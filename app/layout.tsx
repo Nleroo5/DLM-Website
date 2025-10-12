@@ -21,6 +21,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Drive Lead Media - Meta Advertising Experts",
   description: "We Build Advertisement Systems That Bring Your Best Customers To You",
+  icons: {
+    icon: "/images/dlm-logo.png",
+    shortcut: "/images/dlm-logo.png",
+    apple: "/images/dlm-logo.png",
+  },
 };
 
 export default function RootLayout({
