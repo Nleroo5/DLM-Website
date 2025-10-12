@@ -1,49 +1,37 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import { useState } from 'react';
 import VideoModal from './VideoModal';
 
-export default function ActorLedVideos() {
+export default function MotionGraphics() {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
-  // Actor-led video portfolio items
-  const actorVideos = [
+  // Motion graphic videos
+  const motionGraphicVideos = [
     {
       id: 1,
       client: "Sample Dental Ad",
-      videoType: "15 Second Actor-Led Ad",
-      thumbnail: "/images/dlm-logo.png",
-      youtubeId: "rcwYaxampnw"
+      videoType: "15 Second Motion Graphic Ad",
+      youtubeId: "S8PGR30XXy8"
     },
     {
       id: 2,
-      client: "Sample Dental Ad",
-      videoType: "15 Second Actor-Led Ad",
-      thumbnail: "/images/dlm-logo.png",
-      youtubeId: "X-kXJa0To3I"
+      client: "Fayette C.A.R.E. Clinic",
+      videoType: "20 Second Motion Graphic Ad",
+      youtubeId: "05s3zrXlP-s"
     },
     {
       id: 3,
-      client: "Sample Dental Ad",
-      videoType: "15 Second Actor-Led Ad",
-      thumbnail: "/images/dlm-logo.png",
-      youtubeId: "1firvNqcNMs"
+      client: "Drive Lead Media",
+      videoType: "20 Second Motion Graphic",
+      youtubeId: "Rts9AYu0KPs"
     },
     {
       id: 4,
-      client: "Sample Dental Ad",
-      videoType: "15 Second Actor-Led Ad",
-      thumbnail: "/images/dlm-logo.png",
-      youtubeId: "q-oGU24yTgw"
-    },
-    {
-      id: 5,
-      client: "Sample Dental Ad",
-      videoType: "15 Second Actor-Led Ad",
-      thumbnail: "/images/dlm-logo.png",
-      youtubeId: "02el0aY17l8"
+      client: "Drive Lead Media",
+      videoType: "30 Second Motion Graphic",
+      youtubeId: "YkuweNpYbSk"
     }
   ];
 
@@ -82,23 +70,23 @@ export default function ActorLedVideos() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            Actor-Led Videos
+            Motion Graphics
           </motion.h2>
 
           {/* Video Grid */}
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 md:gap-6"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 md:gap-6"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
           >
-            {actorVideos.map((item) => (
+            {motionGraphicVideos.map((item) => (
               <motion.div
                 key={item.id}
                 variants={itemVariants}
                 className="group relative overflow-hidden bg-transparent border border-[rgba(95,169,159,0.12)] rounded-[24px] aspect-[9/16] cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.12),0_2px_8px_rgba(0,0,0,0.08),0_0_40px_rgba(212,165,116,0.1)] transition-all duration-400 hover:transform hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(0,0,0,0.25),0_8px_16px_rgba(212,165,116,0.15),0_0_60px_rgba(212,165,116,0.2)] hover:border-[rgba(212,165,116,0.3)]"
-                onClick={() => item.youtubeId && setSelectedVideo(item.youtubeId)}
+                onClick={() => setSelectedVideo(item.youtubeId)}
               >
                 {/* YouTube Thumbnail Background */}
                 <div

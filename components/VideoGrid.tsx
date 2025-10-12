@@ -8,11 +8,11 @@ import VideoModal from './VideoModal';
 export default function VideoGrid() {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
-  // Sample portfolio items - you'll replace these with your actual videos
+  // Client video portfolio
   const portfolioItems = [
     {
       id: 1,
-      client: "Dream",
+      client: "Dream Pediatric Dentistry and Orthodontics",
       videoType: "1 Minute Meta Ad",
       thumbnail: "/images/dream-logo.png",
       youtubeId: "2qwhz4K9ZXg"
@@ -26,31 +26,59 @@ export default function VideoGrid() {
     },
     {
       id: 3,
-      client: "Dream",
+      client: "Dream Pediatric Dentistry and Orthodontics",
       videoType: "Website Banner Video",
       thumbnail: "/images/dream-logo.png",
       youtubeId: "4JKRwEdejUE"
     },
     {
       id: 4,
-      client: "Sample Brand",
-      videoType: "No Sound Banner",
-      thumbnail: "/images/dlm-logo.png", // Placeholder
-      youtubeId: "dQw4w9WgXcQ"
+      client: "Dream Pediatric Dentistry and Orthodontics",
+      videoType: "1 Minute Meta Ad",
+      thumbnail: "/images/dream-logo.png",
+      youtubeId: "MkbWGedLbVY"
     },
     {
       id: 5,
-      client: "Another Client",
-      videoType: "15s Meta Ad",
-      thumbnail: "/images/dlm-logo.png", // Placeholder
-      youtubeId: "dQw4w9WgXcQ"
+      client: "The Yoga Lounge",
+      videoType: "30 Second Meta Ad",
+      thumbnail: "/images/yoga.png",
+      youtubeId: "eoGhu1NU3jk"
     },
     {
       id: 6,
-      client: "Test Brand",
+      client: "The Yoga Lounge",
+      videoType: "40 Second Meta Ad",
+      thumbnail: "/images/yoga.png",
+      youtubeId: "Oj4vLJ1bCNg"
+    },
+    {
+      id: 7,
+      client: "School of Orthodontic Assisting",
       videoType: "1 Minute Meta Ad",
-      thumbnail: "/images/dlm-logo.png", // Placeholder
-      youtubeId: "dQw4w9WgXcQ"
+      thumbnail: "/images/soa-logo.png",
+      youtubeId: "pmAMb2VQmpI"
+    },
+    {
+      id: 8,
+      client: "School of Orthodontic Assisting",
+      videoType: "20 Second Meta Ad",
+      thumbnail: "/images/soa-logo.png",
+      youtubeId: "g3yCoC4NmiE"
+    },
+    {
+      id: 9,
+      client: "School of Orthodontic Assisting",
+      videoType: "20 Second Meta Ad",
+      thumbnail: "/images/soa-logo.png",
+      youtubeId: "qDOI3p-Hqng"
+    },
+    {
+      id: 10,
+      client: "Maven Baseball Lab",
+      videoType: "40 Second Meta Ad",
+      thumbnail: "/images/maven-logo.png",
+      youtubeId: "b8BITNsDr_w"
     }
   ];
 
@@ -94,33 +122,35 @@ export default function VideoGrid() {
               className="group relative overflow-hidden bg-transparent border border-[rgba(95,169,159,0.12)] rounded-[24px] aspect-[9/16] cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.12),0_2px_8px_rgba(0,0,0,0.08),0_0_40px_rgba(212,165,116,0.1)] transition-all duration-400 hover:transform hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(0,0,0,0.25),0_8px_16px_rgba(212,165,116,0.15),0_0_60px_rgba(212,165,116,0.2)] hover:border-[rgba(212,165,116,0.3)]"
               onClick={() => setSelectedVideo(item.youtubeId)}
             >
-              {/* Thumbnail */}
-              <div className="absolute inset-0 flex items-center justify-center bg-[#0B1D2E]">
-                <div className="w-[60%] h-[60%] relative">
-                  <Image
-                    src={item.thumbnail}
-                    alt={`${item.client} - ${item.videoType}`}
-                    fill
-                    className="object-contain"
-                  />
+              {/* YouTube Thumbnail Background */}
+              <div
+                className="absolute inset-0 bg-cover bg-center"
+                style={{
+                  backgroundImage: `url(https://img.youtube.com/vi/${item.youtubeId}/maxresdefault.jpg)`
+                }}
+              ></div>
+
+              {/* Dark overlay for contrast */}
+              <div className="absolute inset-0 bg-gradient-to-b from-[rgba(11,29,46,0.3)] via-[rgba(11,29,46,0.2)] to-[rgba(11,29,46,0.6)]"></div>
+
+              {/* Play button centered with enhanced glow */}
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                {/* Glow effect */}
+                <div className="absolute inset-0 rounded-full bg-[#D4A574] opacity-10 blur-xl scale-150 group-hover:opacity-20 transition-opacity duration-300"></div>
+
+                {/* Button */}
+                <div className="relative w-20 h-20 rounded-full bg-gradient-to-br from-[rgba(212,165,116,0.7)] to-[rgba(200,152,96,0.7)] flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:from-[rgba(212,165,116,0.9)] group-hover:to-[rgba(200,152,96,0.9)] group-hover:shadow-[0_0_30px_rgba(212,165,116,0.4)] shadow-lg">
+                  <svg
+                    className="w-8 h-8 fill-[#0B1D2E] ml-1"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
                 </div>
               </div>
 
-              {/* Overlay on hover */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[rgba(11,29,46,0.95)] via-[rgba(11,29,46,0.6)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex flex-col justify-end p-6">
-                {/* Play Icon */}
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                  <div className="w-20 h-20 rounded-full bg-[rgba(212,165,116,0.9)] flex items-center justify-center transition-transform duration-400 group-hover:scale-110">
-                    <svg
-                      className="w-8 h-8 fill-[#0B1D2E] ml-1"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  </div>
-                </div>
-
-                {/* Client & Video Type */}
+              {/* Description - always visible at bottom */}
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[rgba(11,29,46,0.98)] via-[rgba(11,29,46,0.92)] to-transparent p-6 pt-12">
                 <div className="relative z-10">
                   <h3 className="text-[#F8F6F3] text-[1.25rem] font-semibold font-serif mb-2">
                     {item.client}

@@ -1,6 +1,7 @@
 import PortfolioHero from '@/components/PortfolioHero';
 import VideoGrid from '@/components/VideoGrid';
 import ActorLedVideos from '@/components/ActorLedVideos';
+import MotionGraphics from '@/components/MotionGraphics';
 import ClientLogoBanner from '@/components/ClientLogoBanner';
 
 export const metadata = {
@@ -14,6 +15,7 @@ export default function Portfolio() {
       <PortfolioHero />
       <VideoGrid />
       <ActorLedVideos />
+      <MotionGraphics />
       <ClientLogoBanner />
     </main>
   );
