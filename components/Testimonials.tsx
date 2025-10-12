@@ -110,7 +110,7 @@ export default function Testimonials() {
               <div className="w-28 h-28 mx-auto mb-6 rounded-full overflow-hidden border-3 border-[rgba(212,165,116,0.4)] shadow-[0_8px_24px_rgba(212,165,116,0.2)] transition-all duration-400 group-hover:border-[rgba(212,165,116,0.6)] group-hover:shadow-[0_12px_32px_rgba(212,165,116,0.3)] lg:w-24 lg:h-24">
                 <Image
                   src={testimonial.image}
-                  alt={testimonial.author}
+                  alt={testimonial.name}
                   width={112}
                   height={112}
                   className="w-full h-full object-cover"
