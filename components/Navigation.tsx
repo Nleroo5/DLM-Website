@@ -101,16 +101,16 @@ export default function Navigation() {
                     className="absolute top-full left-0 mt-2 w-[220px] bg-[rgba(11,29,46,0.98)] backdrop-blur-lg rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.2)] border border-[rgba(95,169,159,0.15)] overflow-hidden"
                   >
                     <Link
-                      href="/resources"
-                      className="block px-5 py-3 font-sans text-[1rem] text-[#F8F6F3] hover:bg-[rgba(212,165,116,0.08)] hover:text-[#D4A574] transition-all duration-400"
-                    >
-                      Free Meta Ads Guide
-                    </Link>
-                    <Link
                       href="/targeted-ads"
                       className="block px-5 py-3 font-sans text-[1rem] text-[#F8F6F3] hover:bg-[rgba(212,165,116,0.08)] hover:text-[#D4A574] transition-all duration-400"
                     >
-                      Targeted Ads Guide
+                      Intro to Targeted Ads
+                    </Link>
+                    <Link
+                      href="/resources/meta-targeting-guide"
+                      className="block px-5 py-3 font-sans text-[1rem] text-[#F8F6F3] hover:bg-[rgba(212,165,116,0.08)] hover:text-[#D4A574] transition-all duration-400"
+                    >
+                      Target Audiences Guide
                     </Link>
                   </motion.div>
                 )}
@@ -219,18 +219,18 @@ export default function Navigation() {
                       className="pl-5 mt-2"
                     >
                       <Link
-                        href="/resources"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                        className="block font-sans text-[1rem] text-[#5FA99F] hover:text-[#D4A574] transition-colors duration-400 py-2"
-                      >
-                        Free Meta Ads Guide
-                      </Link>
-                      <Link
                         href="/targeted-ads"
                         onClick={() => setIsMobileMenuOpen(false)}
                         className="block font-sans text-[1rem] text-[#5FA99F] hover:text-[#D4A574] transition-colors duration-400 py-2"
                       >
-                        Targeted Ads Guide
+                        Intro to Targeted Ads
+                      </Link>
+                      <Link
+                        href="/resources/meta-targeting-guide"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="block font-sans text-[1rem] text-[#5FA99F] hover:text-[#D4A574] transition-colors duration-400 py-2"
+                      >
+                        Target Audiences Guide
                       </Link>
                     </motion.div>
                   )}

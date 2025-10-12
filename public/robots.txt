@@ -1,0 +1,13 @@
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://driveleadmedia.com/sitemap.xml
+
+# Disallow crawling of API routes
+Disallow: /api/
+
+# Disallow crawling of admin areas (if any)
+Disallow: /_next/
+Disallow: /admin/
