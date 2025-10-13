@@ -341,15 +341,9 @@ export default function TargetParticles() {
           }
         }
 
-        /* Mobile Optimization */
-        @media (max-width: 768px) {
-          .particle:nth-child(n + 13) {
-            display: none !important;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .particle:nth-child(n + 7) {
+        /* Mobile Optimization - HIDE ALL PARTICLES ON MOBILE */
+        @media (max-width: 1024px) {
+          .particle-background {
             display: none !important;
           }
         }
@@ -359,12 +353,6 @@ export default function TargetParticles() {
           .particle {
             animation: none !important;
             opacity: 0.1 !important;
-          }
-        }
-
-        @media (max-width: 320px) {
-          .particle-background {
-            display: none !important;
           }
         }
       `}</style>

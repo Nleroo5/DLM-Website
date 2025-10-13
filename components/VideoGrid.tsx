@@ -109,7 +109,7 @@ export default function VideoGrid() {
     <>
       <section className="bg-transparent py-[80px] px-6 md:py-[60px]">
         <motion.div
-          className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 md:gap-6"
+          className="max-w-[1400px] mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -150,12 +150,12 @@ export default function VideoGrid() {
               </div>
 
               {/* Description - always visible at bottom */}
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[rgba(11,29,46,0.98)] via-[rgba(11,29,46,0.92)] to-transparent p-6 pt-12">
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[rgba(11,29,46,0.98)] via-[rgba(11,29,46,0.92)] to-transparent p-4 pt-12 md:p-6">
                 <div className="relative z-10">
-                  <h3 className="text-[#F8F6F3] text-[1.25rem] font-semibold font-serif mb-2">
+                  <h3 className="text-[#F8F6F3] text-[0.9rem] md:text-[1.25rem] font-semibold font-serif mb-1 md:mb-2 leading-tight">
                     {item.client}
                   </h3>
-                  <p className="text-[#D4A574] text-[0.95rem] font-medium font-[family-name:var(--font-inter)]">
+                  <p className="text-[#D4A574] text-[0.75rem] md:text-[0.95rem] font-medium font-[family-name:var(--font-inter)]">
                     {item.videoType}
                   </p>
                 </div>
