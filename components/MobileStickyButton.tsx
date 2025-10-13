@@ -3,9 +3,14 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function MobileStickyButton() {
   const [isVisible, setIsVisible] = useState(false);
+  const pathname = usePathname();
+
+  // Hide sticky button on targeted-ads page
+  const shouldHide = pathname === '/targeted-ads';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,6 +21,9 @@ export default function MobileStickyButton() {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Don't render if on targeted-ads page
+  if (shouldHide) return null;
 
   return (
     <AnimatePresence>
