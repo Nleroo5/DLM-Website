@@ -119,7 +119,7 @@ export default function Testimonials() {
 
               {/* Author Info */}
               <div className="mb-4 md:mb-6 text-center">
-                <p className="text-[1.1rem] md:text-[1.5rem] font-semibold font-serif" style={{ color: testimonial.nameColor }}>
+                <p className="text-[0.95rem] sm:text-[1rem] md:text-[1.2rem] lg:text-[1.5rem] font-semibold font-serif" style={{ color: testimonial.nameColor }}>
                   {testimonial.name}, {testimonial.title}
                 </p>
               </div>

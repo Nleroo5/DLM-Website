@@ -19,10 +19,10 @@ export default function ProblemSolution() {
           transition={{ duration: 0.6 }}
           className="text-center mb-[60px]"
         >
-          <h2 className="font-serif text-[clamp(2rem,5vw,3rem)] font-bold text-[#EEF4D9] mb-6 leading-[1.1]">
+          <h2 className="font-serif text-[1.5rem] sm:text-[1.75rem] md:text-[2.25rem] lg:text-[3rem] font-bold text-[#EEF4D9] mb-6 leading-[1.1]">
             Tired of Expensive Ads That Don't Convert?
           </h2>
-          <p className="font-serif text-[clamp(1.1rem,2.5vw,1.4rem)] text-[#85C7B3] max-w-[800px] mx-auto leading-[1.6]">
+          <p className="font-serif text-[0.95rem] sm:text-[1.05rem] md:text-[1.2rem] lg:text-[1.4rem] text-[#85C7B3] max-w-[800px] mx-auto leading-[1.6]">
             Most businesses waste thousands of dollars showing ads to people who will never buy.
           </p>
         </motion.div>
@@ -64,11 +64,11 @@ export default function ProblemSolution() {
               </span>
             </div>
 
-            <h3 className="font-serif text-[clamp(1.8rem,4.5vw,2.5rem)] font-bold text-[#EEF4D9] mb-6 leading-[1.2]">
+            <h3 className="font-serif text-[1.4rem] sm:text-[1.6rem] md:text-[2rem] lg:text-[2.5rem] font-bold text-[#EEF4D9] mb-6 leading-[1.2]">
               We Only Show Ads to People Already Interested in Your Service
             </h3>
 
-            <p className="font-serif text-[clamp(1rem,2.2vw,1.2rem)] text-[#EEF4D9] max-w-[700px] mx-auto leading-[1.7] mb-8">
+            <p className="font-serif text-[0.9rem] sm:text-[0.95rem] md:text-[1.05rem] lg:text-[1.2rem] text-[#EEF4D9] max-w-[700px] mx-auto leading-[1.7] mb-8">
               Using Meta's powerful targeting, we reach people based on their{' '}
               <span className="text-[#F2A922] font-semibold">age, location, interests, and behavior</span>
               {' '}— so every dollar you spend reaches someone likely to become a customer.
@@ -77,13 +77,13 @@ export default function ProblemSolution() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link
                 href="/contact"
-                className="inline-block font-serif text-[1.1rem] px-8 py-4 bg-gradient-to-r from-[#F2A922] to-[#85C7B3] text-[#012E40] font-bold rounded-full hover:shadow-[0_0_30px_rgba(242,169,34,0.6)] transition-all duration-300 hover:scale-105"
+                className="inline-block font-serif text-[0.9rem] sm:text-[0.95rem] md:text-[1rem] lg:text-[1.1rem] px-6 sm:px-7 md:px-8 py-3 sm:py-3.5 md:py-4 bg-gradient-to-r from-[#F2A922] to-[#85C7B3] text-[#012E40] font-bold rounded-full hover:shadow-[0_0_30px_rgba(242,169,34,0.6)] transition-all duration-300 hover:scale-105"
               >
                 Get Your Free Strategy Call
               </Link>
               <Link
                 href="/targeted-ads"
-                className="inline-block font-serif text-[1.1rem] px-8 py-4 bg-transparent border-2 border-[#EEF4D9] text-[#EEF4D9] font-bold rounded-full hover:bg-[rgba(238,244,217,0.1)] transition-all duration-300 hover:scale-105"
+                className="inline-block font-serif text-[0.9rem] sm:text-[0.95rem] md:text-[1rem] lg:text-[1.1rem] px-6 sm:px-7 md:px-8 py-3 sm:py-3.5 md:py-4 bg-transparent border-2 border-[#EEF4D9] text-[#EEF4D9] font-bold rounded-full hover:bg-[rgba(238,244,217,0.1)] transition-all duration-300 hover:scale-105"
               >
                 Learn How It Works
               </Link>
@@ -104,10 +104,10 @@ function ProblemCard({ title, description, delay }: { icon?: string; title: stri
       transition={{ duration: 0.5, delay }}
       className="bg-[#0A192F] backdrop-blur-lg rounded-[20px] p-6 border border-[rgba(212,165,116,0.3)] hover:border-[rgba(212,165,116,0.5)] transition-all duration-300 hover:-translate-y-2 text-center"
     >
-      <h3 className="font-serif text-[clamp(1.2rem,2.5vw,1.4rem)] font-bold text-[#EEF4D9] mb-3">
+      <h3 className="font-serif text-[1rem] sm:text-[1.1rem] md:text-[1.2rem] lg:text-[1.4rem] font-bold text-[#EEF4D9] mb-3">
         {title}
       </h3>
-      <p className="font-serif text-[clamp(0.95rem,2vw,1.05rem)] text-[#85C7B3] leading-[1.6]">
+      <p className="font-serif text-[0.9rem] sm:text-[0.95rem] md:text-[1rem] lg:text-[1.05rem] text-[#85C7B3] leading-[1.6]">
         {description}
       </p>
     </motion.div>
