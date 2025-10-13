@@ -10,7 +10,7 @@ export default function Footer() {
     <footer className="relative bg-[rgba(10,25,47,0.95)] border-t border-[rgba(133,199,179,0.2)] pt-[40px] md:pt-[60px] pb-[20px] md:pb-[30px] mt-[60px] md:mt-[100px]">
       <div className="max-w-[1400px] mx-auto px-5 lg:px-8">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 mb-8 md:mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-10 mb-6 sm:mb-8 md:mb-12">
           {/* Brand Column */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}

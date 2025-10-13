@@ -76,11 +76,11 @@ export default function WhatWeDeliver() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="group relative overflow-hidden bg-[#0B1D2E] border border-[rgba(95,169,159,0.12)] rounded-[24px] md:rounded-[32px] p-6 md:p-10 shadow-[0_8px_32px_rgba(0,0,0,0.12),0_2px_8px_rgba(0,0,0,0.08)] backdrop-blur-md min-h-[300px] md:min-h-[380px] flex flex-col justify-start transition-all duration-400 hover:transform hover:-translate-y-1 hover:shadow-[0_16px_48px_rgba(0,0,0,0.18),0_4px_12px_rgba(0,0,0,0.12)] hover:border-[rgba(212,165,116,0.25)] hover:bg-[#0B1D2E]"
+              className="group relative overflow-hidden bg-[#0B1D2E] border border-[rgba(95,169,159,0.12)] rounded-[20px] md:rounded-[24px] lg:rounded-[32px] p-4 sm:p-5 md:p-6 lg:p-10 shadow-[0_8px_32px_rgba(0,0,0,0.12),0_2px_8px_rgba(0,0,0,0.08)] backdrop-blur-md min-h-[240px] sm:min-h-[260px] md:min-h-[300px] lg:min-h-[380px] flex flex-col justify-start transition-all duration-400 hover:transform hover:-translate-y-1 hover:shadow-[0_16px_48px_rgba(0,0,0,0.18),0_4px_12px_rgba(0,0,0,0.12)] hover:border-[rgba(212,165,116,0.25)] hover:bg-[#0B1D2E]"
             >
               <div>
                 {/* Icon */}
-                <div className="h-28 w-auto mx-auto mb-8 block transition-all duration-400 [filter:drop-shadow(0_4px_12px_rgba(95,169,159,0.2))] md:h-24 md:mb-6 sm:h-20 sm:mb-5">
+                <div className="h-14 sm:h-16 md:h-20 lg:h-24 w-auto mx-auto mb-3 sm:mb-4 md:mb-5 lg:mb-6 block transition-all duration-400 [filter:drop-shadow(0_4px_12px_rgba(95,169,159,0.2))]">
                   <Image
                     src={card.icon}
                     alt={`${card.title} Icon`}
@@ -91,13 +91,13 @@ export default function WhatWeDeliver() {
                 </div>
 
                 {/* Card Title */}
-                <h3 className="text-[#F8F6F3] text-[1.1rem] sm:text-[1.375rem] lg:text-[1.875rem] mb-3 sm:mb-4 lg:mb-5 font-semibold font-serif transition-all duration-400 leading-[1.3] text-center">
+                <h3 className="text-[#F8F6F3] text-[0.95rem] sm:text-[1.05rem] md:text-[1.2rem] lg:text-[1.5rem] xl:text-[1.875rem] mb-2 sm:mb-3 md:mb-3 lg:mb-4 xl:mb-5 font-semibold font-serif transition-all duration-400 leading-[1.3] text-center">
                   {card.title}
                 </h3>
               </div>
 
               {/* Card Content */}
-              <p className="text-[#5FA99F] text-[0.9rem] sm:text-[1.0625rem] lg:text-[1.3rem] font-normal font-sans leading-[1.6] transition-all duration-400 opacity-90 text-center">
+              <p className="text-[#5FA99F] text-[0.8rem] sm:text-[0.85rem] md:text-[0.95rem] lg:text-[1.1rem] xl:text-[1.3rem] font-normal font-sans leading-[1.5] sm:leading-[1.55] md:leading-[1.6] transition-all duration-400 opacity-90 text-center">
                 {card.content}
               </p>
             </motion.div>
