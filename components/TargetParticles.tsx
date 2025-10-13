@@ -1,6 +1,13 @@
 'use client';
 
+import { useIsMobile } from '@/hooks/useIsMobile';
+
 export default function TargetParticles() {
+  const isMobile = useIsMobile();
+
+  // Don't render particles at all on mobile - saves 24 DOM nodes + 72 pseudo-elements
+  if (isMobile) return null;
+
   return (
     <>
       <div className="particle-background">
