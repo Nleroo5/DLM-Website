@@ -100,7 +100,8 @@ export default function DentalIntroPage() {
           </div>
 
           <div className="hero-ctas">
-            <a href="https://www.driveleadmedia.com/contact" className="btn-primary">See How It Works for My Practice</a>
+            <a href="#examples" className="btn-primary">See Example Ads for My Practice</a>
+            <a href="https://www.driveleadmedia.com/contact" className="btn-secondary">Book a 10-Minute Call</a>
           </div>
 
           <div className="hero-trust">
@@ -115,32 +116,57 @@ export default function DentalIntroPage() {
       </section>
 
       {/* Examples Section */}
-      <section className="examples section">
+      <section className="examples section" id="examples">
         <div className="container">
           <h2 className="section-title fade-in-up">See the Ads We Build for Your Practice</h2>
 
           <div className="examples-grid">
-            <div className="example-card card fade-in-up stagger-1">
+            <div className="example-card card fade-in-up stagger-1" onClick={openVideoModal}>
               <div className="example-content">
-                <div className="video-thumbnail" onClick={openVideoModal}></div>
+                <div className="video-thumbnail-wrapper">
+                  <video className="video-thumbnail-preview" poster="https://www.driveleadmedia.com/s/Untitled-design-40.mp4">
+                    <source src="https://www.driveleadmedia.com/s/Untitled-design-40.mp4" type="video/mp4" />
+                  </video>
+                  <div className="play-overlay">
+                    <svg viewBox="0 0 24 24" className="play-icon">
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
+                  </div>
+                </div>
                 <h3 className="example-title">Actor Videos</h3>
-                <p className="example-desc">Professional actors, your office branding</p>
+                <p className="example-desc">Professional actors explain your services</p>
               </div>
             </div>
 
-            <div className="example-card card fade-in-up stagger-2">
+            <div className="example-card card fade-in-up stagger-2" onClick={openAnimatedModal}>
               <div className="example-content">
-                <div className="animated-thumbnail" onClick={openAnimatedModal}></div>
+                <div className="video-thumbnail-wrapper">
+                  <video className="video-thumbnail-preview" poster="https://www.driveleadmedia.com/s/Sample-Motion-Graphic-gjme.mp4">
+                    <source src="https://www.driveleadmedia.com/s/Sample-Motion-Graphic-gjme.mp4" type="video/mp4" />
+                  </video>
+                  <div className="play-overlay">
+                    <svg viewBox="0 0 24 24" className="play-icon">
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
+                  </div>
+                </div>
                 <h3 className="example-title">Animated Videos</h3>
                 <p className="example-desc">Motion graphics that engage and educate</p>
               </div>
             </div>
 
-            <div className="example-card card fade-in-up stagger-3">
+            <div className="example-card card fade-in-up stagger-3" onClick={openImageModal}>
               <div className="example-content">
-                <div className="image-thumbnail" onClick={openImageModal}></div>
+                <div className="image-thumbnail-wrapper">
+                  <img src="https://www.driveleadmedia.com/s/Actor-3-Sample-Ad.png" alt="Sample dental image ad" className="image-thumbnail-preview" />
+                  <div className="play-overlay">
+                    <svg viewBox="0 0 24 24" className="play-icon" style={{width: '30px', height: '30px'}}>
+                      <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                    </svg>
+                  </div>
+                </div>
                 <h3 className="example-title">Image Ads</h3>
-                <p className="example-desc">Polished, professional static campaigns</p>
+                <p className="example-desc">High-converting static campaigns</p>
               </div>
             </div>
           </div>
@@ -169,7 +195,7 @@ export default function DentalIntroPage() {
             <div className="testimonial-card scale-in">
               <img className="testimonial-photo" src="https://www.driveleadmedia.com/s/Untitled-design-60.png" alt="Dr. Austin Dupont" />
               <p className="testimonial-quote">
-                Drive Lead Media transformed our practice. The actor-led videos look incredibly professional - patients actually think we filmed them in our office. We've seen a 40% increase in new patient bookings, and I didn't have to lift a finger. They truly handle everything while we focus on what we do best.
+                Working with Drive Lead Media has been a game changer for Village Pediatrics. They completely transformed our outdated website into something modern and professional. The Meta ad campaigns they've been running have brought in a 40% increase in new patient bookings, and honestly, the best part is that I haven't had to manage any of it. Nic and Tommy handle everything from strategy to execution while I focus on caring for my patients.
               </p>
               <div className="testimonial-author">
                 <div className="testimonial-name">Dr. Austin Dupont</div>
@@ -185,7 +211,7 @@ export default function DentalIntroPage() {
       <section className="urgency fade-in-up">
         <div className="urgency-container">
           <div className="container">
-            <h2 className="urgency-headline">Zero Setup Costs — For a Limited Time</h2>
+            <h2 className="urgency-headline">Zero Setup Costs ($2,500 Value)</h2>
             <p className="urgency-copy stagger-1">Most agencies charge $2,500+ upfront just to get started. We're waiving all setup costs to make it simple for you to launch now.</p>
             <div className="stagger-2">
               <a href="https://www.driveleadmedia.com/contact" className="btn-navy">Claim My No-Cost Setup</a>
