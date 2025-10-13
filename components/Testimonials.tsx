@@ -125,7 +125,7 @@ export default function Testimonials() {
               </div>
 
               {/* Quote */}
-              <blockquote className="text-[#F8F6F3] text-[0.95rem] md:text-[1.25rem] font-normal leading-[1.6] md:leading-[1.8] mb-6 md:mb-8 opacity-90 flex-grow text-center font-[family-name:var(--font-inter)]">
+              <blockquote className="text-[#F8F6F3] text-[0.95rem] sm:text-[1rem] md:text-[1.125rem] lg:text-[1.25rem] font-normal leading-[1.6] md:leading-[1.8] mb-6 md:mb-8 opacity-90 flex-grow text-center font-[family-name:var(--font-inter)]">
                 {testimonial.quote}
               </blockquote>
 

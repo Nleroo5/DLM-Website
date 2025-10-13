@@ -67,7 +67,7 @@ export default function HowItWorks() {
           How It Works (Process Funnel)
         </motion.h2>
         <motion.p
-          className="text-[0.85rem] sm:text-[0.9rem] md:text-base lg:text-[1.2rem] xl:text-[1.5rem] text-[#85C7B3] max-w-[600px] mx-auto font-normal font-serif leading-[1.2] sm:leading-[1.25] lg:leading-[1.3] [text-shadow:1px_1px_2px_rgba(0,0,0,0.2)] opacity-90 tracking-[0.2px] [-webkit-font-smoothing:antialiased] [-moz-osx-font-smoothing:grayscale] [text-rendering:optimizeLegibility]"
+          className="text-[0.9rem] sm:text-[0.95rem] md:text-base lg:text-[1.2rem] xl:text-[1.5rem] text-[#85C7B3] max-w-[600px] mx-auto font-normal font-serif leading-[1.2] sm:leading-[1.25] lg:leading-[1.3] [text-shadow:1px_1px_2px_rgba(0,0,0,0.2)] opacity-90 tracking-[0.2px] [-webkit-font-smoothing:antialiased] [-moz-osx-font-smoothing:grayscale] [text-rendering:optimizeLegibility]"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -116,7 +116,7 @@ export default function HowItWorks() {
                 <h3 className="font-serif text-[0.95rem] sm:text-[1rem] md:text-[1.15rem] lg:text-[1.3rem] xl:text-[1.5rem] font-normal text-[#012E40] mb-[0.5rem] sm:mb-[0.6rem] lg:mb-[0.8rem] leading-[1.15] sm:leading-[1.15] lg:leading-[1.2] [text-shadow:1px_1px_2px_rgba(0,0,0,0.1)] tracking-[0.2px] [-webkit-font-smoothing:antialiased] [-moz-osx-font-smoothing:grayscale] [text-rendering:optimizeLegibility]">
                   {step.title}
                 </h3>
-                <p className="text-[#05908C] text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1.05rem] xl:text-[1.2rem] leading-[1.35] sm:leading-[1.3] lg:leading-[1.4] font-serif font-normal [text-shadow:1px_1px_2px_rgba(0,0,0,0.05)] opacity-95 tracking-[0.1px] [-webkit-font-smoothing:antialiased] [-moz-osx-font-smoothing:grayscale] [text-rendering:optimizeLegibility]">
+                <p className="text-[#05908C] text-[0.9rem] sm:text-[0.95rem] md:text-[1rem] lg:text-[1.1rem] xl:text-[1.2rem] leading-[1.35] sm:leading-[1.3] lg:leading-[1.4] font-serif font-normal [text-shadow:1px_1px_2px_rgba(0,0,0,0.05)] opacity-95 tracking-[0.1px] [-webkit-font-smoothing:antialiased] [-moz-osx-font-smoothing:grayscale] [text-rendering:optimizeLegibility]">
                   {step.description}
                 </p>
               </div>
@@ -134,7 +134,7 @@ export default function HowItWorks() {
         >
           <Link
             href="/contact"
-            className="inline-block bg-gradient-to-br from-[#F2A922] to-[#EEF4D9] text-[#012E40] px-10 py-4 rounded-[40px] text-[1.1rem] font-normal font-serif no-underline transition-all duration-300 cursor-pointer shadow-[0_6px_20px_rgba(242,169,34,0.3)] border-2 border-[rgba(255,255,255,0.2)] tracking-[0.3px] [text-shadow:1px_1px_2px_rgba(0,0,0,0.1)] hover:transform hover:-translate-y-[2px] hover:shadow-[0_12px_32px_rgba(242,169,34,0.5)] hover:text-[#EEF4D9] hover:bg-gradient-to-br hover:from-[#05908C] hover:to-[#85C7B3] hover:border-[rgba(238,244,217,0.4)] [-webkit-font-smoothing:antialiased] [-moz-osx-font-smoothing:grayscale] [text-rendering:optimizeLegibility] md:px-8 md:py-[0.9rem] md:text-base md:tracking-[0.2px] md:rounded-[35px] sm:px-7 sm:py-[0.8rem] sm:text-[0.95rem] sm:tracking-[0.1px]"
+            className="inline-block bg-gradient-to-br from-[#F2A922] to-[#EEF4D9] text-[#012E40] px-7 py-3 rounded-[40px] text-[0.95rem] sm:text-base md:text-[1.05rem] lg:text-[1.1rem] font-normal font-serif no-underline transition-all duration-300 cursor-pointer shadow-[0_6px_20px_rgba(242,169,34,0.3)] border-2 border-[rgba(255,255,255,0.2)] tracking-[0.3px] [text-shadow:1px_1px_2px_rgba(0,0,0,0.1)] hover:transform hover:-translate-y-[2px] hover:shadow-[0_12px_32px_rgba(242,169,34,0.5)] hover:text-[#EEF4D9] hover:bg-gradient-to-br hover:from-[#05908C] hover:to-[#85C7B3] hover:border-[rgba(238,244,217,0.4)] [-webkit-font-smoothing:antialiased] [-moz-osx-font-smoothing:grayscale] [text-rendering:optimizeLegibility] sm:px-8 sm:py-3.5 md:px-9 md:py-4 md:tracking-[0.2px] md:rounded-[35px] lg:px-10"
           >
             See This Process In Action
           </Link>

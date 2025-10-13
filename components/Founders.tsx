@@ -72,7 +72,7 @@ export default function Founders() {
               />
             </div>
 
-            <p className="font-serif text-[clamp(1rem,3vw,1.125rem)] text-[#85C7B3] mb-[15px] font-normal italic">
+            <p className="font-serif text-[0.9rem] sm:text-[0.95rem] md:text-[1rem] lg:text-[1.05rem] xl:text-[1.125rem] text-[#85C7B3] mb-[15px] font-normal italic">
               Paid Media Strategist
             </p>
             <p className="font-serif text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.0625rem] text-[#EEF4D9] leading-[1.6] font-normal">
