@@ -21,7 +21,7 @@ export default function Hero() {
       >
         {/* Main Headline */}
         <motion.h1
-          className="font-serif text-[4.5rem] font-semibold leading-[1.1] text-[#F8F6F3] mb-6 md:text-[2rem] md:mb-4 sm:text-[1.5rem]"
+          className="font-serif text-[1.75rem] sm:text-[2rem] md:text-[2.5rem] lg:text-[3.5rem] xl:text-[4.5rem] font-semibold leading-[1.1] text-[#F8F6F3] mb-4 sm:mb-5 md:mb-6"
           variants={fadeInUp}
           initial="hidden"
           animate="visible"
@@ -32,7 +32,7 @@ export default function Hero() {
 
         {/* Subheadline */}
         <motion.p
-          className="font-sans text-[1.625rem] font-normal text-[#5FA99F] mb-12 leading-[1.5] max-w-[900px] mx-auto md:text-[1rem] md:mb-6 md:leading-[1.4] sm:text-[0.9rem]"
+          className="font-sans text-[0.95rem] sm:text-[1.05rem] md:text-[1.25rem] lg:text-[1.625rem] font-normal text-[#5FA99F] mb-8 sm:mb-10 md:mb-12 leading-[1.5] max-w-[900px] mx-auto"
           variants={fadeInUp}
           initial="hidden"
           animate="visible"

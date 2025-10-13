@@ -32,7 +32,7 @@ export default function Founders() {
       </motion.p>
 
       {/* Founders Grid */}
-      <div className="grid grid-cols-1 gap-[60px] mt-[60px] lg:grid-cols-2 md:gap-[60px] md:mt-[60px] sm:gap-[30px] sm:mt-[30px]">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-[60px] mt-[60px] lg:grid-cols-2 md:gap-[60px] md:mt-[60px] sm:gap-[30px] sm:mt-[30px]">
         {/* Founder 1: Nicolas Leroo */}
         <motion.div
           className="flex flex-col items-center gap-5 lg:flex-row lg:gap-[30px] lg:items-center md:gap-5 md:flex-col md:items-center sm:flex-col sm:gap-[15px] sm:items-center"

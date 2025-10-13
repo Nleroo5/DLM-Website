@@ -94,7 +94,7 @@ export default function Testimonials() {
 
         {/* Testimonials Grid - Cards swoop in together */}
         <motion.div
-          className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 max-w-[1200px] mx-auto"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8 max-w-[1200px] mx-auto"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"

@@ -67,7 +67,7 @@ export default function WhatWeDeliver() {
         </motion.p>
 
         {/* Cards Container */}
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-10 max-w-[1100px] mx-auto lg:gap-8 md:grid-cols-1 md:gap-6 md:max-w-full sm:gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6 lg:gap-8 max-w-[1100px] mx-auto">
           {cards.map((card, index) => (
             <motion.div
               key={index}
