@@ -58,7 +58,7 @@ export default function HowItWorks() {
       {/* Header */}
       <div className="text-center mb-10 px-4 md:mb-8 md:px-4 sm:mb-6 sm:px-3">
         <motion.h2
-          className="font-serif text-[3.5rem] font-normal text-[#EEF4D9] mb-4 leading-[1.1] [text-shadow:2px_2px_4px_rgba(0,0,0,0.3)] tracking-[0.3px] [-webkit-font-smoothing:antialiased] [-moz-osx-font-smoothing:grayscale] [text-rendering:optimizeLegibility] md:text-[2rem] md:leading-[1.05] md:mb-3 sm:text-[1.8rem] sm:leading-[1] sm:mb-[0.7rem]"
+          className="font-serif text-[1.5rem] sm:text-[1.8rem] md:text-[2rem] lg:text-[2.5rem] xl:text-[3.5rem] font-normal text-[#EEF4D9] mb-3 sm:mb-3 md:mb-3 lg:mb-4 leading-[1.1] [text-shadow:2px_2px_4px_rgba(0,0,0,0.3)] tracking-[0.3px] [-webkit-font-smoothing:antialiased] [-moz-osx-font-smoothing:grayscale] [text-rendering:optimizeLegibility]"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -67,7 +67,7 @@ export default function HowItWorks() {
           How It Works (Process Funnel)
         </motion.h2>
         <motion.p
-          className="text-[0.95rem] sm:text-base lg:text-[1.5rem] text-[#85C7B3] max-w-[600px] mx-auto font-normal font-serif leading-[1.2] sm:leading-[1.25] lg:leading-[1.3] [text-shadow:1px_1px_2px_rgba(0,0,0,0.2)] opacity-90 tracking-[0.2px] [-webkit-font-smoothing:antialiased] [-moz-osx-font-smoothing:grayscale] [text-rendering:optimizeLegibility]"
+          className="text-[0.85rem] sm:text-[0.9rem] md:text-base lg:text-[1.2rem] xl:text-[1.5rem] text-[#85C7B3] max-w-[600px] mx-auto font-normal font-serif leading-[1.2] sm:leading-[1.25] lg:leading-[1.3] [text-shadow:1px_1px_2px_rgba(0,0,0,0.2)] opacity-90 tracking-[0.2px] [-webkit-font-smoothing:antialiased] [-moz-osx-font-smoothing:grayscale] [text-rendering:optimizeLegibility]"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -113,14 +113,11 @@ export default function HowItWorks() {
                   } md:-left-3 md:border-r-[#EEF4D9] md:border-l-transparent md:border-[10px]`}
                 ></span>
 
-                <h3 className="font-serif text-[1.15rem] sm:text-xl lg:text-[1.5rem] font-normal text-[#012E40] mb-[0.6rem] sm:mb-[0.6rem] lg:mb-[0.8rem] leading-[1.15] sm:leading-[1.15] lg:leading-[1.2] [text-shadow:1px_1px_2px_rgba(0,0,0,0.1)] tracking-[0.2px] [-webkit-font-smoothing:antialiased] [-moz-osx-font-smoothing:grayscale] [text-rendering:optimizeLegibility]">
+                <h3 className="font-serif text-[0.95rem] sm:text-[1rem] md:text-[1.15rem] lg:text-[1.3rem] xl:text-[1.5rem] font-normal text-[#012E40] mb-[0.5rem] sm:mb-[0.6rem] lg:mb-[0.8rem] leading-[1.15] sm:leading-[1.15] lg:leading-[1.2] [text-shadow:1px_1px_2px_rgba(0,0,0,0.1)] tracking-[0.2px] [-webkit-font-smoothing:antialiased] [-moz-osx-font-smoothing:grayscale] [text-rendering:optimizeLegibility]">
                   {step.title}
                 </h3>
-                <p className="text-[#05908C] text-[0.95rem] sm:text-[1.05rem] lg:text-[1.2rem] leading-[1.35] sm:leading-[1.3] lg:leading-[1.4] mb-[0.6rem] sm:mb-[0.7rem] lg:mb-4 font-serif font-normal [text-shadow:1px_1px_2px_rgba(0,0,0,0.05)] opacity-95 tracking-[0.1px] [-webkit-font-smoothing:antialiased] [-moz-osx-font-smoothing:grayscale] [text-rendering:optimizeLegibility]">
+                <p className="text-[#05908C] text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1.05rem] xl:text-[1.2rem] leading-[1.35] sm:leading-[1.3] lg:leading-[1.4] font-serif font-normal [text-shadow:1px_1px_2px_rgba(0,0,0,0.05)] opacity-95 tracking-[0.1px] [-webkit-font-smoothing:antialiased] [-moz-osx-font-smoothing:grayscale] [text-rendering:optimizeLegibility]">
                   {step.description}
-                </p>
-                <p className="text-[#012E40] text-[1.125rem] font-normal opacity-80 font-serif leading-[1.3] tracking-[0.1px] p-[0.7rem_1.1rem] bg-[rgba(5,144,140,0.1)] rounded-md border-l-[3px] border-[rgba(242,169,34,0.6)] [-webkit-font-smoothing:antialiased] [-moz-osx-font-smoothing:grayscale] [text-rendering:optimizeLegibility] md:text-[0.9rem] md:leading-[1.25] md:p-[0.5rem_0.8rem] sm:text-[0.85rem] sm:leading-[1.25] sm:p-[0.4rem_0.7rem]">
-                  {step.details}
                 </p>
               </div>
             </motion.div>
