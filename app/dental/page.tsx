@@ -338,10 +338,15 @@ export default function DentalIntroPage() {
         <div className="video-overlay" onClick={(e) => e.target === e.currentTarget && closeHeroVideo()}>
           <div className="video-container-fullscreen">
             <button className="close-btn" onClick={closeHeroVideo}>×</button>
-            <video controls autoPlay>
-              <source src="https://www.driveleadmedia.com/s/QR-Code-Video-Final.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            <div style={{ position: 'relative', paddingBottom: '177.78%', height: 0, overflow: 'hidden' }}>
+              <iframe
+                src="https://www.youtube.com/embed/U9AH3eAnd8M?autoplay=1&rel=0&modestbranding=1"
+                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
           </div>
         </div>
       )}
