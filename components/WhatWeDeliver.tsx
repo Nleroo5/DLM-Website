@@ -46,7 +46,7 @@ export default function WhatWeDeliver() {
       <div className="max-w-[1200px] mx-auto text-center">
         {/* Section Title */}
         <motion.h2
-          className="font-serif text-[2rem] sm:text-[2.25rem] lg:text-[3.5rem] mb-4 sm:mb-5 lg:mb-6 text-[#F8F6F3] font-normal leading-[1.2] tracking-tight"
+          className="font-serif text-[1.75rem] sm:text-[2.25rem] lg:text-[3.5rem] mb-3 sm:mb-5 lg:mb-6 text-[#F8F6F3] font-normal leading-[1.2] tracking-tight"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -57,7 +57,7 @@ export default function WhatWeDeliver() {
 
         {/* Section Subtitle */}
         <motion.p
-          className="text-[#5FA99F] text-[1rem] sm:text-[1.125rem] lg:text-[1.5rem] mb-8 sm:mb-10 lg:mb-12 font-sans font-normal leading-[1.7] opacity-90 max-w-[700px] mx-auto"
+          className="text-[#5FA99F] text-[0.95rem] sm:text-[1.125rem] lg:text-[1.5rem] mb-6 sm:mb-10 lg:mb-12 font-sans font-normal leading-[1.6] opacity-90 max-w-[700px] mx-auto"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -67,7 +67,7 @@ export default function WhatWeDeliver() {
         </motion.p>
 
         {/* Cards Container */}
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-10 max-w-[1100px] mx-auto lg:gap-8 md:grid-cols-1 md:gap-8 md:max-w-full sm:gap-6">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-10 max-w-[1100px] mx-auto lg:gap-8 md:grid-cols-1 md:gap-6 md:max-w-full sm:gap-5">
           {cards.map((card, index) => (
             <motion.div
               key={index}
@@ -76,7 +76,7 @@ export default function WhatWeDeliver() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="group relative overflow-hidden bg-[#0B1D2E] border border-[rgba(95,169,159,0.12)] rounded-[32px] p-10 shadow-[0_8px_32px_rgba(0,0,0,0.12),0_2px_8px_rgba(0,0,0,0.08)] backdrop-blur-md min-h-[380px] flex flex-col justify-start transition-all duration-400 hover:transform hover:-translate-y-1 hover:shadow-[0_16px_48px_rgba(0,0,0,0.18),0_4px_12px_rgba(0,0,0,0.12)] hover:border-[rgba(212,165,116,0.25)] hover:bg-[#0B1D2E] lg:p-9 lg:min-h-[360px] md:p-8 md:min-h-auto sm:p-7 sm:rounded-[24px]"
+              className="group relative overflow-hidden bg-[#0B1D2E] border border-[rgba(95,169,159,0.12)] rounded-[24px] md:rounded-[32px] p-6 md:p-10 shadow-[0_8px_32px_rgba(0,0,0,0.12),0_2px_8px_rgba(0,0,0,0.08)] backdrop-blur-md min-h-[300px] md:min-h-[380px] flex flex-col justify-start transition-all duration-400 hover:transform hover:-translate-y-1 hover:shadow-[0_16px_48px_rgba(0,0,0,0.18),0_4px_12px_rgba(0,0,0,0.12)] hover:border-[rgba(212,165,116,0.25)] hover:bg-[#0B1D2E]"
             >
               <div>
                 {/* Icon */}
@@ -91,13 +91,13 @@ export default function WhatWeDeliver() {
                 </div>
 
                 {/* Card Title */}
-                <h3 className="text-[#F8F6F3] text-[1.25rem] sm:text-[1.375rem] lg:text-[1.875rem] mb-4 sm:mb-4 lg:mb-5 font-semibold font-serif transition-all duration-400 leading-[1.3] text-center">
+                <h3 className="text-[#F8F6F3] text-[1.1rem] sm:text-[1.375rem] lg:text-[1.875rem] mb-3 sm:mb-4 lg:mb-5 font-semibold font-serif transition-all duration-400 leading-[1.3] text-center">
                   {card.title}
                 </h3>
               </div>
 
               {/* Card Content */}
-              <p className="text-[#5FA99F] text-[1rem] sm:text-[1.0625rem] lg:text-[1.3rem] font-normal font-sans leading-[1.7] lg:leading-[1.7] sm:leading-[1.6] transition-all duration-400 opacity-90 text-center">
+              <p className="text-[#5FA99F] text-[0.9rem] sm:text-[1.0625rem] lg:text-[1.3rem] font-normal font-sans leading-[1.6] transition-all duration-400 opacity-90 text-center">
                 {card.content}
               </p>
             </motion.div>

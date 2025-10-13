@@ -7,10 +7,10 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-[rgba(10,25,47,0.95)] border-t border-[rgba(133,199,179,0.2)] pt-[60px] pb-[30px] mt-[100px]">
+    <footer className="relative bg-[rgba(10,25,47,0.95)] border-t border-[rgba(133,199,179,0.2)] pt-[40px] md:pt-[60px] pb-[20px] md:pb-[30px] mt-[60px] md:mt-[100px]">
       <div className="max-w-[1400px] mx-auto px-5 lg:px-8">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 mb-8 md:mb-12">
           {/* Brand Column */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -18,10 +18,10 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="font-serif text-[1.5rem] font-bold text-[#EEF4D9] mb-4">
+            <h3 className="font-serif text-[1.2rem] md:text-[1.5rem] font-bold text-[#EEF4D9] mb-3 md:mb-4">
               Drive Lead Media
             </h3>
-            <p className="font-serif text-[0.95rem] text-[#85C7B3] leading-[1.6] mb-6">
+            <p className="font-serif text-[0.85rem] md:text-[0.95rem] text-[#85C7B3] leading-[1.5] mb-4 md:mb-6">
               We Build Advertisement Systems That Bring Your Best Customers To You
             </p>
             {/* Social Media Links */}
@@ -66,14 +66,14 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <h4 className="font-serif text-[1.2rem] font-bold text-[#EEF4D9] mb-4">
+            <h4 className="font-serif text-[1rem] md:text-[1.2rem] font-bold text-[#EEF4D9] mb-3 md:mb-4">
               Quick Links
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-2 md:space-y-3">
               <li>
                 <Link
                   href="/"
-                  className="font-serif text-[0.95rem] text-[#85C7B3] hover:text-[#F2A922] transition-colors duration-300"
+                  className="font-serif text-[0.85rem] md:text-[0.95rem] text-[#85C7B3] hover:text-[#F2A922] transition-colors duration-300"
                 >
                   Home
                 </Link>
@@ -81,7 +81,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/faq"
-                  className="font-serif text-[0.95rem] text-[#85C7B3] hover:text-[#F2A922] transition-colors duration-300"
+                  className="font-serif text-[0.85rem] md:text-[0.95rem] text-[#85C7B3] hover:text-[#F2A922] transition-colors duration-300"
                 >
                   FAQ
                 </Link>
@@ -89,7 +89,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/targeted-ads"
-                  className="font-serif text-[0.95rem] text-[#85C7B3] hover:text-[#F2A922] transition-colors duration-300"
+                  className="font-serif text-[0.85rem] md:text-[0.95rem] text-[#85C7B3] hover:text-[#F2A922] transition-colors duration-300"
                 >
                   Targeted Ads Guide
                 </Link>
@@ -97,7 +97,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/contact"
-                  className="font-serif text-[0.95rem] text-[#85C7B3] hover:text-[#F2A922] transition-colors duration-300"
+                  className="font-serif text-[0.85rem] md:text-[0.95rem] text-[#85C7B3] hover:text-[#F2A922] transition-colors duration-300"
                 >
                   Contact Us
                 </Link>
@@ -116,16 +116,16 @@ export default function Footer() {
               Services
             </h4>
             <ul className="space-y-3">
-              <li className="font-serif text-[0.95rem] text-[#85C7B3]">
+              <li className="font-serif text-[0.85rem] md:text-[0.95rem] text-[#85C7B3]">
                 Meta Advertising
               </li>
-              <li className="font-serif text-[0.95rem] text-[#85C7B3]">
+              <li className="font-serif text-[0.85rem] md:text-[0.95rem] text-[#85C7B3]">
                 Ad Creative Production
               </li>
-              <li className="font-serif text-[0.95rem] text-[#85C7B3]">
+              <li className="font-serif text-[0.85rem] md:text-[0.95rem] text-[#85C7B3]">
                 Campaign Management
               </li>
-              <li className="font-serif text-[0.95rem] text-[#85C7B3]">
+              <li className="font-serif text-[0.85rem] md:text-[0.95rem] text-[#85C7B3]">
                 Performance Analytics
               </li>
             </ul>
@@ -144,7 +144,7 @@ export default function Footer() {
             <div className="space-y-3">
               <a
                 href="mailto:hello@driveleadmedia.com"
-                className="font-serif text-[0.95rem] text-[#85C7B3] hover:text-[#F2A922] transition-colors duration-300 flex items-center gap-2"
+                className="font-serif text-[0.85rem] md:text-[0.95rem] text-[#85C7B3] hover:text-[#F2A922] transition-colors duration-300 flex items-center gap-2"
               >
                 <svg
                   className="w-5 h-5"
