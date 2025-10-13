@@ -46,13 +46,12 @@ export default function TargetedAdsPage() {
               </div>
               <div className="text-center">
                 <Image
-                  src="https://www.driveleadmedia.com/s/ChatGPT-Image-Aug-29-2025-07_45_03-AM.png"
+                  src="/images/target-ads.png"
                   alt="Traditional vs targeted advertising comparison"
                   width={600}
                   height={400}
                   className="w-full h-auto rounded-[clamp(10px,2vw,14px)] border-2 border-[rgba(242,169,34,0.3)] shadow-lg hover:scale-105 transition-transform duration-300"
                   style={{ objectPosition: 'center 60%' }}
-                  unoptimized
                 />
               </div>
             </div>
