@@ -109,7 +109,7 @@ export default function VideoGrid() {
     <>
       <section className="bg-transparent py-[80px] px-6 md:py-[60px]">
         <motion.div
-          className="max-w-[1400px] mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6"
+          className="max-w-[1400px] mx-auto grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
