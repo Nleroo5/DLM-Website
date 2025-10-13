@@ -150,12 +150,12 @@ export default function VideoGrid() {
               </div>
 
               {/* Description - always visible at bottom */}
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[rgba(11,29,46,0.98)] via-[rgba(11,29,46,0.92)] to-transparent p-4 pt-12 md:p-6">
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[rgba(11,29,46,0.98)] via-[rgba(11,29,46,0.92)] to-transparent p-3 sm:p-4 md:p-6 pt-8 sm:pt-10 md:pt-12">
                 <div className="relative z-10">
-                  <h3 className="text-[#F8F6F3] text-[0.9rem] md:text-[1.25rem] font-semibold font-serif mb-1 md:mb-2 leading-tight">
+                  <h3 className="text-[#F8F6F3] text-[0.7rem] sm:text-[0.85rem] md:text-[1rem] lg:text-[1.2rem] xl:text-[1.5rem] font-semibold font-serif mb-1 sm:mb-1.5 md:mb-2 leading-tight">
                     {item.client}
                   </h3>
-                  <p className="text-[#D4A574] text-[0.75rem] md:text-[0.95rem] font-medium font-[family-name:var(--font-inter)]">
+                  <p className="text-[#D4A574] text-[0.6rem] sm:text-[0.7rem] md:text-[0.85rem] lg:text-[0.95rem] xl:text-[1.1rem] font-medium font-[family-name:var(--font-inter)] leading-tight">
                     {item.videoType}
                   </p>
                 </div>
