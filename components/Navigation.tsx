@@ -110,7 +110,7 @@ export default function Navigation() {
                       href="/resources/meta-targeting-guide"
                       className="block px-5 py-3 font-sans text-[1rem] text-[#F8F6F3] hover:bg-[rgba(212,165,116,0.08)] hover:text-[#D4A574] transition-all duration-400"
                     >
-                      Target Audiences Guide
+                      Target Audiences
                     </Link>
                   </motion.div>
                 )}
@@ -230,7 +230,7 @@ export default function Navigation() {
                         onClick={() => setIsMobileMenuOpen(false)}
                         className="block font-sans text-[1rem] text-[#5FA99F] hover:text-[#D4A574] transition-colors duration-400 py-2"
                       >
-                        Target Audiences Guide
+                        Target Audiences
                       </Link>
                     </motion.div>
                   )}

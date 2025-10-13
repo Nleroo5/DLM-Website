@@ -51,7 +51,7 @@ export default function TargetedAdsPage() {
                   width={600}
                   height={400}
                   className="w-full h-auto rounded-[clamp(10px,2vw,14px)] border-2 border-[rgba(242,169,34,0.3)] shadow-lg hover:scale-105 transition-transform duration-300"
-                  style={{ objectPosition: 'center 60%' }}
+                  style={{ objectPosition: 'center 75%' }}
                 />
               </div>
             </div>

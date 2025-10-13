@@ -118,10 +118,10 @@ export default function MotionGraphics() {
                 {/* Description - always visible at bottom */}
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[rgba(11,29,46,0.98)] via-[rgba(11,29,46,0.92)] to-transparent p-6 pt-12">
                   <div className="relative z-10">
-                    <h3 className="text-[#F8F6F3] text-[1.25rem] font-semibold font-serif mb-2">
+                    <h3 className="text-[#F8F6F3] text-[0.95rem] sm:text-[1.05rem] md:text-[1.2rem] lg:text-[1.5rem] font-semibold font-serif mb-2">
                       {item.client}
                     </h3>
-                    <p className="text-[#D4A574] text-[0.95rem] font-medium font-[family-name:var(--font-inter)]">
+                    <p className="text-[#D4A574] text-[0.8rem] sm:text-[0.85rem] md:text-[0.95rem] lg:text-[1.1rem] font-medium font-[family-name:var(--font-inter)]">
                       {item.videoType}
                     </p>
                   </div>
