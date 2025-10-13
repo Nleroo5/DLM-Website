@@ -50,8 +50,7 @@ export default function TargetedAdsPage() {
                   alt="Traditional vs targeted advertising comparison"
                   width={600}
                   height={400}
-                  className="w-full h-auto rounded-[clamp(10px,2vw,14px)] border-2 border-[rgba(242,169,34,0.3)] shadow-lg hover:scale-105 transition-transform duration-300"
-                  style={{ objectPosition: 'center 85%' }}
+                  className="w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[450px] xl:h-[500px] rounded-[clamp(10px,2vw,14px)] border-2 border-[rgba(242,169,34,0.3)] shadow-lg hover:scale-105 transition-transform duration-300 object-cover object-[center_85%]"
                 />
               </div>
             </div>
