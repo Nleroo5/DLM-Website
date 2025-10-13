@@ -61,13 +61,25 @@ body {
   *,
   *::before,
   *::after {
-    animation-duration: 0.5s !important;
-    transition-duration: 0.35s !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 
-  /* Framer Motion animations - override via CSS variables */
+  /* Disable Framer Motion animations on mobile */
   [data-framer-component-type] {
-    --motion-duration-multiplier: 0.8;
+    --motion-duration-multiplier: 0;
+  }
+
+  /* Force all motion elements to be static on mobile */
+  div[class*="motion"],
+  section[class*="motion"],
+  h1[class*="motion"],
+  h2[class*="motion"],
+  h3[class*="motion"],
+  p[class*="motion"] {
+    transform: none !important;
+    opacity: 1 !important;
   }
 }
 

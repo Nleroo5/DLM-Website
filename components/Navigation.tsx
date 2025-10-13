@@ -238,6 +238,14 @@ export default function Navigation() {
               </div>
 
               <Link
+                href="/portfolio"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block font-sans text-[1.125rem] text-[#F8F6F3] hover:text-[#D4A574] transition-colors duration-400 py-2 font-medium"
+              >
+                Portfolio
+              </Link>
+
+              <Link
                 href="/faq"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="block font-sans text-[1.125rem] text-[#F8F6F3] hover:text-[#D4A574] transition-colors duration-400 py-2 font-medium"
