@@ -64,7 +64,7 @@ export default function ContactPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="font-serif text-[3.5rem] text-[#EEF4D9] mb-5 font-normal leading-[1.2] [text-shadow:2px_2px_4px_rgba(0,0,0,0.3)] tracking-[0.5px] md:text-[2.8rem] sm:text-[2.2rem]">
+          <h1 className="font-serif text-[1.5rem] sm:text-[1.75rem] md:text-[2.25rem] lg:text-[3rem] xl:text-[3.5rem] text-[#EEF4D9] mb-5 font-normal leading-[1.2] [text-shadow:2px_2px_4px_rgba(0,0,0,0.3)] tracking-[0.5px] md:text-[2.25rem] sm:text-[1.75rem]">
             Let's Grow Your Business
           </h1>
           <p className="text-[#85C7B3] text-[1.3rem] font-serif font-normal leading-[1.5] max-w-[600px] mx-auto md:text-[1.2rem] sm:text-[1.1rem]">

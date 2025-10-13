@@ -16,7 +16,7 @@ export default function TargetedAdsPage() {
       {/* Page Header */}
       <header className="bg-transparent py-[clamp(30px,6vw,40px)] pb-[clamp(20px,4vw,30px)] text-center pt-[180px]">
         <div className="max-w-[1400px] mx-auto px-[clamp(24px,4vw,40px)]">
-          <h1 className="text-[clamp(1.8rem,5vw,3rem)] text-[#F5F5DC] font-normal leading-[1.2] tracking-[-0.02em] max-w-[1000px] mx-auto">
+          <h1 className="text-[1.3rem] sm:text-[1.5rem] md:text-[1.8rem] lg:text-[2.5rem] xl:text-[3rem] text-[#F5F5DC] font-normal leading-[1.2] tracking-[-0.02em] max-w-[1000px] mx-auto">
             Why Meta Targeted Ads Are More Effective Than Traditional Advertising
           </h1>
         </div>
@@ -28,19 +28,19 @@ export default function TargetedAdsPage() {
           <TitleBox title="What Are Targeted Ads? (Let's Start Simple)">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-[clamp(16px,3vw,24px)] items-center">
               <div>
-                <p className="text-[clamp(1.125rem,2.4vw,1.375rem)] text-[#012E40] leading-[1.6] mb-[clamp(12px,2vw,16px)]">
+                <p className="text-[0.9rem] sm:text-[0.95rem] md:text-[1.05rem] lg:text-[1.2rem] xl:text-[1.375rem] text-[#012E40] leading-[1.6] mb-[clamp(12px,2vw,16px)]">
                   <strong>First, let's clarify:</strong> When we say "Meta," we're talking about the company that owns Facebook and Instagram - the two biggest social media platforms where most targeted advertising happens.
                 </p>
-                <p className="text-[clamp(1.1875rem,2.6vw,1.4rem)] text-[#012E40] leading-[1.5] mb-[clamp(12px,2vw,16px)]">
+                <p className="text-[0.95rem] sm:text-[1rem] md:text-[1.1rem] lg:text-[1.25rem] xl:text-[1.4rem] text-[#012E40] leading-[1.5] mb-[clamp(12px,2vw,16px)]">
                   Think of it like this:
                 </p>
-                <p className="text-[clamp(1.125rem,2.4vw,1.375rem)] text-[#012E40] leading-[1.6] mb-[clamp(12px,2vw,16px)]">
+                <p className="text-[0.9rem] sm:text-[0.95rem] md:text-[1.05rem] lg:text-[1.2rem] xl:text-[1.375rem] text-[#012E40] leading-[1.6] mb-[clamp(12px,2vw,16px)]">
                   <span className="text-[#F2A922] font-semibold">Traditional advertising</span> is like shouting your message in a crowded mall, hoping the right people hear you.
                 </p>
-                <p className="text-[clamp(1.125rem,2.4vw,1.375rem)] text-[#012E40] leading-[1.6] mb-[clamp(12px,2vw,16px)]">
+                <p className="text-[0.9rem] sm:text-[0.95rem] md:text-[1.05rem] lg:text-[1.2rem] xl:text-[1.375rem] text-[#012E40] leading-[1.6] mb-[clamp(12px,2vw,16px)]">
                   <span className="text-[#F2A922] font-semibold">Targeted advertising</span> is like walking directly up to people who are already interested in what you're selling and having a conversation with them.
                 </p>
-                <p className="text-[clamp(1.125rem,2.4vw,1.375rem)] text-[#012E40] leading-[1.6]">
+                <p className="text-[0.9rem] sm:text-[0.95rem] md:text-[1.05rem] lg:text-[1.2rem] xl:text-[1.375rem] text-[#012E40] leading-[1.6]">
                   Targeted ads use information about people (like their age, interests, and online behavior) to show your advertisement only to people who are likely to be interested in your product or service.
                 </p>
               </div>
@@ -108,10 +108,10 @@ export default function TargetedAdsPage() {
               <em>Source: Industry averages based on WordStream 2024 benchmarks</em>
             </p>
 
-            <p className="text-center text-[clamp(1.5rem,3.5vw,2rem)] text-[#F2A922] font-semibold my-[clamp(12px,2.5vw,18px)]">
+            <p className="text-center text-[1.2rem] sm:text-[1.3rem] md:text-[1.5rem] lg:text-[1.75rem] xl:text-[2rem] text-[#F2A922] font-semibold my-[clamp(12px,2.5vw,18px)]">
               That's 85% Cheaper!
             </p>
-            <p className="text-[clamp(1.125rem,2.4vw,1.375rem)] text-[#012E40] leading-[1.6] text-center">
+            <p className="text-[0.9rem] sm:text-[0.95rem] md:text-[1.05rem] lg:text-[1.2rem] xl:text-[1.375rem] text-[#012E40] leading-[1.6] text-center">
               With Meta targeted ads, you pay <strong>85% less</strong> for each person who clicks on your ad compared to traditional advertising methods.
             </p>
           </TitleBox>
@@ -320,12 +320,12 @@ export default function TargetedAdsPage() {
               <h3 className="text-[#92400e] my-0 mb-[clamp(8px,1.5vw,12px)] text-[clamp(1rem,2.2vw,1.2rem)] leading-[1.3]">
                 🎪 Stop Performing for the Wrong Audience
               </h3>
-              <p className="text-[clamp(1.1rem,2.8vw,1.6rem)] text-[#012E40] leading-[1.55]">
+              <p className="text-[0.9rem] sm:text-[0.95rem] md:text-[1.05rem] lg:text-[1.3rem] xl:text-[1.6rem] text-[#012E40] leading-[1.55]">
                 Traditional advertising is like doing a magic show for people who don't like magic. Meta targeted ads are like performing only for people who love magic shows and are ready to pay for tickets.
               </p>
             </div>
 
-            <h3 className="text-[clamp(1.2rem,2.8vw,1.5rem)] text-[#012E40] my-[20px_0_15px] text-center">
+            <h3 className="text-[1rem] sm:text-[1.05rem] md:text-[1.15rem] lg:text-[1.3rem] xl:text-[1.5rem] text-[#012E40] my-[20px_0_15px] text-center">
               The Bottom Line:
             </h3>
             <ul className="my-[clamp(12px,2.5vw,16px)] pl-0 list-none text-left space-y-[clamp(8px,1.5vw,12px)]">
@@ -343,7 +343,7 @@ export default function TargetedAdsPage() {
       <section className="relative bg-transparent py-[clamp(20px,3vw,30px)] overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-[clamp(24px,4vw,40px)] relative z-10">
           <TitleBox title="Ready to Try Meta Targeted Ads?">
-            <p className="text-center text-[clamp(1.1rem,2.5vw,1.3rem)] text-[#012E40] leading-[1.55] mb-[clamp(10px,2vw,14px)]">
+            <p className="text-center text-[0.9rem] sm:text-[0.95rem] md:text-[1rem] lg:text-[1.15rem] xl:text-[1.3rem] text-[#012E40] leading-[1.55] mb-[clamp(10px,2vw,14px)]">
               The difference is clear: Meta targeted ads cost <span className="text-[#F2A922] font-semibold">85% less</span> than traditional advertising and only reach people interested in your business.
             </p>
 
@@ -357,7 +357,7 @@ export default function TargetedAdsPage() {
       {/* Final Highlight Section */}
       <section className="bg-gradient-to-br from-[rgba(242,169,34,0.9)] to-[rgba(133,144,140,0.8)] py-[clamp(30px,6vw,50px)] px-[clamp(16px,3vw,24px)] text-center relative overflow-hidden rounded-[clamp(12px,2.5vw,18px)] mx-[clamp(8px,1.5vw,12px)] my-[clamp(20px,4vw,30px)] backdrop-blur-[10px] border-2 border-[rgba(242,169,34,0.4)]">
         <div className="max-w-[1400px] mx-auto">
-          <p className="text-[clamp(1.75rem,4.5vw,2.75rem)] text-[#012E40] font-semibold leading-[1.5] max-w-[900px] mx-auto">
+          <p className="text-[1.3rem] sm:text-[1.5rem] md:text-[2rem] lg:text-[2.5rem] xl:text-[2.75rem] text-[#012E40] font-semibold leading-[1.5] max-w-[900px] mx-auto">
             Stop wasting money on people who don't want what you're selling.
           </p>
         </div>
@@ -382,7 +382,7 @@ export default function TargetedAdsPage() {
 function TitleBox({ title, children }: { title: string; children: React.ReactNode}) {
   return (
     <div className="bg-gradient-to-br from-[rgba(238,244,217,0.95)] to-[rgba(238,244,217,0.9)] border-2 border-[rgba(5,144,140,0.4)] rounded-[clamp(12px,2vw,16px)] p-[clamp(16px,3vw,24px)] backdrop-blur-[20px] shadow-[0_8px_20px_rgba(0,0,0,0.1),0_4px_8px_rgba(5,144,140,0.06)] transition-all duration-[400ms] mb-[clamp(20px,4vw,30px)] relative z-[2] hover:-translate-y-[2px] hover:shadow-[0_12px_25px_rgba(0,0,0,0.15)] hover:border-[rgba(242,169,34,0.6)]">
-      <h2 className="text-[clamp(1.5rem,3.5vw,2.25rem)] text-[#012E40] font-normal text-center mb-[clamp(12px,2.5vw,18px)] leading-[1.2] font-serif">
+      <h2 className="text-[1.2rem] sm:text-[1.3rem] md:text-[1.5rem] lg:text-[2rem] xl:text-[2.25rem] text-[#012E40] font-normal text-center mb-[clamp(12px,2.5vw,18px)] leading-[1.2] font-serif">
         {title}
       </h2>
       {children}

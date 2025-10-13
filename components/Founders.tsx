@@ -11,7 +11,7 @@ export default function Founders() {
     >
       {/* Section Title */}
       <motion.h2
-        className="font-serif text-[clamp(2rem,5vw,3.5rem)] font-bold text-[#F5F5DC] mb-5 tracking-[-0.5px]"
+        className="font-serif text-[1.5rem] sm:text-[1.75rem] md:text-[2.25rem] lg:text-[3rem] xl:text-[3.5rem] font-bold text-[#F5F5DC] mb-5 tracking-[-0.5px]"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -22,7 +22,7 @@ export default function Founders() {
 
       {/* Section Subtitle */}
       <motion.p
-        className="text-[clamp(1rem,3vw,1.5rem)] text-[#F5F5DC] mb-[60px] max-w-[800px] mx-auto leading-[1.6] font-normal bg-[rgba(238,244,217,0.15)] p-5 rounded-[15px] backdrop-blur-[12px] border border-[rgba(133,199,179,0.25)] md:mb-[60px] md:p-[20px_30px] sm:p-[15px_18px] sm:mb-[30px]"
+        className="text-[0.9rem] sm:text-[0.95rem] md:text-[1.1rem] lg:text-[1.3rem] xl:text-[1.5rem] text-[#F5F5DC] mb-[60px] max-w-[800px] mx-auto leading-[1.6] font-normal bg-[rgba(238,244,217,0.15)] p-5 rounded-[15px] backdrop-blur-[12px] border border-[rgba(133,199,179,0.25)] md:mb-[60px] md:p-[20px_30px] sm:p-[15px_18px] sm:mb-[30px]"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -59,7 +59,7 @@ export default function Founders() {
           <div className="text-center max-w-[400px] lg:text-left lg:max-w-none lg:flex-1">
             {/* Name with Meta Badge */}
             <div className="flex items-center gap-3 justify-center flex-nowrap mb-2 lg:justify-start lg:gap-[10px] sm:gap-2">
-              <h3 className="font-serif text-[clamp(1.2rem,4vw,1.4rem)] font-normal text-[#EEF4D9] tracking-[-0.3px] m-0">
+              <h3 className="font-serif text-[1rem] sm:text-[1.05rem] md:text-[1.15rem] lg:text-[1.3rem] xl:text-[1.4rem] font-normal text-[#EEF4D9] tracking-[-0.3px] m-0">
                 Nicolas Leroo
               </h3>
               {/* Meta Certification Badge */}
@@ -75,7 +75,7 @@ export default function Founders() {
             <p className="font-serif text-[clamp(1rem,3vw,1.125rem)] text-[#85C7B3] mb-[15px] font-normal italic">
               Paid Media Strategist
             </p>
-            <p className="font-serif text-[clamp(1rem,2.5vw,1.0625rem)] text-[#EEF4D9] leading-[1.6] font-normal">
+            <p className="font-serif text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.0625rem] text-[#EEF4D9] leading-[1.6] font-normal">
               Nicolas is Meta Certified in Digital Marketing, with expertise in Facebook and Instagram advertising. He focuses on building campaigns that reach the right people and turn ad spend into measurable results.
             </p>
           </div>
@@ -105,13 +105,13 @@ export default function Founders() {
 
           {/* Info */}
           <div className="text-center max-w-[400px] lg:text-left lg:max-w-none lg:flex-1">
-            <h3 className="font-serif text-[clamp(1.2rem,4vw,1.4rem)] font-normal text-[#EEF4D9] mb-2 tracking-[-0.3px]">
+            <h3 className="font-serif text-[1rem] sm:text-[1.05rem] md:text-[1.15rem] lg:text-[1.3rem] xl:text-[1.4rem] font-normal text-[#EEF4D9] mb-2 tracking-[-0.3px]">
               Tommy Duda
             </h3>
             <p className="font-serif text-[clamp(1rem,3vw,1.125rem)] text-[#85C7B3] mb-[15px] font-normal italic">
               Creative Director
             </p>
-            <p className="font-serif text-[clamp(1rem,2.5vw,1.0625rem)] text-[#EEF4D9] leading-[1.6] font-normal">
+            <p className="font-serif text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.0625rem] text-[#EEF4D9] leading-[1.6] font-normal">
               Tommy is a specialist in video production and ad creative, leading the direction of every project. He ensures ads look professional, capture attention, and convert viewers into customers.
             </p>
           </div>
