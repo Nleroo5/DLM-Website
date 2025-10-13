@@ -67,7 +67,7 @@ export default function ContactPage() {
           <h1 className="font-serif text-[1.5rem] sm:text-[1.75rem] md:text-[2.25rem] lg:text-[3rem] xl:text-[3.5rem] text-[#EEF4D9] mb-5 font-normal leading-[1.2] [text-shadow:2px_2px_4px_rgba(0,0,0,0.3)] tracking-[0.5px] md:text-[2.25rem] sm:text-[1.75rem]">
             Let's Grow Your Business
           </h1>
-          <p className="text-[#85C7B3] text-[1.3rem] font-serif font-normal leading-[1.5] max-w-[600px] mx-auto md:text-[1.2rem] sm:text-[1.1rem]">
+          <p className="text-[#85C7B3] text-[0.95rem] sm:text-[1.05rem] md:text-[1.15rem] lg:text-[1.25rem] xl:text-[1.3rem] font-serif font-normal leading-[1.5] max-w-[600px] mx-auto">
             Ready to see how Meta advertising can transform your business? Fill out the form below and we'll be in touch within 24 hours.
           </p>
         </motion.div>
@@ -82,7 +82,7 @@ export default function ContactPage() {
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Name Field */}
             <div>
-              <label htmlFor="name" className="block text-[#EEF4D9] text-[1.1rem] font-serif mb-2 font-semibold">
+              <label htmlFor="name" className="block text-[#EEF4D9] text-[0.9rem] sm:text-[0.95rem] md:text-[1rem] lg:text-[1.05rem] xl:text-[1.1rem] font-serif mb-2 font-semibold">
                 Full Name *
               </label>
               <input
@@ -92,14 +92,14 @@ export default function ContactPage() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-5 py-4 bg-[rgba(1,46,64,0.5)] border-2 border-[#85C7B3] rounded-xl text-[#EEF4D9] font-serif text-[1rem] outline-none transition-all duration-300 focus:border-[#F2A922] focus:shadow-[0_0_20px_rgba(242,169,34,0.3)] placeholder:text-[#85C7B3] placeholder:opacity-60"
+                className="w-full px-5 py-4 bg-[rgba(1,46,64,0.5)] border-2 border-[#85C7B3] rounded-xl text-[#EEF4D9] font-serif text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] outline-none transition-all duration-300 focus:border-[#F2A922] focus:shadow-[0_0_20px_rgba(242,169,34,0.3)] placeholder:text-[#85C7B3] placeholder:opacity-60"
                 placeholder="John Smith"
               />
             </div>
 
             {/* Email Field */}
             <div>
-              <label htmlFor="email" className="block text-[#EEF4D9] text-[1.1rem] font-serif mb-2 font-semibold">
+              <label htmlFor="email" className="block text-[#EEF4D9] text-[0.9rem] sm:text-[0.95rem] md:text-[1rem] lg:text-[1.05rem] xl:text-[1.1rem] font-serif mb-2 font-semibold">
                 Email Address *
               </label>
               <input
@@ -109,14 +109,14 @@ export default function ContactPage() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-5 py-4 bg-[rgba(1,46,64,0.5)] border-2 border-[#85C7B3] rounded-xl text-[#EEF4D9] font-serif text-[1rem] outline-none transition-all duration-300 focus:border-[#F2A922] focus:shadow-[0_0_20px_rgba(242,169,34,0.3)] placeholder:text-[#85C7B3] placeholder:opacity-60"
+                className="w-full px-5 py-4 bg-[rgba(1,46,64,0.5)] border-2 border-[#85C7B3] rounded-xl text-[#EEF4D9] font-serif text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] outline-none transition-all duration-300 focus:border-[#F2A922] focus:shadow-[0_0_20px_rgba(242,169,34,0.3)] placeholder:text-[#85C7B3] placeholder:opacity-60"
                 placeholder="john@example.com"
               />
             </div>
 
             {/* Phone Field */}
             <div>
-              <label htmlFor="phone" className="block text-[#EEF4D9] text-[1.1rem] font-serif mb-2 font-semibold">
+              <label htmlFor="phone" className="block text-[#EEF4D9] text-[0.9rem] sm:text-[0.95rem] md:text-[1rem] lg:text-[1.05rem] xl:text-[1.1rem] font-serif mb-2 font-semibold">
                 Phone Number
               </label>
               <input
@@ -125,14 +125,14 @@ export default function ContactPage() {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full px-5 py-4 bg-[rgba(1,46,64,0.5)] border-2 border-[#85C7B3] rounded-xl text-[#EEF4D9] font-serif text-[1rem] outline-none transition-all duration-300 focus:border-[#F2A922] focus:shadow-[0_0_20px_rgba(242,169,34,0.3)] placeholder:text-[#85C7B3] placeholder:opacity-60"
+                className="w-full px-5 py-4 bg-[rgba(1,46,64,0.5)] border-2 border-[#85C7B3] rounded-xl text-[#EEF4D9] font-serif text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] outline-none transition-all duration-300 focus:border-[#F2A922] focus:shadow-[0_0_20px_rgba(242,169,34,0.3)] placeholder:text-[#85C7B3] placeholder:opacity-60"
                 placeholder="(555) 123-4567"
               />
             </div>
 
             {/* Business Name Field */}
             <div>
-              <label htmlFor="businessName" className="block text-[#EEF4D9] text-[1.1rem] font-serif mb-2 font-semibold">
+              <label htmlFor="businessName" className="block text-[#EEF4D9] text-[0.9rem] sm:text-[0.95rem] md:text-[1rem] lg:text-[1.05rem] xl:text-[1.1rem] font-serif mb-2 font-semibold">
                 Business Name *
               </label>
               <input
@@ -142,14 +142,14 @@ export default function ContactPage() {
                 value={formData.businessName}
                 onChange={handleChange}
                 required
-                className="w-full px-5 py-4 bg-[rgba(1,46,64,0.5)] border-2 border-[#85C7B3] rounded-xl text-[#EEF4D9] font-serif text-[1rem] outline-none transition-all duration-300 focus:border-[#F2A922] focus:shadow-[0_0_20px_rgba(242,169,34,0.3)] placeholder:text-[#85C7B3] placeholder:opacity-60"
+                className="w-full px-5 py-4 bg-[rgba(1,46,64,0.5)] border-2 border-[#85C7B3] rounded-xl text-[#EEF4D9] font-serif text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] outline-none transition-all duration-300 focus:border-[#F2A922] focus:shadow-[0_0_20px_rgba(242,169,34,0.3)] placeholder:text-[#85C7B3] placeholder:opacity-60"
                 placeholder="Your Business LLC"
               />
             </div>
 
             {/* Message Field */}
             <div>
-              <label htmlFor="message" className="block text-[#EEF4D9] text-[1.1rem] font-serif mb-2 font-semibold">
+              <label htmlFor="message" className="block text-[#EEF4D9] text-[0.9rem] sm:text-[0.95rem] md:text-[1rem] lg:text-[1.05rem] xl:text-[1.1rem] font-serif mb-2 font-semibold">
                 Tell Us About Your Goals *
               </label>
               <textarea
@@ -159,7 +159,7 @@ export default function ContactPage() {
                 onChange={handleChange}
                 required
                 rows={6}
-                className="w-full px-5 py-4 bg-[rgba(1,46,64,0.5)] border-2 border-[#85C7B3] rounded-xl text-[#EEF4D9] font-serif text-[1rem] outline-none transition-all duration-300 resize-none focus:border-[#F2A922] focus:shadow-[0_0_20px_rgba(242,169,34,0.3)] placeholder:text-[#85C7B3] placeholder:opacity-60"
+                className="w-full px-5 py-4 bg-[rgba(1,46,64,0.5)] border-2 border-[#85C7B3] rounded-xl text-[#EEF4D9] font-serif text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] outline-none transition-all duration-300 resize-none focus:border-[#F2A922] focus:shadow-[0_0_20px_rgba(242,169,34,0.3)] placeholder:text-[#85C7B3] placeholder:opacity-60"
                 placeholder="Tell us about your business, your goals, and what you're hoping to achieve with Meta advertising..."
               />
             </div>
@@ -169,7 +169,7 @@ export default function ContactPage() {
               <button
                 type="submit"
                 disabled={status === 'loading'}
-                className="w-full bg-gradient-to-br from-[#F2A922] to-[#EEF4D9] text-[#012E40] px-10 py-5 rounded-xl text-[1.2rem] font-bold font-serif border-2 border-transparent transition-all duration-300 shadow-[0_8px_25px_rgba(242,169,34,0.3)] hover:transform hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(242,169,34,0.5)] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none focus:outline focus:outline-[3px] focus:outline-[rgba(242,169,34,0.5)] focus:outline-offset-2 md:text-[1.1rem] md:py-4"
+                className="w-full bg-gradient-to-br from-[#F2A922] to-[#EEF4D9] text-[#012E40] px-10 py-5 rounded-xl text-[0.95rem] sm:text-[1rem] md:text-[1.1rem] lg:text-[1.15rem] xl:text-[1.2rem] font-bold font-serif border-2 border-transparent transition-all duration-300 shadow-[0_8px_25px_rgba(242,169,34,0.3)] hover:transform hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(242,169,34,0.5)] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none focus:outline focus:outline-[3px] focus:outline-[rgba(242,169,34,0.5)] focus:outline-offset-2 md:text-[1.1rem] md:py-4"
               >
                 {status === 'loading' ? 'Sending...' : 'Get Your Free Strategy Call'}
               </button>
@@ -210,12 +210,12 @@ export default function ContactPage() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <p className="text-[#85C7B3] font-serif text-[1.1rem] mb-4">
+          <p className="text-[#85C7B3] font-serif text-[0.9rem] sm:text-[0.95rem] md:text-[1rem] lg:text-[1.05rem] xl:text-[1.1rem] mb-4">
             Or reach out directly:
           </p>
           <a
             href="mailto:hello@driveleadmedia.com"
-            className="text-[#F2A922] font-serif text-[1.3rem] font-bold hover:text-[#EEF4D9] transition-colors duration-300 underline"
+            className="text-[#F2A922] font-serif text-[1rem] sm:text-[1.05rem] md:text-[1.15rem] lg:text-[1.25rem] xl:text-[1.3rem] font-bold hover:text-[#EEF4D9] transition-colors duration-300 underline"
           >
             hello@driveleadmedia.com
           </a>
