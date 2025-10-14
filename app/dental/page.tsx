@@ -287,7 +287,7 @@ export default function DentalIntroPage() {
           <div className="contact-cards">
             <div className="contact-card card fade-in-left stagger-1">
               <div className="contact-photo">
-                <img src="https://www.driveleadmedia.com/s/Untitled-design-61.png" alt="Brenna Skalski Kirillov" className="contact-image" />
+                <img src="/images/brenna.png" alt="Brenna Skalski Kirillov" className="contact-image" />
               </div>
               <div className="contact-info">
                 <h3 className="contact-name">Brenna Skalski Kirillov</h3>
@@ -301,7 +301,7 @@ export default function DentalIntroPage() {
 
             <div className="contact-card card fade-in-right stagger-2">
               <div className="contact-photo">
-                <img src="https://www.driveleadmedia.com/s/Untitled-design-62.png" alt="Nikita Kirillov" className="contact-image" />
+                <img src="/images/nikita.png" alt="Nikita Kirillov" className="contact-image" />
               </div>
               <div className="contact-info">
                 <h3 className="contact-name">Nikita Kirillov</h3>
