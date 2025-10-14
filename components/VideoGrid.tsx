@@ -2,11 +2,8 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { useState } from 'react';
-import VideoModal from './VideoModal';
 
 export default function VideoGrid() {
-  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
   // Client video portfolio
   const portfolioItems = [
@@ -116,11 +113,13 @@ export default function VideoGrid() {
           viewport={{ once: true, margin: "-100px" }}
         >
           {portfolioItems.map((item) => (
-            <motion.div
+            <motion.a
               key={item.id}
+              href={`https://youtube.com/watch?v=${item.youtubeId}`}
+              target="_blank"
+              rel="noopener noreferrer"
               variants={itemVariants}
-              className="group relative overflow-hidden bg-transparent border border-[rgba(95,169,159,0.12)] rounded-[24px] aspect-[9/16] cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.12),0_2px_8px_rgba(0,0,0,0.08),0_0_40px_rgba(212,165,116,0.1)] transition-all duration-400 hover:transform hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(0,0,0,0.25),0_8px_16px_rgba(212,165,116,0.15),0_0_60px_rgba(212,165,116,0.2)] hover:border-[rgba(212,165,116,0.3)]"
-              onClick={() => setSelectedVideo(item.youtubeId)}
+              className="group relative overflow-hidden bg-transparent border border-[rgba(95,169,159,0.12)] rounded-[24px] aspect-[9/16] cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.12),0_2px_8px_rgba(0,0,0,0.08),0_0_40px_rgba(212,165,116,0.1)] transition-all duration-400 hover:transform hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(0,0,0,0.25),0_8px_16px_rgba(212,165,116,0.15),0_0_60px_rgba(212,165,116,0.2)] hover:border-[rgba(212,165,116,0.3)] block no-underline"
             >
               {/* YouTube Thumbnail Background */}
               <div
@@ -160,18 +159,10 @@ export default function VideoGrid() {
                   </p>
                 </div>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </motion.div>
       </section>
-
-      {/* Video Modal */}
-      {selectedVideo && (
-        <VideoModal
-          youtubeId={selectedVideo}
-          onClose={() => setSelectedVideo(null)}
-        />
-      )}
     </>
   );
 }
