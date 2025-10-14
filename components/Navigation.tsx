@@ -64,6 +64,14 @@ export default function Navigation() {
               <span className="absolute bottom-0 left-0 w-0 h-px bg-[#D4A574] transition-all duration-400 group-hover:w-full"></span>
             </Link>
 
+            <Link
+              href="/portfolio"
+              className="font-sans text-[1rem] text-[#F8F6F3] hover:text-[#D4A574] transition-colors duration-400 relative group font-medium"
+            >
+              Portfolio
+              <span className="absolute bottom-0 left-0 w-0 h-px bg-[#D4A574] transition-all duration-400 group-hover:w-full"></span>
+            </Link>
+
             {/* Resources Dropdown */}
             <div
               className="relative"
@@ -116,14 +124,6 @@ export default function Navigation() {
                 )}
               </AnimatePresence>
             </div>
-
-            <Link
-              href="/portfolio"
-              className="font-sans text-[1rem] text-[#F8F6F3] hover:text-[#D4A574] transition-colors duration-400 relative group font-medium"
-            >
-              Portfolio
-              <span className="absolute bottom-0 left-0 w-0 h-px bg-[#D4A574] transition-all duration-400 group-hover:w-full"></span>
-            </Link>
 
             <Link
               href="/faq"
@@ -185,6 +185,14 @@ export default function Navigation() {
                 Home
               </Link>
 
+              <Link
+                href="/portfolio"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block font-sans text-[1.125rem] text-[#F8F6F3] hover:text-[#D4A574] transition-colors duration-400 py-2 font-medium"
+              >
+                Portfolio
+              </Link>
+
               {/* Mobile Resources Section */}
               <div>
                 <button
@@ -236,14 +244,6 @@ export default function Navigation() {
                   )}
                 </AnimatePresence>
               </div>
-
-              <Link
-                href="/portfolio"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="block font-sans text-[1.125rem] text-[#F8F6F3] hover:text-[#D4A574] transition-colors duration-400 py-2 font-medium"
-              >
-                Portfolio
-              </Link>
 
               <Link
                 href="/faq"

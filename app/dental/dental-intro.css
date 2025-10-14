@@ -432,7 +432,7 @@ a.example-card:active {
   transform: translate(-50%, -50%);
   width: 60px;
   height: 60px;
-  background: var(--orange);
+  background: rgba(242, 169, 34, 0.7);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -844,6 +844,9 @@ a.example-card:active {
   margin-bottom: 25px;
   position: relative;
   z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .contact-image {
@@ -1204,7 +1207,7 @@ video {
 
   .hero {
     min-height: 90vh;
-    padding: 60px 0 40px;
+    padding: 100px 0 60px;
   }
 
   .hero-content {
@@ -1532,7 +1535,7 @@ video {
 
   .hero {
     min-height: 85vh;
-    padding: 50px 0 30px;
+    padding: 90px 0 50px;
   }
 
   .hero-content {

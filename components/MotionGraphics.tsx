@@ -9,22 +9,28 @@ export default function MotionGraphics() {
       id: 1,
       client: "Sample Dental Ad",
       videoType: "15 Second Motion Graphic Ad",
-      youtubeId: "S8PGR30XXy8"
+      youtubeId: "RKXOgiYhH-s"
     },
     {
       id: 2,
+      client: "Sample Dental Ad",
+      videoType: "15 Second Motion Graphic Ad",
+      youtubeId: "S8PGR30XXy8"
+    },
+    {
+      id: 3,
       client: "Fayette C.A.R.E. Clinic",
       videoType: "20 Second Motion Graphic Ad",
       youtubeId: "05s3zrXlP-s"
     },
     {
-      id: 3,
+      id: 4,
       client: "Drive Lead Media",
       videoType: "20 Second Motion Graphic",
       youtubeId: "Rts9AYu0KPs"
     },
     {
-      id: 4,
+      id: 5,
       client: "Drive Lead Media",
       videoType: "30 Second Motion Graphic",
       youtubeId: "YkuweNpYbSk"

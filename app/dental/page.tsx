@@ -97,7 +97,7 @@ export default function DentalIntroPage() {
 
           <div className="hero-ctas">
             <a href="#examples" className="btn-primary">See Example Ads for My Practice</a>
-            <a href="https://www.driveleadmedia.com/contact" className="btn-secondary">Book a 10-Minute Call</a>
+            <a href="#contact" className="btn-secondary">Call Brenna to Get Started</a>
           </div>
 
           <div className="hero-trust">
@@ -230,7 +230,7 @@ export default function DentalIntroPage() {
       <section className="urgency fade-in-up">
         <div className="urgency-container">
           <div className="container">
-            <h2 className="urgency-headline">Zero Setup Costs ($2,500 Value)</h2>
+            <h2 className="urgency-headline">Zero Setup Costs</h2>
             <p className="urgency-copy stagger-1">Most agencies charge $2,500+ upfront just to get started. We're waiving all setup costs to make it simple for you to launch now.</p>
             <div className="stagger-2">
               <a href="https://www.driveleadmedia.com/contact" className="btn-navy">Claim My No-Cost Setup</a>
@@ -280,9 +280,9 @@ export default function DentalIntroPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="contact section">
+      <section id="contact" className="contact section">
         <div className="container">
-          <h2 className="section-title fade-in-up">Your Account Executives</h2>
+          <h2 className="section-title fade-in-up">Your Account Executive</h2>
 
           <div className="contact-cards">
             <div className="contact-card card fade-in-left stagger-1">
@@ -295,20 +295,6 @@ export default function DentalIntroPage() {
                 <div className="contact-details">
                   <a href="tel:404-862-1975" className="contact-phone">404-862-1975</a>
                   <a href="mailto:Brenna@driveleadmedia.com" className="contact-email">Brenna@driveleadmedia.com</a>
-                </div>
-              </div>
-            </div>
-
-            <div className="contact-card card fade-in-right stagger-2">
-              <div className="contact-photo">
-                <img src="/images/nikita.png" alt="Nikita Kirillov" className="contact-image" />
-              </div>
-              <div className="contact-info">
-                <h3 className="contact-name">Nikita Kirillov</h3>
-                <p className="contact-title">Account Executive</p>
-                <div className="contact-details">
-                  <a href="tel:404-556-0267" className="contact-phone">404-556-0267</a>
-                  <a href="mailto:Nikita@driveleadmedia.com" className="contact-email">Nikita@driveleadmedia.com</a>
                 </div>
               </div>
             </div>
