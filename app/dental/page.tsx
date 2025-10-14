@@ -216,7 +216,7 @@ export default function DentalIntroPage() {
 
           <div className="testimonial-container">
             <div className="testimonial-card scale-in">
-              <img className="testimonial-photo" src="https://www.driveleadmedia.com/s/Untitled-design-60.png" alt="Dr. Austin Dupont" />
+              <img className="testimonial-photo" src="/images/austin.png" alt="Dr. Austin Dupont" />
               <p className="testimonial-quote">
                 Working with Drive Lead Media has been a game changer for Village Pediatrics. They completely transformed our outdated website into something modern and professional. The Meta ad campaigns they've been running have brought in a 40% increase in new patient bookings, and honestly, the best part is that I haven't had to manage any of it. Nic and Tommy handle everything from strategy to execution while I focus on caring for my patients.
               </p>
