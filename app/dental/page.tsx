@@ -95,126 +95,94 @@ export default function DentalIntroPage() {
         </div>
       </section>
 
-      {/* Primary CTA - Call Brenna */}
-      <section className="cta-primary">
-        <div className="container">
-          <div className="cta-primary-content fade-in-up">
-            <h2 className="cta-primary-title">Ready to Get Started?</h2>
-            <p className="cta-primary-subtitle">Talk to Brenna about your practice</p>
-            <div className="cta-primary-buttons">
-              <a href="tel:404-862-1975" className="btn-call-now">
-                <svg className="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                Call Brenna Now
-                <span className="btn-phone-number">404-862-1975</span>
-              </a>
-              <a href="mailto:Brenna@driveleadmedia.com" className="btn-email-now">
-                <svg className="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                Email Brenna
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Examples Section - 3 Large Videos */}
+      {/* Examples Section */}
       <section className="examples section" id="examples">
         <div className="container">
-          <h2 className="section-title fade-in-up">See the Ads We Build</h2>
-          <p className="section-subtitle fade-in-up">Tap any example to watch</p>
+          <h2 className="section-title fade-in-up">See the Ads We Build for Your Practice</h2>
 
-          <div className="examples-grid-mobile">
-            {/* Actor-Led Video */}
+          <div className="examples-grid">
+            {/* Actor-Led Video - Opens YouTube in fullscreen */}
             <a
               href="https://youtube.com/shorts/1firvNqcNMs?feature=share"
               target="_blank"
               rel="noopener noreferrer"
-              className="example-card-large card fade-in-up stagger-1"
+              className="example-card card fade-in-up stagger-1"
             >
               <div className="example-content">
-                <div className="video-thumbnail-wrapper-large">
+                <div className="video-thumbnail-wrapper">
                   <Image
                     src="https://img.youtube.com/vi/1firvNqcNMs/maxresdefault.jpg"
-                    alt="Actor-led dental video ad"
-                    width={720}
-                    height={1280}
+                    alt="Actor-led dental video ad example"
+                    width={480}
+                    height={854}
                     className="video-thumbnail-preview"
                     loading="lazy"
                     onError={(e: any) => {
                       e.currentTarget.src = "https://img.youtube.com/vi/1firvNqcNMs/hqdefault.jpg";
                     }}
                   />
-                  <div className="play-overlay-large">
-                    <svg viewBox="0 0 24 24" className="play-icon-large">
+                  <div className="play-overlay">
+                    <svg viewBox="0 0 24 24" className="play-icon">
                       <path d="M8 5v14l11-7z"/>
                     </svg>
                   </div>
                 </div>
-                <div className="example-info">
-                  <h3 className="example-title-large">Actor Videos</h3>
-                  <p className="example-desc-large">Professional actors explain your services</p>
-                </div>
+                <h3 className="example-title">Actor Videos</h3>
+                <p className="example-desc">Professional actors explain your services</p>
               </div>
             </a>
 
-            {/* Motion Graphic Video */}
+            {/* Motion Graphic Video - Opens YouTube in fullscreen */}
             <a
               href="https://youtube.com/shorts/RKXOgiYhH-s?feature=share"
               target="_blank"
               rel="noopener noreferrer"
-              className="example-card-large card fade-in-up stagger-2"
+              className="example-card card fade-in-up stagger-2"
             >
               <div className="example-content">
-                <div className="video-thumbnail-wrapper-large">
+                <div className="video-thumbnail-wrapper">
                   <Image
                     src="https://img.youtube.com/vi/RKXOgiYhH-s/maxresdefault.jpg"
-                    alt="Motion graphic dental video ad"
-                    width={720}
-                    height={1280}
+                    alt="Motion graphic dental video ad example"
+                    width={480}
+                    height={854}
                     className="video-thumbnail-preview"
                     loading="lazy"
                     onError={(e: any) => {
                       e.currentTarget.src = "https://img.youtube.com/vi/RKXOgiYhH-s/hqdefault.jpg";
                     }}
                   />
-                  <div className="play-overlay-large">
-                    <svg viewBox="0 0 24 24" className="play-icon-large">
+                  <div className="play-overlay">
+                    <svg viewBox="0 0 24 24" className="play-icon">
                       <path d="M8 5v14l11-7z"/>
                     </svg>
                   </div>
                 </div>
-                <div className="example-info">
-                  <h3 className="example-title-large">Motion Graphics</h3>
-                  <p className="example-desc-large">Animated videos that engage</p>
-                </div>
+                <h3 className="example-title">Motion Graphics</h3>
+                <p className="example-desc">Animated videos that engage and educate</p>
               </div>
             </a>
 
-            {/* Static Image */}
-            <div className="example-card-large card fade-in-up stagger-3" onClick={openImageModal}>
+            {/* Static Image - Opens modal */}
+            <div className="example-card card fade-in-up stagger-3" onClick={openImageModal}>
               <div className="example-content">
-                <div className="image-thumbnail-wrapper-large">
+                <div className="image-thumbnail-wrapper">
                   <Image
                     src="/images/static.png"
-                    alt="Static dental image ad"
-                    width={720}
-                    height={1280}
+                    alt="Static dental image ad example"
+                    width={480}
+                    height={854}
                     className="image-thumbnail-preview"
                     loading="lazy"
                   />
-                  <div className="play-overlay-large">
-                    <svg viewBox="0 0 24 24" className="play-icon-large" style={{width: '40px', height: '40px'}}>
+                  <div className="play-overlay">
+                    <svg viewBox="0 0 24 24" className="play-icon" style={{width: '30px', height: '30px'}}>
                       <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
                     </svg>
                   </div>
                 </div>
-                <div className="example-info">
-                  <h3 className="example-title-large">Image Ads</h3>
-                  <p className="example-desc-large">High-converting static campaigns</p>
-                </div>
+                <h3 className="example-title">Image Ads</h3>
+                <p className="example-desc">High-converting static campaigns</p>
               </div>
             </div>
           </div>
@@ -258,9 +226,7 @@ export default function DentalIntroPage() {
             <h2 className="urgency-headline">Zero Setup Costs</h2>
             <p className="urgency-copy stagger-1">Most agencies charge $2,500+ upfront. We're waiving all setup costs to make it simple for you to launch now.</p>
             <div className="stagger-2">
-              <a href="tel:404-862-1975" className="btn-navy">
-                Call Brenna to Claim This Offer
-              </a>
+              <a href="https://www.driveleadmedia.com/contact" className="btn-navy">Claim My No-Cost Setup</a>
             </div>
           </div>
         </div>
@@ -326,16 +292,6 @@ export default function DentalIntroPage() {
                   Tap to Call
                 </div>
               </div>
-            </a>
-          </div>
-
-          {/* Alternative Email Button */}
-          <div className="email-alternative fade-in-up">
-            <a href="mailto:Brenna@driveleadmedia.com" className="btn-email-alt">
-              <svg className="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-              Or Send an Email Instead
             </a>
           </div>
         </div>
