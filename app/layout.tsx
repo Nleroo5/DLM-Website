@@ -19,9 +19,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Drive Lead Media - Meta Advertising Experts",
-  description: "We Build Advertisement Systems That Bring Your Best Customers To You",
-  keywords: "meta ads, facebook advertising, instagram ads, targeted advertising, lead generation, social media marketing, meta advertising agency",
+  title: "Atlanta Meta Advertising Agency | Facebook & Instagram Ads | Drive Lead Media",
+  description: "Atlanta's premier Meta advertising agency. We build Facebook & Instagram ad campaigns and high-converting websites that bring your best customers to you. Serving Atlanta, GA and nationwide.",
+  keywords: "atlanta meta ads agency, facebook advertising atlanta, instagram ads atlanta ga, meta advertising agency atlanta, atlanta social media marketing, facebook ads agency atlanta, meta ads consultant atlanta, video ads production atlanta, atlanta digital marketing agency, meta certified atlanta",
   authors: [{ name: "Drive Lead Media" }],
   creator: "Drive Lead Media",
   publisher: "Drive Lead Media",
@@ -30,8 +30,8 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://driveleadmedia.com",
     siteName: "Drive Lead Media",
-    title: "Drive Lead Media - Meta Advertising Experts",
-    description: "We Build Advertisement Systems That Bring Your Best Customers To You",
+    title: "Atlanta Meta Advertising Agency | Facebook & Instagram Ads",
+    description: "Atlanta's premier Meta advertising agency. We build Facebook & Instagram ad campaigns and high-converting websites that bring your best customers to you.",
     images: [
       {
         url: "/images/dlm-logo.png",
@@ -43,8 +43,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Drive Lead Media - Meta Advertising Experts",
-    description: "We Build Advertisement Systems That Bring Your Best Customers To You",
+    title: "Atlanta Meta Advertising Agency | Facebook & Instagram Ads",
+    description: "Atlanta's premier Meta advertising agency. We build Facebook & Instagram ad campaigns and high-converting websites.",
     images: ["/images/dlm-logo.png"],
   },
   icons: {
@@ -102,7 +102,7 @@ export default function RootLayout({
               "alternateName": "DLM",
               "url": "https://driveleadmedia.com",
               "logo": "https://driveleadmedia.com/images/dlm-logo.png",
-              "description": "We Build Advertisement Systems That Bring Your Best Customers To You. Full-service Meta advertising agency specializing in Facebook ads, Instagram ads, video production, and custom website development for local businesses.",
+              "description": "Atlanta's premier Meta advertising agency. Full-service Facebook ads, Instagram ads, video production, and custom website development for local businesses. Serving Atlanta, GA and nationwide.",
               "foundingDate": "2019",
               "sameAs": [
                 "https://www.facebook.com/driveleadmedia",
@@ -117,12 +117,24 @@ export default function RootLayout({
               },
               "address": {
                 "@type": "PostalAddress",
+                "addressLocality": "Atlanta",
+                "addressRegion": "GA",
                 "addressCountry": "US"
               },
-              "areaServed": {
-                "@type": "Country",
-                "name": "United States"
-              },
+              "areaServed": [
+                {
+                  "@type": "City",
+                  "name": "Atlanta"
+                },
+                {
+                  "@type": "State",
+                  "name": "Georgia"
+                },
+                {
+                  "@type": "Country",
+                  "name": "United States"
+                }
+              ],
               "knowsAbout": [
                 "Meta Advertising",
                 "Facebook Advertising",
@@ -212,13 +224,30 @@ export default function RootLayout({
               "email": "hello@driveleadmedia.com",
               "address": {
                 "@type": "PostalAddress",
+                "addressLocality": "Atlanta",
+                "addressRegion": "GA",
                 "addressCountry": "US"
               },
               "geo": {
                 "@type": "GeoCoordinates",
-                "addressCountry": "US"
+                "addressLocality": "Atlanta",
+                "addressRegion": "GA"
               },
               "priceRange": "$$",
+              "areaServed": [
+                {
+                  "@type": "City",
+                  "name": "Atlanta"
+                },
+                {
+                  "@type": "State",
+                  "name": "Georgia"
+                },
+                {
+                  "@type": "Country",
+                  "name": "United States"
+                }
+              ],
               "openingHoursSpecification": {
                 "@type": "OpeningHoursSpecification",
                 "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
