@@ -12,6 +12,13 @@ export default function MobileStickyButton() {
   // Hide sticky button on targeted-ads page
   const shouldHide = pathname === '/targeted-ads';
 
+  // Check if we're on the dental page
+  const isDentalPage = pathname === '/dental';
+
+  // Set button text and link based on page
+  const buttonText = isDentalPage ? 'Call Brenna to Get Started' : 'Get Started';
+  const buttonLink = isDentalPage ? '/dental#contact' : '/contact';
+
   useEffect(() => {
     const handleScroll = () => {
       // Show button after scrolling down 300px
@@ -38,10 +45,10 @@ export default function MobileStickyButton() {
           {/* Floating bar with backdrop blur */}
           <div className="bg-gradient-to-r from-[rgba(1,46,64,0.95)] to-[rgba(5,144,140,0.95)] backdrop-blur-lg border-t-2 border-[#F2A922] shadow-[0_-10px_40px_rgba(0,0,0,0.3)] px-3 py-2">
             <Link
-              href="/contact"
+              href={buttonLink}
               className="flex items-center justify-center gap-2 bg-gradient-to-r from-[#F2A922] to-[#EEF4D9] text-[#012E40] font-serif font-bold text-[0.9rem] py-2.5 px-5 rounded-full shadow-[0_6px_24px_rgba(242,169,34,0.4)] transition-all duration-300 hover:shadow-[0_8px_32px_rgba(242,169,34,0.6)] hover:scale-[1.02] active:scale-[0.98] min-h-[44px] w-full no-underline"
             >
-              <span>Get Started</span>
+              <span>{buttonText}</span>
               <svg
                 className="w-4 h-4"
                 fill="none"

@@ -11,56 +11,57 @@ export default function Footer() {
       <div className="max-w-[1400px] mx-auto px-5 lg:px-8">
         {/* Main Footer Content */}
         <div className="mb-6 sm:mb-8 md:mb-12">
-          {/* Top Row - Brand + Quick Links (2 columns on mobile, 4 on desktop) */}
-          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-10 mb-6">
-            {/* Brand Column */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h3 className="font-serif text-[1.1rem] md:text-[1.5rem] font-bold text-[#EEF4D9] mb-2 md:mb-4">
-                Drive Lead Media
-              </h3>
-              <p className="font-serif text-[0.8rem] md:text-[0.95rem] text-[#85C7B3] leading-[1.5] mb-3 md:mb-6">
-                We Build Advertisement Systems That Bring Your Best Customers To You
-              </p>
-              {/* Social Media Links */}
-              <div className="flex gap-3">
-                <a
-                  href="https://www.facebook.com/driveleadmedia"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-9 h-9 md:w-10 md:h-10 flex items-center justify-center bg-[rgba(238,244,217,0.1)] rounded-full hover:bg-[rgba(242,169,34,0.2)] hover:scale-110 transition-all duration-300"
-                  aria-label="Facebook"
+          {/* Brand Section - Full Width */}
+          <motion.div
+            className="mb-6 pb-6 border-b border-[rgba(133,199,179,0.15)]"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h3 className="font-serif text-[1.1rem] md:text-[1.5rem] font-bold text-[#EEF4D9] mb-2 md:mb-4">
+              Drive Lead Media
+            </h3>
+            <p className="font-serif text-[0.8rem] md:text-[0.95rem] text-[#85C7B3] leading-[1.5] mb-3 md:mb-6">
+              We Build Advertisement Systems That Bring Your Best Customers To You
+            </p>
+            {/* Social Media Links */}
+            <div className="flex gap-3">
+              <a
+                href="https://www.facebook.com/driveleadmedia"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 md:w-10 md:h-10 flex items-center justify-center bg-[rgba(238,244,217,0.1)] rounded-full hover:bg-[rgba(242,169,34,0.2)] hover:scale-110 transition-all duration-300"
+                aria-label="Facebook"
+              >
+                <svg
+                  className="w-4 h-4 md:w-5 md:h-5 text-[#EEF4D9]"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
                 >
-                  <svg
-                    className="w-4 h-4 md:w-5 md:h-5 text-[#EEF4D9]"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                  </svg>
-                </a>
-                <a
-                  href="https://www.instagram.com/drivelead.media"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-9 h-9 md:w-10 md:h-10 flex items-center justify-center bg-[rgba(238,244,217,0.1)] rounded-full hover:bg-[rgba(242,169,34,0.2)] hover:scale-110 transition-all duration-300"
-                  aria-label="Instagram"
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                </svg>
+              </a>
+              <a
+                href="https://www.instagram.com/drivelead.media"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 md:w-10 md:h-10 flex items-center justify-center bg-[rgba(238,244,217,0.1)] rounded-full hover:bg-[rgba(242,169,34,0.2)] hover:scale-110 transition-all duration-300"
+                aria-label="Instagram"
+              >
+                <svg
+                  className="w-4 h-4 md:w-5 md:h-5 text-[#EEF4D9]"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
                 >
-                  <svg
-                    className="w-4 h-4 md:w-5 md:h-5 text-[#EEF4D9]"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                  </svg>
-                </a>
-              </div>
-            </motion.div>
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                </svg>
+              </a>
+            </div>
+          </motion.div>
 
+          {/* 2-Column Grid - Quick Links & Get In Touch */}
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
             {/* Quick Links */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -68,16 +69,24 @@ export default function Footer() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <h4 className="font-serif text-[0.95rem] md:text-[1.2rem] font-bold text-[#EEF4D9] mb-2 md:mb-4">
+              <h4 className="font-serif text-[0.95rem] md:text-[1.2rem] font-bold text-[#EEF4D9] mb-3 md:mb-4">
                 Quick Links
               </h4>
-              <ul className="space-y-1.5 md:space-y-3">
+              <ul className="space-y-2 md:space-y-3">
                 <li>
                   <Link
                     href="/"
                     className="font-serif text-[0.8rem] md:text-[0.95rem] text-[#85C7B3] hover:text-[#F2A922] transition-colors duration-300"
                   >
                     Home
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/portfolio"
+                    className="font-serif text-[0.8rem] md:text-[0.95rem] text-[#85C7B3] hover:text-[#F2A922] transition-colors duration-300"
+                  >
+                    Portfolio
                   </Link>
                 </li>
                 <li>
@@ -107,51 +116,23 @@ export default function Footer() {
               </ul>
             </motion.div>
 
-            {/* Services - Hidden on Mobile, Shown on Desktop */}
+            {/* Get In Touch */}
             <motion.div
-              className="hidden lg:block"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <h4 className="font-serif text-[1.2rem] font-bold text-[#EEF4D9] mb-4">
-                Services
-              </h4>
-              <ul className="space-y-3">
-                <li className="font-serif text-[0.95rem] text-[#85C7B3]">
-                  Meta Advertising
-                </li>
-                <li className="font-serif text-[0.95rem] text-[#85C7B3]">
-                  Ad Creative Production
-                </li>
-                <li className="font-serif text-[0.95rem] text-[#85C7B3]">
-                  Campaign Management
-                </li>
-                <li className="font-serif text-[0.95rem] text-[#85C7B3]">
-                  Performance Analytics
-                </li>
-              </ul>
-            </motion.div>
-
-            {/* Contact Info - Hidden on Mobile in this row */}
-            <motion.div
-              className="hidden lg:block"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-            >
-              <h4 className="font-serif text-[1.2rem] font-bold text-[#EEF4D9] mb-4">
+              <h4 className="font-serif text-[0.95rem] md:text-[1.2rem] font-bold text-[#EEF4D9] mb-3 md:mb-4">
                 Get In Touch
               </h4>
-              <div className="space-y-3">
+              <div className="space-y-3 md:space-y-4">
                 <a
                   href="mailto:hello@driveleadmedia.com"
-                  className="font-serif text-[0.95rem] text-[#85C7B3] hover:text-[#F2A922] transition-colors duration-300 flex items-center gap-2"
+                  className="font-serif text-[0.8rem] md:text-[0.95rem] text-[#85C7B3] hover:text-[#F2A922] transition-colors duration-300 flex items-center gap-2"
                 >
                   <svg
-                    className="w-5 h-5"
+                    className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -163,57 +144,40 @@ export default function Footer() {
                       d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                     />
                   </svg>
-                  hello@driveleadmedia.com
+                  <span className="break-all">hello@driveleadmedia.com</span>
                 </a>
                 <Link
                   href="/contact"
-                  className="inline-block font-serif text-[0.95rem] px-6 py-2 bg-gradient-to-r from-[#F2A922] to-[#85C7B3] text-[#0a192f] font-bold rounded-full hover:shadow-[0_0_20px_rgba(242,169,34,0.4)] transition-all duration-300 hover:scale-105 mt-4"
+                  className="inline-block font-serif text-[0.85rem] md:text-[0.95rem] px-5 py-2 md:px-6 md:py-2.5 bg-gradient-to-r from-[#F2A922] to-[#85C7B3] text-[#0a192f] font-bold rounded-full hover:shadow-[0_0_20px_rgba(242,169,34,0.4)] transition-all duration-300 hover:scale-105 mt-2"
                 >
                   Schedule a Call
                 </Link>
               </div>
             </motion.div>
-          </div>
 
-          {/* Bottom Row - Contact Info (Full Width on Mobile) */}
-          <motion.div
-            className="lg:hidden pt-4 border-t border-[rgba(133,199,179,0.15)]"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            <h4 className="font-serif text-[0.95rem] md:text-[1.2rem] font-bold text-[#EEF4D9] mb-3">
-              Get In Touch
-            </h4>
-            <div className="space-y-3">
-              <a
-                href="mailto:hello@driveleadmedia.com"
-                className="font-serif text-[0.8rem] md:text-[0.95rem] text-[#85C7B3] hover:text-[#F2A922] transition-colors duration-300 flex items-center gap-2"
-              >
-                <svg
-                  className="w-4 h-4 md:w-5 md:h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  />
-                </svg>
-                hello@driveleadmedia.com
-              </a>
-              <Link
-                href="/contact"
-                className="inline-block font-serif text-[0.85rem] md:text-[0.95rem] px-6 py-2.5 bg-gradient-to-r from-[#F2A922] to-[#85C7B3] text-[#0a192f] font-bold rounded-full hover:shadow-[0_0_20px_rgba(242,169,34,0.4)] transition-all duration-300 hover:scale-105 mt-2"
-              >
-                Schedule a Call
-              </Link>
-            </div>
-          </motion.div>
+            {/* Desktop Only - Extra Column for Balance */}
+            <motion.div
+              className="hidden lg:block"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              <h4 className="font-serif text-[1.2rem] font-bold text-[#EEF4D9] mb-4">
+                Resources
+              </h4>
+              <ul className="space-y-3">
+                <li>
+                  <Link
+                    href="/resources/meta-targeting-guide"
+                    className="font-serif text-[0.95rem] text-[#85C7B3] hover:text-[#F2A922] transition-colors duration-300"
+                  >
+                    Meta Targeting Guide
+                  </Link>
+                </li>
+              </ul>
+            </motion.div>
+          </div>
         </div>
 
         {/* Bottom Bar */}
