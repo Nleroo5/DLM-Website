@@ -59,16 +59,6 @@ export default function DentalIntroPage() {
     document.body.style.overflow = 'auto';
   };
 
-  const openHeroVideo = () => {
-    setActiveModal('hero');
-    document.body.style.overflow = 'hidden';
-  };
-
-  const closeHeroVideo = () => {
-    setActiveModal(null);
-    document.body.style.overflow = 'auto';
-  };
-
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
@@ -90,14 +80,20 @@ export default function DentalIntroPage() {
         <div className="floating-element floating-3"></div>
 
         <div className="hero-content">
-          <div className="video-container">
+          <a
+            href="https://youtube.com/shorts/U9AH3eAnd8M?feature=share"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="video-container"
+            style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}
+          >
             <h2 className="video-intro-text">Watch This Short Video While You Enjoy Your Cookies</h2>
-            <button className="floating-play" onClick={openHeroVideo}>
+            <div className="floating-play">
               <svg viewBox="0 0 24 24">
                 <path d="M8 5v14l11-7z"/>
               </svg>
-            </button>
-          </div>
+            </div>
+          </a>
 
           <div className="hero-ctas">
             <a href="#examples" className="btn-primary">See Example Ads for My Practice</a>
@@ -352,24 +348,6 @@ export default function DentalIntroPage() {
               <source src="https://www.driveleadmedia.com/s/Sample-Motion-Graphic-gjme.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
-          </div>
-        </div>
-      )}
-
-      {/* Fullscreen Hero Video Overlay */}
-      {activeModal === 'hero' && (
-        <div className="video-overlay" onClick={(e) => e.target === e.currentTarget && closeHeroVideo()}>
-          <div className="video-container-fullscreen">
-            <button className="close-btn" onClick={closeHeroVideo}>×</button>
-            <div style={{ position: 'relative', paddingBottom: '177.78%', height: 0, overflow: 'hidden' }}>
-              <iframe
-                src="https://www.youtube.com/embed/U9AH3eAnd8M?autoplay=1&rel=0&modestbranding=1"
-                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div>
           </div>
         </div>
       )}
