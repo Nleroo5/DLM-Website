@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
@@ -12,6 +12,134 @@ interface FAQItem {
 }
 
 export default function FAQPage() {
+  // Add FAQ Schema to head
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What services does Drive Lead Media offer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We combine high-end video production with precision-targeted Meta ad campaigns, including: Full Campaign Management (strategy, Meta Pixel & GA4 setup, dynamic creative, weekly optimization), Creative Bundle Only (actor-led video ads + static images + copy bank), Custom Website Design (brand aligned, mobile responsive sites built to convert ad traffic), On-Site Production, Remote Production, Access to 30,000+ Paid Actors via our exclusive casting partner for HIPAA compliant testimonial shoots, and Part 107 Certified Drone Footage."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is pricing determined?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our pricing is fully customized to the exact mix of services you require—from campaign management and creative production to add-ons like drone footage or animations. After a brief discovery conversation, we'll provide a detailed proposal outlining all deliverables, timelines, and investment so you know precisely what to expect."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to handle any filming or logistics?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You don't—unless you choose on-site. Our processes are fully managed, so you can focus on running your business while we handle everything from casting to final cut."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are targeted ads?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Targeted ads allow you to reach your ideal audience based on demographics, interests, location, and behaviors. Visit our Targeted Ads page for a full breakdown of how we hone in on your perfect customers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you target clients outside my local area?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Whether it's a 5 mile radius or a nationwide rollout, we tailor ZIP code, demographic, and interest filters to your ideal profile."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Meta Pixel & GA4?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Meta Pixel is a snippet of code we install on your website to track visitor actions (page views, button clicks, form submissions), enabling smarter ad optimization and retargeting. Google Analytics 4 (GA4) is Google's next-gen analytics platform measuring user journeys across web and app. Together, they give you end-to-end visibility into which ads and videos drive actual business results."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you track performance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We layer data from Meta Pixel and GA4 into custom dashboards and weekly reports. Key metrics include: Click Through Rate (CTR), Cost Per Lead (CPL), Cost Per Mille (CPM), Return on Ad Spend (ROAS), View Through Conversion Rate, Video Engagement, Landing Page Conversion Rate, Frequency & Reach, Audience Demographics & Behaviors, Session Duration & Bounce Rate, and Event Based Conversions. You'll receive a weekly dashboard plus a monthly review call with clear optimization recommendations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you build websites or just run ads?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We offer full service website design and development, from brand aligned landing pages to complete multi page sites with custom animations, mobile optimization, and conversion focused layouts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's included in your website packages?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Custom design, mobile responsive development, Meta Pixel & GA4 integration, contact forms, speed optimization, SSL security, hosting setup assistance, and basic SEO foundation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take to build a website?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Timelines vary based on complexity. A high converting landing page typically takes 2 to 3 weeks, while a full multi page site with custom features takes 4 to 8 weeks. We'll provide a detailed timeline during discovery."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will my website work on mobile devices?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Every site we build is fully responsive and optimized for all devices (desktop, tablet, mobile). With over 60% of traffic coming from mobile, this is non negotiable."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you provide website hosting and maintenance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We can assist with hosting setup and offer ongoing maintenance packages including updates, security monitoring, performance optimization, and content changes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you integrate my website with my ad campaigns?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "That's our specialty. We build websites specifically designed to convert ad traffic with optimized landing pages, tracking pixels, conversion focused layouts, and seamless handoff from ad to action."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I get started?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Head to our Contact page to book your Free 30 Minute Strategy Call or send us an email at hello@driveleadmedia.com."
+          }
+        }
+      ]
+    });
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
   const [openItems, setOpenItems] = useState<Set<number>>(new Set());
   const [headingPulse, setHeadingPulse] = useState(false);
 

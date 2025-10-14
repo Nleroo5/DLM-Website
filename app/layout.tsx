@@ -197,6 +197,102 @@ export default function RootLayout({
             })
           }}
         />
+        {/* LocalBusiness Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "@id": "https://driveleadmedia.com/#localbusiness",
+              "name": "Drive Lead Media",
+              "image": "https://driveleadmedia.com/images/dlm-logo.png",
+              "url": "https://driveleadmedia.com",
+              "telephone": "",
+              "email": "hello@driveleadmedia.com",
+              "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "US"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "addressCountry": "US"
+              },
+              "priceRange": "$$",
+              "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "09:00",
+                "closes": "17:00"
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5",
+                "reviewCount": "2",
+                "bestRating": "5",
+                "worstRating": "5"
+              }
+            })
+          }}
+        />
+        {/* Review Schema - Testimonials */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": "Review",
+                "itemReviewed": {
+                  "@type": "LocalBusiness",
+                  "name": "Drive Lead Media",
+                  "image": "https://driveleadmedia.com/images/dlm-logo.png"
+                },
+                "author": {
+                  "@type": "Person",
+                  "name": "Jenn",
+                  "jobTitle": "Owner",
+                  "worksFor": {
+                    "@type": "Organization",
+                    "name": "The Yoga Lounge"
+                  }
+                },
+                "reviewRating": {
+                  "@type": "Rating",
+                  "ratingValue": "5",
+                  "bestRating": "5"
+                },
+                "reviewBody": "We partnered with Drive Lead Media to run Meta ads for my yoga studio, and the experience was smooth and professional. Nic and Tommy created amazing videos and ads that really captured our vibe, and I learned so much about how to better use Meta for marketing. Within weeks we started seeing new leads coming in, and their clear communication made the whole process easy. I'm so grateful for all they did and would definitely recommend them to any business looking to grow.",
+                "datePublished": "2024-01-15"
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "Review",
+                "itemReviewed": {
+                  "@type": "LocalBusiness",
+                  "name": "Drive Lead Media",
+                  "image": "https://driveleadmedia.com/images/dlm-logo.png"
+                },
+                "author": {
+                  "@type": "Person",
+                  "name": "Dr. Austin Dupont",
+                  "jobTitle": "Owner",
+                  "worksFor": {
+                    "@type": "Organization",
+                    "name": "Village Pediatrics of St. Augustine"
+                  }
+                },
+                "reviewRating": {
+                  "@type": "Rating",
+                  "ratingValue": "5",
+                  "bestRating": "5"
+                },
+                "reviewBody": "Working with Drive Lead Media has been a game changer for Village Pediatrics. They completely transformed our outdated website into something modern and professional. The Meta ad campaigns they've been running have brought in a 40% increase in new patient bookings, and honestly, the best part is that I haven't had to manage any of it. Nic and Tommy handle everything from strategy to execution while I focus on caring for my patients.",
+                "datePublished": "2024-02-20"
+              }
+            ])
+          }}
+        />
       </head>
       <body className={`${bitter.variable} ${inter.variable} antialiased`}>
         <TargetParticles />
