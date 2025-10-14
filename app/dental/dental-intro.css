@@ -367,6 +367,16 @@
   border-radius: 25px;
   box-shadow: var(--shadow-soft);
   backdrop-filter: blur(10px);
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Ensure links don't change color */
+a.example-card,
+a.example-card:visited,
+a.example-card:active {
+  text-decoration: none;
+  color: inherit;
 }
 
 .example-card:hover {
