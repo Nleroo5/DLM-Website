@@ -14,7 +14,7 @@ export default function Footer() {
         <div className="mb-6 sm:mb-8 md:mb-12">
           {/* Mobile: Brand Section - Full Width */}
           <motion.div
-            className="mb-6 pb-6 border-b border-[rgba(133,199,179,0.15)] md:hidden"
+            className="mb-6 pb-6 border-b border-[rgba(133,199,179,0.15)] md:hidden text-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -27,7 +27,7 @@ export default function Footer() {
               We Build Advertisement Systems That Bring Your Best Customers To You
             </p>
             {/* Social Media Links */}
-            <div className="flex gap-3">
+            <div className="flex gap-3 justify-center">
               <a
                 href="https://www.facebook.com/driveleadmedia"
                 target="_blank"
@@ -169,12 +169,33 @@ export default function Footer() {
                 Get In Touch
               </h4>
               <div className="space-y-3 md:space-y-5">
+                {/* Mobile: Email Us Button */}
                 <a
                   href="mailto:hello@driveleadmedia.com"
-                  className="font-serif text-[0.8rem] md:text-[1rem] text-[#85C7B3] hover:text-[#F2A922] transition-colors duration-300 flex items-center gap-2 group"
+                  className="md:hidden inline-flex items-center gap-2 font-serif text-[0.85rem] px-6 py-2.5 bg-gradient-to-r from-[#85C7B3] to-[#05908C] text-[#0a192f] font-bold rounded-full hover:shadow-[0_0_25px_rgba(133,199,179,0.5)] transition-all duration-300 hover:scale-105 group"
                 >
                   <svg
-                    className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0 group-hover:scale-110 transition-transform duration-300"
+                    className="w-4 h-4 group-hover:scale-110 transition-transform duration-300"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
+                  </svg>
+                  Email Us
+                </a>
+                {/* Desktop: Full Email Address */}
+                <a
+                  href="mailto:hello@driveleadmedia.com"
+                  className="hidden md:flex font-serif text-[1rem] text-[#85C7B3] hover:text-[#F2A922] transition-colors duration-300 items-center gap-2 group"
+                >
+                  <svg
+                    className="w-5 h-5 flex-shrink-0 group-hover:scale-110 transition-transform duration-300"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
