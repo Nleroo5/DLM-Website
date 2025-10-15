@@ -22,8 +22,7 @@ export default function Hero() {
         className="absolute inset-0 w-full h-full object-cover z-0"
         style={{ objectFit: 'cover' }}
       >
-        <source src="/Videos/hero.MOV" type="video/quicktime" />
-        <source src="/Videos/hero.MOV" type="video/mp4" />
+        <source src="/Videos/hero.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
