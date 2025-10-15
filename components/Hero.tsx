@@ -21,7 +21,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative w-full min-h-screen flex items-end md:items-center justify-center overflow-hidden pt-[120px] pb-[80px] md:pb-[180px] px-6">
+    <section className="relative w-full min-h-screen flex items-end justify-center overflow-hidden pt-[120px] pb-[80px] px-6">
       {/* Background Video */}
       <video
         ref={videoRef}
@@ -49,7 +49,7 @@ export default function Hero() {
       >
         {/* Main Headline */}
         <motion.h1
-          className="font-serif text-[1.75rem] sm:text-[2rem] md:text-[2.5rem] lg:text-[3.5rem] xl:text-[4.5rem] font-semibold leading-[1.1] text-[#F8F6F3] mb-[20vh] md:mb-8 lg:mb-16"
+          className="font-serif text-[1.75rem] sm:text-[2rem] md:text-[2.5rem] lg:text-[3.5rem] xl:text-[4.5rem] font-semibold leading-[1.1] text-[#F8F6F3] mb-[20vh] md:mb-[25vh] lg:mb-[30vh]"
           variants={fadeInUp}
           initial="hidden"
           animate="visible"
@@ -60,7 +60,7 @@ export default function Hero() {
 
         {/* CTA Buttons */}
         <motion.div
-          className="flex flex-col gap-6 justify-center items-center md:flex-row md:gap-8 md:mt-20 lg:mt-24"
+          className="flex flex-col gap-6 justify-center items-center md:flex-row md:gap-8"
           variants={fadeInUp}
           initial="hidden"
           animate="visible"
