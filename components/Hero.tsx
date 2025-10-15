@@ -12,7 +12,22 @@ export default function Hero() {
 
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden pt-[120px] pb-[180px] px-6">
-      {/* Hero Content - No background box */}
+      {/* Background Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover z-0"
+      >
+        <source src="/Videos/hero.MOV" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      {/* Dark overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/50 z-[1]"></div>
+
+      {/* Hero Content */}
       <motion.div
         className="relative z-10 text-center max-w-[1200px] text-white"
         initial={{ opacity: 0, y: 0 }}
