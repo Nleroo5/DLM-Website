@@ -75,9 +75,9 @@ export default function Footer() {
                 <Image
                   src="/images/dlm-logo.png"
                   alt="Drive Lead Media Logo"
-                  width={180}
-                  height={60}
-                  className="h-auto w-auto max-w-[180px]"
+                  width={140}
+                  height={47}
+                  className="h-auto w-auto max-w-[140px]"
                   priority
                 />
               </Link>
@@ -202,10 +202,10 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/resources/meta-targeting-guide"
+                    href="/#what-we-deliver"
                     className="font-serif text-[0.8rem] md:text-[1rem] text-[#85C7B3] hover:text-[#F2A922] hover:translate-x-1 inline-block transition-all duration-300"
                   >
-                    Meta Targeting Guide
+                    Data-Driven Strategy
                   </Link>
                 </li>
               </ul>
