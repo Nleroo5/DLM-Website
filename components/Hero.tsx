@@ -60,7 +60,7 @@ export default function Hero() {
 
         {/* CTA Buttons */}
         <motion.div
-          className="flex gap-8 justify-center flex-wrap md:flex-col md:items-center md:gap-6 mt-12 sm:mt-16 md:mt-20 lg:mt-24"
+          className="flex flex-col gap-6 justify-center items-center md:flex-row md:gap-8 mt-12 sm:mt-16 md:mt-20 lg:mt-24"
           variants={fadeInUp}
           initial="hidden"
           animate="visible"
@@ -69,7 +69,7 @@ export default function Hero() {
           {/* Primary CTA */}
           <Link
             href="/portfolio"
-            className="relative overflow-hidden bg-transparent text-[#F8F6F3] px-6 py-3 sm:px-8 sm:py-3.5 md:px-10 md:py-4 border border-[rgba(248,246,243,0.2)] rounded-xl text-[0.9rem] sm:text-[0.95rem] md:text-[1.0625rem] font-medium font-sans no-underline inline-block cursor-pointer transition-all duration-300 backdrop-blur-sm hover:transform hover:-translate-y-0.5 hover:border-[rgba(95,169,159,0.4)] hover:bg-[rgba(95,169,159,0.05)] hover:shadow-[0_8px_20px_rgba(95,169,159,0.15)] focus:outline focus:outline-2 focus:outline-[#5FA99F] focus:outline-offset-4 md:min-w-[280px] md:max-w-[320px] group"
+            className="relative overflow-hidden bg-transparent text-[#F8F6F3] px-6 py-3 sm:px-8 sm:py-3.5 md:px-10 md:py-4 border border-[rgba(248,246,243,0.2)] rounded-xl text-[0.9rem] sm:text-[0.95rem] md:text-[1.0625rem] font-medium font-sans no-underline inline-block cursor-pointer transition-all duration-300 backdrop-blur-sm hover:transform hover:-translate-y-0.5 hover:border-[rgba(95,169,159,0.4)] hover:bg-[rgba(95,169,159,0.05)] hover:shadow-[0_8px_20px_rgba(95,169,159,0.15)] focus:outline focus:outline-2 focus:outline-[#5FA99F] focus:outline-offset-4 w-full max-w-[320px] group text-center"
           >
             <span className="relative z-10">View Our Work</span>
           </Link>
@@ -77,7 +77,7 @@ export default function Hero() {
           {/* Secondary CTA */}
           <a
             href="#how-it-works"
-            className="relative overflow-hidden bg-transparent text-[#F8F6F3] px-6 py-3 sm:px-8 sm:py-3.5 md:px-10 md:py-4 border border-[rgba(248,246,243,0.2)] rounded-xl text-[0.9rem] sm:text-[0.95rem] md:text-[1.0625rem] font-medium font-sans no-underline inline-block cursor-pointer transition-all duration-300 backdrop-blur-sm hover:transform hover:-translate-y-0.5 hover:border-[rgba(95,169,159,0.4)] hover:bg-[rgba(95,169,159,0.05)] hover:shadow-[0_8px_20px_rgba(95,169,159,0.15)] focus:outline focus:outline-2 focus:outline-[#5FA99F] focus:outline-offset-4 md:min-w-[280px] md:max-w-[320px] group"
+            className="relative overflow-hidden bg-transparent text-[#F8F6F3] px-6 py-3 sm:px-8 sm:py-3.5 md:px-10 md:py-4 border border-[rgba(248,246,243,0.2)] rounded-xl text-[0.9rem] sm:text-[0.95rem] md:text-[1.0625rem] font-medium font-sans no-underline inline-block cursor-pointer transition-all duration-300 backdrop-blur-sm hover:transform hover:-translate-y-0.5 hover:border-[rgba(95,169,159,0.4)] hover:bg-[rgba(95,169,159,0.05)] hover:shadow-[0_8px_20px_rgba(95,169,159,0.15)] focus:outline focus:outline-2 focus:outline-[#5FA99F] focus:outline-offset-4 w-full max-w-[320px] group text-center"
           >
             <span className="relative z-10">See How It Works</span>
           </a>
