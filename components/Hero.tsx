@@ -56,6 +56,7 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
           transition={{ duration: 0.8, delay: 0.3 }}
+          suppressHydrationWarning
         >
           Stop wasting money on ads that don't work
         </motion.h1>
@@ -67,6 +68,7 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
           transition={{ duration: 0.8, delay: 0.7 }}
+          suppressHydrationWarning
         >
           {/* Primary CTA */}
           <Link
