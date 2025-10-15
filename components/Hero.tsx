@@ -21,7 +21,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden pt-[120px] pb-[180px] px-6">
+    <section className="relative w-full min-h-screen flex items-end md:items-center justify-center overflow-hidden pt-[120px] pb-[80px] md:pb-[180px] px-6">
       {/* Background Video */}
       <video
         ref={videoRef}
@@ -42,14 +42,14 @@ export default function Hero() {
 
       {/* Hero Content */}
       <motion.div
-        className="relative z-10 text-center max-w-[1200px] text-white"
+        className="relative z-10 text-center max-w-[1200px] text-white w-full"
         initial={{ opacity: 0, y: 0 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
         {/* Main Headline */}
         <motion.h1
-          className="font-serif text-[1.75rem] sm:text-[2rem] md:text-[2.5rem] lg:text-[3.5rem] xl:text-[4.5rem] font-semibold leading-[1.1] text-[#F8F6F3] mb-8 sm:mb-10 md:mb-14 lg:mb-16"
+          className="font-serif text-[1.75rem] sm:text-[2rem] md:text-[2.5rem] lg:text-[3.5rem] xl:text-[4.5rem] font-semibold leading-[1.1] text-[#F8F6F3] mb-[20vh] md:mb-8 lg:mb-16"
           variants={fadeInUp}
           initial="hidden"
           animate="visible"
@@ -60,7 +60,7 @@ export default function Hero() {
 
         {/* CTA Buttons */}
         <motion.div
-          className="flex flex-col gap-6 justify-center items-center md:flex-row md:gap-8 mt-12 sm:mt-16 md:mt-20 lg:mt-24"
+          className="flex flex-col gap-6 justify-center items-center md:flex-row md:gap-8 md:mt-20 lg:mt-24"
           variants={fadeInUp}
           initial="hidden"
           animate="visible"
