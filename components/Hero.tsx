@@ -2,13 +2,15 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [mounted, setMounted] = useState(false);
 
   // Set video playback speed
   useEffect(() => {
+    setMounted(true);
     if (videoRef.current) {
       videoRef.current.playbackRate = 1.0;
     }
@@ -21,7 +23,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative w-full min-h-screen flex items-end justify-center overflow-hidden pt-[120px] pb-[80px] px-6">
+    <section className="relative w-full min-h-screen flex items-end justify-center overflow-hidden pt-[120px] pb-[80px] px-6" suppressHydrationWarning>
       {/* Background Video */}
       <video
         ref={videoRef}
