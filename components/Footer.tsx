@@ -61,8 +61,8 @@ export default function Footer() {
             </div>
           </motion.div>
 
-          {/* Desktop: 4-Column Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
+          {/* Desktop: 3-Column Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-10">
             {/* Column 1: Brand + Logo + Social */}
             <motion.div
               className="hidden md:block"
@@ -154,69 +154,16 @@ export default function Footer() {
                     FAQ
                   </Link>
                 </li>
-                <li>
-                  <Link
-                    href="/targeted-ads"
-                    className="font-serif text-[0.8rem] md:text-[1rem] text-[#85C7B3] hover:text-[#F2A922] hover:translate-x-1 inline-block transition-all duration-300"
-                  >
-                    Targeted Ads Guide
-                  </Link>
-                </li>
               </ul>
             </motion.div>
 
-            {/* Column 3: Resources & Services */}
+
+            {/* Column 3: Contact + CTA */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <h4 className="font-serif text-[0.95rem] md:text-[1.35rem] font-bold text-[#EEF4D9] mb-3 md:mb-5 tracking-wide">
-                Our Services
-              </h4>
-              <ul className="space-y-2 md:space-y-3">
-                <li>
-                  <Link
-                    href="/#what-we-deliver"
-                    className="font-serif text-[0.8rem] md:text-[1rem] text-[#85C7B3] hover:text-[#F2A922] hover:translate-x-1 inline-block transition-all duration-300"
-                  >
-                    Video Ad Production
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/#what-we-deliver"
-                    className="font-serif text-[0.8rem] md:text-[1rem] text-[#85C7B3] hover:text-[#F2A922] hover:translate-x-1 inline-block transition-all duration-300"
-                  >
-                    Website Design
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/#what-we-deliver"
-                    className="font-serif text-[0.8rem] md:text-[1rem] text-[#85C7B3] hover:text-[#F2A922] hover:translate-x-1 inline-block transition-all duration-300"
-                  >
-                    Campaign Management
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/#what-we-deliver"
-                    className="font-serif text-[0.8rem] md:text-[1rem] text-[#85C7B3] hover:text-[#F2A922] hover:translate-x-1 inline-block transition-all duration-300"
-                  >
-                    Data-Driven Strategy
-                  </Link>
-                </li>
-              </ul>
-            </motion.div>
-
-            {/* Column 4: Contact + CTA */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
             >
               <h4 className="font-serif text-[0.95rem] md:text-[1.35rem] font-bold text-[#EEF4D9] mb-3 md:mb-5 tracking-wide">
                 Get In Touch
