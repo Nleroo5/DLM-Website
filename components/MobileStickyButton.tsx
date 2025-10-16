@@ -17,7 +17,7 @@ export default function MobileStickyButton() {
 
   // Set button text and link based on page
   const buttonText = isDentalPage ? 'Call Brenna to Get Started' : 'Get Started';
-  const buttonLink = isDentalPage ? '/dental#contact' : '/contact';
+  const buttonLink = isDentalPage ? 'tel:404-862-1975' : '/contact';
 
   useEffect(() => {
     const handleScroll = () => {
