@@ -162,7 +162,7 @@ export default function MetaAdsCalculator() {
             Meta Ads Cost Calculator
           </motion.h1>
           <motion.p
-            className="text-[#85C7B3] text-[0.95rem] sm:text-[1rem] font-serif leading-[1.5] max-w-[800px] mx-auto"
+            className="text-[#EEF4D9] text-[0.95rem] sm:text-[1rem] font-serif leading-[1.5] max-w-[800px] mx-auto opacity-80"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
@@ -199,7 +199,7 @@ export default function MetaAdsCalculator() {
                     </option>
                   ))}
                 </select>
-                <p className="text-[#85C7B3] text-[0.8rem] mt-2 font-serif">
+                <p className="text-[#EEF4D9] text-[0.8rem] mt-2 font-serif opacity-70">
                   Competition: {INDUSTRY_DATA[industry as keyof typeof INDUSTRY_DATA].competition}/10
                 </p>
               </div>
@@ -236,7 +236,7 @@ export default function MetaAdsCalculator() {
                   onChange={(e) => setMonthlyBudget(Number(e.target.value))}
                   className="w-full h-2 bg-[rgba(85,199,179,0.3)] rounded-lg appearance-none cursor-pointer accent-[#F2A922]"
                 />
-                <div className="flex justify-between text-[#85C7B3] text-[0.75rem] mt-1 font-serif">
+                <div className="flex justify-between text-[#EEF4D9] text-[0.75rem] mt-1 font-serif opacity-70">
                   <span>$500</span>
                   <span>$25,000+</span>
                 </div>
@@ -261,7 +261,7 @@ export default function MetaAdsCalculator() {
                     placeholder="500"
                   />
                 </div>
-                <p className="text-[#85C7B3] text-[0.75rem] mt-1 font-serif">
+                <p className="text-[#EEF4D9] text-[0.75rem] mt-1 font-serif opacity-70">
                   How much is a new customer worth to your business?
                 </p>
               </div>
@@ -280,7 +280,7 @@ export default function MetaAdsCalculator() {
                   onChange={(e) => setConversionRate(Number(e.target.value))}
                   className="w-full h-2 bg-[rgba(85,199,179,0.3)] rounded-lg appearance-none cursor-pointer accent-[#F2A922]"
                 />
-                <div className="flex justify-between text-[#85C7B3] text-[0.75rem] mt-1 font-serif">
+                <div className="flex justify-between text-[#EEF4D9] text-[0.75rem] mt-1 font-serif opacity-70">
                   <span>Auto (Industry Avg)</span>
                   <span>10%</span>
                 </div>
@@ -300,7 +300,7 @@ export default function MetaAdsCalculator() {
                   onChange={(e) => setCampaignDuration(Number(e.target.value))}
                   className="w-full h-2 bg-[rgba(85,199,179,0.3)] rounded-lg appearance-none cursor-pointer accent-[#F2A922]"
                 />
-                <div className="flex justify-between text-[#85C7B3] text-[0.75rem] mt-1 font-serif">
+                <div className="flex justify-between text-[#EEF4D9] text-[0.75rem] mt-1 font-serif opacity-70">
                   <span>1 month</span>
                   <span>12 months</span>
                 </div>
@@ -334,29 +334,29 @@ export default function MetaAdsCalculator() {
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3">
               {/* Estimated Impressions */}
               <div className="bg-[rgba(238,244,217,0.08)] backdrop-blur-[15px] border-2 border-[#85C7B3] rounded-[16px] p-4">
-                <h3 className="text-[#85C7B3] text-[0.8rem] font-serif mb-1">Est. Impressions</h3>
+                <h3 className="text-[#EEF4D9] text-[0.8rem] font-serif mb-1 opacity-70">Est. Impressions</h3>
                 <p className="text-[#EEF4D9] text-[1.75rem] font-bold font-serif leading-tight">
                   {results.estimatedImpressions.toLocaleString()}
                 </p>
-                <p className="text-[#85C7B3] text-[0.7rem] font-serif">per month</p>
+                <p className="text-[#EEF4D9] text-[0.7rem] font-serif opacity-60">per month</p>
               </div>
 
               {/* Cost Per Lead */}
               <div className="bg-[rgba(238,244,217,0.08)] backdrop-blur-[15px] border-2 border-[#85C7B3] rounded-[16px] p-4">
-                <h3 className="text-[#85C7B3] text-[0.8rem] font-serif mb-1">Cost Per Lead</h3>
+                <h3 className="text-[#EEF4D9] text-[0.8rem] font-serif mb-1 opacity-70">Cost Per Lead</h3>
                 <p className="text-[#EEF4D9] text-[1.75rem] font-bold font-serif leading-tight">
                   ${results.costPerLead}
                 </p>
-                <p className="text-[#85C7B3] text-[0.7rem] font-serif">per qualified lead</p>
+                <p className="text-[#EEF4D9] text-[0.7rem] font-serif opacity-60">per qualified lead</p>
               </div>
 
               {/* Estimated Leads */}
               <div className="bg-[rgba(238,244,217,0.08)] backdrop-blur-[15px] border-2 border-[#85C7B3] rounded-[16px] p-4">
-                <h3 className="text-[#85C7B3] text-[0.8rem] font-serif mb-1">Est. Leads/Month</h3>
+                <h3 className="text-[#EEF4D9] text-[0.8rem] font-serif mb-1 opacity-70">Est. Leads/Month</h3>
                 <p className="text-[#EEF4D9] text-[1.75rem] font-bold font-serif leading-tight">
                   {results.estimatedLeads}
                 </p>
-                <p className="text-[#85C7B3] text-[0.7rem] font-serif">qualified leads</p>
+                <p className="text-[#EEF4D9] text-[0.7rem] font-serif opacity-60">qualified leads</p>
               </div>
 
               {/* Projected ROI */}
@@ -365,7 +365,7 @@ export default function MetaAdsCalculator() {
                 <p className="text-[#EEF4D9] text-[1.75rem] font-bold font-serif leading-tight">
                   {results.roi > 0 ? `${results.roi}%` : 'N/A'}
                 </p>
-                <p className="text-[#85C7B3] text-[0.7rem] font-serif">
+                <p className="text-[#EEF4D9] text-[0.7rem] font-serif opacity-60">
                   {results.roi > 0 ? `$${results.profit.toLocaleString()} profit` : 'Enter customer value'}
                 </p>
               </div>
@@ -378,35 +378,35 @@ export default function MetaAdsCalculator() {
               <div className="space-y-3">
                 {/* Monthly Metrics */}
                 <div className="flex justify-between items-center py-2 border-b border-[rgba(85,199,179,0.2)]">
-                  <span className="text-[#85C7B3] font-serif text-[0.9rem]">Monthly Ad Budget</span>
+                  <span className="text-[#EEF4D9] font-serif text-[0.9rem] opacity-70">Monthly Ad Budget</span>
                   <span className="text-[#EEF4D9] font-serif font-semibold text-[1rem]">
                     ${monthlyBudget.toLocaleString()}
                   </span>
                 </div>
 
                 <div className="flex justify-between items-center py-2 border-b border-[rgba(85,199,179,0.2)]">
-                  <span className="text-[#85C7B3] font-serif text-[0.9rem]">Estimated Clicks</span>
+                  <span className="text-[#EEF4D9] font-serif text-[0.9rem] opacity-70">Estimated Clicks</span>
                   <span className="text-[#EEF4D9] font-serif font-semibold text-[1rem]">
                     {results.estimatedClicks.toLocaleString()}
                   </span>
                 </div>
 
                 <div className="flex justify-between items-center py-2 border-b border-[rgba(85,199,179,0.2)]">
-                  <span className="text-[#85C7B3] font-serif text-[0.9rem]">Cost Per Click (CPC)</span>
+                  <span className="text-[#EEF4D9] font-serif text-[0.9rem] opacity-70">Cost Per Click (CPC)</span>
                   <span className="text-[#EEF4D9] font-serif font-semibold text-[1rem]">
                     ${results.costPerClick}
                   </span>
                 </div>
 
                 <div className="flex justify-between items-center py-2 border-b border-[rgba(85,199,179,0.2)]">
-                  <span className="text-[#85C7B3] font-serif text-[0.9rem]">Conversion Rate</span>
+                  <span className="text-[#EEF4D9] font-serif text-[0.9rem] opacity-70">Conversion Rate</span>
                   <span className="text-[#EEF4D9] font-serif font-semibold text-[1rem]">
                     {results.conversionRate}%
                   </span>
                 </div>
 
                 <div className="flex justify-between items-center py-2 border-b border-[rgba(85,199,179,0.2)]">
-                  <span className="text-[#85C7B3] font-serif text-[0.9rem]">Qualified Leads</span>
+                  <span className="text-[#EEF4D9] font-serif text-[0.9rem] opacity-70">Qualified Leads</span>
                   <span className="text-[#EEF4D9] font-serif font-semibold text-[1rem]">
                     {results.estimatedLeads} leads
                   </span>
@@ -415,7 +415,7 @@ export default function MetaAdsCalculator() {
                 {customerValue > 0 && (
                   <>
                     <div className="flex justify-between items-center py-3 border-b border-[rgba(85,199,179,0.2)]">
-                      <span className="text-[#85C7B3] font-serif text-[0.95rem]">Projected Revenue</span>
+                      <span className="text-[#EEF4D9] font-serif text-[0.95rem] opacity-70">Projected Revenue</span>
                       <span className="text-[#EEF4D9] font-serif font-semibold text-[1.1rem]">
                         ${results.revenue.toLocaleString()}
                       </span>
@@ -434,7 +434,7 @@ export default function MetaAdsCalculator() {
               {/* Confidence Score */}
               <div className="mt-4 pt-4 border-t border-[rgba(85,199,179,0.2)]">
                 <div className="flex items-center justify-between mb-1.5">
-                  <span className="text-[#85C7B3] font-serif text-[0.85rem]">Estimate Confidence</span>
+                  <span className="text-[#EEF4D9] font-serif text-[0.85rem] opacity-70">Estimate Confidence</span>
                   <span className="text-[#EEF4D9] font-serif font-semibold text-[0.9rem]">{results.confidence}%</span>
                 </div>
                 <div className="w-full bg-[rgba(85,199,179,0.2)] rounded-full h-1.5">
@@ -455,24 +455,24 @@ export default function MetaAdsCalculator() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* Traditional Advertising */}
                 <div className="bg-[rgba(1,46,64,0.3)] rounded-[16px] p-4 border border-[rgba(255,255,255,0.1)]">
-                  <h3 className="text-[#85C7B3] font-serif text-[1rem] font-semibold mb-3">
+                  <h3 className="text-[#EEF4D9] font-serif text-[1rem] font-semibold mb-3 opacity-80">
                     Traditional Advertising
                   </h3>
                   <div className="space-y-2">
                     <div className="flex justify-between">
-                      <span className="text-[#85C7B3] text-[0.9rem] font-serif">Cost Per Lead</span>
+                      <span className="text-[#EEF4D9] text-[0.9rem] font-serif opacity-70">Cost Per Lead</span>
                       <span className="text-[#EEF4D9] font-serif font-semibold">
                         ${results.traditionalCPL}
                       </span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-[#85C7B3] text-[0.9rem] font-serif">Est. Leads</span>
+                      <span className="text-[#EEF4D9] text-[0.9rem] font-serif opacity-70">Est. Leads</span>
                       <span className="text-[#EEF4D9] font-serif font-semibold">
                         {results.traditionalLeads}
                       </span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-[#85C7B3] text-[0.9rem] font-serif">Total Cost</span>
+                      <span className="text-[#EEF4D9] text-[0.9rem] font-serif opacity-70">Total Cost</span>
                       <span className="text-[#EEF4D9] font-serif font-semibold">
                         ${monthlyBudget.toLocaleString()}
                       </span>
@@ -511,13 +511,13 @@ export default function MetaAdsCalculator() {
               {/* Savings Highlight */}
               <div className="mt-4 p-4 bg-gradient-to-r from-[rgba(242,169,34,0.2)] to-[rgba(85,199,179,0.2)] rounded-[16px] border border-[#F2A922]">
                 <div className="text-center">
-                  <p className="text-[#85C7B3] font-serif text-[0.85rem] mb-1">
+                  <p className="text-[#EEF4D9] font-serif text-[0.85rem] mb-1 opacity-80">
                     Potential Monthly Savings with Meta Ads
                   </p>
                   <p className="text-[#F2A922] font-serif text-[2rem] font-bold leading-tight">
                     ${results.savings.toLocaleString()}
                   </p>
-                  <p className="text-[#EEF4D9] font-serif text-[0.9rem]">
+                  <p className="text-[#EEF4D9] font-serif text-[0.9rem] opacity-90">
                     That's {results.savingsPercent}% less cost per lead
                   </p>
                 </div>
@@ -591,7 +591,7 @@ export default function MetaAdsCalculator() {
               <h2 className="font-serif text-[1.5rem] sm:text-[1.75rem] font-semibold text-[#EEF4D9] mb-3">
                 Ready to Launch Your Campaign?
               </h2>
-              <p className="text-[#85C7B3] font-serif text-[0.95rem] mb-5 max-w-[600px] mx-auto leading-relaxed">
+              <p className="text-[#EEF4D9] font-serif text-[0.95rem] mb-5 max-w-[600px] mx-auto leading-relaxed opacity-85">
                 Let's turn these projections into real results. Schedule a free strategy call to discuss your specific goals and how we can help you maximize your Meta advertising ROI.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
@@ -618,13 +618,13 @@ export default function MetaAdsCalculator() {
               <h3 className="font-serif text-[1rem] font-semibold text-[#EEF4D9] mb-2">
                 Important Disclaimer
               </h3>
-              <p className="text-[#85C7B3] font-serif text-[0.82rem] leading-[1.5] mb-3">
+              <p className="text-[#EEF4D9] font-serif text-[0.82rem] leading-[1.5] mb-3 opacity-75">
                 This calculator provides estimates based on industry averages and historical data. Actual results may vary significantly depending on numerous factors including ad creative quality, targeting precision, landing page optimization, offer competitiveness, market conditions, and campaign management expertise.
               </p>
-              <p className="text-[#85C7B3] font-serif text-[0.82rem] leading-[1.5] mb-3">
+              <p className="text-[#EEF4D9] font-serif text-[0.82rem] leading-[1.5] mb-3 opacity-75">
                 These projections should not be considered guarantees of performance. Meta advertising campaigns require ongoing optimization, testing, and strategic adjustments to achieve optimal results. The learning phase typically lasts 2-4 weeks, during which costs may be higher than projected.
               </p>
-              <p className="text-[#85C7B3] font-serif text-[0.82rem] leading-[1.5]">
+              <p className="text-[#EEF4D9] font-serif text-[0.82rem] leading-[1.5] opacity-75">
                 We recommend consulting with a Meta advertising professional to develop a customized strategy for your specific business goals and market conditions.
               </p>
             </div>
@@ -634,7 +634,7 @@ export default function MetaAdsCalculator() {
               <h3 className="font-serif text-[1rem] font-semibold text-[#EEF4D9] mb-3">
                 Data Sources & Methodology
               </h3>
-              <p className="text-[#85C7B3] font-serif text-[0.85rem] leading-[1.5] mb-3">
+              <p className="text-[#EEF4D9] font-serif text-[0.85rem] leading-[1.5] mb-3 opacity-80">
                 All industry benchmarks are based on verified data from authoritative sources, updated for 2024-2025. View current data for <strong>{INDUSTRY_DATA[industry as keyof typeof INDUSTRY_DATA].name}</strong>: <a href={INDUSTRY_DATA[industry as keyof typeof INDUSTRY_DATA].sourceUrl} target="_blank" rel="noopener noreferrer" className="text-[#F2A922] hover:underline">{INDUSTRY_DATA[industry as keyof typeof INDUSTRY_DATA].source}</a> (Last verified: {INDUSTRY_DATA[industry as keyof typeof INDUSTRY_DATA].lastVerified})
               </p>
 
@@ -643,7 +643,7 @@ export default function MetaAdsCalculator() {
                   <h4 className="text-[#EEF4D9] font-serif text-[0.95rem] font-semibold mb-1">
                     Primary Industry Data Sources:
                   </h4>
-                  <ul className="space-y-2 text-[#85C7B3] font-serif text-[0.85rem] leading-[1.6]">
+                  <ul className="space-y-2 text-[#EEF4D9] font-serif text-[0.85rem] leading-[1.6] opacity-80">
                     <li className="flex items-start gap-2">
                       <span className="text-[#F2A922] flex-shrink-0">•</span>
                       <span><strong>WordStream by LocaliQ</strong> - "Meta Ads Benchmarks for Your Industry" (Q4 2024). Comprehensive CPC, CPL, and conversion rate data across 18+ industries based on $3B+ in annual ad spend.</span>
@@ -667,7 +667,7 @@ export default function MetaAdsCalculator() {
                   <h4 className="text-[#EEF4D9] font-serif text-[0.95rem] font-semibold mb-1">
                     Specialized Industry Sources:
                   </h4>
-                  <ul className="space-y-2 text-[#85C7B3] font-serif text-[0.85rem] leading-[1.6]">
+                  <ul className="space-y-2 text-[#EEF4D9] font-serif text-[0.85rem] leading-[1.6] opacity-80">
                     <li className="flex items-start gap-2">
                       <span className="text-[#85C7B3] flex-shrink-0">•</span>
                       <span><strong>Clio Legal Trends Report 2024</strong> - Legal services advertising benchmarks and client acquisition costs.</span>
@@ -691,17 +691,17 @@ export default function MetaAdsCalculator() {
                   <h4 className="text-[#EEF4D9] font-serif text-[0.95rem] font-semibold mb-1">
                     Geographic & Seasonal Data:
                   </h4>
-                  <ul className="space-y-2 text-[#85C7B3] font-serif text-[0.85rem] leading-[1.6]">
+                  <ul className="space-y-2 text-[#EEF4D9] font-serif text-[0.85rem] leading-[1.6] opacity-80">
                     <li className="flex items-start gap-2">
-                      <span className="text-[#EEF4D9] flex-shrink-0">•</span>
+                      <span className="text-[#EEF4D9] flex-shrink-0 opacity-60">•</span>
                       <span><strong>U.S. Census Bureau</strong> - Metropolitan Statistical Area population data used for geographic cost multipliers.</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-[#EEF4D9] flex-shrink-0">•</span>
+                      <span className="text-[#EEF4D9] flex-shrink-0 opacity-60">•</span>
                       <span><strong>Meta Ads Manager Historical Data</strong> - Quarterly seasonal trends analysis (2020-2024) showing Q4 holiday surge and Q1 normalization patterns.</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-[#EEF4D9] flex-shrink-0">•</span>
+                      <span className="text-[#EEF4D9] flex-shrink-0 opacity-60">•</span>
                       <span><strong>BLS Consumer Price Index</strong> - Regional cost-of-living adjustments factored into market tier pricing.</span>
                     </li>
                   </ul>
@@ -715,7 +715,7 @@ export default function MetaAdsCalculator() {
                 <p className="text-[#EEF4D9] font-serif text-[0.85rem] leading-[1.6] mb-2">
                   Our proprietary algorithm combines multiple data sources and applies the following adjustments:
                 </p>
-                <ul className="space-y-1 text-[#85C7B3] font-serif text-[0.85rem] leading-[1.6]">
+                <ul className="space-y-1 text-[#EEF4D9] font-serif text-[0.85rem] leading-[1.6] opacity-80">
                   <li className="flex items-start gap-2">
                     <span className="text-[#F2A922]">1.</span>
                     <span><strong>Industry baseline:</strong> Average CPC and conversion rates from primary sources listed above</span>
@@ -740,10 +740,10 @@ export default function MetaAdsCalculator() {
               </div>
 
               <div className="bg-[rgba(85,199,179,0.1)] border border-[rgba(85,199,179,0.3)] rounded-xl p-4">
-                <h4 className="text-[#85C7B3] font-serif text-[0.95rem] font-semibold mb-2">
+                <h4 className="text-[#EEF4D9] font-serif text-[0.95rem] font-semibold mb-2">
                   Data Accuracy & Updates:
                 </h4>
-                <p className="text-[#EEF4D9] font-serif text-[0.85rem] leading-[1.6]">
+                <p className="text-[#EEF4D9] font-serif text-[0.85rem] leading-[1.6] opacity-80">
                   All benchmarks are reviewed and updated quarterly to reflect current market conditions. Industry averages represent median performance across thousands of campaigns. Individual results will vary based on creative quality, targeting precision, offer competitiveness, landing page optimization, and other factors. Last updated: October 2024.
                 </p>
               </div>
