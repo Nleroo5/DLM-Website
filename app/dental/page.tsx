@@ -75,7 +75,7 @@ export default function DentalIntroPage() {
             className="video-container"
             style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}
           >
-            <h2 className="video-intro-text">Watch This Short Video</h2>
+            <h2 className="video-intro-text">watch this short video while you enjoy your cookies</h2>
             <div className="floating-play">
               <svg viewBox="0 0 24 24">
                 <path d="M8 5v14l11-7z"/>
@@ -102,7 +102,7 @@ export default function DentalIntroPage() {
           <div className="examples-grid">
             {/* Actor-Led Video - Opens YouTube in fullscreen */}
             <a
-              href="https://youtube.com/shorts/1firvNqcNMs?feature=share"
+              href="https://youtube.com/shorts/5TDwucithxs?feature=share"
               target="_blank"
               rel="noopener noreferrer"
               className="example-card card fade-in-up stagger-1"
@@ -110,11 +110,11 @@ export default function DentalIntroPage() {
               <div className="example-content">
                 <div className="video-thumbnail-wrapper">
                   <img
-                    src="https://img.youtube.com/vi/1firvNqcNMs/maxresdefault.jpg"
+                    src="https://img.youtube.com/vi/5TDwucithxs/maxresdefault.jpg"
                     alt="Actor-led dental video ad example"
                     className="video-thumbnail-preview"
                     onError={(e) => {
-                      e.currentTarget.src = "https://img.youtube.com/vi/1firvNqcNMs/hqdefault.jpg";
+                      e.currentTarget.src = "https://img.youtube.com/vi/5TDwucithxs/hqdefault.jpg";
                     }}
                   />
                   <div className="play-overlay">
@@ -130,7 +130,7 @@ export default function DentalIntroPage() {
 
             {/* Motion Graphic Video - Opens YouTube in fullscreen */}
             <a
-              href="https://youtube.com/shorts/RKXOgiYhH-s?feature=share"
+              href="https://youtube.com/shorts/3ZHAJi43-Bo?feature=share"
               target="_blank"
               rel="noopener noreferrer"
               className="example-card card fade-in-up stagger-2"
@@ -138,11 +138,11 @@ export default function DentalIntroPage() {
               <div className="example-content">
                 <div className="video-thumbnail-wrapper">
                   <img
-                    src="https://img.youtube.com/vi/RKXOgiYhH-s/maxresdefault.jpg"
+                    src="https://img.youtube.com/vi/3ZHAJi43-Bo/maxresdefault.jpg"
                     alt="Motion graphic dental video ad example"
                     className="video-thumbnail-preview"
                     onError={(e) => {
-                      e.currentTarget.src = "https://img.youtube.com/vi/RKXOgiYhH-s/hqdefault.jpg";
+                      e.currentTarget.src = "https://img.youtube.com/vi/3ZHAJi43-Bo/hqdefault.jpg";
                     }}
                   />
                   <div className="play-overlay">

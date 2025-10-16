@@ -9,7 +9,7 @@ export default function MotionGraphics() {
       id: 1,
       client: "Sample Dental Ad",
       videoType: "15 Second Motion Graphic Ad",
-      youtubeId: "RKXOgiYhH-s"
+      youtubeId: "3ZHAJi43-Bo"
     },
     {
       id: 2,
