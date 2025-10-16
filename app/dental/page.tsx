@@ -255,6 +255,16 @@ export default function DentalIntroPage() {
         </div>
       </section>
 
+      {/* Call Brenna Button */}
+      <section className="cta-call-section" style={{ padding: '60px 20px', textAlign: 'center', background: 'linear-gradient(135deg, #0B1D2E 0%, #1a3a4d 100%)' }}>
+        <div className="container">
+          <a href="tel:404-862-1975" className="btn-call-now">
+            <span className="btn-icon">📞</span>
+            Call Brenna To Get Started
+          </a>
+        </div>
+      </section>
+
       {/* Final CTA - Contact Brenna */}
       <section id="contact" className="contact section">
         <div className="container">
