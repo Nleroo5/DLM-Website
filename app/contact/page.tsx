@@ -13,16 +13,58 @@ export default function ContactPage() {
     message: ''
   });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [phoneError, setPhoneError] = useState('');
+
+  const formatPhoneNumber = (value: string) => {
+    // Remove all non-numeric characters
+    const phoneNumber = value.replace(/\D/g, '');
+
+    // Format as (XXX) XXX-XXXX
+    if (phoneNumber.length <= 3) {
+      return phoneNumber;
+    } else if (phoneNumber.length <= 6) {
+      return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3)}`;
+    } else {
+      return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3, 6)}-${phoneNumber.slice(6, 10)}`;
+    }
+  };
+
+  const validatePhone = (phone: string) => {
+    const phoneDigits = phone.replace(/\D/g, '');
+    if (phone && phoneDigits.length !== 10) {
+      setPhoneError('Please enter a valid 10-digit US phone number');
+      return false;
+    }
+    setPhoneError('');
+    return true;
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    const { name, value } = e.target;
+
+    if (name === 'phone') {
+      const formatted = formatPhoneNumber(value);
+      setFormData({
+        ...formData,
+        phone: formatted
+      });
+      if (value) validatePhone(formatted);
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value
+      });
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Validate phone before submission if phone is provided
+    if (formData.phone && !validatePhone(formData.phone)) {
+      return;
+    }
+
     setStatus('loading');
 
     try {
@@ -125,9 +167,13 @@ export default function ContactPage() {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full px-5 py-4 bg-[rgba(1,46,64,0.5)] border-2 border-[#85C7B3] rounded-xl text-[#EEF4D9] font-serif text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] outline-none transition-all duration-300 focus:border-[#F2A922] focus:shadow-[0_0_12px_rgba(242,169,34,0.2)] md:focus:shadow-[0_0_20px_rgba(242,169,34,0.3)] focus:ring-2 focus:ring-[#F2A922] focus:ring-opacity-50 placeholder:text-[#85C7B3] placeholder:opacity-60"
+                className={`w-full px-5 py-4 bg-[rgba(1,46,64,0.5)] border-2 ${phoneError ? 'border-red-500' : 'border-[#85C7B3]'} rounded-xl text-[#EEF4D9] font-serif text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] outline-none transition-all duration-300 focus:border-[#F2A922] focus:shadow-[0_0_12px_rgba(242,169,34,0.2)] md:focus:shadow-[0_0_20px_rgba(242,169,34,0.3)] focus:ring-2 focus:ring-[#F2A922] focus:ring-opacity-50 placeholder:text-[#85C7B3] placeholder:opacity-60`}
                 placeholder="(555) 123-4567"
+                maxLength={14}
               />
+              {phoneError && (
+                <p className="mt-1 text-red-400 text-[0.8rem] font-serif">{phoneError}</p>
+              )}
             </div>
 
             {/* Business Name Field */}
