@@ -164,15 +164,15 @@ export default function MetaAdsCalculator() {
         </div>
 
         {/* Main Calculator Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
           {/* LEFT PANEL: Filters */}
           <motion.div
-            className="lg:col-span-4 space-y-6"
+            className="lg:col-span-5 xl:col-span-4"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="bg-[rgba(238,244,217,0.08)] backdrop-blur-[15px] border-2 border-[#85C7B3] rounded-[20px] p-6 sticky top-[120px]">
+            <div className="bg-[rgba(238,244,217,0.08)] backdrop-blur-[15px] border-2 border-[#85C7B3] rounded-[20px] p-6 lg:sticky lg:top-[120px] lg:max-h-[calc(100vh-140px)] lg:overflow-y-auto lg:scrollbar-thin lg:scrollbar-thumb-[#85C7B3] lg:scrollbar-track-transparent">
               <h2 className="font-serif text-[1.5rem] font-semibold text-[#EEF4D9] mb-6">Calculator Filters</h2>
 
               {/* Industry Selector */}
@@ -317,13 +317,13 @@ export default function MetaAdsCalculator() {
 
           {/* RIGHT PANEL: Results Dashboard */}
           <motion.div
-            className="lg:col-span-8 space-y-6"
+            className="lg:col-span-7 xl:col-span-8 space-y-6"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             {/* Key Metrics Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
               {/* Estimated Reach */}
               <div className="bg-[rgba(238,244,217,0.08)] backdrop-blur-[15px] border-2 border-[#85C7B3] rounded-[16px] p-5">
                 <h3 className="text-[#85C7B3] text-[0.85rem] font-serif mb-2">Estimated Reach</h3>
