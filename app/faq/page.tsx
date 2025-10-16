@@ -164,7 +164,7 @@ export default function FAQPage() {
     {
       id: 1,
       icon: '',
-      question: 'What services does Dive Lead Media offer?',
+      question: 'What services does Drive Lead Media offer?',
       answer: (
         <>
           <p className="mb-2">We combine high-end video production with precision-targeted Meta ad campaigns, including:</p>

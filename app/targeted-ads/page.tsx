@@ -16,7 +16,7 @@ export default function TargetedAdsPage() {
       {/* Page Header */}
       <header className="bg-transparent py-[clamp(30px,6vw,40px)] pb-[clamp(20px,4vw,30px)] text-center pt-[180px]">
         <div className="max-w-[1400px] mx-auto px-[clamp(24px,4vw,40px)]">
-          <h1 className="text-[1.3rem] sm:text-[1.5rem] md:text-[1.8rem] lg:text-[2.5rem] xl:text-[3rem] text-[#F5F5DC] font-normal leading-[1.2] tracking-[-0.02em] max-w-[1000px] mx-auto">
+          <h1 className="text-[1.3rem] sm:text-[1.5rem] md:text-[1.8rem] lg:text-[2.5rem] xl:text-[3rem] text-[#EEF4D9] font-normal leading-[1.2] tracking-[-0.02em] max-w-[1000px] mx-auto">
             Why Meta Targeted Ads Are More Effective Than Traditional Advertising
           </h1>
         </div>

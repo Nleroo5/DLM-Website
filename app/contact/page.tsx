@@ -28,8 +28,8 @@ export default function ContactPage() {
     try {
       // Send email using EmailJS
       await emailjs.send(
-        'service_vdgqpig', // Service ID
-        'template_p0bgvrl', // Template ID
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!, // Service ID
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!, // Template ID
         {
           from_name: formData.name,
           from_email: formData.email,
@@ -37,7 +37,7 @@ export default function ContactPage() {
           business_name: formData.businessName,
           message: formData.message,
         },
-        'I0cSUssX4mmCMsUhP' // Public Key
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY! // Public Key
       );
 
       setStatus('success');

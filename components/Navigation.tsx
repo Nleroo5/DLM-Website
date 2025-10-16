@@ -58,18 +58,18 @@ export default function Navigation() {
           <div className="hidden lg:flex items-center gap-10">
             <Link
               href="/"
-              className="font-sans text-[1rem] text-[#F8F6F3] hover:text-[#D4A574] transition-colors duration-400 relative group font-medium"
+              className="font-sans text-[1rem] text-[#F8F6F3] hover:text-[#F2A922] transition-colors duration-400 relative group font-medium"
             >
               Home
-              <span className="absolute bottom-0 left-0 w-0 h-px bg-[#D4A574] transition-all duration-400 group-hover:w-full"></span>
+              <span className="absolute bottom-0 left-0 w-0 h-px bg-[#F2A922] transition-all duration-400 group-hover:w-full"></span>
             </Link>
 
             <Link
               href="/portfolio"
-              className="font-sans text-[1rem] text-[#F8F6F3] hover:text-[#D4A574] transition-colors duration-400 relative group font-medium"
+              className="font-sans text-[1rem] text-[#F8F6F3] hover:text-[#F2A922] transition-colors duration-400 relative group font-medium"
             >
               Portfolio
-              <span className="absolute bottom-0 left-0 w-0 h-px bg-[#D4A574] transition-all duration-400 group-hover:w-full"></span>
+              <span className="absolute bottom-0 left-0 w-0 h-px bg-[#F2A922] transition-all duration-400 group-hover:w-full"></span>
             </Link>
 
             {/* Resources Dropdown */}
@@ -78,7 +78,7 @@ export default function Navigation() {
               onMouseEnter={() => setIsResourcesOpen(true)}
               onMouseLeave={() => setIsResourcesOpen(false)}
             >
-              <button className="font-sans text-[1rem] text-[#F8F6F3] hover:text-[#D4A574] transition-colors duration-400 flex items-center gap-2 relative group font-medium">
+              <button className="font-sans text-[1rem] text-[#F8F6F3] hover:text-[#F2A922] transition-colors duration-400 flex items-center gap-2 relative group font-medium">
                 Resources
                 <svg
                   className={`w-4 h-4 transition-transform duration-400 ${
@@ -95,7 +95,7 @@ export default function Navigation() {
                     d="M19 9l-7 7-7-7"
                   />
                 </svg>
-                <span className="absolute bottom-0 left-0 w-0 h-px bg-[#D4A574] transition-all duration-400 group-hover:w-full"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-px bg-[#F2A922] transition-all duration-400 group-hover:w-full"></span>
               </button>
 
               {/* Dropdown Menu */}
@@ -110,25 +110,25 @@ export default function Navigation() {
                   >
                     <Link
                       href="/targeted-ads"
-                      className="block px-5 py-3 font-sans text-[1rem] text-[#F8F6F3] hover:bg-[rgba(212,165,116,0.08)] hover:text-[#D4A574] transition-all duration-400"
+                      className="block px-5 py-3 font-sans text-[1rem] text-[#F8F6F3] hover:bg-[rgba(212,165,116,0.08)] hover:text-[#F2A922] transition-all duration-400"
                     >
                       Intro to Targeted Ads
                     </Link>
                     <Link
                       href="/resources/meta-targeting-guide"
-                      className="block px-5 py-3 font-sans text-[1rem] text-[#F8F6F3] hover:bg-[rgba(212,165,116,0.08)] hover:text-[#D4A574] transition-all duration-400"
+                      className="block px-5 py-3 font-sans text-[1rem] text-[#F8F6F3] hover:bg-[rgba(212,165,116,0.08)] hover:text-[#F2A922] transition-all duration-400"
                     >
                       Target Audiences
                     </Link>
                     <Link
                       href="/resources/meta-ads-calculator"
-                      className="block px-5 py-3 font-sans text-[1rem] text-[#F8F6F3] hover:bg-[rgba(212,165,116,0.08)] hover:text-[#D4A574] transition-all duration-400"
+                      className="block px-5 py-3 font-sans text-[1rem] text-[#F8F6F3] hover:bg-[rgba(212,165,116,0.08)] hover:text-[#F2A922] transition-all duration-400"
                     >
                       Meta Ads Calculator
                     </Link>
                     <Link
                       href="/resources/targeted-ads-infographic"
-                      className="block px-5 py-3 font-sans text-[1rem] text-[#F8F6F3] hover:bg-[rgba(212,165,116,0.08)] hover:text-[#D4A574] transition-all duration-400"
+                      className="block px-5 py-3 font-sans text-[1rem] text-[#F8F6F3] hover:bg-[rgba(212,165,116,0.08)] hover:text-[#F2A922] transition-all duration-400"
                     >
                       Download Infographic
                     </Link>
@@ -139,15 +139,15 @@ export default function Navigation() {
 
             <Link
               href="/faq"
-              className="font-sans text-[1rem] text-[#F8F6F3] hover:text-[#D4A574] transition-colors duration-400 relative group font-medium"
+              className="font-sans text-[1rem] text-[#F8F6F3] hover:text-[#F2A922] transition-colors duration-400 relative group font-medium"
             >
               FAQ
-              <span className="absolute bottom-0 left-0 w-0 h-px bg-[#D4A574] transition-all duration-400 group-hover:w-full"></span>
+              <span className="absolute bottom-0 left-0 w-0 h-px bg-[#F2A922] transition-all duration-400 group-hover:w-full"></span>
             </Link>
 
             <Link
               href="/contact"
-              className="font-sans text-[1rem] px-8 py-3 bg-gradient-to-r from-[#D4A574] to-[#E8D5B7] text-[#2A2A2A] font-semibold rounded-2xl hover:shadow-[0_8px_32px_rgba(212,165,116,0.3)] transition-all duration-400 hover:transform hover:-translate-y-0.5"
+              className="font-sans text-[1rem] px-8 py-3 bg-gradient-to-r from-[#F2A922] to-[#E8D5B7] text-[#2A2A2A] font-semibold rounded-2xl hover:shadow-[0_8px_32px_rgba(212,165,116,0.3)] transition-all duration-400 hover:transform hover:-translate-y-0.5"
             >
               Contact
             </Link>
@@ -192,7 +192,7 @@ export default function Navigation() {
               <Link
                 href="/"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block font-sans text-[1.125rem] text-[#F8F6F3] hover:text-[#D4A574] transition-colors duration-400 py-2 font-medium"
+                className="block font-sans text-[1.125rem] text-[#F8F6F3] hover:text-[#F2A922] transition-colors duration-400 py-2 font-medium"
               >
                 Home
               </Link>
@@ -200,7 +200,7 @@ export default function Navigation() {
               <Link
                 href="/portfolio"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block font-sans text-[1.125rem] text-[#F8F6F3] hover:text-[#D4A574] transition-colors duration-400 py-2 font-medium"
+                className="block font-sans text-[1.125rem] text-[#F8F6F3] hover:text-[#F2A922] transition-colors duration-400 py-2 font-medium"
               >
                 Portfolio
               </Link>
@@ -209,7 +209,7 @@ export default function Navigation() {
               <div>
                 <button
                   onClick={() => setIsResourcesOpen(!isResourcesOpen)}
-                  className="w-full flex items-center justify-between font-sans text-[1.125rem] text-[#F8F6F3] hover:text-[#D4A574] transition-colors duration-400 py-2 font-medium"
+                  className="w-full flex items-center justify-between font-sans text-[1.125rem] text-[#F8F6F3] hover:text-[#F2A922] transition-colors duration-400 py-2 font-medium"
                 >
                   Resources
                   <svg
@@ -241,28 +241,28 @@ export default function Navigation() {
                       <Link
                         href="/targeted-ads"
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className="block font-sans text-[1rem] text-[#5FA99F] hover:text-[#D4A574] transition-colors duration-400 py-2"
+                        className="block font-sans text-[1rem] text-[#5FA99F] hover:text-[#F2A922] transition-colors duration-400 py-2"
                       >
                         Intro to Targeted Ads
                       </Link>
                       <Link
                         href="/resources/meta-targeting-guide"
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className="block font-sans text-[1rem] text-[#5FA99F] hover:text-[#D4A574] transition-colors duration-400 py-2"
+                        className="block font-sans text-[1rem] text-[#5FA99F] hover:text-[#F2A922] transition-colors duration-400 py-2"
                       >
                         Target Audiences
                       </Link>
                       <Link
                         href="/resources/meta-ads-calculator"
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className="block font-sans text-[1rem] text-[#5FA99F] hover:text-[#D4A574] transition-colors duration-400 py-2"
+                        className="block font-sans text-[1rem] text-[#5FA99F] hover:text-[#F2A922] transition-colors duration-400 py-2"
                       >
                         Meta Ads Calculator
                       </Link>
                       <Link
                         href="/resources/targeted-ads-infographic"
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className="block font-sans text-[1rem] text-[#5FA99F] hover:text-[#D4A574] transition-colors duration-400 py-2"
+                        className="block font-sans text-[1rem] text-[#5FA99F] hover:text-[#F2A922] transition-colors duration-400 py-2"
                       >
                         Download Infographic
                       </Link>
@@ -274,7 +274,7 @@ export default function Navigation() {
               <Link
                 href="/faq"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block font-sans text-[1.125rem] text-[#F8F6F3] hover:text-[#D4A574] transition-colors duration-400 py-2 font-medium"
+                className="block font-sans text-[1.125rem] text-[#F8F6F3] hover:text-[#F2A922] transition-colors duration-400 py-2 font-medium"
               >
                 FAQ
               </Link>
@@ -282,7 +282,7 @@ export default function Navigation() {
               <Link
                 href="/contact"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block text-center font-sans text-[1rem] px-8 py-4 bg-gradient-to-r from-[#D4A574] to-[#E8D5B7] text-[#2A2A2A] font-semibold rounded-2xl hover:shadow-[0_8px_32px_rgba(212,165,116,0.3)] transition-all duration-400 mt-6"
+                className="block text-center font-sans text-[1rem] px-8 py-4 bg-gradient-to-r from-[#F2A922] to-[#E8D5B7] text-[#2A2A2A] font-semibold rounded-2xl hover:shadow-[0_8px_32px_rgba(212,165,116,0.3)] transition-all duration-400 mt-6"
               >
                 Contact
               </Link>
