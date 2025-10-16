@@ -55,11 +55,27 @@ export default function DentalIntroPage() {
     <>
       {/* Hero Section + Video Combined */}
       <section className="hero">
+        {/* Background Video */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          className="hero-video"
+          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0 }}
+        >
+          <source src="/Videos/hero.mp4" type="video/mp4" />
+        </video>
+
+        {/* Dark overlay for better text readability */}
+        <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(0, 0, 0, 0.5)', zIndex: 1 }}></div>
+
         <div className="floating-element floating-1"></div>
         <div className="floating-element floating-2"></div>
         <div className="floating-element floating-3"></div>
 
-        <div className="hero-content">
+        <div className="hero-content" style={{ position: 'relative', zIndex: 2 }}>
           {/* Meta Specialists Badge */}
           <div className="specialist-badge fade-in-up">
             <svg className="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -75,7 +91,7 @@ export default function DentalIntroPage() {
             className="video-container"
             style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}
           >
-            <h2 className="video-intro-text">watch this short video while you enjoy your cookies</h2>
+            <h2 className="video-intro-text">Watch This Short Video<br />While You Enjoy Your Cookies</h2>
             <div className="floating-play">
               <svg viewBox="0 0 24 24">
                 <path d="M8 5v14l11-7z"/>

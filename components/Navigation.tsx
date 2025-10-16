@@ -116,6 +116,12 @@ export default function Navigation() {
                     >
                       Target Audiences
                     </Link>
+                    <Link
+                      href="/resources/targeted-ads-infographic"
+                      className="block px-5 py-3 font-sans text-[1rem] text-[#F8F6F3] hover:bg-[rgba(212,165,116,0.08)] hover:text-[#D4A574] transition-all duration-400"
+                    >
+                      Download Infographic
+                    </Link>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -235,6 +241,13 @@ export default function Navigation() {
                         className="block font-sans text-[1rem] text-[#5FA99F] hover:text-[#D4A574] transition-colors duration-400 py-2"
                       >
                         Target Audiences
+                      </Link>
+                      <Link
+                        href="/resources/targeted-ads-infographic"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="block font-sans text-[1rem] text-[#5FA99F] hover:text-[#D4A574] transition-colors duration-400 py-2"
+                      >
+                        Download Infographic
                       </Link>
                     </motion.div>
                   )}
