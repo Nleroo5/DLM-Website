@@ -31,11 +31,7 @@ export default function Navigation() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-400 ${
-        isScrolled
-          ? 'bg-[rgba(11,29,46,0.95)] backdrop-blur-lg shadow-[0_4px_24px_rgba(0,0,0,0.2)]'
-          : 'bg-transparent'
-      }`}
+      className="fixed top-0 left-0 right-0 z-[999] bg-transparent transition-all duration-400"
     >
       <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
         <div className="flex items-center justify-between h-[90px]">

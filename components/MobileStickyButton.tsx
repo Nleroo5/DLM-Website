@@ -36,14 +36,14 @@ export default function MobileStickyButton() {
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          className="fixed bottom-0 left-0 right-0 z-[9999] lg:hidden"
+          className="fixed bottom-0 left-0 right-0 z-[998] lg:hidden pb-[env(safe-area-inset-bottom)]"
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
           transition={{ duration: 0.3, ease: 'easeOut' }}
         >
           {/* Floating bar with backdrop blur */}
-          <div className="bg-gradient-to-r from-[rgba(1,46,64,0.95)] to-[rgba(5,144,140,0.95)] backdrop-blur-lg border-t-2 border-[#F2A922] shadow-[0_-10px_40px_rgba(0,0,0,0.3)] px-3 py-2">
+          <div className="bg-gradient-to-r from-[rgba(1,46,64,0.95)] to-[rgba(5,144,140,0.95)] backdrop-blur-lg border-t-2 border-[#F2A922] shadow-[0_-10px_40px_rgba(0,0,0,0.3)] px-3 py-3">
             <Link
               href={buttonLink}
               className="flex items-center justify-center gap-2 bg-gradient-to-r from-[#F2A922] to-[#EEF4D9] text-[#012E40] font-serif font-bold text-[0.9rem] py-2.5 px-5 rounded-full shadow-[0_6px_24px_rgba(242,169,34,0.4)] transition-all duration-300 hover:shadow-[0_8px_32px_rgba(242,169,34,0.6)] hover:scale-[1.02] active:scale-[0.98] min-h-[44px] w-full no-underline"
@@ -64,9 +64,6 @@ export default function MobileStickyButton() {
               </svg>
             </Link>
           </div>
-
-          {/* Bottom safe area padding for iOS */}
-          <div className="bg-gradient-to-r from-[rgba(1,46,64,0.95)] to-[rgba(5,144,140,0.95)] h-[env(safe-area-inset-bottom)] w-full"></div>
         </motion.div>
       )}
     </AnimatePresence>

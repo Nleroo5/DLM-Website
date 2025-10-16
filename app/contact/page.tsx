@@ -64,7 +64,7 @@ export default function ContactPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="font-serif text-[1.5rem] sm:text-[1.75rem] md:text-[2.25rem] lg:text-[3rem] xl:text-[3.5rem] text-[#EEF4D9] mb-5 font-normal leading-[1.2] [text-shadow:2px_2px_4px_rgba(0,0,0,0.3)] tracking-[0.5px] md:text-[2.25rem] sm:text-[1.75rem]">
+          <h1 className="font-serif text-[1.5rem] sm:text-[1.75rem] md:text-[2.25rem] lg:text-[3rem] xl:text-[3.5rem] text-[#EEF4D9] mb-5 font-normal leading-[1.2] [text-shadow:2px_2px_4px_rgba(0,0,0,0.3)] tracking-[0.5px] break-words">
             Let's Grow Your Business
           </h1>
           <p className="text-[#85C7B3] text-[0.95rem] sm:text-[1.05rem] md:text-[1.15rem] lg:text-[1.25rem] xl:text-[1.3rem] font-serif font-normal leading-[1.5] max-w-[600px] mx-auto">
@@ -74,7 +74,7 @@ export default function ContactPage() {
 
         {/* Contact Form */}
         <motion.div
-          className="bg-[rgba(238,244,217,0.1)] backdrop-blur-[15px] border-2 border-[#85C7B3] rounded-[25px] p-[50px_40px] shadow-[0_20px_60px_rgba(1,46,64,0.4)] md:p-[40px_30px] sm:p-[30px_20px]"
+          className="bg-[rgba(238,244,217,0.1)] backdrop-blur-[15px] border-2 border-[#85C7B3] rounded-[25px] p-[30px_20px] sm:p-[40px_30px] md:p-[50px_40px] shadow-[0_20px_60px_rgba(1,46,64,0.4)]"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -92,7 +92,7 @@ export default function ContactPage() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-5 py-4 bg-[rgba(1,46,64,0.5)] border-2 border-[#85C7B3] rounded-xl text-[#EEF4D9] font-serif text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] outline-none transition-all duration-300 focus:border-[#F2A922] focus:shadow-[0_0_20px_rgba(242,169,34,0.3)] placeholder:text-[#85C7B3] placeholder:opacity-60"
+                className="w-full px-5 py-4 bg-[rgba(1,46,64,0.5)] border-2 border-[#85C7B3] rounded-xl text-[#EEF4D9] font-serif text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] outline-none transition-all duration-300 focus:border-[#F2A922] focus:shadow-[0_0_12px_rgba(242,169,34,0.2)] md:focus:shadow-[0_0_20px_rgba(242,169,34,0.3)] focus:ring-2 focus:ring-[#F2A922] focus:ring-opacity-50 placeholder:text-[#85C7B3] placeholder:opacity-60"
                 placeholder="John Smith"
               />
             </div>
@@ -109,7 +109,7 @@ export default function ContactPage() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-5 py-4 bg-[rgba(1,46,64,0.5)] border-2 border-[#85C7B3] rounded-xl text-[#EEF4D9] font-serif text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] outline-none transition-all duration-300 focus:border-[#F2A922] focus:shadow-[0_0_20px_rgba(242,169,34,0.3)] placeholder:text-[#85C7B3] placeholder:opacity-60"
+                className="w-full px-5 py-4 bg-[rgba(1,46,64,0.5)] border-2 border-[#85C7B3] rounded-xl text-[#EEF4D9] font-serif text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] outline-none transition-all duration-300 focus:border-[#F2A922] focus:shadow-[0_0_12px_rgba(242,169,34,0.2)] md:focus:shadow-[0_0_20px_rgba(242,169,34,0.3)] focus:ring-2 focus:ring-[#F2A922] focus:ring-opacity-50 placeholder:text-[#85C7B3] placeholder:opacity-60"
                 placeholder="john@example.com"
               />
             </div>
@@ -125,7 +125,7 @@ export default function ContactPage() {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full px-5 py-4 bg-[rgba(1,46,64,0.5)] border-2 border-[#85C7B3] rounded-xl text-[#EEF4D9] font-serif text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] outline-none transition-all duration-300 focus:border-[#F2A922] focus:shadow-[0_0_20px_rgba(242,169,34,0.3)] placeholder:text-[#85C7B3] placeholder:opacity-60"
+                className="w-full px-5 py-4 bg-[rgba(1,46,64,0.5)] border-2 border-[#85C7B3] rounded-xl text-[#EEF4D9] font-serif text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] outline-none transition-all duration-300 focus:border-[#F2A922] focus:shadow-[0_0_12px_rgba(242,169,34,0.2)] md:focus:shadow-[0_0_20px_rgba(242,169,34,0.3)] focus:ring-2 focus:ring-[#F2A922] focus:ring-opacity-50 placeholder:text-[#85C7B3] placeholder:opacity-60"
                 placeholder="(555) 123-4567"
               />
             </div>
@@ -142,7 +142,7 @@ export default function ContactPage() {
                 value={formData.businessName}
                 onChange={handleChange}
                 required
-                className="w-full px-5 py-4 bg-[rgba(1,46,64,0.5)] border-2 border-[#85C7B3] rounded-xl text-[#EEF4D9] font-serif text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] outline-none transition-all duration-300 focus:border-[#F2A922] focus:shadow-[0_0_20px_rgba(242,169,34,0.3)] placeholder:text-[#85C7B3] placeholder:opacity-60"
+                className="w-full px-5 py-4 bg-[rgba(1,46,64,0.5)] border-2 border-[#85C7B3] rounded-xl text-[#EEF4D9] font-serif text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] outline-none transition-all duration-300 focus:border-[#F2A922] focus:shadow-[0_0_12px_rgba(242,169,34,0.2)] md:focus:shadow-[0_0_20px_rgba(242,169,34,0.3)] focus:ring-2 focus:ring-[#F2A922] focus:ring-opacity-50 placeholder:text-[#85C7B3] placeholder:opacity-60"
                 placeholder="Your Business LLC"
               />
             </div>

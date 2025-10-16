@@ -218,9 +218,9 @@ export default function TargetedAdsPage() {
               <table className="w-full border-collapse my-[clamp(16px,3vw,24px)] bg-gradient-to-br from-[rgba(238,244,217,0.95)] to-[rgba(238,244,217,0.9)] rounded-[clamp(10px,2vw,14px)] overflow-hidden shadow-lg backdrop-blur-[20px]">
                 <thead>
                   <tr className="bg-gradient-to-r from-[rgba(242,169,34,0.9)] to-[rgba(5,144,140,0.8)]">
-                    <th className="text-[#012E40] p-[clamp(10px,2vw,14px)] text-left font-normal text-[clamp(0.9rem,2vw,1.05rem)] leading-[1.4]">What You Want to Know</th>
-                    <th className="text-[#012E40] p-[clamp(10px,2vw,14px)] text-left font-normal text-[clamp(0.9rem,2vw,1.05rem)] leading-[1.4]">Traditional Advertising</th>
-                    <th className="text-[#012E40] p-[clamp(10px,2vw,14px)] text-left font-normal text-[clamp(0.9rem,2vw,1.05rem)] leading-[1.4]">Meta Targeted Ads</th>
+                    <th className="text-[#012E40] p-[clamp(10px,2vw,14px)] text-left font-normal text-[0.7rem] sm:text-[0.85rem] md:text-[0.95rem] lg:text-[1.05rem] leading-[1.4]">What You Want to Know</th>
+                    <th className="text-[#012E40] p-[clamp(10px,2vw,14px)] text-left font-normal text-[0.7rem] sm:text-[0.85rem] md:text-[0.95rem] lg:text-[1.05rem] leading-[1.4]">Traditional Advertising</th>
+                    <th className="text-[#012E40] p-[clamp(10px,2vw,14px)] text-left font-normal text-[0.7rem] sm:text-[0.85rem] md:text-[0.95rem] lg:text-[1.05rem] leading-[1.4]">Meta Targeted Ads</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -363,7 +363,7 @@ export default function TargetedAdsPage() {
       </section>
 
       {/* Floating CTA */}
-      <div className="fixed bottom-[clamp(12px,2.5vw,20px)] right-[clamp(12px,2.5vw,20px)] z-[99999] max-w-[clamp(200px,35vw,260px)]">
+      <div className="fixed bottom-[clamp(12px,2.5vw,20px)] right-[clamp(12px,2.5vw,20px)] z-[997] max-w-[clamp(200px,40vw,320px)] hidden sm:block">
         <Link
           href="/contact"
           className="block bg-gradient-to-br from-[rgba(238,244,217,0.95)] to-[rgba(238,244,217,0.9)] border-2 border-[#012E40] rounded-[clamp(10px,2vw,16px)] p-[clamp(12px,2.5vw,16px)_clamp(16px,3vw,20px)] backdrop-blur-[20px] shadow-[0_15px_30px_rgba(0,0,0,0.15)] transition-all duration-300 hover:-translate-y-[2px] hover:border-[#F2A922] hover:shadow-[0_18px_35px_rgba(0,0,0,0.2),0_0_15px_rgba(242,169,34,0.3)]"
