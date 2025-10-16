@@ -1,4 +1,5 @@
 'use client';
+// All text colors updated to white (#EEF4D9) with opacity for hierarchy - Oct 2024
 
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
