@@ -145,7 +145,7 @@ export default function MetaAdsCalculator() {
         <div className="text-center mb-8">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-[#85C7B3] hover:text-[#F2A922] transition-colors duration-300 mb-6 font-serif text-[0.95rem]"
+            className="inline-flex items-center gap-2 text-[#EEF4D9] hover:text-[#F2A922] transition-colors duration-300 mb-6 font-serif text-[0.95rem] opacity-80"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -248,7 +248,7 @@ export default function MetaAdsCalculator() {
                   Avg Customer Value (Optional)
                 </label>
                 <div className="relative">
-                  <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-[#85C7B3] text-[0.95rem] font-serif">
+                  <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-[#EEF4D9] text-[0.95rem] font-serif opacity-70">
                     $
                   </span>
                   <input
@@ -316,7 +316,7 @@ export default function MetaAdsCalculator() {
                   setConversionRate(0);
                   setCampaignDuration(6);
                 }}
-                className="w-full px-6 py-3 bg-transparent border-2 border-[#85C7B3] text-[#85C7B3] rounded-xl font-serif font-semibold transition-all duration-300 hover:bg-[rgba(85,199,179,0.1)] hover:border-[#F2A922] hover:text-[#F2A922]"
+                className="w-full px-6 py-3 bg-transparent border-2 border-[#85C7B3] text-[#EEF4D9] rounded-xl font-serif font-semibold transition-all duration-300 hover:bg-[rgba(85,199,179,0.1)] hover:border-[#F2A922] hover:text-[#F2A922]"
               >
                 Reset to Defaults
               </button>
@@ -544,7 +544,7 @@ export default function MetaAdsCalculator() {
 
                 {monthlyBudget >= 2000 && monthlyBudget <= 5000 && (
                   <div className="flex items-start gap-2.5 p-3 bg-[rgba(85,199,179,0.1)] rounded-xl border border-[rgba(85,199,179,0.3)]">
-                    <span className="text-[#85C7B3] text-[1.1rem]">✓</span>
+                    <span className="text-[#EEF4D9] text-[1.1rem]">✓</span>
                     <div>
                       <p className="text-[#EEF4D9] font-serif text-[0.9rem] leading-relaxed">
                         Your budget is in the optimal performance range for {INDUSTRY_DATA[industry as keyof typeof INDUSTRY_DATA].name}. This should provide consistent results with reasonable cost per lead.
@@ -606,7 +606,7 @@ export default function MetaAdsCalculator() {
                 </Link>
                 <Link
                   href="/portfolio"
-                  className="inline-flex items-center gap-2 bg-transparent border-2 border-[#85C7B3] text-[#85C7B3] px-7 py-3 rounded-xl text-[1rem] font-bold font-serif transition-all duration-300 hover:bg-[rgba(85,199,179,0.1)] hover:border-[#F2A922] hover:text-[#F2A922] no-underline"
+                  className="inline-flex items-center gap-2 bg-transparent border-2 border-[#85C7B3] text-[#EEF4D9] px-7 py-3 rounded-xl text-[1rem] font-bold font-serif transition-all duration-300 hover:bg-[rgba(85,199,179,0.1)] hover:border-[#F2A922] hover:text-[#F2A922] no-underline"
                 >
                   View Our Work
                 </Link>
