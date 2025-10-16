@@ -1,5 +1,6 @@
 'use client';
-// All text colors updated to white (#EEF4D9) with opacity for hierarchy - Oct 2024
+// Text colors: All secondary/descriptive text updated to white (#EEF4D9) with opacity
+// Update timestamp: 2024-10-16 20:45 PST
 
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
