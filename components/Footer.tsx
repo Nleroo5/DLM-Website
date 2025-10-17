@@ -8,7 +8,11 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-[rgba(10,25,47,0.95)] border-t border-[rgba(133,199,179,0.2)] pt-[40px] md:pt-[80px] pb-[80px] lg:pb-[40px] mt-[60px] md:mt-[100px]">
+    <footer
+      role="contentinfo"
+      aria-label="Site footer"
+      className="relative bg-[rgba(10,25,47,0.95)] border-t border-[rgba(133,199,179,0.2)] pt-[40px] md:pt-[80px] pb-[80px] lg:pb-[40px] mt-[60px] md:mt-[100px]"
+    >
       <div className="max-w-[1400px] mx-auto px-5 lg:px-8">
         {/* Main Footer Content */}
         <div className="mb-6 sm:mb-8 md:mb-12">

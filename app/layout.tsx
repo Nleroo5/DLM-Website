@@ -324,9 +324,14 @@ export default function RootLayout({
         />
       </head>
       <body className={`${bitter.variable} ${inter.variable} antialiased`}>
+        <a href="#main-content" className="skip-to-content">
+          Skip to main content
+        </a>
         <TargetParticles />
         <Navigation />
-        {children}
+        <main id="main-content">
+          {children}
+        </main>
         <Footer />
         <MobileStickyButton />
       </body>

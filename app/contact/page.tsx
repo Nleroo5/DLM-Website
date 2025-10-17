@@ -121,7 +121,7 @@ export default function ContactPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6" aria-label="Contact form">
             {/* Name Field */}
             <div>
               <label htmlFor="name" className="block text-[#EEF4D9] text-[0.9rem] sm:text-[0.95rem] md:text-[1rem] lg:text-[1.05rem] xl:text-[1.1rem] font-serif mb-2 font-semibold">
@@ -134,6 +134,7 @@ export default function ContactPage() {
                 value={formData.name}
                 onChange={handleChange}
                 required
+                aria-required="true"
                 className="w-full px-5 py-4 bg-[rgba(1,46,64,0.5)] border-2 border-[#85C7B3] rounded-xl text-[#EEF4D9] font-serif text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] outline-none transition-all duration-300 focus:border-[#F2A922] focus:shadow-[0_0_12px_rgba(242,169,34,0.2)] md:focus:shadow-[0_0_20px_rgba(242,169,34,0.3)] focus:ring-2 focus:ring-[#F2A922] focus:ring-opacity-50 placeholder:text-[#85C7B3] placeholder:opacity-60"
                 placeholder="John Smith"
               />
@@ -151,6 +152,7 @@ export default function ContactPage() {
                 value={formData.email}
                 onChange={handleChange}
                 required
+                aria-required="true"
                 className="w-full px-5 py-4 bg-[rgba(1,46,64,0.5)] border-2 border-[#85C7B3] rounded-xl text-[#EEF4D9] font-serif text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] outline-none transition-all duration-300 focus:border-[#F2A922] focus:shadow-[0_0_12px_rgba(242,169,34,0.2)] md:focus:shadow-[0_0_20px_rgba(242,169,34,0.3)] focus:ring-2 focus:ring-[#F2A922] focus:ring-opacity-50 placeholder:text-[#85C7B3] placeholder:opacity-60"
                 placeholder="john@example.com"
               />
@@ -167,12 +169,14 @@ export default function ContactPage() {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
+                aria-invalid={phoneError ? 'true' : 'false'}
+                aria-describedby={phoneError ? 'phone-error' : undefined}
                 className={`w-full px-5 py-4 bg-[rgba(1,46,64,0.5)] border-2 ${phoneError ? 'border-red-500' : 'border-[#85C7B3]'} rounded-xl text-[#EEF4D9] font-serif text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] outline-none transition-all duration-300 focus:border-[#F2A922] focus:shadow-[0_0_12px_rgba(242,169,34,0.2)] md:focus:shadow-[0_0_20px_rgba(242,169,34,0.3)] focus:ring-2 focus:ring-[#F2A922] focus:ring-opacity-50 placeholder:text-[#85C7B3] placeholder:opacity-60`}
                 placeholder="(555) 123-4567"
                 maxLength={14}
               />
               {phoneError && (
-                <p className="mt-1 text-red-400 text-[0.8rem] font-serif">{phoneError}</p>
+                <p id="phone-error" className="mt-1 text-red-400 text-[0.8rem] font-serif" role="alert">{phoneError}</p>
               )}
             </div>
 
@@ -188,6 +192,7 @@ export default function ContactPage() {
                 value={formData.businessName}
                 onChange={handleChange}
                 required
+                aria-required="true"
                 className="w-full px-5 py-4 bg-[rgba(1,46,64,0.5)] border-2 border-[#85C7B3] rounded-xl text-[#EEF4D9] font-serif text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] outline-none transition-all duration-300 focus:border-[#F2A922] focus:shadow-[0_0_12px_rgba(242,169,34,0.2)] md:focus:shadow-[0_0_20px_rgba(242,169,34,0.3)] focus:ring-2 focus:ring-[#F2A922] focus:ring-opacity-50 placeholder:text-[#85C7B3] placeholder:opacity-60"
                 placeholder="Your Business LLC"
               />
@@ -204,6 +209,7 @@ export default function ContactPage() {
                 value={formData.message}
                 onChange={handleChange}
                 required
+                aria-required="true"
                 rows={6}
                 className="w-full px-5 py-4 bg-[rgba(1,46,64,0.5)] border-2 border-[#85C7B3] rounded-xl text-[#EEF4D9] font-serif text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] outline-none transition-all duration-300 resize-none focus:border-[#F2A922] focus:shadow-[0_0_20px_rgba(242,169,34,0.3)] placeholder:text-[#85C7B3] placeholder:opacity-60"
                 placeholder="Tell us about your business, your goals, and what you're hoping to achieve with Meta advertising..."
@@ -227,6 +233,8 @@ export default function ContactPage() {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="bg-[rgba(133,199,179,0.2)] border-2 border-[#85C7B3] rounded-xl p-4 text-center"
+                role="alert"
+                aria-live="polite"
               >
                 <p className="text-[#EEF4D9] font-serif text-[1.1rem]">
                   Thanks for reaching out! We'll get back to you within 24 hours.
@@ -240,6 +248,8 @@ export default function ContactPage() {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="bg-[rgba(242,169,34,0.2)] border-2 border-[#F2A922] rounded-xl p-4 text-center"
+                role="alert"
+                aria-live="assertive"
               >
                 <p className="text-[#EEF4D9] font-serif text-[1.1rem]">
                   Oops! Something went wrong. Please email us directly at hello@driveleadmedia.com

@@ -31,6 +31,8 @@ export default function Navigation() {
 
   return (
     <nav
+      role="navigation"
+      aria-label="Main navigation"
       className={`fixed top-0 left-0 right-0 z-[999] transition-all duration-400 ${
         isScrolled
           ? 'bg-[rgba(11,29,46,0.85)] backdrop-blur-lg'
@@ -78,7 +80,11 @@ export default function Navigation() {
               onMouseEnter={() => setIsResourcesOpen(true)}
               onMouseLeave={() => setIsResourcesOpen(false)}
             >
-              <button className="font-sans text-[1rem] text-[#F8F6F3] hover:text-[#F2A922] transition-colors duration-400 flex items-center gap-2 relative group font-medium">
+              <button
+                aria-haspopup="true"
+                aria-expanded={isResourcesOpen}
+                className="font-sans text-[1rem] text-[#F8F6F3] hover:text-[#F2A922] transition-colors duration-400 flex items-center gap-2 relative group font-medium"
+              >
                 Resources
                 <svg
                   className={`w-4 h-4 transition-transform duration-400 ${
@@ -87,6 +93,7 @@ export default function Navigation() {
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
+                  aria-hidden="true"
                 >
                   <path
                     strokeLinecap="round"
@@ -107,6 +114,8 @@ export default function Navigation() {
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.3 }}
                     className="absolute top-full left-0 mt-2 w-[220px] bg-[rgba(11,29,46,0.98)] backdrop-blur-lg rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.2)] border border-[rgba(95,169,159,0.15)] overflow-hidden"
+                    role="menu"
+                    aria-label="Resources menu"
                   >
                     <Link
                       href="/targeted-ads"
@@ -157,7 +166,9 @@ export default function Navigation() {
           <button
             className="lg:hidden flex flex-col gap-1.5 w-8 h-8 justify-center items-center"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle mobile menu"
+            aria-label={isMobileMenuOpen ? 'Close mobile menu' : 'Open mobile menu'}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-menu"
           >
             <span
               className={`block w-7 h-0.5 bg-[#F8F6F3] transition-all duration-400 ${
@@ -182,11 +193,14 @@ export default function Navigation() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
+            id="mobile-menu"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.4 }}
             className="lg:hidden bg-[rgba(11,29,46,0.98)] backdrop-blur-lg border-t border-[rgba(95,169,159,0.15)]"
+            role="menu"
+            aria-label="Mobile navigation menu"
           >
             <div className="px-6 py-8 space-y-5">
               <Link
