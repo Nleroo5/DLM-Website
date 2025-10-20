@@ -220,21 +220,25 @@ export default function RootLayout({
               "name": "Drive Lead Media",
               "image": "https://driveleadmedia.com/images/dlm-logo.png",
               "url": "https://driveleadmedia.com",
-              "telephone": "",
+              "telephone": "+1-678-650-6411",
               "email": "hello@driveleadmedia.com",
               "address": {
                 "@type": "PostalAddress",
-                "addressLocality": "Atlanta",
+                "addressLocality": "Peachtree City",
                 "addressRegion": "GA",
                 "addressCountry": "US"
               },
               "geo": {
                 "@type": "GeoCoordinates",
-                "addressLocality": "Atlanta",
-                "addressRegion": "GA"
+                "latitude": "33.3968",
+                "longitude": "-84.5957"
               },
               "priceRange": "$$",
               "areaServed": [
+                {
+                  "@type": "City",
+                  "name": "Peachtree City"
+                },
                 {
                   "@type": "City",
                   "name": "Atlanta"
@@ -250,7 +254,7 @@ export default function RootLayout({
               ],
               "openingHoursSpecification": {
                 "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"],
                 "opens": "09:00",
                 "closes": "17:00"
               },
@@ -260,7 +264,12 @@ export default function RootLayout({
                 "reviewCount": "2",
                 "bestRating": "5",
                 "worstRating": "5"
-              }
+              },
+              "sameAs": [
+                "https://www.facebook.com/driveleadmedia",
+                "https://www.instagram.com/driveleadmedia",
+                "https://www.linkedin.com/company/drive-lead-media"
+              ]
             })
           }}
         />
