@@ -368,7 +368,7 @@ export default function FAQPage() {
                 transition={{ duration: 0.5, ease: 'easeInOut' }}
                 className="overflow-hidden"
               >
-                <div className="text-base leading-relaxed pl-4 pr-4 pb-4 text-[#EEF4D9]">
+                <div className="text-base leading-relaxed pl-4 pr-4 pb-4 text-[#EEF4D9] bg-[rgba(5,144,140,0.08)] backdrop-blur-sm rounded-b-lg mx-2 mt-1">
                   {typeof faq.answer === 'string' ? <p>{faq.answer}</p> : faq.answer}
                 </div>
               </motion.div>
