@@ -220,18 +220,19 @@ export default function RootLayout({
               "name": "Drive Lead Media",
               "image": "https://driveleadmedia.com/images/dlm-logo.png",
               "url": "https://driveleadmedia.com",
-              "telephone": "",
+              "telephone": "+1-404-862-1975",
               "email": "hello@driveleadmedia.com",
               "address": {
                 "@type": "PostalAddress",
                 "addressLocality": "Atlanta",
                 "addressRegion": "GA",
+                "postalCode": "30303",
                 "addressCountry": "US"
               },
               "geo": {
                 "@type": "GeoCoordinates",
-                "addressLocality": "Atlanta",
-                "addressRegion": "GA"
+                "latitude": "33.7490",
+                "longitude": "-84.3880"
               },
               "priceRange": "$$",
               "areaServed": [
@@ -260,7 +261,12 @@ export default function RootLayout({
                 "reviewCount": "2",
                 "bestRating": "5",
                 "worstRating": "5"
-              }
+              },
+              "sameAs": [
+                "https://www.facebook.com/driveleadmedia",
+                "https://www.instagram.com/driveleadmedia",
+                "https://www.linkedin.com/company/drive-lead-media"
+              ]
             })
           }}
         />
