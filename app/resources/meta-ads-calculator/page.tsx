@@ -46,12 +46,12 @@ const getSeasonalFactor = () => {
 };
 
 export default function MetaAdsCalculator() {
-  // State for filters
-  const [industry, setIndustry] = useState('dental-healthcare');
-  const [location, setLocation] = useState('tier3');
-  const [monthlyBudget, setMonthlyBudget] = useState(2500);
-  const [customerValue, setCustomerValue] = useState(500);
-  const [campaignDuration, setCampaignDuration] = useState(6);
+  // State for filters - blank defaults
+  const [industry, setIndustry] = useState('');
+  const [location, setLocation] = useState('');
+  const [monthlyBudget, setMonthlyBudget] = useState(500);
+  const [customerValue, setCustomerValue] = useState(0);
+  const [campaignDuration, setCampaignDuration] = useState(1);
   const [conversionRate, setConversionRate] = useState(0);
 
   // Calculate budget efficiency curve - lower is better (economies of scale at higher budgets)
@@ -67,6 +67,26 @@ export default function MetaAdsCalculator() {
 
   // Real-time calculations
   const results = useMemo(() => {
+    // Return default/empty results if industry or location not selected
+    if (!industry || !location) {
+      return {
+        estimatedImpressions: 0,
+        estimatedClicks: 0,
+        estimatedLeads: 0,
+        costPerLead: 0,
+        costPerClick: 0,
+        roi: 0,
+        revenue: 0,
+        profit: 0,
+        traditionalCPL: 0,
+        traditionalLeads: 0,
+        savings: 0,
+        savingsPercent: 0,
+        confidence: 0,
+        conversionRate: 0,
+      };
+    }
+
     const industryData = INDUSTRY_DATA[industry as keyof typeof INDUSTRY_DATA];
     const locationData = LOCATION_TIERS[location as keyof typeof LOCATION_TIERS];
     const seasonalFactor = getSeasonalFactor();
@@ -195,15 +215,18 @@ export default function MetaAdsCalculator() {
                   onChange={(e) => setIndustry(e.target.value)}
                   className="w-full px-4 py-3 bg-[rgba(1,46,64,0.5)] border-2 border-[#85C7B3] rounded-xl text-[#EEF4D9] font-serif text-[0.95rem] outline-none transition-all duration-300 focus:border-[#F2A922] focus:ring-2 focus:ring-[#F2A922] focus:ring-opacity-50 cursor-pointer"
                 >
+                  <option value="">Select your industry...</option>
                   {Object.entries(INDUSTRY_DATA).map(([key, data]) => (
                     <option key={key} value={key}>
                       {data.name}
                     </option>
                   ))}
                 </select>
-                <p className="text-[#EEF4D9] text-[0.8rem] mt-2 font-serif opacity-70">
-                  Competition: {INDUSTRY_DATA[industry as keyof typeof INDUSTRY_DATA].competition}/10
-                </p>
+                {industry && (
+                  <p className="text-[#EEF4D9] text-[0.8rem] mt-2 font-serif opacity-70">
+                    Competition: {INDUSTRY_DATA[industry as keyof typeof INDUSTRY_DATA].competition}/10
+                  </p>
+                )}
               </div>
 
               {/* Location Selector */}
@@ -216,6 +239,7 @@ export default function MetaAdsCalculator() {
                   onChange={(e) => setLocation(e.target.value)}
                   className="w-full px-4 py-3 bg-[rgba(1,46,64,0.5)] border-2 border-[#85C7B3] rounded-xl text-[#EEF4D9] font-serif text-[0.95rem] outline-none transition-all duration-300 focus:border-[#F2A922] focus:ring-2 focus:ring-[#F2A922] focus:ring-opacity-50 cursor-pointer"
                 >
+                  <option value="">Select your market location...</option>
                   {Object.entries(LOCATION_TIERS).map(([key, data]) => (
                     <option key={key} value={key}>
                       {data.name}
@@ -311,16 +335,16 @@ export default function MetaAdsCalculator() {
               {/* Reset Button */}
               <button
                 onClick={() => {
-                  setIndustry('dental-healthcare');
-                  setLocation('tier3');
-                  setMonthlyBudget(2500);
-                  setCustomerValue(500);
+                  setIndustry('');
+                  setLocation('');
+                  setMonthlyBudget(500);
+                  setCustomerValue(0);
                   setConversionRate(0);
-                  setCampaignDuration(6);
+                  setCampaignDuration(1);
                 }}
                 className="w-full px-6 py-3 bg-transparent border-2 border-[#85C7B3] text-[#EEF4D9] rounded-xl font-serif font-semibold transition-all duration-300 hover:bg-[rgba(85,199,179,0.1)] hover:border-[#F2A922] hover:text-[#F2A922]"
               >
-                Reset to Defaults
+                Reset Calculator
               </button>
             </div>
           </motion.div>
@@ -533,6 +557,17 @@ export default function MetaAdsCalculator() {
               </h2>
 
               <div className="space-y-3">
+                {!industry || !location ? (
+                  <div className="flex items-start gap-2.5 p-3 bg-[rgba(85,199,179,0.1)] rounded-xl border border-[rgba(85,199,179,0.3)]">
+                    <span className="text-[#EEF4D9] text-[1.1rem]">👈</span>
+                    <div>
+                      <p className="text-[#EEF4D9] font-serif text-[0.9rem] leading-relaxed">
+                        Select your industry and market location to see personalized estimates for your business.
+                      </p>
+                    </div>
+                  </div>
+                ) : null}
+
                 {monthlyBudget < 1000 && (
                   <div className="flex items-start gap-2.5 p-3 bg-[rgba(242,169,34,0.1)] rounded-xl border border-[rgba(242,169,34,0.3)]">
                     <span className="text-[#F2A922] text-[1.1rem]">⚠</span>
@@ -544,7 +579,7 @@ export default function MetaAdsCalculator() {
                   </div>
                 )}
 
-                {monthlyBudget >= 2000 && monthlyBudget <= 5000 && (
+                {monthlyBudget >= 2000 && monthlyBudget <= 5000 && industry && (
                   <div className="flex items-start gap-2.5 p-3 bg-[rgba(85,199,179,0.1)] rounded-xl border border-[rgba(85,199,179,0.3)]">
                     <span className="text-[#EEF4D9] text-[1.1rem]">✓</span>
                     <div>
@@ -555,7 +590,7 @@ export default function MetaAdsCalculator() {
                   </div>
                 )}
 
-                {INDUSTRY_DATA[industry as keyof typeof INDUSTRY_DATA].competition >= 8 && (
+                {industry && INDUSTRY_DATA[industry as keyof typeof INDUSTRY_DATA].competition >= 8 && (
                   <div className="flex items-start gap-2.5 p-3 bg-[rgba(238,244,217,0.05)] rounded-xl border border-[rgba(238,244,217,0.2)]">
                     <span className="text-[#EEF4D9] text-[1.1rem]">i</span>
                     <div>
@@ -637,7 +672,9 @@ export default function MetaAdsCalculator() {
                 Data Sources & Methodology
               </h3>
               <p className="text-[#EEF4D9] font-serif text-[0.85rem] leading-[1.5] mb-3 opacity-80">
-                All industry benchmarks are based on verified data from authoritative sources, updated for 2024-2025. View current data for <strong>{INDUSTRY_DATA[industry as keyof typeof INDUSTRY_DATA].name}</strong>: <a href={INDUSTRY_DATA[industry as keyof typeof INDUSTRY_DATA].sourceUrl} target="_blank" rel="noopener noreferrer" className="text-[#F2A922] hover:underline">{INDUSTRY_DATA[industry as keyof typeof INDUSTRY_DATA].source}</a> (Last verified: {INDUSTRY_DATA[industry as keyof typeof INDUSTRY_DATA].lastVerified})
+                All industry benchmarks are based on verified data from authoritative sources, updated for 2024-2025. {industry && (
+                  <>View current data for <strong>{INDUSTRY_DATA[industry as keyof typeof INDUSTRY_DATA].name}</strong>: <a href={INDUSTRY_DATA[industry as keyof typeof INDUSTRY_DATA].sourceUrl} target="_blank" rel="noopener noreferrer" className="text-[#F2A922] hover:underline">{INDUSTRY_DATA[industry as keyof typeof INDUSTRY_DATA].source}</a> (Last verified: {INDUSTRY_DATA[industry as keyof typeof INDUSTRY_DATA].lastVerified})</>
+                )}
               </p>
 
               <div className="space-y-3 mb-4">

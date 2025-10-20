@@ -65,10 +65,10 @@ export default function VideoGrid() {
     },
     {
       id: 9,
-      client: "School of Orthodontic Assisting",
-      videoType: "20 Second Meta Ad",
-      thumbnail: "/images/soa-logo.png",
-      youtubeId: "qDOI3p-Hqng"
+      client: "Maven Baseball Lab",
+      videoType: "40 Second Meta Ad",
+      thumbnail: "/images/maven-logo.png",
+      youtubeId: "24t7EZgQ6E4"
     },
     {
       id: 10,
