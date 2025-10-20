@@ -51,7 +51,7 @@ export default function Hero() {
       >
         {/* Main Headline */}
         <motion.h1
-          className="font-serif text-[1.75rem] sm:text-[2rem] md:text-[2.5rem] lg:text-[4rem] xl:text-[5rem] font-semibold leading-[1.1] text-[#F8F6F3] mb-[clamp(60px,15vh,120px)] md:mb-[clamp(90px,19vh,160px)]"
+          className="font-serif text-[1.75rem] sm:text-[2rem] md:text-[2.5rem] lg:text-[4rem] xl:text-[5rem] font-semibold leading-[1.1] text-[#F8F6F3] mb-[clamp(60px,15vh,120px)] md:mb-[clamp(105px,21vh,180px)]"
           variants={fadeInUp}
           initial="hidden"
           animate="visible"
