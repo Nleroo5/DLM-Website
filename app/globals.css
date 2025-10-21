@@ -174,3 +174,9 @@ div[class*="container"] {
     scrollbar-color: rgba(133, 199, 179, 0.4) transparent;
   }
 }
+
+/* Hide particle background on specific pages */
+body:has(.hide-particles) .particle-background,
+body:has(.hide-particles) .particle {
+  display: none !important;
+}
