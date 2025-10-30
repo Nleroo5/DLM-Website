@@ -366,7 +366,7 @@ export default function MetaAdsCalculator() {
               {/* Management Fee */}
               <div className="mb-4">
                 <label className="block text-[#EEF4D9] text-[0.95rem] font-serif mb-2 font-semibold">
-                  Management Fee (Optional): ${managementFee.toLocaleString()}/month
+                  Management Fee: ${managementFee.toLocaleString()}/month
                 </label>
                 <input
                   type="range"
