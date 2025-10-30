@@ -56,25 +56,6 @@ export default function MetaAdsCalculator() {
   const [conversionRate, setConversionRate] = useState(0);
   const [managementFee, setManagementFee] = useState(0);
 
-  // Get management fee helper text based on percentage of ad spend
-  const getManagementFeeHelperText = (fee: number, budget: number) => {
-    if (fee === 0) {
-      return "DIY mode: No management fees included";
-    }
-
-    const percentage = budget > 0 ? (fee / budget) * 100 : 0;
-
-    if (percentage < 10) {
-      return "Below typical agency rates";
-    } else if (percentage >= 10 && percentage <= 20) {
-      return "Industry standard range";
-    } else if (percentage > 20 && percentage <= 30) {
-      return "Premium management tier";
-    } else {
-      return "Management fee is above standard rates";
-    }
-  };
-
   // Calculate budget efficiency curve - lower is better (economies of scale at higher budgets)
   const getBudgetEfficiency = (budget: number, industryKey: string) => {
     const industryInfo = INDUSTRY_DATA[industryKey as keyof typeof INDUSTRY_DATA];
@@ -381,11 +362,6 @@ export default function MetaAdsCalculator() {
                   <span>$0 = DIY/No Management</span>
                   <span>$5,000</span>
                 </div>
-                {managementFee > 0 && (
-                  <p className="text-[#EEF4D9] text-[0.75rem] mt-2 font-serif opacity-70">
-                    {getManagementFeeHelperText(managementFee, monthlyBudget)}
-                  </p>
-                )}
               </div>
 
               {/* Reset Button */}
