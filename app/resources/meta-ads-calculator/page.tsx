@@ -105,6 +105,8 @@ export default function MetaAdsCalculator() {
         savingsPercent: 0,
         confidence: 0,
         conversionRate: 0,
+        totalInvestment: 0,
+        managementFeePercentage: 0,
       };
     }
 
