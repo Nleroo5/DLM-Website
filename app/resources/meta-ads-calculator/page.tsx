@@ -260,10 +260,10 @@ export default function MetaAdsCalculator() {
                 </select>
               </div>
 
-              {/* Monthly Budget Slider */}
+              {/* Meta Ad Spend Slider */}
               <div className="mb-4">
                 <label className="block text-[#EEF4D9] text-[0.95rem] font-serif mb-2 font-semibold">
-                  Monthly Budget: ${monthlyBudget.toLocaleString()}
+                  Meta Ad Spend: ${monthlyBudget.toLocaleString()}
                 </label>
                 <input
                   type="range"
@@ -437,7 +437,7 @@ export default function MetaAdsCalculator() {
               <div className="space-y-3">
                 {/* Monthly Metrics */}
                 <div className="flex justify-between items-center py-2 border-b border-[rgba(85,199,179,0.2)]">
-                  <span className="text-[#EEF4D9] font-serif text-[0.9rem] opacity-70">Monthly Ad Budget</span>
+                  <span className="text-[#EEF4D9] font-serif text-[0.9rem] opacity-70">Meta Ad Spend</span>
                   <span className="text-[#EEF4D9] font-serif font-semibold text-[1rem]">
                     ${monthlyBudget.toLocaleString()}
                   </span>
@@ -678,7 +678,7 @@ export default function MetaAdsCalculator() {
                   <span className="text-[#EEF4D9] text-[1.1rem]">→</span>
                   <div>
                     <p className="text-[#EEF4D9] font-serif text-[0.9rem] leading-relaxed">
-                      Over {campaignDuration} months, your campaign would generate approximately <strong>{results.estimatedLeads * campaignDuration} total leads</strong> with a cumulative spend of ${(monthlyBudget * campaignDuration).toLocaleString()}.
+                      Over {campaignDuration} months, your campaign would generate approximately <strong>{results.estimatedLeads * campaignDuration} total leads</strong> with a cumulative Meta ad spend of ${(monthlyBudget * campaignDuration).toLocaleString()}.
                     </p>
                   </div>
                 </div>
