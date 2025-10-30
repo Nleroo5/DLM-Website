@@ -381,9 +381,11 @@ export default function MetaAdsCalculator() {
                   <span>$0 = DIY/No Management</span>
                   <span>$5,000</span>
                 </div>
-                <p className="text-[#EEF4D9] text-[0.75rem] mt-2 font-serif opacity-70">
-                  {getManagementFeeHelperText(managementFee, monthlyBudget)}
-                </p>
+                {managementFee > 0 && (
+                  <p className="text-[#EEF4D9] text-[0.75rem] mt-2 font-serif opacity-70">
+                    {getManagementFeeHelperText(managementFee, monthlyBudget)}
+                  </p>
+                )}
               </div>
 
               {/* Reset Button */}
