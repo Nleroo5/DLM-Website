@@ -55,22 +55,6 @@ export default function DentalIntroPage() {
     <>
       {/* Hero Section + Video Combined */}
       <section className="hero">
-        {/* Background Video */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-          className="hero-video"
-          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0 }}
-        >
-          <source src="/Videos/hero.mp4" type="video/mp4" />
-        </video>
-
-        {/* Dark overlay for better text readability */}
-        <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(0, 0, 0, 0.5)', zIndex: 1 }}></div>
-
         <div className="floating-element floating-1"></div>
         <div className="floating-element floating-2"></div>
         <div className="floating-element floating-3"></div>
