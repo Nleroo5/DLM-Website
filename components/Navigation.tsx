@@ -130,6 +130,12 @@ export default function Navigation() {
                       Target Audiences
                     </Link>
                     <Link
+                      href="/resources/meta-ads-landing-pages"
+                      className="block px-5 py-3 font-sans text-[1rem] text-[#F8F6F3] hover:bg-[rgba(212,165,116,0.08)] hover:text-[#F2A922] transition-all duration-400"
+                    >
+                      Landing Page Guide
+                    </Link>
+                    <Link
                       href="/resources/meta-ads-calculator"
                       className="block px-5 py-3 font-sans text-[1rem] text-[#F8F6F3] hover:bg-[rgba(212,165,116,0.08)] hover:text-[#F2A922] transition-all duration-400"
                     >
@@ -265,6 +271,13 @@ export default function Navigation() {
                         className="block font-sans text-[1rem] text-[#5FA99F] hover:text-[#F2A922] transition-colors duration-400 py-2"
                       >
                         Target Audiences
+                      </Link>
+                      <Link
+                        href="/resources/meta-ads-landing-pages"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="block font-sans text-[1rem] text-[#5FA99F] hover:text-[#F2A922] transition-colors duration-400 py-2"
+                      >
+                        Landing Page Guide
                       </Link>
                       <Link
                         href="/resources/meta-ads-calculator"
