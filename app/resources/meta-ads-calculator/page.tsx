@@ -20,6 +20,7 @@ const INDUSTRY_DATA = {
   'legal-services': { name: 'Legal Services', avgCPC: 3.77, avgCTR: 0.8, conversionRate: 2.1, competition: 10, traditionalMultiplier: 6.5, source: 'Clio Legal Marketing Report 2024', sourceUrl: 'https://www.clio.com/resources/legal-trends/2024-report/', lastVerified: 'Oct 2024' },
   'auto-services': { name: 'Auto Services', avgCPC: 1.55, avgCTR: 1.3, conversionRate: 3.7, competition: 6, traditionalMultiplier: 4.0, source: 'Automotive Digital Marketing 2024', sourceUrl: 'https://www.wordstream.com/blog/ws/2024/automotive-benchmarks', lastVerified: 'Oct 2024' },
   'beauty-salon': { name: 'Beauty & Salon', avgCPC: 1.09, avgCTR: 1.6, conversionRate: 4.6, competition: 5, traditionalMultiplier: 3.2, source: 'WordStream Beauty Industry 2024', sourceUrl: 'https://www.wordstream.com/blog/ws/2024/beauty-salon-benchmarks', lastVerified: 'Oct 2024' },
+  'med-spa': { name: 'Med Spa & Medical Aesthetics', avgCPC: 3.06, avgCTR: 1.5, conversionRate: 5.9, competition: 7, traditionalMultiplier: 3.5, source: 'WordStream Beauty 2024 & PatientGain Med Spa Study', sourceUrl: 'https://www.wordstream.com/blog/facebook-ads-benchmarks-2024', lastVerified: 'Oct 2024' },
   'hvac': { name: 'HVAC', avgCPC: 2.10, avgCTR: 1.2, conversionRate: 3.5, competition: 7, traditionalMultiplier: 5.0, source: 'ServiceTitan HVAC Marketing 2024', sourceUrl: 'https://www.servicetitan.com/marketing/hvac-advertising-costs', lastVerified: 'Oct 2024' },
   'plumbing': { name: 'Plumbing', avgCPC: 1.87, avgCTR: 1.3, conversionRate: 3.8, competition: 7, traditionalMultiplier: 4.8, source: 'ServiceTitan Plumbing Report 2024', sourceUrl: 'https://www.servicetitan.com/marketing/plumbing-advertising-costs', lastVerified: 'Oct 2024' },
   'education': { name: 'Education & Courses', avgCPC: 0.98, avgCTR: 1.4, conversionRate: 4.0, competition: 8, traditionalMultiplier: 3.5, source: 'EdTech Meta Advertising 2024', sourceUrl: 'https://www.wordstream.com/blog/ws/2024/education-advertising-benchmarks', lastVerified: 'Oct 2024' },
@@ -100,7 +101,8 @@ export default function MetaAdsCalculator() {
     const estimatedClicks = monthlyBudget / adjustedCPC;
 
     // Calculate impressions using CTR (more accurate than fixed 3x multiplier)
-    const averageCTR = industryData.avgCTR / 100; // Convert percentage to decimal
+    // Add validation to prevent division by zero
+    const averageCTR = Math.max(industryData.avgCTR / 100, 0.001); // Minimum 0.1% CTR to prevent division by zero
     const estimatedImpressions = Math.round(estimatedClicks / averageCTR);
 
     // Calculate leads
@@ -131,16 +133,18 @@ export default function MetaAdsCalculator() {
     const hasCustomConversion = conversionRate > 0;
     const budgetIsOptimal = monthlyBudget >= 2000 && monthlyBudget <= 10000;
     const isLowCompetition = industryData.competition < 7;
-    const isHighBudget = monthlyBudget < 1000;
+    const isLowBudget = monthlyBudget < 1000;
     const isVolatileSeason = seasonalFactor > 1.15; // Q4 high variance
+    const isLongCampaign = campaignDuration >= 6; // Long campaigns optimize over time
 
     let confidence = 60; // Lower base confidence
     if (hasCustomValue) confidence += 10; // User knows their metrics
     if (hasCustomConversion) confidence += 15; // Custom conversion data is valuable
     if (budgetIsOptimal) confidence += 10; // Sweet spot for performance
     if (isLowCompetition) confidence += 5; // More predictable results
-    if (isHighBudget) confidence -= 15; // Learning phase is unpredictable
+    if (isLowBudget) confidence -= 15; // Learning phase is unpredictable
     if (isVolatileSeason) confidence -= 5; // Q4 has higher variance
+    if (isLongCampaign) confidence += 5; // Optimization over time increases predictability
 
     return {
       estimatedImpressions,
@@ -256,7 +260,7 @@ export default function MetaAdsCalculator() {
                 <input
                   type="range"
                   min="500"
-                  max="25000"
+                  max="50000"
                   step="100"
                   value={monthlyBudget}
                   onChange={(e) => setMonthlyBudget(Number(e.target.value))}
@@ -264,7 +268,7 @@ export default function MetaAdsCalculator() {
                 />
                 <div className="flex justify-between text-[#EEF4D9] text-[0.75rem] mt-1 font-serif opacity-70">
                   <span>$500</span>
-                  <span>$25,000+</span>
+                  <span>$50,000+</span>
                 </div>
               </div>
 
@@ -295,7 +299,7 @@ export default function MetaAdsCalculator() {
               {/* Conversion Rate Override */}
               <div className="mb-4">
                 <label className="block text-[#EEF4D9] text-[0.95rem] font-serif mb-2 font-semibold">
-                  Your Conversion Rate: {conversionRate > 0 ? conversionRate : results.conversionRate}%
+                  Your Conversion Rate: {conversionRate > 0 ? `${conversionRate}%` : `${results.conversionRate}% (Industry Avg)`}
                 </label>
                 <input
                   type="range"
@@ -307,7 +311,7 @@ export default function MetaAdsCalculator() {
                   className="w-full h-2 bg-[rgba(85,199,179,0.3)] rounded-lg appearance-none cursor-pointer accent-[#F2A922]"
                 />
                 <div className="flex justify-between text-[#EEF4D9] text-[0.75rem] mt-1 font-serif opacity-70">
-                  <span>Auto (Industry Avg)</span>
+                  <span>0% = Auto (Industry Avg: {industry ? `${INDUSTRY_DATA[industry as keyof typeof INDUSTRY_DATA].conversionRate}%` : 'N/A'})</span>
                   <span>10%</span>
                 </div>
               </div>
@@ -596,6 +600,17 @@ export default function MetaAdsCalculator() {
                     <div>
                       <p className="text-[#EEF4D9] font-serif text-[0.9rem] leading-relaxed">
                         Your industry has high competition ({INDUSTRY_DATA[industry as keyof typeof INDUSTRY_DATA].competition}/10). Expect costs to be above national averages. Strategic targeting and creative optimization will be crucial for success.
+                      </p>
+                    </div>
+                  </div>
+                )}
+
+                {conversionRate > 0 && industry && conversionRate > (INDUSTRY_DATA[industry as keyof typeof INDUSTRY_DATA].conversionRate * 2) && (
+                  <div className="flex items-start gap-2.5 p-3 bg-[rgba(242,169,34,0.1)] rounded-xl border border-[rgba(242,169,34,0.3)]">
+                    <span className="text-[#F2A922] text-[1.1rem]">⚠</span>
+                    <div>
+                      <p className="text-[#EEF4D9] font-serif text-[0.9rem] leading-relaxed">
+                        Your custom conversion rate ({conversionRate}%) is significantly higher than the {INDUSTRY_DATA[industry as keyof typeof INDUSTRY_DATA].name} industry average ({INDUSTRY_DATA[industry as keyof typeof INDUSTRY_DATA].conversionRate}%). Verify your data to ensure accurate projections.
                       </p>
                     </div>
                   </div>
