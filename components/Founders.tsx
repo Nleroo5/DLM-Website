@@ -17,7 +17,7 @@ export default function Founders() {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        Meet the Founders
+        Meet the Team
       </motion.h2>
 
       {/* Section Subtitle */}
@@ -28,41 +28,46 @@ export default function Founders() {
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
-        We're not a faceless agency. Every campaign is built and managed directly by us, combining data-driven ad strategy with creative content that converts.
+        Every campaign is built and managed directly by our leadership team. From strategy to creative to client success, you work with the people who own the results.
       </motion.p>
 
-      {/* Founders Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-[60px] mt-[60px] lg:grid-cols-2 md:gap-[60px] md:mt-[60px] sm:gap-[30px] sm:mt-[30px]">
-        {/* Founder 1: Nicolas Leroo */}
+      {/* Team Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[60px] mt-[60px] md:gap-[60px] md:mt-[60px] sm:gap-[30px] sm:mt-[30px]">
+        {/* Team Member 1: Nicolas Leroo */}
         <motion.div
-          className="flex flex-col items-center gap-5 lg:flex-row lg:gap-[30px] lg:items-center md:gap-5 md:flex-col md:items-center sm:flex-col sm:gap-[15px] sm:items-center"
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          className="flex flex-col items-center gap-5"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           {/* Photo Card */}
-          <div className="relative overflow-hidden bg-[#EEF4D9] rounded-[20px] border-2 border-[rgba(133,199,179,0.3)] transition-all duration-300 h-[280px] w-[280px] flex-shrink-0 hover:transform hover:-translate-y-[5px] hover:border-[rgba(133,199,179,0.6)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)] md:h-[250px] md:w-[250px] sm:h-[220px] sm:w-[220px] group">
-            {/* Top gradient bar */}
-            <span className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#F2A922] to-[#85C7B3] z-[2]"></span>
-
+          <div className="relative overflow-hidden rounded-full border-4 border-[rgba(133,199,179,0.3)] transition-all duration-300 h-[280px] w-[280px] flex-shrink-0 hover:transform hover:-translate-y-[5px] hover:border-[rgba(133,199,179,0.6)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)] md:h-[250px] md:w-[250px] sm:h-[220px] sm:w-[220px] group">
             <Image
               src="/images/nicolas.png"
               alt="Nicolas Leroo"
               fill
               sizes="(max-width: 640px) 220px, (max-width: 768px) 250px, 280px"
-              className="object-cover transition-transform duration-300 group-hover:scale-105"
+              className="object-cover transition-transform duration-300 group-hover:scale-105 relative z-10"
+              style={{ objectPosition: 'center', transform: 'scale(1.37)' }}
             />
           </div>
 
           {/* Info */}
-          <div className="text-center max-w-[400px] lg:text-left lg:max-w-none lg:flex-1">
-            {/* Name with Meta Badge */}
-            <div className="flex items-center gap-3 justify-center flex-nowrap mb-2 lg:justify-start lg:gap-[10px] sm:gap-2">
-              <h3 className="font-serif text-[1rem] sm:text-[1.05rem] md:text-[1.15rem] lg:text-[1.3rem] xl:text-[1.4rem] font-normal text-[#EEF4D9] tracking-[-0.3px] m-0">
-                Nicolas Leroo
-              </h3>
-              {/* Meta Certification Badge */}
+          <div className="text-center max-w-[400px]">
+            <h3 className="font-serif text-[1rem] sm:text-[1.05rem] md:text-[1.15rem] lg:text-[1.3rem] xl:text-[1.4rem] font-normal text-[#EEF4D9] tracking-[-0.3px] mb-2">
+              Nicolas Leroo
+            </h3>
+
+            <p className="font-serif text-[0.9rem] sm:text-[0.95rem] md:text-[1rem] lg:text-[1.05rem] xl:text-[1.125rem] text-[#85C7B3] mb-[15px] font-normal italic">
+              Co-Founder & COO
+            </p>
+            <p className="font-serif text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.0625rem] text-[#EEF4D9] leading-[1.6] font-normal mb-[15px]">
+              Nicolas brings Meta Certification in Digital Marketing with expertise in Facebook, Instagram advertising, and web design. He builds campaigns that reach the right audience and deliver measurable ROI.
+            </p>
+
+            {/* Meta Certification Badge */}
+            <div className="flex justify-center mt-4">
               <Image
                 src="/images/Meta.png"
                 alt="Meta Certified Digital Marketing Professional"
@@ -71,48 +76,73 @@ export default function Founders() {
                 className="flex-shrink-0 lg:w-[80px] lg:h-[80px] sm:w-[70px] sm:h-[70px]"
               />
             </div>
-
-            <p className="font-serif text-[0.9rem] sm:text-[0.95rem] md:text-[1rem] lg:text-[1.05rem] xl:text-[1.125rem] text-[#85C7B3] mb-[15px] font-normal italic">
-              Paid Media Strategist
-            </p>
-            <p className="font-serif text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.0625rem] text-[#EEF4D9] leading-[1.6] font-normal">
-              Nicolas is Meta Certified in Digital Marketing, with expertise in Facebook and Instagram advertising. He focuses on building campaigns that reach the right people and turn ad spend into measurable results.
-            </p>
           </div>
         </motion.div>
 
-        {/* Founder 2: Tommy Duda */}
+        {/* Team Member 2: Tommy Duda */}
         <motion.div
-          className="flex flex-col items-center gap-5 lg:flex-row lg:gap-[30px] lg:items-center md:gap-5 md:flex-col md:items-center sm:flex-col sm:gap-[15px] sm:items-center"
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          className="flex flex-col items-center gap-5"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.5 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
         >
           {/* Photo Card */}
-          <div className="relative overflow-hidden bg-[#EEF4D9] rounded-[20px] border-2 border-[rgba(133,199,179,0.3)] transition-all duration-300 h-[280px] w-[280px] flex-shrink-0 hover:transform hover:-translate-y-[5px] hover:border-[rgba(133,199,179,0.6)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)] md:h-[250px] md:w-[250px] sm:h-[220px] sm:w-[220px] group">
-            {/* Top gradient bar */}
-            <span className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#F2A922] to-[#85C7B3] z-[2]"></span>
-
+          <div className="relative overflow-hidden rounded-full border-4 border-[rgba(133,199,179,0.3)] transition-all duration-300 h-[280px] w-[280px] flex-shrink-0 hover:transform hover:-translate-y-[5px] hover:border-[rgba(133,199,179,0.6)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)] md:h-[250px] md:w-[250px] sm:h-[220px] sm:w-[220px] group">
             <Image
               src="/images/tommy.png"
               alt="Tommy Duda"
               fill
               sizes="(max-width: 640px) 220px, (max-width: 768px) 250px, 280px"
-              className="object-cover transition-transform duration-300 group-hover:scale-105"
+              className="object-cover transition-transform duration-300 group-hover:scale-105 relative z-10"
+              style={{ objectPosition: 'center', transform: 'scale(1.37)' }}
             />
           </div>
 
           {/* Info */}
-          <div className="text-center max-w-[400px] lg:text-left lg:max-w-none lg:flex-1">
+          <div className="text-center max-w-[400px]">
             <h3 className="font-serif text-[1rem] sm:text-[1.05rem] md:text-[1.15rem] lg:text-[1.3rem] xl:text-[1.4rem] font-normal text-[#EEF4D9] mb-2 tracking-[-0.3px]">
               Tommy Duda
             </h3>
-            <p className="font-serif text-[clamp(1rem,3vw,1.125rem)] text-[#85C7B3] mb-[15px] font-normal italic">
-              Creative Director
+            <p className="font-serif text-[0.9rem] sm:text-[0.95rem] md:text-[1rem] lg:text-[1.05rem] xl:text-[1.125rem] text-[#85C7B3] mb-[15px] font-normal italic">
+              Co-Founder & Chief Creative Officer
             </p>
             <p className="font-serif text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.0625rem] text-[#EEF4D9] leading-[1.6] font-normal">
               Tommy is a specialist in video production and ad creative, leading the direction of every project. He ensures ads look professional, capture attention, and convert viewers into customers.
+            </p>
+          </div>
+        </motion.div>
+
+        {/* Team Member 3: Brenna Skalski Kirillov */}
+        <motion.div
+          className="flex flex-col items-center gap-5"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+        >
+          {/* Photo Card */}
+          <div className="relative overflow-hidden rounded-full border-4 border-[rgba(133,199,179,0.3)] transition-all duration-300 h-[280px] w-[280px] flex-shrink-0 hover:transform hover:-translate-y-[5px] hover:border-[rgba(133,199,179,0.6)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)] md:h-[250px] md:w-[250px] sm:h-[220px] sm:w-[220px] group">
+            <Image
+              src="/images/brenna.png"
+              alt="Brenna Skalski Kirillov"
+              fill
+              sizes="(max-width: 640px) 220px, (max-width: 768px) 250px, 280px"
+              className="object-cover transition-transform duration-300 group-hover:scale-105 relative z-10"
+              style={{ objectPosition: 'center' }}
+            />
+          </div>
+
+          {/* Info */}
+          <div className="text-center max-w-[400px]">
+            <h3 className="font-serif text-[1rem] sm:text-[1.05rem] md:text-[1.15rem] lg:text-[1.3rem] xl:text-[1.4rem] font-normal text-[#EEF4D9] mb-2 tracking-[-0.3px]">
+              Brenna Skalski Kirillov
+            </h3>
+            <p className="font-serif text-[0.9rem] sm:text-[0.95rem] md:text-[1rem] lg:text-[1.05rem] xl:text-[1.125rem] text-[#85C7B3] mb-[15px] font-normal italic">
+              VP of Sales & Business Development
+            </p>
+            <p className="font-serif text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.0625rem] text-[#EEF4D9] leading-[1.6] font-normal">
+              As VP of Sales & Business Development, Brenna leads client acquisition and account management. She ensures new clients are set up for success and existing partnerships continue to grow.
             </p>
           </div>
         </motion.div>
