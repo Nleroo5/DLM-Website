@@ -54,6 +54,26 @@ export default function MetaAdsCalculator() {
   const [customerValue, setCustomerValue] = useState(0);
   const [campaignDuration, setCampaignDuration] = useState(1);
   const [conversionRate, setConversionRate] = useState(0);
+  const [managementFee, setManagementFee] = useState(0);
+
+  // Get management fee helper text based on percentage of ad spend
+  const getManagementFeeHelperText = (fee: number, budget: number) => {
+    if (fee === 0) {
+      return "DIY mode: No management fees included";
+    }
+
+    const percentage = budget > 0 ? (fee / budget) * 100 : 0;
+
+    if (percentage < 10) {
+      return "Below typical agency rates";
+    } else if (percentage >= 10 && percentage <= 20) {
+      return "Industry standard range";
+    } else if (percentage > 20 && percentage <= 30) {
+      return "Premium management tier";
+    } else {
+      return "Management fee is above standard rates";
+    }
+  };
 
   // Calculate budget efficiency curve - lower is better (economies of scale at higher budgets)
   const getBudgetEfficiency = (budget: number, industryKey: string) => {
@@ -109,17 +129,20 @@ export default function MetaAdsCalculator() {
     const effectiveConversionRate = conversionRate > 0 ? conversionRate : industryData.conversionRate;
     const estimatedLeads = Math.round(estimatedClicks * (effectiveConversionRate / 100));
 
-    // Calculate CPL
-    const costPerLead = estimatedLeads > 0 ? monthlyBudget / estimatedLeads : 0;
+    // Calculate total investment (ad spend + management fee)
+    const totalInvestment = monthlyBudget + managementFee;
 
-    // Calculate ROI
+    // Calculate CPL (including management fee if present)
+    const costPerLead = estimatedLeads > 0 ? totalInvestment / estimatedLeads : 0;
+
+    // Calculate ROI (accounting for management fee)
     let roi = 0;
     let revenue = 0;
     let profit = 0;
     if (customerValue > 0 && estimatedLeads > 0) {
       revenue = estimatedLeads * customerValue;
-      profit = revenue - monthlyBudget;
-      roi = (profit / monthlyBudget) * 100;
+      profit = revenue - totalInvestment; // Subtract total investment (ad spend + management)
+      roi = (profit / totalInvestment) * 100; // ROI based on total investment
     }
 
     // Traditional advertising comparison (industry-specific multipliers)
@@ -161,8 +184,10 @@ export default function MetaAdsCalculator() {
       savingsPercent: Math.round(savingsPercent),
       confidence,
       conversionRate: effectiveConversionRate,
+      totalInvestment: Math.round(totalInvestment),
+      managementFeePercentage: monthlyBudget > 0 ? Math.round((managementFee / monthlyBudget) * 100) : 0,
     };
-  }, [industry, location, monthlyBudget, customerValue, campaignDuration, conversionRate]);
+  }, [industry, location, monthlyBudget, customerValue, campaignDuration, conversionRate, managementFee]);
 
   return (
     <main className="min-h-screen pt-[110px] pb-[60px] px-6 bg-[#0B1D2E]">
@@ -336,6 +361,29 @@ export default function MetaAdsCalculator() {
                 </div>
               </div>
 
+              {/* Management Fee */}
+              <div className="mb-4">
+                <label className="block text-[#EEF4D9] text-[0.95rem] font-serif mb-2 font-semibold">
+                  Management Fee (Optional): ${managementFee.toLocaleString()}/month
+                </label>
+                <input
+                  type="range"
+                  min="0"
+                  max="5000"
+                  step="50"
+                  value={managementFee}
+                  onChange={(e) => setManagementFee(Number(e.target.value))}
+                  className="w-full h-2 bg-[rgba(85,199,179,0.3)] rounded-lg appearance-none cursor-pointer accent-[#F2A922]"
+                />
+                <div className="flex justify-between text-[#EEF4D9] text-[0.75rem] mt-1 font-serif opacity-70">
+                  <span>$0 = DIY/No Management</span>
+                  <span>$5,000</span>
+                </div>
+                <p className="text-[#EEF4D9] text-[0.75rem] mt-2 font-serif opacity-70">
+                  {getManagementFeeHelperText(managementFee, monthlyBudget)}
+                </p>
+              </div>
+
               {/* Reset Button */}
               <button
                 onClick={() => {
@@ -345,6 +393,7 @@ export default function MetaAdsCalculator() {
                   setCustomerValue(0);
                   setConversionRate(0);
                   setCampaignDuration(1);
+                  setManagementFee(0);
                 }}
                 className="w-full px-6 py-3 bg-transparent border-2 border-[#85C7B3] text-[#EEF4D9] rounded-xl font-serif font-semibold transition-all duration-300 hover:bg-[rgba(85,199,179,0.1)] hover:border-[#F2A922] hover:text-[#F2A922]"
               >
@@ -413,6 +462,24 @@ export default function MetaAdsCalculator() {
                     ${monthlyBudget.toLocaleString()}
                   </span>
                 </div>
+
+                {managementFee > 0 && (
+                  <>
+                    <div className="flex justify-between items-center py-2 border-b border-[rgba(85,199,179,0.2)]">
+                      <span className="text-[#EEF4D9] font-serif text-[0.9rem] opacity-70">Management Fee</span>
+                      <span className="text-[#EEF4D9] font-serif font-semibold text-[1rem]">
+                        +${managementFee.toLocaleString()}
+                      </span>
+                    </div>
+
+                    <div className="flex justify-between items-center py-2 border-b border-[rgba(85,199,179,0.2)] bg-[rgba(242,169,34,0.05)]">
+                      <span className="text-[#F2A922] font-serif text-[0.95rem] font-semibold">Total Investment</span>
+                      <span className="text-[#F2A922] font-serif font-bold text-[1.05rem]">
+                        ${results.totalInvestment.toLocaleString()}
+                      </span>
+                    </div>
+                  </>
+                )}
 
                 <div className="flex justify-between items-center py-2 border-b border-[rgba(85,199,179,0.2)]">
                   <span className="text-[#EEF4D9] font-serif text-[0.9rem] opacity-70">Estimated Clicks</span>
