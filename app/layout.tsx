@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     description: "Atlanta's premier Meta advertising agency. We build Facebook & Instagram ad campaigns and high-converting websites that bring your best customers to you.",
     images: [
       {
-        url: "/images/dlm-logo.png",
+        url: "/images/dlm-logo2.png",
         width: 1200,
         height: 630,
         alt: "Drive Lead Media Logo",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Atlanta Meta Advertising Agency | Facebook & Instagram Ads",
     description: "Atlanta's premier Meta advertising agency. We build Facebook & Instagram ad campaigns and high-converting websites.",
-    images: ["/images/dlm-logo.png"],
+    images: ["/images/dlm-logo2.png"],
   },
   icons: {
     icon: "/images/dlm-logo2.png",

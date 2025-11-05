@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     description: "Meta advertising that converts. From 15-second hooks to full campaigns. View our portfolio of actor-led videos, motion graphics, and high-performing Meta ads.",
     images: [
       {
-        url: "/images/dlm-logo.png",
+        url: "/images/dlm-logo2.png",
         width: 1200,
         height: 630,
         alt: "Drive Lead Media Portfolio",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Our Work - Meta Ad Portfolio | Drive Lead Media",
     description: "Meta advertising that converts. From 15-second hooks to full campaigns. View our portfolio of actor-led videos and motion graphics.",
-    images: ["/images/dlm-logo.png"],
+    images: ["/images/dlm-logo2.png"],
   },
   alternates: {
     canonical: "/portfolio",
