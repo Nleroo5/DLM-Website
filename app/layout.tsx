@@ -10,17 +10,19 @@ const bitter = Bitter({
   weight: ["400", "600", "700"],
   subsets: ["latin"],
   variable: "--font-bitter",
+  display: 'swap',
 });
 
 const inter = Inter({
   weight: ["400", "500", "600"],
   subsets: ["latin"],
   variable: "--font-inter",
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
   title: "Atlanta Meta Advertising Agency | Facebook & Instagram Ads | Drive Lead Media",
-  description: "Atlanta's premier Meta advertising agency. We build Facebook & Instagram ad campaigns and high-converting websites that bring your best customers to you. Serving Atlanta, GA and nationwide.",
+  description: "Atlanta Meta advertising agency. Facebook & Instagram ad campaigns that convert. Video production, targeting strategy & website design. Serving Atlanta, GA.",
   keywords: "atlanta meta ads agency, facebook advertising atlanta, instagram ads atlanta ga, meta advertising agency atlanta, atlanta social media marketing, facebook ads agency atlanta, meta ads consultant atlanta, video ads production atlanta, atlanta digital marketing agency, meta certified atlanta",
   authors: [{ name: "Drive Lead Media" }],
   creator: "Drive Lead Media",

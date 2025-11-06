@@ -1,13 +1,16 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Why Your Meta Ads Need a Dedicated Landing Page | Drive Lead Media',
-  description: 'Learn why dedicated landing pages convert 3-5X better than homepages for Meta ads. Discover the 5 essential elements that turn expensive clicks into customers.',
-  keywords: 'Meta ads landing pages, Facebook ads landing page, Instagram ads conversion, landing page optimization, Meta ads conversion rate, dedicated landing page',
+  title: 'Meta Ads Landing Pages Guide | How to Convert Facebook & Instagram Ad Clicks Atlanta',
+  description: 'Dedicated landing pages convert 3-5X better than homepages for Meta ads. Learn the 5 essential elements that turn Facebook & Instagram clicks into customers.',
+  keywords: 'meta ads landing pages, facebook ads landing page atlanta, instagram ads conversion, landing page optimization, meta ads conversion rate atlanta, dedicated landing page design',
   openGraph: {
-    title: 'Why Your Meta Ads Need a Dedicated Landing Page (Not Just Your Homepage)',
-    description: 'Stop wasting your Meta ad budget on homepage traffic. Learn how dedicated landing pages can 2-3x your conversion rates.',
+    title: 'Why Your Meta Ads Need a Dedicated Landing Page | Convert More Facebook & Instagram Clicks',
+    description: 'Stop wasting Meta ad budget. Dedicated landing pages convert 2-3X better than homepages. Free guide from Atlanta Meta ads experts.',
     type: 'article',
+  },
+  alternates: {
+    canonical: '/resources/meta-ads-landing-pages',
   },
 };
 
