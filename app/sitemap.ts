@@ -42,15 +42,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/blog/how-much-do-facebook-ads-cost-atlanta`,
-      lastModified: new Date('2025-11-11'),
+      lastModified: new Date('2025-09-15'),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/resources/meta-targeting-guide`,
-      lastModified: new Date(),
+      url: `${baseUrl}/blog/why-meta-ads-need-landing-pages`,
+      lastModified: new Date('2025-10-20'),
       changeFrequency: 'monthly',
-      priority: 0.9,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/blog/meta-ads-target-audience-guide`,
+      lastModified: new Date('2025-10-25'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/resources/meta-ads-calculator`,
@@ -59,10 +65,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/resources/meta-ads-landing-pages`,
+      url: `${baseUrl}/resources/targeted-ads-infographic`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.8,
+      priority: 0.7,
     },
     {
       url: `${baseUrl}/resources/targeted-ads-infographic`,

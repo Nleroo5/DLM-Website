@@ -1,8 +1,50 @@
 import Link from 'next/link';
 
 export default function FacebookAdsCostAtlantaPost() {
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "How Much Do Facebook Ads Cost in Atlanta? (2025 Complete Guide)",
+    "image": [
+      "https://driveleadmedia.com/images/dlm-logo2.png"
+    ],
+    "datePublished": "2025-09-15T09:00:00-05:00",
+    "dateModified": "2025-11-11T09:00:00-05:00",
+    "author": [{
+      "@type": "Person",
+      "name": "Nicolas Leroo",
+      "jobTitle": "Co-Founder",
+      "url": "https://driveleadmedia.com"
+    }],
+    "publisher": {
+      "@type": "Organization",
+      "name": "Drive Lead Media",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://driveleadmedia.com/images/dlm-logo2.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "Facebook ads in Atlanta cost $0.90-$3.50 per click. Complete 2025 pricing guide with industry breakdowns, budget recommendations & free ROI calculator for Atlanta businesses.",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://driveleadmedia.com/blog/how-much-do-facebook-ads-cost-atlanta"
+    },
+    "keywords": ["facebook ads cost atlanta", "meta ads pricing atlanta", "instagram ads cost", "facebook advertising budget atlanta"],
+    "articleSection": "Meta Ads Pricing",
+    "wordCount": 3264,
+    "inLanguage": "en-US"
+  };
+
   return (
     <main className="blog-page min-h-screen bg-[#0B1D2E] text-[#F8F6F3]">
+      {/* JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
+
       {/* Article Header */}
       <article className="pt-[180px] pb-[100px] px-6">
         <div className="max-w-[900px] mx-auto">

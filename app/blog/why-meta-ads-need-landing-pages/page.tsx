@@ -5,8 +5,49 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export default function WhyMetaAdsNeedLandingPages() {
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Why Your Meta Ads Need a Dedicated Landing Page",
+    "image": [
+      "https://driveleadmedia.com/images/dlm-logo2.png"
+    ],
+    "datePublished": "2025-10-20T09:00:00-05:00",
+    "dateModified": "2025-10-20T09:00:00-05:00",
+    "author": [{
+      "@type": "Person",
+      "name": "Nicolas Leroo",
+      "jobTitle": "Co-Founder",
+      "url": "https://driveleadmedia.com"
+    }],
+    "publisher": {
+      "@type": "Organization",
+      "name": "Drive Lead Media",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://driveleadmedia.com/images/dlm-logo2.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "Learn how dedicated landing pages can 2-3x your Meta ads conversion rates. Expert guide covering the 5 essential elements, message match, and ROI optimization.",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://driveleadmedia.com/blog/why-meta-ads-need-landing-pages"
+    },
+    "keywords": ["meta ads landing pages", "facebook ads landing page", "instagram ads conversion", "landing page optimization", "meta ads ROI"],
+    "articleSection": "Conversion Optimization",
+    "inLanguage": "en-US"
+  };
+
   return (
     <main className="blog-page min-h-screen bg-[#0B1D2E]">
+      {/* JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
+
       {/* Hero Section - Full Width */}
       <motion.div
         className="relative w-full pt-20 sm:pt-24 lg:pt-28 pb-16 sm:pb-20 lg:pb-24"
