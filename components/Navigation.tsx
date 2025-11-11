@@ -74,6 +74,14 @@ export default function Navigation() {
               <span className="absolute bottom-0 left-0 w-0 h-px bg-[#F2A922] transition-all duration-400 group-hover:w-full"></span>
             </Link>
 
+            <Link
+              href="/blog"
+              className="font-sans text-[1rem] text-[#F8F6F3] hover:text-[#F2A922] transition-colors duration-400 relative group font-medium"
+            >
+              Blog
+              <span className="absolute bottom-0 left-0 w-0 h-px bg-[#F2A922] transition-all duration-400 group-hover:w-full"></span>
+            </Link>
+
             {/* Resources Dropdown */}
             <div
               className="relative"
@@ -223,6 +231,14 @@ export default function Navigation() {
                 className="block font-sans text-[1.125rem] text-[#F8F6F3] hover:text-[#F2A922] transition-colors duration-400 py-2 font-medium"
               >
                 Portfolio
+              </Link>
+
+              <Link
+                href="/blog"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block font-sans text-[1.125rem] text-[#F8F6F3] hover:text-[#F2A922] transition-colors duration-400 py-2 font-medium"
+              >
+                Blog
               </Link>
 
               {/* Mobile Resources Section */}

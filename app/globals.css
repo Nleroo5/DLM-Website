@@ -177,6 +177,8 @@ div[class*="container"] {
 
 /* Hide particle background on specific pages */
 body:has(.hide-particles) .particle-background,
-body:has(.hide-particles) .particle {
+body:has(.hide-particles) .particle,
+body:has(.blog-page) .particle-background,
+body:has(.blog-page) .particle {
   display: none !important;
 }
