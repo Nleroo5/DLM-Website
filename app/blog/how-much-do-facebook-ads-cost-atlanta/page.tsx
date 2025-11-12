@@ -3,43 +3,16 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
+import { getPostBySlug, generateBlogPostSchema } from '@/lib/blog-posts';
+import Breadcrumbs from '@/components/blog/Breadcrumbs';
+import AuthorBio from '@/components/blog/AuthorBio';
 
 export default function FacebookAdsCostAtlantaPost() {
-  const schemaData = {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "How Much Do Facebook Ads Cost in Atlanta? (2025 Complete Guide)",
-    "image": [
-      "https://driveleadmedia.com/images/dlm-logo2.png"
-    ],
-    "datePublished": "2025-09-15T09:00:00-05:00",
-    "dateModified": "2025-11-11T09:00:00-05:00",
-    "author": [{
-      "@type": "Person",
-      "name": "Nicolas Leroo",
-      "jobTitle": "Co-Founder & Meta Advertising Strategist",
-      "url": "https://driveleadmedia.com/about/nicolas-leroo"
-    }],
-    "publisher": {
-      "@type": "Organization",
-      "name": "Drive Lead Media",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://driveleadmedia.com/images/dlm-logo2.png",
-        "width": 600,
-        "height": 60
-      }
-    },
-    "description": "Facebook ads in Atlanta cost $0.90-$3.50 per click. Complete 2025 pricing guide with industry breakdowns, budget recommendations & free ROI calculator for Atlanta businesses.",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://driveleadmedia.com/blog/how-much-do-facebook-ads-cost-atlanta"
-    },
-    "keywords": ["facebook ads cost atlanta", "meta ads pricing atlanta", "instagram ads cost", "facebook advertising budget atlanta"],
-    "articleSection": "Meta Ads Pricing",
-    "wordCount": 3264,
-    "inLanguage": "en-US"
-  };
+  const post = getPostBySlug('how-much-do-facebook-ads-cost-atlanta');
+
+  if (!post) return null;
+
+  const schemaData = generateBlogPostSchema(post);
 
   return (
     <main className="blog-page min-h-screen bg-[#0B1D2E]">
@@ -88,6 +61,9 @@ export default function FacebookAdsCostAtlantaPost() {
           </div>
         </div>
       </motion.div>
+
+      {/* Breadcrumbs */}
+      <Breadcrumbs category={post.category} postTitle={post.title} />
 
       {/* Article Meta Info */}
       <div className="bg-[#0B1D2E] border-b border-[#5FA99F]/20">
@@ -651,6 +627,9 @@ export default function FacebookAdsCostAtlantaPost() {
               </ul>
             </div>
           </div>
+
+          {/* Author Bio */}
+          <AuthorBio author={post.author} />
 
           {/* Back to Blog Link */}
           <div className="mt-12 pt-8 border-t border-[rgba(95,169,159,0.2)]">

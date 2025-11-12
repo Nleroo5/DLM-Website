@@ -2,29 +2,13 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import Link from 'next/link';
-import { getPostBySlug, generateBlogPostSchema } from '@/lib/blog-posts';
-import Breadcrumbs from '@/components/blog/Breadcrumbs';
-import AuthorBio from '@/components/blog/AuthorBio';
 
-export default function MetaAdsTargetAudienceGuide() {
-  const post = getPostBySlug('meta-ads-target-audience-guide');
-
-  if (!post) return null;
-
-  const schemaData = generateBlogPostSchema(post);
-
+export default function MetaTargetingGuidePage() {
   return (
-    <main className="blog-page min-h-screen bg-[#0B1D2E]">
-      {/* JSON-LD Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
-      />
-
+    <main className="min-h-screen">
       {/* Hero Section - Full Width */}
       <motion.div
-        className="relative w-full pt-20 sm:pt-24 lg:pt-28 pb-16 sm:pb-20 lg:pb-24"
+        className="relative w-full pt-[100px] pb-[80px]"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -32,8 +16,8 @@ export default function MetaAdsTargetAudienceGuide() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/images/meta-audience-target-hero.jpg"
-            alt="Meta Ads audience targeting strategy guide hero image"
+            src="/images/business-owner.jpg"
+            alt="Business owner working on laptop"
             fill
             className="object-cover"
             priority
@@ -42,66 +26,33 @@ export default function MetaAdsTargetAudienceGuide() {
         </div>
 
         {/* Text Content */}
-        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="max-w-3xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-block mb-4"
-            >
-              <span className="text-[#5FA99F] font-semibold text-sm tracking-[0.15em] uppercase">Targeting Strategy</span>
-            </motion.div>
-            <h1 className="text-[#F8F6F3] font-serif text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4">
-              Meta Ads Target Audience Guide
-            </h1>
-            <p className="text-[#D4A574] text-lg sm:text-xl leading-normal font-light">
-              Stop wasting money targeting everyone. Learn how to find your perfect customers on Facebook and Instagram.
-            </p>
-          </div>
+        <div className="relative z-10 max-w-[900px] mx-auto px-6 sm:px-12 py-16 sm:py-20">
+          <h1 className="text-[#F8F6F3] font-serif text-[2.5rem] sm:text-[3.5rem] font-normal leading-tight mb-6">
+            Target Audiences Guide
+          </h1>
+          <p className="text-[#D4A574] text-[clamp(1.2rem,2.5vw,1.6rem)] max-w-[700px] leading-relaxed">
+            Stop wasting money targeting everyone. Learn how to find your perfect customers on Facebook and Instagram.
+          </p>
         </div>
       </motion.div>
 
-      {/* Article Meta Info */}
-      <div className="bg-[#0B1D2E] border-b border-[#5FA99F]/20">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 py-6">
-          <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-[#F8F6F3]/70 text-lg">
-            <div className="flex items-center gap-2">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <span>10 min read</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
-              </svg>
-              <span>Meta Ads, Audience Targeting, Advertising Strategy</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Breadcrumbs */}
-      <Breadcrumbs category={post.category} postTitle={post.title} />
-
-      {/* Main Content */}
-      <article className="bg-[#0B1D2E]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 py-10 sm:py-12 lg:py-16">
+      {/* Content Container with Gradient Background */}
+      <div className="bg-gradient-to-b from-[#0A1628] via-[#0E2338] to-[#0A1628]">
+        <div className="max-w-[900px] mx-auto px-6 pb-[80px]">
 
         {/* Section 1 - Why Targeting Matters */}
         <motion.section
-          className="mb-20"
+          className="mb-20 relative z-10"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <div className="bg-gradient-to-br from-[#0B1D2E] to-[#162E42] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
+          <div className="bg-gradient-to-br from-[#0B1D2E] to-[#162E42] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-10 sm:p-12">
             <div className="flex items-center mb-8">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[rgba(212,165,116,0.2)] rounded-xl flex items-center justify-center mr-4">
-                <span className="text-[#D4A574] text-[1.25rem] sm:text-[1.5rem] font-bold">1</span>
+              <div className="w-12 h-12 bg-[rgba(212,165,116,0.2)] rounded-xl flex items-center justify-center mr-4">
+                <span className="text-[#D4A574] text-[1.5rem] font-bold">1</span>
               </div>
-              <h2 className="text-[#F8F6F3] font-serif text-[1.75rem] sm:text-[2rem] lg:text-[2.5rem] font-normal">
+              <h2 className="text-[#F8F6F3] font-serif text-[2rem] sm:text-[2.5rem] font-normal">
                 Why Targeting Matters
               </h2>
             </div>
@@ -149,17 +100,17 @@ export default function MetaAdsTargetAudienceGuide() {
 
         {/* Section 2 - The 3 Types of Audiences */}
         <motion.section
-          className="mb-20"
+          className="mb-20 relative z-10"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <div className="bg-gradient-to-br from-[#0B1D2E] to-[#162E42] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
+          <div className="bg-gradient-to-br from-[#0B1D2E] to-[#162E42] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-10 sm:p-12">
             <div className="flex items-center mb-8">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[rgba(212,165,116,0.2)] rounded-xl flex items-center justify-center mr-4">
-                <span className="text-[#D4A574] text-[1.25rem] sm:text-[1.5rem] font-bold">2</span>
+              <div className="w-12 h-12 bg-[rgba(212,165,116,0.2)] rounded-xl flex items-center justify-center mr-4">
+                <span className="text-[#D4A574] text-[1.5rem] font-bold">2</span>
               </div>
-              <h2 className="text-[#F8F6F3] font-serif text-[1.75rem] sm:text-[2rem] lg:text-[2.5rem] font-normal">
+              <h2 className="text-[#F8F6F3] font-serif text-[2rem] sm:text-[2.5rem] font-normal">
                 The 3 Types of Audiences
               </h2>
             </div>
@@ -168,36 +119,14 @@ export default function MetaAdsTargetAudienceGuide() {
               Not all audiences are created equal. Think of it like dating. You wouldn't propose marriage on a first date. Same with advertising.
             </p>
 
-            {/* Audience Funnel Visualization */}
-            <motion.div
-              className="my-12"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="relative rounded-[16px] overflow-hidden border border-[rgba(95,169,159,0.3)] shadow-2xl">
-                <Image
-                  src="/images/meta-audience-funnel.jpg"
-                  alt="Meta ads audience funnel showing the progression from cold audiences (strangers) to warm audiences (engaged users) to hot audiences (past customers and qualified leads)"
-                  width={1200}
-                  height={675}
-                  className="w-full h-auto"
-                />
-              </div>
-              <p className="text-center text-[#F8F6F3]/60 text-sm mt-4 italic">
-                The audience funnel: Cold → Warm → Hot progression for Meta ads targeting
-              </p>
-            </motion.div>
-
             {/* Cold Audiences */}
             <div className="mb-10">
               <div className="bg-gradient-to-r from-[#2E5266] to-[#1A3345] border-2 border-[#4A7C9D] rounded-2xl p-8">
                 <div className="mb-6 text-center">
-                  <div className="inline-block bg-[#4A7C9D] text-white px-4 py-2 sm:px-6 sm:py-3 lg:px-8 lg:py-4 rounded-xl font-bold text-[1.25rem] sm:text-[1.5rem] lg:text-[2rem] mb-4">
+                  <div className="inline-block bg-[#4A7C9D] text-white px-8 py-4 rounded-xl font-bold text-[2rem] mb-4">
                     COLD AUDIENCES
                   </div>
-                  <h3 className="text-[#F8F6F3] font-bold text-[1.4rem] sm:text-[1.6rem] lg:text-[1.8rem]">
+                  <h3 className="text-[#F8F6F3] font-bold text-[1.8rem]">
                     People Who Don't Know You
                   </h3>
                 </div>
@@ -239,10 +168,10 @@ export default function MetaAdsTargetAudienceGuide() {
             <div className="mb-10">
               <div className="bg-gradient-to-r from-[#4A5D3F] to-[#2C3826] border-2 border-[#6B8A5E] rounded-2xl p-8">
                 <div className="mb-6 text-center">
-                  <div className="inline-block bg-[#6B8A5E] text-white px-4 py-2 sm:px-6 sm:py-3 lg:px-8 lg:py-4 rounded-xl font-bold text-[1.25rem] sm:text-[1.5rem] lg:text-[2rem] mb-4">
+                  <div className="inline-block bg-[#6B8A5E] text-white px-8 py-4 rounded-xl font-bold text-[2rem] mb-4">
                     WARM AUDIENCES
                   </div>
-                  <h3 className="text-[#F8F6F3] font-bold text-[1.4rem] sm:text-[1.6rem] lg:text-[1.8rem]">
+                  <h3 className="text-[#F8F6F3] font-bold text-[1.8rem]">
                     People Who've Interacted with You
                   </h3>
                 </div>
@@ -284,10 +213,10 @@ export default function MetaAdsTargetAudienceGuide() {
             <div className="mb-6">
               <div className="bg-gradient-to-r from-[#5D3A2F] to-[#3D251F] border-2 border-[#B8865F] rounded-2xl p-8">
                 <div className="mb-6 text-center">
-                  <div className="inline-block bg-[#D4A574] text-[#0B1D2E] px-4 py-2 sm:px-6 sm:py-3 lg:px-8 lg:py-4 rounded-xl font-bold text-[1.25rem] sm:text-[1.5rem] lg:text-[2rem] mb-4">
+                  <div className="inline-block bg-[#D4A574] text-[#0B1D2E] px-8 py-4 rounded-xl font-bold text-[2rem] mb-4">
                     HOT AUDIENCES
                   </div>
-                  <h3 className="text-[#F8F6F3] font-bold text-[1.4rem] sm:text-[1.6rem] lg:text-[1.8rem]">
+                  <h3 className="text-[#F8F6F3] font-bold text-[1.8rem]">
                     Past Customers & Leads
                   </h3>
                 </div>
@@ -329,17 +258,17 @@ export default function MetaAdsTargetAudienceGuide() {
 
         {/* Section 3 - How to Build Your Perfect Audience */}
         <motion.section
-          className="mb-20"
+          className="mb-20 relative z-10"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          <div className="bg-gradient-to-br from-[#0B1D2E] to-[#162E42] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
+          <div className="bg-gradient-to-br from-[#0B1D2E] to-[#162E42] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-10 sm:p-12">
             <div className="flex items-center mb-8">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[rgba(212,165,116,0.2)] rounded-xl flex items-center justify-center mr-4">
-                <span className="text-[#D4A574] text-[1.25rem] sm:text-[1.5rem] font-bold">3</span>
+              <div className="w-12 h-12 bg-[rgba(212,165,116,0.2)] rounded-xl flex items-center justify-center mr-4">
+                <span className="text-[#D4A574] text-[1.5rem] font-bold">3</span>
               </div>
-              <h2 className="text-[#F8F6F3] font-serif text-[1.75rem] sm:text-[2rem] lg:text-[2.5rem] font-normal">
+              <h2 className="text-[#F8F6F3] font-serif text-[2rem] sm:text-[2.5rem] font-normal">
                 How to Build Your Perfect Audience
               </h2>
             </div>
@@ -408,28 +337,6 @@ export default function MetaAdsTargetAudienceGuide() {
                   </div>
                 </div>
               </div>
-
-              {/* Demographics & Targeting Chart */}
-              <motion.div
-                className="my-8"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-              >
-                <div className="relative rounded-[16px] overflow-hidden border border-[rgba(95,169,159,0.3)] shadow-2xl">
-                  <Image
-                    src="/images/meta-audience-targeting.jpg"
-                    alt="Meta Ads Manager targeting interface showing demographics, interests, and behaviors options for precise audience targeting on Facebook and Instagram"
-                    width={1200}
-                    height={675}
-                    className="w-full h-auto"
-                  />
-                </div>
-                <p className="text-center text-[#F8F6F3]/60 text-sm mt-4 italic">
-                  Example of targeting options in Meta Ads Manager: demographics, interests, and behaviors
-                </p>
-              </motion.div>
             </div>
 
             {/* Step 3 - Interests */}
@@ -483,19 +390,19 @@ export default function MetaAdsTargetAudienceGuide() {
 
                 <div className="space-y-4">
                   <div className="flex items-start">
-                    <div className="bg-[#5FA99F] text-white px-2 py-1 sm:px-3 sm:py-1 rounded-lg font-bold text-[0.85rem] sm:text-[0.95rem] lg:text-[1.1rem] mr-3 sm:mr-4 mt-1 flex-shrink-0">WEEK 1</div>
+                    <div className="bg-[#5FA99F] text-white px-3 py-1 rounded-lg font-bold text-[clamp(0.95rem,1.8vw,1.1rem)] mr-4 mt-1">WEEK 1</div>
                     <p className="text-[#F8F6F3] text-[clamp(1rem,2vw,1.2rem)] flex-1">Run your ad. Don't touch anything. Let Meta learn.</p>
                   </div>
                   <div className="flex items-start">
-                    <div className="bg-[#5FA99F] text-white px-2 py-1 sm:px-3 sm:py-1 rounded-lg font-bold text-[0.85rem] sm:text-[0.95rem] lg:text-[1.1rem] mr-3 sm:mr-4 mt-1 flex-shrink-0">WEEK 2</div>
+                    <div className="bg-[#5FA99F] text-white px-3 py-1 rounded-lg font-bold text-[clamp(0.95rem,1.8vw,1.1rem)] mr-4 mt-1">WEEK 2</div>
                     <p className="text-[#F8F6F3] text-[clamp(1rem,2vw,1.2rem)] flex-1">Check your results. Is cost per click under $2? Are people converting? If not, narrow your audience.</p>
                   </div>
                   <div className="flex items-start">
-                    <div className="bg-[#5FA99F] text-white px-2 py-1 sm:px-3 sm:py-1 rounded-lg font-bold text-[0.85rem] sm:text-[0.95rem] lg:text-[1.1rem] mr-3 sm:mr-4 mt-1 flex-shrink-0">WEEK 3</div>
+                    <div className="bg-[#5FA99F] text-white px-3 py-1 rounded-lg font-bold text-[clamp(0.95rem,1.8vw,1.1rem)] mr-4 mt-1">WEEK 3</div>
                     <p className="text-[#F8F6F3] text-[clamp(1rem,2vw,1.2rem)] flex-1">Try a different age range or interest. See if it improves.</p>
                   </div>
                   <div className="flex items-start">
-                    <div className="bg-[#D4A574] text-[#0B1D2E] px-2 py-1 sm:px-3 sm:py-1 rounded-lg font-bold text-[0.85rem] sm:text-[0.95rem] lg:text-[1.1rem] mr-3 sm:mr-4 mt-1 flex-shrink-0">MONTH 2</div>
+                    <div className="bg-[#D4A574] text-[#0B1D2E] px-3 py-1 rounded-lg font-bold text-[clamp(0.95rem,1.8vw,1.1rem)] mr-4 mt-1">MONTH 2</div>
                     <p className="text-[#F8F6F3] text-[clamp(1rem,2vw,1.2rem)] flex-1">You now know what works. Double down on that audience.</p>
                   </div>
                 </div>
@@ -506,7 +413,7 @@ export default function MetaAdsTargetAudienceGuide() {
 
         {/* Quick Reference Card */}
         <motion.div
-          className="bg-gradient-to-br from-[#D4A574] to-[#C89860] rounded-[32px] p-6 sm:p-10 lg:p-12 mb-12"
+          className="bg-gradient-to-br from-[#D4A574] to-[#C89860] rounded-[32px] p-10 sm:p-12 mb-12 relative z-10"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
@@ -533,34 +440,8 @@ export default function MetaAdsTargetAudienceGuide() {
           </div>
         </motion.div>
 
-        {/* CTA Section */}
-        <motion.section
-          className="mb-4"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.0 }}
-        >
-          <div className="bg-gradient-to-br from-[#0B1D2E] to-[#162E42] rounded-3xl p-12 shadow-2xl text-center">
-            <h2 className="text-[#F8F6F3] font-serif text-3xl font-bold mb-4">
-              Need Help Setting Up Your Target Audiences?
-            </h2>
-            <p className="text-[#F8F6F3] text-lg mb-6 max-w-2xl mx-auto">
-              We'll analyze your business, build custom audiences, and manage your Meta ads campaigns so you get the best results from day one.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-block bg-[#5FA99F] hover:bg-[#4A8A82] text-[#0B1D2E] px-10 py-5 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-xl"
-            >
-              Get a Free Strategy Call
-            </Link>
-          </div>
-        </motion.section>
-
-        {/* Author Bio */}
-        <AuthorBio author={post.author} />
-
         </div>
-      </article>
+      </div>
     </main>
   );
 }
