@@ -417,7 +417,7 @@ export default function FacebookAdsCostAtlantaPost() {
               <div className="bg-gradient-to-br from-[#162E42] to-[#1A3345] border border-[rgba(95,169,159,0.3)] rounded-[16px] p-6">
                 <h3 className="text-[#5FA99F] text-[1.3rem] font-medium mb-3">3. Create a Dedicated Landing Page (Not Your Homepage)</h3>
                 <p className="text-[#F8F6F3] text-[1.05rem] leading-[1.7]">
-                  Sending ad clicks to your homepage is like opening 10 doors for your customer — they get confused and leave. A dedicated landing page with one clear offer, one clear call-to-action, and no navigation menu converts 3-5X better. Better conversion rate = lower cost per lead. (Read our full guide: <Link href="/resources/meta-ads-landing-pages" className="text-[#5FA99F] underline">Why Your Meta Ads Need Dedicated Landing Pages</Link>)
+                  Sending ad clicks to your homepage is like opening 10 doors for your customer — they get confused and leave. A dedicated landing page with one clear offer, one clear call-to-action, and no navigation menu converts 3-5X better. Better conversion rate = lower cost per lead. (Read our full guide: <Link href="/blog/why-meta-ads-need-landing-pages" className="text-[#5FA99F] underline">Why Your Meta Ads Need Dedicated Landing Pages</Link>)
                 </p>
               </div>
 
@@ -534,12 +534,12 @@ export default function FacebookAdsCostAtlantaPost() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/resources/meta-targeting-guide" className="text-[#5FA99F] underline hover:text-[#D4A574]">
-                    Free Meta Ads Targeting Guide
+                  <Link href="/blog/meta-ads-target-audience-guide" className="text-[#5FA99F] underline hover:text-[#D4A574]">
+                    Meta Ads Target Audience Guide
                   </Link>
                 </li>
                 <li>
-                  <Link href="/resources/meta-ads-landing-pages" className="text-[#5FA99F] underline hover:text-[#D4A574]">
+                  <Link href="/blog/why-meta-ads-need-landing-pages" className="text-[#5FA99F] underline hover:text-[#D4A574]">
                     Why Your Meta Ads Need Dedicated Landing Pages
                   </Link>
                 </li>
