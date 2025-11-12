@@ -68,7 +68,7 @@ export default function MetaAdsTargetAudienceGuide() {
         </div>
 
         {/* Text Content */}
-        <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-12 lg:px-16">
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="max-w-3xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -90,8 +90,8 @@ export default function MetaAdsTargetAudienceGuide() {
 
       {/* Article Meta Info */}
       <div className="bg-[#0B1D2E] border-b border-[#5FA99F]/20">
-        <div className="max-w-6xl mx-auto px-6 sm:px-12 lg:px-20 py-6">
-          <div className="flex flex-wrap items-center gap-6 text-[#F8F6F3]/70 text-lg">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 py-6">
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-[#F8F6F3]/70 text-lg">
             <div className="flex items-center gap-2">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -110,7 +110,7 @@ export default function MetaAdsTargetAudienceGuide() {
 
       {/* Main Content */}
       <article className="bg-[#0B1D2E]">
-        <div className="max-w-6xl mx-auto px-6 sm:px-12 lg:px-16 py-12 sm:py-16 lg:py-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 py-10 sm:py-12 lg:py-16">
 
         {/* Section 1 - Why Targeting Matters */}
         <motion.section
@@ -119,12 +119,12 @@ export default function MetaAdsTargetAudienceGuide() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <div className="bg-gradient-to-br from-[#0B1D2E] to-[#162E42] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-10 sm:p-12">
+          <div className="bg-gradient-to-br from-[#0B1D2E] to-[#162E42] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
             <div className="flex items-center mb-8">
-              <div className="w-12 h-12 bg-[rgba(212,165,116,0.2)] rounded-xl flex items-center justify-center mr-4">
-                <span className="text-[#D4A574] text-[1.5rem] font-bold">1</span>
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[rgba(212,165,116,0.2)] rounded-xl flex items-center justify-center mr-4">
+                <span className="text-[#D4A574] text-[1.25rem] sm:text-[1.5rem] font-bold">1</span>
               </div>
-              <h2 className="text-[#F8F6F3] font-serif text-[2rem] sm:text-[2.5rem] font-normal">
+              <h2 className="text-[#F8F6F3] font-serif text-[1.75rem] sm:text-[2rem] lg:text-[2.5rem] font-normal">
                 Why Targeting Matters
               </h2>
             </div>
@@ -177,12 +177,12 @@ export default function MetaAdsTargetAudienceGuide() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <div className="bg-gradient-to-br from-[#0B1D2E] to-[#162E42] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-10 sm:p-12">
+          <div className="bg-gradient-to-br from-[#0B1D2E] to-[#162E42] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
             <div className="flex items-center mb-8">
-              <div className="w-12 h-12 bg-[rgba(212,165,116,0.2)] rounded-xl flex items-center justify-center mr-4">
-                <span className="text-[#D4A574] text-[1.5rem] font-bold">2</span>
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[rgba(212,165,116,0.2)] rounded-xl flex items-center justify-center mr-4">
+                <span className="text-[#D4A574] text-[1.25rem] sm:text-[1.5rem] font-bold">2</span>
               </div>
-              <h2 className="text-[#F8F6F3] font-serif text-[2rem] sm:text-[2.5rem] font-normal">
+              <h2 className="text-[#F8F6F3] font-serif text-[1.75rem] sm:text-[2rem] lg:text-[2.5rem] font-normal">
                 The 3 Types of Audiences
               </h2>
             </div>
@@ -195,10 +195,10 @@ export default function MetaAdsTargetAudienceGuide() {
             <div className="mb-10">
               <div className="bg-gradient-to-r from-[#2E5266] to-[#1A3345] border-2 border-[#4A7C9D] rounded-2xl p-8">
                 <div className="mb-6 text-center">
-                  <div className="inline-block bg-[#4A7C9D] text-white px-8 py-4 rounded-xl font-bold text-[2rem] mb-4">
+                  <div className="inline-block bg-[#4A7C9D] text-white px-4 py-2 sm:px-6 sm:py-3 lg:px-8 lg:py-4 rounded-xl font-bold text-[1.25rem] sm:text-[1.5rem] lg:text-[2rem] mb-4">
                     COLD AUDIENCES
                   </div>
-                  <h3 className="text-[#F8F6F3] font-bold text-[1.8rem]">
+                  <h3 className="text-[#F8F6F3] font-bold text-[1.4rem] sm:text-[1.6rem] lg:text-[1.8rem]">
                     People Who Don't Know You
                   </h3>
                 </div>
@@ -240,10 +240,10 @@ export default function MetaAdsTargetAudienceGuide() {
             <div className="mb-10">
               <div className="bg-gradient-to-r from-[#4A5D3F] to-[#2C3826] border-2 border-[#6B8A5E] rounded-2xl p-8">
                 <div className="mb-6 text-center">
-                  <div className="inline-block bg-[#6B8A5E] text-white px-8 py-4 rounded-xl font-bold text-[2rem] mb-4">
+                  <div className="inline-block bg-[#6B8A5E] text-white px-4 py-2 sm:px-6 sm:py-3 lg:px-8 lg:py-4 rounded-xl font-bold text-[1.25rem] sm:text-[1.5rem] lg:text-[2rem] mb-4">
                     WARM AUDIENCES
                   </div>
-                  <h3 className="text-[#F8F6F3] font-bold text-[1.8rem]">
+                  <h3 className="text-[#F8F6F3] font-bold text-[1.4rem] sm:text-[1.6rem] lg:text-[1.8rem]">
                     People Who've Interacted with You
                   </h3>
                 </div>
@@ -285,10 +285,10 @@ export default function MetaAdsTargetAudienceGuide() {
             <div className="mb-6">
               <div className="bg-gradient-to-r from-[#5D3A2F] to-[#3D251F] border-2 border-[#B8865F] rounded-2xl p-8">
                 <div className="mb-6 text-center">
-                  <div className="inline-block bg-[#D4A574] text-[#0B1D2E] px-8 py-4 rounded-xl font-bold text-[2rem] mb-4">
+                  <div className="inline-block bg-[#D4A574] text-[#0B1D2E] px-4 py-2 sm:px-6 sm:py-3 lg:px-8 lg:py-4 rounded-xl font-bold text-[1.25rem] sm:text-[1.5rem] lg:text-[2rem] mb-4">
                     HOT AUDIENCES
                   </div>
-                  <h3 className="text-[#F8F6F3] font-bold text-[1.8rem]">
+                  <h3 className="text-[#F8F6F3] font-bold text-[1.4rem] sm:text-[1.6rem] lg:text-[1.8rem]">
                     Past Customers & Leads
                   </h3>
                 </div>
@@ -335,12 +335,12 @@ export default function MetaAdsTargetAudienceGuide() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          <div className="bg-gradient-to-br from-[#0B1D2E] to-[#162E42] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-10 sm:p-12">
+          <div className="bg-gradient-to-br from-[#0B1D2E] to-[#162E42] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
             <div className="flex items-center mb-8">
-              <div className="w-12 h-12 bg-[rgba(212,165,116,0.2)] rounded-xl flex items-center justify-center mr-4">
-                <span className="text-[#D4A574] text-[1.5rem] font-bold">3</span>
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[rgba(212,165,116,0.2)] rounded-xl flex items-center justify-center mr-4">
+                <span className="text-[#D4A574] text-[1.25rem] sm:text-[1.5rem] font-bold">3</span>
               </div>
-              <h2 className="text-[#F8F6F3] font-serif text-[2rem] sm:text-[2.5rem] font-normal">
+              <h2 className="text-[#F8F6F3] font-serif text-[1.75rem] sm:text-[2rem] lg:text-[2.5rem] font-normal">
                 How to Build Your Perfect Audience
               </h2>
             </div>
@@ -462,19 +462,19 @@ export default function MetaAdsTargetAudienceGuide() {
 
                 <div className="space-y-4">
                   <div className="flex items-start">
-                    <div className="bg-[#5FA99F] text-white px-3 py-1 rounded-lg font-bold text-[clamp(0.95rem,1.8vw,1.1rem)] mr-4 mt-1">WEEK 1</div>
+                    <div className="bg-[#5FA99F] text-white px-2 py-1 sm:px-3 sm:py-1 rounded-lg font-bold text-[0.85rem] sm:text-[0.95rem] lg:text-[1.1rem] mr-3 sm:mr-4 mt-1 flex-shrink-0">WEEK 1</div>
                     <p className="text-[#F8F6F3] text-[clamp(1rem,2vw,1.2rem)] flex-1">Run your ad. Don't touch anything. Let Meta learn.</p>
                   </div>
                   <div className="flex items-start">
-                    <div className="bg-[#5FA99F] text-white px-3 py-1 rounded-lg font-bold text-[clamp(0.95rem,1.8vw,1.1rem)] mr-4 mt-1">WEEK 2</div>
+                    <div className="bg-[#5FA99F] text-white px-2 py-1 sm:px-3 sm:py-1 rounded-lg font-bold text-[0.85rem] sm:text-[0.95rem] lg:text-[1.1rem] mr-3 sm:mr-4 mt-1 flex-shrink-0">WEEK 2</div>
                     <p className="text-[#F8F6F3] text-[clamp(1rem,2vw,1.2rem)] flex-1">Check your results. Is cost per click under $2? Are people converting? If not, narrow your audience.</p>
                   </div>
                   <div className="flex items-start">
-                    <div className="bg-[#5FA99F] text-white px-3 py-1 rounded-lg font-bold text-[clamp(0.95rem,1.8vw,1.1rem)] mr-4 mt-1">WEEK 3</div>
+                    <div className="bg-[#5FA99F] text-white px-2 py-1 sm:px-3 sm:py-1 rounded-lg font-bold text-[0.85rem] sm:text-[0.95rem] lg:text-[1.1rem] mr-3 sm:mr-4 mt-1 flex-shrink-0">WEEK 3</div>
                     <p className="text-[#F8F6F3] text-[clamp(1rem,2vw,1.2rem)] flex-1">Try a different age range or interest. See if it improves.</p>
                   </div>
                   <div className="flex items-start">
-                    <div className="bg-[#D4A574] text-[#0B1D2E] px-3 py-1 rounded-lg font-bold text-[clamp(0.95rem,1.8vw,1.1rem)] mr-4 mt-1">MONTH 2</div>
+                    <div className="bg-[#D4A574] text-[#0B1D2E] px-2 py-1 sm:px-3 sm:py-1 rounded-lg font-bold text-[0.85rem] sm:text-[0.95rem] lg:text-[1.1rem] mr-3 sm:mr-4 mt-1 flex-shrink-0">MONTH 2</div>
                     <p className="text-[#F8F6F3] text-[clamp(1rem,2vw,1.2rem)] flex-1">You now know what works. Double down on that audience.</p>
                   </div>
                 </div>
@@ -485,7 +485,7 @@ export default function MetaAdsTargetAudienceGuide() {
 
         {/* Quick Reference Card */}
         <motion.div
-          className="bg-gradient-to-br from-[#D4A574] to-[#C89860] rounded-[32px] p-10 sm:p-12 mb-12"
+          className="bg-gradient-to-br from-[#D4A574] to-[#C89860] rounded-[32px] p-6 sm:p-10 lg:p-12 mb-12"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
