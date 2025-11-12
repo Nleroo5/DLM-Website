@@ -1,3 +1,7 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import Image from 'next/image';
 import Link from 'next/link';
 
 export default function FacebookAdsCostAtlantaPost() {
@@ -38,36 +42,82 @@ export default function FacebookAdsCostAtlantaPost() {
   };
 
   return (
-    <main className="blog-page min-h-screen bg-[#0B1D2E] text-[#F8F6F3]">
+    <main className="blog-page min-h-screen bg-[#0B1D2E]">
       {/* JSON-LD Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
 
-      {/* Article Header */}
-      <article className="pt-[180px] pb-[100px] px-6">
-        <div className="max-w-[900px] mx-auto">
-          {/* Category Badge */}
-          <div className="mb-6">
-            <span className="inline-block bg-[rgba(212,165,116,0.2)] text-[#D4A574] px-4 py-2 rounded-full text-[0.875rem] font-medium">
-              Meta Ads Pricing
-            </span>
-          </div>
+      {/* Hero Section - Full Width */}
+      <motion.div
+        className="relative w-full pt-20 sm:pt-24 lg:pt-28 pb-16 sm:pb-20 lg:pb-24"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/atlanta.jpg"
+            alt="Atlanta skyline with modern buildings representing local businesses investing in Facebook and Instagram advertising"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[rgba(11,29,46,0.95)] via-[rgba(11,29,46,0.85)] to-[rgba(11,29,46,0.7)]"></div>
+        </div>
 
-          {/* Title */}
-          <h1 className="text-[#F8F6F3] font-serif text-[2.5rem] sm:text-[3.5rem] md:text-[4rem] font-normal leading-[1.1] mb-6">
-            How Much Do Facebook Ads Cost in Atlanta? (2025 Complete Guide)
-          </h1>
-
-          {/* Author & Meta Info */}
-          <div className="flex flex-wrap items-center gap-4 text-[#D4A574] text-[0.9375rem] mb-8 pb-8 border-b border-[rgba(95,169,159,0.2)]">
-            <span>By Nicolas Leroo, Co-Founder of Drive Lead Media</span>
-            <span>•</span>
-            <span>Updated November 2025</span>
-            <span>•</span>
-            <span>14 min read</span>
+        {/* Text Content */}
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="max-w-3xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="inline-block mb-4"
+            >
+              <span className="text-[#5FA99F] font-semibold text-sm tracking-[0.15em] uppercase">Meta Ads Pricing</span>
+            </motion.div>
+            <h1 className="text-[#F8F6F3] font-serif text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4">
+              How Much Do Facebook Ads Cost in Atlanta? (2025 Complete Guide)
+            </h1>
+            <p className="text-[#D4A574] text-lg sm:text-xl leading-normal font-light">
+              Real pricing data, budget recommendations, and what Atlanta businesses actually pay for Facebook & Instagram ads.
+            </p>
           </div>
+        </div>
+      </motion.div>
+
+      {/* Article Meta Info */}
+      <div className="bg-[#0B1D2E] border-b border-[#5FA99F]/20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 py-6">
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-[#F8F6F3]/70 text-lg">
+            <div className="flex items-center gap-2">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
+              <span>By Nicolas Leroo</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>14 min read</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              <span>Updated November 2025</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <article className="bg-[#0B1D2E]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 py-10 sm:py-12 lg:py-16">
 
           {/* Article Content */}
           <div className="prose prose-invert prose-lg max-w-none">
