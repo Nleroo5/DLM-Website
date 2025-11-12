@@ -171,6 +171,28 @@ export default function FacebookAdsCostAtlantaPost() {
               Based on real Atlanta campaigns in 2025, here's what businesses are currently seeing:
             </p>
 
+            {/* Meta Metrics Chart */}
+            <motion.div
+              className="my-12"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="relative rounded-[16px] overflow-hidden border border-[rgba(95,169,159,0.3)] shadow-2xl">
+                <Image
+                  src="/images/meta-chart.jpg"
+                  alt="Real Meta Ads Manager dashboard showing CPC (cost per click) and CPM (cost per thousand impressions) metrics for Atlanta business campaigns"
+                  width={1200}
+                  height={675}
+                  className="w-full h-auto"
+                />
+              </div>
+              <p className="text-center text-[#F8F6F3]/60 text-sm mt-4 italic">
+                Real Meta Ads metrics showing CPC and CPM costs from Atlanta campaigns
+              </p>
+            </motion.div>
+
             <div className="overflow-x-auto my-8">
               <table className="w-full border-collapse bg-gradient-to-br from-[#162E42] to-[#1A3345] rounded-[16px] overflow-hidden">
                 <thead>
@@ -277,6 +299,28 @@ export default function FacebookAdsCostAtlantaPost() {
                 Try Free ROI Calculator →
               </Link>
             </div>
+
+            {/* Meta Calculator Preview */}
+            <motion.div
+              className="my-12"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="relative rounded-[16px] overflow-hidden border border-[rgba(95,169,159,0.3)] shadow-2xl">
+                <Image
+                  src="/images/meta-calculator.jpg"
+                  alt="Drive Lead Media's free Meta Ads ROI calculator showing budget input, industry selection, and projected costs for Atlanta businesses"
+                  width={1200}
+                  height={900}
+                  className="w-full h-auto"
+                />
+              </div>
+              <p className="text-center text-[#F8F6F3]/60 text-sm mt-4 italic">
+                Our free calculator helps Atlanta businesses project their Meta ads costs and ROI
+              </p>
+            </motion.div>
 
             {/* Section: What Results to Expect */}
             <h2 className="text-[#F8F6F3] font-serif text-[2rem] font-normal mt-12 mb-6">
