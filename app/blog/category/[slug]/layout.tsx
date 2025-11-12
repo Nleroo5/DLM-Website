@@ -2,12 +2,13 @@ import type { Metadata } from 'next';
 import { getAllCategories } from '@/lib/blog-posts';
 
 interface Props {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
   const categories = getAllCategories();
-  const category = categories.find(cat => cat.slug === params.slug);
+  const category = categories.find(cat => cat.slug === slug);
 
   if (!category) {
     return {
@@ -25,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: 'website',
     },
     alternates: {
-      canonical: `/blog/category/${params.slug}`,
+      canonical: `/blog/category/${slug}`,
     },
   };
 }

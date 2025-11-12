@@ -2,11 +2,12 @@ import type { Metadata } from 'next';
 import { getProjectBySlug } from '@/lib/portfolio-projects';
 
 interface Props {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const project = getProjectBySlug(params.slug);
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
 
   if (!project) {
     return {
@@ -21,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       type: 'article',
       locale: 'en_US',
-      url: `https://driveleadmedia.com/portfolio/${params.slug}`,
+      url: `https://driveleadmedia.com/portfolio/${slug}`,
       siteName: 'Drive Lead Media',
       title: project.title,
       description: project.description,
@@ -50,7 +51,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       images: project.heroImage ? [project.heroImage] : ['/images/dlm-logo2.png'],
     },
     alternates: {
-      canonical: `/portfolio/${params.slug}`,
+      canonical: `/portfolio/${slug}`,
     },
   };
 }
