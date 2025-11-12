@@ -25,7 +25,7 @@ export default function ActorLedVideos() {
       client: "Sample Dental Ad",
       videoType: "15 Second Actor-Led Ad",
       thumbnail: "/images/dlm-logo.png",
-      youtubeId: "1firvNqcNMs"
+      youtubeId: "5TDwucithxs"
     },
     {
       id: 4,
