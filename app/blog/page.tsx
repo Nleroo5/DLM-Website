@@ -55,33 +55,18 @@ export default function BlogPage() {
                 href={`/blog/${post.slug}`}
                 className="group bg-gradient-to-br from-[#0B1D2E] to-[#162E42] border border-[rgba(95,169,159,0.2)] rounded-[20px] sm:rounded-[24px] p-6 sm:p-8 hover:border-[#5FA99F] transition-all duration-300 hover:-translate-y-1"
               >
-                {/* Category Tag */}
-                <div className="inline-block bg-[rgba(212,165,116,0.2)] text-[#D4A574] px-3 py-1 rounded-full text-[0.8125rem] sm:text-[0.875rem] font-medium mb-3 sm:mb-4">
-                  {post.category}
-                </div>
-
                 {/* Title */}
-                <h2 className="text-[#F8F6F3] font-serif text-[1.375rem] sm:text-[1.5rem] font-normal leading-tight mb-3 group-hover:text-[#5FA99F] transition-colors">
+                <h2 className="text-[#F8F6F3] font-serif text-[1.25rem] sm:text-[1.375rem] lg:text-[1.5rem] font-normal leading-snug mb-4 sm:mb-5 group-hover:text-[#5FA99F] transition-colors">
                   {post.title}
                 </h2>
 
-                {/* Excerpt */}
-                <p className="text-[#F8F6F3] opacity-80 text-[0.9375rem] sm:text-[1rem] leading-relaxed mb-4">
-                  {post.excerpt}
-                </p>
-
                 {/* Meta Info */}
-                <div className="flex flex-wrap items-center gap-2 text-[0.8125rem] sm:text-[0.875rem] text-[#D4A574]">
+                <div className="flex flex-wrap items-center gap-2 text-[0.875rem] sm:text-[0.9375rem] text-[#D4A574]">
                   <span>{post.date}</span>
-                  <span className="hidden sm:inline">•</span>
+                  <span>•</span>
+                  <span>By {post.author}</span>
+                  <span>•</span>
                   <span>{post.readTime}</span>
-                </div>
-
-                {/* Author */}
-                <div className="mt-4 pt-4 border-t border-[rgba(95,169,159,0.2)]">
-                  <p className="text-[0.8125rem] sm:text-[0.875rem] text-[#F8F6F3] opacity-70">
-                    By {post.author}
-                  </p>
                 </div>
               </Link>
             ))}
