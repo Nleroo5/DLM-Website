@@ -13,9 +13,14 @@ export interface PortfolioProject {
   featured: boolean;
   date: string; // "Q1 2025" or "January 2025"
   thumbnail: string;
-  heroImage?: string; // For websites
+  heroImage?: string; // For websites (desktop screenshot)
   images?: string[]; // Additional screenshots for websites
   liveUrl?: string; // If client allows
+
+  // Device-specific screenshots for responsive showcase
+  desktopImage?: string;
+  tabletImage?: string;
+  mobileImage?: string;
 
   // Website-specific fields
   services?: string[]; // ["Web Design", "Development", "SEO"]
@@ -61,10 +66,12 @@ export const portfolioProjects: PortfolioProject[] = [
     date: 'Q1 2025',
     thumbnail: '/portfolio/restaurant-thumb.jpg',
     heroImage: '/portfolio/restaurant-hero.jpg',
+    desktopImage: '/portfolio/restaurant-desktop.jpg',
+    tabletImage: '/portfolio/restaurant-tablet.jpg',
+    mobileImage: '/portfolio/restaurant-mobile.jpg',
     images: [
       '/portfolio/restaurant-1.jpg',
-      '/portfolio/restaurant-2.jpg',
-      '/portfolio/restaurant-mobile.jpg'
+      '/portfolio/restaurant-2.jpg'
     ],
     liveUrl: '', // Add if available
     services: ['Web Design', 'Development', 'SEO Optimization'],
@@ -104,10 +111,12 @@ export const portfolioProjects: PortfolioProject[] = [
     date: 'Q4 2024',
     thumbnail: '/portfolio/professional-thumb.jpg',
     heroImage: '/portfolio/professional-hero.jpg',
+    desktopImage: '/portfolio/professional-desktop.jpg',
+    tabletImage: '/portfolio/professional-tablet.jpg',
+    mobileImage: '/portfolio/professional-mobile.jpg',
     images: [
       '/portfolio/professional-1.jpg',
-      '/portfolio/professional-2.jpg',
-      '/portfolio/professional-mobile.jpg'
+      '/portfolio/professional-2.jpg'
     ],
     liveUrl: '', // Add if available
     services: ['Web Design', 'Development', 'Lead Generation'],

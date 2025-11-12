@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { getProjectBySlug, generateProjectSchema } from '@/lib/portfolio-projects';
+import { DeviceShowcase } from '@/components/portfolio/DeviceFrames';
 
 export default function ProjectPage() {
   const params = useParams();
@@ -64,47 +65,25 @@ export default function ProjectPage() {
             </h1>
 
             {/* Description */}
-            <p className="text-[#D4A574] text-[1.25rem] sm:text-[1.375rem] max-w-[900px] leading-relaxed mb-8">
+            <p className="text-[#D4A574] text-[1.25rem] sm:text-[1.375rem] max-w-[900px] leading-relaxed">
               {project.description}
             </p>
-
-            {/* Live URL */}
-            {project.liveUrl && (
-              <a
-                href={project.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[#5FA99F] text-[#0B1D2E] rounded-xl font-medium hover:bg-[#4A8A82] transition-colors"
-              >
-                <span>Visit Live Site</span>
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
-            )}
           </motion.div>
         </div>
       </section>
 
-      {/* Hero Image */}
-      {project.heroImage && (
+      {/* Device Showcase */}
+      {project.desktopImage && project.tabletImage && project.mobileImage && (
         <section className="pb-[60px] px-4 sm:px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="max-w-[1400px] mx-auto"
-          >
-            <div className="relative w-full aspect-video rounded-[20px] overflow-hidden border border-[rgba(95,169,159,0.2)] shadow-2xl">
-              <Image
-                src={project.heroImage}
-                alt={`${project.title} - Homepage`}
-                fill
-                className="object-cover object-top"
-              />
-            </div>
-          </motion.div>
+          <div className="max-w-[1400px] mx-auto">
+            <DeviceShowcase
+              desktopSrc={project.desktopImage}
+              tabletSrc={project.tabletImage}
+              mobileSrc={project.mobileImage}
+              projectTitle={project.title}
+              liveUrl={project.liveUrl}
+            />
+          </div>
         </section>
       )}
 

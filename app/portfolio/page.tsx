@@ -21,7 +21,7 @@ export default function PortfolioPage() {
               Our Portfolio
             </h1>
             <p className="text-[#D4A574] text-[1.125rem] sm:text-[1.25rem] lg:text-[1.375rem] max-w-[800px] mx-auto leading-relaxed">
-              Custom websites and Meta advertising content built for Atlanta businesses
+              Custom websites and Meta advertising content built for any business
             </p>
           </motion.div>
         </div>
@@ -61,16 +61,10 @@ export default function PortfolioPage() {
                       </div>
                     </div>
 
-                    {/* Title & Count */}
-                    <h2 className="text-[#F8F6F3] font-serif text-[2rem] sm:text-[2.5rem] font-normal mb-4 group-hover:text-[#5FA99F] transition-colors">
+                    {/* Title */}
+                    <h2 className="text-[#F8F6F3] font-serif text-[2rem] sm:text-[2.5rem] font-normal mb-6 group-hover:text-[#5FA99F] transition-colors">
                       Websites
                     </h2>
-
-                    {categories.find(cat => cat.slug === 'websites') && (
-                      <p className="text-[#D4A574] text-lg sm:text-xl font-medium mb-6">
-                        {categories.find(cat => cat.slug === 'websites')?.count} Projects
-                      </p>
-                    )}
 
                     {/* Description */}
                     <p className="text-[#F8F6F3] opacity-80 text-[1rem] sm:text-[1.125rem] leading-relaxed mb-8 flex-grow">
@@ -119,16 +113,10 @@ export default function PortfolioPage() {
                       </div>
                     </div>
 
-                    {/* Title & Count */}
-                    <h2 className="text-[#F8F6F3] font-serif text-[2rem] sm:text-[2.5rem] font-normal mb-4 group-hover:text-[#D4A574] transition-colors">
+                    {/* Title */}
+                    <h2 className="text-[#F8F6F3] font-serif text-[2rem] sm:text-[2.5rem] font-normal mb-6 group-hover:text-[#D4A574] transition-colors">
                       Video Ads
                     </h2>
-
-                    {categories.find(cat => cat.slug === 'video-ads') && (
-                      <p className="text-[#5FA99F] text-lg sm:text-xl font-medium mb-6">
-                        {categories.find(cat => cat.slug === 'video-ads')?.count} Videos
-                      </p>
-                    )}
 
                     {/* Description */}
                     <p className="text-[#F8F6F3] opacity-80 text-[1rem] sm:text-[1.125rem] leading-relaxed mb-8 flex-grow">
