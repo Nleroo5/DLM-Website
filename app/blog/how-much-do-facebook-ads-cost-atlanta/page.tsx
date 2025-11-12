@@ -182,14 +182,14 @@ export default function FacebookAdsCostAtlantaPost() {
               <div className="relative rounded-[16px] overflow-hidden border border-[rgba(95,169,159,0.3)] shadow-2xl">
                 <Image
                   src="/images/meta-chart.jpg"
-                  alt="Real Meta Ads Manager dashboard showing CPC (cost per click) and CPM (cost per thousand impressions) metrics for Atlanta business campaigns"
+                  alt="Example Meta Ads Manager dashboard showing CPC (cost per click) and CPM (cost per thousand impressions) metrics to illustrate typical advertising costs"
                   width={1200}
                   height={675}
                   className="w-full h-auto"
                 />
               </div>
               <p className="text-center text-[#F8F6F3]/60 text-sm mt-4 italic">
-                Real Meta Ads metrics showing CPC and CPM costs from Atlanta campaigns
+                Example Meta Ads metrics showing typical CPC and CPM costs
               </p>
             </motion.div>
 
