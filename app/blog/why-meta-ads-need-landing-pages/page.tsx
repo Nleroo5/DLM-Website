@@ -10,15 +10,15 @@ export default function WhyMetaAdsNeedLandingPages() {
     "@type": "BlogPosting",
     "headline": "Why Your Meta Ads Need a Dedicated Landing Page",
     "image": [
-      "https://driveleadmedia.com/images/dlm-logo2.png"
+      "https://driveleadmedia.com/images/meta-ads-landing-page-conversion-optimization-2025.jpg"
     ],
     "datePublished": "2025-10-20T09:00:00-05:00",
     "dateModified": "2025-10-20T09:00:00-05:00",
     "author": [{
       "@type": "Person",
       "name": "Nicolas Leroo",
-      "jobTitle": "Co-Founder",
-      "url": "https://driveleadmedia.com"
+      "jobTitle": "Co-Founder & Meta Advertising Strategist",
+      "url": "https://driveleadmedia.com/about/nicolas-leroo"
     }],
     "publisher": {
       "@type": "Organization",
@@ -58,8 +58,8 @@ export default function WhyMetaAdsNeedLandingPages() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/images/landingpage.jpg"
-            alt="Business owner analyzing ad performance"
+            src="/images/meta-ads-landing-page-conversion-optimization-2025.jpg"
+            alt="Business owner analyzing Meta ads landing page conversion rates on laptop dashboard showing 2-3x improvement in lead generation"
             fill
             className="object-cover"
             priority
@@ -252,8 +252,8 @@ export default function WhyMetaAdsNeedLandingPages() {
                 <div className="grid md:grid-cols-2 gap-6 items-center mb-4">
                   <div className="relative w-full aspect-[9/16] max-w-sm mx-auto rounded-xl overflow-hidden shadow-lg">
                     <Image
-                      src="/images/confused.jpg"
-                      alt="Confused visitor on homepage"
+                      src="/images/confused-visitor-homepage-bounce-meta-ads.jpg"
+                      alt="Confused visitor leaving website homepage after clicking Meta ads without finding promised offer"
                       fill
                       className="object-cover"
                     />
@@ -314,8 +314,8 @@ export default function WhyMetaAdsNeedLandingPages() {
                 <div className="grid md:grid-cols-2 gap-6 items-center">
                   <div className="relative w-full aspect-[9/16] max-w-sm mx-auto rounded-xl overflow-hidden shadow-lg">
                     <Image
-                      src="/images/happy.jpg"
-                      alt="Happy customer on landing page"
+                      src="/images/happy-customer-landing-page-conversion-meta-ads.jpg"
+                      alt="Happy customer converting on dedicated landing page with clear call-to-action matching Meta ads promise"
                       fill
                       className="object-cover"
                     />
@@ -510,8 +510,8 @@ export default function WhyMetaAdsNeedLandingPages() {
                 {/* Full-Width Phone Image */}
                 <div className="relative h-56 sm:h-64 md:h-72 lg:h-80 rounded-xl overflow-hidden shadow-2xl mb-6">
                   <Image
-                    src="/images/phone.jpg"
-                    alt="Mobile phone showing landing page"
+                    src="/images/mobile-landing-page-optimization-meta-ads-2025.jpg"
+                    alt="Mobile-optimized landing page for Meta ads showing responsive design with large tappable buttons and fast load time"
                     fill
                     className="object-cover"
                   />
@@ -577,8 +577,8 @@ export default function WhyMetaAdsNeedLandingPages() {
               {/* Financial Image */}
               <div className="relative h-80 rounded-2xl overflow-hidden shadow-2xl mb-4">
                 <Image
-                  src="/images/financial.jpg"
-                  alt="Financial analysis and ROI calculations"
+                  src="/images/meta-ads-roi-cost-per-lead-comparison-analysis.jpg"
+                  alt="Financial analysis showing Meta ads ROI comparison between homepage and dedicated landing page cost per lead"
                   fill
                   className="object-cover"
                 />
@@ -686,8 +686,8 @@ export default function WhyMetaAdsNeedLandingPages() {
               {/* Data Analytics Image */}
               <div className="relative h-80 rounded-2xl overflow-hidden shadow-2xl mb-4">
                 <Image
-                  src="/images/data.jpg"
-                  alt="Analytics dashboard and data tracking"
+                  src="/images/meta-ads-conversion-tracking-analytics-dashboard.jpg"
+                  alt="Analytics dashboard displaying Meta ads conversion tracking data and landing page performance metrics"
                   fill
                   className="object-cover"
                 />

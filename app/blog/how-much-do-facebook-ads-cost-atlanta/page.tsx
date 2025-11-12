@@ -13,8 +13,8 @@ export default function FacebookAdsCostAtlantaPost() {
     "author": [{
       "@type": "Person",
       "name": "Nicolas Leroo",
-      "jobTitle": "Co-Founder",
-      "url": "https://driveleadmedia.com"
+      "jobTitle": "Co-Founder & Meta Advertising Strategist",
+      "url": "https://driveleadmedia.com/about/nicolas-leroo"
     }],
     "publisher": {
       "@type": "Organization",
