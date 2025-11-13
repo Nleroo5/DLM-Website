@@ -89,7 +89,7 @@ export default function ProjectPage() {
         </section>
       )}
 
-      {/* Project Details - Full Width 3-Column Grid */}
+      {/* Project Details - Full Width 2-Column Grid */}
       <section className="pb-[80px] px-4 sm:px-6">
         <div className="max-w-[1400px] mx-auto">
           <motion.div
@@ -97,7 +97,7 @@ export default function ProjectPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12"
+            className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12"
           >
             {/* Services Column */}
             {project.services && project.services.length > 0 && (
@@ -136,52 +136,6 @@ export default function ProjectPage() {
                 </ul>
               </div>
             )}
-
-            {/* Project Highlights Column */}
-            <div className="bg-gradient-to-br from-[#162E42] to-[#1A3345] border border-[rgba(95,169,159,0.3)] rounded-[20px] p-6 sm:p-8">
-              <h3 className="text-[#5FA99F] font-serif text-[1.75rem] font-normal mb-6">
-                Project Highlights
-              </h3>
-              <ul className="space-y-3">
-                {project.timeline && (
-                  <li className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-[#5FA99F] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <span className="text-[#F8F6F3] opacity-90">{project.timeline}</span>
-                  </li>
-                )}
-                <li className="flex items-start gap-3">
-                  <svg className="w-5 h-5 text-[#5FA99F] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                  </svg>
-                  <span className="text-[#F8F6F3] opacity-90">Drone Video Production</span>
-                </li>
-                {project.liveUrl && (
-                  <li className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-[#5FA99F] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[#F8F6F3] opacity-90 hover:text-[#5FA99F] hover:opacity-100 transition-colors break-all"
-                    >
-                      {project.liveUrl.replace(/^https?:\/\//, '')}
-                    </a>
-                  </li>
-                )}
-                {project.date && (
-                  <li className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-[#5FA99F] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                    <span className="text-[#F8F6F3] opacity-90">{project.date}</span>
-                  </li>
-                )}
-              </ul>
-            </div>
           </motion.div>
 
           {/* Challenge Section (if exists) */}

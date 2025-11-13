@@ -70,7 +70,7 @@ export const portfolioProjects: PortfolioProject[] = [
     mobileImage: '/images/my-village-peds-mobile.png',
     liveUrl: 'https://www.myvillagepeds.com/',
     services: ['Web Design', 'Development', 'SEO', 'Branding', 'Custom Animations', 'Patient Portal Integration', 'Mobile App Integration', 'Schema Markup', 'Google Analytics Setup', 'Maps Integration'],
-    techStack: ['Custom HTML/CSS/JavaScript', 'Tailwind CSS', 'Privia Medical Group Integration', 'Google Analytics', 'Mobile-First Design', 'Schema.org Structured Data', 'Intersection Observer API'],
+    techStack: ['Custom HTML/CSS/JavaScript', 'Tailwind CSS', 'Privia Medical Group Integration', 'Google Analytics', 'Mobile-First Design', 'Schema.org Structured Data', 'Intersection Observer API', 'Drone Video Production'],
     features: [
       'Mobile-responsive design optimized for parents on-the-go',
       'Online appointment booking system',
