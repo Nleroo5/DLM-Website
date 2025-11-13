@@ -22,33 +22,15 @@ export default function WebsiteCard({ project }: WebsiteCardProps) {
     >
       <Link href={`/portfolio/${project.slug}`}>
         <div className="bg-gradient-to-br from-[#0B1D2E] to-[#162E42] border border-[rgba(95,169,159,0.2)] rounded-[20px] overflow-hidden hover:border-[#5FA99F] transition-all duration-300 hover:-translate-y-2 shadow-lg hover:shadow-2xl">
-          {/* Desktop Browser Mockup */}
-          <div className="relative w-full bg-[#1A1A1A] p-4 pt-3">
-            {/* Browser Chrome */}
-            <div className="w-full h-6 bg-[#2A2A2A] rounded-t-lg flex items-center px-3 mb-1">
-              <div className="flex items-center gap-1.5">
-                <div className="w-2 h-2 rounded-full bg-[#FF5F57]"></div>
-                <div className="w-2 h-2 rounded-full bg-[#FEBC2E]"></div>
-                <div className="w-2 h-2 rounded-full bg-[#28C840]"></div>
-              </div>
-            </div>
-
-            {/* Screenshot */}
-            <div className="relative w-full aspect-[16/10] bg-white rounded-b-lg overflow-hidden">
-              <Image
-                src={displayImage}
-                alt={project.title}
-                fill
-                className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
-              />
-
-              {/* Category Badge */}
-              <div className="absolute top-4 left-4">
-                <span className="px-3 py-1 text-xs font-medium tracking-wider uppercase bg-[#5FA99F] text-[#0B1D2E] rounded-lg shadow-lg">
-                  Website
-                </span>
-              </div>
-            </div>
+          {/* Pre-framed Desktop Image */}
+          <div className="relative w-full overflow-hidden">
+            <Image
+              src={displayImage}
+              alt={project.title}
+              width={1920}
+              height={1200}
+              className="w-full h-auto group-hover:scale-105 transition-transform duration-500"
+            />
           </div>
 
           {/* Project Info */}
