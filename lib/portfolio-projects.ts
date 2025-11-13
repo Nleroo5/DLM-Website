@@ -53,7 +53,7 @@ export const portfolioProjects: PortfolioProject[] = [
   // WEBSITES
   {
     slug: 'my-village-peds',
-    title: 'Village Pediatrics',
+    title: 'Village Pediatrics of St. Augustine',
     client: 'Village Pediatrics of St. Augustine',
     industry: 'Healthcare - Pediatrics',
     type: 'website',
