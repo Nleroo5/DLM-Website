@@ -52,49 +52,39 @@ export interface PortfolioProject {
 export const portfolioProjects: PortfolioProject[] = [
   // WEBSITES
   {
-    slug: 'atlanta-restaurant-website',
-    title: 'Modern Restaurant Website',
-    client: 'Atlanta Restaurant',
-    description: 'Full-service restaurant website with online ordering integration and menu management system.',
-    industry: 'Restaurant & Hospitality',
+    slug: 'my-village-peds',
+    title: 'My Village Peds - Pediatric Practice Website',
+    client: 'My Village Peds',
+    description: 'Modern, family-friendly website for a pediatric practice featuring online appointment booking, patient resources, and comprehensive service information.',
+    industry: 'Healthcare - Pediatrics',
     type: 'website',
     category: {
       name: 'Websites',
       slug: 'websites'
     },
     featured: true,
-    date: 'Q1 2025',
-    thumbnail: '/portfolio/restaurant-thumb.jpg',
-    heroImage: '/portfolio/restaurant-hero.jpg',
-    desktopImage: '/portfolio/restaurant-desktop.jpg',
-    tabletImage: '/portfolio/restaurant-tablet.jpg',
-    mobileImage: '/portfolio/restaurant-mobile.jpg',
-    images: [
-      '/portfolio/restaurant-1.jpg',
-      '/portfolio/restaurant-2.jpg'
-    ],
-    liveUrl: '', // Add if available
-    services: ['Web Design', 'Development', 'SEO Optimization'],
-    techStack: ['Next.js', 'React', 'Tailwind CSS', 'Vercel'],
+    date: 'Q4 2024',
+    thumbnail: '/images/my-village-peds-desktop.png',
+    heroImage: '/images/my-village-peds-desktop.png',
+    desktopImage: '/images/my-village-peds-desktop.png',
+    tabletImage: '/images/my-village-peds-tablet.png',
+    mobileImage: '/images/my-village-peds-mobile.png',
+    liveUrl: 'https://myvillagespeds.com',
+    services: ['Web Design', 'Development', 'SEO', 'Branding'],
+    techStack: ['WordPress', 'Custom Theme', 'Responsive Design'],
     features: [
-      'Mobile-responsive design',
-      'Online ordering integration',
-      'Interactive menu with filtering',
-      'Reservation system',
-      'Google Maps integration',
-      'Fast page load optimization',
-      'SEO-friendly structure',
-      'Contact form with email notifications'
+      'Mobile-responsive design optimized for parents on-the-go',
+      'Online appointment booking system',
+      'Patient portal integration',
+      'Service information and provider bios',
+      'Insurance and forms section',
+      'Blog for parenting tips and health information',
+      'Fast loading speed for better user experience',
+      'HIPAA-compliant contact forms'
     ],
-    challenge: 'Client needed a modern website to replace their outdated platform and enable online ordering to compete with delivery apps.',
-    solution: 'Built a fast, mobile-first website with integrated online ordering system, beautiful menu presentation, and optimized user experience for both mobile and desktop visitors.',
-    timeline: '6 weeks',
-    testimonial: {
-      quote: 'Working with Drive Lead Media transformed our online presence. The new website is beautiful and our online orders have increased significantly.',
-      author: 'Restaurant Owner',
-      role: 'Owner',
-      company: 'Atlanta Restaurant'
-    }
+    challenge: 'A growing pediatric practice needed a professional online presence to serve busy parents and streamline appointment scheduling while maintaining a warm, welcoming brand identity.',
+    solution: 'Designed and developed a child-friendly, easy-to-navigate website with integrated appointment booking, comprehensive service information, and resources for parents. The site reflects the practice\'s caring approach while making it simple for families to access care.',
+    timeline: '8 weeks'
   },
   {
     slug: 'professional-services-website',
