@@ -32,7 +32,7 @@ export default function WebsitesPortfolioPage() {
               Website Projects
             </h1>
             <p className="text-[#D4A574] text-[1.125rem] sm:text-[1.25rem] lg:text-[1.375rem] max-w-[800px] leading-relaxed">
-              Custom website design and development for Atlanta businesses. Mobile-responsive, fast-loading, and built to convert.
+              Professional websites designed to help your business grow online.
             </p>
           </motion.div>
         </div>

@@ -68,7 +68,7 @@ export default function PortfolioPage() {
 
                     {/* Description */}
                     <p className="text-[#F8F6F3] opacity-80 text-[1rem] sm:text-[1.125rem] leading-relaxed mb-8 flex-grow">
-                      Custom website design and development for local businesses. Mobile-responsive, fast-loading, and built to convert.
+                      Professional websites designed to help your business grow online.
                     </p>
 
                     {/* CTA */}
