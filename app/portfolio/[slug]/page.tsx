@@ -138,57 +138,46 @@ export default function ProjectPage() {
             )}
 
             {/* Project Highlights Column */}
-            <div className="bg-gradient-to-br from-[#5FA99F] to-[#4A8B82] rounded-[20px] p-6 sm:p-8">
-              <h3 className="text-[#0B1D2E] font-serif text-[1.75rem] font-normal mb-6">
+            <div className="bg-gradient-to-br from-[#162E42] to-[#1A3345] border border-[rgba(95,169,159,0.3)] rounded-[20px] p-6 sm:p-8">
+              <h3 className="text-[#5FA99F] font-serif text-[1.75rem] font-normal mb-6">
                 Project Highlights
               </h3>
-              <ul className="space-y-4">
+              <ul className="space-y-3">
                 {project.timeline && (
                   <li className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-[#0B1D2E] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-[#5FA99F] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
-                    <div>
-                      <p className="text-[#0B1D2E] opacity-70 text-sm">Timeline</p>
-                      <p className="text-[#0B1D2E] font-medium">{project.timeline}</p>
-                    </div>
+                    <span className="text-[#F8F6F3] opacity-90">{project.timeline}</span>
                   </li>
                 )}
                 <li className="flex items-start gap-3">
-                  <svg className="w-5 h-5 text-[#0B1D2E] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-[#5FA99F] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                   </svg>
-                  <div>
-                    <p className="text-[#0B1D2E] font-medium">Drone Video Production</p>
-                  </div>
+                  <span className="text-[#F8F6F3] opacity-90">Drone Video Production</span>
                 </li>
                 {project.liveUrl && (
                   <li className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-[#0B1D2E] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-[#5FA99F] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
-                    <div>
-                      <p className="text-[#0B1D2E] opacity-70 text-sm">Live Site</p>
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-[#0B1D2E] font-medium hover:underline break-all"
-                      >
-                        {project.liveUrl.replace(/^https?:\/\//, '')}
-                      </a>
-                    </div>
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#F8F6F3] opacity-90 hover:text-[#5FA99F] hover:opacity-100 transition-colors break-all"
+                    >
+                      {project.liveUrl.replace(/^https?:\/\//, '')}
+                    </a>
                   </li>
                 )}
                 {project.date && (
                   <li className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-[#0B1D2E] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-[#5FA99F] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
-                    <div>
-                      <p className="text-[#0B1D2E] opacity-70 text-sm">Completed</p>
-                      <p className="text-[#0B1D2E] font-medium">{project.date}</p>
-                    </div>
+                    <span className="text-[#F8F6F3] opacity-90">{project.date}</span>
                   </li>
                 )}
               </ul>
