@@ -99,9 +99,9 @@ export function DeviceShowcase({
 }: DeviceShowcaseProps) {
   return (
     <div className="w-full space-y-8">
-      {/* All Three Devices Side by Side on Desktop */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 max-w-[1200px] mx-auto items-center">
-        {/* Tablet - Left Side (Desktop: 25%, Mobile: Full Width) */}
+      {/* All Three Devices Side by Side on Desktop - Equal Emphasis */}
+      <div className="grid grid-cols-1 lg:grid-cols-10 gap-6 lg:gap-8 max-w-[1200px] mx-auto items-center">
+        {/* Tablet - Left Side (Desktop: 30%, Mobile: Full Width) */}
         <div className="lg:col-span-3">
           <TabletFrame
             src={tabletSrc}
@@ -109,8 +109,8 @@ export function DeviceShowcase({
           />
         </div>
 
-        {/* Desktop - Center (Desktop: 50%, Mobile: Full Width) */}
-        <div className="lg:col-span-6">
+        {/* Desktop - Center (Desktop: 40%, Mobile: Full Width) */}
+        <div className="lg:col-span-4">
           <DesktopFrame
             src={desktopSrc}
             alt={`${projectTitle} - Desktop View`}
@@ -118,7 +118,7 @@ export function DeviceShowcase({
           />
         </div>
 
-        {/* Mobile - Right Side (Desktop: 25%, Mobile: Full Width) */}
+        {/* Mobile - Right Side (Desktop: 30%, Mobile: Full Width) */}
         <div className="lg:col-span-3">
           <MobileFrame
             src={mobileSrc}
