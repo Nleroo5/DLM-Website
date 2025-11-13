@@ -65,9 +65,11 @@ export default function ProjectPage() {
             </h1>
 
             {/* Description */}
-            <p className="text-[#D4A574] text-[1.25rem] sm:text-[1.375rem] max-w-[900px] leading-relaxed">
-              {project.description}
-            </p>
+            {project.description && (
+              <p className="text-[#D4A574] text-[1.25rem] sm:text-[1.375rem] max-w-[900px] leading-relaxed">
+                {project.description}
+              </p>
+            )}
           </motion.div>
         </div>
       </section>

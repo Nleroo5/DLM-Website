@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `${project.title} - Case Study | Drive Lead Media`,
-    description: project.description,
+    description: project.description || `Portfolio case study for ${project.title} - ${project.industry} project`,
     keywords: [project.industry, project.client, ...(project.techStack || [])].join(', '),
     openGraph: {
       type: 'article',
@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: `https://driveleadmedia.com/portfolio/${slug}`,
       siteName: 'Drive Lead Media',
       title: project.title,
-      description: project.description,
+      description: project.description || `Portfolio case study for ${project.title}`,
       images: project.heroImage
         ? [
             {
@@ -47,7 +47,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     twitter: {
       card: 'summary_large_image',
       title: project.title,
-      description: project.description,
+      description: project.description || `Portfolio case study for ${project.title}`,
       images: project.heroImage ? [project.heroImage] : ['/images/dlm-logo2.png'],
     },
     alternates: {
