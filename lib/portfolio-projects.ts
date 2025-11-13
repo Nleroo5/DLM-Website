@@ -3,7 +3,7 @@ export interface PortfolioProject {
   slug: string;
   title: string;
   client: string; // Client name or anonymized ("Atlanta Dental Practice")
-  description: string;
+  description?: string;
   industry: string;
   type: 'website' | 'video-ad';
   category: {
@@ -54,8 +54,7 @@ export const portfolioProjects: PortfolioProject[] = [
   {
     slug: 'my-village-peds',
     title: 'Village Pediatrics',
-    client: 'My Village Peds',
-    description: 'Modern, family-friendly website for a pediatric practice featuring online appointment booking, patient resources, and comprehensive service information.',
+    client: 'Village Pediatrics of St. Augustine',
     industry: 'Healthcare - Pediatrics',
     type: 'website',
     category: {
@@ -69,9 +68,9 @@ export const portfolioProjects: PortfolioProject[] = [
     desktopImage: '/images/my-village-peds-desktop.png',
     tabletImage: '/images/my-village-peds-tablet.png',
     mobileImage: '/images/my-village-peds-mobile.png',
-    liveUrl: 'https://myvillagespeds.com',
-    services: ['Web Design', 'Development', 'SEO', 'Branding'],
-    techStack: ['WordPress', 'Custom Theme', 'Responsive Design'],
+    liveUrl: 'https://www.myvillagepeds.com/',
+    services: ['Web Design', 'Development', 'SEO', 'Branding', 'Custom Animations', 'Patient Portal Integration', 'Mobile App Integration', 'Schema Markup', 'Google Analytics Setup', 'Maps Integration'],
+    techStack: ['Custom HTML/CSS/JavaScript', 'Tailwind CSS', 'Privia Medical Group Integration', 'Google Analytics', 'Mobile-First Design', 'Schema.org Structured Data', 'Intersection Observer API'],
     features: [
       'Mobile-responsive design optimized for parents on-the-go',
       'Online appointment booking system',
@@ -82,8 +81,6 @@ export const portfolioProjects: PortfolioProject[] = [
       'Fast loading speed for better user experience',
       'HIPAA-compliant contact forms'
     ],
-    challenge: 'A growing pediatric practice needed a professional online presence to serve busy parents and streamline appointment scheduling while maintaining a warm, welcoming brand identity.',
-    solution: 'Designed and developed a child-friendly, easy-to-navigate website with integrated appointment booking, comprehensive service information, and resources for parents. The site reflects the practice\'s caring approach while making it simple for families to access care.',
     timeline: '8 weeks'
   },
   {
