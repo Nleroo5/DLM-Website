@@ -100,7 +100,7 @@ export function DeviceShowcase({
   return (
     <div className="w-full space-y-8">
       {/* All Three Devices Side by Side on Desktop - Equal Emphasis */}
-      <div className="grid grid-cols-1 lg:grid-cols-10 gap-6 lg:gap-8 max-w-[1200px] mx-auto items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-10 gap-6 lg:gap-8 max-w-[1600px] mx-auto items-center">
         {/* Tablet - Left Side (Desktop: 30%, Mobile: Full Width) */}
         <div className="lg:col-span-3">
           <TabletFrame
