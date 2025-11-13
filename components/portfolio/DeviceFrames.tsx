@@ -99,25 +99,32 @@ export function DeviceShowcase({
 }: DeviceShowcaseProps) {
   return (
     <div className="w-full space-y-8">
-      {/* Desktop Frame - Full Width */}
-      <div className="w-full">
-        <DesktopFrame
-          src={desktopSrc}
-          alt={`${projectTitle} - Desktop View`}
-          priority={true}
-        />
-      </div>
+      {/* All Three Devices Side by Side on Desktop */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 max-w-[1200px] mx-auto items-center">
+        {/* Tablet - Left Side (Desktop: 25%, Mobile: Full Width) */}
+        <div className="lg:col-span-3">
+          <TabletFrame
+            src={tabletSrc}
+            alt={`${projectTitle} - Tablet View`}
+          />
+        </div>
 
-      {/* Tablet and Mobile Side by Side */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 max-w-[800px] mx-auto">
-        <TabletFrame
-          src={tabletSrc}
-          alt={`${projectTitle} - Tablet View`}
-        />
-        <MobileFrame
-          src={mobileSrc}
-          alt={`${projectTitle} - Mobile View`}
-        />
+        {/* Desktop - Center (Desktop: 50%, Mobile: Full Width) */}
+        <div className="lg:col-span-6">
+          <DesktopFrame
+            src={desktopSrc}
+            alt={`${projectTitle} - Desktop View`}
+            priority={true}
+          />
+        </div>
+
+        {/* Mobile - Right Side (Desktop: 25%, Mobile: Full Width) */}
+        <div className="lg:col-span-3">
+          <MobileFrame
+            src={mobileSrc}
+            alt={`${projectTitle} - Mobile View`}
+          />
+        </div>
       </div>
 
       {/* View Live Site Button */}
