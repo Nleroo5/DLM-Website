@@ -43,6 +43,7 @@ export default function ProjectPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
+            className="text-center"
           >
             {/* Breadcrumb */}
             <div className="mb-6">
@@ -91,7 +92,7 @@ export default function ProjectPage() {
 
       {/* Project Details - Full Width 2-Column Grid */}
       <section className="pb-[80px] px-4 sm:px-6">
-        <div className="max-w-[1400px] mx-auto">
+        <div className="max-w-[1000px] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
