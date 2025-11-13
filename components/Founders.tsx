@@ -71,9 +71,9 @@ export default function Founders() {
               <Image
                 src="/images/Meta.png"
                 alt="Meta Certified Digital Marketing Professional"
-                width={90}
-                height={90}
-                className="flex-shrink-0 lg:w-[80px] lg:h-[80px] sm:w-[70px] sm:h-[70px]"
+                width={110}
+                height={110}
+                className="flex-shrink-0 lg:w-[100px] lg:h-[100px] sm:w-[85px] sm:h-[85px]"
               />
             </div>
           </div>
