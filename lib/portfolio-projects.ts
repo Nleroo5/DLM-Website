@@ -83,45 +83,6 @@ export const portfolioProjects: PortfolioProject[] = [
     ],
     timeline: '8 weeks'
   },
-  {
-    slug: 'professional-services-website',
-    title: 'Professional Services Website',
-    client: 'Atlanta Professional Services',
-    description: 'Corporate website for professional services firm with lead generation focus.',
-    industry: 'Professional Services',
-    type: 'website',
-    category: {
-      name: 'Websites',
-      slug: 'websites'
-    },
-    featured: true,
-    date: 'Q4 2024',
-    thumbnail: '/portfolio/professional-thumb.jpg',
-    heroImage: '/portfolio/professional-hero.jpg',
-    desktopImage: '/portfolio/professional-desktop.jpg',
-    tabletImage: '/portfolio/professional-tablet.jpg',
-    mobileImage: '/portfolio/professional-mobile.jpg',
-    images: [
-      '/portfolio/professional-1.jpg',
-      '/portfolio/professional-2.jpg'
-    ],
-    liveUrl: '', // Add if available
-    services: ['Web Design', 'Development', 'Lead Generation'],
-    techStack: ['Next.js', 'React', 'Tailwind CSS', 'Google Analytics'],
-    features: [
-      'Professional, corporate design',
-      'Service pages with detailed information',
-      'Team member profiles',
-      'Blog integration',
-      'Multi-step contact form',
-      'CRM integration',
-      'Fast page performance',
-      'Mobile-optimized'
-    ],
-    challenge: 'Client needed a professional website that would generate qualified leads and establish credibility in their industry.',
-    solution: 'Designed and developed a clean, professional website with strategic lead capture forms, clear service descriptions, and trust-building elements like team profiles and case studies.',
-    timeline: '5 weeks'
-  },
 
   // VIDEO ADS - Add your actual videos here
   {
