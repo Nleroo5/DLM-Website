@@ -53,7 +53,7 @@ export const portfolioProjects: PortfolioProject[] = [
   // WEBSITES
   {
     slug: 'my-village-peds',
-    title: 'My Village Peds - Pediatric Practice Website',
+    title: 'Village Pediatrics',
     client: 'My Village Peds',
     description: 'Modern, family-friendly website for a pediatric practice featuring online appointment booking, patient resources, and comprehensive service information.',
     industry: 'Healthcare - Pediatrics',
