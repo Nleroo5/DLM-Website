@@ -242,7 +242,7 @@ export default function ProjectPage() {
           <h2 className="text-[#0B1D2E] font-serif text-[2rem] sm:text-[2.5rem] font-normal mb-4">
             Want Results Like This?
           </h2>
-          <p className="text-[#0B1D2E] opacity-90 text-[1.125rem] mb-6 leading-relaxed">
+          <p className="text-[#0B1D2E] opacity-90 text-[1.25rem] sm:text-[1.375rem] mb-6 leading-relaxed">
             Let's build a custom website that drives real results for your business.
           </p>
           <Link
