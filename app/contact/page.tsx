@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import emailjs from '@emailjs/browser';
+import type emailjs from '@emailjs/browser';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -68,8 +68,11 @@ export default function ContactPage() {
     setStatus('loading');
 
     try {
+      // Dynamically import EmailJS only when form is submitted
+      const emailjs = await import('@emailjs/browser');
+
       // Send email using EmailJS
-      await emailjs.send(
+      await emailjs.default.send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!, // Service ID
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!, // Template ID
         {

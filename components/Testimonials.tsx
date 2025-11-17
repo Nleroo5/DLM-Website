@@ -113,6 +113,7 @@ export default function Testimonials() {
                   alt={testimonial.name}
                   width={112}
                   height={112}
+                  loading="lazy"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -140,6 +141,7 @@ export default function Testimonials() {
                     alt={`${testimonial.company} logo`}
                     width={80}
                     height={80}
+                    loading="lazy"
                     className="w-full h-full object-contain opacity-80 transition-opacity duration-400 group-hover:opacity-100"
                   />
                 </div>

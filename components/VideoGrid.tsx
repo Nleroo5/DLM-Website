@@ -122,12 +122,14 @@ export default function VideoGrid() {
               className="group relative overflow-hidden bg-transparent border border-[rgba(95,169,159,0.12)] rounded-[24px] aspect-[9/16] cursor-pointer shadow-[0_8px_32px_rgba(0,0,0,0.12),0_2px_8px_rgba(0,0,0,0.08),0_0_40px_rgba(212,165,116,0.1)] transition-all duration-400 hover:transform hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(0,0,0,0.25),0_8px_16px_rgba(212,165,116,0.15),0_0_60px_rgba(212,165,116,0.2)] hover:border-[rgba(212,165,116,0.3)] block no-underline"
             >
               {/* YouTube Thumbnail Background */}
-              <div
-                className="absolute inset-0 bg-cover bg-center"
-                style={{
-                  backgroundImage: `url(https://img.youtube.com/vi/${item.youtubeId}/maxresdefault.jpg)`
-                }}
-              ></div>
+              <Image
+                src={`https://img.youtube.com/vi/${item.youtubeId}/maxresdefault.jpg`}
+                alt={`${item.client} - ${item.videoType}`}
+                fill
+                loading="lazy"
+                className="object-cover"
+                sizes="(max-width: 640px) 33vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
+              />
 
               {/* Dark overlay for contrast */}
               <div className="absolute inset-0 bg-gradient-to-b from-[rgba(11,29,46,0.3)] via-[rgba(11,29,46,0.2)] to-[rgba(11,29,46,0.6)]"></div>
