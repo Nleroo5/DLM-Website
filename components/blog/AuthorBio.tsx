@@ -27,7 +27,7 @@ export default function AuthorBio({ author }: AuthorBioProps) {
           <div className="flex-shrink-0">
             <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-[#5FA99F]">
               <Image
-                src="/images/nicolas.png"
+                src="/images/nicolas.webp"
                 alt={`${author.name} - ${author.jobTitle}`}
                 fill
                 className="object-cover"

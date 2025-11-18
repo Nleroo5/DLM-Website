@@ -6,12 +6,12 @@ import Image from 'next/image';
 export default function ClientLogoBanner() {
   // Client logos - strategically ordered to avoid same logos next to each other
   const clients = [
-    { name: "The Yoga Lounge", logo: "/images/yoga.png?v=2", scale: 0.85 },
-    { name: "Maven", logo: "/images/maven-logo.png?v=2", scale: 0.85 },
-    { name: "Village Pediatrics", logo: "/images/peds.png?v=2", scale: 0.85 },
-    { name: "Dream", logo: "/images/dream-logo.png?v=2", scale: 1.1 },
-    { name: "SOA", logo: "/images/soa-logo.png?v=2", scale: 1 },
-    { name: "FCC", logo: "/images/fcc-logo.png?v=2", scale: 1 },
+    { name: "The Yoga Lounge", logo: "/images/yoga.webp?v=2", scale: 0.85 },
+    { name: "Maven", logo: "/images/maven-logo.webp?v=2", scale: 0.85 },
+    { name: "Village Pediatrics", logo: "/images/peds.webp?v=2", scale: 0.85 },
+    { name: "Dream", logo: "/images/dream-logo.webp?v=2", scale: 1.1 },
+    { name: "SOA", logo: "/images/soa-logo.webp?v=2", scale: 1 },
+    { name: "FCC", logo: "/images/fcc-logo.webp?v=2", scale: 1 },
   ];
 
   return (
@@ -55,6 +55,7 @@ export default function ClientLogoBanner() {
                     alt={client.name}
                     width={140}
                     height={80}
+                    loading="lazy"
                     className="object-contain"
                   />
                 </div>
@@ -72,6 +73,7 @@ export default function ClientLogoBanner() {
                     alt={client.name}
                     width={140}
                     height={80}
+                    loading="lazy"
                     className="object-contain"
                   />
                 </div>
@@ -89,6 +91,7 @@ export default function ClientLogoBanner() {
                     alt={client.name}
                     width={140}
                     height={80}
+                    loading="lazy"
                     className="object-contain"
                   />
                 </div>

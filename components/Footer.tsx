@@ -77,7 +77,7 @@ export default function Footer() {
             >
               <Link href="/" className="inline-block mb-4 hover:opacity-80 transition-opacity duration-300">
                 <Image
-                  src="/images/dlm-logo.png"
+                  src="/images/dlm-logo.webp"
                   alt="Drive Lead Media Logo"
                   width={140}
                   height={47}

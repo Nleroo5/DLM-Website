@@ -11,70 +11,70 @@ export default function VideoGrid() {
       id: 1,
       client: "Dream Pediatric Dentistry and Orthodontics",
       videoType: "1 Minute Meta Ad",
-      thumbnail: "/images/dream-logo.png",
+      thumbnail: "/images/dream-logo.webp",
       youtubeId: "2qwhz4K9ZXg"
     },
     {
       id: 2,
       client: "Dream Pediatric Dentistry and Orthodontics",
       videoType: "Email Marketing Video",
-      thumbnail: "/images/dream-logo.png",
+      thumbnail: "/images/dream-logo.webp",
       youtubeId: "yGGxVuA3ZDM"
     },
     {
       id: 3,
       client: "Dream Pediatric Dentistry and Orthodontics",
       videoType: "Website Banner Video",
-      thumbnail: "/images/dream-logo.png",
+      thumbnail: "/images/dream-logo.webp",
       youtubeId: "4JKRwEdejUE"
     },
     {
       id: 4,
       client: "Dream Pediatric Dentistry and Orthodontics",
       videoType: "1 Minute Meta Ad",
-      thumbnail: "/images/dream-logo.png",
+      thumbnail: "/images/dream-logo.webp",
       youtubeId: "MkbWGedLbVY"
     },
     {
       id: 5,
       client: "The Yoga Lounge",
       videoType: "30 Second Meta Ad",
-      thumbnail: "/images/yoga.png",
+      thumbnail: "/images/yoga.webp",
       youtubeId: "eoGhu1NU3jk"
     },
     {
       id: 6,
       client: "The Yoga Lounge",
       videoType: "40 Second Meta Ad",
-      thumbnail: "/images/yoga.png",
+      thumbnail: "/images/yoga.webp",
       youtubeId: "Oj4vLJ1bCNg"
     },
     {
       id: 7,
       client: "School of Orthodontic Assisting",
       videoType: "1 Minute Meta Ad",
-      thumbnail: "/images/soa-logo.png",
+      thumbnail: "/images/soa-logo.webp",
       youtubeId: "pmAMb2VQmpI"
     },
     {
       id: 8,
       client: "School of Orthodontic Assisting",
       videoType: "20 Second Meta Ad",
-      thumbnail: "/images/soa-logo.png",
+      thumbnail: "/images/soa-logo.webp",
       youtubeId: "g3yCoC4NmiE"
     },
     {
       id: 9,
       client: "Maven Baseball Lab",
       videoType: "40 Second Meta Ad",
-      thumbnail: "/images/maven-logo.png",
+      thumbnail: "/images/maven-logo.webp",
       youtubeId: "24t7EZgQ6E4"
     },
     {
       id: 10,
       client: "Maven Baseball Lab",
       videoType: "40 Second Meta Ad",
-      thumbnail: "/images/maven-logo.png",
+      thumbnail: "/images/maven-logo.webp",
       youtubeId: "b8BITNsDr_w"
     }
   ];

@@ -44,10 +44,11 @@ export default function Founders() {
           {/* Photo Card */}
           <div className="relative overflow-hidden rounded-full border-4 border-[rgba(133,199,179,0.3)] transition-all duration-300 h-[280px] w-[280px] flex-shrink-0 hover:transform hover:-translate-y-[5px] hover:border-[rgba(133,199,179,0.6)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)] md:h-[250px] md:w-[250px] sm:h-[220px] sm:w-[220px] group">
             <Image
-              src="/images/nicolas.png"
+              src="/images/nicolas.webp"
               alt="Nicolas Leroo"
               fill
               sizes="(max-width: 640px) 220px, (max-width: 768px) 250px, 280px"
+              loading="lazy"
               className="object-cover transition-transform duration-300 group-hover:scale-105 relative z-10"
               style={{ objectPosition: 'center', transform: 'scale(1.37)' }}
             />
@@ -69,10 +70,11 @@ export default function Founders() {
             {/* Meta Certification Badge */}
             <div className="flex justify-center mt-4">
               <Image
-                src="/images/Meta.png"
+                src="/images/Meta.webp"
                 alt="Meta Certified Digital Marketing Professional"
                 width={110}
                 height={110}
+                loading="lazy"
                 className="flex-shrink-0 lg:w-[100px] lg:h-[100px] sm:w-[85px] sm:h-[85px]"
               />
             </div>
@@ -90,10 +92,11 @@ export default function Founders() {
           {/* Photo Card */}
           <div className="relative overflow-hidden rounded-full border-4 border-[rgba(133,199,179,0.3)] transition-all duration-300 h-[280px] w-[280px] flex-shrink-0 hover:transform hover:-translate-y-[5px] hover:border-[rgba(133,199,179,0.6)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)] md:h-[250px] md:w-[250px] sm:h-[220px] sm:w-[220px] group">
             <Image
-              src="/images/tommy.png"
+              src="/images/tommy.webp"
               alt="Tommy Duda"
               fill
               sizes="(max-width: 640px) 220px, (max-width: 768px) 250px, 280px"
+              loading="lazy"
               className="object-cover transition-transform duration-300 group-hover:scale-105 relative z-10"
               style={{ objectPosition: 'center', transform: 'scale(1.37)' }}
             />
@@ -124,10 +127,11 @@ export default function Founders() {
           {/* Photo Card */}
           <div className="relative overflow-hidden rounded-full border-4 border-[rgba(133,199,179,0.3)] transition-all duration-300 h-[280px] w-[280px] flex-shrink-0 hover:transform hover:-translate-y-[5px] hover:border-[rgba(133,199,179,0.6)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)] md:h-[250px] md:w-[250px] sm:h-[220px] sm:w-[220px] group">
             <Image
-              src="/images/brenna.png"
+              src="/images/brenna.webp"
               alt="Brenna Skalski Kirillov"
               fill
               sizes="(max-width: 640px) 220px, (max-width: 768px) 250px, 280px"
+              loading="lazy"
               className="object-cover transition-transform duration-300 group-hover:scale-105 relative z-10"
               style={{ objectPosition: 'center' }}
             />

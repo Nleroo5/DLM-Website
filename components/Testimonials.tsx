@@ -60,8 +60,8 @@ export default function Testimonials() {
       name: "Jenn",
       title: "Owner",
       company: "The Yoga Lounge",
-      logo: "/images/yoga.png",
-      image: "/images/jenn.png",
+      logo: "/images/yoga.webp",
+      image: "/images/jenn.webp",
       nameColor: "#5FA99F",
       companyColor: "#5FA99F"
     },
@@ -70,8 +70,8 @@ export default function Testimonials() {
       name: "Dr. Austin Dupont",
       title: "Owner",
       company: "Village Pediatrics of St. Augustine",
-      logo: "/images/peds.png",
-      image: "/images/austin.png",
+      logo: "/images/peds.webp",
+      image: "/images/austin.webp",
       nameColor: "#5FA99F",
       companyColor: "#5FA99F"
     }

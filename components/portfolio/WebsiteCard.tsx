@@ -10,7 +10,7 @@ interface WebsiteCardProps {
 }
 
 export default function WebsiteCard({ project }: WebsiteCardProps) {
-  const displayImage = project.desktopImage || project.heroImage || project.thumbnail || '/images/dlm-logo.png';
+  const displayImage = project.desktopImage || project.heroImage || project.thumbnail || '/images/dlm-logo.webp';
 
   return (
     <motion.div

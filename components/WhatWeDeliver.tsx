@@ -20,22 +20,22 @@ export default function WhatWeDeliver() {
 
   const cards = [
     {
-      icon: '/images/creative-icon.png',
+      icon: '/images/creative-icon.webp',
       title: 'Video and Image Ads',
       content: 'Actor-led videos and scroll-stopping images made for Meta. No more generic stock photos or DIY footage.'
     },
     {
-      icon: '/images/target-icon.png',
+      icon: '/images/target-icon.webp',
       title: 'Full Campaign Setup',
       content: 'We build your targeting, tracking, and conversion sequences. You get campaigns that actually reach the right people.'
     },
     {
-      icon: '/images/performance-icon.png',
+      icon: '/images/performance-icon.webp',
       title: 'Ongoing Optimization',
       content: 'We test new creative, adjust budgets, and kill what\'s not working. Your campaigns get better every week.'
     },
     {
-      icon: '/images/website-icon.png',
+      icon: '/images/website-icon.webp',
       title: 'Custom Website Design',
       content: 'Fast, modern websites built to convert. If your site isn\'t pulling its weight, we\'ll rebuild it from scratch.'
     }
@@ -86,6 +86,7 @@ export default function WhatWeDeliver() {
                     alt={`${card.title} Icon`}
                     width={112}
                     height={112}
+                    loading="lazy"
                     className="w-auto h-full mx-auto object-contain"
                   />
                 </div>

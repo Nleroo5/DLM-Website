@@ -47,7 +47,7 @@ export default function Navigation() {
             className="relative flex items-center hover:opacity-80 transition-opacity duration-400"
           >
             <Image
-              src="/images/dlm-logo.png"
+              src="/images/dlm-logo.webp"
               alt="Drive Lead Media Logo"
               width={300}
               height={95}
