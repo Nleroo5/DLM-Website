@@ -44,7 +44,7 @@ export default function Hero() {
         loop
         muted
         playsInline
-        preload={shouldPlayVideo ? (isMobile ? "none" : "metadata") : "none"}
+        preload={isSlowConnection ? "none" : "metadata"}
         poster="/Videos/hero-poster.webp"
         className="absolute inset-0 w-full h-full object-cover z-0"
         style={{ objectFit: 'cover' }}
