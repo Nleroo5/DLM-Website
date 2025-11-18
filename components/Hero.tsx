@@ -3,18 +3,27 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
+import { useDeviceDetection } from '@/hooks/useDeviceDetection';
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [mounted, setMounted] = useState(false);
+  const { isMobile, isSlowConnection } = useDeviceDetection();
+  const [shouldPlayVideo, setShouldPlayVideo] = useState(true);
 
-  // Set video playback speed
+  // Determine if video should play based on connection
   useEffect(() => {
     setMounted(true);
-    if (videoRef.current) {
+
+    // Don't autoplay video on slow connections
+    if (isSlowConnection) {
+      setShouldPlayVideo(false);
+    }
+
+    if (videoRef.current && shouldPlayVideo) {
       videoRef.current.playbackRate = 1.0;
     }
-  }, []);
+  }, [isSlowConnection, shouldPlayVideo]);
 
   // Animation variants for staggered fade-in effects
   const fadeInUp = {
@@ -23,18 +32,24 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative w-full min-h-screen flex items-end justify-center overflow-hidden pt-[120px] pb-[80px] px-6" suppressHydrationWarning>
+    <section
+      className="relative w-full min-h-screen flex items-end justify-center overflow-hidden pt-[120px] pb-[80px] px-6"
+      style={{ backgroundImage: 'url(/Videos/hero-poster.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+      suppressHydrationWarning
+    >
       {/* Background Video */}
       <video
         ref={videoRef}
-        autoPlay
+        autoPlay={shouldPlayVideo}
         loop
         muted
         playsInline
-        preload="metadata"
+        preload={shouldPlayVideo ? (isMobile ? "none" : "metadata") : "none"}
+        poster="/Videos/hero-poster.webp"
         className="absolute inset-0 w-full h-full object-cover z-0"
         style={{ objectFit: 'cover' }}
       >
+        <source src="/Videos/hero.webm" type="video/webm" />
         <source src="/Videos/hero.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
