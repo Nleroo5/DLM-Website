@@ -12,8 +12,6 @@
     "@emailjs/browser": "^4.4.1",
     "@fontsource/exo-2": "^5.2.8",
     "@hookform/resolvers": "^3.9.1",
-    "@tsparticles/react": "^3.0.0",
-    "@tsparticles/slim": "^3.9.1",
     "@vercel/blob": "^2.0.0",
     "autoprefixer": "^10.4.21",
     "framer-motion": "^11.11.17",
@@ -22,7 +20,6 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.53.2",
-    "tsparticles": "^3.9.1",
     "zod": "^3.23.8"
   },
   "devDependencies": {

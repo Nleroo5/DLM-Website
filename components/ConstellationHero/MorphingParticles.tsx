@@ -152,12 +152,13 @@ export function MorphingParticles() {
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('mouseleave', handleMouseLeave);
 
-    // Adaptive particle counts - optimized for crisp font-like rendering
+    // Adaptive particle counts - optimized for crisp font-like rendering with better performance
     const getOptimalParticleCount = () => {
       const width = window.innerWidth;
-      if (width < 768) return 1200;      // Mobile: dense text
-      if (width < 1024) return 3500;     // Tablet: very dense text
-      return 8000;                        // Desktop: ultra-dense font-like text
+      if (width < 768) return 0;         // Mobile: ZERO (truly disabled - no wasted resources)
+      if (width < 1024) return 1500;     // Tablet: balanced performance (was 3500)
+      if (width < 1920) return 3500;     // Desktop: optimized quality (was 8000)
+      return 5000;                        // 4K: high quality without excess
     };
 
     // Initialize background particles (always floating)

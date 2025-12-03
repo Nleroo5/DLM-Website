@@ -56,10 +56,10 @@ export default function Hero() {
           autoPlay
           muted
           playsInline
-          preload="auto"
+          preload="metadata"
           className="w-full h-full object-cover"
         >
-          <source src="/Videos/dlm-hero-v1.webm" type="video/webm" />
+          <source src="/Videos/dlm-hero-v1-optimized.webm" type="video/webm" />
           <source src="/Videos/dlm-hero-v1.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>

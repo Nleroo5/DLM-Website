@@ -37,7 +37,7 @@ const VideoScene = ({
         loop
         muted
         playsInline
-        preload="auto"
+        preload="none"
       >
         <source src={src} type={src.endsWith('.webm') ? 'video/webm' : 'video/mp4'} />
       </video>
@@ -111,7 +111,7 @@ const MobileScene = ({
             loop
             muted
             playsInline
-            preload="auto"
+            preload="none"
           >
             <source src={videoSrc} type={videoSrc.endsWith('.webm') ? 'video/webm' : 'video/mp4'} />
           </video>
@@ -230,7 +230,7 @@ export default function HowItWorks() {
               <div className="relative w-full max-w-3xl h-[60vh] px-6 md:px-8 pointer-events-auto">
 
                 <VideoScene
-                  src="/Videos/deviceframes.webm"
+                  src="/Videos/deviceframes-optimized.webm"
                   opacity={scene1Opacity}
                   index={0}
                 />
