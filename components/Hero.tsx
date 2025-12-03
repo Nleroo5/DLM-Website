@@ -230,7 +230,7 @@ export function CTAButton() {
         <motion.div
           className="hidden md:flex fixed inset-0 items-center justify-center"
           style={{
-            zIndex: 99999,
+            zIndex: 200,
             pointerEvents: 'none'
           }}
           initial={{ opacity: 0 }}

@@ -87,7 +87,8 @@ export default function MeetTheTeam() {
       {/* Header with Laser Writing Animation */}
       <div className="max-w-[1400px] mx-auto px-4 md:px-6 text-center mb-[80px] relative">
         <h2
-          className="font-heading text-[2rem] xs:text-[2.5rem] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[5rem] font-bold text-white mb-6 leading-[1.1] relative overflow-hidden"
+          className="font-heading font-bold text-white mb-6 leading-[1.1] relative overflow-hidden whitespace-nowrap"
+          style={{ fontSize: 'clamp(1.5rem, 3.5vw, 5rem)' }}
         >
           {"The Team Behind Your Success".split('').map((char, index) => {
             const letterDelay = index * 0.01; // 10ms per letter (faster)
@@ -222,20 +223,21 @@ export default function MeetTheTeam() {
                   {/* Name */}
                   <div className="text-center mb-6">
                     <h3
-                      className="font-heading text-[1.5rem] xs:text-[1.75rem] sm:text-[2rem] md:text-[2.25rem] font-bold text-white mb-2 group-hover:text-[#5FA99F] transition-colors duration-300"
+                      className="font-heading font-bold text-white mb-2 group-hover:text-[#5FA99F] transition-colors duration-300"
                       style={{
+                        fontSize: 'clamp(1.5rem, 2.5vw, 2.25rem)',
                         textShadow: '0 0 10px rgba(95,169,159,0.3)'
                       }}
                     >
                       {member.name}
                     </h3>
-                    <p className="font-body text-[1rem] xs:text-[1.125rem] sm:text-[1.25rem] text-[#5FA99F] font-semibold">
+                    <p className="font-body text-[#5FA99F] font-semibold" style={{ fontSize: 'clamp(1rem, 1.5vw, 1.25rem)' }}>
                       {member.role}
                     </p>
                   </div>
 
                   {/* Bio */}
-                  <p className="font-body text-[1rem] sm:text-[1.0625rem] text-gray-300 leading-[1.7] text-center">
+                  <p className="font-body text-gray-300 leading-[1.7] text-center" style={{ fontSize: 'clamp(1rem, 1.2vw, 1.0625rem)' }}>
                     {member.bio}
                   </p>
                 </div>

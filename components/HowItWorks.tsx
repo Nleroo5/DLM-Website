@@ -150,14 +150,14 @@ export default function HowItWorks() {
 
   return (
     <div className="relative bg-black" style={{ zIndex: 4 }}>
-      {/* DESKTOP LAYOUT - Hidden on mobile */}
-      <div ref={containerRef} className="hidden lg:flex">
-        <div className="flex flex-col lg:flex-row min-h-[300vh] w-full">
+      {/* DESKTOP LAYOUT - Now shows on tablets (md:) and above */}
+      <div ref={containerRef} className="hidden md:flex">
+        <div className="flex flex-col md:flex-row min-h-[300vh] w-full">
 
           {/* LEFT: Scrolling Text */}
-          <div className="w-full lg:w-1/2 relative">
+          <div className="w-full md:w-1/2 relative">
             {/* Vertical Glowing Timeline */}
-            <div className="absolute left-8 top-0 bottom-0 w-[2px] hidden lg:block">
+            <div className="absolute left-8 top-0 bottom-0 w-[2px] hidden md:block">
               <div
                 className="absolute inset-0 bg-gradient-to-b from-transparent via-[#5FA99F] to-transparent"
                 style={{
@@ -224,10 +224,10 @@ export default function HowItWorks() {
             </div>
           </div>
 
-          {/* RIGHT: Sticky Graphics - SCROLL-DRIVEN FADE */}
-          <div className="w-full lg:w-1/2 relative hidden lg:block">
+          {/* RIGHT: Sticky Graphics - SCROLL-DRIVEN FADE - Now shows on tablets */}
+          <div className="w-full md:w-1/2 relative hidden md:block">
             <div className="sticky top-0 self-start h-screen flex items-center justify-center pointer-events-none">
-              <div className="relative w-full max-w-3xl h-[60vh] px-8 pointer-events-auto">
+              <div className="relative w-full max-w-3xl h-[60vh] px-6 md:px-8 pointer-events-auto">
 
                 <VideoScene
                   src="/Videos/deviceframes.webm"
@@ -254,8 +254,8 @@ export default function HowItWorks() {
         </div>
       </div>
 
-      {/* MOBILE LAYOUT - Hidden on desktop */}
-      <div className="block lg:hidden relative">
+      {/* MOBILE LAYOUT - Only show on mobile, hide on tablets and above */}
+      <div className="block md:hidden relative">
         {/* Vertical Glowing Line - Centered, behind all content */}
         <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[2px] z-0">
           <div

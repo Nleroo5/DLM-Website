@@ -21,8 +21,16 @@ export default function Navigation() {
         setShowNav(true);
       };
 
+      // Fallback timer: Show nav after 3 seconds if video fails or doesn't trigger event
+      const fallbackTimer = setTimeout(() => {
+        setShowNav(true);
+      }, 3000);
+
       window.addEventListener('heroVideoEnded', handleHeroVideoEnd);
-      return () => window.removeEventListener('heroVideoEnded', handleHeroVideoEnd);
+      return () => {
+        window.removeEventListener('heroVideoEnded', handleHeroVideoEnd);
+        clearTimeout(fallbackTimer);
+      };
     } else {
       // Show nav immediately on non-home pages
       setShowNav(true);
@@ -63,8 +71,8 @@ export default function Navigation() {
             className="max-w-[1400px] mx-auto px-4 xs:px-5 sm:px-6 lg:px-10"
           >
             <div className="flex items-center justify-end h-[70px] xs:h-[80px] sm:h-[90px]">
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-10">
+          {/* Desktop Navigation - Now shows on tablets (md:) and above */}
+          <div className="hidden md:flex items-center gap-8 lg:gap-10">
             <Link
               href="/"
               className="font-ui text-[1rem] text-[#5FA99F] hover:text-[#4a8a81] transition-colors duration-400 relative group font-medium"
@@ -179,9 +187,9 @@ export default function Navigation() {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - Only show on mobile, hide on tablets */}
           <button
-            className="lg:hidden flex flex-col gap-1.5 w-8 h-8 justify-center items-center"
+            className="md:hidden flex flex-col gap-1.5 w-8 h-8 justify-center items-center"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label={isMobileMenuOpen ? 'Close mobile menu' : 'Open mobile menu'}
             aria-expanded={isMobileMenuOpen}
@@ -208,7 +216,7 @@ export default function Navigation() {
         )}
       </AnimatePresence>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Hidden on tablets and above */}
       <AnimatePresence>
         {showNav && isMobileMenuOpen && (
           <motion.div
@@ -217,7 +225,7 @@ export default function Navigation() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.4 }}
-            className="lg:hidden bg-white backdrop-blur-lg border-t border-gray-200"
+            className="md:hidden bg-white backdrop-blur-lg border-t border-gray-200"
             role="menu"
             aria-label="Mobile navigation menu"
           >
