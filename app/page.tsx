@@ -1,26 +1,26 @@
 import dynamic from 'next/dynamic';
-import Hero from '@/components/Hero';
-import ProblemSolution from '@/components/ProblemSolution';
-import WhatWeDeliver from '@/components/WhatWeDeliver';
+import Hero, { CTAButton, MobileCTASection } from '@/components/Hero';
+import WhatWeDo from '@/components/WhatWeDo';
 
 // Dynamic imports for below-fold components to reduce initial bundle size
 const Testimonials = dynamic(() => import('@/components/Testimonials'), { ssr: true });
-const ActorNetwork = dynamic(() => import('@/components/ActorNetwork'), { ssr: true });
 const HowItWorks = dynamic(() => import('@/components/HowItWorks'), { ssr: true });
 const Founders = dynamic(() => import('@/components/Founders'), { ssr: true });
+const MeetTheTeam = dynamic(() => import('@/components/MeetTheTeam'), { ssr: true });
 const TargetedAdsCTA = dynamic(() => import('@/components/TargetedAdsCTA'), { ssr: true });
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-[#000000]">
       <Hero />
-      <ProblemSolution />
-      <WhatWeDeliver />
-      <Testimonials />
-      <ActorNetwork />
       <HowItWorks />
+      <Testimonials />
+      <MeetTheTeam />
+      <MobileCTASection />
+      <WhatWeDo />
       <Founders />
       <TargetedAdsCTA />
+      <CTAButton />
     </main>
   );
 }

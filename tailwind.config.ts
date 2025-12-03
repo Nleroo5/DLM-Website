@@ -7,16 +7,27 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      'xs': '480px',   // Modern phones (390px-479px range)
+      'sm': '640px',   // Large phones / Small tablets
+      'md': '768px',   // Tablets
+      'lg': '1024px',  // Desktop
+      'xl': '1280px',  // Large desktop
+      '2xl': '1536px', // Extra large desktop
+    },
     extend: {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        bitter: ['var(--font-bitter)', 'serif'],
-        inter: ['var(--font-inter)', 'sans-serif'],
-        serif: ['var(--font-bitter)', 'serif'],
-        sans: ['var(--font-inter)', 'sans-serif'],
+        heading: ['"Exo 2"', 'sans-serif'],
+        body: ['var(--font-arno)', 'serif'],
+        ui: ['var(--font-arno)', 'serif'],
+        exo2: ['"Exo 2"', 'sans-serif'],
+        arno: ['var(--font-arno)', 'serif'],
+        serif: ['var(--font-arno)', 'serif'],
+        sans: ['"Exo 2"', 'sans-serif'],
       },
     },
   },

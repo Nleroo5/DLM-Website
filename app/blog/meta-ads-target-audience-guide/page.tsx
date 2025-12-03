@@ -15,7 +15,7 @@ export default function MetaAdsTargetAudienceGuide() {
   const schemaData = generateBlogPostSchema(post);
 
   return (
-    <main className="blog-page min-h-screen bg-[#0B1D2E]">
+    <main className="blog-page min-h-screen bg-[#000000]">
       {/* JSON-LD Schema */}
       <script
         type="application/ld+json"
@@ -38,7 +38,7 @@ export default function MetaAdsTargetAudienceGuide() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[rgba(11,29,46,0.95)] via-[rgba(11,29,46,0.85)] to-[rgba(11,29,46,0.7)]"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[rgba(0,0,0,0.95)] via-[rgba(0,0,0,0.85)] to-[rgba(0,0,0,0.7)]"></div>
         </div>
 
         {/* Text Content */}
@@ -63,7 +63,7 @@ export default function MetaAdsTargetAudienceGuide() {
       </motion.div>
 
       {/* Article Meta Info */}
-      <div className="bg-[#0B1D2E] border-b border-[#5FA99F]/20">
+      <div className="bg-[#000000] border-b border-[#5FA99F]/20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 py-6">
           <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-[#F8F6F3]/70 text-lg">
             <div className="flex items-center gap-2">
@@ -86,7 +86,7 @@ export default function MetaAdsTargetAudienceGuide() {
       <Breadcrumbs category={post.category} postTitle={post.title} />
 
       {/* Main Content */}
-      <article className="bg-[#0B1D2E]">
+      <article className="bg-[#000000]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 py-10 sm:py-12 lg:py-16">
 
         {/* Section 1 - Why Targeting Matters */}
@@ -96,7 +96,7 @@ export default function MetaAdsTargetAudienceGuide() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <div className="bg-gradient-to-br from-[#0B1D2E] to-[#162E42] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
+          <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
             <div className="flex items-center mb-8">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[rgba(212,165,116,0.2)] rounded-xl flex items-center justify-center mr-4">
                 <span className="text-[#D4A574] text-[1.25rem] sm:text-[1.5rem] font-bold">1</span>
@@ -154,7 +154,7 @@ export default function MetaAdsTargetAudienceGuide() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <div className="bg-gradient-to-br from-[#0B1D2E] to-[#162E42] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
+          <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
             <div className="flex items-center mb-8">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[rgba(212,165,116,0.2)] rounded-xl flex items-center justify-center mr-4">
                 <span className="text-[#D4A574] text-[1.25rem] sm:text-[1.5rem] font-bold">2</span>
@@ -284,7 +284,7 @@ export default function MetaAdsTargetAudienceGuide() {
             <div className="mb-6">
               <div className="bg-gradient-to-r from-[#5D3A2F] to-[#3D251F] border-2 border-[#B8865F] rounded-2xl p-8">
                 <div className="mb-6 text-center">
-                  <div className="inline-block bg-[#D4A574] text-[#0B1D2E] px-4 py-2 sm:px-6 sm:py-3 lg:px-8 lg:py-4 rounded-xl font-bold text-[1.25rem] sm:text-[1.5rem] lg:text-[2rem] mb-4">
+                  <div className="inline-block bg-[#D4A574] text-[#000000] px-4 py-2 sm:px-6 sm:py-3 lg:px-8 lg:py-4 rounded-xl font-bold text-[1.25rem] sm:text-[1.5rem] lg:text-[2rem] mb-4">
                     HOT AUDIENCES
                   </div>
                   <h3 className="text-[#F8F6F3] font-bold text-[1.4rem] sm:text-[1.6rem] lg:text-[1.8rem]">
@@ -334,7 +334,7 @@ export default function MetaAdsTargetAudienceGuide() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          <div className="bg-gradient-to-br from-[#0B1D2E] to-[#162E42] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
+          <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
             <div className="flex items-center mb-8">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[rgba(212,165,116,0.2)] rounded-xl flex items-center justify-center mr-4">
                 <span className="text-[#D4A574] text-[1.25rem] sm:text-[1.5rem] font-bold">3</span>
@@ -441,7 +441,7 @@ export default function MetaAdsTargetAudienceGuide() {
                 </p>
 
                 <div className="space-y-6">
-                  <div className="bg-[rgba(11,29,46,0.5)] rounded-lg p-5">
+                  <div className="bg-[rgba(0,0,0,0.5)] rounded-lg p-5">
                     <h4 className="text-[#D4A574] font-bold text-[clamp(1.1rem,2.5vw,1.5rem)] mb-3">Example: Dental Practice</h4>
                     <div className="flex flex-wrap gap-2">
                       <span className="bg-[rgba(212,165,116,0.2)] border border-[#D4A574] text-[#D4A574] px-3 py-1 rounded-full text-[clamp(0.95rem,1.8vw,1.1rem)]">Cosmetic dentistry</span>
@@ -452,7 +452,7 @@ export default function MetaAdsTargetAudienceGuide() {
                     </div>
                   </div>
 
-                  <div className="bg-[rgba(11,29,46,0.5)] rounded-lg p-5">
+                  <div className="bg-[rgba(0,0,0,0.5)] rounded-lg p-5">
                     <h4 className="text-[#D4A574] font-bold text-[clamp(1.1rem,2.5vw,1.5rem)] mb-3">Example: Fitness Studio</h4>
                     <div className="flex flex-wrap gap-2">
                       <span className="bg-[rgba(212,165,116,0.2)] border border-[#D4A574] text-[#D4A574] px-3 py-1 rounded-full text-[clamp(0.95rem,1.8vw,1.1rem)]">Yoga</span>
@@ -495,7 +495,7 @@ export default function MetaAdsTargetAudienceGuide() {
                     <p className="text-[#F8F6F3] text-[clamp(1rem,2vw,1.2rem)] flex-1">Try a different age range or interest. See if it improves.</p>
                   </div>
                   <div className="flex items-start">
-                    <div className="bg-[#D4A574] text-[#0B1D2E] px-2 py-1 sm:px-3 sm:py-1 rounded-lg font-bold text-[0.85rem] sm:text-[0.95rem] lg:text-[1.1rem] mr-3 sm:mr-4 mt-1 flex-shrink-0">MONTH 2</div>
+                    <div className="bg-[#D4A574] text-[#000000] px-2 py-1 sm:px-3 sm:py-1 rounded-lg font-bold text-[0.85rem] sm:text-[0.95rem] lg:text-[1.1rem] mr-3 sm:mr-4 mt-1 flex-shrink-0">MONTH 2</div>
                     <p className="text-[#F8F6F3] text-[clamp(1rem,2vw,1.2rem)] flex-1">You now know what works. Double down on that audience.</p>
                   </div>
                 </div>
@@ -506,30 +506,34 @@ export default function MetaAdsTargetAudienceGuide() {
 
         {/* Quick Reference Card */}
         <motion.div
-          className="bg-gradient-to-br from-[#D4A574] to-[#C89860] rounded-[32px] p-6 sm:p-10 lg:p-12 mb-12"
+          className="relative bg-[#1A1A1A]/40 backdrop-blur-xl border-2 border-[rgba(95,169,159,0.3)] rounded-[32px] p-6 sm:p-10 lg:p-12 mb-12 shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:border-[#5FA99F]/60 hover:shadow-[0_0_40px_rgba(95,169,159,0.3)] transition-all duration-500 overflow-hidden group"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
         >
-          <h2 className="text-[#0B1D2E] font-serif text-[2rem] font-bold mb-6 text-center">
-            Quick Reference: Your First Audience
-          </h2>
+          <div className="absolute inset-0 bg-gradient-to-br from-[#5FA99F]/5 via-transparent to-[#85C7B3]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-          <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 mb-6">
-            <h3 className="text-[#0B1D2E] font-bold text-[clamp(1.1rem,2.5vw,1.5rem)] mb-4">Starting Template for Local Businesses:</h3>
-            <div className="space-y-3 text-[#0B1D2E] text-[clamp(1rem,2vw,1.2rem)]">
-              <p><strong>Location:</strong> 7-10 miles around your business</p>
-              <p><strong>Age:</strong> Your ideal customer age range (narrow it to 10-15 years)</p>
-              <p><strong>Income:</strong> Top 25-50% of your zip code</p>
-              <p><strong>Interests:</strong> 5-7 topics directly related to what you sell</p>
-              <p><strong>Budget:</strong> Start with $20-30/day minimum</p>
+          <div className="relative z-10">
+            <h2 className="text-white font-serif text-[2rem] font-bold mb-6 text-center">
+              Quick Reference: Your First Audience
+            </h2>
+
+            <div className="bg-[rgba(95,169,159,0.1)] backdrop-blur-sm rounded-2xl p-6 mb-6 border border-[rgba(95,169,159,0.3)]">
+              <h3 className="text-[#5FA99F] font-bold text-[clamp(1.1rem,2.5vw,1.5rem)] mb-4">Starting Template for Local Businesses:</h3>
+              <div className="space-y-3 text-white text-[clamp(1rem,2vw,1.2rem)]">
+                <p><strong className="text-[#5FA99F]">Location:</strong> 7-10 miles around your business</p>
+                <p><strong className="text-[#5FA99F]">Age:</strong> Your ideal customer age range (narrow it to 10-15 years)</p>
+                <p><strong className="text-[#5FA99F]">Income:</strong> Top 25-50% of your zip code</p>
+                <p><strong className="text-[#5FA99F]">Interests:</strong> 5-7 topics directly related to what you sell</p>
+                <p><strong className="text-[#5FA99F]">Budget:</strong> Start with $20-30/day minimum</p>
+              </div>
             </div>
-          </div>
 
-          <div className="text-center">
-            <p className="text-[#0B1D2E] text-[clamp(1rem,2.2vw,1.4rem)] font-semibold">
-              Remember: Small, focused audiences perform better than large, broad ones.
-            </p>
+            <div className="text-center">
+              <p className="text-gray-300 text-[clamp(1rem,2.2vw,1.4rem)] font-semibold">
+                Remember: Small, focused audiences perform better than large, broad ones.
+              </p>
+            </div>
           </div>
         </motion.div>
 
@@ -540,7 +544,7 @@ export default function MetaAdsTargetAudienceGuide() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.0 }}
         >
-          <div className="bg-gradient-to-br from-[#0B1D2E] to-[#162E42] rounded-3xl p-12 shadow-2xl text-center">
+          <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] rounded-3xl p-12 shadow-2xl text-center">
             <h2 className="text-[#F8F6F3] font-serif text-3xl font-bold mb-4">
               Need Help Setting Up Your Target Audiences?
             </h2>
@@ -549,7 +553,7 @@ export default function MetaAdsTargetAudienceGuide() {
             </p>
             <Link
               href="/contact"
-              className="inline-block bg-[#5FA99F] hover:bg-[#4A8A82] text-[#0B1D2E] px-10 py-5 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-xl"
+              className="inline-block bg-[#5FA99F] hover:bg-[#4A8A82] text-[#000000] px-10 py-5 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-xl"
             >
               Get a Free Strategy Call
             </Link>

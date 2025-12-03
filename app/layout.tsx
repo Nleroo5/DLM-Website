@@ -1,22 +1,15 @@
 import type { Metadata } from "next";
-import { Bitter, Inter } from "next/font/google";
+import '@fontsource/exo-2/400.css';
+import '@fontsource/exo-2/600.css';
+import '@fontsource/exo-2/700.css';
+import localFont from "next/font/local";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import MobileStickyButton from "@/components/MobileStickyButton";
-import TargetParticles from "@/components/TargetParticles";
 
-const bitter = Bitter({
-  weight: ["400", "600", "700"],
-  subsets: ["latin"],
-  variable: "--font-bitter",
-  display: 'swap',
-});
-
-const inter = Inter({
-  weight: ["400", "500", "600"],
-  subsets: ["latin"],
-  variable: "--font-inter",
+const arnoPro = localFont({
+  src: "../font/ArnoPro-LightDisplay.otf",
+  variable: "--font-arno",
   display: 'swap',
 });
 
@@ -226,7 +219,7 @@ export default function RootLayout({
               "email": "hello@driveleadmedia.com",
               "address": {
                 "@type": "PostalAddress",
-                "addressLocality": "Peachtree City",
+                "addressLocality": "Atlanta",
                 "addressRegion": "GA",
                 "addressCountry": "US"
               },
@@ -237,10 +230,6 @@ export default function RootLayout({
               },
               "priceRange": "$$",
               "areaServed": [
-                {
-                  "@type": "City",
-                  "name": "Peachtree City"
-                },
                 {
                   "@type": "City",
                   "name": "Atlanta"
@@ -334,17 +323,15 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${bitter.variable} ${inter.variable} antialiased`}>
+      <body className={`${arnoPro.variable} antialiased`}>
         <a href="#main-content" className="skip-to-content">
           Skip to main content
         </a>
-        <TargetParticles />
         <Navigation />
         <main id="main-content">
           {children}
         </main>
         <Footer />
-        <MobileStickyButton />
       </body>
     </html>
   );

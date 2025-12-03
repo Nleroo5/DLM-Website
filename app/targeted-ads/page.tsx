@@ -19,37 +19,41 @@ export const metadata: Metadata = {
 
 export default function TargetedAdsPage() {
   return (
-    <main className="min-h-screen bg-transparent text-[#012E40] font-serif">
+    <main className="min-h-screen bg-[#000000] text-white font-body relative">
+      {/* Background gradient orbs */}
+      <div className="fixed top-[20%] left-[10%] w-[500px] h-[500px] bg-[#5FA99F] opacity-10 rounded-full blur-[150px] pointer-events-none" />
+      <div className="fixed bottom-[10%] right-[15%] w-[400px] h-[400px] bg-[#85C7B3] opacity-10 rounded-full blur-[150px] pointer-events-none" />
+
       <ProgressBar />
 
       {/* Page Header */}
-      <header className="bg-transparent py-[clamp(30px,6vw,40px)] pb-[clamp(20px,4vw,30px)] text-center pt-[180px]">
+      <header className="relative py-[clamp(30px,6vw,40px)] pb-[clamp(20px,4vw,30px)] text-center pt-[180px]">
         <div className="max-w-[1400px] mx-auto px-[clamp(24px,4vw,40px)]">
-          <h1 className="text-[1.3rem] sm:text-[1.5rem] md:text-[1.8rem] lg:text-[2.5rem] xl:text-[3rem] text-[#EEF4D9] font-normal leading-[1.2] tracking-[-0.02em] max-w-[1000px] mx-auto">
+          <h1 className="text-[1.3rem] sm:text-[1.5rem] md:text-[1.8rem] lg:text-[2.5rem] xl:text-[3rem] text-white font-heading font-bold leading-[1.2] tracking-[-0.02em] max-w-[1000px] mx-auto">
             Why Meta Targeted Ads Are More Effective Than Traditional Advertising
           </h1>
         </div>
       </header>
 
       {/* Section 1: What Are Targeted Ads */}
-      <section className="relative bg-transparent py-[clamp(20px,3vw,30px)] overflow-hidden">
+      <section className="relative py-[clamp(20px,3vw,30px)] overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-[clamp(24px,4vw,40px)] relative z-10">
           <TitleBox title="What Are Targeted Ads? (Let's Start Simple)">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-[clamp(16px,3vw,24px)] items-center">
               <div>
-                <p className="text-[0.9rem] sm:text-[0.95rem] md:text-[1.05rem] lg:text-[1.2rem] xl:text-[1.375rem] text-[#012E40] leading-[1.6] mb-[clamp(12px,2vw,16px)]">
+                <p className="text-[0.9rem] sm:text-[0.95rem] md:text-[1.05rem] lg:text-[1.2rem] xl:text-[1.375rem] text-gray-300 leading-[1.6] mb-[clamp(12px,2vw,16px)]">
                   <strong>First, let's clarify:</strong> When we say "Meta," we're talking about the company that owns Facebook and Instagram - the two biggest social media platforms where most targeted advertising happens.
                 </p>
-                <p className="text-[0.95rem] sm:text-[1rem] md:text-[1.1rem] lg:text-[1.25rem] xl:text-[1.4rem] text-[#012E40] leading-[1.5] mb-[clamp(12px,2vw,16px)]">
+                <p className="text-[0.95rem] sm:text-[1rem] md:text-[1.1rem] lg:text-[1.25rem] xl:text-[1.4rem] text-gray-300 leading-[1.5] mb-[clamp(12px,2vw,16px)]">
                   Think of it like this:
                 </p>
-                <p className="text-[0.9rem] sm:text-[0.95rem] md:text-[1.05rem] lg:text-[1.2rem] xl:text-[1.375rem] text-[#012E40] leading-[1.6] mb-[clamp(12px,2vw,16px)]">
-                  <span className="text-[#F2A922] font-semibold">Traditional advertising</span> is like shouting your message in a crowded mall, hoping the right people hear you.
+                <p className="text-[0.9rem] sm:text-[0.95rem] md:text-[1.05rem] lg:text-[1.2rem] xl:text-[1.375rem] text-gray-300 leading-[1.6] mb-[clamp(12px,2vw,16px)]">
+                  <span className="text-[#5FA99F] font-semibold">Traditional advertising</span> is like shouting your message in a crowded mall, hoping the right people hear you.
                 </p>
-                <p className="text-[0.9rem] sm:text-[0.95rem] md:text-[1.05rem] lg:text-[1.2rem] xl:text-[1.375rem] text-[#012E40] leading-[1.6] mb-[clamp(12px,2vw,16px)]">
-                  <span className="text-[#F2A922] font-semibold">Targeted advertising</span> is like walking directly up to people who are already interested in what you're selling and having a conversation with them.
+                <p className="text-[0.9rem] sm:text-[0.95rem] md:text-[1.05rem] lg:text-[1.2rem] xl:text-[1.375rem] text-gray-300 leading-[1.6] mb-[clamp(12px,2vw,16px)]">
+                  <span className="text-[#5FA99F] font-semibold">Targeted advertising</span> is like walking directly up to people who are already interested in what you're selling and having a conversation with them.
                 </p>
-                <p className="text-[0.9rem] sm:text-[0.95rem] md:text-[1.05rem] lg:text-[1.2rem] xl:text-[1.375rem] text-[#012E40] leading-[1.6]">
+                <p className="text-[0.9rem] sm:text-[0.95rem] md:text-[1.05rem] lg:text-[1.2rem] xl:text-[1.375rem] text-gray-300 leading-[1.6]">
                   Targeted ads use information about people (like their age, interests, and online behavior) to show your advertisement only to people who are likely to be interested in your product or service.
                 </p>
               </div>
@@ -68,11 +72,11 @@ export default function TargetedAdsPage() {
       </section>
 
       {/* Section 2: Real Example */}
-      <section className="relative bg-transparent py-[clamp(20px,3vw,30px)] overflow-hidden">
+      <section className="relative py-[clamp(20px,3vw,30px)] overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-[clamp(24px,4vw,40px)] relative z-10">
           <TitleBox title="Real Example: Your Gym Advertisement">
             <HighlightBox title="📱 Real Example:">
-              <p className="text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.1rem] text-[#012E40] leading-[1.55] mb-[clamp(10px,2vw,14px)]">
+              <p className="text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.1rem] text-gray-300 leading-[1.55] mb-[clamp(10px,2vw,14px)]">
                 Instead of putting a gym advertisement in the local newspaper (where everyone sees it, including people who hate exercise), Meta can show your gym ad only to people who:
               </p>
 
@@ -83,8 +87,8 @@ export default function TargetedAdsPage() {
                 <AudienceItem>Have visited fitness websites recently</AudienceItem>
               </ul>
 
-              <p className="text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.1rem] text-[#012E40] leading-[1.55]">
-                <strong>Result:</strong> You spend money only on people who might actually <span className="text-[#F2A922] font-semibold">join your gym</span>.
+              <p className="text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.1rem] text-gray-300 leading-[1.55]">
+                <strong>Result:</strong> You spend money only on people who might actually <span className="text-[#5FA99F] font-semibold">join your gym</span>.
               </p>
             </HighlightBox>
           </TitleBox>
@@ -92,7 +96,7 @@ export default function TargetedAdsPage() {
       </section>
 
       {/* Section 3: The Numbers */}
-      <section className="relative bg-transparent py-[clamp(20px,3vw,30px)] overflow-hidden">
+      <section className="relative py-[clamp(20px,3vw,30px)] overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-[clamp(24px,4vw,40px)] relative z-10">
           <TitleBox title="The Numbers Don't Lie">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-[clamp(12px,2.5vw,18px)] my-[clamp(16px,3vw,24px)]">
@@ -116,10 +120,10 @@ export default function TargetedAdsPage() {
               <em>Source: Industry averages based on WordStream 2024 benchmarks</em>
             </p>
 
-            <p className="text-center text-[1.2rem] sm:text-[1.3rem] md:text-[1.5rem] lg:text-[1.75rem] xl:text-[2rem] text-[#F2A922] font-semibold my-[clamp(12px,2.5vw,18px)]">
+            <p className="text-center text-[1.2rem] sm:text-[1.3rem] md:text-[1.5rem] lg:text-[1.75rem] xl:text-[2rem] text-[#5FA99F] font-semibold my-[clamp(12px,2.5vw,18px)]">
               That's 85% Cheaper!
             </p>
-            <p className="text-[0.9rem] sm:text-[0.95rem] md:text-[1.05rem] lg:text-[1.2rem] xl:text-[1.375rem] text-[#012E40] leading-[1.6] text-center">
+            <p className="text-[0.9rem] sm:text-[0.95rem] md:text-[1.05rem] lg:text-[1.2rem] xl:text-[1.375rem] text-gray-300 leading-[1.6] text-center">
               With Meta targeted ads, you pay <strong>85% less</strong> for each person who clicks on your ad compared to traditional advertising methods.
             </p>
           </TitleBox>
@@ -127,10 +131,10 @@ export default function TargetedAdsPage() {
       </section>
 
       {/* Section 4: Traditional Advertising */}
-      <section className="relative bg-transparent py-[clamp(20px,3vw,30px)] overflow-hidden">
+      <section className="relative py-[clamp(20px,3vw,30px)] overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-[clamp(24px,4vw,40px)] relative z-10">
           <TitleBox title="How Traditional Advertising Works">
-            <p className="text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.1rem] text-[#012E40] leading-[1.55] mb-[clamp(10px,2vw,14px)]">
+            <p className="text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.1rem] text-gray-300 leading-[1.55] mb-[clamp(10px,2vw,14px)]">
               Traditional advertising includes things like:
             </p>
             <ul className="my-[clamp(12px,2.5vw,16px)] pl-0 list-none text-left space-y-[clamp(8px,1.5vw,12px)]">
@@ -141,13 +145,13 @@ export default function TargetedAdsPage() {
             </ul>
 
             <HighlightBox title="🚗 Example: Car Dealership">
-              <p className="text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.1rem] text-[#012E40] leading-[1.55] mb-[clamp(10px,2vw,14px)]">
+              <p className="text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.1rem] text-gray-300 leading-[1.55] mb-[clamp(10px,2vw,14px)]">
                 You own a luxury car dealership. You put an ad on TV during the evening news.
               </p>
-              <p className="text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.1rem] text-[#012E40] leading-[1.55] mb-[clamp(10px,2vw,14px)]">
+              <p className="text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.1rem] text-gray-300 leading-[1.55] mb-[clamp(10px,2vw,14px)]">
                 <strong>Who sees it:</strong> Everyone watching - including teenagers with no money, people who just bought a car, people who can't afford luxury cars, and people who live 500 miles away.
               </p>
-              <p className="text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.1rem] text-[#012E40] leading-[1.55]">
+              <p className="text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.1rem] text-gray-300 leading-[1.55]">
                 <strong>Result:</strong> You paid to show your ad to thousands of people who will never buy from you.
               </p>
             </HighlightBox>
@@ -171,10 +175,10 @@ export default function TargetedAdsPage() {
       </section>
 
       {/* Section 5: How Meta Works */}
-      <section className="relative bg-transparent py-[clamp(20px,3vw,30px)] overflow-hidden">
+      <section className="relative py-[clamp(20px,3vw,30px)] overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-[clamp(24px,4vw,40px)] relative z-10">
           <TitleBox title="How Meta Targeted Ads Work">
-            <p className="text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.1rem] text-[#012E40] leading-[1.55] mb-[clamp(10px,2vw,14px)]">
+            <p className="text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.1rem] text-gray-300 leading-[1.55] mb-[clamp(10px,2vw,14px)]">
               Meta (Facebook and Instagram) knows a lot about its users because people willingly share information:
             </p>
             <ul className="my-[clamp(12px,2.5vw,16px)] pl-0 list-none text-left space-y-[clamp(8px,1.5vw,12px)]">
@@ -185,7 +189,7 @@ export default function TargetedAdsPage() {
             </ul>
 
             <HighlightBox title="🚗 Same Car Dealership Example with Meta Ads:">
-              <p className="text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.1rem] text-[#012E40] leading-[1.55] mb-[clamp(10px,2vw,14px)]">
+              <p className="text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.1rem] text-gray-300 leading-[1.55] mb-[clamp(10px,2vw,14px)]">
                 Instead of showing your luxury car ad to everyone, Meta shows it only to people who:
               </p>
               <ul className="my-[clamp(12px,2.5vw,16px)] pl-0 list-none text-left space-y-[clamp(8px,1.5vw,12px)]">
@@ -195,7 +199,7 @@ export default function TargetedAdsPage() {
                 <AudienceItem>Have shown interest in luxury brands</AudienceItem>
                 <AudienceItem>Have visited car websites recently</AudienceItem>
               </ul>
-              <p className="text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.1rem] text-[#012E40] leading-[1.55]">
+              <p className="text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.1rem] text-gray-300 leading-[1.55]">
                 <strong>Result:</strong> Every person who sees your ad is a potential customer.
               </p>
             </HighlightBox>
@@ -220,16 +224,16 @@ export default function TargetedAdsPage() {
       </section>
 
       {/* Section 6: Direct Comparison Table */}
-      <section className="relative bg-transparent py-[clamp(20px,3vw,30px)] overflow-hidden">
+      <section className="relative py-[clamp(20px,3vw,30px)] overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-[clamp(24px,4vw,40px)] relative z-10">
           <TitleBox title="Direct Comparison: Traditional vs Meta Targeted Ads">
             <div className="overflow-x-auto">
-              <table className="w-full border-collapse my-[clamp(16px,3vw,24px)] bg-gradient-to-br from-[rgba(238,244,217,0.95)] to-[rgba(238,244,217,0.9)] rounded-[clamp(10px,2vw,14px)] overflow-hidden shadow-lg backdrop-blur-[20px]">
+              <table className="w-full border-collapse my-[clamp(16px,3vw,24px)] bg-[#1A1A1A]/40 backdrop-blur-xl rounded-[clamp(10px,2vw,14px)] overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.4)] border-2 border-[rgba(95,169,159,0.3)]">
                 <thead>
-                  <tr className="bg-gradient-to-r from-[rgba(242,169,34,0.9)] to-[rgba(5,144,140,0.8)]">
-                    <th className="text-[#012E40] p-[clamp(10px,2vw,14px)] text-left font-normal text-[0.7rem] sm:text-[0.85rem] md:text-[0.95rem] lg:text-[1.05rem] leading-[1.4]">What You Want to Know</th>
-                    <th className="text-[#012E40] p-[clamp(10px,2vw,14px)] text-left font-normal text-[0.7rem] sm:text-[0.85rem] md:text-[0.95rem] lg:text-[1.05rem] leading-[1.4]">Traditional Advertising</th>
-                    <th className="text-[#012E40] p-[clamp(10px,2vw,14px)] text-left font-normal text-[0.7rem] sm:text-[0.85rem] md:text-[0.95rem] lg:text-[1.05rem] leading-[1.4]">Meta Targeted Ads</th>
+                  <tr className="bg-gradient-to-r from-[rgba(95,169,159,0.3)] to-[rgba(95,169,159,0.2)]">
+                    <th className="text-white p-[clamp(10px,2vw,14px)] text-left font-heading font-bold text-[0.7rem] sm:text-[0.85rem] md:text-[0.95rem] lg:text-[1.05rem] leading-[1.4]">What You Want to Know</th>
+                    <th className="text-white p-[clamp(10px,2vw,14px)] text-left font-heading font-bold text-[0.7rem] sm:text-[0.85rem] md:text-[0.95rem] lg:text-[1.05rem] leading-[1.4]">Traditional Advertising</th>
+                    <th className="text-white p-[clamp(10px,2vw,14px)] text-left font-heading font-bold text-[0.7rem] sm:text-[0.85rem] md:text-[0.95rem] lg:text-[1.05rem] leading-[1.4]">Meta Targeted Ads</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -272,15 +276,15 @@ export default function TargetedAdsPage() {
       </section>
 
       {/* Section 7: Real Business Results */}
-      <section className="relative bg-transparent py-[clamp(20px,3vw,30px)] overflow-hidden">
+      <section className="relative py-[clamp(20px,3vw,30px)] overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-[clamp(24px,4vw,40px)] relative z-10">
           <TitleBox title="What Real Businesses Are Seeing">
-            <p className="text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.1rem] text-[#012E40] leading-[1.55] mb-[clamp(10px,2vw,14px)]">
+            <p className="text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.1rem] text-gray-300 leading-[1.55] mb-[clamp(10px,2vw,14px)]">
               Here's what happens when businesses switch from traditional advertising to Meta targeted ads:
             </p>
 
-            <div className="bg-gradient-to-br from-[rgba(16,185,129,0.1)] to-[rgba(16,185,129,0.05)] border-2 border-[rgba(16,185,129,0.3)] rounded-[clamp(8px,1.5vw,12px)] p-[clamp(14px,2.5vw,18px)] my-[clamp(14px,2.5vw,18px)] backdrop-blur-[10px]">
-              <h3 className="text-[#059669] my-0 mb-[clamp(8px,1.5vw,12px)] text-[clamp(1rem,2.2vw,1.2rem)] leading-[1.3]">
+            <div className="bg-gradient-to-br from-[rgba(95,169,159,0.15)] to-[rgba(95,169,159,0.08)] border-2 border-[rgba(95,169,159,0.4)] rounded-[clamp(8px,1.5vw,12px)] p-[clamp(14px,2.5vw,18px)] my-[clamp(14px,2.5vw,18px)] backdrop-blur-sm">
+              <h3 className="text-[#5FA99F] my-0 mb-[clamp(8px,1.5vw,12px)] text-[clamp(1rem,2.2vw,1.2rem)] leading-[1.3] font-heading font-bold">
                 📊 Actual Results:
               </h3>
               <ul className="my-[clamp(12px,2.5vw,16px)] pl-0 list-none text-left space-y-[clamp(8px,1.5vw,12px)]">
@@ -288,26 +292,26 @@ export default function TargetedAdsPage() {
                 <AudienceItem><strong>29% of marketers</strong> get better results from Meta than any other advertising</AudienceItem>
                 <AudienceItem>Professional Meta ads typically return <strong>$4-5 for every $1 spent</strong></AudienceItem>
               </ul>
-              <p className="text-[0.7rem] text-[#666] mt-[8px] opacity-70">
+              <p className="text-[0.7rem] text-gray-400 mt-[8px]">
                 <em>Sources: Social Media Examiner 2024 Report, HubSpot Marketing Statistics</em>
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-[clamp(12px,2.5vw,18px)] my-[clamp(16px,3vw,24px)]">
-              <div className="bg-gradient-to-br from-[rgba(238,244,217,0.95)] to-[rgba(238,244,217,0.9)] rounded-[clamp(10px,2vw,14px)] p-[clamp(16px,3vw,22px)] text-center border-2 border-[rgba(220,38,38,0.4)] shadow-md backdrop-blur-[20px] min-h-[140px] flex flex-col justify-center hover:-translate-y-1 transition-all duration-300">
-                <h3 className="text-[clamp(1rem,2.2vw,1.2rem)] font-normal mb-[clamp(8px,1.5vw,12px)] text-[#012E40] leading-[1.3]">
+              <div className="bg-[#1A1A1A]/40 backdrop-blur-xl rounded-[clamp(10px,2vw,14px)] p-[clamp(16px,3vw,22px)] text-center border-2 border-[rgba(220,38,38,0.4)] shadow-[0_8px_32px_rgba(0,0,0,0.4)] min-h-[140px] flex flex-col justify-center hover:-translate-y-1 transition-all duration-500 hover:shadow-[0_0_30px_rgba(220,38,38,0.2)]">
+                <h3 className="text-[clamp(1rem,2.2vw,1.2rem)] font-heading font-bold mb-[clamp(8px,1.5vw,12px)] text-white leading-[1.3]">
                   Traditional Advertising
                 </h3>
-                <p className="text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.1rem] text-[#012E40] leading-[1.55]">
+                <p className="text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.1rem] text-gray-300 leading-[1.55]">
                   "We spent $5,000 on a radio campaign and aren't sure if anyone called because of it."
                 </p>
               </div>
 
-              <div className="bg-gradient-to-br from-[rgba(238,244,217,0.95)] to-[rgba(238,244,217,0.9)] rounded-[clamp(10px,2vw,14px)] p-[clamp(16px,3vw,22px)] text-center border-2 border-[rgba(59,130,246,0.4)] shadow-md backdrop-blur-[20px] min-h-[140px] flex flex-col justify-center hover:-translate-y-1 transition-all duration-300">
-                <h3 className="text-[clamp(1rem,2.2vw,1.2rem)] font-normal mb-[clamp(8px,1.5vw,12px)] text-[#012E40] leading-[1.3]">
+              <div className="bg-[#1A1A1A]/40 backdrop-blur-xl rounded-[clamp(10px,2vw,14px)] p-[clamp(16px,3vw,22px)] text-center border-2 border-[rgba(95,169,159,0.4)] shadow-[0_8px_32px_rgba(0,0,0,0.4)] min-h-[140px] flex flex-col justify-center hover:-translate-y-1 transition-all duration-500 hover:shadow-[0_0_30px_rgba(95,169,159,0.2)]">
+                <h3 className="text-[clamp(1rem,2.2vw,1.2rem)] font-heading font-bold mb-[clamp(8px,1.5vw,12px)] text-white leading-[1.3]">
                   Meta Targeted Ads
                 </h3>
-                <p className="text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.1rem] text-[#012E40] leading-[1.55]">
+                <p className="text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.1rem] text-gray-300 leading-[1.55]">
                   "We spent $500 on Meta ads and can see exactly 23 people clicked, 8 filled out our form, and 3 became customers."
                 </p>
               </div>
@@ -317,23 +321,23 @@ export default function TargetedAdsPage() {
       </section>
 
       {/* Section 8: Why This Matters */}
-      <section className="relative bg-transparent py-[clamp(20px,3vw,30px)] overflow-hidden">
+      <section className="relative py-[clamp(20px,3vw,30px)] overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-[clamp(24px,4vw,40px)] relative z-10">
           <TitleBox title="Why This Matters for Your Business">
-            <p className="text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.1rem] text-[#012E40] leading-[1.55] mb-[clamp(10px,2vw,14px)]">
+            <p className="text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.1rem] text-gray-300 leading-[1.55] mb-[clamp(10px,2vw,14px)]">
               Whether you run a restaurant, sell products online, offer services, or have any other business, here's why Meta targeted ads are more effective:
             </p>
 
-            <div className="bg-gradient-to-br from-[rgba(242,169,34,0.1)] to-[rgba(242,169,34,0.05)] border-2 border-[rgba(242,169,34,0.4)] rounded-[clamp(8px,1.5vw,12px)] p-[clamp(14px,2.5vw,18px)] my-[clamp(14px,2.5vw,18px)] backdrop-blur-[10px]">
-              <h3 className="text-[#92400e] my-0 mb-[clamp(8px,1.5vw,12px)] text-[clamp(1rem,2.2vw,1.2rem)] leading-[1.3]">
+            <div className="bg-gradient-to-br from-[rgba(95,169,159,0.15)] to-[rgba(95,169,159,0.08)] border-2 border-[rgba(95,169,159,0.4)] rounded-[clamp(8px,1.5vw,12px)] p-[clamp(14px,2.5vw,18px)] my-[clamp(14px,2.5vw,18px)] backdrop-blur-sm">
+              <h3 className="text-[#5FA99F] my-0 mb-[clamp(8px,1.5vw,12px)] text-[clamp(1rem,2.2vw,1.2rem)] leading-[1.3] font-heading font-bold">
                 🎪 Stop Performing for the Wrong Audience
               </h3>
-              <p className="text-[0.9rem] sm:text-[0.95rem] md:text-[1.05rem] lg:text-[1.3rem] xl:text-[1.6rem] text-[#012E40] leading-[1.55]">
+              <p className="text-[0.9rem] sm:text-[0.95rem] md:text-[1.05rem] lg:text-[1.3rem] xl:text-[1.6rem] text-gray-300 leading-[1.55]">
                 Traditional advertising is like doing a magic show for people who don't like magic. Meta targeted ads are like performing only for people who love magic shows and are ready to pay for tickets.
               </p>
             </div>
 
-            <h3 className="text-[1rem] sm:text-[1.05rem] md:text-[1.15rem] lg:text-[1.3rem] xl:text-[1.5rem] text-[#012E40] my-[20px_0_15px] text-center">
+            <h3 className="text-[1rem] sm:text-[1.05rem] md:text-[1.15rem] lg:text-[1.3rem] xl:text-[1.5rem] text-white my-[20px_0_15px] text-center font-heading font-bold">
               The Bottom Line:
             </h3>
             <ul className="my-[clamp(12px,2.5vw,16px)] pl-0 list-none text-left space-y-[clamp(8px,1.5vw,12px)]">
@@ -348,14 +352,14 @@ export default function TargetedAdsPage() {
       </section>
 
       {/* Section 9: Ready to Try */}
-      <section className="relative bg-transparent py-[clamp(20px,3vw,30px)] overflow-hidden">
+      <section className="relative py-[clamp(20px,3vw,30px)] overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-[clamp(24px,4vw,40px)] relative z-10">
           <TitleBox title="Ready to Try Meta Targeted Ads?">
-            <p className="text-center text-[0.9rem] sm:text-[0.95rem] md:text-[1rem] lg:text-[1.15rem] xl:text-[1.3rem] text-[#012E40] leading-[1.55] mb-[clamp(10px,2vw,14px)]">
-              The difference is clear: Meta targeted ads cost <span className="text-[#F2A922] font-semibold">85% less</span> than traditional advertising and only reach people interested in your business.
+            <p className="text-center text-[0.9rem] sm:text-[0.95rem] md:text-[1rem] lg:text-[1.15rem] xl:text-[1.3rem] text-gray-300 leading-[1.55] mb-[clamp(10px,2vw,14px)]">
+              The difference is clear: Meta targeted ads cost <span className="text-[#5FA99F] font-semibold">85% less</span> than traditional advertising and only reach people interested in your business.
             </p>
 
-            <p className="text-center text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.1rem] text-[#012E40] leading-[1.55]">
+            <p className="text-center text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.1rem] text-gray-300 leading-[1.55]">
               But here's the thing - while Meta targeted ads are more effective, they do require knowledge and experience to set up correctly. That's where professional help makes the difference between wasting money and getting great results.
             </p>
           </TitleBox>
@@ -363,9 +367,9 @@ export default function TargetedAdsPage() {
       </section>
 
       {/* Final Highlight Section */}
-      <section className="bg-gradient-to-br from-[rgba(242,169,34,0.9)] to-[rgba(133,144,140,0.8)] py-[clamp(30px,6vw,50px)] px-[clamp(16px,3vw,24px)] text-center relative overflow-hidden rounded-[clamp(12px,2.5vw,18px)] mx-[clamp(8px,1.5vw,12px)] my-[clamp(20px,4vw,30px)] backdrop-blur-[10px] border-2 border-[rgba(242,169,34,0.4)]">
+      <section className="bg-gradient-to-br from-[rgba(95,169,159,0.2)] to-[rgba(95,169,159,0.1)] py-[clamp(30px,6vw,50px)] px-[clamp(16px,3vw,24px)] text-center relative overflow-hidden rounded-[clamp(12px,2.5vw,18px)] mx-[clamp(8px,1.5vw,12px)] my-[clamp(20px,4vw,30px)] backdrop-blur-xl border-2 border-[rgba(95,169,159,0.4)]">
         <div className="max-w-[1400px] mx-auto">
-          <p className="text-[1.3rem] sm:text-[1.5rem] md:text-[2rem] lg:text-[2.5rem] xl:text-[2.75rem] text-[#012E40] font-semibold leading-[1.5] max-w-[900px] mx-auto">
+          <p className="text-[1.3rem] sm:text-[1.5rem] md:text-[2rem] lg:text-[2.5rem] xl:text-[2.75rem] text-white font-heading font-bold leading-[1.5] max-w-[900px] mx-auto">
             Stop wasting money on people who don't want what you're selling.
           </p>
         </div>
@@ -375,9 +379,9 @@ export default function TargetedAdsPage() {
       <div className="fixed bottom-[clamp(12px,2.5vw,20px)] right-[clamp(12px,2.5vw,20px)] z-[997] max-w-[clamp(200px,40vw,320px)] hidden sm:block">
         <Link
           href="/contact"
-          className="block bg-gradient-to-br from-[rgba(238,244,217,0.95)] to-[rgba(238,244,217,0.9)] border-2 border-[#012E40] rounded-[clamp(10px,2vw,16px)] p-[clamp(12px,2.5vw,16px)_clamp(16px,3vw,20px)] backdrop-blur-[20px] shadow-[0_15px_30px_rgba(0,0,0,0.15)] transition-all duration-300 hover:-translate-y-[2px] hover:border-[#F2A922] hover:shadow-[0_18px_35px_rgba(0,0,0,0.2),0_0_15px_rgba(242,169,34,0.3)]"
+          className="block bg-[#1A1A1A]/40 backdrop-blur-xl border-2 border-[rgba(95,169,159,0.4)] rounded-[clamp(10px,2vw,16px)] p-[clamp(12px,2.5vw,16px)_clamp(16px,3vw,20px)] shadow-[0_8px_32px_rgba(0,0,0,0.4)] transition-all duration-500 hover:-translate-y-[2px] hover:border-[rgba(95,169,159,0.6)] hover:shadow-[0_0_30px_rgba(95,169,159,0.3)]"
         >
-          <p className="text-[clamp(0.85rem,1.8vw,1rem)] text-[#012E40] font-serif text-center leading-[1.3] m-0">
+          <p className="text-[clamp(0.85rem,1.8vw,1rem)] text-white font-heading font-bold text-center leading-[1.3] m-0">
             Want to See How Meta Targeted Ads Can Work for Your Business?
           </p>
         </Link>
@@ -389,8 +393,8 @@ export default function TargetedAdsPage() {
 // Reusable Components
 function TitleBox({ title, children }: { title: string; children: React.ReactNode}) {
   return (
-    <div className="bg-gradient-to-br from-[rgba(238,244,217,0.95)] to-[rgba(238,244,217,0.9)] border-2 border-[rgba(5,144,140,0.4)] rounded-[clamp(12px,2vw,16px)] p-[clamp(16px,3vw,24px)] backdrop-blur-[20px] shadow-[0_8px_20px_rgba(0,0,0,0.1),0_4px_8px_rgba(5,144,140,0.06)] transition-all duration-[400ms] mb-[clamp(20px,4vw,30px)] relative z-[2] hover:-translate-y-[2px] hover:shadow-[0_12px_25px_rgba(0,0,0,0.15)] hover:border-[rgba(242,169,34,0.6)]">
-      <h2 className="text-[1.2rem] sm:text-[1.3rem] md:text-[1.5rem] lg:text-[2rem] xl:text-[2.25rem] text-[#012E40] font-normal text-center mb-[clamp(12px,2.5vw,18px)] leading-[1.2] font-serif">
+    <div className="bg-[#1A1A1A]/40 backdrop-blur-xl border-2 border-[rgba(95,169,159,0.3)] rounded-[clamp(12px,2vw,16px)] p-[clamp(16px,3vw,24px)] shadow-[0_8px_32px_rgba(0,0,0,0.4)] transition-all duration-500 mb-[clamp(20px,4vw,30px)] relative z-[2] hover:-translate-y-[2px] hover:shadow-[0_0_40px_rgba(95,169,159,0.3)] hover:border-[rgba(95,169,159,0.6)]">
+      <h2 className="text-[1.2rem] sm:text-[1.3rem] md:text-[1.5rem] lg:text-[2rem] xl:text-[2.25rem] text-white font-heading font-semibold text-center mb-[clamp(12px,2.5vw,18px)] leading-[1.2]">
         {title}
       </h2>
       {children}
@@ -400,8 +404,8 @@ function TitleBox({ title, children }: { title: string; children: React.ReactNod
 
 function HighlightBox({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <div className="bg-gradient-to-br from-[rgba(242,169,34,0.1)] to-[rgba(242,169,34,0.05)] border-2 border-[rgba(242,169,34,0.4)] rounded-[clamp(8px,1.5vw,12px)] p-[clamp(14px,2.5vw,18px)] my-[clamp(14px,2.5vw,18px)] backdrop-blur-[10px]">
-      <h3 className="text-[#92400e] my-0 mb-[clamp(8px,1.5vw,12px)] text-[clamp(1rem,2.2vw,1.2rem)] leading-[1.3]">
+    <div className="bg-gradient-to-br from-[rgba(95,169,159,0.15)] to-[rgba(95,169,159,0.08)] border-2 border-[rgba(95,169,159,0.4)] rounded-[clamp(8px,1.5vw,12px)] p-[clamp(14px,2.5vw,18px)] my-[clamp(14px,2.5vw,18px)] backdrop-blur-sm">
+      <h3 className="text-[#5FA99F] my-0 mb-[clamp(8px,1.5vw,12px)] text-[clamp(1rem,2.2vw,1.2rem)] leading-[1.3] font-heading font-semibold">
         {title}
       </h3>
       {children}
@@ -411,7 +415,7 @@ function HighlightBox({ title, children }: { title: string; children: React.Reac
 
 function AudienceItem({ children }: { children: React.ReactNode }) {
   return (
-    <li className="text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.1rem] text-[#012E40] relative pl-[clamp(14px,2.5vw,18px)] transition-all duration-300 hover:translate-x-[3px] hover:text-[#05908C] before:content-['→'] before:text-[#F2A922] before:text-[clamp(0.9rem,1.8vw,1rem)] before:absolute before:left-0 before:top-0 before:transition-all before:duration-300 hover:before:translate-x-[2px] hover:before:text-[#05908C]">
+    <li className="text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.1rem] text-gray-300 relative pl-[clamp(14px,2.5vw,18px)] transition-all duration-300 hover:translate-x-[3px] hover:text-[#5FA99F] before:content-['→'] before:text-[#5FA99F] before:text-[clamp(0.9rem,1.8vw,1rem)] before:absolute before:left-0 before:top-0 before:transition-all before:duration-300 hover:before:translate-x-[2px] hover:before:text-[#85C7B3]">
       {children}
     </li>
   );
@@ -430,33 +434,32 @@ function ComparisonCard({
   description: string;
   note: string;
 }) {
-  const borderColor = type === 'traditional' ? 'rgba(220,38,38,0.4)' : 'rgba(59,130,246,0.4)';
-  const hoverBorderColor = type === 'traditional' ? 'rgba(220,38,38,0.6)' : 'rgba(59,130,246,0.6)';
-  const statColor = type === 'traditional' ? '#dc2626' : '#2563eb';
+  const borderColor = type === 'traditional' ? 'rgba(220,38,38,0.4)' : 'rgba(95,169,159,0.4)';
+  const hoverBorderColor = type === 'traditional' ? 'rgba(220,38,38,0.6)' : 'rgba(95,169,159,0.6)';
+  const statColor = type === 'traditional' ? '#ef4444' : '#5FA99F';
 
   return (
     <div
-      className="bg-gradient-to-br from-[rgba(238,244,217,0.95)] to-[rgba(238,244,217,0.9)] rounded-[clamp(10px,2vw,14px)] p-[clamp(16px,3vw,22px)] text-center relative transition-all duration-300 backdrop-blur-[20px] shadow-[0_4px_12px_rgba(0,0,0,0.06)] min-h-[140px] flex flex-col justify-center hover:-translate-y-[3px] hover:shadow-[0_8px_20px_rgba(0,0,0,0.1)]"
+      className="bg-[#1A1A1A]/40 backdrop-blur-xl rounded-[clamp(10px,2vw,14px)] p-[clamp(16px,3vw,22px)] text-center relative transition-all duration-500 shadow-[0_8px_32px_rgba(0,0,0,0.4)] min-h-[140px] flex flex-col justify-center hover:-translate-y-[3px] hover:shadow-[0_0_30px_rgba(95,169,159,0.2)]"
       style={{
         border: `2px solid ${borderColor}`,
       }}
     >
-      <h3 className="text-[clamp(1rem,2.2vw,1.2rem)] font-normal mb-[clamp(8px,1.5vw,12px)] text-[#012E40] leading-[1.3]">
+      <h3 className="text-[clamp(1rem,2.2vw,1.2rem)] font-heading font-semibold mb-[clamp(8px,1.5vw,12px)] text-white leading-[1.3]">
         {title}
       </h3>
       <div
-        className="text-[clamp(2rem,4vw,2.8rem)] font-normal my-[clamp(8px,1.5vw,12px)] leading-[1]"
+        className="text-[clamp(2rem,4vw,2.8rem)] font-heading font-bold my-[clamp(8px,1.5vw,12px)] leading-[1]"
         style={{
           color: statColor,
-          textShadow: '0 0 12px rgba(242,169,34,0.4)',
         }}
       >
         {stat}
       </div>
-      <p className="text-[clamp(0.85rem,1.8vw,1rem)] text-[#012E40] opacity-80 mb-[clamp(4px,0.8vw,6px)]">
+      <p className="text-[clamp(0.85rem,1.8vw,1rem)] text-gray-300 mb-[clamp(4px,0.8vw,6px)]">
         {description}
       </p>
-      <small className="text-[clamp(0.75rem,1.6vw,0.9rem)] text-[#012E40] opacity-70">{note}</small>
+      <small className="text-[clamp(0.75rem,1.6vw,0.9rem)] text-gray-400">{note}</small>
     </div>
   );
 }
@@ -470,20 +473,20 @@ function ProsConsCard({
   title: string;
   children: React.ReactNode;
 }) {
-  const bgColor = type === 'pros' ? 'rgba(16,185,129,0.1)' : 'rgba(220,38,38,0.1)';
-  const borderColor = type === 'pros' ? 'rgba(16,185,129,0.3)' : 'rgba(220,38,38,0.3)';
-  const titleColor = type === 'pros' ? '#059669' : '#dc2626';
+  const bgColor = type === 'pros' ? 'rgba(95,169,159,0.15)' : 'rgba(220,38,38,0.15)';
+  const borderColor = type === 'pros' ? 'rgba(95,169,159,0.4)' : 'rgba(220,38,38,0.4)';
+  const titleColor = type === 'pros' ? '#5FA99F' : '#ef4444';
 
   return (
     <div
-      className="p-[clamp(12px,2.5vw,16px)] rounded-[clamp(8px,1.5vw,12px)] backdrop-blur-[10px]"
+      className="p-[clamp(12px,2.5vw,16px)] rounded-[clamp(8px,1.5vw,12px)] backdrop-blur-sm"
       style={{
         background: bgColor,
         border: `2px solid ${borderColor}`,
       }}
     >
       <h4
-        className="my-0 mb-[clamp(8px,1.5vw,12px)] text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.1rem] leading-[1.3]"
+        className="my-0 mb-[clamp(8px,1.5vw,12px)] text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] xl:text-[1.1rem] leading-[1.3] font-heading font-bold"
         style={{ color: titleColor }}
       >
         {title}
@@ -509,20 +512,20 @@ function TableRow({
   return (
     <tr>
       <td
-        className="p-[clamp(10px,2vw,14px)] text-[clamp(0.85rem,1.9vw,1rem)] text-[#012E40] leading-[1.4] align-top font-semibold bg-[rgba(242,169,34,0.05)]"
-        style={{ borderBottom: isLast ? 'none' : '1px solid rgba(5,144,140,0.2)' }}
+        className="p-[clamp(10px,2vw,14px)] text-[clamp(0.85rem,1.9vw,1rem)] text-white leading-[1.4] align-top font-semibold bg-[rgba(95,169,159,0.08)]"
+        style={{ borderBottom: isLast ? 'none' : '1px solid rgba(95,169,159,0.2)' }}
       >
         <strong>{question}</strong>
       </td>
       <td
-        className="p-[clamp(10px,2vw,14px)] text-[clamp(0.85rem,1.9vw,1rem)] text-[#012E40] leading-[1.4] align-top"
-        style={{ borderBottom: isLast ? 'none' : '1px solid rgba(5,144,140,0.2)' }}
+        className="p-[clamp(10px,2vw,14px)] text-[clamp(0.85rem,1.9vw,1rem)] text-gray-300 leading-[1.4] align-top"
+        style={{ borderBottom: isLast ? 'none' : '1px solid rgba(95,169,159,0.2)' }}
       >
         {traditional}
       </td>
       <td
-        className="p-[clamp(10px,2vw,14px)] text-[clamp(0.85rem,1.9vw,1rem)] text-[#012E40] leading-[1.4] align-top"
-        style={{ borderBottom: isLast ? 'none' : '1px solid rgba(5,144,140,0.2)' }}
+        className="p-[clamp(10px,2vw,14px)] text-[clamp(0.85rem,1.9vw,1rem)] text-gray-300 leading-[1.4] align-top"
+        style={{ borderBottom: isLast ? 'none' : '1px solid rgba(95,169,159,0.2)' }}
       >
         {meta}
       </td>

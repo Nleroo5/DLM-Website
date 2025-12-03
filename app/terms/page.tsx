@@ -8,7 +8,10 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <main className="min-h-screen pt-[100px] pb-[80px] px-6">
+    <main className="min-h-screen pt-[100px] pb-[80px] px-6 bg-[#000000] relative">
+      {/* Background gradient orbs */}
+      <div className="fixed top-[20%] left-[10%] w-[500px] h-[500px] bg-[#5FA99F] opacity-10 rounded-full blur-[150px] pointer-events-none" />
+      <div className="fixed bottom-[10%] right-[15%] w-[400px] h-[400px] bg-[#85C7B3] opacity-10 rounded-full blur-[150px] pointer-events-none" />
       <div className="max-w-[900px] mx-auto">
         {/* Header */}
         <div className="mb-12">
@@ -21,16 +24,16 @@ export default function TermsPage() {
             </svg>
             Back to Home
           </Link>
-          <h1 className="font-serif text-[1.5rem] sm:text-[2rem] md:text-[2.5rem] lg:text-[3.5rem] font-bold text-[#EEF4D9] mb-4 leading-[1.1] break-words">
+          <h1 className="font-heading text-[1.5rem] sm:text-[2rem] md:text-[2.5rem] lg:text-[3.5rem] font-bold text-white mb-4 leading-[1.1] break-words">
             Terms of Service
           </h1>
-          <p className="font-serif text-[1rem] text-[#85C7B3]">
+          <p className="font-body text-[1rem] text-gray-300">
             Last Updated: October 13, 2025
           </p>
         </div>
 
         {/* Content */}
-        <div className="space-y-8 font-serif text-[#85C7B3] leading-[1.8]">
+        <div className="space-y-8 font-body text-gray-300 leading-[1.8]">
           {/* Introduction */}
           <section>
             <p className="text-[1.05rem]">
@@ -44,7 +47,7 @@ export default function TermsPage() {
 
           {/* Section 1 */}
           <section>
-            <h2 className="font-serif text-[1.75rem] font-bold text-[#EEF4D9] mb-4">
+            <h2 className="font-heading text-[1.75rem] font-bold text-white mb-4">
               1. Acceptance of Terms
             </h2>
             <p>
@@ -54,7 +57,7 @@ export default function TermsPage() {
 
           {/* Section 2 */}
           <section>
-            <h2 className="font-serif text-[1.75rem] font-bold text-[#EEF4D9] mb-4">
+            <h2 className="font-heading text-[1.75rem] font-bold text-white mb-4">
               2. Services Description
             </h2>
             <p className="mb-3">
@@ -74,7 +77,7 @@ export default function TermsPage() {
 
           {/* Section 3 */}
           <section>
-            <h2 className="font-serif text-[1.75rem] font-bold text-[#EEF4D9] mb-4">
+            <h2 className="font-heading text-[1.75rem] font-bold text-white mb-4">
               3. Client Responsibilities
             </h2>
             <p className="mb-3">As a client, you agree to:</p>
@@ -91,46 +94,46 @@ export default function TermsPage() {
 
           {/* Section 4 */}
           <section>
-            <h2 className="font-serif text-[1.75rem] font-bold text-[#EEF4D9] mb-4">
+            <h2 className="font-heading text-[1.75rem] font-bold text-white mb-4">
               4. Payment Terms
             </h2>
             <div className="space-y-3">
               <p>
-                <strong className="text-[#EEF4D9]">Fees:</strong> All fees and payment schedules will be specified in your service agreement or proposal. Fees are exclusive of applicable taxes unless otherwise stated.
+                <strong className="text-white">Fees:</strong> All fees and payment schedules will be specified in your service agreement or proposal. Fees are exclusive of applicable taxes unless otherwise stated.
               </p>
               <p>
-                <strong className="text-[#EEF4D9]">Payment Schedule:</strong> Invoices are due upon receipt unless otherwise agreed. Late payments may incur additional fees and may result in suspension of services.
+                <strong className="text-white">Payment Schedule:</strong> Invoices are due upon receipt unless otherwise agreed. Late payments may incur additional fees and may result in suspension of services.
               </p>
               <p>
-                <strong className="text-[#EEF4D9]">Ad Spend:</strong> For advertising services, you are responsible for all advertising spend paid directly to advertising platforms (e.g., Meta). Our service fees are separate from ad spend.
+                <strong className="text-white">Ad Spend:</strong> For advertising services, you are responsible for all advertising spend paid directly to advertising platforms (e.g., Meta). Our service fees are separate from ad spend.
               </p>
               <p>
-                <strong className="text-[#EEF4D9]">Refunds:</strong> Due to the custom nature of our services, all fees are non-refundable once work has commenced, except as otherwise stated in writing.
+                <strong className="text-white">Refunds:</strong> Due to the custom nature of our services, all fees are non-refundable once work has commenced, except as otherwise stated in writing.
               </p>
             </div>
           </section>
 
           {/* Section 5 */}
           <section>
-            <h2 className="font-serif text-[1.75rem] font-bold text-[#EEF4D9] mb-4">
+            <h2 className="font-heading text-[1.75rem] font-bold text-white mb-4">
               5. Intellectual Property
             </h2>
             <div className="space-y-3">
               <p>
-                <strong className="text-[#EEF4D9]">Our Property:</strong> All content on our website, including text, graphics, logos, and software, is the property of Drive Lead Media and is protected by copyright and other intellectual property laws.
+                <strong className="text-white">Our Property:</strong> All content on our website, including text, graphics, logos, and software, is the property of Drive Lead Media and is protected by copyright and other intellectual property laws.
               </p>
               <p>
-                <strong className="text-[#EEF4D9]">Client Materials:</strong> You retain ownership of materials you provide to us. By providing materials, you grant us a license to use them for the purpose of delivering services to you.
+                <strong className="text-white">Client Materials:</strong> You retain ownership of materials you provide to us. By providing materials, you grant us a license to use them for the purpose of delivering services to you.
               </p>
               <p>
-                <strong className="text-[#EEF4D9]">Deliverables:</strong> Upon full payment, you will own the final deliverables created specifically for you. We retain the right to use work samples for portfolio and marketing purposes unless otherwise agreed in writing.
+                <strong className="text-white">Deliverables:</strong> Upon full payment, you will own the final deliverables created specifically for you. We retain the right to use work samples for portfolio and marketing purposes unless otherwise agreed in writing.
               </p>
             </div>
           </section>
 
           {/* Section 6 */}
           <section>
-            <h2 className="font-serif text-[1.75rem] font-bold text-[#EEF4D9] mb-4">
+            <h2 className="font-heading text-[1.75rem] font-bold text-white mb-4">
               6. Performance and Results
             </h2>
             <p>
@@ -140,7 +143,7 @@ export default function TermsPage() {
 
           {/* Section 7 */}
           <section>
-            <h2 className="font-serif text-[1.75rem] font-bold text-[#EEF4D9] mb-4">
+            <h2 className="font-heading text-[1.75rem] font-bold text-white mb-4">
               7. Confidentiality
             </h2>
             <p>
@@ -150,25 +153,25 @@ export default function TermsPage() {
 
           {/* Section 8 */}
           <section>
-            <h2 className="font-serif text-[1.75rem] font-bold text-[#EEF4D9] mb-4">
+            <h2 className="font-heading text-[1.75rem] font-bold text-white mb-4">
               8. Term and Termination
             </h2>
             <div className="space-y-3">
               <p>
-                <strong className="text-[#EEF4D9]">Service Term:</strong> The term of service will be specified in your service agreement.
+                <strong className="text-white">Service Term:</strong> The term of service will be specified in your service agreement.
               </p>
               <p>
-                <strong className="text-[#EEF4D9]">Termination by Client:</strong> You may terminate services with written notice as specified in your service agreement. You remain responsible for payment of fees for services rendered and any costs incurred prior to termination.
+                <strong className="text-white">Termination by Client:</strong> You may terminate services with written notice as specified in your service agreement. You remain responsible for payment of fees for services rendered and any costs incurred prior to termination.
               </p>
               <p>
-                <strong className="text-[#EEF4D9]">Termination by Us:</strong> We reserve the right to terminate services if you breach these Terms, fail to make payment, or engage in conduct that we deem harmful to our business or reputation.
+                <strong className="text-white">Termination by Us:</strong> We reserve the right to terminate services if you breach these Terms, fail to make payment, or engage in conduct that we deem harmful to our business or reputation.
               </p>
             </div>
           </section>
 
           {/* Section 9 */}
           <section>
-            <h2 className="font-serif text-[1.75rem] font-bold text-[#EEF4D9] mb-4">
+            <h2 className="font-heading text-[1.75rem] font-bold text-white mb-4">
               9. Limitation of Liability
             </h2>
             <p>
@@ -178,7 +181,7 @@ export default function TermsPage() {
 
           {/* Section 10 */}
           <section>
-            <h2 className="font-serif text-[1.75rem] font-bold text-[#EEF4D9] mb-4">
+            <h2 className="font-heading text-[1.75rem] font-bold text-white mb-4">
               10. Indemnification
             </h2>
             <p>
@@ -188,7 +191,7 @@ export default function TermsPage() {
 
           {/* Section 11 */}
           <section>
-            <h2 className="font-serif text-[1.75rem] font-bold text-[#EEF4D9] mb-4">
+            <h2 className="font-heading text-[1.75rem] font-bold text-white mb-4">
               11. Third-Party Services
             </h2>
             <p>
@@ -198,7 +201,7 @@ export default function TermsPage() {
 
           {/* Section 12 */}
           <section>
-            <h2 className="font-serif text-[1.75rem] font-bold text-[#EEF4D9] mb-4">
+            <h2 className="font-heading text-[1.75rem] font-bold text-white mb-4">
               12. Dispute Resolution
             </h2>
             <p>
@@ -208,7 +211,7 @@ export default function TermsPage() {
 
           {/* Section 13 */}
           <section>
-            <h2 className="font-serif text-[1.75rem] font-bold text-[#EEF4D9] mb-4">
+            <h2 className="font-heading text-[1.75rem] font-bold text-white mb-4">
               13. Governing Law
             </h2>
             <p>
@@ -218,7 +221,7 @@ export default function TermsPage() {
 
           {/* Section 14 */}
           <section>
-            <h2 className="font-serif text-[1.75rem] font-bold text-[#EEF4D9] mb-4">
+            <h2 className="font-heading text-[1.75rem] font-bold text-white mb-4">
               14. Changes to Terms
             </h2>
             <p>
@@ -228,7 +231,7 @@ export default function TermsPage() {
 
           {/* Section 15 */}
           <section>
-            <h2 className="font-serif text-[1.75rem] font-bold text-[#EEF4D9] mb-4">
+            <h2 className="font-heading text-[1.75rem] font-bold text-white mb-4">
               15. Severability
             </h2>
             <p>
@@ -238,7 +241,7 @@ export default function TermsPage() {
 
           {/* Section 16 */}
           <section>
-            <h2 className="font-serif text-[1.75rem] font-bold text-[#EEF4D9] mb-4">
+            <h2 className="font-heading text-[1.75rem] font-bold text-white mb-4">
               16. Entire Agreement
             </h2>
             <p>
@@ -248,7 +251,7 @@ export default function TermsPage() {
 
           {/* Contact */}
           <section className="bg-[rgba(133,199,179,0.05)] p-6 rounded-lg border border-[rgba(133,199,179,0.2)]">
-            <h2 className="font-serif text-[1.75rem] font-bold text-[#EEF4D9] mb-4">
+            <h2 className="font-heading text-[1.75rem] font-bold text-white mb-4">
               Contact Us
             </h2>
             <p className="mb-3">
@@ -256,19 +259,19 @@ export default function TermsPage() {
             </p>
             <ul className="space-y-2">
               <li>
-                <strong className="text-[#EEF4D9]">Email:</strong>{' '}
+                <strong className="text-white">Email:</strong>{' '}
                 <a href="mailto:hello@driveleadmedia.com" className="text-[#F2A922] hover:underline">
                   hello@driveleadmedia.com
                 </a>
               </li>
               <li>
-                <strong className="text-[#EEF4D9]">Website:</strong>{' '}
+                <strong className="text-white">Website:</strong>{' '}
                 <a href="https://driveleadmedia.com" className="text-[#F2A922] hover:underline">
                   driveleadmedia.com
                 </a>
               </li>
               <li>
-                <strong className="text-[#EEF4D9]">Location:</strong> Atlanta, GA
+                <strong className="text-white">Location:</strong> Atlanta, GA
               </li>
             </ul>
           </section>

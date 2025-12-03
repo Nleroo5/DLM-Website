@@ -8,7 +8,10 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <main className="min-h-screen pt-[100px] pb-[80px] px-6">
+    <main className="min-h-screen pt-[100px] pb-[80px] px-6 bg-[#000000] relative">
+      {/* Background gradient orbs */}
+      <div className="fixed top-[20%] left-[10%] w-[500px] h-[500px] bg-[#5FA99F] opacity-10 rounded-full blur-[150px] pointer-events-none" />
+      <div className="fixed bottom-[10%] right-[15%] w-[400px] h-[400px] bg-[#85C7B3] opacity-10 rounded-full blur-[150px] pointer-events-none" />
       <div className="max-w-[900px] mx-auto">
         {/* Header */}
         <div className="mb-12">
@@ -21,16 +24,16 @@ export default function PrivacyPage() {
             </svg>
             Back to Home
           </Link>
-          <h1 className="font-serif text-[1.5rem] sm:text-[2rem] md:text-[2.5rem] lg:text-[3.5rem] font-bold text-[#EEF4D9] mb-4 leading-[1.1] break-words">
+          <h1 className="font-heading text-[1.5rem] sm:text-[2rem] md:text-[2.5rem] lg:text-[3.5rem] font-bold text-white mb-4 leading-[1.1] break-words">
             Privacy Policy
           </h1>
-          <p className="font-serif text-[1rem] text-[#85C7B3]">
+          <p className="font-body text-[1rem] text-gray-300">
             Last Updated: October 13, 2025
           </p>
         </div>
 
         {/* Content */}
-        <div className="space-y-8 font-serif text-[#85C7B3] leading-[1.8]">
+        <div className="space-y-8 font-body text-gray-300 leading-[1.8]">
           {/* Introduction */}
           <section>
             <p className="text-[1.05rem]">
@@ -44,12 +47,12 @@ export default function PrivacyPage() {
 
           {/* Section 1 */}
           <section>
-            <h2 className="font-serif text-[1.75rem] font-bold text-[#EEF4D9] mb-4">
+            <h2 className="font-heading text-[1.75rem] font-bold text-[#EEF4D9] mb-4">
               1. Information We Collect
             </h2>
             <div className="space-y-4">
               <div>
-                <h3 className="font-serif text-[1.25rem] font-semibold text-[#EEF4D9] mb-2">
+                <h3 className="font-heading text-[1.25rem] font-semibold text-[#EEF4D9] mb-2">
                   Personal Information
                 </h3>
                 <p>
@@ -67,7 +70,7 @@ export default function PrivacyPage() {
               </div>
 
               <div>
-                <h3 className="font-serif text-[1.25rem] font-semibold text-[#EEF4D9] mb-2">
+                <h3 className="font-heading text-[1.25rem] font-semibold text-[#EEF4D9] mb-2">
                   Automatically Collected Information
                 </h3>
                 <p>
@@ -87,7 +90,7 @@ export default function PrivacyPage() {
 
           {/* Section 2 */}
           <section>
-            <h2 className="font-serif text-[1.75rem] font-bold text-[#EEF4D9] mb-4">
+            <h2 className="font-heading text-[1.75rem] font-bold text-[#EEF4D9] mb-4">
               2. How We Use Your Information
             </h2>
             <p className="mb-3">We use the information we collect to:</p>
@@ -104,7 +107,7 @@ export default function PrivacyPage() {
 
           {/* Section 3 */}
           <section>
-            <h2 className="font-serif text-[1.75rem] font-bold text-[#EEF4D9] mb-4">
+            <h2 className="font-heading text-[1.75rem] font-bold text-[#EEF4D9] mb-4">
               3. How We Share Your Information
             </h2>
             <p className="mb-3">We may share your information with:</p>
@@ -129,7 +132,7 @@ export default function PrivacyPage() {
 
           {/* Section 4 */}
           <section>
-            <h2 className="font-serif text-[1.75rem] font-bold text-[#EEF4D9] mb-4">
+            <h2 className="font-heading text-[1.75rem] font-bold text-[#EEF4D9] mb-4">
               4. Cookies and Tracking Technologies
             </h2>
             <p>
@@ -150,7 +153,7 @@ export default function PrivacyPage() {
 
           {/* Section 5 */}
           <section>
-            <h2 className="font-serif text-[1.75rem] font-bold text-[#EEF4D9] mb-4">
+            <h2 className="font-heading text-[1.75rem] font-bold text-[#EEF4D9] mb-4">
               5. Data Security
             </h2>
             <p>
@@ -160,7 +163,7 @@ export default function PrivacyPage() {
 
           {/* Section 6 */}
           <section>
-            <h2 className="font-serif text-[1.75rem] font-bold text-[#EEF4D9] mb-4">
+            <h2 className="font-heading text-[1.75rem] font-bold text-[#EEF4D9] mb-4">
               6. Your Privacy Rights
             </h2>
             <p className="mb-3">Depending on your location, you may have the following rights:</p>
@@ -191,7 +194,7 @@ export default function PrivacyPage() {
 
           {/* Section 7 */}
           <section>
-            <h2 className="font-serif text-[1.75rem] font-bold text-[#EEF4D9] mb-4">
+            <h2 className="font-heading text-[1.75rem] font-bold text-[#EEF4D9] mb-4">
               7. Third-Party Links
             </h2>
             <p>
@@ -201,7 +204,7 @@ export default function PrivacyPage() {
 
           {/* Section 8 */}
           <section>
-            <h2 className="font-serif text-[1.75rem] font-bold text-[#EEF4D9] mb-4">
+            <h2 className="font-heading text-[1.75rem] font-bold text-[#EEF4D9] mb-4">
               8. Children's Privacy
             </h2>
             <p>
@@ -211,7 +214,7 @@ export default function PrivacyPage() {
 
           {/* Section 9 */}
           <section>
-            <h2 className="font-serif text-[1.75rem] font-bold text-[#EEF4D9] mb-4">
+            <h2 className="font-heading text-[1.75rem] font-bold text-[#EEF4D9] mb-4">
               9. Changes to This Privacy Policy
             </h2>
             <p>
@@ -220,8 +223,8 @@ export default function PrivacyPage() {
           </section>
 
           {/* Contact */}
-          <section className="bg-[rgba(133,199,179,0.05)] p-6 rounded-lg border border-[rgba(133,199,179,0.2)]">
-            <h2 className="font-serif text-[1.75rem] font-bold text-[#EEF4D9] mb-4">
+          <section className="bg-[#1A1A1A]/40 backdrop-blur-xl border-2 border-[rgba(95,169,159,0.3)] rounded-[20px] p-6 shadow-[0_8px_32px_rgba(0,0,0,0.4)]">
+            <h2 className="font-heading text-[1.75rem] font-bold text-white mb-4">
               Contact Us
             </h2>
             <p className="mb-3">

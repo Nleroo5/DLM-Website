@@ -53,7 +53,7 @@ export default function Breadcrumbs({ category, postTitle }: BreadcrumbsProps) {
       {/* Visual Breadcrumbs */}
       <motion.nav
         aria-label="Breadcrumb"
-        className="bg-[#0B1D2E] border-b border-[#5FA99F]/10"
+        className="bg-[#000000] border-b border-[#5FA99F]/10"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.4 }}
@@ -63,31 +63,31 @@ export default function Breadcrumbs({ category, postTitle }: BreadcrumbsProps) {
             <li>
               <Link
                 href="/"
-                className="text-[#5FA99F] hover:text-[#D4A574] transition-colors"
+                className="text-[#5FA99F] hover:text-[#85C7B3] transition-colors"
               >
                 Home
               </Link>
             </li>
-            <li className="text-[#F8F6F3]/40">/</li>
+            <li className="text-white/40">/</li>
             <li>
               <Link
                 href="/blog"
-                className="text-[#5FA99F] hover:text-[#D4A574] transition-colors"
+                className="text-[#5FA99F] hover:text-[#85C7B3] transition-colors"
               >
                 Blog
               </Link>
             </li>
-            <li className="text-[#F8F6F3]/40">/</li>
+            <li className="text-white/40">/</li>
             <li>
               <Link
                 href={`/blog/category/${category.slug}`}
-                className="text-[#5FA99F] hover:text-[#D4A574] transition-colors"
+                className="text-[#5FA99F] hover:text-[#85C7B3] transition-colors"
               >
                 {category.name}
               </Link>
             </li>
-            <li className="text-[#F8F6F3]/40 hidden sm:inline">/</li>
-            <li className="text-[#F8F6F3]/60 truncate max-w-[200px] sm:max-w-none hidden sm:inline">
+            <li className="text-white/40 hidden sm:inline">/</li>
+            <li className="text-white/60 truncate max-w-[200px] sm:max-w-none hidden sm:inline">
               {postTitle}
             </li>
           </ol>

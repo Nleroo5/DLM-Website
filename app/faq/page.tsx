@@ -199,7 +199,7 @@ export default function FAQPage() {
       answer: (
         <p>
           For a full breakdown of how we hone in on your ideal audience, visit our{' '}
-          <Link href="/targeted-ads" className="relative text-[#05908C] font-bold no-underline pb-[2px] opacity-100 hover:after:scale-x-100 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-[#05908C] after:scale-x-0 after:origin-left after:transition-transform after:duration-300">
+          <Link href="/targeted-ads" className="relative text-[#5FA99F] font-bold no-underline pb-[2px] opacity-100 hover:after:scale-x-100 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-[#5FA99F] after:scale-x-0 after:origin-left after:transition-transform after:duration-300">
             Targeted Ads page
           </Link>.
         </p>
@@ -292,11 +292,11 @@ export default function FAQPage() {
       answer: (
         <p>
           Head to our{' '}
-          <Link href="/contact" className="relative text-[#05908C] font-bold no-underline pb-[2px] opacity-100 hover:after:scale-x-100 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-[#05908C] after:scale-x-0 after:origin-left after:transition-transform after:duration-300">
+          <Link href="/contact" className="relative text-[#5FA99F] font-bold no-underline pb-[2px] opacity-100 hover:after:scale-x-100 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-[#5FA99F] after:scale-x-0 after:origin-left after:transition-transform after:duration-300">
             Contact page
           </Link>{' '}
           to book your Free 30 Minute Strategy Call or{' '}
-          <a href="mailto:hello@driveleadmedia.com" className="relative text-[#05908C] font-bold no-underline pb-[2px] opacity-100 hover:after:scale-x-100 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-[#05908C] after:scale-x-0 after:origin-left after:transition-transform after:duration-300">
+          <a href="mailto:hello@driveleadmedia.com" className="relative text-[#5FA99F] font-bold no-underline pb-[2px] opacity-100 hover:after:scale-x-100 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-[#5FA99F] after:scale-x-0 after:origin-left after:transition-transform after:duration-300">
             send us an email
           </a>.
         </p>
@@ -305,52 +305,56 @@ export default function FAQPage() {
   ];
 
   return (
-    <div className="bg-transparent text-[#EEF4D9] font-sans pt-32 pb-10 px-5 max-w-[800px] mx-auto">
+    <div className="bg-[#000000] text-white font-body pt-32 pb-10 px-5 max-w-[800px] mx-auto min-h-screen relative">
+      {/* Background gradient orbs */}
+      <div className="fixed top-[20%] left-[10%] w-[500px] h-[500px] bg-[#5FA99F] opacity-10 rounded-full blur-[150px] pointer-events-none" />
+      <div className="fixed bottom-[10%] right-[15%] w-[400px] h-[400px] bg-[#85C7B3] opacity-10 rounded-full blur-[150px] pointer-events-none" />
+
       {/* Hero Section */}
-      <section className="text-center mb-12 flex justify-center">
+      <section className="text-center mb-12 flex justify-center relative z-10">
         <motion.h1
-          className={`font-serif text-[1.5rem] sm:text-[1.75rem] md:text-[2rem] lg:text-[2.5rem] xl:text-[3.5rem] font-normal text-[#EEF4D9] m-0 cursor-pointer relative inline-block px-4 py-4 sm:px-6 sm:py-5 md:px-8 md:py-6 lg:px-12 lg:py-8 bg-[rgba(238,244,217,0.1)] backdrop-blur-[20px] border border-[rgba(238,244,217,0.2)] rounded-[24px] shadow-[0_8px_32px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,0.1),inset_0_-1px_0_rgba(0,0,0,0.1)] [text-shadow:0_2px_4px_rgba(0,0,0,0.1)] transition-all duration-[400ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] will-change-transform hover:scale-[1.03] hover:-translate-y-[2px] hover:[text-shadow:0_8px_16px_rgba(0,0,0,0.2)] hover:tracking-[0.02em] hover:bg-[rgba(238,244,217,0.15)] hover:border-[rgba(238,244,217,0.3)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.15),inset_0_1px_0_rgba(255,255,255,0.2),inset_0_-1px_0_rgba(0,0,0,0.1)] active:scale-[1.02] active:translate-y-0 overflow-hidden ${headingPulse ? 'animate-[headingPulse_0.6s_ease-out]' : ''}`}
+          className={`font-heading text-[1.5rem] sm:text-[1.75rem] md:text-[2rem] lg:text-[2.5rem] xl:text-[3.5rem] font-bold text-white m-0 cursor-pointer relative inline-block px-4 py-4 sm:px-6 sm:py-5 md:px-8 md:py-6 lg:px-12 lg:py-8 bg-[#1A1A1A]/40 backdrop-blur-xl border-2 border-[rgba(95,169,159,0.3)] rounded-[24px] shadow-[0_8px_32px_rgba(0,0,0,0.4)] transition-all duration-[400ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] will-change-transform hover:scale-[1.03] hover:-translate-y-[2px] hover:shadow-[0_0_40px_rgba(95,169,159,0.3)] hover:border-[rgba(95,169,159,0.6)] active:scale-[1.02] active:translate-y-0 overflow-hidden ${headingPulse ? 'animate-[headingPulse_0.6s_ease-out]' : ''}`}
           onClick={handleHeadingClick}
           whileHover={{ scale: 1.03, y: -2 }}
           whileTap={{ scale: 1.02, y: 0 }}
         >
           <span className="relative z-10">Your Questions, Answered</span>
           {/* Shine effect */}
-          <span className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-45 from-transparent via-[rgba(238,244,217,0.2)] to-transparent -translate-x-full transition-transform duration-[600ms] rounded-[24px] pointer-events-none group-hover:translate-x-full"></span>
+          <span className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-45 from-transparent via-[rgba(95,169,159,0.2)] to-transparent -translate-x-full transition-transform duration-[600ms] rounded-[24px] pointer-events-none group-hover:translate-x-full"></span>
         </motion.h1>
       </section>
 
       {/* FAQ Accordion */}
-      <div className="space-y-0">
+      <div className="space-y-4 relative z-10">
         {faqs.map((faq, index) => {
           const isOpen = openItems.has(faq.id);
 
           return (
             <motion.div
               key={faq.id}
-              className="faq-item relative"
+              className="faq-item relative bg-[#1A1A1A]/40 backdrop-blur-xl border-2 border-[rgba(95,169,159,0.3)] rounded-[20px] overflow-hidden hover:border-[rgba(95,169,159,0.6)] hover:shadow-[0_0_30px_rgba(95,169,159,0.2)] transition-all duration-500"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
+              transition={{ delay: index * 0.05 }}
             >
               {/* Accent Line */}
               <div
-                className={`absolute left-0 top-0 bottom-0 w-1 transition-all duration-300 ${
-                  isOpen ? 'bg-[#05908C]' : 'bg-transparent'
+                className={`absolute left-0 top-0 bottom-0 w-1 transition-all duration-300 rounded-l-[20px] ${
+                  isOpen ? 'bg-[#5FA99F]' : 'bg-transparent'
                 }`}
               />
 
               {/* Question Button */}
               <button
                 onClick={() => toggleItem(faq.id)}
-                className="relative w-full bg-none border-none py-4 pr-0 pl-6 text-left text-lg cursor-pointer border-t border-[#05908C] transition-all duration-300 text-[#EEF4D9] hover:bg-[rgba(5,144,140,0.1)] flex items-center justify-between"
+                className="relative w-full bg-none border-none py-4 pr-4 pl-6 text-left text-lg cursor-pointer transition-all duration-300 text-white hover:bg-[rgba(95,169,159,0.1)] flex items-center justify-between font-heading font-bold"
               >
-                <span className="inline-flex items-center font-bold">
+                <span className="inline-flex items-center">
                   <span className="mr-2 text-xl">{faq.icon}</span>
                   {faq.question}
                 </span>
                 <motion.span
-                  className="inline-block text-2xl"
+                  className="inline-block text-2xl text-[#5FA99F]"
                   animate={{ rotate: isOpen ? 180 : 0 }}
                   transition={{ duration: 0.3 }}
                 >
@@ -368,7 +372,7 @@ export default function FAQPage() {
                 transition={{ duration: 0.5, ease: 'easeInOut' }}
                 className="overflow-hidden"
               >
-                <div className="text-base leading-relaxed pl-4 pr-4 pb-4 text-[#EEF4D9] bg-[rgba(5,144,140,0.08)] backdrop-blur-sm rounded-b-lg mx-2 mt-1">
+                <div className="text-base leading-relaxed pl-6 pr-4 pb-4 text-gray-300 rounded-b-lg font-body">
                   {typeof faq.answer === 'string' ? <p>{faq.answer}</p> : faq.answer}
                 </div>
               </motion.div>

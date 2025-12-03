@@ -1,154 +1,85 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import Image from 'next/image';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { useRef, useState } from 'react';
 
 export default function Testimonials() {
-  // Container animation - makes cards swoop in together
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.2
-      }
-    }
-  };
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
 
-  // Left card animation - swoop from left
-  const leftCardVariants = {
-    hidden: {
-      opacity: 0,
-      x: -120,
-      scale: 0.95
-    },
-    visible: {
-      opacity: 1,
-      x: 0,
-      scale: 1,
-      transition: {
-        duration: 1,
-        ease: [0.16, 1, 0.3, 1],
-        opacity: { duration: 0.6 }
-      }
-    }
-  };
+  // Track section as it moves through viewport - standard pattern for smooth scroll animations
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]  // Full viewport tracking: section enters bottom → exits top
+  });
 
-  // Right card animation - swoop from right
-  const rightCardVariants = {
-    hidden: {
-      opacity: 0,
-      x: 120,
-      scale: 0.95
-    },
-    visible: {
-      opacity: 1,
-      x: 0,
-      scale: 1,
-      transition: {
-        duration: 1,
-        ease: [0.16, 1, 0.3, 1],
-        opacity: { duration: 0.6 }
-      }
-    }
-  };
+  // Doors start CLOSED (0%) and slide apart - complete opening when video is just past halfway up screen
+  // Earlier completion (0.45) means doors fully open when video crosses screen center
+  const leftDoorX = useTransform(scrollYProgress, [0.1, 0.45], ['0%', '-100%']);
+  const rightDoorX = useTransform(scrollYProgress, [0.1, 0.45], ['0%', '100%']);
 
-  const testimonials = [
-    {
-      quote: "We partnered with Drive Lead Media to run Meta ads for my yoga studio, and the experience was smooth and professional. Nic and Tommy created amazing videos and ads that really captured our vibe, and I learned so much about how to better use Meta for marketing. Within weeks we started seeing new leads coming in, and their clear communication made the whole process easy. I'm so grateful for all they did and would definitely recommend them to any business looking to grow.",
-      name: "Jenn",
-      title: "Owner",
-      company: "The Yoga Lounge",
-      logo: "/images/yoga.webp",
-      image: "/images/jenn.webp",
-      nameColor: "#5FA99F",
-      companyColor: "#5FA99F"
-    },
-    {
-      quote: "Working with Drive Lead Media has been a game changer for Village Pediatrics. They completely transformed our outdated website into something modern and professional. The Meta ad campaigns they've been running have brought in a 40% increase in new patient bookings, and honestly, the best part is that I haven't had to manage any of it. Nic and Tommy handle everything from strategy to execution while I focus on caring for my patients.",
-      name: "Dr. Austin Dupont",
-      title: "Owner",
-      company: "Village Pediatrics of St. Augustine",
-      logo: "/images/peds.webp",
-      image: "/images/austin.webp",
-      nameColor: "#5FA99F",
-      companyColor: "#5FA99F"
-    }
-  ];
+  // Video fades in as doors open (25% → 45%)
+  const videoOpacity = useTransform(scrollYProgress, [0.25, 0.45], [0, 1]);
 
   return (
-    <section className="bg-transparent text-[#5FA99F] py-[100px] px-6 font-sans my-0 md:py-[80px] md:px-5">
-      <div className="max-w-[1200px] mx-auto text-center">
-        {/* Section Title */}
-        <motion.h2
-          className="font-serif text-[1.75rem] sm:text-[2.25rem] lg:text-[3.5rem] mb-3 sm:mb-5 lg:mb-6 text-[#F8F6F3] font-normal leading-[1.2] tracking-tight"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-        >
-          What Our Clients Say
-        </motion.h2>
+    // SECTION 3: CLIENT TESTIMONIAL VIDEO - Elevator door animation reveals video on scroll
+    // Reduced padding for less empty scroll space, more professional pacing
+    <section ref={containerRef} className="relative min-h-screen pt-[50vh] pb-[50vh]" style={{ zIndex: 3 }}>
+      <div className="max-w-[900px] mx-auto px-4 md:px-6">
+        {/* Video Container */}
+        <div className="relative">
+          {/* Video - 16:9 aspect ratio */}
+          <div className="relative bg-black rounded-2xl overflow-hidden">
+            <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+              {/* YouTube Embed */}
+              <motion.iframe
+                style={{ opacity: videoOpacity }}
+                className="absolute inset-0 w-full h-full"
+                src={`https://www.youtube.com/embed/YBLniwOCtKU?modestbranding=1&rel=0&showinfo=0&controls=0&disablekb=1${isPlaying ? '&autoplay=1' : ''}`}
+                title="Village Pediatrics of St. Augustine Testimonial"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
 
+              {/* Branded Teal Play Button Overlay - Only fades when clicked */}
+              <AnimatePresence>
+                {!isPlaying && (
+                  <motion.button
+                    initial={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    onClick={() => setIsPlaying(true)}
+                    className="absolute inset-0 z-[5] flex items-center justify-center group cursor-pointer"
+                    aria-label="Play video"
+                  >
+                    <div className="relative">
+                      {/* Branded teal circular button */}
+                      <div className="w-20 h-20 rounded-full bg-[#5FA99F] flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:bg-[#4a8a81] shadow-lg group-hover:shadow-[0_0_30px_rgba(95,169,159,0.6)]">
+                        {/* Play triangle */}
+                        <div className="w-0 h-0 ml-1 border-t-[14px] border-t-transparent border-l-[22px] border-l-white border-b-[14px] border-b-transparent" />
+                      </div>
+                    </div>
+                  </motion.button>
+                )}
+              </AnimatePresence>
 
-        {/* Testimonials Grid - Cards swoop in together */}
-        <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8 max-w-[1200px] mx-auto"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={index}
-              variants={index === 0 ? leftCardVariants : rightCardVariants}
-              className="group relative overflow-hidden bg-[#0B1D2E] border border-[rgba(95,169,159,0.12)] rounded-[24px] md:rounded-[32px] p-6 md:p-10 shadow-[0_8px_32px_rgba(0,0,0,0.12),0_2px_8px_rgba(0,0,0,0.08),0_0_40px_rgba(212,165,116,0.15)] backdrop-blur-md h-full flex flex-col will-change-transform hover:transform hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(0,0,0,0.25),0_8px_16px_rgba(212,165,116,0.15),0_0_60px_rgba(212,165,116,0.25)] hover:border-[rgba(212,165,116,0.4)] transition-all duration-400 ease-out"
-            >
-              {/* Client Image */}
-              <div className="w-20 h-20 md:w-28 md:h-28 mx-auto mb-4 md:mb-6 rounded-full overflow-hidden border-3 border-[rgba(212,165,116,0.4)] shadow-[0_8px_24px_rgba(212,165,116,0.2)] transition-all duration-400 group-hover:border-[rgba(212,165,116,0.6)] group-hover:shadow-[0_12px_32px_rgba(212,165,116,0.3)]">
-                <Image
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  width={112}
-                  height={112}
-                  loading="lazy"
-                  className="w-full h-full object-cover"
-                />
-              </div>
+              {/* Elevator Doors */}
+              <motion.div
+                style={{ x: leftDoorX }}
+                className="absolute top-0 left-0 w-1/2 h-full bg-black z-10 flex items-center justify-end pr-4 shadow-[0_0_20px_rgba(255,255,255,0.3),inset_2px_0_0_rgba(255,255,255,0.4)]"
+              >
+                <div className="text-white text-2xl font-bold opacity-50">▶</div>
+              </motion.div>
 
-              {/* Author Info */}
-              <div className="mb-4 md:mb-6 text-center">
-                <p className="text-[0.95rem] sm:text-[1rem] md:text-[1.2rem] lg:text-[1.5rem] font-semibold font-serif" style={{ color: testimonial.nameColor }}>
-                  {testimonial.name}, {testimonial.title}
-                </p>
-              </div>
-
-              {/* Quote */}
-              <blockquote className="text-[#F8F6F3] text-[0.95rem] sm:text-[1rem] md:text-[1.125rem] lg:text-[1.25rem] font-normal leading-[1.6] md:leading-[1.8] mb-6 md:mb-8 opacity-90 flex-grow text-center font-[family-name:var(--font-inter)]">
-                {testimonial.quote}
-              </blockquote>
-
-              {/* Company Info with Logo - Centered */}
-              <div className="mt-auto pt-4 md:pt-6 border-t border-[rgba(95,169,159,0.15)] flex flex-col items-center gap-2 md:gap-3">
-                <p className="text-[0.95rem] md:text-[1.125rem] font-medium text-center font-[family-name:var(--font-inter)]" style={{ color: testimonial.companyColor }}>
-                  {testimonial.company}
-                </p>
-                <div className="w-16 h-16 md:w-20 md:h-20">
-                  <Image
-                    src={testimonial.logo}
-                    alt={`${testimonial.company} logo`}
-                    width={80}
-                    height={80}
-                    loading="lazy"
-                    className="w-full h-full object-contain opacity-80 transition-opacity duration-400 group-hover:opacity-100"
-                  />
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+              <motion.div
+                style={{ x: rightDoorX }}
+                className="absolute top-0 right-0 w-1/2 h-full bg-black z-10 flex items-center justify-start pl-4 shadow-[0_0_20px_rgba(255,255,255,0.3),inset_-2px_0_0_rgba(255,255,255,0.4)]"
+              >
+                <div className="text-white text-2xl font-bold opacity-50">◀</div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
