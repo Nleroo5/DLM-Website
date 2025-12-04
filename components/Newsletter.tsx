@@ -5,24 +5,46 @@ import { useEffect } from 'react';
 
 export default function Newsletter() {
   useEffect(() => {
-    // Set placeholder for email input after component mounts
-    const setPlaceholder = () => {
-      const emailInput = document.querySelector('.newsletter-form-container input[type="email"]') as HTMLInputElement;
-      if (emailInput && !emailInput.placeholder) {
-        emailInput.placeholder = 'Email';
-      }
-    };
+    // Load MailerLite webforms script to render embedded forms
+    const script = document.createElement('script');
+    script.src = 'https://assets.mailerlite.com/js/w/webforms.min.js';
+    script.async = true;
+    script.id = 'ml-webforms';
 
-    // Check immediately
-    setPlaceholder();
+    // Only add if not already loaded
+    if (!document.getElementById('ml-webforms')) {
+      document.body.appendChild(script);
 
-    // Also check periodically for the first 2 seconds (in case MailerLite loads slowly)
-    const intervalId = setInterval(setPlaceholder, 100);
-    const timeoutId = setTimeout(() => clearInterval(intervalId), 2000);
+      // Wait for script to load, then set placeholder
+      script.onload = () => {
+        // Check for form input multiple times as it takes time to render
+        const checkInterval = setInterval(() => {
+          const emailInput = document.querySelector('.newsletter-form-container input[type="email"]') as HTMLInputElement;
+          if (emailInput && !emailInput.placeholder) {
+            emailInput.placeholder = 'Email';
+            clearInterval(checkInterval);
+          }
+        }, 100);
+
+        // Stop checking after 3 seconds
+        setTimeout(() => clearInterval(checkInterval), 3000);
+      };
+    } else {
+      // Script already loaded, just set placeholder
+      setTimeout(() => {
+        const emailInput = document.querySelector('.newsletter-form-container input[type="email"]') as HTMLInputElement;
+        if (emailInput && !emailInput.placeholder) {
+          emailInput.placeholder = 'Email';
+        }
+      }, 500);
+    }
 
     return () => {
-      clearInterval(intervalId);
-      clearTimeout(timeoutId);
+      // Cleanup: remove script when component unmounts
+      const existingScript = document.getElementById('ml-webforms');
+      if (existingScript) {
+        existingScript.remove();
+      }
     };
   }, []);
 
