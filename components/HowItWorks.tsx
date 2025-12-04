@@ -88,6 +88,9 @@ const MobileScene = ({
     });
   }, [opacity]);
 
+  // Build desktop class based on videoMaxWidth
+  const desktopMaxWidth = videoMaxWidth === 'max-w-4xl' ? 'md:max-w-4xl' : 'md:max-w-2xl';
+
   return (
     <div
       ref={sectionRef}
@@ -95,7 +98,7 @@ const MobileScene = ({
     >
       <motion.div
         style={{ opacity }}
-        className={`flex flex-col justify-center items-center md:${videoMaxWidth} w-full relative z-10`}
+        className={`flex flex-col justify-center items-center ${desktopMaxWidth} w-full relative z-10`}
       >
         {/* Text */}
         <div className="max-w-xl text-center mb-12 bg-black px-6 py-4 rounded-lg">
