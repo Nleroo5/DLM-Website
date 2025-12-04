@@ -84,6 +84,45 @@ export const portfolioProjects: PortfolioProject[] = [
     ],
     timeline: '8 weeks'
   },
+  {
+    slug: 'southern-tents-events',
+    title: 'Southern Tents & Events',
+    client: 'Southern Tents & Events',
+    industry: 'Event Services',
+    type: 'website',
+    category: {
+      name: 'Websites',
+      slug: 'websites'
+    },
+    featured: true,
+    date: 'Q4 2024',
+    thumbnail: '/images/southern-tents-image.png',
+    liveUrl: 'https://southerntentsandevents.com/',
+    description: 'Professional event rental website showcasing tents, equipment, and services for weddings and special events.',
+    services: ['Web Design', 'Development', 'SEO'],
+    techStack: ['Next.js', 'React', 'Tailwind CSS'],
+    timeline: '6 weeks'
+  },
+  {
+    slug: 'setlife-casting',
+    title: 'SetLife Casting',
+    client: 'SetLife Casting',
+    industry: 'Entertainment - Casting',
+    type: 'website',
+    category: {
+      name: 'Websites',
+      slug: 'websites'
+    },
+    featured: true,
+    date: 'Q4 2024',
+    thumbnail: '/images/setlife-casting.png',
+    videoUrl: '/Videos/setlife-casting.mp4',
+    liveUrl: 'https://www.setlifecasting.com/',
+    description: 'Modern casting agency website connecting talent with production opportunities.',
+    services: ['Web Design', 'Development', 'Branding'],
+    techStack: ['Next.js', 'React', 'Tailwind CSS'],
+    timeline: '6 weeks'
+  },
 
   // VIDEO ADS - Add your actual videos here
   {
