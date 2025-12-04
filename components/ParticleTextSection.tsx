@@ -63,7 +63,7 @@ export default function ParticleTextSection() {
       const imageData = textCtx.getImageData(0, 0, textCanvas.width, textCanvas.height);
       const pixels = imageData.data;
 
-      const samplingRate = window.innerWidth < 768 ? 1.5 : 0.3; // Dense sampling for clear readability on mobile
+      const samplingRate = window.innerWidth < 768 ? 2 : 0.3; // Tighter spacing for better readability
 
       for (let y = 0; y < textCanvas.height; y += samplingRate) {
         for (let x = 0; x < textCanvas.width; x += samplingRate) {
@@ -79,33 +79,14 @@ export default function ParticleTextSection() {
       return positions;
     };
 
-    // Mouse tracking with throttling for mobile performance
+    // Mouse tracking
     let mouseX = -1000;
     let mouseY = -1000;
-    let lastMouseUpdate = 0;
-    const isMobile = window.innerWidth < 768;
-    const mouseUpdateInterval = isMobile ? 50 : 16; // Throttle to 20fps on mobile, 60fps on desktop
 
     const handleMouseMove = (e: MouseEvent) => {
-      const now = Date.now();
-      if (now - lastMouseUpdate < mouseUpdateInterval) return;
-      lastMouseUpdate = now;
-
       const rect = canvas.getBoundingClientRect();
       mouseX = e.clientX - rect.left;
       mouseY = e.clientY - rect.top;
-    };
-
-    const handleTouchMove = (e: TouchEvent) => {
-      const now = Date.now();
-      if (now - lastMouseUpdate < mouseUpdateInterval) return;
-      lastMouseUpdate = now;
-
-      if (e.touches.length > 0) {
-        const rect = canvas.getBoundingClientRect();
-        mouseX = e.touches[0].clientX - rect.left;
-        mouseY = e.touches[0].clientY - rect.top;
-      }
     };
 
     const handleMouseLeave = () => {
@@ -114,16 +95,14 @@ export default function ParticleTextSection() {
     };
 
     canvas.addEventListener('mousemove', handleMouseMove);
-    canvas.addEventListener('touchmove', handleTouchMove, { passive: true });
     canvas.addEventListener('mouseleave', handleMouseLeave);
-    canvas.addEventListener('touchend', handleMouseLeave);
 
     // Particles
     let particles: Array<{x: number, y: number, targetX: number, targetY: number, vx: number, vy: number}> = [];
 
     const initializeParticles = () => {
       const textPositions = createTextPositions();
-      const particleCount = Math.min(textPositions.length, window.innerWidth < 768 ? 1200 : 8000); // Mobile: 1200 (optimized), Desktop: 8000
+      const particleCount = Math.min(textPositions.length, window.innerWidth < 768 ? 0 : 8000); // Disabled on mobile, Desktop: 8000
 
       particles = [];
       for (let i = 0; i < particleCount; i++) {
@@ -178,14 +157,10 @@ export default function ParticleTextSection() {
         p.x += p.vx;
         p.y += p.vy;
 
-        // Draw particle - White with teal glow shadow (disabled on mobile for performance)
+        // Draw particle - White with teal glow shadow
         ctx.fillStyle = '#FFFFFF';
-        if (window.innerWidth >= 768) {
-          ctx.shadowColor = '#5FA99F';
-          ctx.shadowBlur = 3;
-        } else {
-          ctx.shadowBlur = 0;
-        }
+        ctx.shadowColor = '#5FA99F';
+        ctx.shadowBlur = 3;
         ctx.beginPath();
         ctx.arc(p.x, p.y, 2.5, 0, Math.PI * 2);
         ctx.fill();
@@ -199,9 +174,7 @@ export default function ParticleTextSection() {
     return () => {
       window.removeEventListener('resize', resizeCanvas);
       canvas.removeEventListener('mousemove', handleMouseMove);
-      canvas.removeEventListener('touchmove', handleTouchMove);
       canvas.removeEventListener('mouseleave', handleMouseLeave);
-      canvas.removeEventListener('touchend', handleMouseLeave);
     };
   }, []);
 
@@ -215,9 +188,7 @@ export default function ParticleTextSection() {
         className="w-full h-[400px] md:h-[600px] bg-black"
         style={{
           display: 'block',
-          backgroundColor: '#000000',
-          willChange: 'transform',
-          transform: 'translateZ(0)'
+          backgroundColor: '#000000'
         }}
       />
     </section>
