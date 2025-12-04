@@ -8,10 +8,12 @@ export default function Hero() {
   const [showArrow, setShowArrow] = useState(false);
   const [videoEnded, setVideoEnded] = useState(false);
   const [videoSources, setVideoSources] = useState<{ webm: string; mp4: string }>({
-    webm: '/Videos/hero-1280x720.webm',
-    mp4: '/Videos/hero-1280x720.mp4'
+    webm: '/Videos/drive-lead-media-digital-marketing-hero-desktop.webm',
+    mp4: '/Videos/drive-lead-media-digital-marketing-hero-desktop.mp4'
   });
   const videoRef = useRef<HTMLVideoElement>(null);
+  const hasPlayedRef = useRef(false);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   // Detect optimal video resolution based on screen size and orientation
   useEffect(() => {
@@ -23,35 +25,37 @@ export default function Hero() {
       // Portrait mode - use portrait video
       if (isPortrait && width <= 768) {
         return {
-          webm: '/Videos/hero-480x854-portrait.webm',
-          mp4: '/Videos/hero-480x854-portrait.mp4'
+          webm: '/Videos/drive-lead-media-digital-marketing-hero-mobile-portrait.webm',
+          mp4: '/Videos/drive-lead-media-digital-marketing-hero-mobile-portrait.mp4'
         };
       }
 
       // Landscape mode - select based on screen width
       if (width < 640) {
         return {
-          webm: '/Videos/hero-640x360.webm',
-          mp4: '/Videos/hero-640x360.mp4'
+          webm: '/Videos/drive-lead-media-digital-marketing-hero-mobile-landscape.webm',
+          mp4: '/Videos/drive-lead-media-digital-marketing-hero-mobile-landscape.mp4'
         };
       } else if (width < 1024) {
         return {
-          webm: '/Videos/hero-1024x576.webm',
-          mp4: '/Videos/hero-1024x576.mp4'
+          webm: '/Videos/drive-lead-media-digital-marketing-hero-tablet.webm',
+          mp4: '/Videos/drive-lead-media-digital-marketing-hero-tablet.mp4'
         };
       } else {
         return {
-          webm: '/Videos/hero-1280x720.webm',
-          mp4: '/Videos/hero-1280x720.mp4'
+          webm: '/Videos/drive-lead-media-digital-marketing-hero-desktop.webm',
+          mp4: '/Videos/drive-lead-media-digital-marketing-hero-desktop.mp4'
         };
       }
     };
 
     setVideoSources(selectVideoSource());
 
-    // Re-select on resize/orientation change
+    // Don't allow resize to interrupt playback
     const handleResize = () => {
-      setVideoSources(selectVideoSource());
+      if (!hasPlayedRef.current) {
+        setVideoSources(selectVideoSource());
+      }
     };
 
     window.addEventListener('resize', handleResize);
@@ -63,7 +67,7 @@ export default function Hero() {
     };
   }, []);
 
-  // Show arrow and logo when video ends
+  // Comprehensive video playback handling
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
@@ -71,13 +75,65 @@ export default function Hero() {
     const handleVideoEnd = () => {
       setVideoEnded(true);
       setShowArrow(true);
+      hasPlayedRef.current = true;
       // Dispatch custom event for navigation to listen to
       window.dispatchEvent(new CustomEvent('heroVideoEnded'));
+
+      // Clear timeout if it exists
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+        timeoutRef.current = null;
+      }
+    };
+
+    const handlePlaying = () => {
+      // Safety timeout: force end sequence if video doesn't end naturally
+      // Video is 8 seconds, add 2 second buffer
+      timeoutRef.current = setTimeout(() => {
+        if (!videoEnded) {
+          console.warn('Video timeout reached, forcing end sequence');
+          handleVideoEnd();
+        }
+      }, 10000);
+    };
+
+    const handleError = (e: Event) => {
+      console.error('Video playback error:', e);
+      // On error, skip to logo immediately
+      handleVideoEnd();
+    };
+
+    const handleCanPlay = () => {
+      // Aggressively try to play when video can play
+      video.play().catch((error) => {
+        console.warn('Play attempt failed:', error);
+        // Retry play on next interaction
+        const retryPlay = () => {
+          video.play().catch(console.error);
+          document.removeEventListener('touchstart', retryPlay);
+          document.removeEventListener('click', retryPlay);
+        };
+        document.addEventListener('touchstart', retryPlay, { once: true });
+        document.addEventListener('click', retryPlay, { once: true });
+      });
     };
 
     video.addEventListener('ended', handleVideoEnd);
-    return () => video.removeEventListener('ended', handleVideoEnd);
-  }, []);
+    video.addEventListener('playing', handlePlaying);
+    video.addEventListener('error', handleError);
+    video.addEventListener('canplay', handleCanPlay);
+
+    return () => {
+      video.removeEventListener('ended', handleVideoEnd);
+      video.removeEventListener('playing', handlePlaying);
+      video.removeEventListener('error', handleError);
+      video.removeEventListener('canplay', handleCanPlay);
+
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, [videoEnded]);
 
 
   return (
@@ -107,7 +163,7 @@ export default function Hero() {
           autoPlay
           muted
           playsInline
-          preload="metadata"
+          preload="auto"
           poster="/Videos/hero-poster.webp"
           className="w-full h-full object-cover"
           key={`${videoSources.webm}-${videoSources.mp4}`}
