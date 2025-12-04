@@ -279,54 +279,72 @@ export default function HowItWorks() {
 
       {/* MOBILE LAYOUT - Only show on mobile, hide on tablets and above */}
       <div className="block md:hidden relative">
-        {/* Vertical Glowing Line - Left side, behind all content */}
-        <div className="absolute left-8 top-0 bottom-0 w-[2px] z-0">
-          <div
-            className="absolute inset-0 bg-gradient-to-b from-transparent via-[#5FA99F] to-transparent"
-            style={{
-              boxShadow: '0 0 10px #5FA99F, 0 0 20px #5FA99F, 0 0 30px #5FA99F'
-            }}
-          />
-
-          {/* Animated Glowing Orbs */}
-          <motion.div
-            className="absolute w-3 h-3 rounded-full bg-[#5FA99F] left-1/2 -translate-x-1/2"
-            style={{
-              boxShadow: '0 0 15px #5FA99F, 0 0 30px #5FA99F, 0 0 45px #5FA99F'
-            }}
-            animate={{
-              top: ['0%', '100%'],
-            }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-              ease: 'linear'
-            }}
-          />
-
-          <motion.div
-            className="absolute w-3 h-3 rounded-full bg-[#5FA99F] left-1/2 -translate-x-1/2"
-            style={{
-              boxShadow: '0 0 15px #5FA99F, 0 0 30px #5FA99F, 0 0 45px #5FA99F'
-            }}
-            animate={{
-              top: ['100%', '0%'],
-            }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-              ease: 'linear',
-              delay: 2
-            }}
-          />
-        </div>
-
         <MobileScene
           title="High-Performance Websites"
           description="Custom-built websites engineered for speed, conversion, and top search rankings. We skip the templates and build every site from the ground up with clean code, strategic SEO, and performance optimization."
           videoSrc="/Videos/deviceframes.webm"
           index={0}
         />
+
+        {/* Progress Dots 1 - Between Scene 1 & 2 */}
+        <div className="flex items-center justify-center gap-3 py-8 relative z-10">
+          <motion.div
+            className="w-2.5 h-2.5 rounded-full bg-[#5FA99F]"
+            animate={{
+              opacity: [0.4, 1, 0.4],
+              scale: [1, 1.3, 1],
+              boxShadow: [
+                '0 0 8px #5FA99F',
+                '0 0 20px #5FA99F, 0 0 30px #5FA99F',
+                '0 0 8px #5FA99F'
+              ]
+            }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              ease: 'easeInOut',
+              times: [0, 0.5, 1]
+            }}
+          />
+          <motion.div
+            className="w-2.5 h-2.5 rounded-full bg-[#5FA99F]"
+            animate={{
+              opacity: [0.4, 1, 0.4],
+              scale: [1, 1.3, 1],
+              boxShadow: [
+                '0 0 8px #5FA99F',
+                '0 0 20px #5FA99F, 0 0 30px #5FA99F',
+                '0 0 8px #5FA99F'
+              ]
+            }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              ease: 'easeInOut',
+              delay: 0.5,
+              times: [0, 0.5, 1]
+            }}
+          />
+          <motion.div
+            className="w-2.5 h-2.5 rounded-full bg-[#5FA99F]"
+            animate={{
+              opacity: [0.4, 1, 0.4],
+              scale: [1, 1.3, 1],
+              boxShadow: [
+                '0 0 8px #5FA99F',
+                '0 0 20px #5FA99F, 0 0 30px #5FA99F',
+                '0 0 8px #5FA99F'
+              ]
+            }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              ease: 'easeInOut',
+              delay: 1.0,
+              times: [0, 0.5, 1]
+            }}
+          />
+        </div>
 
         <MobileScene
           title="Scroll Stopping Creatives"
@@ -335,6 +353,66 @@ export default function HowItWorks() {
           index={1}
           mobilePadding="px-0"
         />
+
+        {/* Progress Dots 2 - Between Scene 2 & 3 */}
+        <div className="flex items-center justify-center gap-3 py-8 relative z-10">
+          <motion.div
+            className="w-2.5 h-2.5 rounded-full bg-[#5FA99F]"
+            animate={{
+              opacity: [0.4, 1, 0.4],
+              scale: [1, 1.3, 1],
+              boxShadow: [
+                '0 0 8px #5FA99F',
+                '0 0 20px #5FA99F, 0 0 30px #5FA99F',
+                '0 0 8px #5FA99F'
+              ]
+            }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              ease: 'easeInOut',
+              times: [0, 0.5, 1]
+            }}
+          />
+          <motion.div
+            className="w-2.5 h-2.5 rounded-full bg-[#5FA99F]"
+            animate={{
+              opacity: [0.4, 1, 0.4],
+              scale: [1, 1.3, 1],
+              boxShadow: [
+                '0 0 8px #5FA99F',
+                '0 0 20px #5FA99F, 0 0 30px #5FA99F',
+                '0 0 8px #5FA99F'
+              ]
+            }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              ease: 'easeInOut',
+              delay: 0.5,
+              times: [0, 0.5, 1]
+            }}
+          />
+          <motion.div
+            className="w-2.5 h-2.5 rounded-full bg-[#5FA99F]"
+            animate={{
+              opacity: [0.4, 1, 0.4],
+              scale: [1, 1.3, 1],
+              boxShadow: [
+                '0 0 8px #5FA99F',
+                '0 0 20px #5FA99F, 0 0 30px #5FA99F',
+                '0 0 8px #5FA99F'
+              ]
+            }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              ease: 'easeInOut',
+              delay: 1.0,
+              times: [0, 0.5, 1]
+            }}
+          />
+        </div>
 
         <MobileScene
           title="Precision Targeting"
