@@ -623,7 +623,7 @@ export function MorphingParticles() {
                 alt="Instagram"
                 width={80}
                 height={80}
-                className="drop-shadow-[0_0_10px_rgba(228,64,95,0.5)] w-12 h-12 xs:w-14 xs:h-14 sm:w-16 sm:h-16 md:w-12 md:h-12"
+                className="drop-shadow-[0_0_10px_rgba(228,64,95,0.5)] w-12 h-12 xs:w-14 xs:h-14 sm:w-16 sm:h-16 md:w-14 md:h-14"
                 style={{
                   filter: 'drop-shadow(0 0 12px rgba(228, 64, 95, 0.5))'
                 }}
@@ -655,7 +655,7 @@ export function MorphingParticles() {
                 alt="Facebook"
                 width={80}
                 height={80}
-                className="drop-shadow-[0_0_10px_rgba(24,119,242,0.5)] w-12 h-12 xs:w-14 xs:h-14 sm:w-16 sm:h-16 md:w-12 md:h-12"
+                className="drop-shadow-[0_0_10px_rgba(24,119,242,0.5)] w-12 h-12 xs:w-14 xs:h-14 sm:w-16 sm:h-16 md:w-14 md:h-14"
                 style={{
                   filter: 'drop-shadow(0 0 12px rgba(24, 119, 242, 0.5))'
                 }}
