@@ -111,13 +111,14 @@ const MobileScene = ({
         </div>
 
         {/* Video */}
-        <div className="w-full aspect-video relative" style={{
-          // TEMPORARY DEBUG: Red border on scenes 2 & 3 to prove sizing is different
-          border: mobilePadding === 'px-2' ? '3px solid red' : '3px solid blue'
-        }}>
+        <div className="w-full aspect-video relative overflow-hidden">
           <video
             ref={videoRef}
-            className="w-full h-full object-contain"
+            className="w-full h-full"
+            style={{
+              objectFit: 'contain',
+              transform: mobilePadding === 'px-2' ? 'scale(1.2)' : 'scale(1)'
+            }}
             loop
             muted
             playsInline
