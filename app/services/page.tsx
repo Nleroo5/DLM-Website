@@ -28,7 +28,7 @@ export default function ServicesPage() {
             Everything You Need to Win on Facebook & Instagram
           </h1>
           <p className="font-body text-[1rem] sm:text-[1.0625rem] md:text-[1.125rem] lg:text-[1.25rem] text-[#5FA99F] max-w-[800px] mx-auto leading-[1.6]">
-            We handle every part of your advertising — from strategy to creative to results
+            We handle every part of your advertising, from strategy to creative to results
           </p>
         </div>
       </section>
@@ -54,7 +54,7 @@ export default function ServicesPage() {
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-[#5FA99F] text-[1.25rem] font-bold">✓</span>
-                    <span className="font-body text-[1rem] text-gray-300">Fully custom, professional websites built from the ground up—no templates</span>
+                    <span className="font-body text-[1rem] text-gray-300">Fully custom, professional websites built from the ground up, no templates</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-[#5FA99F] text-[1.25rem] font-bold">✓</span>
@@ -129,7 +129,7 @@ export default function ServicesPage() {
                   Complete Campaign Setup
                 </h2>
                 <p className="font-body text-[1rem] sm:text-[1.0625rem] text-gray-300 leading-[1.7] mb-6">
-                  Full campaign configuration and audience targeting—from identifying your ideal customers to tracking every lead that comes through.
+                  Full campaign configuration and audience targeting, from identifying your ideal customers to tracking every lead that comes through.
                 </p>
                 <ul className="space-y-4 mb-8">
                   <li className="flex items-start gap-3">
