@@ -179,13 +179,13 @@ export default function ParticleTextSection() {
   }, []);
 
   return (
-    <section className="relative bg-black py-[40px] md:py-[5px] overflow-hidden">
+    <section className="relative bg-black py-0 md:py-[5px] overflow-hidden">
       <div className="absolute top-[20%] right-[10%] w-[300px] h-[300px] bg-[#5FA99F] opacity-10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-[20%] left-[10%] w-[250px] h-[250px] bg-[#85C7B3] opacity-10 rounded-full blur-[120px] pointer-events-none" />
 
       <canvas
         ref={canvasRef}
-        className="w-full h-[400px] md:h-[600px] bg-black"
+        className="w-full h-0 md:h-[600px] bg-black"
         style={{
           display: 'block',
           backgroundColor: '#000000'
