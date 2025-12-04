@@ -50,13 +50,13 @@ export default function TargetedAdsCTA() {
             {/* Animated gradient overlay on hover */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-            <span className="relative flex items-center gap-2 pointer-events-none">
-              Start Driving Leads
+            <span className="relative flex items-center justify-center pointer-events-none">
+              <span className="text-center">Start Driving Leads</span>
               <motion.span
                 initial={{ opacity: 0, x: -10 }}
                 whileHover={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.3 }}
-                className="inline-block"
+                className="absolute -right-6 inline-block"
               >
                 →
               </motion.span>
