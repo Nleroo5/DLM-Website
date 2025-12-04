@@ -24,7 +24,7 @@ export default function Testimonials() {
   return (
     // SECTION 3: CLIENT TESTIMONIAL VIDEO - Elevator door animation reveals video on scroll
     // Reduced padding for less empty scroll space, more professional pacing
-    <section ref={containerRef} className="relative min-h-screen pt-[15vh] md:pt-[25vh] pb-[10vh] md:pb-[25vh]" style={{ zIndex: 3 }}>
+    <section ref={containerRef} className="relative min-h-screen pt-[15vh] md:pt-[25vh] pb-[12px] md:pb-[25vh]" style={{ zIndex: 3 }}>
       <div className="max-w-[900px] mx-auto px-4 md:px-6">
         {/* Video Container */}
         <div className="relative">
@@ -35,7 +35,7 @@ export default function Testimonials() {
               <motion.iframe
                 style={{ opacity: videoOpacity }}
                 className="absolute inset-0 w-full h-full"
-                src={`https://www.youtube.com/embed/YBLniwOCtKU?modestbranding=1&rel=0&showinfo=0&controls=1&disablekb=1${isPlaying ? '&autoplay=1&mute=0' : ''}`}
+                src={`https://www.youtube.com/embed/YBLniwOCtKU?modestbranding=1&rel=0&showinfo=0&controls=1&disablekb=1${isPlaying ? '&autoplay=1' : ''}`}
                 title="Village Pediatrics of St. Augustine Testimonial"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
