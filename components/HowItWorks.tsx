@@ -114,10 +114,12 @@ const MobileScene = ({
         <div className="w-full aspect-video relative overflow-hidden">
           <video
             ref={videoRef}
-            className="w-full h-full"
             style={{
-              objectFit: mobilePadding === 'px-2' ? 'cover' : 'contain',
-              transform: mobilePadding === 'px-2' ? 'scale(1.15)' : 'scale(1)'
+              width: mobilePadding === 'px-2' ? '120%' : '100%',
+              height: '100%',
+              objectFit: 'cover',
+              objectPosition: 'center',
+              marginLeft: mobilePadding === 'px-2' ? '-10%' : '0'
             }}
             loop
             muted
