@@ -22,8 +22,21 @@ export default function WebsiteCard({ project }: WebsiteCardProps) {
         {/* Animated gradient background on hover */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#5FA99F]/5 via-transparent to-[#85C7B3]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-        {/* Website Preview Image/Video */}
-        {project.thumbnail && (
+        {/* Website Preview Video or Image */}
+        {project.videoUrl ? (
+          <div className="relative w-full aspect-video bg-black/50 overflow-hidden">
+            <video
+              className="w-full h-full object-cover"
+              autoPlay
+              loop
+              muted
+              playsInline
+            >
+              <source src={project.videoUrl} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        ) : project.thumbnail ? (
           <div className="relative w-full aspect-video bg-black/50 overflow-hidden">
             <Image
               src={project.thumbnail}
@@ -32,7 +45,7 @@ export default function WebsiteCard({ project }: WebsiteCardProps) {
               className="object-cover"
             />
           </div>
-        )}
+        ) : null}
 
         {/* Project Info */}
         <div className="relative p-6 sm:p-8 flex-1 flex flex-col">
