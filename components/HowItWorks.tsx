@@ -95,7 +95,7 @@ const MobileScene = ({
     >
       <motion.div
         style={{ opacity }}
-        className={`flex flex-col justify-center items-center ${videoMaxWidth} w-full relative z-10`}
+        className={`flex flex-col justify-center items-center md:${videoMaxWidth} w-full relative z-10`}
       >
         {/* Text */}
         <div className="max-w-xl text-center mb-12 bg-black px-6 py-4 rounded-lg">
