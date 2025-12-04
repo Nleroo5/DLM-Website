@@ -95,7 +95,7 @@ const MobileScene = ({
     >
       <motion.div
         style={{ opacity }}
-        className="flex flex-col justify-center items-center max-w-4xl w-full relative z-10"
+        className={`flex flex-col justify-center items-center ${videoMaxWidth} w-full relative z-10`}
       >
         {/* Text */}
         <div className="max-w-xl text-center mb-12 bg-black px-6 py-4 rounded-lg">
@@ -108,7 +108,7 @@ const MobileScene = ({
         </div>
 
         {/* Video */}
-        <div className={`w-full ${videoMaxWidth} aspect-video relative`}>
+        <div className="w-full aspect-video relative">
           <video
             ref={videoRef}
             className="w-full h-full object-contain"
