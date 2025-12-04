@@ -67,7 +67,7 @@ export default function ServicesPage() {
                 </ul>
               </div>
               <div className="order-1 lg:order-2">
-                <div className="relative h-[300px] sm:h-[400px] bg-[#1A1A1A] rounded-[24px] overflow-hidden border-2 border-white/30 shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:border-white/50 hover:shadow-[0_0_40px_rgba(255,255,255,0.4)] transition-all duration-400">
+                <div className="relative h-[300px] sm:h-[400px] bg-[#1A1A1A] rounded-[24px] overflow-hidden border-2 border-[#5FA99F]/30 shadow-[0_0_30px_rgba(95,169,159,0.3)] hover:border-[#5FA99F]/50 hover:shadow-[0_0_40px_rgba(95,169,159,0.4)] transition-all duration-400">
                   <Image
                     src="/images/website-icon.webp"
                     alt="Custom Website Design"
@@ -83,7 +83,7 @@ export default function ServicesPage() {
           <div className="mb-[100px]">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="order-1">
-                <div className="relative h-[300px] sm:h-[400px] bg-[#1A1A1A] rounded-[24px] overflow-hidden border-2 border-white/30 shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:border-white/50 hover:shadow-[0_0_40px_rgba(255,255,255,0.4)] transition-all duration-400">
+                <div className="relative h-[300px] sm:h-[400px] bg-[#1A1A1A] rounded-[24px] overflow-hidden border-2 border-[#5FA99F]/30 shadow-[0_0_30px_rgba(95,169,159,0.3)] hover:border-[#5FA99F]/50 hover:shadow-[0_0_40px_rgba(95,169,159,0.4)] transition-all duration-400">
                   <Image
                     src="/images/creative-icon.webp"
                     alt="Video and Image Ads"
@@ -151,7 +151,7 @@ export default function ServicesPage() {
                 </ul>
               </div>
               <div className="order-1 lg:order-2">
-                <div className="relative h-[300px] sm:h-[400px] bg-[#1A1A1A] rounded-[24px] overflow-hidden border-2 border-white/30 shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:border-white/50 hover:shadow-[0_0_40px_rgba(255,255,255,0.4)] transition-all duration-400">
+                <div className="relative h-[300px] sm:h-[400px] bg-[#1A1A1A] rounded-[24px] overflow-hidden border-2 border-[#5FA99F]/30 shadow-[0_0_30px_rgba(95,169,159,0.3)] hover:border-[#5FA99F]/50 hover:shadow-[0_0_40px_rgba(95,169,159,0.4)] transition-all duration-400">
                   <Image
                     src="/images/target-icon.webp"
                     alt="Complete Campaign Setup"
@@ -167,7 +167,7 @@ export default function ServicesPage() {
           <div className="mb-[80px]">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="order-1">
-                <div className="relative h-[300px] sm:h-[400px] bg-[#1A1A1A] rounded-[24px] overflow-hidden border-2 border-white/30 shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:border-white/50 hover:shadow-[0_0_40px_rgba(255,255,255,0.4)] transition-all duration-400">
+                <div className="relative h-[300px] sm:h-[400px] bg-[#1A1A1A] rounded-[24px] overflow-hidden border-2 border-[#5FA99F]/30 shadow-[0_0_30px_rgba(95,169,159,0.3)] hover:border-[#5FA99F]/50 hover:shadow-[0_0_40px_rgba(95,169,159,0.4)] transition-all duration-400">
                   <Image
                     src="/images/performance-icon.webp"
                     alt="Continuous Improvement"
