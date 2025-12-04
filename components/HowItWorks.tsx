@@ -216,30 +216,30 @@ export default function HowItWorks() {
 
               {/* Scene 1 Text */}
               <div className="min-h-screen flex flex-col justify-center py-20">
-                <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6 leading-tight">
+                <h2 className="text-3xl lg:text-[2.625rem] font-bold text-white mb-6 leading-tight">
                   High-Performance<br />Websites
                 </h2>
-                <p className="text-base lg:text-lg text-gray-300 leading-relaxed">
+                <p className="text-base lg:text-xl text-gray-300 leading-relaxed">
                   Custom-built websites engineered for speed, conversion, and top search rankings. We skip the templates and build every site from the ground up with clean code, strategic SEO, and performance optimization.
                 </p>
               </div>
 
               {/* Scene 2 Text */}
               <div className="min-h-screen flex flex-col justify-center py-20">
-                <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6 leading-tight">
+                <h2 className="text-3xl lg:text-[2.625rem] font-bold text-white mb-6 leading-tight">
                   Scroll Stopping<br />Creatives
                 </h2>
-                <p className="text-base lg:text-lg text-gray-300 leading-relaxed">
+                <p className="text-base lg:text-xl text-gray-300 leading-relaxed">
                   Custom video and image ads designed to capture attention in crowded feeds and drive qualified clicks across Instagram and Facebook.
                 </p>
               </div>
 
               {/* Scene 3 Text */}
               <div className="min-h-screen flex flex-col justify-center py-20">
-                <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6 leading-tight">
+                <h2 className="text-3xl lg:text-[2.625rem] font-bold text-white mb-6 leading-tight">
                   Precision<br />Targeting
                 </h2>
-                <p className="text-base lg:text-lg text-gray-300 leading-relaxed">
+                <p className="text-base lg:text-xl text-gray-300 leading-relaxed">
                   We target the exact audience most likely to become your customers filtering by location, age, interests, and behaviors then manage your budget to get the best results at the lowest cost.
                 </p>
               </div>
