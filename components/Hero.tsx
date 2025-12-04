@@ -1,7 +1,6 @@
 'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';
-import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
 import { ChevronDown } from 'lucide-react';
 
@@ -201,38 +200,6 @@ export default function Hero() {
         )}
       </AnimatePresence>
 
-    </section>
-  );
-}
-
-// Mobile CTA Section - Static section between MeetTheTeam and Footer
-export function MobileCTASection() {
-  return (
-    <section className="block md:hidden relative bg-black py-6 px-6">
-      <div className="flex items-center justify-center">
-        <Link href="/contact" className="block">
-          <motion.button
-            className="relative px-8 py-4 bg-transparent rounded-xl font-heading font-bold text-white text-lg cursor-pointer"
-            style={{
-              boxShadow: '0 0 30px rgba(255, 255, 255, 0.4), 0 8px 24px rgba(0, 0, 0, 0.3)',
-              border: '3px solid rgba(255, 255, 255, 0.9)',
-            }}
-            whileHover={{
-              scale: 1.03,
-              boxShadow: '0 0 45px rgba(255, 255, 255, 0.6), 0 10px 30px rgba(0, 0, 0, 0.4)',
-            }}
-            whileTap={{
-              scale: 0.98,
-            }}
-            transition={{
-              duration: 0.2,
-              ease: 'easeOut'
-            }}
-          >
-            Start Driving Leads
-          </motion.button>
-        </Link>
-      </div>
     </section>
   );
 }

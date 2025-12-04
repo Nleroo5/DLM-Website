@@ -1,5 +1,5 @@
 import dynamic from 'next/dynamic';
-import Hero, { MobileCTASection } from '@/components/Hero';
+import Hero from '@/components/Hero';
 import ParticleTextSection from '@/components/ParticleTextSection';
 
 // Dynamic imports for below-fold components to reduce initial bundle size
@@ -16,7 +16,6 @@ export default function Home() {
       <Testimonials />
       <MeetTheTeam />
       <ParticleTextSection />
-      <MobileCTASection />
       <TargetedAdsCTA />
     </main>
   );
