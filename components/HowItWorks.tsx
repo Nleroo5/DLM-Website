@@ -116,8 +116,8 @@ const MobileScene = ({
             ref={videoRef}
             className="w-full h-full"
             style={{
-              objectFit: 'contain',
-              transform: mobilePadding === 'px-2' ? 'scale(1.2)' : 'scale(1)'
+              objectFit: mobilePadding === 'px-2' ? 'cover' : 'contain',
+              transform: mobilePadding === 'px-2' ? 'scale(1.15)' : 'scale(1)'
             }}
             loop
             muted
