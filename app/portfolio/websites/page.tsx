@@ -46,7 +46,7 @@ export default function WebsitesPortfolioPage() {
       <section className="relative pb-[100px] sm:pb-[120px] px-4 sm:px-6">
         <div className="max-w-[1400px] mx-auto">
           {websites.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
               {websites.map((project) => (
                 <WebsiteCard key={project.slug} project={project} />
               ))}
