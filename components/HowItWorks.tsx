@@ -117,8 +117,9 @@ const MobileScene = ({
             className="w-full h-full"
             style={{
               objectFit: 'contain',
-              width: mobilePadding === 'px-2' ? '140%' : '100%',
-              marginLeft: mobilePadding === 'px-2' ? '-20%' : '0'
+              width: mobilePadding === 'px-2' ? '180%' : '100%',
+              marginLeft: mobilePadding === 'px-2' ? '-40%' : '0',
+              transform: mobilePadding === 'px-2' ? 'scale(1.2)' : 'scale(1)'
             }}
             loop
             muted
