@@ -194,36 +194,52 @@ export default function HowItWorks() {
                 }}
                 className="absolute top-[83.33%] left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-[#5FA99F]"
               />
+
+              {/* Traveling Pulse Animation */}
+              <motion.div
+                className="absolute w-3 h-3 rounded-full bg-[#5FA99F] left-1/2 -translate-x-1/2"
+                style={{
+                  boxShadow: '0 0 15px #5FA99F, 0 0 30px #5FA99F, 0 0 45px #5FA99F'
+                }}
+                animate={{
+                  top: ['0%', '100%'],
+                }}
+                transition={{
+                  duration: 3.5,
+                  repeat: Infinity,
+                  ease: 'linear'
+                }}
+              />
             </div>
 
             <div className="max-w-xl mx-auto px-6 lg:px-20">
 
               {/* Scene 1 Text */}
               <div className="min-h-screen flex flex-col justify-center py-20">
-                <h2 className="text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6 leading-tight">
                   High-Performance<br />Websites
                 </h2>
-                <p className="text-xl text-gray-300 leading-relaxed">
+                <p className="text-base lg:text-lg text-gray-300 leading-relaxed">
                   Custom-built websites engineered for speed, conversion, and top search rankings. We skip the templates and build every site from the ground up with clean code, strategic SEO, and performance optimization.
                 </p>
               </div>
 
               {/* Scene 2 Text */}
               <div className="min-h-screen flex flex-col justify-center py-20">
-                <h2 className="text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6 leading-tight">
                   Scroll Stopping<br />Creatives
                 </h2>
-                <p className="text-xl text-gray-300 leading-relaxed">
+                <p className="text-base lg:text-lg text-gray-300 leading-relaxed">
                   Custom video and image ads designed to capture attention in crowded feeds and drive qualified clicks across Instagram and Facebook.
                 </p>
               </div>
 
               {/* Scene 3 Text */}
               <div className="min-h-screen flex flex-col justify-center py-20">
-                <h2 className="text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6 leading-tight">
                   Precision<br />Targeting
                 </h2>
-                <p className="text-xl text-gray-300 leading-relaxed">
+                <p className="text-base lg:text-lg text-gray-300 leading-relaxed">
                   We target the exact audience most likely to become your customers filtering by location, age, interests, and behaviors then manage your budget to get the best results at the lowest cost.
                 </p>
               </div>
@@ -234,7 +250,7 @@ export default function HowItWorks() {
           {/* RIGHT: Sticky Graphics - SCROLL-DRIVEN FADE - Now shows on tablets */}
           <div className="w-full md:w-1/2 relative hidden md:block">
             <div className="sticky top-0 self-start h-screen flex items-center justify-center pointer-events-none">
-              <div className="relative w-full max-w-3xl h-[60vh] px-6 md:px-8 pointer-events-auto">
+              <div className="relative w-full max-w-4xl h-[75vh] px-6 md:px-8 pointer-events-auto">
 
                 <VideoScene
                   src="/Videos/deviceframes-optimized.webm"
