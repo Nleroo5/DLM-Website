@@ -317,6 +317,7 @@ export default function HowItWorks() {
           description="Custom video and image ads designed to capture attention in crowded feeds and drive qualified clicks across Instagram and Facebook."
           videoSrc="/Videos/phone-ad.webm"
           index={1}
+          mobilePadding="px-0"
         />
 
         <MobileScene
@@ -324,6 +325,7 @@ export default function HowItWorks() {
           description="We target the exact audience most likely to become your customers filtering by location, age, interests, and behaviors then manage your budget to get the best results at the lowest cost."
           videoSrc="/Videos/metric-video.webm"
           index={2}
+          mobilePadding="px-0"
         />
       </div>
 
