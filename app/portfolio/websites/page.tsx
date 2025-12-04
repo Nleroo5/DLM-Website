@@ -32,10 +32,10 @@ export default function WebsitesPortfolioPage() {
               </Link>
             </div>
 
-            <h1 className="font-heading text-[2.5rem] sm:text-[3.5rem] lg:text-[5rem] font-bold text-white mb-6 leading-[1.1]">
+            <h1 className="font-heading text-[2rem] sm:text-[2.5rem] lg:text-[3rem] font-bold text-white mb-6 leading-[1.1]">
               Website Projects
             </h1>
-            <p className="font-body text-[1.125rem] sm:text-[1.25rem] lg:text-[1.375rem] max-w-[800px] leading-relaxed text-gray-300">
+            <p className="font-body text-[1rem] sm:text-[1.0625rem] lg:text-[1.125rem] max-w-[800px] leading-relaxed text-gray-300">
               Professional websites built from scratch—designed for speed, SEO, and conversion.
             </p>
           </motion.div>
@@ -74,15 +74,15 @@ export default function WebsitesPortfolioPage() {
           transition={{ duration: 0.6 }}
           className="max-w-[900px] mx-auto bg-[#1A1A1A]/40 backdrop-blur-xl rounded-[32px] border-2 border-[#5FA99F]/30 p-8 sm:p-12 text-center shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:border-[#5FA99F]/60 hover:shadow-[0_0_40px_rgba(95,169,159,0.3)] transition-all duration-500"
         >
-          <h2 className="font-heading text-[2rem] sm:text-[3rem] font-bold text-white mb-4 leading-tight">
+          <h2 className="font-heading text-[1.5rem] sm:text-[2rem] font-bold text-white mb-4 leading-tight">
             Need a Website Like These?
           </h2>
-          <p className="font-body text-gray-300 text-[1.125rem] mb-8 leading-relaxed max-w-[600px] mx-auto">
+          <p className="font-body text-gray-300 text-[1rem] mb-8 leading-relaxed max-w-[600px] mx-auto">
             Let's build a custom website that drives results for your business.
           </p>
           <Link
             href="/contact"
-            className="inline-block bg-gradient-to-r from-[#5FA99F] to-[#85C7B3] text-white px-10 py-4 text-[1.125rem] rounded-xl font-heading font-bold hover:scale-105 transition-transform duration-300 shadow-[0_0_30px_rgba(95,169,159,0.4)]"
+            className="inline-block bg-transparent text-white px-8 py-3 text-sm rounded-lg font-heading font-semibold border-2 border-white hover:bg-white hover:text-black transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] hover:scale-105"
           >
             Start Your Project
           </Link>
