@@ -101,7 +101,7 @@ const MobileScene = ({
         className={`flex flex-col justify-center items-center ${desktopMaxWidth} w-full relative z-10`}
       >
         {/* Text */}
-        <div className="max-w-xl text-center mb-12 bg-black px-6 py-4 rounded-lg">
+        <div className="max-w-xl text-center mb-12">
           <h2 className="text-4xl font-bold text-white mb-6 leading-tight">
             {title}
           </h2>
@@ -263,8 +263,8 @@ export default function HowItWorks() {
 
       {/* MOBILE LAYOUT - Only show on mobile, hide on tablets and above */}
       <div className="block md:hidden relative">
-        {/* Vertical Glowing Line - Centered, behind all content */}
-        <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[2px] z-0">
+        {/* Vertical Glowing Line - Left side, behind all content */}
+        <div className="absolute left-8 top-0 bottom-0 w-[2px] z-0">
           <div
             className="absolute inset-0 bg-gradient-to-b from-transparent via-[#5FA99F] to-transparent"
             style={{

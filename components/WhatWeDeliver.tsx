@@ -46,7 +46,7 @@ export default function WhatWeDeliver() {
       <div className="max-w-[1200px] mx-auto text-center">
         {/* Section Title */}
         <motion.h2
-          className="font-heading text-[1.75rem] sm:text-[2.25rem] lg:text-[3.5rem] mb-3 sm:mb-5 lg:mb-6 text-white font-semibold leading-[1.2] tracking-tight"
+          className="font-heading text-[1.75rem] sm:text-[2.25rem] lg:text-[2.75rem] mb-3 sm:mb-5 lg:mb-6 text-white font-semibold leading-[1.2] tracking-tight"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -57,7 +57,7 @@ export default function WhatWeDeliver() {
 
         {/* Section Subtitle */}
         <motion.p
-          className="text-[#5FA99F] text-[0.95rem] sm:text-[1.125rem] lg:text-[1.5rem] mb-6 sm:mb-10 lg:mb-12 font-body font-normal leading-[1.6] max-w-[700px] mx-auto"
+          className="text-[#5FA99F] text-[0.95rem] sm:text-[1.125rem] lg:text-[1.25rem] mb-6 sm:mb-10 lg:mb-12 font-body font-normal leading-[1.6] max-w-[700px] mx-auto"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -80,25 +80,25 @@ export default function WhatWeDeliver() {
             >
               <div>
                 {/* Icon */}
-                <div className="h-14 sm:h-16 md:h-20 lg:h-24 w-auto mx-auto mb-3 sm:mb-4 md:mb-5 lg:mb-6 block transition-all duration-400 [filter:drop-shadow(0_4px_12px_rgba(95,169,159,0.2))]">
+                <div className="h-14 sm:h-16 md:h-20 lg:h-32 w-auto mx-auto mb-3 sm:mb-4 md:mb-5 lg:mb-6 block transition-all duration-400 [filter:drop-shadow(0_4px_12px_rgba(95,169,159,0.2))]">
                   <Image
                     src={card.icon}
                     alt={`${card.title} Icon`}
-                    width={112}
-                    height={112}
+                    width={128}
+                    height={128}
                     loading="lazy"
                     className="w-auto h-full mx-auto object-contain"
                   />
                 </div>
 
                 {/* Card Title */}
-                <h3 className="text-white text-[0.95rem] sm:text-[1.05rem] md:text-[1.2rem] lg:text-[1.5rem] xl:text-[1.875rem] mb-2 sm:mb-3 md:mb-3 lg:mb-4 xl:mb-5 font-semibold font-heading transition-all duration-400 leading-[1.3] text-center">
+                <h3 className="text-white text-[0.95rem] sm:text-[1.05rem] md:text-[1.2rem] lg:text-[1.35rem] xl:text-[1.5rem] mb-2 sm:mb-3 md:mb-3 lg:mb-4 xl:mb-5 font-semibold font-heading transition-all duration-400 leading-[1.3] text-center">
                   {card.title}
                 </h3>
               </div>
 
               {/* Card Content */}
-              <p className="text-[#5FA99F] text-[0.8rem] sm:text-[0.85rem] md:text-[0.95rem] lg:text-[1.1rem] xl:text-[1.3rem] font-normal font-body leading-[1.5] sm:leading-[1.55] md:leading-[1.6] transition-all duration-400 text-center">
+              <p className="text-[#5FA99F] text-[0.8rem] sm:text-[0.85rem] md:text-[0.95rem] lg:text-[1.05rem] xl:text-[1.125rem] font-normal font-body leading-[1.5] sm:leading-[1.55] md:leading-[1.6] transition-all duration-400 text-center">
                 {card.content}
               </p>
             </motion.div>
