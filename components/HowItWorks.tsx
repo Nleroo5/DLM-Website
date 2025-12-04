@@ -51,13 +51,15 @@ const MobileScene = ({
   description,
   videoSrc,
   index,
-  videoMaxWidth = 'max-w-2xl'
+  videoMaxWidth = 'max-w-2xl',
+  mobilePadding = 'px-6'
 }: {
   title: string;
   description: string;
   videoSrc: string;
   index: number;
   videoMaxWidth?: string;
+  mobilePadding?: string;
 }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -89,7 +91,7 @@ const MobileScene = ({
   return (
     <div
       ref={sectionRef}
-      className="flex items-center justify-center py-32 px-6 relative z-10"
+      className={`flex items-center justify-center py-32 ${mobilePadding} relative z-10`}
     >
       <motion.div
         style={{ opacity }}
@@ -313,6 +315,7 @@ export default function HowItWorks() {
           videoSrc="/Videos/phone-ad.webm"
           index={1}
           videoMaxWidth="max-w-4xl"
+          mobilePadding="px-2"
         />
 
         <MobileScene
@@ -321,6 +324,7 @@ export default function HowItWorks() {
           videoSrc="/Videos/metric-video.webm"
           index={2}
           videoMaxWidth="max-w-4xl"
+          mobilePadding="px-2"
         />
       </div>
 
