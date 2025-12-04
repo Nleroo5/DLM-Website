@@ -52,14 +52,6 @@ export default function TargetedAdsCTA() {
 
             <span className="relative flex items-center justify-center pointer-events-none">
               <span className="text-center">Start Driving Leads</span>
-              <motion.span
-                initial={{ opacity: 0, x: -10 }}
-                whileHover={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3 }}
-                className="absolute -right-6 inline-block"
-              >
-                →
-              </motion.span>
             </span>
           </motion.button>
         </Link>
