@@ -15,7 +15,7 @@ export default function ParticleTextSection() {
     // Set canvas size
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
-      canvas.height = 600; // Smaller fixed height
+      canvas.height = window.innerWidth < 768 ? 400 : 600; // Responsive height: 400px mobile, 600px desktop
       initializeParticles();
     };
 
@@ -26,7 +26,9 @@ export default function ParticleTextSection() {
       const textCtx = textCanvas.getContext('2d', { willReadFrequently: true });
       if (!textCtx) return positions;
 
-      const text = 'target your exact audience\nwithout wasting ad spend';
+      const text = canvas.width < 1440
+        ? 'target your\nexact audience'
+        : 'target your exact audience\nwithout wasting ad spend';
       const lines = text.split('\n');
 
       // Responsive font size
@@ -100,7 +102,7 @@ export default function ParticleTextSection() {
 
     const initializeParticles = () => {
       const textPositions = createTextPositions();
-      const particleCount = Math.min(textPositions.length, window.innerWidth < 768 ? 0 : 8000); // Increased for clearer text
+      const particleCount = Math.min(textPositions.length, window.innerWidth < 768 ? 2000 : 8000); // Mobile: 2000, Desktop: 8000
 
       particles = [];
       for (let i = 0; i < particleCount; i++) {
@@ -177,13 +179,13 @@ export default function ParticleTextSection() {
   }, []);
 
   return (
-    <section className="relative bg-black py-[5px] overflow-hidden">
+    <section className="relative bg-black py-[40px] md:py-[5px] overflow-hidden">
       <div className="absolute top-[20%] right-[10%] w-[300px] h-[300px] bg-[#5FA99F] opacity-10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-[20%] left-[10%] w-[250px] h-[250px] bg-[#85C7B3] opacity-10 rounded-full blur-[120px] pointer-events-none" />
 
       <canvas
         ref={canvasRef}
-        className="w-full h-[600px] bg-black"
+        className="w-full h-[400px] md:h-[600px] bg-black"
         style={{
           display: 'block',
           backgroundColor: '#000000'
