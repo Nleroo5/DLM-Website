@@ -16,7 +16,7 @@ export default function MeetTheTeam() {
   // Trigger animation when section enters viewport
   useEffect(() => {
     const unsubscribe = scrollYProgress.on('change', (latest) => {
-      if (latest >= 0.3 && !hasTriggered) {
+      if (latest >= 0.01 && !hasTriggered) {
         setHasTriggered(true);
       }
     });
