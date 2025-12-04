@@ -88,8 +88,8 @@ export function MorphingParticles() {
         // Tablet/small desktop: optimized for medium screens
         fontSize = Math.min(canvasWidth * 0.075, 70);
       } else {
-        // Desktop: full size
-        fontSize = Math.min(canvasWidth * 0.08, 80);
+        // Desktop: reduced size for better particle density
+        fontSize = Math.min(canvasWidth * 0.08, 72);
       }
       textCanvas.width = canvasWidth;
       textCanvas.height = canvasHeight;
@@ -157,8 +157,8 @@ export function MorphingParticles() {
       const width = window.innerWidth;
       if (width < 768) return 0;         // Mobile: ZERO (truly disabled - no wasted resources)
       if (width < 1024) return 1500;     // Tablet: balanced performance (was 3500)
-      if (width < 1920) return 3500;     // Desktop: optimized quality (was 8000)
-      return 5000;                        // 4K: high quality without excess
+      if (width < 1920) return 5000;     // Desktop: increased density for clearer text (was 3500)
+      return 6000;                        // 4K: high quality for larger screens
     };
 
     // Initialize background particles (always floating)
