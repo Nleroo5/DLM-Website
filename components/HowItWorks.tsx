@@ -116,9 +116,9 @@ const MobileScene = ({
             ref={videoRef}
             className="w-full h-full"
             style={{
-              objectFit: mobilePadding === 'px-2' ? 'contain' : 'contain',
-              width: mobilePadding === 'px-2' ? '120%' : '100%',
-              marginLeft: mobilePadding === 'px-2' ? '-10%' : '0'
+              objectFit: 'contain',
+              width: mobilePadding === 'px-2' ? '140%' : '100%',
+              marginLeft: mobilePadding === 'px-2' ? '-20%' : '0'
             }}
             loop
             muted
@@ -322,6 +322,7 @@ export default function HowItWorks() {
           description="Custom video and image ads designed to capture attention in crowded feeds and drive qualified clicks across Instagram and Facebook."
           videoSrc="/Videos/phone-ad.webm"
           index={1}
+          mobilePadding="px-2"
         />
 
         <MobileScene
@@ -329,6 +330,7 @@ export default function HowItWorks() {
           description="We target the exact audience most likely to become your customers filtering by location, age, interests, and behaviors then manage your budget to get the best results at the lowest cost."
           videoSrc="/Videos/metric-video.webm"
           index={2}
+          mobilePadding="px-2"
         />
       </div>
 
