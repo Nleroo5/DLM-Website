@@ -157,7 +157,7 @@ export default function Footer() {
                 </a>
                 <a
                   href="mailto:hello@driveleadmedia.com"
-                  className="font-body text-[0.9rem] text-gray-300 hover:text-[#5FA99F] transition-all duration-300 break-all"
+                  className="font-body text-[0.8rem] sm:text-[0.9rem] text-gray-300 hover:text-[#5FA99F] transition-all duration-300 break-all"
                   style={{
                     textShadow: '0 0 5px rgba(95,169,159,0.2)'
                   }}
@@ -304,7 +304,7 @@ export default function Footer() {
               </a>
               <a
                 href="mailto:hello@driveleadmedia.com"
-                className="font-body text-[0.95rem] text-[#85C7B3] hover:text-[#5FA99F] transition-colors duration-300"
+                className="font-body text-[0.85rem] sm:text-[0.95rem] text-[#85C7B3] hover:text-[#5FA99F] transition-colors duration-300"
               >
                 hello@driveleadmedia.com
               </a>
