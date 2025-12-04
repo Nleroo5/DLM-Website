@@ -220,13 +220,13 @@ export default function ServicesPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link
               href="/contact"
-              className="inline-block font-ui text-[1rem] sm:text-[1.05rem] md:text-[1.1rem] px-8 py-4 bg-[#5FA99F] text-white font-bold rounded-full hover:bg-[#4E8B82] hover:shadow-lg transition-all duration-300"
+              className="inline-block font-heading text-sm px-8 py-3 bg-transparent text-white font-semibold rounded-lg border-2 border-white hover:bg-white hover:text-black transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] hover:scale-105"
             >
               Schedule Your Free Call
             </Link>
             <Link
               href="/portfolio"
-              className="inline-block font-ui text-[1rem] sm:text-[1.05rem] md:text-[1.1rem] px-8 py-4 bg-transparent border-2 border-[#5FA99F] text-[#5FA99F] font-bold rounded-full hover:bg-[#5FA99F] hover:text-white transition-all duration-300"
+              className="inline-block font-heading text-sm px-8 py-3 bg-transparent text-white font-semibold rounded-lg border-2 border-white hover:bg-white hover:text-black transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] hover:scale-105"
             >
               View Our Work
             </Link>
