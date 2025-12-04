@@ -45,24 +45,24 @@ export default function ServicesPage() {
                   Custom Website Design
                 </h2>
                 <p className="font-body text-[1rem] sm:text-[1.1rem] md:text-[1.2rem] text-gray-300 leading-[1.7] mb-6">
-                  Fast, modern websites built to convert visitors into customers. If your current site isn't pulling its weight, we'll rebuild it from scratch.
+                  Fast, modern websites engineered to convert visitors into customers and rank well in search results.
                 </p>
                 <ul className="space-y-4 mb-8">
                   <li className="flex items-start gap-3">
                     <span className="text-[#5FA99F] text-[1.5rem] font-bold">✓</span>
-                    <span className="font-body text-[0.95rem] sm:text-[1rem] md:text-[1.1rem] text-gray-300">Mobile-first design that looks great on every device</span>
+                    <span className="font-body text-[0.95rem] sm:text-[1rem] md:text-[1.1rem] text-gray-300">Mobile-optimized design that performs flawlessly across all devices</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-[#5FA99F] text-[1.5rem] font-bold">✓</span>
-                    <span className="font-body text-[0.95rem] sm:text-[1rem] md:text-[1.1rem] text-gray-300">Clear calls-to-action that guide visitors to contact you</span>
+                    <span className="font-body text-[0.95rem] sm:text-[1rem] md:text-[1.1rem] text-gray-300">Fully custom, professional websites built from the ground up—no templates</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-[#5FA99F] text-[1.5rem] font-bold">✓</span>
-                    <span className="font-body text-[0.95rem] sm:text-[1rem] md:text-[1.1rem] text-gray-300">Lightning-fast loading for better search rankings</span>
+                    <span className="font-body text-[0.95rem] sm:text-[1rem] md:text-[1.1rem] text-gray-300">Optimized page speed for improved search visibility</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-[#5FA99F] text-[1.5rem] font-bold">✓</span>
-                    <span className="font-body text-[0.95rem] sm:text-[1rem] md:text-[1.1rem] text-gray-300">Built to convert ad traffic into paying customers</span>
+                    <span className="font-body text-[0.95rem] sm:text-[1rem] md:text-[1.1rem] text-gray-300">Conversion-focused architecture built for ad traffic</span>
                   </li>
                 </ul>
               </div>
@@ -97,24 +97,24 @@ export default function ServicesPage() {
                   Professional Video & Image Ads
                 </h2>
                 <p className="font-body text-[1rem] sm:text-[1.1rem] md:text-[1.2rem] text-gray-300 leading-[1.7] mb-6">
-                  Actor-led videos and scroll-stopping images made specifically for Facebook and Instagram. No more generic stock photos or DIY footage.
+                  High-quality video and image ads designed to capture attention and drive qualified clicks on Facebook and Instagram.
                 </p>
                 <ul className="space-y-4 mb-8">
                   <li className="flex items-start gap-3">
                     <span className="text-[#5FA99F] text-[1.5rem] font-bold">✓</span>
-                    <span className="font-body text-[0.95rem] sm:text-[1rem] md:text-[1.1rem] text-gray-300">Professional actors who represent your brand perfectly</span>
+                    <span className="font-body text-[0.95rem] sm:text-[1rem] md:text-[1.1rem] text-gray-300">Professional creative that represents your brand effectively</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-[#5FA99F] text-[1.5rem] font-bold">✓</span>
-                    <span className="font-body text-[0.95rem] sm:text-[1rem] md:text-[1.1rem] text-gray-300">Scripts written to connect with your specific audience</span>
+                    <span className="font-body text-[0.95rem] sm:text-[1rem] md:text-[1.1rem] text-gray-300">Strategic messaging tailored to your target audience</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-[#5FA99F] text-[1.5rem] font-bold">✓</span>
-                    <span className="font-body text-[0.95rem] sm:text-[1rem] md:text-[1.1rem] text-gray-300">Multiple versions for testing different approaches</span>
+                    <span className="font-body text-[0.95rem] sm:text-[1rem] md:text-[1.1rem] text-gray-300">Multiple ad variations for performance testing</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-[#5FA99F] text-[1.5rem] font-bold">✓</span>
-                    <span className="font-body text-[0.95rem] sm:text-[1rem] md:text-[1.1rem] text-gray-300">Created specifically for mobile viewing</span>
+                    <span className="font-body text-[0.95rem] sm:text-[1rem] md:text-[1.1rem] text-gray-300">Mobile-optimized formats for maximum impact</span>
                   </li>
                 </ul>
               </div>
@@ -129,24 +129,24 @@ export default function ServicesPage() {
                   Complete Campaign Setup
                 </h2>
                 <p className="font-body text-[1rem] sm:text-[1.1rem] md:text-[1.2rem] text-gray-300 leading-[1.7] mb-6">
-                  We build everything for you — from finding your ideal customers to tracking every lead that comes through.
+                  Full campaign configuration and audience targeting—from identifying your ideal customers to tracking every lead that comes through.
                 </p>
                 <ul className="space-y-4 mb-8">
                   <li className="flex items-start gap-3">
                     <span className="text-[#5FA99F] text-[1.5rem] font-bold">✓</span>
-                    <span className="font-body text-[0.95rem] sm:text-[1rem] md:text-[1.1rem] text-gray-300">Finding your perfect customers by age, location, and interests</span>
+                    <span className="font-body text-[0.95rem] sm:text-[1rem] md:text-[1.1rem] text-gray-300">Precision audience targeting based on demographics, interests, and behavior</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-[#5FA99F] text-[1.5rem] font-bold">✓</span>
-                    <span className="font-body text-[0.95rem] sm:text-[1rem] md:text-[1.1rem] text-gray-300">Complete Facebook and Instagram account setup</span>
+                    <span className="font-body text-[0.95rem] sm:text-[1rem] md:text-[1.1rem] text-gray-300">Strategic budget allocation across your campaigns</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-[#5FA99F] text-[1.5rem] font-bold">✓</span>
-                    <span className="font-body text-[0.95rem] sm:text-[1rem] md:text-[1.1rem] text-gray-300">Tracking setup so you see exactly where leads come from</span>
+                    <span className="font-body text-[0.95rem] sm:text-[1rem] md:text-[1.1rem] text-gray-300">Complete conversion tracking for leads and sales</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-[#5FA99F] text-[1.5rem] font-bold">✓</span>
-                    <span className="font-body text-[0.95rem] sm:text-[1rem] md:text-[1.1rem] text-gray-300">Budget management to get the most from every dollar</span>
+                    <span className="font-body text-[0.95rem] sm:text-[1rem] md:text-[1.1rem] text-gray-300">Professional account structure for long-term performance</span>
                   </li>
                 </ul>
               </div>
@@ -181,24 +181,24 @@ export default function ServicesPage() {
                   Continuous Improvement
                 </h2>
                 <p className="font-body text-[1rem] sm:text-[1.1rem] md:text-[1.2rem] text-gray-300 leading-[1.7] mb-6">
-                  We test new ads, adjust budgets, and remove what's not working. Your campaigns get better every single week.
+                  Ongoing testing, optimization, and budget management to maximize results and eliminate underperforming elements.
                 </p>
                 <ul className="space-y-4 mb-8">
                   <li className="flex items-start gap-3">
                     <span className="text-[#5FA99F] text-[1.5rem] font-bold">✓</span>
-                    <span className="font-body text-[0.95rem] sm:text-[1rem] md:text-[1.1rem] text-gray-300">Weekly performance reports showing what's working</span>
+                    <span className="font-body text-[0.95rem] sm:text-[1rem] md:text-[1.1rem] text-gray-300">Regular testing of new ad creative and messaging</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-[#5FA99F] text-[1.5rem] font-bold">✓</span>
-                    <span className="font-body text-[0.95rem] sm:text-[1rem] md:text-[1.1rem] text-gray-300">Testing new creative to find what converts best</span>
+                    <span className="font-body text-[0.95rem] sm:text-[1rem] md:text-[1.1rem] text-gray-300">Data-driven budget adjustments to improve cost efficiency</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-[#5FA99F] text-[1.5rem] font-bold">✓</span>
-                    <span className="font-body text-[0.95rem] sm:text-[1rem] md:text-[1.1rem] text-gray-300">Budget adjustments to maximize results</span>
+                    <span className="font-body text-[0.95rem] sm:text-[1rem] md:text-[1.1rem] text-gray-300">Performance analysis and optimization recommendations</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-[#5FA99F] text-[1.5rem] font-bold">✓</span>
-                    <span className="font-body text-[0.95rem] sm:text-[1rem] md:text-[1.1rem] text-gray-300">Direct communication whenever you have questions</span>
+                    <span className="font-body text-[0.95rem] sm:text-[1rem] md:text-[1.1rem] text-gray-300">Strategic refinements based on campaign results</span>
                   </li>
                 </ul>
               </div>
