@@ -2,15 +2,67 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
-import { MorphingParticles } from '@/components/ConstellationHero/MorphingParticles';
-import { Z_INDEX } from '@/components/ConstellationHero/constants';
 import { useState, useEffect, useRef } from 'react';
 import { ChevronDown } from 'lucide-react';
 
 export default function Hero() {
   const [showArrow, setShowArrow] = useState(false);
   const [videoEnded, setVideoEnded] = useState(false);
+  const [videoSources, setVideoSources] = useState<{ webm: string; mp4: string }>({
+    webm: '/Videos/hero-1280x720.webm',
+    mp4: '/Videos/hero-1280x720.mp4'
+  });
   const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Detect optimal video resolution based on screen size and orientation
+  useEffect(() => {
+    const selectVideoSource = () => {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      const isPortrait = height > width;
+
+      // Portrait mode - use portrait video
+      if (isPortrait && width <= 768) {
+        return {
+          webm: '/Videos/hero-480x854-portrait.webm',
+          mp4: '/Videos/hero-480x854-portrait.mp4'
+        };
+      }
+
+      // Landscape mode - select based on screen width
+      if (width < 640) {
+        return {
+          webm: '/Videos/hero-640x360.webm',
+          mp4: '/Videos/hero-640x360.mp4'
+        };
+      } else if (width < 1024) {
+        return {
+          webm: '/Videos/hero-1024x576.webm',
+          mp4: '/Videos/hero-1024x576.mp4'
+        };
+      } else {
+        return {
+          webm: '/Videos/hero-1280x720.webm',
+          mp4: '/Videos/hero-1280x720.mp4'
+        };
+      }
+    };
+
+    setVideoSources(selectVideoSource());
+
+    // Re-select on resize/orientation change
+    const handleResize = () => {
+      setVideoSources(selectVideoSource());
+    };
+
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('orientationchange', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('orientationchange', handleResize);
+    };
+  }, []);
 
   // Show arrow and logo when video ends
   useEffect(() => {
@@ -57,10 +109,12 @@ export default function Hero() {
           muted
           playsInline
           preload="metadata"
+          poster="/Videos/hero-poster.webp"
           className="w-full h-full object-cover"
+          key={`${videoSources.webm}-${videoSources.mp4}`}
         >
-          <source src="/Videos/dlm-hero-v1-optimized.webm" type="video/webm" />
-          <source src="/Videos/dlm-hero-v1.mp4" type="video/mp4" />
+          <source src={videoSources.webm} type="video/webm" />
+          <source src={videoSources.mp4} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </motion.div>
@@ -110,25 +164,12 @@ export default function Hero() {
         )}
       </AnimatePresence>
 
-      {/* Layer 1: Morphing Particles with Text Formation */}
-      <MorphingParticles />
-
-      {/* Layer 2: Hero Content - Empty, particles are the visual */}
-      <motion.div
-        className="relative text-center max-w-[1200px] text-white w-full"
-        style={{ zIndex: Z_INDEX.content }}
-        initial={{ opacity: 0, y: 0 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-      >
-      </motion.div>
-
-      {/* Layer 3: Scroll Arrow - Appears after video ends */}
+      {/* Scroll Arrow - Appears after video ends */}
       <AnimatePresence>
         {showArrow && (
           <motion.div
             className="absolute bottom-12 left-1/2 -translate-x-1/2"
-            style={{ zIndex: Z_INDEX.content + 1 }}
+            style={{ zIndex: 10 }}
             initial={{ opacity: 0, y: -20 }}
             animate={{
               opacity: 1,
@@ -167,7 +208,7 @@ export default function Hero() {
 // Mobile CTA Section - Static section between MeetTheTeam and Footer
 export function MobileCTASection() {
   return (
-    <section className="block md:hidden relative bg-black py-10 px-6">
+    <section className="block md:hidden relative bg-black py-6 px-6">
       <div className="flex items-center justify-center">
         <Link href="/contact" className="block">
           <motion.button
@@ -196,133 +237,3 @@ export function MobileCTASection() {
   );
 }
 
-// CTA Button Portal - Desktop only, animated version
-export function CTAButton() {
-  const [showCTA, setShowCTA] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const viewportHeight = window.innerHeight;
-      const currentScroll = window.scrollY;
-
-      // Desktop: Show CTA after particles completely disappear
-      const whatWeDoStart = viewportHeight * 6.0;
-      const whatWeDoScrollRange = viewportHeight * 1.5;
-      const adjustedScroll = Math.max(0, currentScroll - whatWeDoStart);
-      const progress = Math.min(adjustedScroll / whatWeDoScrollRange, 1);
-      const shouldShowCTA = progress >= 0.98;
-      setShowCTA(shouldShowCTA);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    window.addEventListener('resize', handleScroll, { passive: true });
-    handleScroll(); // Check initial position
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleScroll);
-    };
-  }, []);
-
-  return (
-    <AnimatePresence>
-      {showCTA && (
-        <motion.div
-          className="hidden md:flex fixed inset-0 items-center justify-center"
-          style={{
-            zIndex: 200,
-            pointerEvents: 'none'
-          }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-        >
-          <motion.div
-            className="pointer-events-auto"
-            initial={{ opacity: 0, scale: 0.9, filter: 'blur(10px)' }}
-            animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
-            exit={{ opacity: 0, scale: 0.95 }}
-            transition={{
-              duration: 0.8,
-              delay: 0.3,
-              ease: [0.34, 1.56, 0.64, 1]
-            }}
-          >
-            <Link href="/contact" className="block">
-              <motion.button
-                className="relative px-8 py-4 bg-transparent rounded-xl font-heading font-bold text-white text-lg overflow-hidden group cursor-pointer"
-                style={{
-                  boxShadow: '0 0 30px rgba(255, 255, 255, 0.4), 0 8px 24px rgba(0, 0, 0, 0.3)',
-                }}
-                whileHover={{
-                  scale: 1.05,
-                  boxShadow: '0 0 40px rgba(255, 255, 255, 0.6), 0 12px 32px rgba(0, 0, 0, 0.4)',
-                }}
-                whileTap={{ scale: 0.98 }}
-                animate={{
-                  boxShadow: [
-                    '0 0 30px rgba(255, 255, 255, 0.4), 0 8px 24px rgba(0, 0, 0, 0.3)',
-                    '0 0 40px rgba(255, 255, 255, 0.5), 0 10px 28px rgba(0, 0, 0, 0.3)',
-                    '0 0 30px rgba(255, 255, 255, 0.4), 0 8px 24px rgba(0, 0, 0, 0.3)',
-                  ],
-                  borderColor: [
-                    'rgba(255, 255, 255, 0.9)',
-                    'rgba(95, 250, 159, 0.9)',
-                    'rgba(255, 255, 255, 0.9)',
-                  ],
-                }}
-                transition={{
-                  boxShadow: {
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: 'easeInOut'
-                  },
-                  borderColor: {
-                    duration: 2.5,
-                    repeat: Infinity,
-                    ease: 'easeInOut'
-                  }
-                }}
-              >
-                {/* Animated border - separate element for better control */}
-                <motion.div
-                  className="absolute inset-0 rounded-xl pointer-events-none"
-                  style={{
-                    border: '3px solid rgba(255, 255, 255, 0.9)',
-                  }}
-                  animate={{
-                    borderColor: [
-                      'rgba(255, 255, 255, 0.9)',
-                      'rgba(95, 250, 159, 0.9)',
-                      'rgba(255, 255, 255, 0.9)',
-                    ],
-                  }}
-                  transition={{
-                    duration: 2.5,
-                    repeat: Infinity,
-                    ease: 'easeInOut'
-                  }}
-                />
-
-                {/* Animated gradient overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-
-                <span className="relative flex items-center gap-2 pointer-events-none">
-                  Start Driving Leads
-                  <motion.span
-                    initial={{ opacity: 0, x: -10 }}
-                    whileHover={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="inline-block"
-                  >
-                    →
-                  </motion.span>
-                </span>
-              </motion.button>
-            </Link>
-          </motion.div>
-        </motion.div>
-      )}
-    </AnimatePresence>
-  );
-}
