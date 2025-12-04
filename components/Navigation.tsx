@@ -189,26 +189,32 @@ export default function Navigation() {
 
           {/* Mobile Menu Button - Only show on mobile, hide on tablets */}
           <button
-            className="md:hidden flex flex-col gap-1.5 w-8 h-8 justify-center items-center"
+            className="md:hidden flex flex-col gap-1.5 w-8 h-8 justify-center items-center relative"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label={isMobileMenuOpen ? 'Close mobile menu' : 'Open mobile menu'}
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-menu"
           >
             <span
-              className={`block w-7 h-0.5 bg-[#2A2A2A] transition-all duration-400 ${
+              className={`block w-7 h-0.5 bg-white transition-all duration-400 ${
                 isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''
               }`}
+              style={{
+                boxShadow: isMobileMenuOpen ? '0 0 10px rgba(255,255,255,0.8), 0 0 20px rgba(255,255,255,0.4)' : 'none'
+              }}
             ></span>
             <span
-              className={`block w-7 h-0.5 bg-[#2A2A2A] transition-all duration-400 ${
+              className={`block w-7 h-0.5 bg-white transition-all duration-400 ${
                 isMobileMenuOpen ? 'opacity-0' : ''
               }`}
             ></span>
             <span
-              className={`block w-7 h-0.5 bg-[#2A2A2A] transition-all duration-400 ${
+              className={`block w-7 h-0.5 bg-white transition-all duration-400 ${
                 isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''
               }`}
+              style={{
+                boxShadow: isMobileMenuOpen ? '0 0 10px rgba(255,255,255,0.8), 0 0 20px rgba(255,255,255,0.4)' : 'none'
+              }}
             ></span>
           </button>
             </div>
@@ -225,50 +231,83 @@ export default function Navigation() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.4 }}
-            className="md:hidden bg-white backdrop-blur-lg border-t border-gray-200"
+            className="md:hidden bg-black/95 backdrop-blur-xl border-t border-[#5FA99F]/50 relative overflow-hidden"
+            style={{
+              boxShadow: '0 8px 32px rgba(0,0,0,0.8), inset 0 1px 0 rgba(95,169,159,0.2)'
+            }}
             role="menu"
             aria-label="Mobile navigation menu"
           >
-            <div className="px-6 py-8 space-y-5">
+            {/* Futuristic grid overlay */}
+            <div className="absolute inset-0 opacity-5 pointer-events-none"
+              style={{
+                backgroundImage: 'linear-gradient(#5FA99F 1px, transparent 1px), linear-gradient(90deg, #5FA99F 1px, transparent 1px)',
+                backgroundSize: '20px 20px'
+              }}
+            />
+
+            {/* Animated glow effect */}
+            <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#5FA99F] to-transparent opacity-80" />
+            <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#5FA99F]/50 to-transparent" />
+            <div className="px-6 py-8 space-y-5 relative z-10">
               <Link
                 href="/"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block font-ui text-[1.125rem] text-[#5FA99F] hover:text-[#4a8a81] transition-colors duration-400 py-2 font-medium"
+                className="block font-ui text-[1.125rem] text-white hover:text-[#5FA99F] transition-all duration-400 py-3 font-medium relative group"
+                style={{
+                  textShadow: '0 0 10px rgba(95,169,159,0.3)'
+                }}
               >
-                Home
+                <span className="relative z-10">Home</span>
+                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-[#5FA99F] to-[#85C7B3] group-hover:w-full transition-all duration-400 shadow-[0_0_10px_#5FA99F]"></span>
               </Link>
 
               <Link
                 href="/services"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block font-ui text-[1.125rem] text-[#5FA99F] hover:text-[#4a8a81] transition-colors duration-400 py-2 font-medium"
+                className="block font-ui text-[1.125rem] text-white hover:text-[#5FA99F] transition-all duration-400 py-3 font-medium relative group"
+                style={{
+                  textShadow: '0 0 10px rgba(95,169,159,0.3)'
+                }}
               >
-                Services
+                <span className="relative z-10">Services</span>
+                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-[#5FA99F] to-[#85C7B3] group-hover:w-full transition-all duration-400 shadow-[0_0_10px_#5FA99F]"></span>
               </Link>
 
               <Link
                 href="/portfolio"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block font-ui text-[1.125rem] text-[#5FA99F] hover:text-[#4a8a81] transition-colors duration-400 py-2 font-medium"
+                className="block font-ui text-[1.125rem] text-white hover:text-[#5FA99F] transition-all duration-400 py-3 font-medium relative group"
+                style={{
+                  textShadow: '0 0 10px rgba(95,169,159,0.3)'
+                }}
               >
-                Portfolio
+                <span className="relative z-10">Portfolio</span>
+                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-[#5FA99F] to-[#85C7B3] group-hover:w-full transition-all duration-400 shadow-[0_0_10px_#5FA99F]"></span>
               </Link>
 
               <Link
                 href="/blog"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block font-ui text-[1.125rem] text-[#5FA99F] hover:text-[#4a8a81] transition-colors duration-400 py-2 font-medium"
+                className="block font-ui text-[1.125rem] text-white hover:text-[#5FA99F] transition-all duration-400 py-3 font-medium relative group"
+                style={{
+                  textShadow: '0 0 10px rgba(95,169,159,0.3)'
+                }}
               >
-                Blog
+                <span className="relative z-10">Blog</span>
+                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-[#5FA99F] to-[#85C7B3] group-hover:w-full transition-all duration-400 shadow-[0_0_10px_#5FA99F]"></span>
               </Link>
 
               {/* Mobile Resources Section */}
               <div>
                 <button
                   onClick={() => setIsResourcesOpen(!isResourcesOpen)}
-                  className="w-full flex items-center justify-between font-ui text-[1.125rem] text-[#5FA99F] hover:text-[#4a8a81] transition-colors duration-400 py-2 font-medium"
+                  className="w-full flex items-center justify-between font-ui text-[1.125rem] text-white hover:text-[#5FA99F] transition-all duration-400 py-3 font-medium relative group"
+                  style={{
+                    textShadow: '0 0 10px rgba(95,169,159,0.3)'
+                  }}
                 >
-                  Resources
+                  <span className="relative z-10">Resources</span>
                   <svg
                     className={`w-5 h-5 transition-transform duration-400 ${
                       isResourcesOpen ? 'rotate-180' : ''
@@ -276,6 +315,9 @@ export default function Navigation() {
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
+                    style={{
+                      filter: 'drop-shadow(0 0 5px rgba(95,169,159,0.5))'
+                    }}
                   >
                     <path
                       strokeLinecap="round"
@@ -284,6 +326,7 @@ export default function Navigation() {
                       d="M19 9l-7 7-7-7"
                     />
                   </svg>
+                  <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-[#5FA99F] to-[#85C7B3] group-hover:w-full transition-all duration-400 shadow-[0_0_10px_#5FA99F]"></span>
                 </button>
 
                 <AnimatePresence>
@@ -293,26 +336,35 @@ export default function Navigation() {
                       animate={{ opacity: 1, height: 'auto' }}
                       exit={{ opacity: 0, height: 0 }}
                       transition={{ duration: 0.3 }}
-                      className="pl-5 mt-2"
+                      className="pl-5 mt-2 space-y-1 border-l-2 border-[#5FA99F]/30 ml-2"
                     >
                       <Link
                         href="/targeted-ads"
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className="block font-ui text-[1rem] text-[#5FA99F] hover:text-[#4E8B82] transition-colors duration-400 py-2"
+                        className="block font-ui text-[1rem] text-gray-300 hover:text-[#5FA99F] transition-all duration-400 py-2 pl-3"
+                        style={{
+                          textShadow: '0 0 8px rgba(95,169,159,0.2)'
+                        }}
                       >
                         Intro to Targeted Ads
                       </Link>
                       <Link
                         href="/resources/meta-ads-calculator"
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className="block font-ui text-[1rem] text-[#5FA99F] hover:text-[#4E8B82] transition-colors duration-400 py-2"
+                        className="block font-ui text-[1rem] text-gray-300 hover:text-[#5FA99F] transition-all duration-400 py-2 pl-3"
+                        style={{
+                          textShadow: '0 0 8px rgba(95,169,159,0.2)'
+                        }}
                       >
                         Meta Ads Calculator
                       </Link>
                       <Link
                         href="/resources/targeted-ads-infographic"
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className="block font-ui text-[1rem] text-[#5FA99F] hover:text-[#4E8B82] transition-colors duration-400 py-2"
+                        className="block font-ui text-[1rem] text-gray-300 hover:text-[#5FA99F] transition-all duration-400 py-2 pl-3"
+                        style={{
+                          textShadow: '0 0 8px rgba(95,169,159,0.2)'
+                        }}
                       >
                         Download Infographic
                       </Link>
@@ -324,17 +376,37 @@ export default function Navigation() {
               <Link
                 href="/faq"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block font-ui text-[1.125rem] text-[#5FA99F] hover:text-[#4a8a81] transition-colors duration-400 py-2 font-medium"
+                className="block font-ui text-[1.125rem] text-white hover:text-[#5FA99F] transition-all duration-400 py-3 font-medium relative group"
+                style={{
+                  textShadow: '0 0 10px rgba(95,169,159,0.3)'
+                }}
               >
-                FAQ
+                <span className="relative z-10">FAQ</span>
+                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-[#5FA99F] to-[#85C7B3] group-hover:w-full transition-all duration-400 shadow-[0_0_10px_#5FA99F]"></span>
               </Link>
 
               <Link
                 href="/contact"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block text-center font-ui text-[1rem] px-8 py-4 bg-transparent text-white font-semibold rounded-xl border-2 border-white shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] hover:border-white/80 transition-all duration-400 mt-6 backdrop-blur-sm"
+                className="block text-center font-ui text-[1rem] px-8 py-4 bg-gradient-to-r from-[#5FA99F]/10 to-[#85C7B3]/10 text-white font-semibold rounded-xl border-2 border-[#5FA99F] transition-all duration-400 mt-8 relative overflow-hidden group"
+                style={{
+                  boxShadow: '0 0 20px rgba(95,169,159,0.4), inset 0 0 20px rgba(95,169,159,0.1)',
+                  textShadow: '0 0 10px rgba(255,255,255,0.5)'
+                }}
               >
-                Contact
+                {/* Animated gradient background on hover */}
+                <div className="absolute inset-0 bg-gradient-to-r from-[#5FA99F]/20 to-[#85C7B3]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
+
+                {/* Glowing border animation */}
+                <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-400">
+                  <div className="absolute top-0 left-0 w-full h-full rounded-xl animate-pulse"
+                    style={{
+                      boxShadow: '0 0 30px rgba(95,169,159,0.6), inset 0 0 30px rgba(95,169,159,0.2)'
+                    }}
+                  />
+                </div>
+
+                <span className="relative z-10">Contact</span>
               </Link>
             </div>
           </motion.div>

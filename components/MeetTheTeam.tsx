@@ -48,7 +48,7 @@ export default function MeetTheTeam() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen py-[120px] px-6 bg-[#000000] overflow-hidden"
+      className="relative min-h-screen py-[60px] md:py-[120px] px-6 bg-[#000000] overflow-hidden"
       style={{ zIndex: 7 }}
     >
       {/* SVG Filters for Laser Glow Effects */}
@@ -86,8 +86,14 @@ export default function MeetTheTeam() {
 
       {/* Header with Laser Writing Animation */}
       <div className="max-w-[1400px] mx-auto px-4 md:px-6 text-center mb-[80px] relative">
+        {/* Mobile heading */}
+        <h2 className="md:hidden font-heading font-bold text-white mb-6 leading-[1.1]" style={{ fontSize: 'clamp(1.5rem, 3.5vw, 3rem)' }}>
+          Meet Our Team
+        </h2>
+
+        {/* Desktop heading with laser animation */}
         <h2
-          className="font-heading font-bold text-white mb-6 leading-[1.1] relative overflow-hidden whitespace-nowrap"
+          className="hidden md:block font-heading font-bold text-white mb-6 leading-[1.1] relative overflow-hidden whitespace-nowrap"
           style={{ fontSize: 'clamp(1.5rem, 3.5vw, 5rem)' }}
         >
           {"The Team Behind Your Success".split('').map((char, index) => {
@@ -128,8 +134,8 @@ export default function MeetTheTeam() {
       {/* Team Grid */}
       <div className="max-w-[1400px] mx-auto px-4 md:px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
         {teamMembers.map((member, index) => {
-          const cardDelay = 0.5;
-          const laserDuration = 2.0;
+          const cardDelay = 0.3;
+          const laserDuration = 1.2;
 
           return (
             <div key={member.name} className="group relative">
