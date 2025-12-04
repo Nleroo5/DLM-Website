@@ -48,7 +48,7 @@ export default function MeetTheTeam() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen py-[60px] md:py-[120px] px-6 bg-[#000000] overflow-hidden"
+      className="relative min-h-screen pt-[30px] pb-[60px] md:py-[120px] px-6 bg-[#000000] overflow-hidden"
       style={{ zIndex: 7 }}
     >
       {/* SVG Filters for Laser Glow Effects */}

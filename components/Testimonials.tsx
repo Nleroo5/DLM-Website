@@ -24,7 +24,7 @@ export default function Testimonials() {
   return (
     // SECTION 3: CLIENT TESTIMONIAL VIDEO - Elevator door animation reveals video on scroll
     // Reduced padding for less empty scroll space, more professional pacing
-    <section ref={containerRef} className="relative min-h-screen pt-[25vh] md:pt-[50vh] pb-[25vh] md:pb-[50vh]" style={{ zIndex: 3 }}>
+    <section ref={containerRef} className="relative min-h-screen pt-[25vh] md:pt-[50vh] pb-[10vh] md:pb-[50vh]" style={{ zIndex: 3 }}>
       <div className="max-w-[900px] mx-auto px-4 md:px-6">
         {/* Video Container */}
         <div className="relative">
