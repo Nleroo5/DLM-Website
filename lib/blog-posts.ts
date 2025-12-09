@@ -107,6 +107,34 @@ export const blogPosts: BlogPost[] = [
     heroImageAlt: 'Meta Ads audience targeting strategy guide showing cold, warm, and hot audience segmentation',
     wordCount: 2450
   },
+  {
+    slug: 'boosted-posts-vs-targeted-ads',
+    title: 'Boosted Posts vs. Targeted Ads: Why That Blue Button Is Costing You Money',
+    excerpt: 'Learn why Facebook\'s Boost button delivers 2-3X worse results than proper targeted ads. Industry benchmarks, technical insights, and the real cost difference.',
+    date: 'December 2025',
+    datePublished: '2025-12-09T09:00:00-05:00',
+    dateModified: '2025-12-09T09:00:00-05:00',
+    readTime: '8 min read',
+    category: {
+      name: 'Meta Ads Strategy',
+      slug: 'meta-ads-strategy'
+    },
+    author: {
+      name: 'Nicolas Leroo',
+      jobTitle: 'Co-Founder & Meta Advertising Strategist',
+      url: 'https://driveleadmedia.com/about/nicolas-leroo'
+    },
+    keywords: [
+      'boosted posts vs targeted ads',
+      'facebook boost post vs ads manager',
+      'should i boost my facebook posts',
+      'meta ads manager vs boost',
+      'facebook advertising atlanta'
+    ],
+    heroImage: '/images/hero-meta-boosted.webp',
+    heroImageAlt: 'Comparison visualization showing Facebook boost button vs Meta Ads Manager interface demonstrating cost and results differences',
+    wordCount: 2433
+  },
 ];
 
 // Helper functions
