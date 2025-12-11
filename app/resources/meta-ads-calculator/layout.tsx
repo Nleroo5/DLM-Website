@@ -8,6 +8,18 @@ export const metadata: Metadata = {
     title: 'Meta Ads ROI Calculator | Facebook & Instagram Ads Cost Calculator',
     description: 'Free Meta ads calculator with real industry data. Calculate your Facebook & Instagram advertising costs, leads, and ROI instantly.',
     type: 'website',
+    images: [{
+      url: '/images/meta-ads-calculator-og.webp',
+      width: 1200,
+      height: 630,
+      alt: 'Meta Ads ROI Calculator - Free Facebook & Instagram advertising budget tool',
+    }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Free Meta Ads ROI Calculator',
+    description: 'Calculate your Facebook & Instagram advertising costs, leads, and ROI instantly.',
+    images: ['/images/meta-ads-calculator-og.webp'],
   },
   alternates: {
     canonical: '/resources/meta-ads-calculator',
