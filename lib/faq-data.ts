@@ -108,7 +108,7 @@ export const faqItems: FAQItem[] = [
   {
     id: 'meta-pixel',
     question: 'What is the Meta Pixel and do I need it?',
-    answer: 'The Meta Pixel is tracking code installed on your website that measures conversions and helps optimize your ads. Yes, it's essential for effective campaigns.',
+    answer: 'The Meta Pixel is tracking code installed on your website that measures conversions and helps optimize your ads. Yes, it is essential for effective campaigns.',
     category: 'meta-ads'
   },
   {
