@@ -1,394 +1,239 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
-
-interface FAQItem {
-  id: number;
-  icon: string;
-  question: string;
-  answer: string | JSX.Element;
-}
+import { faqCategories, faqItems, searchFAQs, generateFAQSchema } from '@/lib/faq-data';
+import { trackEvent } from '@/components/MetaPixel';
 
 export default function FAQPage() {
-  // Add FAQ Schema to head
+  const [searchQuery, setSearchQuery] = useState('');
+  const [openItems, setOpenItems] = useState<Set<string>>(new Set());
+  const [filteredItems, setFilteredItems] = useState(faqItems);
+
   useEffect(() => {
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.text = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What services does Drive Lead Media offer?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We combine high-end video production with precision-targeted Meta ad campaigns, including: Full Campaign Management (strategy, Meta Pixel & GA4 setup, dynamic creative, weekly optimization), Creative Bundle Only (actor-led video ads + static images + copy bank), Custom Website Design (brand aligned, mobile responsive sites built to convert ad traffic), On-Site Production, Remote Production, Access to 30,000+ Paid Actors via our exclusive casting partner for HIPAA compliant testimonial shoots, and Part 107 Certified Drone Footage."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How is pricing determined?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Our pricing is fully customized to the exact mix of services you require—from campaign management and creative production to add-ons like drone footage or animations. After a brief discovery conversation, we'll provide a detailed proposal outlining all deliverables, timelines, and investment so you know precisely what to expect."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do I need to handle any filming or logistics?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "You don't—unless you choose on-site. Our processes are fully managed, so you can focus on running your business while we handle everything from casting to final cut."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What are targeted ads?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Targeted ads allow you to reach your ideal audience based on demographics, interests, location, and behaviors. Visit our Targeted Ads page for a full breakdown of how we hone in on your perfect customers."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can you target clients outside my local area?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Whether it's a 5 mile radius or a nationwide rollout, we tailor ZIP code, demographic, and interest filters to your ideal profile."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is Meta Pixel & GA4?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Meta Pixel is a snippet of code we install on your website to track visitor actions (page views, button clicks, form submissions), enabling smarter ad optimization and retargeting. Google Analytics 4 (GA4) is Google's next-gen analytics platform measuring user journeys across web and app. Together, they give you end-to-end visibility into which ads and videos drive actual business results."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How do you track performance?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We layer data from Meta Pixel and GA4 into custom dashboards and weekly reports. Key metrics include: Click Through Rate (CTR), Cost Per Lead (CPL), Cost Per Mille (CPM), Return on Ad Spend (ROAS), View Through Conversion Rate, Video Engagement, Landing Page Conversion Rate, Frequency & Reach, Audience Demographics & Behaviors, Session Duration & Bounce Rate, and Event Based Conversions. You'll receive a weekly dashboard plus a monthly review call with clear optimization recommendations."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do you build websites or just run ads?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We offer full service website design and development, from brand aligned landing pages to complete multi page sites with custom animations, mobile optimization, and conversion focused layouts."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What's included in your website packages?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Custom design, mobile responsive development, Meta Pixel & GA4 integration, contact forms, speed optimization, SSL security, hosting setup assistance, and basic SEO foundation."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How long does it take to build a website?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Timelines vary based on complexity. A high converting landing page typically takes 2 to 3 weeks, while a full multi page site with custom features takes 4 to 8 weeks. We'll provide a detailed timeline during discovery."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Will my website work on mobile devices?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Every site we build is fully responsive and optimized for all devices (desktop, tablet, mobile). With over 60% of traffic coming from mobile, this is non negotiable."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do you provide website hosting and maintenance?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We can assist with hosting setup and offer ongoing maintenance packages including updates, security monitoring, performance optimization, and content changes."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can you integrate my website with my ad campaigns?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "That's our specialty. We build websites specifically designed to convert ad traffic with optimized landing pages, tracking pixels, conversion focused layouts, and seamless handoff from ad to action."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How do I get started?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Head to our Contact page to book your Free 30 Minute Strategy Call or send us an email at hello@driveleadmedia.com."
-          }
-        }
-      ]
+    // Track page view
+    trackEvent('ViewContent', {
+      content_name: 'FAQ Page',
+      content_type: 'page',
+      content_category: 'Support'
     });
-    document.head.appendChild(script);
 
-    return () => {
-      document.head.removeChild(script);
-    };
-  }, []);
-  const [openItems, setOpenItems] = useState<Set<number>>(new Set());
-  const [headingPulse, setHeadingPulse] = useState(false);
-
-  const toggleItem = (id: number) => {
-    setOpenItems(prev => {
-      const newSet = new Set(prev);
-      if (newSet.has(id)) {
-        newSet.delete(id);
-      } else {
-        newSet.add(id);
-      }
-      return newSet;
-    });
-  };
-
-  const handleHeadingClick = () => {
-    setHeadingPulse(true);
-    setTimeout(() => setHeadingPulse(false), 600);
-  };
-
-  const faqs: FAQItem[] = [
-    {
-      id: 1,
-      icon: '',
-      question: 'What services does Drive Lead Media offer?',
-      answer: (
-        <>
-          <p className="mb-2">We combine high-end video production with precision-targeted Meta ad campaigns, including:</p>
-          <ul className="my-2 pl-5 space-y-1">
-            <li><strong>Full Campaign Management</strong> (strategy, Meta Pixel & GA4 setup, dynamic creative, weekly optimization)</li>
-            <li><strong>Creative Bundle Only</strong> (actor-led video ads + static images + copy bank)</li>
-            <li><strong>Custom Website Design</strong> (brand aligned, mobile responsive sites built to convert ad traffic into customers)</li>
-            <li><strong>On-Site Production</strong> (We bring our full crew and gear to your office for polished, professional footage.)</li>
-            <li><strong>Remote Production</strong> (All casting, script approvals, and editing happen virtually, no on site logistics.)</li>
-            <li><strong>Access to 30,000+ Paid Actors</strong> via our exclusive casting partner for fully HIPAA compliant testimonial shoots.</li>
-            <li><strong>Part 107 Certified Drone Footage</strong> for slick aerials that showcase your location and services from above.</li>
-          </ul>
-        </>
-      )
-    },
-    {
-      id: 2,
-      icon: '',
-      question: 'How is pricing determined?',
-      answer: 'Our pricing is fully customized to the exact mix of services you require—from campaign management and creative production to add-ons like drone footage or animations. After a brief discovery conversation, we\'ll provide a detailed proposal outlining all deliverables, timelines, and investment so you know precisely what to expect.'
-    },
-    {
-      id: 3,
-      icon: '',
-      question: 'Do I need to handle any filming or logistics?',
-      answer: 'You don\'t—unless you choose on-site. Our processes are fully managed, so you can focus on running your business while we handle everything from casting to final cut.'
-    },
-    {
-      id: 4,
-      icon: '',
-      question: 'What are targeted ads?',
-      answer: (
-        <p>
-          For a full breakdown of how we hone in on your ideal audience, visit our{' '}
-          <Link href="/targeted-ads" className="relative text-[#5FA99F] font-bold no-underline pb-[2px] opacity-100 hover:after:scale-x-100 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-[#5FA99F] after:scale-x-0 after:origin-left after:transition-transform after:duration-300">
-            Targeted Ads page
-          </Link>.
-        </p>
-      )
-    },
-    {
-      id: 5,
-      icon: '',
-      question: 'Can you target clients outside my local area?',
-      answer: 'Yes. Whether it\'s a 5 mile radius or a nationwide rollout, we tailor ZIP code, demographic, and interest filters to your ideal profile.'
-    },
-    {
-      id: 6,
-      icon: '',
-      question: 'What is Meta Pixel & GA4?',
-      answer: (
-        <>
-          <ul className="my-2 pl-5 space-y-2">
-            <li><strong>Meta Pixel</strong> is a snippet of code we install on your website to track visitor actions (page views, button clicks, form submissions), enabling smarter ad optimization and retargeting.</li>
-            <li><strong>Google Analytics 4 (GA4)</strong> is Google's next-gen analytics platform measuring user journeys across web and app, feeding us rich, privacy focused data on sessions, events, and conversions.</li>
-          </ul>
-          <p className="mt-2">Together, they give you end-to-end visibility into which ads and videos drive actual business results.</p>
-        </>
-      )
-    },
-    {
-      id: 7,
-      icon: '',
-      question: 'How do you track performance?',
-      answer: (
-        <>
-          <p className="mb-2">We layer data from Meta Pixel and GA4 into custom dashboards and weekly reports. Key metrics include:</p>
-          <ul className="my-2 pl-5 space-y-1">
-            <li><strong>Click Through Rate (CTR)</strong> The percentage of ad impressions that resulted in a click; shows how compelling your creative and copy are.</li>
-            <li><strong>Cost Per Lead (CPL)</strong> The average amount you pay to acquire a single lead (form submission, sign up, etc.); measures cost efficiency of your funnel.</li>
-            <li><strong>Cost Per Mille (CPM)</strong> The cost to serve 1,000 ad impressions; helps you understand spend efficiency and audience reach.</li>
-            <li><strong>Return on Ad Spend (ROAS)</strong> Revenue generated divided by ad spend; the ultimate measure of campaign profitability.</li>
-            <li><strong>View Through Conversion Rate</strong> The percentage of viewers who saw (but didn't click) your ad and later converted; captures the indirect lift from video and display.</li>
-            <li><strong>Video Engagement</strong> (watch time, completion rates, drop off) Indicates how well your story holds attention.</li>
-            <li><strong>Landing Page Conversion Rate</strong> The percentage of visitors who take your desired action after clicking an ad; ties creative directly to on site performance.</li>
-            <li><strong>Frequency & Reach</strong> Reach is the number of unique users who saw your ad; frequency is the average times each person saw it; together they guard against ad fatigue.</li>
-            <li><strong>Audience Demographics & Behaviors</strong> Breakdowns by age, gender, location, interests, device, etc.; informs targeting refinements and creative pivots.</li>
-            <li><strong>Session Duration & Bounce Rate</strong> Average time on site and percentage of single page visits; signals landing page relevance and user experience quality.</li>
-            <li><strong>Event Based Conversions</strong> (e.g. "Book Now," "Download Guide") Custom actions tracked to measure the micro and macro conversions that matter most.</li>
-          </ul>
-          <p className="mt-2">You'll receive a weekly dashboard plus a monthly review call with clear optimization recommendations.</p>
-        </>
-      )
-    },
-    {
-      id: 8,
-      icon: '',
-      question: 'Do you build websites or just run ads?',
-      answer: 'We offer full service website design and development, from brand aligned landing pages to complete multi page sites with custom animations, mobile optimization, and conversion focused layouts.'
-    },
-    {
-      id: 9,
-      icon: '',
-      question: 'What\'s included in your website packages?',
-      answer: 'Custom design, mobile responsive development, Meta Pixel & GA4 integration, contact forms, speed optimization, SSL security, hosting setup assistance, and basic SEO foundation.'
-    },
-    {
-      id: 10,
-      icon: '',
-      question: 'How long does it take to build a website?',
-      answer: 'Timelines vary based on complexity. A high converting landing page typically takes 2 to 3 weeks, while a full multi page site with custom features takes 4 to 8 weeks. We\'ll provide a detailed timeline during discovery.'
-    },
-    {
-      id: 11,
-      icon: '',
-      question: 'Will my website work on mobile devices?',
-      answer: 'Yes. Every site we build is fully responsive and optimized for all devices (desktop, tablet, mobile). With over 60% of traffic coming from mobile, this is non negotiable.'
-    },
-    {
-      id: 12,
-      icon: '',
-      question: 'Do you provide website hosting and maintenance?',
-      answer: 'We can assist with hosting setup and offer ongoing maintenance packages including updates, security monitoring, performance optimization, and content changes.'
-    },
-    {
-      id: 13,
-      icon: '',
-      question: 'Can you integrate my website with my ad campaigns?',
-      answer: 'That\'s our specialty. We build websites specifically designed to convert ad traffic with optimized landing pages, tracking pixels, conversion focused layouts, and seamless handoff from ad to action.'
-    },
-    {
-      id: 14,
-      icon: '',
-      question: 'How do I get started?',
-      answer: (
-        <p>
-          Head to our{' '}
-          <Link href="/contact" className="relative text-[#5FA99F] font-bold no-underline pb-[2px] opacity-100 hover:after:scale-x-100 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-[#5FA99F] after:scale-x-0 after:origin-left after:transition-transform after:duration-300">
-            Contact page
-          </Link>{' '}
-          to book your Free 30 Minute Strategy Call or{' '}
-          <a href="mailto:hello@driveleadmedia.com" className="relative text-[#5FA99F] font-bold no-underline pb-[2px] opacity-100 hover:after:scale-x-100 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-[#5FA99F] after:scale-x-0 after:origin-left after:transition-transform after:duration-300">
-            send us an email
-          </a>.
-        </p>
-      )
+    // Check for URL hash to auto-open specific FAQ
+    if (window.location.hash) {
+      const itemId = window.location.hash.substring(1);
+      setOpenItems(new Set([itemId]));
+      setTimeout(() => {
+        document.getElementById(itemId)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 100);
     }
-  ];
+  }, []);
+
+  useEffect(() => {
+    if (searchQuery.trim()) {
+      setFilteredItems(searchFAQs(searchQuery));
+      // Auto-expand all results when searching
+      setOpenItems(new Set(searchFAQs(searchQuery).map(item => item.id)));
+    } else {
+      setFilteredItems(faqItems);
+    }
+  }, [searchQuery]);
+
+  const toggleItem = (id: string) => {
+    const newOpenItems = new Set(openItems);
+    if (newOpenItems.has(id)) {
+      newOpenItems.delete(id);
+    } else {
+      newOpenItems.add(id);
+    }
+    setOpenItems(newOpenItems);
+
+    // Update URL hash
+    if (newOpenItems.has(id)) {
+      window.history.replaceState(null, '', `#${id}`);
+    }
+  };
+
+  const schemaData = generateFAQSchema();
 
   return (
-    <div className="bg-[#000000] text-white font-body pt-32 pb-10 px-5 max-w-[800px] mx-auto min-h-screen relative">
-      {/* Background gradient orbs */}
-      <div className="fixed top-[20%] left-[10%] w-[500px] h-[500px] bg-[#5FA99F] opacity-10 rounded-full blur-[150px] pointer-events-none" />
-      <div className="fixed bottom-[10%] right-[15%] w-[400px] h-[400px] bg-[#85C7B3] opacity-10 rounded-full blur-[150px] pointer-events-none" />
+    <main className="min-h-screen bg-[#000000] text-white">
+      {/* JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
 
       {/* Hero Section */}
-      <section className="text-center mb-12 flex justify-center relative z-10">
-        <motion.h1
-          className={`font-heading text-[1.5rem] sm:text-[1.75rem] md:text-[2rem] lg:text-[2.5rem] xl:text-[3.5rem] font-bold text-white m-0 cursor-pointer relative inline-block px-4 py-4 sm:px-6 sm:py-5 md:px-8 md:py-6 lg:px-12 lg:py-8 bg-[#1A1A1A]/40 backdrop-blur-xl border-2 border-[rgba(95,169,159,0.3)] rounded-[24px] shadow-[0_8px_32px_rgba(0,0,0,0.4)] transition-all duration-[400ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] will-change-transform hover:scale-[1.03] hover:-translate-y-[2px] hover:shadow-[0_0_40px_rgba(95,169,159,0.3)] hover:border-[rgba(95,169,159,0.6)] active:scale-[1.02] active:translate-y-0 overflow-hidden ${headingPulse ? 'animate-[headingPulse_0.6s_ease-out]' : ''}`}
-          onClick={handleHeadingClick}
-          whileHover={{ scale: 1.03, y: -2 }}
-          whileTap={{ scale: 1.02, y: 0 }}
-        >
-          <span className="relative z-10">Your Questions, Answered</span>
-          {/* Shine effect */}
-          <span className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-45 from-transparent via-[rgba(95,169,159,0.2)] to-transparent -translate-x-full transition-transform duration-[600ms] rounded-[24px] pointer-events-none group-hover:translate-x-full"></span>
-        </motion.h1>
+      <section className="relative pt-[140px] sm:pt-[160px] lg:pt-[180px] pb-[60px] sm:pb-[80px] px-4 sm:px-6">
+        <div className="max-w-[900px] mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h1 className="font-heading text-[2.5rem] sm:text-[3rem] lg:text-[3.5rem] font-bold text-white mb-6 leading-[1.1]">
+              Frequently Asked Questions
+            </h1>
+            <p className="font-body text-[1.0625rem] sm:text-[1.125rem] text-gray-300 mb-10 leading-relaxed">
+              Find answers to common questions about our services
+            </p>
+
+            {/* Search Bar */}
+            <div className="relative max-w-[600px] mx-auto">
+              <input
+                type="text"
+                placeholder="Search FAQs..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full px-6 py-4 bg-[#0A0A0A] border-2 border-[#5FA99F]/30 rounded-[16px] text-white placeholder-gray-500 focus:outline-none focus:border-[#5FA99F] transition-colors text-[1rem]"
+              />
+              <svg
+                className="absolute right-6 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </div>
+
+            {searchQuery && (
+              <p className="mt-4 text-gray-400 text-sm">
+                Found {filteredItems.length} result{filteredItems.length !== 1 ? 's' : ''}
+              </p>
+            )}
+          </motion.div>
+        </div>
       </section>
 
-      {/* FAQ Accordion */}
-      <div className="space-y-4 relative z-10">
-        {faqs.map((faq, index) => {
-          const isOpen = openItems.has(faq.id);
+      {/* FAQ Categories */}
+      <section className="relative pb-[100px] sm:pb-[120px] px-4 sm:px-6">
+        <div className="max-w-[900px] mx-auto">
+          {faqCategories.map((category, categoryIndex) => {
+            const categoryItems = filteredItems.filter(item => item.category === category.id);
 
-          return (
-            <motion.div
-              key={faq.id}
-              className="faq-item relative bg-[#1A1A1A]/40 backdrop-blur-xl border-2 border-[rgba(95,169,159,0.3)] rounded-[20px] overflow-hidden hover:border-[rgba(95,169,159,0.6)] hover:shadow-[0_0_30px_rgba(95,169,159,0.2)] transition-all duration-500"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.05 }}
-            >
-              {/* Accent Line */}
-              <div
-                className={`absolute left-0 top-0 bottom-0 w-1 transition-all duration-300 rounded-l-[20px] ${
-                  isOpen ? 'bg-[#5FA99F]' : 'bg-transparent'
-                }`}
-              />
+            if (categoryItems.length === 0) return null;
 
-              {/* Question Button */}
-              <button
-                onClick={() => toggleItem(faq.id)}
-                className="relative w-full bg-none border-none py-4 pr-4 pl-6 text-left text-lg cursor-pointer transition-all duration-300 text-white hover:bg-[rgba(95,169,159,0.1)] flex items-center justify-between font-heading font-bold"
-              >
-                <span className="inline-flex items-center">
-                  <span className="mr-2 text-xl">{faq.icon}</span>
-                  {faq.question}
-                </span>
-                <motion.span
-                  className="inline-block text-2xl text-[#5FA99F]"
-                  animate={{ rotate: isOpen ? 180 : 0 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  ▼
-                </motion.span>
-              </button>
-
-              {/* Answer */}
+            return (
               <motion.div
-                initial={false}
-                animate={{
-                  height: isOpen ? 'auto' : 0,
-                  opacity: isOpen ? 1 : 0
-                }}
-                transition={{ duration: 0.5, ease: 'easeInOut' }}
-                className="overflow-hidden"
+                key={category.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
+                className="mb-12"
               >
-                <div className="text-base leading-relaxed pl-6 pr-4 pb-4 text-gray-300 rounded-b-lg font-body">
-                  {typeof faq.answer === 'string' ? <p>{faq.answer}</p> : faq.answer}
+                {/* Category Header */}
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="text-2xl">{category.icon}</span>
+                  <h2 className="font-heading text-[1.75rem] font-bold text-white">
+                    {category.name}
+                  </h2>
+                </div>
+
+                {/* FAQ Items */}
+                <div className="space-y-4">
+                  {categoryItems.map((item) => {
+                    const isOpen = openItems.has(item.id);
+
+                    return (
+                      <div
+                        key={item.id}
+                        id={item.id}
+                        className={`bg-[#0A0A0A] rounded-[16px] border-2 transition-all duration-300 ${
+                          isOpen
+                            ? 'border-[#5FA99F]'
+                            : 'border-[#5FA99F]/20 hover:border-[#5FA99F]/50'
+                        }`}
+                      >
+                        {/* Question */}
+                        <button
+                          onClick={() => toggleItem(item.id)}
+                          className="w-full flex items-center justify-between gap-4 p-6 text-left"
+                          aria-expanded={isOpen}
+                        >
+                          <span className="font-heading text-[1.125rem] font-semibold text-white leading-relaxed flex-1">
+                            {item.question}
+                          </span>
+                          <svg
+                            className={`w-6 h-6 text-[#5FA99F] transition-transform duration-300 flex-shrink-0 ${
+                              isOpen ? 'rotate-180' : ''
+                            }`}
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </button>
+
+                        {/* Answer */}
+                        <AnimatePresence>
+                          {isOpen && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: 'auto', opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.3 }}
+                              className="overflow-hidden"
+                            >
+                              <div className="px-6 pb-6 pt-0">
+                                <p className="font-body text-[1rem] text-gray-300 leading-relaxed">
+                                  {item.answer}
+                                </p>
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    );
+                  })}
                 </div>
               </motion.div>
-            </motion.div>
-          );
-        })}
-      </div>
+            );
+          })}
 
-      {/* Keyframe for heading pulse */}
-      <style jsx>{`
-        @keyframes headingPulse {
-          0% { transform: scale(1.05) translateY(-2px); }
-          50% { transform: scale(1.1) translateY(-4px); filter: brightness(1.1); }
-          100% { transform: scale(1.05) translateY(-2px); }
-        }
-      `}</style>
-    </div>
+          {filteredItems.length === 0 && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="text-center py-20"
+            >
+              <p className="text-gray-400 text-lg mb-4">No results found for "{searchQuery}"</p>
+              <button
+                onClick={() => setSearchQuery('')}
+                className="text-[#5FA99F] hover:text-[#85C7B3] transition-colors"
+              >
+                Clear search
+              </button>
+            </motion.div>
+          )}
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="relative pb-[100px] sm:pb-[120px] px-4 sm:px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-[700px] mx-auto bg-[#0A0A0A] rounded-[32px] border-2 border-[#5FA99F]/30 p-8 sm:p-12 text-center shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:border-[#5FA99F]/60 hover:shadow-[0_0_40px_rgba(95,169,159,0.3)] transition-all duration-500"
+        >
+          <h2 className="font-heading text-[1.75rem] sm:text-[2rem] font-bold text-white mb-4 leading-tight">
+            Still have questions?
+          </h2>
+          <p className="font-body text-gray-300 text-[1rem] mb-8 leading-relaxed">
+            We're here to help. Get in touch and we'll respond as soon as possible.
+          </p>
+          <Link
+            href="/contact"
+            className="inline-block bg-transparent text-white px-8 py-3 text-sm rounded-lg font-heading font-semibold border-2 border-white hover:bg-white hover:text-black transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] hover:scale-105"
+          >
+            Contact Us
+          </Link>
+        </motion.div>
+      </section>
+    </main>
   );
 }
