@@ -28,7 +28,7 @@ export default function WebsiteCard({ project }: WebsiteCardProps) {
             muted
             playsInline
           >
-            <source src={project.videoUrl} type="video/mp4" />
+            <source src={project.videoUrl} type={project.videoUrl.endsWith('.webm') ? 'video/webm' : 'video/mp4'} />
             Your browser does not support the video tag.
           </video>
         </div>
