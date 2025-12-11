@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description: 'Meta advertising video content for Facebook and Instagram. Engaging video ads created for Atlanta businesses.',
     images: [
       {
-        url: '/images/dlm-logo.png',
+        url: '/images/drive-lead-media-full-service-marketing-agency-brand.webp',
         width: 1200,
         height: 630,
         alt: 'Drive Lead Media Video Ads Portfolio',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Video Ads Portfolio | Drive Lead Media',
     description: 'Meta advertising video content created for Atlanta businesses.',
-    images: ['/images/dlm-logo.png'],
+    images: ['/images/drive-lead-media-full-service-marketing-agency-brand.webp'],
   },
   alternates: {
     canonical: '/portfolio/video-ads',

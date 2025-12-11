@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     publishedTime: '2025-10-25T09:00:00-05:00',
     authors: ['Nicolas Leroo'],
     images: [{
-      url: '/images/dlm-logo.png',
+      url: '/images/drive-lead-media-full-service-marketing-agency-brand.webp',
       width: 1200,
       height: 630,
       alt: 'Meta Ads Target Audience Guide',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Meta Ads Target Audience Guide: Stop Wasting Money',
     description: 'Master cold, warm, and hot audience strategies for Facebook & Instagram ads. Complete targeting guide.',
-    images: ['/images/dlm-logo.png'],
+    images: ['/images/drive-lead-media-full-service-marketing-agency-brand.webp'],
   },
   alternates: {
     canonical: '/blog/meta-ads-target-audience-guide',
