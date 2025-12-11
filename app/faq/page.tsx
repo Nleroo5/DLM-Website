@@ -124,8 +124,7 @@ export default function FAQPage() {
                 className="mb-12"
               >
                 {/* Category Header */}
-                <div className="flex items-center gap-3 mb-6">
-                  <span className="text-2xl">{category.icon}</span>
+                <div className="mb-6">
                   <h2 className="font-heading text-[1.75rem] font-bold text-white">
                     {category.name}
                   </h2>

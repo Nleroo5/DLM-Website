@@ -13,10 +13,10 @@ export interface FAQCategory {
 }
 
 export const faqCategories: FAQCategory[] = [
-  { id: 'general', name: 'General Services', icon: '🏢' },
-  { id: 'websites', name: 'Website Design & Development', icon: '💻' },
-  { id: 'video', name: 'Video Production', icon: '🎥' },
-  { id: 'meta-ads', name: 'Meta Advertising', icon: '📱' }
+  { id: 'general', name: 'General Services', icon: '' },
+  { id: 'websites', name: 'Website Design & Development', icon: '' },
+  { id: 'video', name: 'Video Production', icon: '' },
+  { id: 'meta-ads', name: 'Meta Advertising', icon: '' }
 ];
 
 export const faqItems: FAQItem[] = [
