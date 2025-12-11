@@ -267,7 +267,7 @@ export default function MetaAdsCalculator() {
               {/* Meta Ad Spend Slider */}
               <div className="mb-4">
                 <label className="block text-[#EEF4D9] text-[0.95rem] font-body mb-2 font-semibold">
-                  Meta Ad Spend: ${monthlyBudget.toLocaleString()}
+                  Monthly Meta Ad Spend: ${monthlyBudget.toLocaleString()}
                 </label>
                 <input
                   type="range"
