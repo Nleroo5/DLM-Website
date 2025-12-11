@@ -537,7 +537,7 @@ export default function FacebookAdsAtlantaGuide() {
                 />
                 <div className="bg-[rgba(95,169,159,0.1)] p-4">
                   <p className="text-[#F8F6F3]/80 text-[0.95rem] italic">
-                    Use a calculator like this to estimate your Facebook ads budget and expected leads based on your industry.
+                    Use a calculator like this to estimate your Facebook ads budget and expected leads based on your industry. <Link href="/resources/meta-ads-calculator" className="text-[#5FA99F] hover:text-[#D4A574] underline transition-colors">Try our free Meta ads calculator →</Link>
                   </p>
                 </div>
               </div>
