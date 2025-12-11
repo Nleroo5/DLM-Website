@@ -214,7 +214,7 @@ export default function MetaAdsLandingPagesPage() {
                 <div className="grid md:grid-cols-2 gap-6 items-center mb-4">
                   <div className="relative w-full aspect-[9/16] max-w-sm mx-auto rounded-xl overflow-hidden shadow-lg">
                     <Image
-                      src="/images/confused.jpg"
+                      src="/images/confused.webp"
                       alt="Confused visitor on homepage"
                       fill
                       className="object-cover"
@@ -276,7 +276,7 @@ export default function MetaAdsLandingPagesPage() {
                 <div className="grid md:grid-cols-2 gap-6 items-center">
                   <div className="relative w-full aspect-[9/16] max-w-sm mx-auto rounded-xl overflow-hidden shadow-lg">
                     <Image
-                      src="/images/happy.jpg"
+                      src="/images/happy.webp"
                       alt="Happy customer on landing page"
                       fill
                       className="object-cover"
@@ -472,7 +472,7 @@ export default function MetaAdsLandingPagesPage() {
                 {/* Full-Width Phone Image */}
                 <div className="relative h-56 sm:h-64 md:h-72 lg:h-80 rounded-xl overflow-hidden shadow-2xl mb-6">
                   <Image
-                    src="/images/phone.jpg"
+                    src="/images/phone.webp"
                     alt="Mobile phone showing landing page"
                     fill
                     className="object-cover"
@@ -539,7 +539,7 @@ export default function MetaAdsLandingPagesPage() {
               {/* Financial Image */}
               <div className="relative h-80 rounded-2xl overflow-hidden shadow-2xl mb-4">
                 <Image
-                  src="/images/financial.jpg"
+                  src="/images/financial.webp"
                   alt="Financial analysis and ROI calculations"
                   fill
                   className="object-cover"
@@ -651,7 +651,7 @@ export default function MetaAdsLandingPagesPage() {
               {/* Data Analytics Image */}
               <div className="relative h-80 rounded-2xl overflow-hidden shadow-2xl mb-4">
                 <Image
-                  src="/images/data.jpg"
+                  src="/images/data.webp"
                   alt="Analytics dashboard and data tracking"
                   fill
                   className="object-cover"
