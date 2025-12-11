@@ -16,7 +16,7 @@ const arnoPro = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Custom Websites & Meta Advertising Agency | Targeted Facebook & Instagram Ads | Drive Lead Media",
+  title: "Custom Websites & Meta Advertising Agency | Facebook & Instagram Ads | Drive Lead Media",
   description: "Atlanta Meta advertising agency. Facebook & Instagram ad campaigns that convert. Video production, targeting strategy & websites. Get started today.",
   keywords: "atlanta meta ads agency, facebook advertising atlanta, instagram ads atlanta ga, meta advertising agency atlanta, atlanta social media marketing, facebook ads agency atlanta, meta ads consultant atlanta, video ads production atlanta, atlanta digital marketing agency, meta certified atlanta",
   authors: [{ name: "Drive Lead Media" }],
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://driveleadmedia.com",
     siteName: "Drive Lead Media",
-    title: "Custom Websites & Meta Advertising Agency | Targeted Facebook & Instagram Ads",
+    title: "Custom Websites & Meta Advertising Agency | Facebook & Instagram Ads",
     description: "Atlanta's premier Meta advertising agency. We build Facebook & Instagram ad campaigns and high-converting websites that bring your best customers to you.",
     images: [
       {
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Custom Websites & Meta Advertising Agency | Targeted Facebook & Instagram Ads",
+    title: "Custom Websites & Meta Advertising Agency | Facebook & Instagram Ads",
     description: "Atlanta's premier Meta advertising agency. We build Facebook & Instagram ad campaigns and high-converting websites.",
     images: ["/images/dlm-logo2.png"],
   },
