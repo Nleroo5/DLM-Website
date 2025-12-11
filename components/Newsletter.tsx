@@ -2,6 +2,8 @@
 
 import { motion } from 'framer-motion';
 import { useState, FormEvent } from 'react';
+import { trackEvent } from '@/components/MetaPixel';
+import { trackFormSubmission } from '@/components/GoogleAnalytics';
 
 export default function Newsletter() {
   const [email, setEmail] = useState('');
@@ -25,6 +27,17 @@ export default function Newsletter() {
       const data = await response.json();
 
       if (response.ok) {
+        // Track newsletter subscription as Lead event
+        trackEvent('Lead', {
+          content_name: 'Newsletter Subscription',
+          content_category: 'Newsletter',
+          value: 0.50,
+          currency: 'USD'
+        });
+
+        // Track GA4 newsletter subscription
+        trackFormSubmission('Newsletter Signup', 0.5);
+
         setStatus('success');
         setMessage(data.message || 'Successfully subscribed!');
         setEmail(''); // Clear form

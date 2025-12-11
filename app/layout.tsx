@@ -6,6 +6,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { MetaPixel } from "@/components/MetaPixel";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 
 const arnoPro = localFont({
   src: "../font/ArnoPro-LightDisplay.otf",
@@ -74,7 +76,46 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
         <meta name="google-site-verification" content="Aa_bZjosqPJtDpPU0ddFCLwmIT1PceViOlakLzBFqQE" />
-        {/* Google Analytics */}
+        {/* Meta Pixel Code - Enhanced Configuration */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              !function(f,b,e,v,n,t,s)
+              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+              n.queue=[];t=b.createElement(e);t.async=!0;
+              t.src=v;s=b.getElementsByTagName(e)[0];
+              s.parentNode.insertBefore(t,s)}(window, document,'script',
+              'https://connect.facebook.net/en_US/fbevents.js');
+
+              // Initialize with enhanced configuration
+              fbq('init', '1103544594607690', {
+                autoConfig: true,
+                debug: false
+              });
+
+              // Enable advanced matching
+              fbq('set', 'autoAdvancedMatching', true);
+
+              // Track initial PageView with source
+              fbq('track', 'PageView', {
+                source_url: window.location.href,
+                referrer: document.referrer || 'direct'
+              });
+            `,
+          }}
+        />
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: 'none' }}
+            src="https://www.facebook.com/tr?id=1103544594607690&ev=PageView&noscript=1"
+            alt=""
+          />
+        </noscript>
+        {/* Google Analytics 4 - Enhanced Configuration */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-K25LTGL8FP"></script>
         <script
           dangerouslySetInnerHTML={{
@@ -82,7 +123,39 @@ export default function RootLayout({
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-K25LTGL8FP');
+
+              // Enhanced GA4 configuration
+              gtag('config', 'G-K25LTGL8FP', {
+                page_path: window.location.pathname,
+                send_page_view: true,
+                allow_google_signals: true,
+                allow_ad_personalization_signals: true,
+                cookie_flags: 'SameSite=None;Secure',
+                anonymize_ip: false,
+                content_group: 'General'
+              });
+
+              // Enable enhanced measurement
+              gtag('set', 'user_properties', {
+                site_section: 'main'
+              });
+
+              // Track Core Web Vitals
+              function sendWebVitals(metric) {
+                gtag('event', metric.name, {
+                  event_category: 'Web Vitals',
+                  value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
+                  event_label: metric.id,
+                  non_interaction: true,
+                });
+              }
+
+              // Load web-vitals library
+              if ('web-vitals' in window) {
+                webVitals.getCLS(sendWebVitals);
+                webVitals.getFID(sendWebVitals);
+                webVitals.getLCP(sendWebVitals);
+              }
             `,
           }}
         />
@@ -336,6 +409,8 @@ export default function RootLayout({
         />
       </head>
       <body className={`${arnoPro.variable} antialiased`}>
+        <MetaPixel pixelId="1103544594607690" />
+        <GoogleAnalytics measurementId="G-K25LTGL8FP" />
         <a href="#main-content" className="skip-to-content">
           Skip to main content
         </a>

@@ -160,7 +160,7 @@ export default function DentalIntroPage() {
             <div className="example-card card fade-in-up stagger-3" onClick={openImageModal}>
               <div className="example-content">
                 <div className="image-thumbnail-wrapper">
-                  <img src="/images/static.png" alt="Static dental image ad example" className="image-thumbnail-preview" />
+                  <img src="/images/static.webp" alt="Static dental image ad example" className="image-thumbnail-preview" />
                   <div className="play-overlay">
                     <svg viewBox="0 0 24 24" className="play-icon" style={{width: '30px', height: '30px'}}>
                       <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
@@ -274,7 +274,7 @@ export default function DentalIntroPage() {
         <div className="image-modal active" onClick={(e) => e.target === e.currentTarget && closeImageModal()}>
           <div className="image-modal-content">
             <span className="image-modal-close" onClick={closeImageModal}>&times;</span>
-            <img src="/images/static.png" alt="Static dental image ad example" />
+            <img src="/images/static.webp" alt="Static dental image ad example" />
           </div>
         </div>
       )}

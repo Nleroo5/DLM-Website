@@ -282,7 +282,7 @@ export default function HowItWorks() {
         <MobileScene
           title="High-Performance Websites"
           description="Custom-built websites engineered for speed, conversion, and top search rankings. We skip the templates and build every site from the ground up with clean code, strategic SEO, and performance optimization."
-          videoSrc="/Videos/deviceframes.webm"
+          videoSrc="/Videos/deviceframes-optimized.webm"
           index={0}
         />
 

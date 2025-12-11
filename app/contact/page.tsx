@@ -1,8 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import type emailjs from '@emailjs/browser';
+import { trackEvent, trackLeadWithUserData } from '@/components/MetaPixel';
+import { trackFormSubmission, trackEvent as trackGA4Event } from '@/components/GoogleAnalytics';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -14,6 +16,16 @@ export default function ContactPage() {
   });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [phoneError, setPhoneError] = useState('');
+  const [formStarted, setFormStarted] = useState(false);
+
+  useEffect(() => {
+    // Track ViewContent for contact page
+    trackEvent('ViewContent', {
+      content_name: 'Contact Page',
+      content_type: 'page',
+      content_category: 'Contact'
+    });
+  }, []);
 
   const formatPhoneNumber = (value: string) => {
     // Remove all non-numeric characters
@@ -41,6 +53,19 @@ export default function ContactPage() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
+
+    // Track InitiateCheckout when user starts filling form (only once)
+    if (!formStarted && value.length > 0) {
+      setFormStarted(true);
+      trackEvent('InitiateCheckout', {
+        content_name: 'Contact Form Started',
+        content_category: 'Contact'
+      });
+      trackGA4Event('form_start', {
+        form_name: 'Contact Form',
+        form_destination: 'contact'
+      });
+    }
 
     if (name === 'phone') {
       const formatted = formatPhoneNumber(value);
@@ -84,6 +109,20 @@ export default function ContactPage() {
         },
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY! // Public Key
       );
+
+      // Track Meta Pixel Lead event with advanced matching
+      const [firstName, ...lastNameParts] = formData.name.trim().split(' ');
+      const lastName = lastNameParts.join(' ');
+
+      trackLeadWithUserData('Contact Form Submission', 1.0, {
+        email: formData.email,
+        phone: formData.phone || undefined,
+        firstName: firstName,
+        lastName: lastName || undefined
+      });
+
+      // Track GA4 Lead event
+      trackFormSubmission('Contact Form', 1.0);
 
       setStatus('success');
       setFormData({

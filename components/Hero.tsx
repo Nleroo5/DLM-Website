@@ -3,6 +3,8 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect, useRef } from 'react';
 import { ChevronDown } from 'lucide-react';
+import { trackVideoEngagement } from '@/components/GoogleAnalytics';
+import { trackVideoEvent } from '@/components/MetaPixel';
 
 export default function Hero() {
   const [showArrow, setShowArrow] = useState(false);
@@ -76,6 +78,11 @@ export default function Hero() {
       setVideoEnded(true);
       setShowArrow(true);
       hasPlayedRef.current = true;
+
+      // Track video completion (GA4 & Meta Pixel)
+      trackVideoEngagement('Hero Video', 'complete', 100);
+      trackVideoEvent('complete', 'Hero Video', 100);
+
       // Dispatch custom event for navigation to listen to
       window.dispatchEvent(new CustomEvent('heroVideoEnded'));
 
@@ -87,6 +94,10 @@ export default function Hero() {
     };
 
     const handlePlaying = () => {
+      // Track video start (GA4 & Meta Pixel)
+      trackVideoEngagement('Hero Video', 'start', 0);
+      trackVideoEvent('start', 'Hero Video', 0);
+
       // Safety timeout: force end sequence if video doesn't end naturally
       // Video is 8 seconds, add 2 second buffer
       timeoutRef.current = setTimeout(() => {

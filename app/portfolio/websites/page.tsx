@@ -2,11 +2,22 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { useEffect } from 'react';
 import { getWebsiteProjects } from '@/lib/portfolio-projects';
 import WebsiteCard from '@/components/portfolio/WebsiteCard';
+import { trackEvent } from '@/components/MetaPixel';
 
 export default function WebsitesPortfolioPage() {
   const websites = getWebsiteProjects();
+
+  useEffect(() => {
+    // Track ViewContent for portfolio page
+    trackEvent('ViewContent', {
+      content_name: 'Website Portfolio',
+      content_type: 'portfolio',
+      content_category: 'Websites'
+    });
+  }, []);
 
   return (
     <main className="min-h-screen bg-[#000000] text-white">

@@ -36,7 +36,7 @@ export default function FacebookAdsCostAtlantaPost() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/images/atlanta.jpg"
+            src="/images/atlanta.webp"
             alt="Atlanta skyline with modern buildings representing local businesses investing in Facebook and Instagram advertising"
             fill
             className="object-cover"
