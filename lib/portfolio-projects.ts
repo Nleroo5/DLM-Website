@@ -123,6 +123,26 @@ export const portfolioProjects: PortfolioProject[] = [
     techStack: ['Next.js', 'React', 'Tailwind CSS'],
     timeline: '6 weeks'
   },
+  {
+    slug: 'marietta-antique-mall',
+    title: 'Marietta Antique Mall',
+    client: 'Marietta Antique Mall',
+    industry: 'Retail - Antiques',
+    type: 'website',
+    category: {
+      name: 'Websites',
+      slug: 'websites'
+    },
+    featured: true,
+    date: 'Q4 2024',
+    thumbnail: '/images/marietta-antique-mall.png',
+    videoUrl: '/Videos/marietta-antique-mall.webm',
+    liveUrl: 'https://www.mariettaantiquemall.com/',
+    description: 'Professional antique mall website showcasing vendors, booth information, and mall hours.',
+    services: ['Web Design', 'Development', 'SEO'],
+    techStack: ['Next.js', 'React', 'Tailwind CSS'],
+    timeline: '6 weeks'
+  },
 
   // VIDEO ADS - Add your actual videos here
   {
