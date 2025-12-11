@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import type emailjs from '@emailjs/browser';
 import { trackEvent, trackLeadWithUserData } from '@/components/MetaPixel';
 import { trackFormSubmission, trackEvent as trackGA4Event } from '@/components/GoogleAnalytics';
 
@@ -93,22 +92,18 @@ export default function ContactPage() {
     setStatus('loading');
 
     try {
-      // Dynamically import EmailJS only when form is submitted
-      const emailjs = await import('@emailjs/browser');
-
-      // Send email using EmailJS
-      await emailjs.default.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!, // Service ID
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!, // Template ID
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          phone: formData.phone || 'Not provided',
-          business_name: formData.businessName,
-          message: formData.message,
+      // Send email using API route
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
         },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY! // Public Key
-      );
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
 
       // Track Meta Pixel Lead event with advanced matching
       const [firstName, ...lastNameParts] = formData.name.trim().split(' ');
@@ -133,7 +128,7 @@ export default function ContactPage() {
         message: ''
       });
     } catch (error) {
-      console.error('EmailJS Error:', error);
+      console.error('Contact form error:', error);
       setStatus('error');
     }
   };
