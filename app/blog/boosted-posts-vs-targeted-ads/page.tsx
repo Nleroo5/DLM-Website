@@ -598,6 +598,16 @@ export default function BoostedPostsVsTargetedAdsPost() {
               </h3>
               <ul className="space-y-2 text-white text-[1rem]">
                 <li>
+                  <Link href="/resources/meta-ads-calculator" className="text-[#5FA99F] underline hover:text-gray-300">
+                    Free Meta Ads ROI Calculator
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/resources/meta-targeting-guide" className="text-[#5FA99F] underline hover:text-gray-300">
+                    Meta Ads Targeting Strategy Guide
+                  </Link>
+                </li>
+                <li>
                   <Link href="/blog/how-much-do-facebook-ads-cost-atlanta" className="text-[#5FA99F] underline hover:text-gray-300">
                     How Much Do Facebook Ads Cost in Atlanta?
                   </Link>

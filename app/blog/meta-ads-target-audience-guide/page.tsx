@@ -561,6 +561,40 @@ export default function MetaAdsTargetAudienceGuide() {
           </div>
         </motion.div>
 
+        {/* Related Resources */}
+        <div className="bg-gradient-to-br from-[#1A1A1A]/40 to-[#1A1A1A]/40 backdrop-blur-xl border border-[rgba(95,169,159,0.3)] rounded-[16px] p-6 my-10">
+          <h3 className="text-[#5FA99F] font-heading text-[1.3rem] font-normal mb-3">
+            Free Resources to Improve Your Meta Ads
+          </h3>
+          <ul className="space-y-2 text-white text-[1rem]">
+            <li>
+              <Link href="/resources/meta-ads-calculator" className="text-[#5FA99F] underline hover:text-gray-300">
+                Free Meta Ads ROI Calculator
+              </Link>
+            </li>
+            <li>
+              <Link href="/resources/meta-targeting-guide" className="text-[#5FA99F] underline hover:text-gray-300">
+                Complete Meta Ads Targeting Strategy Guide (PDF)
+              </Link>
+            </li>
+            <li>
+              <Link href="/resources/targeted-ads-infographic" className="text-[#5FA99F] underline hover:text-gray-300">
+                Targeted Ads vs Traditional Advertising Infographic
+              </Link>
+            </li>
+            <li>
+              <Link href="/blog/boosted-posts-vs-targeted-ads" className="text-[#5FA99F] underline hover:text-gray-300">
+                Boosted Posts vs Targeted Ads: Complete Comparison
+              </Link>
+            </li>
+            <li>
+              <Link href="/blog/how-much-do-facebook-ads-cost-atlanta" className="text-[#5FA99F] underline hover:text-gray-300">
+                How Much Do Facebook Ads Cost in Atlanta?
+              </Link>
+            </li>
+          </ul>
+        </div>
+
         {/* CTA Section */}
         <motion.section
           className="mb-4"

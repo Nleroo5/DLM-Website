@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { getPostBySlug, generateBlogPostSchema } from '@/lib/blog-posts';
 import Breadcrumbs from '@/components/blog/Breadcrumbs';
 import AuthorBio from '@/components/blog/AuthorBio';
-import { ImageObjectSchema } from '@/components/StructuredDataSchemas';
+import { ImageObjectSchema, FAQSchema } from '@/components/StructuredDataSchemas';
 
 export default function FacebookAdsCostAtlantaPost() {
   const post = getPostBySlug('how-much-do-facebook-ads-cost-atlanta');
@@ -48,6 +48,32 @@ export default function FacebookAdsCostAtlantaPost() {
         description="Budget planning tool and ROI calculator for estimating Facebook advertising costs and expected returns"
         width={1200}
         height={800}
+      />
+
+      {/* FAQ Schema for SEO */}
+      <FAQSchema
+        faqs={[
+          {
+            question: "What's the minimum budget for Facebook ads in Atlanta?",
+            answer: "Technically, you can start with as little as $5/day ($150/month), but we recommend $500-$800/month minimum to gather meaningful data and see results. Anything less takes too long to optimize and learn what works."
+          },
+          {
+            question: "How long before I see results from Facebook ads?",
+            answer: "You'll start getting clicks and leads within the first week, but it takes 2-4 weeks for Meta's algorithm to fully optimize. Give your campaigns at least 30 days before making major changes. The best results come after 60-90 days of consistent optimization."
+          },
+          {
+            question: "Should I hire an agency or run ads myself?",
+            answer: "It depends on your time and experience. Running effective Meta ads requires ongoing optimization, testing, creative production, and strategy. If you have the time to learn and test, start yourself. If you want faster results and professional creative (especially video), an experienced Atlanta agency can deliver 2-3X better ROI and save you months of trial and error."
+          },
+          {
+            question: "Do Facebook ads still work in 2025?",
+            answer: "Absolutely. Meta ads (Facebook and Instagram) are still one of the most cost-effective advertising platforms available. In Atlanta, businesses across every industry are seeing strong ROI. The key is quality creative (especially video), smart targeting, and dedicated landing pages."
+          },
+          {
+            question: "What's the difference between Facebook ads and Instagram ads?",
+            answer: "They're both part of Meta's ad platform, so you manage them in the same place (Meta Ads Manager). Instagram tends to attract younger audiences (18-40) and performs better with visual businesses (restaurants, fitness, beauty). Facebook has older demographics (35-65+) and works well for professional services (dental, real estate, home services). Most Atlanta businesses run ads on both platforms simultaneously for best results."
+          }
+        ]}
       />
 
       {/* Hero Section - Full Width */}
