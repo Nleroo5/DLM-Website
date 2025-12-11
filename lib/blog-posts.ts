@@ -135,6 +135,36 @@ export const blogPosts: BlogPost[] = [
     heroImageAlt: 'Comparison visualization showing Facebook boost button vs Meta Ads Manager interface demonstrating cost and results differences',
     wordCount: 2433
   },
+  {
+    slug: 'facebook-ads-atlanta-guide',
+    title: 'Facebook Ads Atlanta: Complete Guide for Local Businesses (2025)',
+    excerpt: 'Complete guide to Facebook advertising for Atlanta businesses. Learn costs, targeting strategies, ROI benchmarks, and why 200+ local businesses choose Meta ads over billboards.',
+    date: 'December 2025',
+    datePublished: '2025-12-11T09:00:00-05:00',
+    dateModified: '2025-12-11T09:00:00-05:00',
+    readTime: '15 min read',
+    category: {
+      name: 'Local Marketing',
+      slug: 'local-marketing'
+    },
+    author: {
+      name: 'Nicolas Leroo',
+      jobTitle: 'Co-Founder & Meta Advertising Strategist',
+      url: 'https://driveleadmedia.com/about/nicolas-leroo'
+    },
+    keywords: [
+      'facebook ads atlanta',
+      'atlanta facebook ads',
+      'facebook advertising atlanta',
+      'meta ads atlanta',
+      'instagram ads atlanta',
+      'social media advertising atlanta',
+      'atlanta facebook ads agency'
+    ],
+    heroImage: '/images/atlanta-facebook-ads-cost-meta-advertising-pricing.webp',
+    heroImageAlt: 'Atlanta business owner reviewing Facebook ads campaign performance and ROI dashboard showing local targeting success',
+    wordCount: 3400
+  },
 ];
 
 // Helper functions
