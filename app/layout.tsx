@@ -8,6 +8,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { MetaPixel } from "@/components/MetaPixel";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import { Analytics } from "@vercel/analytics/next";
 
 const arnoPro = localFont({
   src: "../font/ArnoPro-LightDisplay.otf",
@@ -411,6 +412,7 @@ export default function RootLayout({
       <body className={`${arnoPro.variable} antialiased`}>
         <MetaPixel pixelId="1103544594607690" />
         <GoogleAnalytics measurementId="G-K25LTGL8FP" />
+        <Analytics />
         <a href="#main-content" className="skip-to-content">
           Skip to main content
         </a>
