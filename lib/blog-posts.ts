@@ -217,7 +217,7 @@ export function generateBlogPostSchema(post: BlogPost) {
       "name": "Drive Lead Media",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://driveleadmedia.com/images/drive-lead-media-atlanta-digital-marketing-agency-logo.png",
+        "url": "https://driveleadmedia.com/images/dlm-logo.png",
         "width": 600,
         "height": 60
       }

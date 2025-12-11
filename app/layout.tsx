@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     description: "Atlanta's premier Meta advertising. We build Facebook & Instagram ad campaigns and high-converting websites that bring your best customers to you.",
     images: [
       {
-        url: "/images/drive-lead-media-atlanta-digital-marketing-agency-logo.png",
+        url: "/images/dlm-logo.png",
         width: 1200,
         height: 630,
         alt: "Drive Lead Media Logo",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Custom Websites & Meta Advertising | Facebook & Instagram Ads",
     description: "Atlanta's premier Meta advertising. We build Facebook & Instagram ad campaigns and high-converting websites.",
-    images: ["/images/drive-lead-media-atlanta-digital-marketing-agency-logo.png"],
+    images: ["/images/dlm-logo.png"],
   },
   icons: {
     icon: "/images/drive-lead-media-atlanta-digital-marketing-agency-logo.png",
@@ -169,7 +169,7 @@ export default function RootLayout({
               "name": "Drive Lead Media",
               "alternateName": "DLM",
               "url": "https://driveleadmedia.com",
-              "logo": "https://driveleadmedia.com/images/drive-lead-media-atlanta-digital-marketing-agency-logo.png",
+              "logo": "https://driveleadmedia.com/images/dlm-logo.png",
               "description": "Atlanta's premier Meta advertising. Full-service Facebook ads, Instagram ads, video production, and custom website development for local businesses. Serving Atlanta, GA and nationwide.",
               "foundingDate": "2019",
               "sameAs": [
@@ -286,7 +286,7 @@ export default function RootLayout({
               "@type": "LocalBusiness",
               "@id": "https://driveleadmedia.com/#localbusiness",
               "name": "Drive Lead Media",
-              "image": "https://driveleadmedia.com/images/drive-lead-media-atlanta-digital-marketing-agency-logo.png",
+              "image": "https://driveleadmedia.com/images/dlm-logo.png",
               "url": "https://driveleadmedia.com",
               "telephone": "+1-678-650-6411",
               "email": "hello@driveleadmedia.com",
@@ -348,7 +348,7 @@ export default function RootLayout({
                 "itemReviewed": {
                   "@type": "LocalBusiness",
                   "name": "Drive Lead Media",
-                  "image": "https://driveleadmedia.com/images/drive-lead-media-atlanta-digital-marketing-agency-logo.png"
+                  "image": "https://driveleadmedia.com/images/dlm-logo.png"
                 },
                 "author": {
                   "@type": "Person",
@@ -373,7 +373,7 @@ export default function RootLayout({
                 "itemReviewed": {
                   "@type": "LocalBusiness",
                   "name": "Drive Lead Media",
-                  "image": "https://driveleadmedia.com/images/drive-lead-media-atlanta-digital-marketing-agency-logo.png"
+                  "image": "https://driveleadmedia.com/images/dlm-logo.png"
                 },
                 "author": {
                   "@type": "Person",

@@ -4,7 +4,7 @@ export default function StructuredData() {
     "@type": "Organization",
     "name": "Drive Lead Media",
     "url": "https://driveleadmedia.com",
-    "logo": "https://driveleadmedia.com/images/drive-lead-media-atlanta-digital-marketing-agency-logo.png",
+    "logo": "https://driveleadmedia.com/images/dlm-logo.png",
     "description": "We Build Advertisement Systems That Bring Your Best Customers To You. Specializing in Meta advertising, Facebook ads, Instagram ads, and custom website development for local businesses.",
     "foundingDate": "2019",
     "founders": [
@@ -83,7 +83,7 @@ export default function StructuredData() {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "Drive Lead Media",
-    "image": "https://driveleadmedia.com/images/drive-lead-media-atlanta-digital-marketing-agency-logo.png",
+    "image": "https://driveleadmedia.com/images/dlm-logo.png",
     "url": "https://driveleadmedia.com",
     "telephone": "+1-XXX-XXX-XXXX", // Replace with actual phone number
     "priceRange": "$$$",

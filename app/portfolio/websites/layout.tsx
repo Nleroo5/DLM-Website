@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description: 'Custom websites built for Atlanta businesses. Mobile-responsive, fast-loading, and designed to convert.',
     images: [
       {
-        url: '/images/drive-lead-media-atlanta-digital-marketing-agency-logo.png',
+        url: '/images/dlm-logo.png',
         width: 1200,
         height: 630,
         alt: 'Drive Lead Media Website Portfolio',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Website Portfolio | Drive Lead Media',
     description: 'Custom websites built for Atlanta businesses.',
-    images: ['/images/drive-lead-media-atlanta-digital-marketing-agency-logo.png'],
+    images: ['/images/dlm-logo.png'],
   },
   alternates: {
     canonical: '/portfolio/websites',
