@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Meta Ads Target Audience Guide: Stop Wasting Money | Drive Lead Media',
-  description: 'Master Meta ads targeting with our complete guide. Learn cold, warm, and hot audience strategies, demographic targeting, and how to build profitable Facebook & Instagram ad audiences.',
+  description: 'Master Meta ads targeting with our Atlanta guide. Learn cold, warm & hot audience strategies to build profitable Facebook & Instagram campaigns. Read now.',
   keywords: 'meta ads targeting, facebook audience targeting, instagram ads audience, cold warm hot audiences, meta ads demographics, facebook ads strategy',
   authors: [{ name: 'Nicolas Leroo' }],
   openGraph: {

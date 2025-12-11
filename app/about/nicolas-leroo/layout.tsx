@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Nicolas Leroo - Meta Advertising Expert | Drive Lead Media',
-  description: 'Nicolas Leroo is Co-Founder of Drive Lead Media and a Meta Blueprint Certified advertising strategist specializing in Facebook & Instagram campaigns for Atlanta healthcare and service businesses.',
+  description: 'Nicolas Leroo, Meta Blueprint Certified strategist & Co-Founder of Drive Lead Media. Specializing in Facebook & Instagram ads for Atlanta businesses.',
   keywords: 'nicolas leroo, meta ads expert, facebook advertising specialist, atlanta digital marketing, meta blueprint certified',
   authors: [{ name: 'Nicolas Leroo' }],
   openGraph: {

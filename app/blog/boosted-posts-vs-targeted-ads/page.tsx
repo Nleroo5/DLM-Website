@@ -8,6 +8,7 @@ import { getPostBySlug, generateBlogPostSchema } from '@/lib/blog-posts';
 import Breadcrumbs from '@/components/blog/Breadcrumbs';
 import AuthorBio from '@/components/blog/AuthorBio';
 import { trackEvent } from '@/components/MetaPixel';
+import { ImageObjectSchema } from '@/components/StructuredDataSchemas';
 
 export default function BoostedPostsVsTargetedAdsPost() {
   const post = getPostBySlug('boosted-posts-vs-targeted-ads');
@@ -37,6 +38,50 @@ export default function BoostedPostsVsTargetedAdsPost() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
 
+      {/* Image Schemas for SEO */}
+      <ImageObjectSchema
+        url="/images/facebook-boosted-posts-vs-meta-ads-manager-comparison.webp"
+        caption="Facebook boosted posts vs Meta Ads Manager comparison"
+        description="Comparison visualization showing Facebook boost button vs Meta Ads Manager interface demonstrating cost and results differences"
+        width={1200}
+        height={630}
+      />
+      <ImageObjectSchema
+        url="/images/facebook-boost-post-button-mobile-interface-settings.webp"
+        caption="Facebook boost post button mobile interface settings"
+        description="Facebook's boost post targeting interface showing basic demographic controls (age, gender, location)"
+        width={1064}
+        height={1722}
+      />
+      <ImageObjectSchema
+        url="/images/facebook-meta-ads-manager-audience-targeting-interface.webp"
+        caption="Facebook Meta Ads Manager audience targeting interface"
+        description="Meta Ads Manager campaign dashboard showing detailed performance metrics including CPM, CTR, landing page views and cost per result"
+        width={2400}
+        height={1293}
+      />
+      <ImageObjectSchema
+        url="/images/facebook-ads-cost-comparison-boosted-vs-targeted-roi.webp"
+        caption="Facebook ads cost comparison boosted vs targeted ROI"
+        description="Real campaign results comparison showing boosted posts with Boost again buttons versus targeted campaigns with superior lead generation and reach metrics"
+        width={2182}
+        height={1510}
+      />
+      <ImageObjectSchema
+        url="/images/facebook-meta-ads-campaign-results-analytics-roi.webp"
+        caption="Facebook Meta ads campaign results analytics ROI"
+        description="Real Meta Ads Manager showing multiple campaigns with detailed budget tracking, CPM costs, impressions and reach metrics"
+        width={2400}
+        height={663}
+      />
+      <ImageObjectSchema
+        url="/images/facebook-meta-pixel-conversion-tracking-setup-guide.webp"
+        caption="Facebook Meta Pixel conversion tracking setup guide"
+        description="Meta Pixel data source setup options showing Web, App, Offline, CRM, and Messaging connection options for conversion tracking"
+        width={1390}
+        height={1244}
+      />
+
       {/* Hero Section */}
       <motion.div
         className="relative w-full pt-20 sm:pt-24 lg:pt-28 pb-16 sm:pb-20 lg:pb-24"
@@ -47,7 +92,7 @@ export default function BoostedPostsVsTargetedAdsPost() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/images/hero-meta-boosted.webp"
+            src="/images/facebook-boosted-posts-vs-meta-ads-manager-comparison.webp"
             alt="Comparison visualization showing Facebook boost button vs Meta Ads Manager interface demonstrating cost and results differences"
             fill
             className="object-cover"
@@ -168,7 +213,7 @@ export default function BoostedPostsVsTargetedAdsPost() {
             >
               <div className="relative rounded-[16px] overflow-hidden border border-[rgba(95,169,159,0.3)] shadow-2xl max-w-2xl mx-auto">
                 <Image
-                  src="/images/boosted-meta-settings.webp"
+                  src="/images/facebook-boost-post-button-mobile-interface-settings.webp"
                   alt="The familiar boost button interface — simple but limited"
                   width={1064}
                   height={1722}
@@ -269,7 +314,7 @@ export default function BoostedPostsVsTargetedAdsPost() {
             >
               <div className="relative rounded-[16px] overflow-hidden border border-[rgba(95,169,159,0.3)] shadow-2xl">
                 <Image
-                  src="/images/meta-ads-manager-interface-targeting.webp"
+                  src="/images/facebook-meta-ads-manager-audience-targeting-interface.webp"
                   alt="Meta Ads Manager campaign dashboard showing detailed performance metrics including CPM, CTR, landing page views and cost per result"
                   width={2400}
                   height={1293}
@@ -355,7 +400,7 @@ export default function BoostedPostsVsTargetedAdsPost() {
             >
               <div className="relative rounded-[16px] overflow-hidden border border-[rgba(95,169,159,0.3)] shadow-2xl">
                 <Image
-                  src="/images/cost-comparison-boosted-vs-targeted-ads.webp"
+                  src="/images/facebook-ads-cost-comparison-boosted-vs-targeted-roi.webp"
                   alt="Real campaign results comparison showing boosted posts with Boost again buttons versus targeted campaigns with superior lead generation and reach metrics"
                   width={2182}
                   height={1510}
@@ -398,7 +443,7 @@ export default function BoostedPostsVsTargetedAdsPost() {
             >
               <div className="relative rounded-[16px] overflow-hidden border border-[rgba(95,169,159,0.3)] shadow-2xl">
                 <Image
-                  src="/images/Campaign-meta-results.webp"
+                  src="/images/facebook-meta-ads-campaign-results-analytics-roi.webp"
                   alt="Real Meta Ads Manager showing multiple campaigns with detailed budget tracking, CPM costs, impressions and reach metrics"
                   width={2400}
                   height={663}
@@ -444,7 +489,7 @@ export default function BoostedPostsVsTargetedAdsPost() {
             >
               <div className="relative rounded-[16px] overflow-hidden border border-[rgba(95,169,159,0.3)] shadow-2xl max-w-3xl mx-auto">
                 <Image
-                  src="/images/pixel-setup.webp"
+                  src="/images/facebook-meta-pixel-conversion-tracking-setup-guide.webp"
                   alt="Meta Pixel data source setup options showing Web, App, Offline, CRM, and Messaging connection options for conversion tracking"
                   width={1390}
                   height={1244}

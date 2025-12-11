@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { getPostBySlug, generateBlogPostSchema } from '@/lib/blog-posts';
 import Breadcrumbs from '@/components/blog/Breadcrumbs';
 import AuthorBio from '@/components/blog/AuthorBio';
+import { ImageObjectSchema } from '@/components/StructuredDataSchemas';
 
 export default function WhyMetaAdsNeedLandingPages() {
   const post = getPostBySlug('why-meta-ads-need-landing-pages');
@@ -24,6 +25,50 @@ export default function WhyMetaAdsNeedLandingPages() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
+
+      {/* Image Schemas for SEO */}
+      <ImageObjectSchema
+        url="/images/meta-ads-landing-page-conversion-optimization-2025.jpg"
+        caption="Meta ads landing page conversion optimization 2025"
+        description="Optimized landing page design for Meta advertising campaigns showing conversion-focused layout and call-to-action elements"
+        width={1920}
+        height={1080}
+      />
+      <ImageObjectSchema
+        url="/images/confused-visitor-homepage-bounce-meta-ads.jpg"
+        caption="Confused visitor homepage bounce from Meta ads"
+        description="Illustration showing confused website visitor experiencing high bounce rate from generic homepage instead of focused landing page"
+        width={1200}
+        height={800}
+      />
+      <ImageObjectSchema
+        url="/images/happy-customer-landing-page-conversion-meta-ads.jpg"
+        caption="Happy customer landing page conversion from Meta ads"
+        description="Satisfied customer converting through optimized landing page with clear value proposition and streamlined conversion path"
+        width={1200}
+        height={800}
+      />
+      <ImageObjectSchema
+        url="/images/mobile-landing-page-optimization-meta-ads-2025.jpg"
+        caption="Mobile landing page optimization Meta ads 2025"
+        description="Mobile-responsive landing page design optimized for Meta advertising traffic with thumb-friendly buttons and fast load times"
+        width={1080}
+        height={1920}
+      />
+      <ImageObjectSchema
+        url="/images/meta-ads-roi-cost-per-lead-comparison-analysis.jpg"
+        caption="Meta ads ROI cost per lead comparison analysis"
+        description="ROI comparison chart showing cost per lead differences between homepage traffic and dedicated landing page conversions"
+        width={1200}
+        height={800}
+      />
+      <ImageObjectSchema
+        url="/images/meta-ads-conversion-tracking-analytics-dashboard.jpg"
+        caption="Meta ads conversion tracking analytics dashboard"
+        description="Meta Ads Manager analytics dashboard displaying conversion tracking metrics, pixel events, and landing page performance data"
+        width={2400}
+        height={1293}
       />
 
       {/* Hero Section - Full Width */}

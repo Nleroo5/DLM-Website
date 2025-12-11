@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { getPostBySlug, generateBlogPostSchema } from '@/lib/blog-posts';
 import Breadcrumbs from '@/components/blog/Breadcrumbs';
 import AuthorBio from '@/components/blog/AuthorBio';
+import { ImageObjectSchema } from '@/components/StructuredDataSchemas';
 
 export default function MetaAdsTargetAudienceGuide() {
   const post = getPostBySlug('meta-ads-target-audience-guide');
@@ -20,6 +21,29 @@ export default function MetaAdsTargetAudienceGuide() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
+
+      {/* Image Schemas for SEO */}
+      <ImageObjectSchema
+        url="/images/meta-audience-target-hero.jpg"
+        caption="Meta audience targeting hero image"
+        description="Meta Ads Manager interface showing audience targeting options and demographic controls for Facebook and Instagram campaigns"
+        width={1920}
+        height={1080}
+      />
+      <ImageObjectSchema
+        url="/images/meta-audience-funnel.jpg"
+        caption="Meta audience funnel visualization"
+        description="Marketing funnel diagram showing awareness, consideration, and conversion stages for Meta advertising audience targeting strategy"
+        width={1200}
+        height={800}
+      />
+      <ImageObjectSchema
+        url="/images/meta-audience-targeting.jpg"
+        caption="Meta audience targeting interface"
+        description="Detailed Meta Ads Manager audience targeting interface with location, demographics, interests, and behavior filters"
+        width={1200}
+        height={800}
       />
 
       {/* Hero Section - Full Width */}

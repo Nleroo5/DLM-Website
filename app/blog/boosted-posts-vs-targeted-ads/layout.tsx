@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Boosted Posts vs. Targeted Ads: Why That Blue Button Is Costing You Money',
-  description: 'Learn why Facebook\'s Boost button delivers 2-3X worse results than proper targeted ads. Industry benchmarks, technical insights, and the real cost difference.',
+  description: 'Learn why Facebook\'s Boost button delivers 2-3X worse results than targeted ads. Industry benchmarks, technical insights & cost comparison. Read more.',
   keywords: 'boosted posts vs targeted ads, facebook boost post vs ads manager, should i boost my facebook posts, meta ads manager vs boost, facebook advertising atlanta, targeted advertising',
   authors: [{ name: 'Nicolas Leroo' }],
   openGraph: {
@@ -11,13 +11,13 @@ export const metadata: Metadata = {
     type: 'article',
     publishedTime: '2025-12-09T09:00:00-05:00',
     authors: ['Nicolas Leroo'],
-    images: ['/images/hero-meta-boosted.webp'],
+    images: ['/images/facebook-boosted-posts-vs-meta-ads-manager-comparison.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Boosted Posts vs. Targeted Ads: Stop Wasting Money',
     description: 'Learn why Facebook\'s Boost button delivers 2-3X worse results than targeted ads.',
-    images: ['/images/hero-meta-boosted.webp'],
+    images: ['/images/facebook-boosted-posts-vs-meta-ads-manager-comparison.webp'],
   },
 };
 

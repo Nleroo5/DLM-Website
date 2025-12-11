@@ -1,21 +1,39 @@
-import type { Metadata } from 'next';
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
-
-export const metadata: Metadata = {
-  title: 'Facebook & Instagram Advertising Services | Drive Lead Media',
-  description: 'Full-service Meta advertising: custom website design, professional video ads, complete campaign setup, and continuous optimization. Get targeted Facebook and Instagram ads that bring real customers.',
-  keywords: 'facebook advertising services, instagram ads services, meta advertising agency, video ad production, custom website design, social media advertising, facebook ad campaigns, instagram marketing services',
-  openGraph: {
-    title: 'Facebook & Instagram Advertising Services | Drive Lead Media',
-    description: 'Full-service Meta advertising including websites, video ads, and campaign management.',
-    type: 'website',
-  },
-};
+import { ServiceSchema, BreadcrumbSchema } from '@/components/StructuredDataSchemas';
 
 export default function ServicesPage() {
   return (
     <main className="min-h-screen bg-[#000000] relative">
+      {/* Structured Data for SEO */}
+      <ServiceSchema
+        serviceName="Meta Advertising Management"
+        description="Professional Facebook and Instagram advertising campaign setup, management, and optimization for Atlanta businesses. Includes audience targeting, ad creative, Meta Pixel setup, and ongoing performance optimization."
+        url="https://driveleadmedia.com/services"
+      />
+      <ServiceSchema
+        serviceName="Custom Website Design & Development"
+        description="Mobile-responsive website design and development with Next.js and React. Fast, modern websites engineered to convert visitors into customers and rank well in search results."
+        url="https://driveleadmedia.com/services"
+      />
+      <ServiceSchema
+        serviceName="Video Ad Production"
+        description="Professional video ad creation for Facebook and Instagram. Actor-led videos, motion graphics, and custom video content optimized for Meta advertising campaigns."
+        url="https://driveleadmedia.com/services"
+      />
+      <ServiceSchema
+        serviceName="Landing Page Design & Optimization"
+        description="High-converting landing pages optimized for Meta ad campaigns. Conversion-focused architecture built specifically for paid advertising traffic."
+        url="https://driveleadmedia.com/services"
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Services', url: '/services' }
+        ]}
+      />
       {/* Background gradient orbs */}
       <div className="absolute top-[10%] right-[10%] w-[400px] h-[400px] bg-[#5FA99F] opacity-10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute top-[40%] left-[5%] w-[350px] h-[350px] bg-[#85C7B3] opacity-10 rounded-full blur-[120px] pointer-events-none" />
@@ -69,7 +87,7 @@ export default function ServicesPage() {
               <div className="order-1 lg:order-2">
                 <div className="relative h-[300px] sm:h-[400px] bg-[#1A1A1A] rounded-[24px] overflow-hidden border-2 border-[#5FA99F]/30 shadow-[0_0_30px_rgba(95,169,159,0.3)] hover:border-[#5FA99F]/50 hover:shadow-[0_0_40px_rgba(95,169,159,0.4)] transition-all duration-400">
                   <Image
-                    src="/images/website-icon.webp"
+                    src="/images/custom-website-design-development-services-icon.webp"
                     alt="Custom Website Design"
                     fill
                     className="object-contain p-12"
@@ -85,7 +103,7 @@ export default function ServicesPage() {
               <div className="order-1">
                 <div className="relative h-[300px] sm:h-[400px] bg-[#1A1A1A] rounded-[24px] overflow-hidden border-2 border-[#5FA99F]/30 shadow-[0_0_30px_rgba(95,169,159,0.3)] hover:border-[#5FA99F]/50 hover:shadow-[0_0_40px_rgba(95,169,159,0.4)] transition-all duration-400">
                   <Image
-                    src="/images/creative-icon.webp"
+                    src="/images/creative-design-services-custom-branding-icon.webp"
                     alt="Video and Image Ads"
                     fill
                     className="object-contain p-12"
@@ -153,7 +171,7 @@ export default function ServicesPage() {
               <div className="order-1 lg:order-2">
                 <div className="relative h-[300px] sm:h-[400px] bg-[#1A1A1A] rounded-[24px] overflow-hidden border-2 border-[#5FA99F]/30 shadow-[0_0_30px_rgba(95,169,159,0.3)] hover:border-[#5FA99F]/50 hover:shadow-[0_0_40px_rgba(95,169,159,0.4)] transition-all duration-400">
                   <Image
-                    src="/images/target-icon.webp"
+                    src="/images/audience-targeting-strategy-marketing-services-icon.webp"
                     alt="Complete Campaign Setup"
                     fill
                     className="object-contain p-12"
@@ -169,7 +187,7 @@ export default function ServicesPage() {
               <div className="order-1">
                 <div className="relative h-[300px] sm:h-[400px] bg-[#1A1A1A] rounded-[24px] overflow-hidden border-2 border-[#5FA99F]/30 shadow-[0_0_30px_rgba(95,169,159,0.3)] hover:border-[#5FA99F]/50 hover:shadow-[0_0_40px_rgba(95,169,159,0.4)] transition-all duration-400">
                   <Image
-                    src="/images/performance-icon.webp"
+                    src="/images/website-performance-optimization-speed-testing-icon.webp"
                     alt="Continuous Improvement"
                     fill
                     className="object-contain p-12"

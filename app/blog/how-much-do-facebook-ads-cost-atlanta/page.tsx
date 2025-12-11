@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { getPostBySlug, generateBlogPostSchema } from '@/lib/blog-posts';
 import Breadcrumbs from '@/components/blog/Breadcrumbs';
 import AuthorBio from '@/components/blog/AuthorBio';
+import { ImageObjectSchema } from '@/components/StructuredDataSchemas';
 
 export default function FacebookAdsCostAtlantaPost() {
   const post = getPostBySlug('how-much-do-facebook-ads-cost-atlanta');
@@ -26,6 +27,29 @@ export default function FacebookAdsCostAtlantaPost() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
 
+      {/* Image Schemas for SEO */}
+      <ImageObjectSchema
+        url="/images/atlanta-facebook-ads-cost-meta-advertising-pricing.webp"
+        caption="Atlanta Facebook ads cost Meta advertising pricing"
+        description="Atlanta skyline with modern buildings representing local businesses investing in Facebook and Instagram advertising"
+        width={1920}
+        height={1080}
+      />
+      <ImageObjectSchema
+        url="/images/facebook-meta-ads-performance-metrics-analytics-chart.jpg"
+        caption="Facebook Meta ads performance metrics analytics chart"
+        description="Performance metrics dashboard showing campaign analytics, ROI tracking, and cost benchmarks for Facebook advertising"
+        width={1200}
+        height={800}
+      />
+      <ImageObjectSchema
+        url="/images/facebook-ads-budget-calculator-roi-pricing-estimator.jpg"
+        caption="Facebook ads budget calculator ROI pricing estimator"
+        description="Budget planning tool and ROI calculator for estimating Facebook advertising costs and expected returns"
+        width={1200}
+        height={800}
+      />
+
       {/* Hero Section - Full Width */}
       <motion.div
         className="relative w-full pt-20 sm:pt-24 lg:pt-28 pb-16 sm:pb-20 lg:pb-24"
@@ -36,7 +60,7 @@ export default function FacebookAdsCostAtlantaPost() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/images/atlanta.webp"
+            src="/images/atlanta-facebook-ads-cost-meta-advertising-pricing.webp"
             alt="Atlanta skyline with modern buildings representing local businesses investing in Facebook and Instagram advertising"
             fill
             className="object-cover"
@@ -161,7 +185,7 @@ export default function FacebookAdsCostAtlantaPost() {
             >
               <div className="relative rounded-[16px] overflow-hidden border border-[rgba(95,169,159,0.3)] shadow-2xl">
                 <Image
-                  src="/images/meta-chart.jpg"
+                  src="/images/facebook-meta-ads-performance-metrics-analytics-chart.jpg"
                   alt="Example Meta Ads Manager dashboard showing CPC (cost per click) and CPM (cost per thousand impressions) metrics to illustrate typical advertising costs"
                   width={1200}
                   height={675}
@@ -301,7 +325,7 @@ export default function FacebookAdsCostAtlantaPost() {
             >
               <div className="relative rounded-[16px] overflow-hidden border border-[rgba(95,169,159,0.3)] shadow-2xl">
                 <Image
-                  src="/images/meta-calculator.jpg"
+                  src="/images/facebook-ads-budget-calculator-roi-pricing-estimator.jpg"
                   alt="Drive Lead Media's free Meta Ads ROI calculator showing budget input, industry selection, and projected costs for Atlanta businesses"
                   width={1200}
                   height={900}
