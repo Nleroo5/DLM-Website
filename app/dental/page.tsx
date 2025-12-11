@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import './dental-intro.css';
 
 export default function DentalIntroPage() {
@@ -160,7 +161,14 @@ export default function DentalIntroPage() {
             <div className="example-card card fade-in-up stagger-3" onClick={openImageModal}>
               <div className="example-content">
                 <div className="image-thumbnail-wrapper">
-                  <img src="/images/static.webp" alt="Static dental image ad example" className="image-thumbnail-preview" />
+                  <Image
+                    src="/images/dental-office-location-map-atlanta-healthcare-services.webp"
+                    alt="Dental office location map Atlanta showing healthcare services and contact information for Meta advertising"
+                    width={800}
+                    height={600}
+                    className="image-thumbnail-preview"
+                    loading="lazy"
+                  />
                   <div className="play-overlay">
                     <svg viewBox="0 0 24 24" className="play-icon" style={{width: '30px', height: '30px'}}>
                       <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
@@ -182,7 +190,14 @@ export default function DentalIntroPage() {
 
           <div className="testimonial-container">
             <div className="testimonial-card scale-in">
-              <img className="testimonial-photo" src="/images/austin.png" alt="Dr. Austin Dupont" />
+              <Image
+                className="testimonial-photo"
+                src="/images/austin-atlanta-web-developer-designer-team-member.webp"
+                alt="Dr. Austin Dupont - Village Pediatrics client testimonial for Drive Lead Media web design and Meta ads"
+                width={120}
+                height={120}
+                loading="lazy"
+              />
               <p className="testimonial-quote">
                 Working with Drive Lead Media has been a game changer. They transformed our outdated website into something modern and professional.
                 <br /><br />
@@ -248,7 +263,14 @@ export default function DentalIntroPage() {
           <div className="contact-cards">
             <a href="tel:404-862-1975" className="contact-card card fade-in-left stagger-1">
               <div className="contact-photo">
-                <img src="/images/brenna.png" alt="Brenna Skalski Kirillov" className="contact-image" />
+                <Image
+                  src="/images/brenna-atlanta-marketing-consultant-team-member.webp"
+                  alt="Brenna Skalski Kirillov - Account Executive at Drive Lead Media Atlanta digital marketing agency"
+                  width={150}
+                  height={150}
+                  className="contact-image"
+                  loading="lazy"
+                />
               </div>
               <div className="contact-info">
                 <h3 className="contact-name">Brenna Skalski Kirillov</h3>
@@ -274,7 +296,13 @@ export default function DentalIntroPage() {
         <div className="image-modal active" onClick={(e) => e.target === e.currentTarget && closeImageModal()}>
           <div className="image-modal-content">
             <span className="image-modal-close" onClick={closeImageModal}>&times;</span>
-            <img src="/images/static.webp" alt="Static dental image ad example" />
+            <Image
+              src="/images/dental-office-location-map-atlanta-healthcare-services.webp"
+              alt="Dental office location map Atlanta showing healthcare services and contact information for Meta advertising"
+              width={1200}
+              height={900}
+              loading="lazy"
+            />
           </div>
         </div>
       )}

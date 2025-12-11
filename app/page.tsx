@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import Hero from '@/components/Hero';
 import ParticleTextSection from '@/components/ParticleTextSection';
 import { trackEvent } from '@/components/MetaPixel';
+import { LocalBusinessSchema, OrganizationSchema } from '@/components/StructuredDataSchemas';
 
 // Dynamic imports for below-fold components to reduce initial bundle size
 const Testimonials = dynamic(() => import('@/components/Testimonials'), { ssr: true });
@@ -24,6 +25,10 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-[#000000]">
+      {/* Structured Data for SEO */}
+      <LocalBusinessSchema />
+      <OrganizationSchema />
+
       <Hero />
       <HowItWorks />
       <Testimonials />

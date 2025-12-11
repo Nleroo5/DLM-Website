@@ -30,7 +30,7 @@ export default function AuthorBio({ author }: AuthorBioProps) {
           <div className="flex-shrink-0">
             <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-3 border-[#5FA99F] shadow-[0_0_20px_rgba(95,169,159,0.4)] group-hover:shadow-[0_0_30px_rgba(95,169,159,0.6)] transition-shadow duration-500">
               <Image
-                src="/images/nicolas.webp"
+                src="/images/nicolas-leroo-atlanta-digital-marketing-agency-founder.webp"
                 alt={`${author.name} - ${author.jobTitle}`}
                 fill
                 className="object-cover"

@@ -6,12 +6,12 @@ import Image from 'next/image';
 export default function ClientLogoBanner() {
   // Client logos - strategically ordered to avoid same logos next to each other
   const clients = [
-    { name: "The Yoga Lounge", logo: "/images/yoga.webp?v=2", scale: 0.85 },
-    { name: "Maven", logo: "/images/maven-logo.webp?v=2", scale: 0.85 },
-    { name: "Village Pediatrics", logo: "/images/peds.webp?v=2", scale: 0.85 },
-    { name: "Dream", logo: "/images/dream-logo.webp?v=2", scale: 1.1 },
-    { name: "SOA", logo: "/images/soa-logo.webp?v=2", scale: 1 },
-    { name: "FCC", logo: "/images/fcc-logo.webp?v=2", scale: 1 },
+    { name: "The Yoga Lounge", logo: "/images/yoga-atlanta-creative-director-designer-team-member.webp?v=2", scale: 0.85 },
+    { name: "Maven", logo: "/images/maven-health-consulting-atlanta-healthcare-logo.webp?v=2", scale: 0.85 },
+    { name: "Village Pediatrics", logo: "/images/village-pediatrics-st-augustine-healthcare-logo.webp?v=2", scale: 0.85 },
+    { name: "Dream", logo: "/images/dream-big-atlanta-business-consulting-brand-logo.webp?v=2", scale: 1.1 },
+    { name: "SOA", logo: "/images/st-augustine-pediatric-healthcare-medical-logo.webp?v=2", scale: 1 },
+    { name: "FCC", logo: "/images/fcc-certified-drone-pilot-videography-license.webp?v=2", scale: 1 },
   ];
 
   return (

@@ -20,7 +20,7 @@ export default function MetaTargetingGuidePage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/images/business-owner.jpg"
+            src="/images/small-business-owner-facebook-ads-consultation-atlanta.webp"
             alt="Business owner working on laptop"
             fill
             className="object-cover"

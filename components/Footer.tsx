@@ -38,7 +38,7 @@ export default function Footer() {
           >
             <Link href="/" className="inline-block hover:opacity-80 transition-opacity duration-300">
               <Image
-                src="/images/dlm-logo.webp"
+                src="/images/drive-lead-media-atlanta-digital-marketing-agency-logo.webp"
                 alt="Drive Lead Media"
                 width={140}
                 height={46}
@@ -244,7 +244,7 @@ export default function Footer() {
             <div className="text-left">
               <Link href="/" className="inline-block hover:opacity-80 transition-opacity duration-300">
                 <Image
-                  src="/images/dlm-logo.webp"
+                  src="/images/drive-lead-media-atlanta-digital-marketing-agency-logo.webp"
                   alt="Drive Lead Media"
                   width={120}
                   height={40}

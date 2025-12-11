@@ -213,7 +213,7 @@ export default function Hero() {
               }}
             >
               <motion.img
-                src="/images/dlm-logo.webp"
+                src="/images/drive-lead-media-atlanta-digital-marketing-agency-logo.webp"
                 alt="Drive Lead Media Logo"
                 className="w-[200px] xs:w-[250px] sm:w-[300px] md:w-[350px] lg:w-[450px] h-auto"
                 animate={{

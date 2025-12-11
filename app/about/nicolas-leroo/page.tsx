@@ -11,7 +11,7 @@ export default function NicolasLerooPage() {
     "name": "Nicolas Leroo",
     "jobTitle": "Co-Founder & Meta Advertising Strategist",
     "url": "https://driveleadmedia.com/about/nicolas-leroo",
-    "image": "https://driveleadmedia.com/images/nicolas.png",
+    "image": "https://driveleadmedia.com/images/nicolas-leroo-atlanta-digital-marketing-agency-founder.webp",
     "worksFor": {
       "@type": "Organization",
       "name": "Drive Lead Media",
@@ -77,7 +77,7 @@ export default function NicolasLerooPage() {
             <div className="order-2 md:order-1">
               <div className="relative w-full max-w-[400px] mx-auto aspect-square rounded-[24px] overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/nicolas.png"
+                  src="/images/nicolas-leroo-atlanta-digital-marketing-agency-founder.webp"
                   alt="Nicolas Leroo - Meta Advertising Strategist"
                   fill
                   className="object-cover"

@@ -253,7 +253,7 @@ export default function HowItWorks() {
               <div className="relative w-full max-w-4xl h-[75vh] px-6 md:px-8 pointer-events-auto">
 
                 <VideoScene
-                  src="/Videos/deviceframes-optimized.webm"
+                  src="/Videos/responsive-website-mobile-tablet-desktop-design-demo.webm"
                   opacity={scene1Opacity}
                   index={0}
                 />
@@ -265,7 +265,7 @@ export default function HowItWorks() {
                 />
 
                 <VideoScene
-                  src="/Videos/metric-video.webm"
+                  src="/Videos/marketing-metrics-dashboard-analytics-data-visualization.webm"
                   opacity={scene3Opacity}
                   index={2}
                 />
@@ -282,7 +282,7 @@ export default function HowItWorks() {
         <MobileScene
           title="High-Performance Websites"
           description="Custom-built websites engineered for speed, conversion, and top search rankings. We skip the templates and build every site from the ground up with clean code, strategic SEO, and performance optimization."
-          videoSrc="/Videos/deviceframes-optimized.webm"
+          videoSrc="/Videos/responsive-website-mobile-tablet-desktop-design-demo.webm"
           index={0}
         />
 
@@ -417,7 +417,7 @@ export default function HowItWorks() {
         <MobileScene
           title="Precision Targeting"
           description="We target the exact audience most likely to become your customers filtering by location, age, interests, and behaviors then manage your budget to get the best results at the lowest cost."
-          videoSrc="/Videos/metric-video.webm"
+          videoSrc="/Videos/marketing-metrics-dashboard-analytics-data-visualization.webm"
           index={2}
           mobilePadding="px-0"
         />

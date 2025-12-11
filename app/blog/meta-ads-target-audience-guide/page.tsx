@@ -25,21 +25,21 @@ export default function MetaAdsTargetAudienceGuide() {
 
       {/* Image Schemas for SEO */}
       <ImageObjectSchema
-        url="/images/meta-audience-target-hero.jpg"
+        url="/images/facebook-meta-ads-audience-targeting-strategy-guide.webp"
         caption="Meta audience targeting hero image"
         description="Meta Ads Manager interface showing audience targeting options and demographic controls for Facebook and Instagram campaigns"
         width={1920}
         height={1080}
       />
       <ImageObjectSchema
-        url="/images/meta-audience-funnel.jpg"
+        url="/images/facebook-ads-sales-funnel-audience-conversion-strategy.jpg"
         caption="Meta audience funnel visualization"
         description="Marketing funnel diagram showing awareness, consideration, and conversion stages for Meta advertising audience targeting strategy"
         width={1200}
         height={800}
       />
       <ImageObjectSchema
-        url="/images/meta-audience-targeting.jpg"
+        url="/images/facebook-meta-ads-custom-audience-targeting-options.jpg"
         caption="Meta audience targeting interface"
         description="Detailed Meta Ads Manager audience targeting interface with location, demographics, interests, and behavior filters"
         width={1200}
@@ -56,7 +56,7 @@ export default function MetaAdsTargetAudienceGuide() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/images/meta-audience-target-hero.jpg"
+            src="/images/facebook-meta-ads-audience-targeting-strategy-guide.webp"
             alt="Meta Ads audience targeting strategy guide hero image"
             fill
             className="object-cover"
@@ -202,7 +202,7 @@ export default function MetaAdsTargetAudienceGuide() {
             >
               <div className="relative rounded-[16px] overflow-hidden border border-[rgba(95,169,159,0.3)] shadow-2xl">
                 <Image
-                  src="/images/meta-audience-funnel.jpg"
+                  src="/images/facebook-ads-sales-funnel-audience-conversion-strategy.jpg"
                   alt="Meta ads audience funnel showing the progression from cold audiences (strangers) to warm audiences (engaged users) to hot audiences (past customers and qualified leads)"
                   width={1200}
                   height={675}
@@ -443,7 +443,7 @@ export default function MetaAdsTargetAudienceGuide() {
               >
                 <div className="relative rounded-[16px] overflow-hidden border border-[rgba(95,169,159,0.3)] shadow-2xl">
                   <Image
-                    src="/images/meta-audience-targeting.jpg"
+                    src="/images/facebook-meta-ads-custom-audience-targeting-options.jpg"
                     alt="Meta Ads Manager targeting interface showing demographics, interests, and behaviors options for precise audience targeting on Facebook and Instagram"
                     width={1200}
                     height={675}

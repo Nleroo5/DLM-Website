@@ -1,13 +1,37 @@
-# Allow all search engines to crawl the site
+# *
 User-agent: *
 Allow: /
-
-# Sitemap location
-Sitemap: https://driveleadmedia.com/sitemap.xml
-
-# Disallow crawling of API routes
+Disallow: /admin
 Disallow: /api/
-
-# Disallow crawling of admin areas (if any)
 Disallow: /_next/
-Disallow: /admin/
+
+# GPTBot
+User-agent: GPTBot
+Disallow: /
+
+# ChatGPT-User
+User-agent: ChatGPT-User
+Disallow: /
+
+# CCBot
+User-agent: CCBot
+Disallow: /
+
+# anthropic-ai
+User-agent: anthropic-ai
+Disallow: /
+
+# Claude-Web
+User-agent: Claude-Web
+Disallow: /
+
+# Google-Extended
+User-agent: Google-Extended
+Disallow: /
+
+# Host
+Host: https://driveleadmedia.com
+
+# Sitemaps
+Sitemap: https://driveleadmedia.com/sitemap.xml
+Sitemap: https://driveleadmedia.com/server-sitemap.xml

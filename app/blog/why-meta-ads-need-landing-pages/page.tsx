@@ -29,42 +29,42 @@ export default function WhyMetaAdsNeedLandingPages() {
 
       {/* Image Schemas for SEO */}
       <ImageObjectSchema
-        url="/images/meta-ads-landing-page-conversion-optimization-2025.jpg"
+        url="/images/facebook-ads-landing-page-conversion-rate-optimization.jpg"
         caption="Meta ads landing page conversion optimization 2025"
         description="Optimized landing page design for Meta advertising campaigns showing conversion-focused layout and call-to-action elements"
         width={1920}
         height={1080}
       />
       <ImageObjectSchema
-        url="/images/confused-visitor-homepage-bounce-meta-ads.jpg"
+        url="/images/confused-website-visitor-high-bounce-rate-problem.jpg"
         caption="Confused visitor homepage bounce from Meta ads"
         description="Illustration showing confused website visitor experiencing high bounce rate from generic homepage instead of focused landing page"
         width={1200}
         height={800}
       />
       <ImageObjectSchema
-        url="/images/happy-customer-landing-page-conversion-meta-ads.jpg"
+        url="/images/happy-customer-website-conversion-success-testimonial.webp"
         caption="Happy customer landing page conversion from Meta ads"
         description="Satisfied customer converting through optimized landing page with clear value proposition and streamlined conversion path"
         width={1200}
         height={800}
       />
       <ImageObjectSchema
-        url="/images/mobile-landing-page-optimization-meta-ads-2025.jpg"
+        url="/images/mobile-responsive-landing-page-optimization-meta-ads.jpg"
         caption="Mobile landing page optimization Meta ads 2025"
         description="Mobile-responsive landing page design optimized for Meta advertising traffic with thumb-friendly buttons and fast load times"
         width={1080}
         height={1920}
       />
       <ImageObjectSchema
-        url="/images/meta-ads-roi-cost-per-lead-comparison-analysis.jpg"
+        url="/images/facebook-meta-ads-roi-cost-per-lead-analysis-calculator.webp"
         caption="Meta ads ROI cost per lead comparison analysis"
         description="ROI comparison chart showing cost per lead differences between homepage traffic and dedicated landing page conversions"
         width={1200}
         height={800}
       />
       <ImageObjectSchema
-        url="/images/meta-ads-conversion-tracking-analytics-dashboard.jpg"
+        url="/images/facebook-meta-ads-conversion-tracking-analytics-dashboard.jpg"
         caption="Meta ads conversion tracking analytics dashboard"
         description="Meta Ads Manager analytics dashboard displaying conversion tracking metrics, pixel events, and landing page performance data"
         width={2400}
@@ -81,7 +81,7 @@ export default function WhyMetaAdsNeedLandingPages() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/images/meta-ads-landing-page-conversion-optimization-2025.jpg"
+            src="/images/facebook-ads-landing-page-conversion-rate-optimization.jpg"
             alt="Business owner analyzing Meta ads landing page conversion rates on laptop dashboard showing 2-3x improvement in lead generation"
             fill
             className="object-cover"
@@ -278,7 +278,7 @@ export default function WhyMetaAdsNeedLandingPages() {
                 <div className="grid md:grid-cols-2 gap-6 items-center mb-4">
                   <div className="relative w-full aspect-[9/16] max-w-sm mx-auto rounded-xl overflow-hidden shadow-lg">
                     <Image
-                      src="/images/confused-visitor-homepage-bounce-meta-ads.jpg"
+                      src="/images/confused-website-visitor-high-bounce-rate-problem.jpg"
                       alt="Confused visitor leaving website homepage after clicking Meta ads without finding promised offer"
                       fill
                       className="object-cover"
@@ -340,7 +340,7 @@ export default function WhyMetaAdsNeedLandingPages() {
                 <div className="grid md:grid-cols-2 gap-6 items-center">
                   <div className="relative w-full aspect-[9/16] max-w-sm mx-auto rounded-xl overflow-hidden shadow-lg">
                     <Image
-                      src="/images/happy-customer-landing-page-conversion-meta-ads.jpg"
+                      src="/images/happy-customer-website-conversion-success-testimonial.webp"
                       alt="Happy customer converting on dedicated landing page with clear call-to-action matching Meta ads promise"
                       fill
                       className="object-cover"
@@ -536,7 +536,7 @@ export default function WhyMetaAdsNeedLandingPages() {
                 {/* Full-Width Phone Image */}
                 <div className="relative h-56 sm:h-64 md:h-72 lg:h-80 rounded-xl overflow-hidden shadow-2xl mb-6">
                   <Image
-                    src="/images/mobile-landing-page-optimization-meta-ads-2025.jpg"
+                    src="/images/mobile-responsive-landing-page-optimization-meta-ads.jpg"
                     alt="Mobile-optimized landing page for Meta ads showing responsive design with large tappable buttons and fast load time"
                     fill
                     className="object-cover"
@@ -603,7 +603,7 @@ export default function WhyMetaAdsNeedLandingPages() {
               {/* Financial Image */}
               <div className="relative h-80 rounded-2xl overflow-hidden shadow-2xl mb-4">
                 <Image
-                  src="/images/meta-ads-roi-cost-per-lead-comparison-analysis.jpg"
+                  src="/images/facebook-meta-ads-roi-cost-per-lead-analysis-calculator.webp"
                   alt="Financial analysis showing Meta ads ROI comparison between homepage and dedicated landing page cost per lead"
                   fill
                   className="object-cover"
@@ -715,7 +715,7 @@ export default function WhyMetaAdsNeedLandingPages() {
               {/* Data Analytics Image */}
               <div className="relative h-80 rounded-2xl overflow-hidden shadow-2xl mb-4">
                 <Image
-                  src="/images/meta-ads-conversion-tracking-analytics-dashboard.jpg"
+                  src="/images/facebook-meta-ads-conversion-tracking-analytics-dashboard.jpg"
                   alt="Analytics dashboard displaying Meta ads conversion tracking data and landing page performance metrics"
                   fill
                   className="object-cover"

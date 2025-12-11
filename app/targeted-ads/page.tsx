@@ -59,7 +59,7 @@ export default function TargetedAdsPage() {
               </div>
               <div className="text-center">
                 <Image
-                  src="/images/target-ads.png"
+                  src="/images/targeted-facebook-ads-audience-precision-marketing.png"
                   alt="Traditional vs targeted advertising comparison"
                   width={600}
                   height={400}

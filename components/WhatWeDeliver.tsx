@@ -20,22 +20,22 @@ export default function WhatWeDeliver() {
 
   const cards = [
     {
-      icon: '/images/website-icon.webp',
+      icon: '/images/custom-website-design-development-services-icon.webp',
       title: 'Custom Website Design',
       content: 'Fast, modern websites built to convert. If your site isn\'t pulling its weight, we\'ll rebuild it from scratch.'
     },
     {
-      icon: '/images/creative-icon.webp',
+      icon: '/images/creative-design-services-custom-branding-icon.webp',
       title: 'Video and Image Ads',
       content: 'Actor-led videos and scroll-stopping images made for Meta. No more generic stock photos or DIY footage.'
     },
     {
-      icon: '/images/target-icon.webp',
+      icon: '/images/audience-targeting-strategy-marketing-services-icon.webp',
       title: 'Complete Campaign Setup',
       content: 'We build everything for you — from finding your ideal customers to tracking your results.'
     },
     {
-      icon: '/images/performance-icon.webp',
+      icon: '/images/website-performance-optimization-speed-testing-icon.webp',
       title: 'Continuous Improvement',
       content: 'We test new ads, adjust budgets, and remove what\'s not working. Your campaigns get better every week.'
     }

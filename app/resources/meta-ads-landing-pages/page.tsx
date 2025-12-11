@@ -20,7 +20,7 @@ export default function MetaAdsLandingPagesPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/images/landingpage.jpg"
+            src="/images/professional-landing-page-design-conversion-optimization.jpg"
             alt="Business owner analyzing ad performance"
             fill
             className="object-cover"
@@ -214,7 +214,7 @@ export default function MetaAdsLandingPagesPage() {
                 <div className="grid md:grid-cols-2 gap-6 items-center mb-4">
                   <div className="relative w-full aspect-[9/16] max-w-sm mx-auto rounded-xl overflow-hidden shadow-lg">
                     <Image
-                      src="/images/confused.webp"
+                      src="/images/confused-website-visitor-high-bounce-rate-problem.jpg"
                       alt="Confused visitor on homepage"
                       fill
                       className="object-cover"
@@ -276,7 +276,7 @@ export default function MetaAdsLandingPagesPage() {
                 <div className="grid md:grid-cols-2 gap-6 items-center">
                   <div className="relative w-full aspect-[9/16] max-w-sm mx-auto rounded-xl overflow-hidden shadow-lg">
                     <Image
-                      src="/images/happy.webp"
+                      src="/images/happy-customer-website-conversion-success-testimonial.webp"
                       alt="Happy customer on landing page"
                       fill
                       className="object-cover"
@@ -472,7 +472,7 @@ export default function MetaAdsLandingPagesPage() {
                 {/* Full-Width Phone Image */}
                 <div className="relative h-56 sm:h-64 md:h-72 lg:h-80 rounded-xl overflow-hidden shadow-2xl mb-6">
                   <Image
-                    src="/images/phone.webp"
+                    src="/images/mobile-phone-responsive-website-landing-page-design.webp"
                     alt="Mobile phone showing landing page"
                     fill
                     className="object-cover"
@@ -539,7 +539,7 @@ export default function MetaAdsLandingPagesPage() {
               {/* Financial Image */}
               <div className="relative h-80 rounded-2xl overflow-hidden shadow-2xl mb-4">
                 <Image
-                  src="/images/financial.webp"
+                  src="/images/facebook-ads-roi-calculator-budget-cost-analysis-tool.webp"
                   alt="Financial analysis and ROI calculations"
                   fill
                   className="object-cover"
@@ -651,7 +651,7 @@ export default function MetaAdsLandingPagesPage() {
               {/* Data Analytics Image */}
               <div className="relative h-80 rounded-2xl overflow-hidden shadow-2xl mb-4">
                 <Image
-                  src="/images/data.webp"
+                  src="/images/facebook-meta-ads-analytics-data-conversion-tracking.webp"
                   alt="Analytics dashboard and data tracking"
                   fill
                   className="object-cover"

@@ -10,35 +10,35 @@ export default function ActorLedVideos() {
       id: 1,
       client: "Sample Dental Ad",
       videoType: "15 Second Actor-Led Ad",
-      thumbnail: "/images/dlm-logo.webp",
+      thumbnail: "/images/drive-lead-media-atlanta-digital-marketing-agency-logo.webp",
       youtubeId: "rcwYaxampnw"
     },
     {
       id: 2,
       client: "Sample Dental Ad",
       videoType: "15 Second Actor-Led Ad",
-      thumbnail: "/images/dlm-logo.webp",
+      thumbnail: "/images/drive-lead-media-atlanta-digital-marketing-agency-logo.webp",
       youtubeId: "X-kXJa0To3I"
     },
     {
       id: 3,
       client: "Sample Dental Ad",
       videoType: "15 Second Actor-Led Ad",
-      thumbnail: "/images/dlm-logo.webp",
+      thumbnail: "/images/drive-lead-media-atlanta-digital-marketing-agency-logo.webp",
       youtubeId: "5TDwucithxs"
     },
     {
       id: 4,
       client: "Sample Dental Ad",
       videoType: "15 Second Actor-Led Ad",
-      thumbnail: "/images/dlm-logo.webp",
+      thumbnail: "/images/drive-lead-media-atlanta-digital-marketing-agency-logo.webp",
       youtubeId: "q-oGU24yTgw"
     },
     {
       id: 5,
       client: "Sample Dental Ad",
       videoType: "15 Second Actor-Led Ad",
-      thumbnail: "/images/dlm-logo.webp",
+      thumbnail: "/images/drive-lead-media-atlanta-digital-marketing-agency-logo.webp",
       youtubeId: "02el0aY17l8"
     }
   ];
