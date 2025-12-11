@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, Suspense } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 
 declare global {
@@ -10,7 +10,7 @@ declare global {
   }
 }
 
-export function MetaPixel({ pixelId }: { pixelId: string }) {
+function MetaPixelInner({ pixelId }: { pixelId: string }) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
@@ -52,6 +52,14 @@ export function MetaPixel({ pixelId }: { pixelId: string }) {
   }, []);
 
   return null;
+}
+
+export function MetaPixel({ pixelId }: { pixelId: string }) {
+  return (
+    <Suspense fallback={null}>
+      <MetaPixelInner pixelId={pixelId} />
+    </Suspense>
+  );
 }
 
 // Standard event tracking

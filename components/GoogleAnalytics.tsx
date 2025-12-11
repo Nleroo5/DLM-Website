@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, Suspense } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 
 declare global {
@@ -10,7 +10,7 @@ declare global {
   }
 }
 
-export function GoogleAnalytics({ measurementId }: { measurementId: string }) {
+function GoogleAnalyticsInner({ measurementId }: { measurementId: string }) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
@@ -82,6 +82,14 @@ export function GoogleAnalytics({ measurementId }: { measurementId: string }) {
   }, []);
 
   return null;
+}
+
+export function GoogleAnalytics({ measurementId }: { measurementId: string }) {
+  return (
+    <Suspense fallback={null}>
+      <GoogleAnalyticsInner measurementId={measurementId} />
+    </Suspense>
+  );
 }
 
 // Event tracking helper
