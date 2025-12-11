@@ -25,32 +25,32 @@ export default function FacebookAdsAtlantaGuide() {
 
       {/* Image Schemas for SEO */}
       <ImageObjectSchema
-        url="/images/atlanta-facebook-ads-cost-meta-advertising-pricing.webp"
+        url="/images/atlanta-facebook-ads-marketing-services-local-business-strategy.webp"
         caption="Facebook ads cost and pricing for Atlanta businesses"
         description="Comprehensive pricing breakdown showing Facebook advertising costs for local Atlanta businesses with ROI benchmarks and budget recommendations"
         width={1920}
-        height={1080}
+        height={1145}
       />
       <ImageObjectSchema
-        url="/images/facebook-meta-ads-manager-audience-targeting-interface.webp"
+        url="/images/facebook-ads-manager-atlanta-location-targeting-demographics-setup.webp"
         caption="Meta Ads Manager targeting interface for Atlanta campaigns"
         description="Meta Ads Manager interface showing Atlanta location targeting options with demographic filters and audience selection tools"
-        width={1200}
-        height={800}
+        width={1242}
+        height={1424}
       />
       <ImageObjectSchema
-        url="/images/facebook-ads-roi-calculator-budget-cost-analysis-tool.webp"
+        url="/images/atlanta-facebook-ads-cost-budget-calculator-roi-small-business.webp"
         caption="Facebook ads ROI calculator for Atlanta businesses"
         description="ROI calculator tool showing Facebook advertising budget analysis and cost per lead projections for Atlanta market"
-        width={1200}
-        height={800}
+        width={1400}
+        height={897}
       />
       <ImageObjectSchema
-        url="/images/small-business-owner-facebook-ads-consultation-atlanta.webp"
+        url="/images/atlanta-small-business-facebook-ads-success-story-local-marketing.webp"
         caption="Atlanta business owner reviewing Facebook ads performance"
         description="Small business owner in Atlanta reviewing successful Facebook advertising campaign results and performance metrics"
-        width={1200}
-        height={800}
+        width={1920}
+        height={1281}
       />
 
       {/* FAQ Schema */}
@@ -89,7 +89,7 @@ export default function FacebookAdsAtlantaGuide() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/images/atlanta-facebook-ads-cost-meta-advertising-pricing.webp"
+            src="/images/atlanta-facebook-ads-marketing-services-local-business-strategy.webp"
             alt="Atlanta business owner reviewing Facebook ads campaign performance and ROI dashboard"
             fill
             className="object-cover"
@@ -294,10 +294,10 @@ export default function FacebookAdsAtlantaGuide() {
 
               <div className="my-10 rounded-2xl overflow-hidden border border-[#5FA99F]/30">
                 <Image
-                  src="/images/facebook-meta-ads-manager-audience-targeting-interface.webp"
+                  src="/images/facebook-ads-manager-atlanta-location-targeting-demographics-setup.webp"
                   alt="Meta Ads Manager interface showing Atlanta location targeting and audience demographics"
-                  width={1200}
-                  height={800}
+                  width={1242}
+                  height={1424}
                   className="w-full h-auto"
                 />
                 <div className="bg-[rgba(95,169,159,0.1)] p-4">
@@ -529,10 +529,10 @@ export default function FacebookAdsAtlantaGuide() {
 
               <div className="my-10 rounded-2xl overflow-hidden border border-[#5FA99F]/30">
                 <Image
-                  src="/images/facebook-ads-roi-calculator-budget-cost-analysis-tool.webp"
+                  src="/images/atlanta-facebook-ads-cost-budget-calculator-roi-small-business.webp"
                   alt="ROI calculator showing Facebook ads budget breakdown and cost per lead projections for Atlanta businesses"
-                  width={1200}
-                  height={800}
+                  width={1400}
+                  height={897}
                   className="w-full h-auto"
                 />
                 <div className="bg-[rgba(95,169,159,0.1)] p-4">
@@ -815,10 +815,10 @@ export default function FacebookAdsAtlantaGuide() {
 
               <div className="my-10 rounded-2xl overflow-hidden border border-[#5FA99F]/30">
                 <Image
-                  src="/images/facebook-meta-ads-custom-audience-targeting-options.jpg"
+                  src="/images/facebook-ads-atlanta-neighborhoods-targeting-buckhead-midtown-audience.webp"
                   alt="Facebook Ads Manager showing custom audience targeting options and demographic filters for Atlanta businesses"
-                  width={1200}
-                  height={800}
+                  width={1516}
+                  height={1568}
                   className="w-full h-auto"
                 />
                 <div className="bg-[rgba(95,169,159,0.1)] p-4">
@@ -1250,10 +1250,10 @@ export default function FacebookAdsAtlantaGuide() {
 
               <div className="my-10 rounded-2xl overflow-hidden border border-[#5FA99F]/30">
                 <Image
-                  src="/images/small-business-owner-facebook-ads-consultation-atlanta.webp"
+                  src="/images/atlanta-small-business-facebook-ads-success-story-local-marketing.webp"
                   alt="Atlanta small business owner reviewing Facebook ads campaign performance and analytics dashboard"
-                  width={1200}
-                  height={800}
+                  width={1920}
+                  height={1281}
                   className="w-full h-auto"
                 />
                 <div className="bg-[rgba(95,169,159,0.1)] p-4">
@@ -1414,10 +1414,10 @@ export default function FacebookAdsAtlantaGuide() {
 
               <div className="my-10 rounded-2xl overflow-hidden border border-[#5FA99F]/30">
                 <Image
-                  src="/images/facebook-meta-ads-analytics-data-conversion-tracking.webp"
+                  src="/images/facebook-ads-agency-atlanta-reporting-dashboard-performance-metrics.webp"
                   alt="Facebook Ads Manager analytics dashboard showing conversion tracking and performance data"
-                  width={1200}
-                  height={800}
+                  width={1920}
+                  height={830}
                   className="w-full h-auto"
                 />
                 <div className="bg-[rgba(95,169,159,0.1)] p-4">
