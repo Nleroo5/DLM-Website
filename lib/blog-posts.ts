@@ -165,6 +165,37 @@ export const blogPosts: BlogPost[] = [
     heroImageAlt: 'Atlanta business owner reviewing Facebook ads campaign performance and ROI dashboard showing local targeting success',
     wordCount: 3400
   },
+  {
+    slug: 'how-to-tell-if-facebook-ads-working',
+    title: 'How to Tell If Your Facebook Ads Are Working (5 Simple Metrics)',
+    excerpt: 'Learn the 5 simple Facebook ad metrics that tell you if your ads are working. No jargon - just clear benchmarks for impressions, clicks, CPC, CPL, and ROAS with actionable advice.',
+    date: 'December 2024',
+    datePublished: '2024-12-12T09:00:00-05:00',
+    dateModified: '2024-12-12T09:00:00-05:00',
+    readTime: '8 min read',
+    category: {
+      name: 'Meta Ads Strategy',
+      slug: 'meta-ads-strategy'
+    },
+    author: {
+      name: 'Nicolas Leroo',
+      jobTitle: 'Co-Founder & Meta Advertising Strategist',
+      url: 'https://driveleadmedia.com/about/nicolas-leroo'
+    },
+    keywords: [
+      'are my facebook ads working',
+      'facebook ad metrics explained',
+      'how to measure facebook ads',
+      'facebook advertising metrics atlanta',
+      'meta ads performance metrics',
+      'facebook ads cost per lead',
+      'facebook ads roi',
+      'facebook ctr benchmarks'
+    ],
+    heroImage: '/images/facebook-ads-performance-metrics-guide-hero.webp',
+    heroImageAlt: 'How to tell if your Facebook ads are working - business owner analyzing ad performance metrics',
+    wordCount: 2000
+  },
 ];
 
 // Helper functions
