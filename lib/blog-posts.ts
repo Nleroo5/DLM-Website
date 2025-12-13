@@ -196,6 +196,37 @@ export const blogPosts: BlogPost[] = [
     heroImageAlt: 'Facebook Ads performance metrics showing 67 leads at $3.73 cost per lead with demographics breakdown',
     wordCount: 2000
   },
+  {
+    slug: 'how-to-set-up-facebook-pixel',
+    title: 'How to Set Up Facebook Pixel: Complete 2025 Installation Guide',
+    excerpt: 'Complete step-by-step guide to installing Facebook Pixel (Meta Pixel) on your website. Includes WordPress, Shopify, GTM setup methods, testing & verification with screenshots.',
+    date: 'December 2025',
+    datePublished: '2025-12-13T09:00:00-05:00',
+    dateModified: '2025-12-13T09:00:00-05:00',
+    readTime: '12 min read',
+    category: {
+      name: 'Meta Ads Setup',
+      slug: 'meta-ads-setup'
+    },
+    author: {
+      name: 'Nicolas Leroo',
+      jobTitle: 'Co-Founder & Meta Advertising Strategist',
+      url: 'https://driveleadmedia.com/about/nicolas-leroo'
+    },
+    keywords: [
+      'how to install facebook pixel',
+      'meta pixel setup',
+      'facebook pixel installation guide',
+      'install meta pixel wordpress',
+      'facebook pixel shopify setup',
+      'google tag manager facebook pixel',
+      'meta pixel verification',
+      'facebook conversion tracking'
+    ],
+    heroImage: '/images/meta-events-manager-overview.webp',
+    heroImageAlt: 'Meta Events Manager dashboard showing Facebook Pixel overview and setup options for conversion tracking',
+    wordCount: 3500
+  },
 ];
 
 // Helper functions

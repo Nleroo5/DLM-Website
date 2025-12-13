@@ -71,6 +71,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/blog/how-to-set-up-facebook-pixel`,
+      lastModified: new Date('2025-12-13'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/blog/category/meta-ads-pricing`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
@@ -96,6 +102,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/blog/category/local-marketing`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/blog/category/meta-ads-setup`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.7,
