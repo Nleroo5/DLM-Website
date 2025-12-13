@@ -60,7 +60,7 @@ export default function HowToTellIfFacebookAdsWorkingPage() {
         author="Nicolas Leroo"
         datePublished="2024-12-12"
         dateModified="2024-12-12"
-        image="https://driveleadmedia.com/images/facebook-ads-performance-metrics-guide-hero.webp"
+        image="https://driveleadmedia.com/images/facebook-ads-performance-metrics-guide-hero.jpg"
         url="https://driveleadmedia.com/blog/how-to-tell-if-facebook-ads-working"
       />
 
