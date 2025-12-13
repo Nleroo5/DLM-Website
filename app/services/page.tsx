@@ -67,7 +67,7 @@ export default function ServicesPage() {
       <div className="absolute bottom-[20%] right-[20%] w-[300px] h-[300px] bg-[#5FA99F] opacity-10 rounded-full blur-[120px] pointer-events-none" />
 
       {/* Hero Section */}
-      <section className="pt-[140px] pb-[80px] px-6 bg-gradient-to-br from-[#0A0A0A] to-[#000000] relative">
+      <section className="pt-[140px] pb-[80px] px-6 bg-[#000000] relative">
         <div className="max-w-[1200px] mx-auto text-center">
           <h1 className="font-heading text-[2rem] sm:text-[2.25rem] md:text-[2.75rem] lg:text-[3rem] font-bold text-white mb-6 leading-[1.1]">
             We Build Your Ads, Find Your Customers, Drive Them to Your Site
@@ -254,7 +254,7 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-[80px] px-6 bg-gradient-to-br from-[#0A0A0A] to-[#000000] relative">
+      <section className="py-[80px] px-6 bg-[#000000] relative">
         <div className="max-w-[900px] mx-auto text-center">
           <h2 className="font-heading text-[1.5rem] sm:text-[1.75rem] md:text-[2rem] font-bold text-white mb-6">
             Ready to See What We Can Do For You?
