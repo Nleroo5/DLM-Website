@@ -4,6 +4,9 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Terms of Service | Drive Lead Media',
   description: 'Read the terms and conditions for using Drive Lead Media\'s services and website.',
+  alternates: {
+    canonical: '/terms',
+  },
 };
 
 export default function TermsPage() {

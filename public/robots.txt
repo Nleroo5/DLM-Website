@@ -34,4 +34,3 @@ Host: https://driveleadmedia.com
 
 # Sitemaps
 Sitemap: https://driveleadmedia.com/sitemap.xml
-Sitemap: https://driveleadmedia.com/server-sitemap.xml
