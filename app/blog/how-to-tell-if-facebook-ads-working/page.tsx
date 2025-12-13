@@ -250,8 +250,8 @@ export default function HowToTellIfFacebookAdsWorkingPage() {
             </ul>
 
             {/* CTR & CPC Performance Image */}
-            <div className="my-12">
-              <div className="relative w-full max-w-[1100px] mx-auto rounded-2xl overflow-hidden border-2 border-[#5FA99F]/40 shadow-[0_8px_40px_rgba(95,169,159,0.25)]">
+            <div className="my-16">
+              <div className="relative w-full max-w-[1400px] mx-auto rounded-2xl overflow-hidden border-2 border-[#5FA99F]/50 shadow-[0_10px_50px_rgba(95,169,159,0.3)] hover:shadow-[0_15px_60px_rgba(95,169,159,0.4)] transition-all duration-300">
                 <Image
                   src="/images/facebook-ads-ctr-cpc-metrics-performance-data.jpg"
                   alt="Facebook Ads Manager showing CTR and CPC performance data across multiple campaigns"
@@ -259,10 +259,10 @@ export default function HowToTellIfFacebookAdsWorkingPage() {
                   height={600}
                   className="w-full h-auto"
                   quality={95}
-                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 95vw, (max-width: 1024px) 90vw, 1100px"
+                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 95vw, 1400px"
                 />
               </div>
-              <p className="text-gray-400 font-body text-sm sm:text-base mt-6 text-center italic max-w-[900px] mx-auto px-4">
+              <p className="text-gray-400 font-body text-sm sm:text-base mt-8 text-center italic max-w-[1000px] mx-auto px-4">
                 Real campaign data showing CTR ranging from 1.12% to 3.24% and CPC from $0.24 to $0.61
               </p>
             </div>
@@ -428,8 +428,8 @@ export default function HowToTellIfFacebookAdsWorkingPage() {
             </div>
 
             {/* Campaign Dashboard Overview Image */}
-            <div className="my-12">
-              <div className="relative w-full max-w-[1100px] mx-auto rounded-2xl overflow-hidden border-2 border-[#5FA99F]/40 shadow-[0_8px_40px_rgba(95,169,159,0.25)]">
+            <div className="my-16">
+              <div className="relative w-full max-w-[1400px] mx-auto rounded-2xl overflow-hidden border-2 border-[#5FA99F]/50 shadow-[0_10px_50px_rgba(95,169,159,0.3)] hover:shadow-[0_15px_60px_rgba(95,169,159,0.4)] transition-all duration-300">
                 <Image
                   src="/images/facebook-ads-metrics-dashboard-performance-analysis.webp"
                   alt="Facebook Ads Manager dashboard showing campaign performance metrics including impressions, reach, CPM, and spend"
@@ -437,10 +437,10 @@ export default function HowToTellIfFacebookAdsWorkingPage() {
                   height={415}
                   className="w-full h-auto"
                   quality={95}
-                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 95vw, (max-width: 1024px) 90vw, 1100px"
+                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 95vw, 1400px"
                 />
               </div>
-              <p className="text-gray-400 font-body text-sm sm:text-base mt-6 text-center italic max-w-[900px] mx-auto px-4">
+              <p className="text-gray-400 font-body text-sm sm:text-base mt-8 text-center italic max-w-[1000px] mx-auto px-4">
                 Real Facebook Ads Manager dashboard - track your overall campaign metrics like this
               </p>
             </div>
