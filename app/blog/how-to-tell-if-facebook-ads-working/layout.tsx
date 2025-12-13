@@ -11,17 +11,17 @@ export const metadata: Metadata = {
     type: 'article',
     url: 'https://driveleadmedia.com/blog/how-to-tell-if-facebook-ads-working',
     images: [{
-      url: 'https://driveleadmedia.com/images/facebook-ads-performance-metrics-guide-hero.jpg',
-      width: 1200,
-      height: 630,
-      alt: 'How to tell if your Facebook ads are working - business owner analyzing ad performance metrics',
+      url: 'https://driveleadmedia.com/images/facebook-ads-lead-demographics-hero.webp',
+      width: 2446,
+      height: 1888,
+      alt: 'Facebook Ads performance metrics showing 67 leads at $3.73 cost per lead with demographics breakdown',
     }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'How to Tell If Your Facebook Ads Are Working (5 Simple Metrics)',
     description: 'Learn the 5 simple Facebook ad metrics that tell you if your ads are working. No jargon - just clear benchmarks and actionable advice.',
-    images: ['https://driveleadmedia.com/images/facebook-ads-performance-metrics-guide-hero.jpg'],
+    images: ['https://driveleadmedia.com/images/facebook-ads-lead-demographics-hero.webp'],
   },
   alternates: {
     canonical: '/blog/how-to-tell-if-facebook-ads-working',

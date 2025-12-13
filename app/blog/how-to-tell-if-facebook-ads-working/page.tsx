@@ -60,7 +60,7 @@ export default function HowToTellIfFacebookAdsWorkingPage() {
         author="Nicolas Leroo"
         datePublished="2024-12-12"
         dateModified="2024-12-12"
-        image="https://driveleadmedia.com/images/facebook-ads-performance-metrics-guide-hero.jpg"
+        image="https://driveleadmedia.com/images/facebook-ads-lead-demographics-hero.webp"
         url="https://driveleadmedia.com/blog/how-to-tell-if-facebook-ads-working"
       />
 
@@ -116,10 +116,10 @@ export default function HowToTellIfFacebookAdsWorkingPage() {
           <div className="mt-8">
             <div className="relative w-full rounded-xl overflow-hidden border border-[#5FA99F]/30 shadow-[0_0_30px_rgba(95,169,159,0.2)]">
               <Image
-                src="/images/facebook-ads-performance-metrics-guide-hero.jpg"
-                alt="How to tell if your Facebook ads are working - business owner analyzing ad performance metrics"
-                width={1200}
-                height={630}
+                src="/images/facebook-ads-lead-demographics-hero.webp"
+                alt="Facebook Ads performance metrics showing 67 leads at $3.73 cost per lead with detailed age and gender demographics breakdown"
+                width={2446}
+                height={1888}
                 className="w-full h-auto"
                 quality={90}
                 priority

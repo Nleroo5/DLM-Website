@@ -192,8 +192,8 @@ export const blogPosts: BlogPost[] = [
       'facebook ads roi',
       'facebook ctr benchmarks'
     ],
-    heroImage: '/images/facebook-ads-performance-metrics-guide-hero.jpg',
-    heroImageAlt: 'How to tell if your Facebook ads are working - business owner analyzing ad performance metrics',
+    heroImage: '/images/facebook-ads-lead-demographics-hero.webp',
+    heroImageAlt: 'Facebook Ads performance metrics showing 67 leads at $3.73 cost per lead with demographics breakdown',
     wordCount: 2000
   },
 ];
