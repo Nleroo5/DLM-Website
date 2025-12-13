@@ -192,7 +192,7 @@ export const blogPosts: BlogPost[] = [
       'facebook ads roi',
       'facebook ctr benchmarks'
     ],
-    heroImage: '/images/facebook-ads-performance-metrics-guide-hero.webp',
+    heroImage: '/images/facebook-ads-performance-metrics-guide-hero.jpg',
     heroImageAlt: 'How to tell if your Facebook ads are working - business owner analyzing ad performance metrics',
     wordCount: 2000
   },

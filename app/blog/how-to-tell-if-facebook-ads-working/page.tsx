@@ -116,7 +116,7 @@ export default function HowToTellIfFacebookAdsWorkingPage() {
           <div className="mt-8">
             <div className="relative w-full rounded-xl overflow-hidden border border-[#5FA99F]/30 shadow-[0_0_30px_rgba(95,169,159,0.2)]">
               <Image
-                src="/images/facebook-ads-performance-metrics-guide-hero.webp"
+                src="/images/facebook-ads-performance-metrics-guide-hero.jpg"
                 alt="How to tell if your Facebook ads are working - business owner analyzing ad performance metrics"
                 width={1200}
                 height={630}
@@ -250,18 +250,19 @@ export default function HowToTellIfFacebookAdsWorkingPage() {
             </ul>
 
             {/* CTR & CPC Performance Image */}
-            <div className="mb-8">
-              <div className="relative w-full rounded-xl overflow-hidden border border-[#5FA99F]/30 shadow-[0_0_30px_rgba(95,169,159,0.2)]">
+            <div className="my-12">
+              <div className="relative w-full max-w-[1100px] mx-auto rounded-2xl overflow-hidden border-2 border-[#5FA99F]/40 shadow-[0_8px_40px_rgba(95,169,159,0.25)]">
                 <Image
                   src="/images/facebook-ads-ctr-cpc-metrics-performance-data.jpg"
                   alt="Facebook Ads Manager showing CTR and CPC performance data across multiple campaigns"
                   width={1200}
                   height={600}
                   className="w-full h-auto"
-                  quality={90}
+                  quality={95}
+                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 95vw, (max-width: 1024px) 90vw, 1100px"
                 />
               </div>
-              <p className="text-gray-400 font-body text-sm mt-4 text-center italic">
+              <p className="text-gray-400 font-body text-sm sm:text-base mt-6 text-center italic max-w-[900px] mx-auto px-4">
                 Real campaign data showing CTR ranging from 1.12% to 3.24% and CPC from $0.24 to $0.61
               </p>
             </div>
@@ -427,18 +428,19 @@ export default function HowToTellIfFacebookAdsWorkingPage() {
             </div>
 
             {/* Campaign Dashboard Overview Image */}
-            <div className="mb-8">
-              <div className="relative w-full rounded-xl overflow-hidden border border-[#5FA99F]/30 shadow-[0_0_30px_rgba(95,169,159,0.2)]">
+            <div className="my-12">
+              <div className="relative w-full max-w-[1100px] mx-auto rounded-2xl overflow-hidden border-2 border-[#5FA99F]/40 shadow-[0_8px_40px_rgba(95,169,159,0.25)]">
                 <Image
-                  src="/images/facebook-ads-metrics-dashboard-performance-analysis.jpg"
+                  src="/images/facebook-ads-metrics-dashboard-performance-analysis.webp"
                   alt="Facebook Ads Manager dashboard showing campaign performance metrics including impressions, reach, CPM, and spend"
-                  width={1200}
-                  height={800}
+                  width={2048}
+                  height={415}
                   className="w-full h-auto"
-                  quality={90}
+                  quality={95}
+                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 95vw, (max-width: 1024px) 90vw, 1100px"
                 />
               </div>
-              <p className="text-gray-400 font-body text-sm mt-4 text-center italic">
+              <p className="text-gray-400 font-body text-sm sm:text-base mt-6 text-center italic max-w-[900px] mx-auto px-4">
                 Real Facebook Ads Manager dashboard - track your overall campaign metrics like this
               </p>
             </div>
