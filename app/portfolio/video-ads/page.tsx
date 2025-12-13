@@ -30,7 +30,7 @@ export default function VideoAdsPortfolioPage() {
       <VideoObjectSchema
         name="Village Pediatrics - Healthcare Marketing Video"
         description="Professional healthcare marketing video for Village Pediatrics of St. Augustine featuring Dr. Austin Dupont"
-        thumbnailUrl="/images/business-owner-testimonial-satisfied-client-five-star-review.webp"
+        thumbnailUrl="/images/happy-customer-website-conversion-success-testimonial.webp"
         contentUrl="https://www.youtube.com/watch?v=MkbWGedLbVY"
         uploadDate="2024-03-10"
         duration="PT1M"
@@ -39,7 +39,7 @@ export default function VideoAdsPortfolioPage() {
       <VideoObjectSchema
         name="Actor-Led Facebook Ad Production - Sample"
         description="Professional actor-led video ad production for Facebook and Instagram advertising campaigns, no filming required from clients"
-        thumbnailUrl="/images/atlanta-facebook-instagram-video-ads-production-agency.webp"
+        thumbnailUrl="/images/atlanta-small-business-facebook-ads-success-story-local-marketing.webp"
         contentUrl="https://www.youtube.com/watch?v=4JKRwEdejUE"
         uploadDate="2024-04-05"
         duration="PT45S"

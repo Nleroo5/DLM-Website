@@ -29,14 +29,14 @@ export default function WhyMetaAdsNeedLandingPages() {
 
       {/* Image Schemas for SEO */}
       <ImageObjectSchema
-        url="/images/facebook-ads-landing-page-conversion-rate-optimization.jpg"
+        url="/images/facebook-ads-landing-page-conversion-rate-optimization.webp"
         caption="Meta ads landing page conversion optimization 2025"
         description="Optimized landing page design for Meta advertising campaigns showing conversion-focused layout and call-to-action elements"
         width={1920}
         height={1080}
       />
       <ImageObjectSchema
-        url="/images/confused-website-visitor-high-bounce-rate-problem.jpg"
+        url="/images/confused-website-visitor-high-bounce-rate-problem.webp"
         caption="Confused visitor homepage bounce from Meta ads"
         description="Illustration showing confused website visitor experiencing high bounce rate from generic homepage instead of focused landing page"
         width={1200}
@@ -50,7 +50,7 @@ export default function WhyMetaAdsNeedLandingPages() {
         height={800}
       />
       <ImageObjectSchema
-        url="/images/mobile-responsive-landing-page-optimization-meta-ads.jpg"
+        url="/images/mobile-responsive-landing-page-optimization-meta-ads.webp"
         caption="Mobile landing page optimization Meta ads 2025"
         description="Mobile-responsive landing page design optimized for Meta advertising traffic with thumb-friendly buttons and fast load times"
         width={1080}
@@ -64,7 +64,7 @@ export default function WhyMetaAdsNeedLandingPages() {
         height={800}
       />
       <ImageObjectSchema
-        url="/images/facebook-meta-ads-conversion-tracking-analytics-dashboard.jpg"
+        url="/images/facebook-meta-ads-conversion-tracking-analytics-dashboard.webp"
         caption="Meta ads conversion tracking analytics dashboard"
         description="Meta Ads Manager analytics dashboard displaying conversion tracking metrics, pixel events, and landing page performance data"
         width={2400}
@@ -81,7 +81,7 @@ export default function WhyMetaAdsNeedLandingPages() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/images/facebook-ads-landing-page-conversion-rate-optimization.jpg"
+            src="/images/facebook-ads-landing-page-conversion-rate-optimization.webp"
             alt="Business owner analyzing Meta ads landing page conversion rates on laptop dashboard showing 2-3x improvement in lead generation"
             fill
             className="object-cover"
@@ -278,7 +278,7 @@ export default function WhyMetaAdsNeedLandingPages() {
                 <div className="grid md:grid-cols-2 gap-6 items-center mb-4">
                   <div className="relative w-full aspect-[9/16] max-w-sm mx-auto rounded-xl overflow-hidden shadow-lg">
                     <Image
-                      src="/images/confused-website-visitor-high-bounce-rate-problem.jpg"
+                      src="/images/confused-website-visitor-high-bounce-rate-problem.webp"
                       alt="Confused visitor leaving website homepage after clicking Meta ads without finding promised offer"
                       fill
                       className="object-cover"
@@ -536,7 +536,7 @@ export default function WhyMetaAdsNeedLandingPages() {
                 {/* Full-Width Phone Image */}
                 <div className="relative h-56 sm:h-64 md:h-72 lg:h-80 rounded-xl overflow-hidden shadow-2xl mb-6">
                   <Image
-                    src="/images/mobile-responsive-landing-page-optimization-meta-ads.jpg"
+                    src="/images/mobile-responsive-landing-page-optimization-meta-ads.webp"
                     alt="Mobile-optimized landing page for Meta ads showing responsive design with large tappable buttons and fast load time"
                     fill
                     className="object-cover"
@@ -715,7 +715,7 @@ export default function WhyMetaAdsNeedLandingPages() {
               {/* Data Analytics Image */}
               <div className="relative h-80 rounded-2xl overflow-hidden shadow-2xl mb-4">
                 <Image
-                  src="/images/facebook-meta-ads-conversion-tracking-analytics-dashboard.jpg"
+                  src="/images/facebook-meta-ads-conversion-tracking-analytics-dashboard.webp"
                   alt="Analytics dashboard displaying Meta ads conversion tracking data and landing page performance metrics"
                   fill
                   className="object-cover"

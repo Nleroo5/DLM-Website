@@ -46,9 +46,9 @@ export const metadata: Metadata = {
     images: ["/images/drive-lead-media-full-service-marketing-agency-brand.webp"],
   },
   icons: {
-    icon: "/images/drive-lead-media-atlanta-digital-marketing-agency-logo.png",
-    shortcut: "/images/drive-lead-media-atlanta-digital-marketing-agency-logo.png",
-    apple: "/images/drive-lead-media-atlanta-digital-marketing-agency-logo.png",
+    icon: "/images/drive-lead-media-atlanta-digital-marketing-agency-logo.webp",
+    shortcut: "/images/drive-lead-media-atlanta-digital-marketing-agency-logo.webp",
+    apple: "/images/drive-lead-media-atlanta-digital-marketing-agency-logo.webp",
   },
   metadataBase: new URL("https://driveleadmedia.com"),
   alternates: {

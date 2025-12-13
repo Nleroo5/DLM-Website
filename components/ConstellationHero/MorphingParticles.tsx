@@ -619,7 +619,7 @@ export function MorphingParticles() {
               }}
             >
               <Image
-                src="/images/instagram-social-media-icon-follow-share-link.png"
+                src="/images/instagram-social-media-icon-follow-share-link.webp"
                 alt="Instagram"
                 width={80}
                 height={80}
@@ -651,7 +651,7 @@ export function MorphingParticles() {
               }}
             >
               <Image
-                src="/images/facebook-social-media-icon-follow-share-link.png"
+                src="/images/facebook-social-media-icon-follow-share-link.webp"
                 alt="Facebook"
                 width={80}
                 height={80}

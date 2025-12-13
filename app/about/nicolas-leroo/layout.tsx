@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     description: 'Meta Blueprint Certified strategist specializing in Facebook & Instagram advertising combined with custom website development.',
     type: 'profile',
     images: [{
-      url: '/images/nicolas.png',
+      url: '/images/nicolas-leroo-atlanta-digital-marketing-agency-founder.webp',
       width: 1200,
       height: 630,
       alt: 'Nicolas Leroo',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Nicolas Leroo - Meta Advertising Expert',
     description: 'Meta Blueprint Certified strategist specializing in Facebook & Instagram advertising and custom website development.',
-    images: ['/images/nicolas.png'],
+    images: ['/images/nicolas-leroo-atlanta-digital-marketing-agency-founder.webp'],
   },
   alternates: {
     canonical: '/about/nicolas-leroo',

@@ -47,7 +47,7 @@ export const blogPosts: BlogPost[] = [
       'facebook advertising budget atlanta',
       'meta ads roi calculator'
     ],
-    heroImage: '/images/atlanta.jpg',
+    heroImage: '/images/atlanta-facebook-ads-cost-meta-advertising-pricing.webp',
     heroImageAlt: 'Atlanta skyline with modern buildings representing local businesses investing in Facebook and Instagram advertising',
     wordCount: 3264
   },
@@ -75,7 +75,7 @@ export const blogPosts: BlogPost[] = [
       'landing page optimization',
       'meta ads ROI'
     ],
-    heroImage: '/images/meta-ads-landing-page-conversion-optimization-2025.jpg',
+    heroImage: '/images/professional-landing-page-design-conversion-optimization.webp',
     heroImageAlt: 'Business owner analyzing Meta ads landing page conversion rates showing 2-3x improvement in lead generation',
     wordCount: 2850
   },
@@ -103,7 +103,7 @@ export const blogPosts: BlogPost[] = [
       'cold warm hot audiences',
       'meta ads demographics'
     ],
-    heroImage: '/images/meta-audience-target-hero.jpg',
+    heroImage: '/images/facebook-meta-ads-audience-targeting-strategy-guide.webp',
     heroImageAlt: 'Meta Ads audience targeting strategy guide showing cold, warm, and hot audience segmentation',
     wordCount: 2450
   },
@@ -131,7 +131,7 @@ export const blogPosts: BlogPost[] = [
       'meta ads manager vs boost',
       'facebook advertising atlanta'
     ],
-    heroImage: '/images/hero-meta-boosted.webp',
+    heroImage: '/images/facebook-boosted-posts-vs-meta-ads-manager-comparison.webp',
     heroImageAlt: 'Comparison visualization showing Facebook boost button vs Meta Ads Manager interface demonstrating cost and results differences',
     wordCount: 2433
   },

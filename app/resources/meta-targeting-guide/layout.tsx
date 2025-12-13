@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: '/images/business-owner.jpg',
+        url: '/images/small-business-owner-facebook-ads-consultation-atlanta.webp',
         width: 1200,
         height: 630,
         alt: 'Business owner learning about Meta targeting',

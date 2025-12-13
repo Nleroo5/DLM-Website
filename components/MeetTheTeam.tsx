@@ -29,19 +29,19 @@ export default function MeetTheTeam() {
       name: "Nicolas Leroo",
       role: "Co-Founder & COO",
       bio: "Nicolas brings Meta Certification in Digital Marketing with expertise in Facebook, Instagram advertising, and web design. He builds campaigns that reach the right audience and deliver measurable ROI.",
-      image: "/images/1.png"
+      image: "/images/1.webp"
     },
     {
       name: "Tommy Duda",
       role: "Co-Founder & Chief Creative Officer",
       bio: "Tommy is a specialist in video production and ad creative, leading the direction of every project. He ensures ads look professional, capture attention, and convert viewers into customers.",
-      image: "/images/2.png"
+      image: "/images/2.webp"
     },
     {
       name: "Brenna Skalski Kirillov",
       role: "VP of Sales & Business Development",
       bio: "As VP of Sales & Business Development, Brenna leads client acquisition and account management. She ensures new clients are set up for success and existing partnerships continue to grow.",
-      image: "/images/3.png"
+      image: "/images/3.webp"
     }
   ];
 

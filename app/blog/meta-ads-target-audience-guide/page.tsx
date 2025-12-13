@@ -32,14 +32,14 @@ export default function MetaAdsTargetAudienceGuide() {
         height={1080}
       />
       <ImageObjectSchema
-        url="/images/facebook-ads-sales-funnel-audience-conversion-strategy.jpg"
+        url="/images/facebook-ads-sales-funnel-audience-conversion-strategy.webp"
         caption="Meta audience funnel visualization"
         description="Marketing funnel diagram showing awareness, consideration, and conversion stages for Meta advertising audience targeting strategy"
         width={1200}
         height={800}
       />
       <ImageObjectSchema
-        url="/images/facebook-meta-ads-custom-audience-targeting-options.jpg"
+        url="/images/facebook-meta-ads-custom-audience-targeting-options.webp"
         caption="Meta audience targeting interface"
         description="Detailed Meta Ads Manager audience targeting interface with location, demographics, interests, and behavior filters"
         width={1200}
@@ -202,7 +202,7 @@ export default function MetaAdsTargetAudienceGuide() {
             >
               <div className="relative rounded-[16px] overflow-hidden border border-[rgba(95,169,159,0.3)] shadow-2xl">
                 <Image
-                  src="/images/facebook-ads-sales-funnel-audience-conversion-strategy.jpg"
+                  src="/images/facebook-ads-sales-funnel-audience-conversion-strategy.webp"
                   alt="Meta ads audience funnel showing the progression from cold audiences (strangers) to warm audiences (engaged users) to hot audiences (past customers and qualified leads)"
                   width={1200}
                   height={675}
@@ -443,7 +443,7 @@ export default function MetaAdsTargetAudienceGuide() {
               >
                 <div className="relative rounded-[16px] overflow-hidden border border-[rgba(95,169,159,0.3)] shadow-2xl">
                   <Image
-                    src="/images/facebook-meta-ads-custom-audience-targeting-options.jpg"
+                    src="/images/facebook-meta-ads-custom-audience-targeting-options.webp"
                     alt="Meta Ads Manager targeting interface showing demographics, interests, and behaviors options for precise audience targeting on Facebook and Instagram"
                     width={1200}
                     height={675}

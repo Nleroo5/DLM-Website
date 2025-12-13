@@ -20,7 +20,7 @@ export default function MetaAdsLandingPagesPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/images/professional-landing-page-design-conversion-optimization.jpg"
+            src="/images/professional-landing-page-design-conversion-optimization.webp"
             alt="Business owner analyzing ad performance"
             fill
             className="object-cover"
@@ -214,7 +214,7 @@ export default function MetaAdsLandingPagesPage() {
                 <div className="grid md:grid-cols-2 gap-6 items-center mb-4">
                   <div className="relative w-full aspect-[9/16] max-w-sm mx-auto rounded-xl overflow-hidden shadow-lg">
                     <Image
-                      src="/images/confused-website-visitor-high-bounce-rate-problem.jpg"
+                      src="/images/confused-website-visitor-high-bounce-rate-problem.webp"
                       alt="Confused visitor on homepage"
                       fill
                       className="object-cover"
