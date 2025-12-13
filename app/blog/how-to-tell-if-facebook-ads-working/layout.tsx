@@ -9,6 +9,8 @@ export const metadata: Metadata = {
     title: 'How to Tell If Your Facebook Ads Are Working (5 Simple Metrics)',
     description: 'Learn the 5 simple Facebook ad metrics that tell you if your ads are working. Clear benchmarks and actionable advice for Atlanta businesses.',
     type: 'article',
+    publishedTime: '2024-12-12T09:00:00-05:00',
+    authors: ['Nicolas Leroo'],
     url: 'https://driveleadmedia.com/blog/how-to-tell-if-facebook-ads-working',
     images: [{
       url: 'https://driveleadmedia.com/images/facebook-ads-lead-demographics-hero.webp',

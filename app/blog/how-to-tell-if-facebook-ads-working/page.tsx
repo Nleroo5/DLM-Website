@@ -3,8 +3,16 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArticleSchema, BreadcrumbSchema, FAQSchema, HowToSchema } from '@/components/StructuredDataSchemas';
+import { getPostBySlug } from '@/lib/blog-posts';
+import AuthorBio from '@/components/blog/AuthorBio';
 
 export default function HowToTellIfFacebookAdsWorkingPage() {
+  const post = getPostBySlug('how-to-tell-if-facebook-ads-working');
+
+  if (!post) {
+    return <div>Post not found</div>;
+  }
+
   const faqItems = [
     {
       question: "What is a good click-through rate (CTR) for Facebook ads?",
@@ -642,6 +650,9 @@ export default function HowToTellIfFacebookAdsWorkingPage() {
               </Link>
             </div>
           </div>
+
+          {/* Author Bio */}
+          <AuthorBio author={post.author} />
 
           {/* Related Articles */}
           <div className="mt-16">
