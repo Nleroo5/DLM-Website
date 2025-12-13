@@ -11,13 +11,17 @@ export const metadata: Metadata = {
     type: 'article',
     publishedTime: '2025-12-09T09:00:00-05:00',
     authors: ['Nicolas Leroo'],
-    images: ['/images/facebook-boosted-posts-vs-meta-ads-manager-comparison.webp'],
+    url: 'https://driveleadmedia.com/blog/boosted-posts-vs-targeted-ads',
+    images: ['https://driveleadmedia.com/images/facebook-boosted-posts-vs-meta-ads-manager-comparison.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Boosted Posts vs. Targeted Ads: Stop Wasting Money',
     description: 'Learn why Facebook\'s Boost button delivers 2-3X worse results than targeted ads.',
-    images: ['/images/facebook-boosted-posts-vs-meta-ads-manager-comparison.webp'],
+    images: ['https://driveleadmedia.com/images/facebook-boosted-posts-vs-meta-ads-manager-comparison.webp'],
+  },
+  alternates: {
+    canonical: '/blog/boosted-posts-vs-targeted-ads',
   },
 };
 

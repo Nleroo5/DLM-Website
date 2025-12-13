@@ -11,8 +11,9 @@ export const metadata: Metadata = {
     type: 'article',
     publishedTime: '2025-10-25T09:00:00-05:00',
     authors: ['Nicolas Leroo'],
+    url: 'https://driveleadmedia.com/blog/meta-ads-target-audience-guide',
     images: [{
-      url: '/images/drive-lead-media-full-service-marketing-agency-brand.webp',
+      url: 'https://driveleadmedia.com/images/facebook-meta-ads-audience-targeting-strategy-guide.webp',
       width: 1200,
       height: 630,
       alt: 'Meta Ads Target Audience Guide',
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Meta Ads Target Audience Guide: Stop Wasting Money',
     description: 'Master cold, warm, and hot audience strategies for Facebook & Instagram ads. Complete targeting guide.',
-    images: ['/images/drive-lead-media-full-service-marketing-agency-brand.webp'],
+    images: ['https://driveleadmedia.com/images/facebook-meta-ads-audience-targeting-strategy-guide.webp'],
   },
   alternates: {
     canonical: '/blog/meta-ads-target-audience-guide',

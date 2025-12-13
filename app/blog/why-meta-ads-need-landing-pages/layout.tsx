@@ -11,8 +11,9 @@ export const metadata: Metadata = {
     type: 'article',
     publishedTime: '2025-10-20T09:00:00-05:00',
     authors: ['Nicolas Leroo'],
+    url: 'https://driveleadmedia.com/blog/why-meta-ads-need-landing-pages',
     images: [{
-      url: '/images/drive-lead-media-full-service-marketing-agency-brand.webp',
+      url: 'https://driveleadmedia.com/images/professional-landing-page-design-conversion-optimization.webp',
       width: 1200,
       height: 630,
       alt: 'Meta Ads Landing Page Guide',
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Why Your Meta Ads Need a Dedicated Landing Page',
     description: 'The one change that can 2-3x your Meta ads conversion rates. Learn the 5 essential elements.',
-    images: ['/images/drive-lead-media-full-service-marketing-agency-brand.webp'],
+    images: ['https://driveleadmedia.com/images/professional-landing-page-design-conversion-optimization.webp'],
   },
   alternates: {
     canonical: '/blog/why-meta-ads-need-landing-pages',

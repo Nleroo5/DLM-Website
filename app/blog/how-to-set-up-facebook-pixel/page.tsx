@@ -2,9 +2,10 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArticleSchema, BreadcrumbSchema, FAQSchema, HowToSchema } from '@/components/StructuredDataSchemas';
+import { ArticleSchema, BreadcrumbSchema, HowToSchema } from '@/components/StructuredDataSchemas';
 import { getPostBySlug } from '@/lib/blog-posts';
 import AuthorBio from '@/components/blog/AuthorBio';
+import CollapsibleFAQ from '@/components/blog/CollapsibleFAQ';
 
 export default function FacebookPixelSetupPage() {
   const post = getPostBySlug('how-to-set-up-facebook-pixel');
@@ -111,8 +112,6 @@ export default function FacebookPixelSetupPage() {
           { name: 'How to Set Up Facebook Pixel', url: 'https://driveleadmedia.com/blog/how-to-set-up-facebook-pixel' }
         ]}
       />
-
-      <FAQSchema items={faqItems} />
 
       <HowToSchema
         name="How to Install Facebook Pixel (Meta Pixel) on Your Website"
@@ -1087,23 +1086,8 @@ export default function FacebookPixelSetupPage() {
           </div>
 
           {/* FAQ Section */}
-          <div id="faq" className="mb-16">
-            <h2 className="font-heading text-[1.75rem] sm:text-[2rem] md:text-[2.25rem] font-bold text-white mb-8">
-              Frequently Asked Questions
-            </h2>
-
-            <div className="space-y-6">
-              {faqItems.map((faq, index) => (
-                <div key={index} className="bg-[#1A1A1A]/40 backdrop-blur-xl border-2 border-[rgba(95,169,159,0.3)] rounded-[20px] p-6 hover:border-[rgba(95,169,159,0.5)] transition-all duration-300">
-                  <h3 className="font-heading text-[1.125rem] font-bold text-[#5FA99F] mb-3">
-                    {faq.question}
-                  </h3>
-                  <p className="text-gray-300 font-body text-base leading-relaxed">
-                    {faq.answer}
-                  </p>
-                </div>
-              ))}
-            </div>
+          <div id="faq">
+            <CollapsibleFAQ items={faqItems} />
           </div>
 
           {/* Conclusion */}

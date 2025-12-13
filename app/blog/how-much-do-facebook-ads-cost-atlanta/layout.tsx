@@ -11,8 +11,9 @@ export const metadata: Metadata = {
     type: "article",
     publishedTime: "2025-11-11T09:00:00Z",
     authors: ["Nicolas Leroo"],
+    url: "https://driveleadmedia.com/blog/how-much-do-facebook-ads-cost-atlanta",
     images: [{
-      url: "/images/drive-lead-media-full-service-marketing-agency-brand.webp",
+      url: "https://driveleadmedia.com/images/atlanta-facebook-ads-cost-meta-advertising-pricing.webp",
       width: 1200,
       height: 630,
       alt: "Facebook Ads Cost Atlanta Guide",
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Facebook Ads Cost in Atlanta: 2025 Complete Guide",
     description: "Atlanta Meta ads cost $0.90-$3.50/click. See industry pricing + use free calculator.",
-    images: ["/images/drive-lead-media-full-service-marketing-agency-brand.webp"],
+    images: ["https://driveleadmedia.com/images/atlanta-facebook-ads-cost-meta-advertising-pricing.webp"],
   },
   alternates: {
     canonical: "/blog/how-much-do-facebook-ads-cost-atlanta",

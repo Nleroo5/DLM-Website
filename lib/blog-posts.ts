@@ -28,8 +28,8 @@ export const blogPosts: BlogPost[] = [
     title: 'How Much Do Facebook Ads Cost in Atlanta? (2025 Complete Guide)',
     excerpt: 'Facebook ads in Atlanta cost $0.90-$3.50 per click. Complete 2025 pricing guide with industry breakdowns, budget recommendations & free ROI calculator.',
     date: 'September 2025',
-    datePublished: '2025-09-15T09:00:00-05:00',
-    dateModified: '2025-11-11T09:00:00-05:00',
+    datePublished: '2025-09-05T09:00:00-05:00',
+    dateModified: '2025-09-05T09:00:00-05:00',
     readTime: '14 min read',
     category: {
       name: 'Meta Ads Pricing',
@@ -55,9 +55,9 @@ export const blogPosts: BlogPost[] = [
     slug: 'why-meta-ads-need-landing-pages',
     title: 'Why Your Meta Ads Need a Dedicated Landing Page',
     excerpt: 'Learn how dedicated landing pages can 2-3x your Meta ads conversion rates. Expert guide covering the 5 essential elements and ROI optimization.',
-    date: 'October 2025',
-    datePublished: '2025-10-20T09:00:00-05:00',
-    dateModified: '2025-10-20T09:00:00-05:00',
+    date: 'September 2025',
+    datePublished: '2025-09-20T09:00:00-05:00',
+    dateModified: '2025-09-20T09:00:00-05:00',
     readTime: '8 min read',
     category: {
       name: 'Conversion Optimization',
@@ -84,8 +84,8 @@ export const blogPosts: BlogPost[] = [
     title: 'Meta Ads Target Audience Guide: Stop Wasting Money',
     excerpt: 'Stop wasting money targeting everyone. Master cold, warm, and hot audience strategies to find your perfect customers on Facebook & Instagram.',
     date: 'October 2025',
-    datePublished: '2025-10-25T09:00:00-05:00',
-    dateModified: '2025-10-25T09:00:00-05:00',
+    datePublished: '2025-10-05T09:00:00-05:00',
+    dateModified: '2025-10-05T09:00:00-05:00',
     readTime: '10 min read',
     category: {
       name: 'Targeting Strategy',
@@ -111,9 +111,9 @@ export const blogPosts: BlogPost[] = [
     slug: 'boosted-posts-vs-targeted-ads',
     title: 'Boosted Posts vs. Targeted Ads: Why That Blue Button Is Costing You Money',
     excerpt: 'Learn why Facebook\'s Boost button delivers 2-3X worse results than proper targeted ads. Industry benchmarks, technical insights, and the real cost difference.',
-    date: 'December 2025',
-    datePublished: '2025-12-09T09:00:00-05:00',
-    dateModified: '2025-12-09T09:00:00-05:00',
+    date: 'October 2025',
+    datePublished: '2025-10-21T09:00:00-05:00',
+    dateModified: '2025-10-21T09:00:00-05:00',
     readTime: '8 min read',
     category: {
       name: 'Meta Ads Strategy',
@@ -139,9 +139,9 @@ export const blogPosts: BlogPost[] = [
     slug: 'facebook-ads-atlanta-guide',
     title: 'Facebook Ads Atlanta: Complete Guide for Local Businesses (2025)',
     excerpt: 'Complete guide to Facebook advertising for Atlanta businesses. Learn costs, targeting strategies, ROI benchmarks, and why 200+ local businesses choose Meta ads over billboards.',
-    date: 'December 2025',
-    datePublished: '2025-12-11T09:00:00-05:00',
-    dateModified: '2025-12-11T09:00:00-05:00',
+    date: 'November 2025',
+    datePublished: '2025-11-05T09:00:00-05:00',
+    dateModified: '2025-11-05T09:00:00-05:00',
     readTime: '15 min read',
     category: {
       name: 'Local Marketing',
@@ -169,9 +169,9 @@ export const blogPosts: BlogPost[] = [
     slug: 'how-to-tell-if-facebook-ads-working',
     title: 'How to Tell If Your Facebook Ads Are Working (5 Simple Metrics)',
     excerpt: 'Learn the 5 simple Facebook ad metrics that tell you if your ads are working. No jargon - just clear benchmarks for impressions, clicks, CPC, CPL, and ROAS with actionable advice.',
-    date: 'December 2024',
-    datePublished: '2024-12-12T09:00:00-05:00',
-    dateModified: '2024-12-12T09:00:00-05:00',
+    date: 'November 2025',
+    datePublished: '2025-11-20T09:00:00-05:00',
+    dateModified: '2025-11-20T09:00:00-05:00',
     readTime: '8 min read',
     category: {
       name: 'Meta Ads Strategy',
@@ -201,8 +201,8 @@ export const blogPosts: BlogPost[] = [
     title: 'How to Set Up Facebook Pixel: Complete 2025 Installation Guide',
     excerpt: 'Complete step-by-step guide to installing Facebook Pixel (Meta Pixel) on your website. Includes WordPress, Shopify, GTM setup methods, testing & verification with screenshots.',
     date: 'December 2025',
-    datePublished: '2025-12-13T09:00:00-05:00',
-    dateModified: '2025-12-13T09:00:00-05:00',
+    datePublished: '2025-12-05T09:00:00-05:00',
+    dateModified: '2025-12-05T09:00:00-05:00',
     readTime: '12 min read',
     category: {
       name: 'Meta Ads Setup',
@@ -226,6 +226,37 @@ export const blogPosts: BlogPost[] = [
     heroImage: '/images/meta-events-manager-overview.webp',
     heroImageAlt: 'Meta Events Manager dashboard showing Facebook Pixel overview and setup options for conversion tracking',
     wordCount: 3500
+  },
+  {
+    slug: 'facebook-ads-vs-google-ads-atlanta',
+    title: 'Facebook Ads vs. Google Ads: Which Is Better for Atlanta Businesses? (2025)',
+    excerpt: 'Compare Facebook Ads vs Google Ads costs, targeting, and ROI with data from WordStream, Meta, and Google. Industry benchmarks and sourced research to help Atlanta businesses choose.',
+    date: 'December 2025',
+    datePublished: '2025-12-13T09:00:00-05:00',
+    dateModified: '2025-12-13T09:00:00-05:00',
+    readTime: '10 min read',
+    category: {
+      name: 'Platform Comparison',
+      slug: 'platform-comparison'
+    },
+    author: {
+      name: 'Nicolas Leroo',
+      jobTitle: 'Co-Founder & Meta Advertising Strategist',
+      url: 'https://driveleadmedia.com/about/nicolas-leroo'
+    },
+    keywords: [
+      'facebook ads vs google ads',
+      'google ads vs facebook ads atlanta',
+      'should i use facebook or google ads',
+      'facebook ads or google ads for small business',
+      'meta ads vs google ads cost',
+      'which is better facebook or google ads',
+      'facebook vs google advertising atlanta',
+      'social media ads vs search ads'
+    ],
+    heroImage: '/images/facebook-vs-google-ads-comparison-hero.webp',
+    heroImageAlt: 'Facebook Ads vs Google Ads comparison showing cost differences and platform strengths for Atlanta businesses',
+    wordCount: 2500
   },
 ];
 

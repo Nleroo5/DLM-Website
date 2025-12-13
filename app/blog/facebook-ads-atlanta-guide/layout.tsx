@@ -11,8 +11,9 @@ export const metadata: Metadata = {
     type: 'article',
     publishedTime: '2025-12-11T09:00:00-05:00',
     authors: ['Nicolas Leroo'],
+    url: 'https://driveleadmedia.com/blog/facebook-ads-atlanta-guide',
     images: [{
-      url: '/images/atlanta-facebook-ads-cost-meta-advertising-pricing.webp',
+      url: 'https://driveleadmedia.com/images/atlanta-facebook-ads-cost-meta-advertising-pricing.webp',
       width: 1200,
       height: 630,
       alt: 'Facebook Ads Atlanta Complete Guide for Local Businesses',
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Facebook Ads Atlanta: Complete Guide for Local Businesses (2025)',
     description: 'Learn costs, targeting, and ROI benchmarks for Facebook ads in Atlanta. Complete guide for local businesses.',
-    images: ['/images/atlanta-facebook-ads-cost-meta-advertising-pricing.webp'],
+    images: ['https://driveleadmedia.com/images/atlanta-facebook-ads-cost-meta-advertising-pricing.webp'],
   },
   alternates: {
     canonical: '/blog/facebook-ads-atlanta-guide',
