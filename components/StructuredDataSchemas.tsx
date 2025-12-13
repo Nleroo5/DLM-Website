@@ -286,23 +286,113 @@ export function BreadcrumbSchema({ items }: BreadcrumbSchemaProps) {
 }
 
 export interface FAQSchemaProps {
-  faqs: {
+  items?: {
+    question: string;
+    answer: string;
+  }[];
+  faqs?: {
     question: string;
     answer: string;
   }[];
 }
 
-export function FAQSchema({ faqs }: FAQSchemaProps) {
+export function FAQSchema({ items, faqs }: FAQSchemaProps) {
+  const faqList = items || faqs || [];
   const schema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
+    "mainEntity": faqList.map(faq => ({
       "@type": "Question",
       "name": faq.question,
       "acceptedAnswer": {
         "@type": "Answer",
         "text": faq.answer
       }
+    }))
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+export interface ArticleSchemaProps {
+  headline: string;
+  description: string;
+  author: string;
+  datePublished: string;
+  dateModified: string;
+  image: string;
+  url: string;
+}
+
+export function ArticleSchema({
+  headline,
+  description,
+  author,
+  datePublished,
+  dateModified,
+  image,
+  url
+}: ArticleSchemaProps) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": headline,
+    "description": description,
+    "image": image,
+    "author": {
+      "@type": "Person",
+      "name": author,
+      "url": "https://driveleadmedia.com/about/nicolas-leroo"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Drive Lead Media",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://driveleadmedia.com/images/drive-lead-media-atlanta-digital-marketing-agency-logo.webp"
+      }
+    },
+    "datePublished": datePublished,
+    "dateModified": dateModified,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": url
+    }
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+export interface HowToSchemaProps {
+  name: string;
+  description: string;
+  steps: {
+    name: string;
+    text: string;
+  }[];
+}
+
+export function HowToSchema({ name, description, steps }: HowToSchemaProps) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": name,
+    "description": description,
+    "step": steps.map((step, index) => ({
+      "@type": "HowToStep",
+      "position": index + 1,
+      "name": step.name,
+      "text": step.text
     }))
   };
 

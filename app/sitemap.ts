@@ -65,6 +65,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/blog/how-to-tell-if-facebook-ads-working`,
+      lastModified: new Date('2024-12-12'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/blog/category/meta-ads-pricing`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
