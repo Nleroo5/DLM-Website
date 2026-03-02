@@ -157,8 +157,8 @@ const cardVariants = {
 };
 
 export default function HeroDashboard() {
-  const cardClass = "rounded-2xl p-5 sm:p-6 relative overflow-hidden";
-  const cardBg = "bg-[#0d1b2a]/90 border border-[#1a2a3a]";
+  const cardClass = "rounded-2xl p-5 sm:p-6 relative overflow-hidden backdrop-blur-sm";
+  const cardBg = "bg-[#0d1b2a]/90 border border-[#1a2a3a]/80 shadow-[0_4px_24px_rgba(0,0,0,0.4)]";
 
   return (
     <div className="w-full max-w-[1100px] grid grid-cols-1 md:grid-cols-5 gap-3 sm:gap-4">
