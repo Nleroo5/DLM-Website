@@ -1,0 +1,119 @@
+# =================================================================
+# ROBOTS.TXT - DRIVE LEAD MEDIA
+# Last Updated: 2026-01-18
+# Purpose: SEO & AEO (Answer Engine Optimization) Configuration
+# =================================================================
+
+# =================================================================
+# GENERAL CRAWLERS (Google, Bing, etc.)
+# =================================================================
+
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /api/
+Disallow: /_next/
+
+# =================================================================
+# AI SEARCH & TRAINING CRAWLERS
+# Optimized for Answer Engine Optimization (AEO)
+# These crawlers index content for AI-powered search and citations
+# =================================================================
+
+# OpenAI - ChatGPT Training Data
+User-agent: GPTBot
+Allow: /
+
+# OpenAI - ChatGPT User-Triggered Browsing
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic - Claude Training Data
+User-agent: anthropic-ai
+Allow: /
+
+# Anthropic - Claude Bot (Search/Browsing)
+User-agent: ClaudeBot
+Allow: /
+
+# Anthropic - Claude Web Browsing
+User-agent: Claude-Web
+Allow: /
+
+# Common Crawl - Used by Multiple AI Models
+User-agent: CCBot
+Allow: /
+
+# Perplexity AI - Search Index
+User-agent: PerplexityBot
+Allow: /
+
+# Google - AI Training & Bard/Gemini
+User-agent: Google-Extended
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot-Extended
+Allow: /
+
+# Meta AI / Facebook AI
+User-agent: FacebookBot
+Allow: /
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# Cohere AI
+User-agent: cohere-ai
+Allow: /
+
+# Diffbot
+User-agent: Diffbot
+Allow: /
+
+# =================================================================
+# SPECIALTY CRAWLERS
+# =================================================================
+
+# Bing AI / Copilot
+User-agent: Bingbot
+Allow: /
+
+# Amazon Alexa
+User-agent: ia_archiver
+Allow: /
+
+# =================================================================
+# CRAWLER RATE LIMITING (Prevent Server Overload)
+# =================================================================
+
+# Crawl-delay for all crawlers (in seconds)
+# Helps prevent server overload from aggressive crawling
+Crawl-delay: 1
+
+# =================================================================
+# SITEMAP LOCATION
+# =================================================================
+
+Sitemap: https://driveleadmedia.com/sitemap.xml
+
+# =================================================================
+# HOST DIRECTIVE (Canonical Domain)
+# =================================================================
+
+Host: https://driveleadmedia.com
+
+# =================================================================
+# NOTES
+# =================================================================
+# This robots.txt is optimized for both traditional SEO and
+# Answer Engine Optimization (AEO). All major AI crawlers are
+# allowed to index content for citations in AI-generated answers.
+#
+# Protected paths:
+# - /admin (admin interface)
+# - /api/ (API endpoints)
+# - /_next/ (Next.js build files)
+#
+# For questions about this configuration:
+# Contact: hello@driveleadmedia.com
+# =================================================================

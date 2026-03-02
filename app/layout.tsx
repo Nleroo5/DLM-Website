@@ -1,0 +1,455 @@
+import type { Metadata } from "next";
+import Script from "next/script";
+import { GoogleAnalytics } from '@next/third-parties/google';
+import '@fontsource/exo-2/400.css';
+import '@fontsource/exo-2/600.css';
+import '@fontsource/exo-2/700.css';
+import localFont from "next/font/local";
+import "./globals.css";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import { MetaPixel } from "@/components/MetaPixel";
+import CookieConsent from "@/components/CookieConsent";
+import { Analytics } from "@vercel/analytics/next";
+
+const arnoPro = localFont({
+  src: "../font/ArnoPro-LightDisplay.otf",
+  variable: "--font-arno",
+  display: 'swap',
+});
+
+export const metadata: Metadata = {
+  title: "Custom Websites & Meta Advertising | Facebook & Instagram Ads | Drive Lead Media",
+  description: "Atlanta Meta advertising. Facebook & Instagram ad campaigns that convert. Video production, targeting strategy & websites. Get started today.",
+  keywords: "atlanta meta ads agency, facebook advertising atlanta, instagram ads atlanta ga, meta advertising agency atlanta, atlanta social media marketing, facebook ads agency atlanta, meta ads consultant atlanta, video ads production atlanta, atlanta digital marketing agency, meta certified atlanta",
+  authors: [{ name: "Drive Lead Media" }],
+  creator: "Drive Lead Media",
+  publisher: "Drive Lead Media",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://driveleadmedia.com",
+    siteName: "Drive Lead Media",
+    title: "Custom Websites & Meta Advertising | Facebook & Instagram Ads",
+    description: "Atlanta's premier Meta advertising. We build Facebook & Instagram ad campaigns and high-converting websites that bring your best customers to you.",
+    images: [
+      {
+        url: "/images/og-image.webp",
+        width: 1200,
+        height: 630,
+        alt: "Drive Lead Media - Meta Advertising & Custom Websites",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Custom Websites & Meta Advertising | Facebook & Instagram Ads",
+    description: "Atlanta's premier Meta advertising. We build Facebook & Instagram ad campaigns and high-converting websites.",
+    images: ["/images/og-image.webp"],
+  },
+  icons: {
+    icon: "/images/drive-lead-media-full-service-marketing-agency-brand.webp",
+    shortcut: "/images/drive-lead-media-full-service-marketing-agency-brand.webp",
+    apple: "/images/drive-lead-media-full-service-marketing-agency-brand.webp",
+  },
+  metadataBase: new URL("https://driveleadmedia.com"),
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+        <meta name="google-site-verification" content="Aa_bZjosqPJtDpPU0ddFCLwmIT1PceViOlakLzBFqQE" />
+
+        {/* Resource Hints - Preconnect to Analytics Origins */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://www.google-analytics.com" />
+        <link rel="preconnect" href="https://connect.facebook.net" />
+        <link rel="preconnect" href="https://www.facebook.com" />
+        <link rel="preconnect" href="https://www.clarity.ms" />
+
+        {/* DNS Prefetch Fallback for Older Browsers */}
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        <link rel="dns-prefetch" href="https://connect.facebook.net" />
+        <link rel="dns-prefetch" href="https://www.facebook.com" />
+        <link rel="dns-prefetch" href="https://www.clarity.ms" />
+
+        {/* Meta Pixel Code - GDPR Compliant with Consent Mode */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              !function(f,b,e,v,n,t,s)
+              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+              n.queue=[];t=b.createElement(e);t.async=!0;
+              t.src=v;s=b.getElementsByTagName(e)[0];
+              s.parentNode.insertBefore(t,s)}(window, document,'script',
+              'https://connect.facebook.net/en_US/fbevents.js');
+
+              // Initialize with enhanced configuration
+              fbq('init', '1103544594607690', {
+                autoConfig: true,
+                debug: false
+              });
+
+              // Enable advanced matching
+              fbq('set', 'autoAdvancedMatching', true);
+
+              // GDPR: Default consent state is REVOKED (will be granted after user consent)
+              fbq('consent', 'revoke');
+
+              // Note: PageView will be tracked by MetaPixel component after consent check
+            `,
+          }}
+        />
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: 'none' }}
+            src="https://www.facebook.com/tr?id=1103544594607690&ev=PageView&noscript=1"
+            alt=""
+          />
+        </noscript>
+        {/* Google Analytics 4 - GDPR Compliant with Consent Mode v2 */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-K25LTGL8FP"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              // GDPR: Set default consent state to DENIED (Consent Mode v2)
+              gtag('consent', 'default', {
+                'analytics_storage': 'denied',
+                'ad_storage': 'denied',
+                'ad_user_data': 'denied',
+                'ad_personalization': 'denied',
+                'wait_for_update': 500
+              });
+
+              // Enhanced GA4 configuration
+              gtag('config', 'G-K25LTGL8FP', {
+                page_path: window.location.pathname,
+                send_page_view: false, // Handled by consent system
+                allow_google_signals: true,
+                allow_ad_personalization_signals: true,
+                cookie_flags: 'SameSite=None;Secure',
+                anonymize_ip: false,
+                content_group: 'General'
+              });
+
+              // Enable enhanced measurement
+              gtag('set', 'user_properties', {
+                site_section: 'main'
+              });
+            `,
+          }}
+        />
+        {/* JSON-LD Structured Data - Enhanced Organization Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Drive Lead Media",
+              "alternateName": "DLM",
+              "url": "https://driveleadmedia.com",
+              "logo": "https://driveleadmedia.com/images/drive-lead-media-full-service-marketing-agency-brand.webp",
+              "description": "Atlanta's premier Meta advertising. Full-service Facebook ads, Instagram ads, video production, and custom website development for local businesses. Serving Atlanta, GA and nationwide.",
+              "foundingDate": "2019",
+              "sameAs": [
+                "https://www.facebook.com/driveleadmedia",
+                "https://www.instagram.com/driveleadmedia",
+                "https://www.linkedin.com/company/drive-lead-media"
+              ],
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "Sales",
+                "url": "https://driveleadmedia.com/contact",
+                "availableLanguage": "English"
+              },
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Atlanta",
+                "addressRegion": "GA",
+                "addressCountry": "US"
+              },
+              "areaServed": [
+                {
+                  "@type": "City",
+                  "name": "Atlanta"
+                },
+                {
+                  "@type": "State",
+                  "name": "Georgia"
+                },
+                {
+                  "@type": "Country",
+                  "name": "United States"
+                }
+              ],
+              "knowsAbout": [
+                "Meta Advertising",
+                "Facebook Advertising",
+                "Instagram Advertising",
+                "Social Media Marketing",
+                "Video Production",
+                "Web Design",
+                "Lead Generation",
+                "Digital Marketing Strategy"
+              ]
+            })
+          }}
+        />
+        {/* Service Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "serviceType": "Meta Advertising Management",
+                "name": "Meta Ad Campaign Management",
+                "description": "Full-service Meta (Facebook & Instagram) advertising campaigns including strategy, ad creation, targeting, optimization, and reporting.",
+                "provider": {
+                  "@type": "Organization",
+                  "name": "Drive Lead Media"
+                },
+                "areaServed": "US",
+                "audience": {
+                  "@type": "Audience",
+                  "audienceType": "Small Business Owners, Local Businesses, Healthcare Practices"
+                }
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "serviceType": "Video Production",
+                "name": "Actor-Led Video Ad Production",
+                "description": "Professional actor-led video production and motion graphics specifically designed for Meta advertising campaigns. No filming required from clients.",
+                "provider": {
+                  "@type": "Organization",
+                  "name": "Drive Lead Media"
+                },
+                "areaServed": "US"
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "serviceType": "Web Design",
+                "name": "Custom Website Design & Development",
+                "description": "High-converting website design and development optimized for local business lead generation and Meta advertising integration.",
+                "provider": {
+                  "@type": "Organization",
+                  "name": "Drive Lead Media"
+                },
+                "areaServed": "US"
+              }
+            ])
+          }}
+        />
+        {/* Website Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "Drive Lead Media",
+              "url": "https://driveleadmedia.com",
+              "description": "Meta advertising agency specializing in Facebook and Instagram ads, video production, and website development."
+            })
+          }}
+        />
+        {/* LocalBusiness Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "@id": "https://driveleadmedia.com/#localbusiness",
+              "name": "Drive Lead Media",
+              "image": "https://driveleadmedia.com/images/drive-lead-media-full-service-marketing-agency-brand.webp",
+              "url": "https://driveleadmedia.com",
+              "telephone": "+1-678-650-6411",
+              "email": "hello@driveleadmedia.com",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Atlanta",
+                "addressRegion": "GA",
+                "addressCountry": "US"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "33.3968",
+                "longitude": "-84.5957"
+              },
+              "priceRange": "$$",
+              "areaServed": [
+                {
+                  "@type": "City",
+                  "name": "Atlanta"
+                },
+                {
+                  "@type": "State",
+                  "name": "Georgia"
+                },
+                {
+                  "@type": "Country",
+                  "name": "United States"
+                }
+              ],
+              "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "09:00",
+                "closes": "17:00"
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5",
+                "reviewCount": "2",
+                "bestRating": "5",
+                "worstRating": "5"
+              },
+              "sameAs": [
+                "https://www.facebook.com/driveleadmedia",
+                "https://www.instagram.com/driveleadmedia",
+                "https://www.linkedin.com/company/drive-lead-media"
+              ]
+            })
+          }}
+        />
+        {/* Review Schema - Testimonials */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": "Review",
+                "itemReviewed": {
+                  "@type": "LocalBusiness",
+                  "name": "Drive Lead Media",
+                  "image": "https://driveleadmedia.com/images/drive-lead-media-full-service-marketing-agency-brand.webp"
+                },
+                "author": {
+                  "@type": "Person",
+                  "name": "Jenn",
+                  "jobTitle": "Owner",
+                  "worksFor": {
+                    "@type": "Organization",
+                    "name": "The Yoga Lounge"
+                  }
+                },
+                "reviewRating": {
+                  "@type": "Rating",
+                  "ratingValue": "5",
+                  "bestRating": "5"
+                },
+                "reviewBody": "We partnered with Drive Lead Media to run Meta ads for my yoga studio, and the experience was smooth and professional. Nic and Tommy created amazing videos and ads that really captured our vibe, and I learned so much about how to better use Meta for marketing. Within weeks we started seeing new leads coming in, and their clear communication made the whole process easy. I'm so grateful for all they did and would definitely recommend them to any business looking to grow.",
+                "datePublished": "2024-01-15"
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "Review",
+                "itemReviewed": {
+                  "@type": "LocalBusiness",
+                  "name": "Drive Lead Media",
+                  "image": "https://driveleadmedia.com/images/drive-lead-media-full-service-marketing-agency-brand.webp"
+                },
+                "author": {
+                  "@type": "Person",
+                  "name": "Dr. Austin Dupont",
+                  "jobTitle": "Owner",
+                  "worksFor": {
+                    "@type": "Organization",
+                    "name": "Village Pediatrics of St. Augustine"
+                  }
+                },
+                "reviewRating": {
+                  "@type": "Rating",
+                  "ratingValue": "5",
+                  "bestRating": "5"
+                },
+                "reviewBody": "Working with Drive Lead Media has been a game changer for Village Pediatrics. They completely transformed our outdated website into something modern and professional. The Meta ad campaigns they've been running have brought in a 40% increase in new patient bookings, and honestly, the best part is that I haven't had to manage any of it. Nic and Tommy handle everything from strategy to execution while I focus on caring for my patients.",
+                "datePublished": "2024-02-20"
+              }
+            ])
+          }}
+        />
+        {/* MailerLite Universal */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+              .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+              n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+              (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+              ml('account', '1962484');
+            `,
+          }}
+        />
+      </head>
+      <body className={`${arnoPro.variable} antialiased`}>
+        {/* Microsoft Clarity - GDPR Compliant */}
+        <Script
+          id="microsoft-clarity"
+          strategy="lazyOnload"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+              })(window, document, "clarity", "script", "uwa2oygnsh");
+
+              // GDPR: Default consent state is DENIED
+              if (window.clarity) {
+                clarity('consent', false);
+              }
+            `,
+          }}
+        />
+        <MetaPixel pixelId="1103544594607690" />
+        <Analytics />
+        <CookieConsent />
+        <a href="#main-content" className="skip-to-content">
+          Skip to main content
+        </a>
+        <Navigation />
+        <main id="main-content">
+          {children}
+        </main>
+        <Footer />
+        <GoogleAnalytics gaId="G-K25LTGL8FP" />
+      </body>
+    </html>
+  );
+}
