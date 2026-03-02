@@ -1,8 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import Link from 'next/link';
+import HeroDashboard from '@/components/HeroDashboard';
 
 export default function Hero() {
   return (
@@ -32,21 +32,14 @@ export default function Hero() {
           </Link>
         </motion.div>
 
-        {/* Dashboard Image */}
+        {/* Dashboard */}
         <motion.div
-          className="w-full max-w-[1100px]"
+          className="w-full flex justify-center"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
         >
-          <Image
-            src="/images/hero-dashboard.webp"
-            alt="Drive Lead Media analytics dashboard showing website traffic, conversion rates, leads generated, and traffic source breakdown"
-            width={1100}
-            height={700}
-            className="w-full h-auto rounded-2xl"
-            priority
-          />
+          <HeroDashboard />
         </motion.div>
       </div>
     </section>
