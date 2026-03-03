@@ -74,15 +74,17 @@ export default function HeroDashboard() {
   const counterDuration = 3200;
   const counterBaseDelay = 400; // shorter delay since we wait for inView
 
-  // IntersectionObserver to detect when metrics are visible
+  // IntersectionObserver to detect when metrics are visible — once only
   const metricsRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(metricsRef, { amount: 0.3 });
+  const isInView = useInView(metricsRef, { once: true, amount: 0.3 });
   const [triggerKey, setTriggerKey] = useState(0);
+  const hasTriggered = useRef(false);
 
-  // Every time the section comes into view, bump the trigger to replay counters
+  // Only trigger counters once
   useEffect(() => {
-    if (isInView) {
-      setTriggerKey((k) => k + 1);
+    if (isInView && !hasTriggered.current) {
+      hasTriggered.current = true;
+      setTriggerKey(1);
     }
   }, [isInView]);
 
@@ -163,7 +165,7 @@ export default function HeroDashboard() {
                 key={`${sparklineKey}-${i}`}
                 className="flex-1 rounded-sm bg-gradient-to-t from-[#5FA99F]/60 to-[#5FA99F]"
                 initial={{ height: 0 }}
-                animate={isInView ? { height: `${h}%` } : { height: 0 }}
+                animate={hasTriggered.current || isInView ? { height: `${h}%` } : { height: 0 }}
                 transition={{ duration: 0.4, delay: 0.6 + i * 0.04 }}
               />
             ))}
@@ -197,7 +199,7 @@ export default function HeroDashboard() {
                 key={`${sparklineKey}-${i}`}
                 className="flex-1 rounded-sm bg-gradient-to-t from-[#67E8F9]/60 to-[#67E8F9]"
                 initial={{ height: 0 }}
-                animate={isInView ? { height: `${h}%` } : { height: 0 }}
+                animate={hasTriggered.current || isInView ? { height: `${h}%` } : { height: 0 }}
                 transition={{ duration: 0.4, delay: 0.7 + i * 0.04 }}
               />
             ))}
@@ -231,7 +233,7 @@ export default function HeroDashboard() {
                 key={`${sparklineKey}-${i}`}
                 className="flex-1 rounded-sm bg-gradient-to-t from-[#5FA99F]/60 to-[#5FA99F]"
                 initial={{ height: 0 }}
-                animate={isInView ? { height: `${h}%` } : { height: 0 }}
+                animate={hasTriggered.current || isInView ? { height: `${h}%` } : { height: 0 }}
                 transition={{ duration: 0.4, delay: 0.8 + i * 0.04 }}
               />
             ))}
@@ -265,7 +267,7 @@ export default function HeroDashboard() {
                 key={`${sparklineKey}-${i}`}
                 className="flex-1 rounded-sm bg-gradient-to-t from-[#67E8F9]/60 to-[#67E8F9]"
                 initial={{ height: 0 }}
-                animate={isInView ? { height: `${h}%` } : { height: 0 }}
+                animate={hasTriggered.current || isInView ? { height: `${h}%` } : { height: 0 }}
                 transition={{ duration: 0.4, delay: 0.9 + i * 0.04 }}
               />
             ))}

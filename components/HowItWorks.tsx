@@ -61,44 +61,24 @@ const MobileScene = ({
   videoMaxWidth?: string;
   mobilePadding?: string;
 }) => {
-  const sectionRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"]
-  });
-
-  // Fade in as section enters viewport, stay visible in middle, fade out as it exits
-  const opacity = useTransform(
-    scrollYProgress,
-    [0, 0.2, 0.8, 1],
-    [0, 1, 1, 0]
-  );
-
-  useEffect(() => {
-    return opacity.on('change', (v) => {
-      if (videoRef.current) {
-        if (v > 0.1) {
-          videoRef.current.play().catch(() => {});
-        } else {
-          videoRef.current.pause();
-        }
-      }
-    });
-  }, [opacity]);
 
   // Build desktop class based on videoMaxWidth
   const desktopMaxWidth = videoMaxWidth === 'max-w-4xl' ? 'md:max-w-4xl' : 'md:max-w-2xl';
 
   return (
     <div
-      ref={sectionRef}
       className={`flex items-center justify-center py-32 ${mobilePadding} relative z-10`}
     >
       <motion.div
-        style={{ opacity }}
         className={`flex flex-col justify-center items-center ${desktopMaxWidth} w-full relative z-10`}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.6 }}
+        onViewportEnter={() => {
+          videoRef.current?.play().catch(() => {});
+        }}
       >
         {/* Text */}
         <div className="max-w-xl text-center mb-12">

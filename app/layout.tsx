@@ -9,7 +9,6 @@ import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { MetaPixel } from "@/components/MetaPixel";
-import CookieConsent from "@/components/CookieConsent";
 import { Analytics } from "@vercel/analytics/next";
 
 const arnoPro = localFont({
@@ -116,10 +115,9 @@ export default function RootLayout({
               // Enable advanced matching
               fbq('set', 'autoAdvancedMatching', true);
 
-              // GDPR: Default consent state is REVOKED (will be granted after user consent)
-              fbq('consent', 'revoke');
-
-              // Note: PageView will be tracked by MetaPixel component after consent check
+              // Track PageView
+              fbq('consent', 'grant');
+              fbq('track', 'PageView');
             `,
           }}
         />
@@ -141,19 +139,10 @@ export default function RootLayout({
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
 
-              // GDPR: Set default consent state to DENIED (Consent Mode v2)
-              gtag('consent', 'default', {
-                'analytics_storage': 'denied',
-                'ad_storage': 'denied',
-                'ad_user_data': 'denied',
-                'ad_personalization': 'denied',
-                'wait_for_update': 500
-              });
-
-              // Enhanced GA4 configuration
+              // GA4 configuration
               gtag('config', 'G-K25LTGL8FP', {
                 page_path: window.location.pathname,
-                send_page_view: false, // Handled by consent system
+                send_page_view: true,
                 allow_google_signals: true,
                 allow_ad_personalization_signals: true,
                 cookie_flags: 'SameSite=None;Secure',
@@ -418,7 +407,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${arnoPro.variable} antialiased`}>
-        {/* Microsoft Clarity - GDPR Compliant */}
+        {/* Microsoft Clarity */}
         <Script
           id="microsoft-clarity"
           strategy="lazyOnload"
@@ -429,17 +418,11 @@ export default function RootLayout({
                 t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
                 y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
               })(window, document, "clarity", "script", "uwa2oygnsh");
-
-              // GDPR: Default consent state is DENIED
-              if (window.clarity) {
-                clarity('consent', false);
-              }
             `,
           }}
         />
         <MetaPixel pixelId="1103544594607690" />
         <Analytics />
-        <CookieConsent />
         <a href="#main-content" className="skip-to-content">
           Skip to main content
         </a>

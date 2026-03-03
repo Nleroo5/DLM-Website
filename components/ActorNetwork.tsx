@@ -7,11 +7,10 @@ export default function ActorNetwork() {
     <section className="relative overflow-hidden bg-transparent py-[100px] px-[30px] font-serif my-[100px] md:py-20 md:px-5">
       {/* Floating background elements */}
       <motion.div
-        className="absolute top-[10%] left-[5%] w-[120px] h-[120px] bg-[radial-gradient(circle,rgba(242,169,34,0.1)_0%,transparent_70%)] rounded-full -z-10"
+        className="absolute top-[10%] left-[5%] w-[120px] h-[120px] bg-[radial-gradient(circle,rgba(242,169,34,0.1)_0%,transparent_70%)] rounded-full -z-10 opacity-40"
         animate={{
           y: [0, -30, 20, 0],
           scale: [1, 1.1, 0.9, 1],
-          opacity: [0.3, 0.5, 0.4, 0.3]
         }}
         transition={{
           duration: 20,
@@ -20,11 +19,10 @@ export default function ActorNetwork() {
         }}
       />
       <motion.div
-        className="absolute bottom-[15%] right-[8%] w-20 h-20 bg-[radial-gradient(circle,rgba(5,144,140,0.1)_0%,transparent_70%)] rounded-full -z-10"
+        className="absolute bottom-[15%] right-[8%] w-20 h-20 bg-[radial-gradient(circle,rgba(5,144,140,0.1)_0%,transparent_70%)] rounded-full -z-10 opacity-50"
         animate={{
           x: [0, -40, 0],
           scale: [1, 1.2, 1],
-          opacity: [0.4, 0.6, 0.4]
         }}
         transition={{
           duration: 25,
@@ -74,16 +72,8 @@ export default function ActorNetwork() {
               <span className="absolute bottom-[-2px] left-0 w-0 h-[2px] bg-gradient-to-r from-[#F2A922] to-[#05908C] transition-[width] duration-[400ms] ease-out group-keyword-hover:w-full"></span>
             </span>{' '}
             to give you access to over{' '}
-            <motion.span
+            <span
               className="inline-block text-[#F2A922] relative"
-              animate={{
-                scale: [1, 1.05, 1]
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
             >
               30,000
               <motion.span
@@ -93,7 +83,7 @@ export default function ActorNetwork() {
                 viewport={{ once: true }}
                 transition={{ duration: 2 }}
               />
-            </motion.span>{' '}
+            </span>{' '}
             paid actors — ready to deliver{' '}
             <span className="relative inline-block text-[#F2A922] transition-all duration-300 hover:transform hover:-translate-y-[2px] hover:[text-shadow:0_4px_8px_rgba(242,169,34,0.4)]">
               professional

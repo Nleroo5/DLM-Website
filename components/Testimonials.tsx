@@ -1,25 +1,33 @@
 'use client';
 
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { motion, useScroll, useTransform, useMotionValueEvent, AnimatePresence } from 'framer-motion';
 import { useRef, useState } from 'react';
 
 export default function Testimonials() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [doorsOpened, setDoorsOpened] = useState(false);
 
-  // Track section as it moves through viewport - standard pattern for smooth scroll animations
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start end", "end start"]  // Full viewport tracking: section enters bottom → exits top
+    offset: ["start end", "end start"],
   });
 
-  // Doors start CLOSED (0%) and slide apart - complete opening when video is just past halfway up screen
-  // Earlier completion (0.45) means doors fully open when video crosses screen center
-  const leftDoorX = useTransform(scrollYProgress, [0.1, 0.45], ['0%', '-100%']);
-  const rightDoorX = useTransform(scrollYProgress, [0.1, 0.45], ['0%', '100%']);
+  // Doors slide open based on scroll, but once fully open they stay open
+  const leftDoorXRaw = useTransform(scrollYProgress, [0.1, 0.45], ['0%', '-100%']);
+  const rightDoorXRaw = useTransform(scrollYProgress, [0.1, 0.45], ['0%', '100%']);
+  const videoOpacityRaw = useTransform(scrollYProgress, [0.25, 0.45], [0, 1]);
 
-  // Video fades in as doors open (25% → 45%)
-  const videoOpacity = useTransform(scrollYProgress, [0.25, 0.45], [0, 1]);
+  // Lock doors open once they've fully opened
+  useMotionValueEvent(scrollYProgress, 'change', (v) => {
+    if (v >= 0.45 && !doorsOpened) {
+      setDoorsOpened(true);
+    }
+  });
+
+  const leftDoorX = doorsOpened ? '-100%' : leftDoorXRaw;
+  const rightDoorX = doorsOpened ? '100%' : rightDoorXRaw;
+  const videoOpacity = doorsOpened ? 1 : videoOpacityRaw;
 
   return (
     // SECTION 3: CLIENT TESTIMONIAL VIDEO - Elevator door animation reveals video on scroll

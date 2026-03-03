@@ -92,7 +92,7 @@ export default function MeetTheTeam() {
                     '0 0 20px rgba(95,169,159,0.5)'
                   ]
                 }}
-                viewport={{ once: false, amount: 0.5 }}
+                viewport={{ once: true, amount: 0.5 }}
                 transition={{
                   duration: 0.15,
                   delay: letterDelay,
@@ -130,7 +130,7 @@ export default function MeetTheTeam() {
                     'linear-gradient(to bottom, transparent 100%, hsl(204,97%,17.5%) 100%)'
                   ]
                 }}
-                viewport={{ once: false, amount: 0.3 }}
+                viewport={{ once: true, amount: 0.3 }}
                 transition={{
                   duration: laserDuration,
                   delay: cardDelay,
@@ -151,7 +151,7 @@ export default function MeetTheTeam() {
                   top: ['0%', '100%'],
                   opacity: [0, 1, 1, 0.3, 0]
                 }}
-                viewport={{ once: false, amount: 0.3 }}
+                viewport={{ once: true, amount: 0.3 }}
                 transition={{
                   duration: laserDuration,
                   delay: cardDelay,
@@ -171,7 +171,7 @@ export default function MeetTheTeam() {
                   opacity: 1,
                   boxShadow: '0 8px 32px rgba(0,0,0,0.4)'
                 }}
-                viewport={{ once: false, amount: 0.3 }}
+                viewport={{ once: true, amount: 0.3 }}
                 transition={{
                   duration: laserDuration,
                   delay: cardDelay,
