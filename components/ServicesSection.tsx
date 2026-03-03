@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import Link from 'next/link';
 
 const services = [
@@ -8,21 +9,25 @@ const services = [
     category: 'Web Design',
     title: 'Custom Website Design',
     description: "Fast, modern websites built to convert. If your site isn't pulling its weight, we'll rebuild it from scratch.",
+    icon: '/images/custom-website-design-development-services-icon.webp',
   },
   {
     category: 'Creative',
     title: 'Video & Image Ads',
     description: "Motion graphics, drone footage, and scroll-stopping images built for Meta. No more generic stock photos or DIY content.",
+    icon: '/images/creative-design-services-custom-branding-icon.webp',
   },
   {
     category: 'Tracking',
     title: 'Data & Analytics Setup',
     description: "We set up tracking on your website and ads so you can see exactly where every lead comes from, what's working, and what's not.",
+    icon: '/images/audience-targeting-strategy-marketing-services-icon.webp',
   },
   {
     category: 'Optimization',
     title: 'Continuous Improvement',
     description: "We test new ads, adjust budgets, and remove what's not working. Your campaigns get better every week.",
+    icon: '/images/website-performance-optimization-speed-testing-icon.webp',
   },
 ];
 
@@ -53,31 +58,40 @@ export default function ServicesSection() {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {services.map((service, i) => (
             <motion.div
               key={service.title}
-              className="bg-[#1A1A1A] border border-[rgba(95,169,159,0.15)] rounded-[24px] p-8 lg:p-12 hover:border-[#5FA99F] transition-all duration-300 group"
+              className="bg-[#1A1A1A] border border-[rgba(95,169,159,0.15)] rounded-[24px] p-8 lg:p-14 hover:border-[#5FA99F] transition-all duration-300 group"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
             >
+              <div className="w-14 h-14 lg:w-20 lg:h-20 mb-5 lg:mb-7">
+                <Image
+                  src={service.icon}
+                  alt={`${service.title} icon`}
+                  width={80}
+                  height={80}
+                  className="w-full h-full object-contain"
+                />
+              </div>
               <span className="text-[#5FA99F] text-xs lg:text-sm uppercase tracking-widest font-heading font-semibold">
                 {service.category}
               </span>
-              <h3 className="text-white font-heading text-[1.25rem] lg:text-[1.75rem] font-semibold mt-4 mb-5">
+              <h3 className="text-white font-heading text-[1.25rem] lg:text-[1.85rem] font-semibold mt-4 mb-5 lg:mb-6">
                 {service.title}
               </h3>
-              <p className="text-gray-400 font-body text-[0.95rem] lg:text-[1.05rem] leading-relaxed mb-8">
+              <p className="text-gray-400 font-body text-[0.95rem] lg:text-[1.1rem] leading-relaxed mb-8 lg:mb-10">
                 {service.description}
               </p>
               <Link
                 href="/services"
-                className="inline-flex items-center text-[#5FA99F] font-ui font-medium text-sm group-hover:text-white transition-colors duration-300"
+                className="inline-flex items-center text-[#5FA99F] font-ui font-medium text-sm lg:text-base group-hover:text-white transition-colors duration-300"
               >
                 Learn more
-                <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 lg:w-5 lg:h-5 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </Link>

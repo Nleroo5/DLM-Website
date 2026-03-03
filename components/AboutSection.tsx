@@ -93,7 +93,7 @@ export default function AboutSection() {
                     {card.title}
                   </h3>
                 </div>
-                <p className="text-gray-400 font-body text-[0.95rem] lg:text-[1rem] leading-relaxed">
+                <p className="text-gray-400 font-body text-[0.95rem] lg:text-[1.15rem] leading-relaxed">
                   {card.description}
                 </p>
               </motion.div>
