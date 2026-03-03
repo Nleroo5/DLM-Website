@@ -46,7 +46,29 @@ export default function Hero() {
             We Find Your Customers Before They Find Your Competitors
           </h1>
           <p className="font-ui text-[1rem] sm:text-[1.125rem] md:text-[1.25rem] lg:text-[1.125rem] xl:text-[1.25rem] text-gray-400 leading-relaxed mb-8 sm:mb-10 max-w-[600px] mx-auto lg:mx-0">
-            Data-driven Meta advertising and conversion-focused web design that turns clicks into customers.
+            Data-driven{' '}
+            <span className="inline-flex items-center align-middle mx-1">
+              <svg
+                viewBox="0 0 512 512"
+                className="w-[1.1em] h-[1.1em] inline-block"
+                style={{
+                  filter: 'drop-shadow(0 0 8px rgba(0,136,255,0.6)) drop-shadow(0 0 20px rgba(0,136,255,0.3))',
+                }}
+              >
+                <defs>
+                  <linearGradient id="meta-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#0080FB" />
+                    <stop offset="50%" stopColor="#6F5AF6" />
+                    <stop offset="100%" stopColor="#A033FF" />
+                  </linearGradient>
+                </defs>
+                <path
+                  fill="url(#meta-gradient)"
+                  d="M412.7 105.5c-30.4-44.5-73.8-68.4-118.7-68.4-40.3 0-73.7 20.4-103.7 62.4L170 130.5l-20.3-31c-30-45.9-63.4-62.4-103.7-62.4C17.8 37.1 0 63.5 0 131.7c0 62.2 30.3 133.3 77.5 192.3C118.2 374.4 157 404 197 428c15.3 9.2 31.2 20.7 46.7 34.2 6.5 5.7 14.8 8.8 23.3 8.8 8.5 0 16.8-3.1 23.3-8.8 15.5-13.5 31.4-25 46.7-34.2 40-24 78.8-53.6 119.5-104 47.2-59 77.5-130.1 77.5-192.3 0-68.2-17.8-94.6-46-126.2h-75.3zM256 386c-15.2-14.7-28.7-26.2-41.2-33.7-35.8-21.5-70.6-48-107-94.3C67.2 206.7 42 146.7 42 131.7c0-46.8 8-52.6 4 52.6 24 0 26 11.2 42 32.7l68.5 104.5c6 9.2 16.2 14.8 27.2 14.8s21.2-5.6 27.2-14.8l48.8-74.8c20-30.7 41.7-50.3 68.3-50.3s64.2 14.4 87.4 48.4c11.7 17.2 18.6 26.8 18.6 69.6 0 15-25.2 75-65.8 126.3-36.4 46.3-71.2 72.8-107 94.3-12.5 7.5-26 19-41.2 33.7z"
+                />
+              </svg>
+            </span>
+            {' '}advertising and conversion-focused web design that turns clicks into customers.
           </p>
           <Link
             href="/contact"
