@@ -17,7 +17,7 @@ const services = [
   {
     category: 'Tracking',
     title: 'Data & Analytics Setup',
-    description: "We install Microsoft Clarity, GA4, and Meta Pixel so you see exactly how users interact with your site and where your leads come from.",
+    description: "We set up tracking on your website and ads so you can see exactly where every lead comes from, what's working, and what's not.",
   },
   {
     category: 'Optimization',
