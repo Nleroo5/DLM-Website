@@ -58,7 +58,7 @@ export default function AboutSection() {
             transition={{ duration: 0.6 }}
           >
             <Image
-              src="/images/aboutus.JPG"
+              src="/images/aboutus.jpg"
               alt="The Drive Lead Media team"
               fill
               className="object-cover object-center"
