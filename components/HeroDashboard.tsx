@@ -157,14 +157,14 @@ const cardVariants = {
 };
 
 export default function HeroDashboard() {
-  const cardClass = "rounded-2xl p-5 sm:p-6 relative overflow-hidden backdrop-blur-sm";
+  const cardClass = "rounded-2xl p-4 sm:p-5 relative overflow-hidden backdrop-blur-sm";
   const cardBg = "bg-[#0d1b2a]/90 border border-[#1a2a3a]/80 shadow-[0_4px_24px_rgba(0,0,0,0.4)]";
 
   return (
-    <div className="w-full max-w-[1100px] grid grid-cols-1 md:grid-cols-5 gap-3 sm:gap-4">
+    <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-3">
       {/* Top Left - Website Traffic (spans 3 cols) */}
       <motion.div
-        className={`${cardClass} ${cardBg} md:col-span-3 flex flex-col`}
+        className={`${cardClass} ${cardBg} sm:col-span-2 flex flex-col`}
         variants={cardVariants}
         initial="hidden"
         animate="visible"
@@ -200,7 +200,7 @@ export default function HeroDashboard() {
 
       {/* Top Right - Conversion Snapshot (spans 2 cols) */}
       <motion.div
-        className={`${cardClass} ${cardBg} md:col-span-2`}
+        className={`${cardClass} ${cardBg} sm:col-span-2`}
         variants={cardVariants}
         initial="hidden"
         animate="visible"
@@ -231,7 +231,7 @@ export default function HeroDashboard() {
 
       {/* Bottom Left - Traffic Sources (donut) */}
       <motion.div
-        className={`${cardClass} ${cardBg} md:col-span-2`}
+        className={`${cardClass} ${cardBg}`}
         variants={cardVariants}
         initial="hidden"
         animate="visible"
@@ -259,7 +259,7 @@ export default function HeroDashboard() {
 
       {/* Bottom Center - Leads */}
       <motion.div
-        className={`${cardClass} ${cardBg} md:col-span-1 flex flex-col items-center justify-center text-center`}
+        className={`${cardClass} ${cardBg} flex flex-col items-center justify-center text-center`}
         variants={cardVariants}
         initial="hidden"
         animate="visible"
@@ -278,7 +278,7 @@ export default function HeroDashboard() {
 
       {/* Bottom Right - Ad Spend ROI (gauge) */}
       <motion.div
-        className={`${cardClass} ${cardBg} md:col-span-2 flex flex-col items-center justify-center text-center`}
+        className={`${cardClass} ${cardBg} sm:col-span-2 flex flex-col items-center justify-center text-center`}
         variants={cardVariants}
         initial="hidden"
         animate="visible"

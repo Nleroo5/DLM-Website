@@ -7,7 +7,7 @@ import HeroDashboard from '@/components/HeroDashboard';
 export default function Hero() {
   return (
     <section
-      className="relative w-full min-h-screen flex items-center justify-center overflow-hidden pt-[100px] xs:pt-[110px] sm:pt-[120px] pb-20 sm:pb-28 px-4 xs:px-5 sm:px-6"
+      className="relative w-full min-h-screen flex items-center overflow-hidden pt-[100px] xs:pt-[110px] sm:pt-[120px] pb-16 sm:pb-20 px-4 xs:px-5 sm:px-6"
       style={{ backgroundColor: '#0a0a0a' }}
     >
       {/* Background gradient orbs */}
@@ -33,18 +33,19 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative z-10 max-w-[1400px] mx-auto w-full flex flex-col items-center gap-12 sm:gap-16 lg:gap-20">
-        {/* Headline + Subheadline + CTA */}
+      {/* Split screen layout: stacked on mobile, side-by-side on lg+ */}
+      <div className="relative z-10 max-w-[1400px] mx-auto w-full flex flex-col lg:flex-row items-center gap-10 sm:gap-12 lg:gap-16">
+        {/* Left: Text */}
         <motion.div
-          className="text-center max-w-[900px]"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          className="text-center lg:text-left lg:w-1/2 lg:flex-shrink-0"
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          <h1 className="font-heading text-[1.75rem] xs:text-[2rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[3.5rem] xl:text-[4rem] font-bold text-white leading-[1.1] mb-5 sm:mb-7">
+          <h1 className="font-heading text-[1.75rem] xs:text-[2rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[2.75rem] xl:text-[3.25rem] 2xl:text-[3.75rem] font-bold text-white leading-[1.1] mb-5 sm:mb-7">
             We Find Your Customers Before They Find Your Competitors
           </h1>
-          <p className="font-ui text-[1rem] sm:text-[1.125rem] md:text-[1.25rem] text-gray-400 leading-relaxed mb-8 sm:mb-10 max-w-[700px] mx-auto">
+          <p className="font-ui text-[1rem] sm:text-[1.125rem] md:text-[1.25rem] lg:text-[1.125rem] xl:text-[1.25rem] text-gray-400 leading-relaxed mb-8 sm:mb-10 max-w-[600px] mx-auto lg:mx-0">
             Data-driven Meta advertising and conversion-focused web design that turns clicks into customers.
           </p>
           <Link
@@ -55,16 +56,16 @@ export default function Hero() {
           </Link>
         </motion.div>
 
-        {/* Dashboard with glow effect */}
+        {/* Right: Dashboard */}
         <motion.div
-          className="w-full flex justify-center relative"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.4, ease: 'easeOut' }}
+          className="w-full lg:w-1/2 relative"
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.3, ease: 'easeOut' }}
         >
           {/* Glow behind the dashboard */}
           <div
-            className="absolute inset-0 -inset-x-4 -inset-y-4 rounded-3xl opacity-40 blur-[60px] pointer-events-none"
+            className="absolute -inset-4 rounded-3xl opacity-40 blur-[60px] pointer-events-none"
             style={{ background: 'radial-gradient(ellipse at center, rgba(95,169,159,0.3) 0%, transparent 70%)' }}
           />
           <div className="relative">
