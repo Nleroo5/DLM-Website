@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const cards = [
   {
@@ -47,34 +48,54 @@ export default function AboutSection() {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {cards.map((card, i) => (
-            <motion.div
-              key={card.number}
-              className="bg-[#1A1A1A] border border-[rgba(95,169,159,0.15)] rounded-[24px] p-10 lg:p-14 hover:border-[rgba(95,169,159,0.4)] transition-all duration-300"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.15 }}
-            >
-              <span
-                className="block text-[3.5rem] lg:text-[4rem] font-heading font-bold mb-5"
-                style={{
-                  background: 'linear-gradient(135deg, #5FA99F, #85C7B3)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                }}
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-8 lg:gap-12">
+          {/* Team photo */}
+          <motion.div
+            className="relative rounded-[24px] overflow-hidden min-h-[400px] lg:min-h-0"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <Image
+              src="/images/aboutus.JPG"
+              alt="The Drive Lead Media team"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 33vw"
+            />
+          </motion.div>
+
+          {/* Cards */}
+          <div className="flex flex-col gap-8">
+            {cards.map((card, i) => (
+              <motion.div
+                key={card.number}
+                className="bg-[#1A1A1A] border border-[rgba(95,169,159,0.15)] rounded-[24px] p-10 lg:p-14 hover:border-[rgba(95,169,159,0.4)] transition-all duration-300"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.15 }}
               >
-                {card.number}
-              </span>
-              <h3 className="text-white font-heading text-[1.4rem] lg:text-[1.75rem] font-semibold mb-5">
-                {card.title}
-              </h3>
-              <p className="text-gray-400 font-body text-[1.05rem] lg:text-[1.15rem] leading-relaxed">
-                {card.description}
-              </p>
-            </motion.div>
-          ))}
+                <span
+                  className="block text-[3.5rem] lg:text-[4rem] font-heading font-bold mb-5"
+                  style={{
+                    background: 'linear-gradient(135deg, #5FA99F, #85C7B3)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                  }}
+                >
+                  {card.number}
+                </span>
+                <h3 className="text-white font-heading text-[1.4rem] lg:text-[1.75rem] font-semibold mb-5">
+                  {card.title}
+                </h3>
+                <p className="text-gray-400 font-body text-[1.05rem] lg:text-[1.15rem] leading-relaxed">
+                  {card.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
