@@ -26,14 +26,14 @@ export default function HeroDashboard() {
         </div>
 
         {/* Video content — smaller */}
-        <div className="relative h-[140px] bg-[#111827]">
+        <div className="relative aspect-video bg-[#111827]">
           <video
             autoPlay
             muted
             loop
             playsInline
             poster="/Videos/villagepeds-poster.jpg"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain"
           >
             <source src="/Videos/villagepeds-sm.webm" type="video/webm" />
             <source src="/Videos/villagepeds.mp4" type="video/mp4" />
