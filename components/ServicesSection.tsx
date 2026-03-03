@@ -62,10 +62,10 @@ export default function ServicesSection() {
             <motion.div
               key={service.title}
               className="bg-[#1A1A1A] border border-[rgba(95,169,159,0.15)] rounded-[24px] p-8 lg:p-16 hover:border-[#5FA99F] transition-all duration-300 group"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, filter: 'blur(10px)', scale: 0.95 }}
+              whileInView={{ opacity: 1, filter: 'blur(0px)', scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
+              transition={{ duration: 0.7, delay: i * 0.12, ease: 'easeOut' }}
             >
               <div className="w-14 h-14 lg:w-24 lg:h-24 mb-5 lg:mb-8">
                 <Image

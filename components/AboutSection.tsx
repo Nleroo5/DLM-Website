@@ -83,10 +83,10 @@ export default function AboutSection() {
               <motion.div
                 key={card.number}
                 className="bg-[#1A1A1A] border border-[rgba(95,169,159,0.15)] rounded-[20px] p-6 lg:p-8 hover:border-[rgba(95,169,159,0.4)] transition-all duration-300"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, filter: 'blur(10px)', scale: 0.95 }}
+                whileInView={{ opacity: 1, filter: 'blur(0px)', scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.15 }}
+                transition={{ duration: 0.7, delay: i * 0.12, ease: 'easeOut' }}
               >
                 <div className="flex items-center gap-4 mb-3">
                   <span
