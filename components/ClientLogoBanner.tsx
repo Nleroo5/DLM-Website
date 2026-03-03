@@ -52,7 +52,7 @@ export default function ClientLogoBanner({ variant = 'light', heading }: ClientL
                   width={240}
                   height={140}
                   loading="lazy"
-                  className={`object-contain max-h-[80px] sm:max-h-[100px] lg:max-h-[130px] ${isDark ? 'mix-blend-screen' : ''}`}
+                  className={`object-contain max-h-[80px] sm:max-h-[100px] lg:max-h-[130px] ${isDark ? 'brightness-0 invert' : ''}`}
                 />
               </div>
             ))}
@@ -76,7 +76,7 @@ export default function ClientLogoBanner({ variant = 'light', heading }: ClientL
                   width={240}
                   height={140}
                   loading="lazy"
-                  className={`object-contain max-h-[80px] sm:max-h-[100px] lg:max-h-[130px] ${isDark ? 'mix-blend-screen' : ''}`}
+                  className={`object-contain max-h-[80px] sm:max-h-[100px] lg:max-h-[130px] ${isDark ? 'brightness-0 invert' : ''}`}
                 />
               </div>
             ))}
