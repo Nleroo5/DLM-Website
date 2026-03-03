@@ -35,6 +35,7 @@ export default function HeroDashboard() {
             className="w-full h-full object-cover"
           >
             <source src="/Videos/villagepeds.webm" type="video/webm" />
+            <source src="/Videos/villagepeds.mov" type="video/mp4" />
           </video>
         </div>
       </motion.div>
