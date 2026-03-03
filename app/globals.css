@@ -246,9 +246,19 @@ section {
   animation: marquee-left 20s linear infinite;
 }
 
+.animate-marquee-left-slow {
+  animation: marquee-left 45s linear infinite;
+}
+
+.animate-marquee-right-slow {
+  animation: marquee-right 45s linear infinite;
+}
+
 .group:hover .animate-marquee-left,
 .group:hover .animate-marquee-right,
-.group:hover .animate-marquee-left-fast {
+.group:hover .animate-marquee-left-fast,
+.group:hover .animate-marquee-left-slow,
+.group:hover .animate-marquee-right-slow {
   animation-play-state: paused;
 }
 

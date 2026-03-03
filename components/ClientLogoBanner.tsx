@@ -9,19 +9,24 @@ interface ClientLogoBannerProps {
 }
 
 export default function ClientLogoBanner({ variant = 'light', heading }: ClientLogoBannerProps) {
-  const logos = Array.from({ length: 17 }, (_, i) => ({
+  const allLogos = Array.from({ length: 17 }, (_, i) => ({
     name: `Client ${i + 1}`,
     src: `/images/client-logos/${i + 1}.png`,
   }));
 
+  // Split into two rows
+  const row1 = allLogos.slice(0, 9);
+  const row2 = allLogos.slice(9);
+
   const isDark = variant === 'dark';
   const displayHeading = heading || (isDark ? "You're in good company" : 'Trusted by Leading Brands');
+  const fadeBg = isDark ? '#0a0a0a' : 'white';
 
   return (
     <section className={`${isDark ? 'bg-[#0a0a0a] border-y border-[rgba(95,169,159,0.15)]' : 'bg-white border-y border-[rgba(95,169,159,0.12)]'} py-12 overflow-hidden`}>
       <div className="max-w-[1400px] mx-auto">
         <motion.h3
-          className={`text-center text-[#5FA99F] text-[1rem] font-medium uppercase tracking-widest mb-8 font-heading`}
+          className="text-center text-[#5FA99F] text-[1rem] font-medium uppercase tracking-widest mb-8 font-heading"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -30,25 +35,48 @@ export default function ClientLogoBanner({ variant = 'light', heading }: ClientL
           {displayHeading}
         </motion.h3>
 
-        <div className="relative w-full overflow-hidden group">
-          {/* Left fade */}
-          <div className={`absolute left-0 top-0 bottom-0 w-[80px] sm:w-[120px] ${isDark ? 'bg-gradient-to-r from-[#0a0a0a]' : 'bg-gradient-to-r from-white'} to-transparent z-10 pointer-events-none`} />
-          {/* Right fade */}
-          <div className={`absolute right-0 top-0 bottom-0 w-[80px] sm:w-[120px] ${isDark ? 'bg-gradient-to-l from-[#0a0a0a]' : 'bg-gradient-to-l from-white'} to-transparent z-10 pointer-events-none`} />
+        {/* Row 1 — scrolls left */}
+        <div className="relative w-full overflow-hidden mb-6">
+          <div className={`absolute left-0 top-0 bottom-0 w-[80px] sm:w-[120px] bg-gradient-to-r from-[${fadeBg}] to-transparent z-10 pointer-events-none`} />
+          <div className={`absolute right-0 top-0 bottom-0 w-[80px] sm:w-[120px] bg-gradient-to-l from-[${fadeBg}] to-transparent z-10 pointer-events-none`} />
 
-          <div className="flex animate-marquee-left-fast" style={{ width: 'max-content' }}>
-            {[...logos, ...logos].map((logo, index) => (
+          <div className="flex animate-marquee-left-slow" style={{ width: 'max-content' }}>
+            {[...row1, ...row1, ...row1].map((logo, index) => (
               <div
-                key={`logo-${index}`}
-                className="flex-shrink-0 w-[120px] sm:w-[150px] h-[70px] sm:h-[90px] flex items-center justify-center mx-4 sm:mx-8 opacity-70 hover:opacity-100 transition-opacity duration-300"
+                key={`r1-${index}`}
+                className="flex-shrink-0 w-[150px] sm:w-[200px] h-[80px] sm:h-[110px] flex items-center justify-center mx-5 sm:mx-10 opacity-70 hover:opacity-100 transition-opacity duration-300"
               >
                 <Image
                   src={logo.src}
                   alt={logo.name}
-                  width={140}
-                  height={80}
+                  width={180}
+                  height={100}
                   loading="lazy"
-                  className={`object-contain max-h-[50px] sm:max-h-[60px] ${isDark ? 'brightness-0 invert' : ''}`}
+                  className={`object-contain max-h-[60px] sm:max-h-[80px] ${isDark ? 'brightness-0 invert' : ''}`}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Row 2 — scrolls right */}
+        <div className="relative w-full overflow-hidden">
+          <div className={`absolute left-0 top-0 bottom-0 w-[80px] sm:w-[120px] bg-gradient-to-r from-[${fadeBg}] to-transparent z-10 pointer-events-none`} />
+          <div className={`absolute right-0 top-0 bottom-0 w-[80px] sm:w-[120px] bg-gradient-to-l from-[${fadeBg}] to-transparent z-10 pointer-events-none`} />
+
+          <div className="flex animate-marquee-right-slow" style={{ width: 'max-content' }}>
+            {[...row2, ...row2, ...row2, ...row2].map((logo, index) => (
+              <div
+                key={`r2-${index}`}
+                className="flex-shrink-0 w-[150px] sm:w-[200px] h-[80px] sm:h-[110px] flex items-center justify-center mx-5 sm:mx-10 opacity-70 hover:opacity-100 transition-opacity duration-300"
+              >
+                <Image
+                  src={logo.src}
+                  alt={logo.name}
+                  width={180}
+                  height={100}
+                  loading="lazy"
+                  className={`object-contain max-h-[60px] sm:max-h-[80px] ${isDark ? 'brightness-0 invert' : ''}`}
                 />
               </div>
             ))}
