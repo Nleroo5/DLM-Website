@@ -2,297 +2,184 @@
 
 import { motion } from 'framer-motion';
 
-// Mini sparkline SVG for the Leads card
-function Sparkline() {
+// Heatmap dot component
+function HeatDot({ x, y, size, intensity, delay }: { x: number; y: number; size: number; intensity: number; delay: number }) {
   return (
-    <svg viewBox="0 0 120 32" className="w-full h-8 mt-2" fill="none">
-      <path
-        d="M0 28 L8 24 L16 26 L24 20 L32 22 L40 16 L48 18 L56 12 L64 14 L72 8 L80 10 L88 6 L96 8 L104 4 L112 6 L120 2"
-        stroke="#5FA99F"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-// Donut chart for Traffic Sources
-function DonutChart() {
-  // Meta Ads: 58%, Organic: 28%, Direct: 14%
-  // Circle circumference = 2 * PI * 40 ≈ 251.3
-  const circumference = 251.3;
-  const metaAds = circumference * 0.58;    // 145.75
-  const organic = circumference * 0.28;     // 70.36
-  const direct = circumference * 0.14;      // 35.18
-
-  return (
-    <svg viewBox="0 0 100 100" className="w-32 h-32 sm:w-36 sm:h-36 mx-auto">
-      {/* Direct - cyan */}
-      <circle
-        cx="50" cy="50" r="40"
-        fill="none"
-        stroke="#67E8F9"
-        strokeWidth="12"
-        strokeDasharray={`${direct} ${circumference - direct}`}
-        strokeDashoffset={`-${metaAds + organic}`}
-        transform="rotate(-90 50 50)"
-        strokeLinecap="round"
-      />
-      {/* Organic Search - lighter teal */}
-      <circle
-        cx="50" cy="50" r="40"
-        fill="none"
-        stroke="#85C7B3"
-        strokeWidth="12"
-        strokeDasharray={`${organic} ${circumference - organic}`}
-        strokeDashoffset={`-${metaAds}`}
-        transform="rotate(-90 50 50)"
-        strokeLinecap="round"
-      />
-      {/* Meta Ads - primary teal */}
-      <circle
-        cx="50" cy="50" r="40"
-        fill="none"
-        stroke="#5FA99F"
-        strokeWidth="12"
-        strokeDasharray={`${metaAds} ${circumference - metaAds}`}
-        strokeDashoffset="0"
-        transform="rotate(-90 50 50)"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
-// Gauge for ROI card
-function GaugeChart() {
-  // Semi-circle gauge: 180 degrees
-  // circumference of half circle with r=45 = PI * 45 ≈ 141.37
-  const halfCircumference = 141.37;
-  const fillPercent = 0.78; // 78% filled to show 6.2x
-  const filled = halfCircumference * fillPercent;
-
-  return (
-    <svg viewBox="0 0 120 70" className="w-36 h-[72px] sm:w-40 sm:h-20 mx-auto">
-      {/* Background arc */}
-      <path
-        d="M 10 65 A 50 50 0 0 1 110 65"
-        fill="none"
-        stroke="#1a2a3a"
-        strokeWidth="10"
-        strokeLinecap="round"
-      />
-      {/* Filled arc */}
-      <path
-        d="M 10 65 A 50 50 0 0 1 110 65"
-        fill="none"
-        stroke="url(#gaugeGradient)"
-        strokeWidth="10"
-        strokeLinecap="round"
-        strokeDasharray={`${filled} ${halfCircumference}`}
-      />
-      <defs>
-        <linearGradient id="gaugeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#5FA99F" />
-          <stop offset="100%" stopColor="#67E8F9" />
-        </linearGradient>
-      </defs>
-    </svg>
-  );
-}
-
-// Area chart for Website Traffic
-function AreaChart() {
-  return (
-    <svg viewBox="0 0 300 100" className="w-full h-full" preserveAspectRatio="none">
-      <defs>
-        <linearGradient id="areaGradient" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#5FA99F" stopOpacity="0.4" />
-          <stop offset="100%" stopColor="#5FA99F" stopOpacity="0.02" />
-        </linearGradient>
-        <linearGradient id="areaGradient2" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#67E8F9" stopOpacity="0.2" />
-          <stop offset="100%" stopColor="#67E8F9" stopOpacity="0.01" />
-        </linearGradient>
-      </defs>
-      {/* Grid lines */}
-      {[20, 40, 60, 80].map((y) => (
-        <line key={y} x1="0" y1={y} x2="300" y2={y} stroke="#1a2a3a" strokeWidth="0.5" />
-      ))}
-      {/* Paid traffic area */}
-      <path
-        d="M0 85 L30 78 L60 72 L90 65 L120 58 L150 50 L180 42 L210 38 L240 30 L270 25 L300 20 L300 100 L0 100 Z"
-        fill="url(#areaGradient)"
-      />
-      <path
-        d="M0 85 L30 78 L60 72 L90 65 L120 58 L150 50 L180 42 L210 38 L240 30 L270 25 L300 20"
-        fill="none"
-        stroke="#5FA99F"
-        strokeWidth="2"
-      />
-      {/* Organic traffic area */}
-      <path
-        d="M0 92 L30 90 L60 88 L90 85 L120 82 L150 78 L180 74 L210 70 L240 65 L270 60 L300 55 L300 100 L0 100 Z"
-        fill="url(#areaGradient2)"
-      />
-      <path
-        d="M0 92 L30 90 L60 88 L90 85 L120 82 L150 78 L180 74 L210 70 L240 65 L270 60 L300 55"
-        fill="none"
-        stroke="#67E8F9"
-        strokeWidth="1.5"
-        strokeDasharray="4 2"
-      />
-    </svg>
+    <motion.div
+      className="absolute rounded-full pointer-events-none"
+      style={{
+        left: `${x}%`,
+        top: `${y}%`,
+        width: size,
+        height: size,
+        background: `radial-gradient(circle, rgba(239,68,68,${intensity}) 0%, rgba(251,146,60,${intensity * 0.6}) 40%, rgba(34,197,94,${intensity * 0.2}) 70%, transparent 100%)`,
+        transform: 'translate(-50%, -50%)',
+      }}
+      initial={{ opacity: 0, scale: 0 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.6, delay }}
+    />
   );
 }
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 15 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, delay: 0.5 + i * 0.1, ease: 'easeOut' },
+    transition: { duration: 0.5, delay: 0.6 + i * 0.15, ease: 'easeOut' },
   }),
 };
 
 export default function HeroDashboard() {
-  const cardClass = "rounded-2xl p-4 sm:p-5 relative overflow-hidden backdrop-blur-sm";
-  const cardBg = "bg-[#0d1b2a]/90 border border-[#1a2a3a]/80 shadow-[0_4px_24px_rgba(0,0,0,0.4)]";
-
   return (
-    <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-3">
-      {/* Top Left - Website Traffic (spans 3 cols) */}
+    <div className="w-full flex flex-col gap-3">
+
+      {/* Browser mockup with heatmap */}
       <motion.div
-        className={`${cardClass} ${cardBg} sm:col-span-2 flex flex-col`}
+        className="rounded-xl overflow-hidden border border-[#1a2a3a]/80 shadow-[0_4px_24px_rgba(0,0,0,0.4)] bg-[#0d1b2a]/90 backdrop-blur-sm"
         variants={cardVariants}
         initial="hidden"
         animate="visible"
         custom={0}
       >
-        <div className="flex items-start justify-between mb-1">
-          <span className="text-gray-400 text-xs sm:text-sm font-ui">Website Traffic</span>
-          <div className="flex gap-4 text-right">
-            <div>
-              <p className="text-gray-500 text-[10px] sm:text-xs font-ui">Visitors</p>
-              <p className="text-white text-sm sm:text-base font-semibold font-ui">47,200</p>
-            </div>
-            <div>
-              <p className="text-gray-500 text-[10px] sm:text-xs font-ui">Sessions</p>
-              <p className="text-white text-sm sm:text-base font-semibold font-ui">68,450</p>
+        {/* Browser chrome */}
+        <div className="flex items-center gap-1.5 px-3 py-2 bg-[#0a1420] border-b border-[#1a2a3a]/60">
+          <div className="w-2 h-2 rounded-full bg-red-500/60" />
+          <div className="w-2 h-2 rounded-full bg-yellow-500/60" />
+          <div className="w-2 h-2 rounded-full bg-green-500/60" />
+          <div className="flex-1 mx-2">
+            <div className="bg-[#1a2a3a]/60 rounded-md px-3 py-0.5 text-[10px] text-gray-500 font-ui text-center">
+              yourwebsite.com
             </div>
           </div>
         </div>
-        <div className="flex-1 min-h-[100px] sm:min-h-[130px] mt-2">
-          <AreaChart />
-        </div>
-        <div className="flex gap-4 mt-2">
-          <div className="flex items-center gap-1.5">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#5FA99F]" />
-            <span className="text-gray-400 text-[10px] sm:text-xs font-ui">Paid</span>
+
+        {/* Website content with heatmap overlay */}
+        <div className="relative h-[180px] sm:h-[200px] bg-[#111827] p-4">
+          {/* Fake website wireframe */}
+          <div className="space-y-3">
+            {/* Nav bar wireframe */}
+            <div className="flex items-center justify-between">
+              <div className="w-16 h-2 bg-[#1f2937] rounded" />
+              <div className="flex gap-3">
+                <div className="w-8 h-1.5 bg-[#1f2937] rounded" />
+                <div className="w-8 h-1.5 bg-[#1f2937] rounded" />
+                <div className="w-8 h-1.5 bg-[#1f2937] rounded" />
+              </div>
+            </div>
+            {/* Hero wireframe */}
+            <div className="mt-4 space-y-2">
+              <div className="w-3/4 h-3 bg-[#1f2937] rounded" />
+              <div className="w-1/2 h-3 bg-[#1f2937] rounded" />
+              <div className="w-2/3 h-2 bg-[#1f2937]/60 rounded mt-3" />
+              <div className="w-1/2 h-2 bg-[#1f2937]/60 rounded" />
+            </div>
+            {/* CTA button wireframe */}
+            <div className="mt-4">
+              <div className="w-24 h-6 bg-[#5FA99F]/30 rounded-md border border-[#5FA99F]/40" />
+            </div>
+            {/* Content blocks wireframe */}
+            <div className="flex gap-3 mt-4">
+              <div className="flex-1 h-12 bg-[#1f2937]/40 rounded" />
+              <div className="flex-1 h-12 bg-[#1f2937]/40 rounded" />
+              <div className="flex-1 h-12 bg-[#1f2937]/40 rounded" />
+            </div>
           </div>
-          <div className="flex items-center gap-1.5">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#67E8F9]" />
-            <span className="text-gray-400 text-[10px] sm:text-xs font-ui">Organic</span>
-          </div>
+
+          {/* Heatmap dots overlay */}
+          <HeatDot x={38} y={35} size={50} intensity={0.7} delay={0.8} />
+          <HeatDot x={42} y={38} size={35} intensity={0.5} delay={0.9} />
+          <HeatDot x={25} y={70} size={45} intensity={0.8} delay={1.0} />
+          <HeatDot x={28} y={68} size={30} intensity={0.4} delay={1.1} />
+          <HeatDot x={50} y={55} size={25} intensity={0.3} delay={1.2} />
+          <HeatDot x={15} y={20} size={20} intensity={0.25} delay={1.3} />
+          <HeatDot x={70} y={45} size={28} intensity={0.35} delay={1.15} />
+
+          {/* "Heatmap" label */}
+          <motion.div
+            className="absolute top-2 right-2 px-2 py-0.5 rounded bg-[#0a1420]/80 border border-[#1a2a3a]/60"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.4 }}
+          >
+            <span className="text-[9px] text-gray-400 font-ui tracking-wider uppercase">Live Heatmap</span>
+          </motion.div>
         </div>
       </motion.div>
 
-      {/* Top Right - Conversion Snapshot (spans 2 cols) */}
-      <motion.div
-        className={`${cardClass} ${cardBg} sm:col-span-2`}
-        variants={cardVariants}
-        initial="hidden"
-        animate="visible"
-        custom={1}
-      >
-        <span className="text-gray-400 text-xs sm:text-sm font-ui">Live Conversions</span>
-        <div className="mt-4 space-y-3">
-          <div className="flex justify-between items-center">
-            <span className="text-gray-400 text-xs sm:text-sm font-ui">Conversion Rate</span>
-            <span className="text-[#5FA99F] text-lg sm:text-xl font-bold font-ui">8.7%</span>
+      {/* Bottom row: two compact cards */}
+      <div className="grid grid-cols-2 gap-3">
+        {/* Click tracking card */}
+        <motion.div
+          className="rounded-xl p-4 bg-[#0d1b2a]/90 border border-[#1a2a3a]/80 shadow-[0_4px_24px_rgba(0,0,0,0.4)] backdrop-blur-sm"
+          variants={cardVariants}
+          initial="hidden"
+          animate="visible"
+          custom={1}
+        >
+          <span className="text-gray-400 text-[10px] sm:text-xs font-ui tracking-wider uppercase">User Sessions</span>
+          <p className="text-white text-2xl sm:text-3xl font-bold font-ui mt-2">4,821</p>
+          <div className="flex items-center gap-1 mt-1">
+            <span className="text-[#5FA99F] text-xs font-semibold font-ui">+32.4%</span>
+            <svg className="w-2.5 h-2.5 text-[#5FA99F]" fill="currentColor" viewBox="0 0 10 10">
+              <path d="M5 0 L10 7 L0 7 Z" />
+            </svg>
           </div>
-          <div className="w-full h-1.5 bg-[#1a2a3a] rounded-full overflow-hidden">
-            <div className="h-full bg-gradient-to-r from-[#5FA99F] to-[#67E8F9] rounded-full" style={{ width: '87%' }} />
+          {/* Mini bar chart */}
+          <div className="flex items-end gap-1 mt-3 h-8">
+            {[40, 55, 35, 65, 50, 80, 70, 90, 75, 95, 85, 100].map((h, i) => (
+              <motion.div
+                key={i}
+                className="flex-1 rounded-sm bg-gradient-to-t from-[#5FA99F]/60 to-[#5FA99F]"
+                initial={{ height: 0 }}
+                animate={{ height: `${h}%` }}
+                transition={{ duration: 0.4, delay: 1.0 + i * 0.05 }}
+              />
+            ))}
           </div>
-          <div className="flex justify-between items-center">
-            <span className="text-gray-400 text-xs sm:text-sm font-ui">Bounce Rate</span>
-            <span className="text-white text-lg sm:text-xl font-bold font-ui">24.3%</span>
-          </div>
-          <div className="w-full h-1.5 bg-[#1a2a3a] rounded-full overflow-hidden">
-            <div className="h-full bg-gradient-to-r from-[#67E8F9] to-[#5FA99F] rounded-full" style={{ width: '24.3%' }} />
-          </div>
-          <div className="flex justify-between items-center pt-1">
-            <span className="text-gray-400 text-xs sm:text-sm font-ui">Avg. Session</span>
-            <span className="text-white text-lg sm:text-xl font-bold font-ui">3:42</span>
-          </div>
-        </div>
-      </motion.div>
+        </motion.div>
 
-      {/* Bottom Left - Traffic Sources (donut) */}
-      <motion.div
-        className={`${cardClass} ${cardBg}`}
-        variants={cardVariants}
-        initial="hidden"
-        animate="visible"
-        custom={2}
-      >
-        <span className="text-gray-400 text-xs sm:text-sm font-ui">Traffic Sources</span>
-        <div className="mt-3">
-          <DonutChart />
-        </div>
-        <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 mt-3">
-          <div className="flex items-center gap-1.5">
-            <span className="w-2 h-2 rounded-full bg-[#5FA99F]" />
-            <span className="text-gray-400 text-[10px] sm:text-xs font-ui">Meta Ads 58%</span>
+        {/* Conversion funnel card */}
+        <motion.div
+          className="rounded-xl p-4 bg-[#0d1b2a]/90 border border-[#1a2a3a]/80 shadow-[0_4px_24px_rgba(0,0,0,0.4)] backdrop-blur-sm"
+          variants={cardVariants}
+          initial="hidden"
+          animate="visible"
+          custom={2}
+        >
+          <span className="text-gray-400 text-[10px] sm:text-xs font-ui tracking-wider uppercase">Conversion Path</span>
+          <div className="mt-3 space-y-2">
+            {/* Funnel steps */}
+            {[
+              { label: 'Impressions', width: '100%', value: '24.2K' },
+              { label: 'Clicks', width: '62%', value: '8.1K' },
+              { label: 'Visits', width: '38%', value: '4.8K' },
+              { label: 'Conversions', width: '18%', value: '847' },
+            ].map((step, i) => (
+              <motion.div
+                key={step.label}
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 1.2 + i * 0.1 }}
+              >
+                <div className="flex justify-between items-center mb-0.5">
+                  <span className="text-gray-500 text-[9px] sm:text-[10px] font-ui">{step.label}</span>
+                  <span className="text-gray-300 text-[9px] sm:text-[10px] font-ui font-medium">{step.value}</span>
+                </div>
+                <div className="w-full h-1.5 bg-[#1a2a3a] rounded-full overflow-hidden">
+                  <motion.div
+                    className="h-full rounded-full bg-gradient-to-r from-[#5FA99F] to-[#67E8F9]"
+                    initial={{ width: 0 }}
+                    animate={{ width: step.width }}
+                    transition={{ duration: 0.6, delay: 1.3 + i * 0.1 }}
+                  />
+                </div>
+              </motion.div>
+            ))}
           </div>
-          <div className="flex items-center gap-1.5">
-            <span className="w-2 h-2 rounded-full bg-[#85C7B3]" />
-            <span className="text-gray-400 text-[10px] sm:text-xs font-ui">Organic 28%</span>
-          </div>
-          <div className="flex items-center gap-1.5">
-            <span className="w-2 h-2 rounded-full bg-[#67E8F9]" />
-            <span className="text-gray-400 text-[10px] sm:text-xs font-ui">Direct 14%</span>
-          </div>
-        </div>
-      </motion.div>
-
-      {/* Bottom Center - Leads */}
-      <motion.div
-        className={`${cardClass} ${cardBg} flex flex-col items-center justify-center text-center`}
-        variants={cardVariants}
-        initial="hidden"
-        animate="visible"
-        custom={3}
-      >
-        <span className="text-gray-400 text-xs sm:text-sm font-ui">Leads</span>
-        <p className="text-white text-3xl sm:text-4xl font-bold font-ui mt-2">12,400</p>
-        <div className="flex items-center gap-1 mt-1">
-          <span className="text-[#5FA99F] text-sm font-semibold font-ui">+124.6%</span>
-          <svg className="w-3 h-3 text-[#5FA99F]" fill="currentColor" viewBox="0 0 10 10">
-            <path d="M5 0 L10 7 L0 7 Z" />
-          </svg>
-        </div>
-        <Sparkline />
-      </motion.div>
-
-      {/* Bottom Right - Ad Spend ROI (gauge) */}
-      <motion.div
-        className={`${cardClass} ${cardBg} sm:col-span-2 flex flex-col items-center justify-center text-center`}
-        variants={cardVariants}
-        initial="hidden"
-        animate="visible"
-        custom={4}
-      >
-        <span className="text-gray-400 text-xs sm:text-sm font-ui">Ad Spend ROI</span>
-        <div className="relative mt-2">
-          <GaugeChart />
-          <div className="absolute inset-0 flex items-end justify-center pb-0">
-            <span className="text-white text-3xl sm:text-4xl font-bold font-ui">6.2x</span>
-          </div>
-        </div>
-        <p className="text-gray-500 text-[10px] sm:text-xs font-ui tracking-widest uppercase mt-1">Return on Ad Spend</p>
-      </motion.div>
+        </motion.div>
+      </div>
     </div>
   );
 }
