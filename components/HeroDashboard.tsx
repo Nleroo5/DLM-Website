@@ -1,8 +1,83 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useEffect, useRef, useState, useCallback } from 'react';
+
+// Expert-level counter hook using requestAnimationFrame with easeOutExpo
+function useCounter(
+  end: number,
+  start: number = 0,
+  duration: number = 2000,
+  delay: number = 0
+) {
+  const [value, setValue] = useState(start);
+  const rafRef = useRef<number>(0);
+  const startTimeRef = useRef<number>(0);
+
+  const easeOutExpo = useCallback((t: number) => {
+    return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+  }, []);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      startTimeRef.current = performance.now();
+
+      const animate = (now: number) => {
+        const elapsed = now - startTimeRef.current;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = easeOutExpo(progress);
+        const current = start + (end - start) * eased;
+
+        setValue(current);
+
+        if (progress < 1) {
+          rafRef.current = requestAnimationFrame(animate);
+        }
+      };
+
+      rafRef.current = requestAnimationFrame(animate);
+    }, delay);
+
+    return () => {
+      clearTimeout(timeout);
+      cancelAnimationFrame(rafRef.current);
+    };
+  }, [end, start, duration, delay, easeOutExpo]);
+
+  return value;
+}
+
+function formatNumber(val: number): string {
+  return Math.round(val).toLocaleString('en-US');
+}
+
+function formatCurrency(val: number): string {
+  return '$' + val.toFixed(2);
+}
+
+function formatRoas(val: number): string {
+  return val.toFixed(1) + 'x';
+}
+
+function formatDuration(totalSeconds: number): string {
+  const m = Math.floor(totalSeconds / 60);
+  const s = Math.round(totalSeconds % 60);
+  return `${m}m ${s.toString().padStart(2, '0')}s`;
+}
 
 export default function HeroDashboard() {
+  const counterDuration = 2200; // ms — same for all counters
+  const counterBaseDelay = 1000; // ms — after cards appear
+
+  // Count UP from 0
+  const roas = useCounter(6.8, 0, counterDuration, counterBaseDelay);
+  // Count DOWN from high value
+  const cpl = useCounter(12.40, 52.80, counterDuration, counterBaseDelay);
+  // Count UP from 0
+  const sessions = useCounter(3987, 0, counterDuration, counterBaseDelay);
+  // Count UP in seconds (2m 34s = 154s)
+  const duration = useCounter(154, 0, counterDuration, counterBaseDelay);
+
   return (
     <div className="w-full flex flex-col gap-2">
 
@@ -25,7 +100,7 @@ export default function HeroDashboard() {
           </div>
         </div>
 
-        {/* Video content — smaller */}
+        {/* Video content */}
         <div className="relative aspect-video bg-[#111827]">
           <video
             autoPlay
@@ -53,14 +128,9 @@ export default function HeroDashboard() {
         >
           <span className="text-gray-400 text-[9px] font-ui tracking-wider uppercase">ROAS</span>
           <div className="flex items-baseline gap-1 mt-1.5">
-            <motion.p
-              className="text-white text-2xl font-bold font-ui"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.4, delay: 1.0 }}
-            >
-              6.8x
-            </motion.p>
+            <p className="text-white text-2xl font-bold font-ui tabular-nums">
+              {formatRoas(roas)}
+            </p>
           </div>
           <div className="flex items-center gap-1 mt-1">
             <svg className="w-2.5 h-2.5 text-[#5FA99F]" fill="currentColor" viewBox="0 0 10 10">
@@ -82,7 +152,7 @@ export default function HeroDashboard() {
           </div>
         </motion.div>
 
-        {/* Cost per Lead */}
+        {/* Cost per Lead — counts DOWN */}
         <motion.div
           className="rounded-lg p-4 bg-[#0d1b2a]/90 border border-[#1a2a3a]/80 shadow-[0_4px_24px_rgba(0,0,0,0.4)]"
           initial={{ opacity: 0, y: 15 }}
@@ -91,14 +161,9 @@ export default function HeroDashboard() {
         >
           <span className="text-gray-400 text-[9px] font-ui tracking-wider uppercase">Cost per Lead</span>
           <div className="flex items-baseline gap-1 mt-1.5">
-            <motion.p
-              className="text-white text-2xl font-bold font-ui"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.4, delay: 1.1 }}
-            >
-              $12.40
-            </motion.p>
+            <p className="text-white text-2xl font-bold font-ui tabular-nums">
+              {formatCurrency(cpl)}
+            </p>
           </div>
           <div className="flex items-center gap-1 mt-1">
             <svg className="w-2.5 h-2.5 text-[#5FA99F] rotate-180" fill="currentColor" viewBox="0 0 10 10">
@@ -129,14 +194,9 @@ export default function HeroDashboard() {
         >
           <span className="text-gray-400 text-[9px] font-ui tracking-wider uppercase">Sessions</span>
           <div className="flex items-baseline gap-1 mt-1.5">
-            <motion.p
-              className="text-white text-2xl font-bold font-ui"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.4, delay: 1.2 }}
-            >
-              3,987
-            </motion.p>
+            <p className="text-white text-2xl font-bold font-ui tabular-nums">
+              {formatNumber(sessions)}
+            </p>
           </div>
           <div className="flex items-center gap-1 mt-1">
             <svg className="w-2.5 h-2.5 text-[#5FA99F]" fill="currentColor" viewBox="0 0 10 10">
@@ -167,14 +227,9 @@ export default function HeroDashboard() {
         >
           <span className="text-gray-400 text-[9px] font-ui tracking-wider uppercase">Avg. Session Duration</span>
           <div className="flex items-baseline gap-1 mt-1.5">
-            <motion.p
-              className="text-white text-2xl font-bold font-ui"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.4, delay: 1.3 }}
-            >
-              2m 34s
-            </motion.p>
+            <p className="text-white text-2xl font-bold font-ui tabular-nums">
+              {formatDuration(duration)}
+            </p>
           </div>
           <div className="flex items-center gap-1 mt-1">
             <svg className="w-2.5 h-2.5 text-[#5FA99F]" fill="currentColor" viewBox="0 0 10 10">
