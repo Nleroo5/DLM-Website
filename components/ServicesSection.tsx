@@ -12,12 +12,12 @@ const services = [
   {
     category: 'Creative',
     title: 'Video & Image Ads',
-    description: "Actor-led videos and scroll-stopping images made for Meta. No more generic stock photos or DIY footage.",
+    description: "Motion graphics, drone footage, and scroll-stopping images built for Meta. No more generic stock photos or DIY content.",
   },
   {
-    category: 'Strategy',
-    title: 'Complete Campaign Setup',
-    description: "We build everything for you — from finding your ideal customers to tracking your results.",
+    category: 'Tracking',
+    title: 'Data & Analytics Setup',
+    description: "We install Microsoft Clarity, GA4, and Meta Pixel so you see exactly how users interact with your site and where your leads come from.",
   },
   {
     category: 'Optimization',
@@ -57,19 +57,19 @@ export default function ServicesSection() {
           {services.map((service, i) => (
             <motion.div
               key={service.title}
-              className="bg-[#1A1A1A] border border-[rgba(95,169,159,0.15)] rounded-[24px] p-6 lg:p-8 hover:border-[#5FA99F] transition-all duration-300 group"
+              className="bg-[#1A1A1A] border border-[rgba(95,169,159,0.15)] rounded-[24px] p-8 lg:p-12 hover:border-[#5FA99F] transition-all duration-300 group"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
             >
-              <span className="text-[#5FA99F] text-xs uppercase tracking-widest font-heading font-semibold">
+              <span className="text-[#5FA99F] text-xs lg:text-sm uppercase tracking-widest font-heading font-semibold">
                 {service.category}
               </span>
-              <h3 className="text-white font-heading text-[1.25rem] lg:text-[1.5rem] font-semibold mt-3 mb-4">
+              <h3 className="text-white font-heading text-[1.25rem] lg:text-[1.75rem] font-semibold mt-4 mb-5">
                 {service.title}
               </h3>
-              <p className="text-gray-400 font-body text-[0.95rem] leading-relaxed mb-6">
+              <p className="text-gray-400 font-body text-[0.95rem] lg:text-[1.05rem] leading-relaxed mb-8">
                 {service.description}
               </p>
               <Link

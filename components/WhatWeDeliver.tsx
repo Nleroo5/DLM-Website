@@ -27,12 +27,12 @@ export default function WhatWeDeliver() {
     {
       icon: '/images/creative-design-services-custom-branding-icon.webp',
       title: 'Video and Image Ads',
-      content: 'Actor-led videos and scroll-stopping images made for Meta. No more generic stock photos or DIY footage.'
+      content: 'Motion graphics, drone footage, and scroll-stopping images built for Meta. No more generic stock photos or DIY content.'
     },
     {
       icon: '/images/audience-targeting-strategy-marketing-services-icon.webp',
-      title: 'Complete Campaign Setup',
-      content: 'We build everything for you — from finding your ideal customers to tracking your results.'
+      title: 'Data & Analytics Setup',
+      content: 'We install Microsoft Clarity, GA4, and Meta Pixel so you see exactly how users interact with your site and where your leads come from.'
     },
     {
       icon: '/images/website-performance-optimization-speed-testing-icon.webp',
