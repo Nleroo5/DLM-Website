@@ -45,7 +45,7 @@ export default function Hero() {
           <h1 className="font-heading text-[1.75rem] xs:text-[2rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[2.75rem] xl:text-[3.25rem] 2xl:text-[3.75rem] font-bold text-white leading-[1.1] mb-5 sm:mb-7">
             We Find Your Customers Before They Find Your Competitors
           </h1>
-          <p className="font-ui text-[1rem] sm:text-[1.125rem] md:text-[1.25rem] lg:text-[1.125rem] xl:text-[1.25rem] text-gray-400 leading-relaxed mb-8 sm:mb-10 max-w-[600px] mx-auto lg:mx-0">
+          <p className="font-ui text-[1.125rem] sm:text-[1.25rem] md:text-[1.375rem] lg:text-[1.25rem] xl:text-[1.5rem] 2xl:text-[1.625rem] text-gray-400 leading-relaxed mb-8 sm:mb-10 max-w-[650px] mx-auto lg:mx-0">
             Data-driven{' '}
             <span className="inline-flex items-center align-middle mx-1">
               <svg
