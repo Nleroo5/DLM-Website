@@ -110,36 +110,40 @@ export default function CaseStudiesPage() {
           {testimonials.map((testimonial, i) => (
             <motion.div
               key={testimonial.name}
-              className="relative bg-[#1A1A1A] border border-[rgba(95,169,159,0.15)] rounded-[24px] p-6 lg:p-8 hover:border-[rgba(95,169,159,0.4)] transition-all duration-300"
+              className="relative rounded-[24px] p-8 lg:p-10 flex flex-col"
+              style={{
+                background: 'linear-gradient(135deg, hsl(204,97%,12%) 0%, hsl(204,97%,18%) 100%)',
+                border: '2px solid rgba(95,169,159,0.2)',
+              }}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.15 }}
             >
-              {/* Quote mark */}
-              <div className="text-[#f2a921] text-5xl font-serif leading-none mb-4">&ldquo;</div>
+              {/* Large gold quote mark */}
+              <div className="text-[#f2a921] text-[4rem] lg:text-[5rem] font-serif leading-none mb-2 select-none">&ldquo;</div>
 
-              {/* Quote text */}
-              <p className="font-body text-gray-300 text-[0.95rem] lg:text-[1.05rem] leading-relaxed mb-8">
+              {/* Quote text in gold */}
+              <p className="font-heading text-[#f2a921] text-[1.1rem] lg:text-[1.25rem] font-bold leading-[1.5] mb-8 flex-grow">
                 {testimonial.quote}
               </p>
 
-              {/* Author */}
-              <div className="flex items-center gap-4 mt-auto">
-                <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-[#5FA99F]/30 flex-shrink-0">
+              {/* Author with large circular photo */}
+              <div className="flex items-center gap-5">
+                <div className="relative w-20 h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden border-3 border-[#5FA99F]/40 flex-shrink-0 shadow-[0_4px_20px_rgba(0,0,0,0.4)]">
                   <Image
                     src={testimonial.image}
                     alt={testimonial.name}
                     fill
                     className="object-cover"
-                    sizes="56px"
+                    sizes="96px"
                   />
                 </div>
                 <div>
-                  <p className="font-heading text-white font-semibold text-[0.95rem]">
+                  <p className="font-heading text-white font-bold text-[1.1rem] lg:text-[1.25rem]">
                     {testimonial.name}
                   </p>
-                  <p className="font-body text-[#5FA99F] text-sm">
+                  <p className="font-body text-white/80 text-[0.95rem] lg:text-[1.05rem]">
                     {testimonial.role}, {testimonial.company}
                   </p>
                 </div>
