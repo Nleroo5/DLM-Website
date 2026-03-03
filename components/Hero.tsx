@@ -7,7 +7,7 @@ import HeroDashboard from '@/components/HeroDashboard';
 export default function Hero() {
   return (
     <section
-      className="relative w-full min-h-screen flex items-center overflow-hidden pt-[100px] xs:pt-[110px] sm:pt-[120px] pb-16 sm:pb-20 px-4 xs:px-5 sm:px-6"
+      className="relative w-full min-h-screen flex items-center overflow-hidden pt-[130px] xs:pt-[140px] sm:pt-[120px] pb-16 sm:pb-20 px-4 xs:px-5 sm:px-6"
       style={{ backgroundColor: '#0a0a0a' }}
     >
       {/* Background gradient orbs */}

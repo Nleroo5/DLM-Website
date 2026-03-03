@@ -234,32 +234,52 @@ section {
   100% { transform: translateX(0); }
 }
 
+/* Portfolio marquee */
 .animate-marquee-left {
-  animation: marquee-left 50s linear infinite;
+  animation: marquee-left 25s linear infinite;
 }
 
 .animate-marquee-right {
-  animation: marquee-right 50s linear infinite;
+  animation: marquee-right 25s linear infinite;
+}
+
+@media (min-width: 640px) {
+  .animate-marquee-left {
+    animation: marquee-left 40s linear infinite;
+  }
+  .animate-marquee-right {
+    animation: marquee-right 40s linear infinite;
+  }
+}
+
+@media (min-width: 1024px) {
+  .animate-marquee-left {
+    animation: marquee-left 50s linear infinite;
+  }
+  .animate-marquee-right {
+    animation: marquee-right 50s linear infinite;
+  }
 }
 
 .animate-marquee-left-fast {
   animation: marquee-left 20s linear infinite;
 }
 
+/* Logo banner marquee */
 .animate-marquee-left-slow {
-  animation: marquee-left 25s linear infinite;
+  animation: marquee-left 15s linear infinite;
 }
 
 .animate-marquee-right-slow {
-  animation: marquee-right 25s linear infinite;
+  animation: marquee-right 15s linear infinite;
 }
 
 @media (min-width: 640px) {
   .animate-marquee-left-slow {
-    animation: marquee-left 40s linear infinite;
+    animation: marquee-left 30s linear infinite;
   }
   .animate-marquee-right-slow {
-    animation: marquee-right 40s linear infinite;
+    animation: marquee-right 30s linear infinite;
   }
 }
 
