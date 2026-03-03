@@ -34,7 +34,7 @@ export default function HeroDashboard() {
             playsInline
             className="w-full h-full object-cover"
           >
-            <source src="/Videos/villagepeds.mov" type="video/quicktime" />
+            <source src="/Videos/villagepeds.webm" type="video/webm" />
           </video>
         </div>
       </motion.div>
