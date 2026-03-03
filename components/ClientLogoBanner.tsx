@@ -9,9 +9,13 @@ interface ClientLogoBannerProps {
 }
 
 export default function ClientLogoBanner({ variant = 'light', heading }: ClientLogoBannerProps) {
+  // Logos with detailed grey tones that lose detail with brightness-0
+  const detailedLogos = new Set([3, 12]);
+
   const allLogos = Array.from({ length: 17 }, (_, i) => ({
     name: `Client ${i + 1}`,
     src: `/images/client-logos/${i + 1}.png`,
+    detailed: detailedLogos.has(i + 1),
   }));
 
   // Split into two rows
@@ -52,7 +56,7 @@ export default function ClientLogoBanner({ variant = 'light', heading }: ClientL
                   width={240}
                   height={140}
                   loading="lazy"
-                  className={`object-contain max-h-[80px] sm:max-h-[100px] lg:max-h-[130px] ${isDark ? 'brightness-0 invert' : ''}`}
+                  className={`object-contain max-h-[80px] sm:max-h-[100px] lg:max-h-[130px] ${isDark ? (logo.detailed ? 'invert' : 'brightness-0 invert') : ''}`}
                 />
               </div>
             ))}
@@ -76,7 +80,7 @@ export default function ClientLogoBanner({ variant = 'light', heading }: ClientL
                   width={240}
                   height={140}
                   loading="lazy"
-                  className={`object-contain max-h-[80px] sm:max-h-[100px] lg:max-h-[130px] ${isDark ? 'brightness-0 invert' : ''}`}
+                  className={`object-contain max-h-[80px] sm:max-h-[100px] lg:max-h-[130px] ${isDark ? (logo.detailed ? 'invert' : 'brightness-0 invert') : ''}`}
                 />
               </div>
             ))}
