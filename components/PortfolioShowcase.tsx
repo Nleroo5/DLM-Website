@@ -56,21 +56,24 @@ export default function PortfolioShowcase() {
         </motion.div>
       </div>
 
-      {/* Row 1 - scrolls left */}
-      <div className="mb-4 overflow-hidden">
-        <div className="flex gap-4 animate-marquee-left" style={{ width: 'max-content' }}>
-          {[...row1, ...row1].map((src, i) => (
-            <PortfolioCard key={`r1-${i}`} src={src} />
-          ))}
+      {/* Angled marquee wrapper */}
+      <div className="-rotate-2 py-4">
+        {/* Row 1 - scrolls left */}
+        <div className="mb-4 overflow-hidden">
+          <div className="flex gap-4 animate-marquee-left" style={{ width: 'max-content' }}>
+            {[...row1, ...row1].map((src, i) => (
+              <PortfolioCard key={`r1-${i}`} src={src} />
+            ))}
+          </div>
         </div>
-      </div>
 
-      {/* Row 2 - scrolls right */}
-      <div className="overflow-hidden">
-        <div className="flex gap-4 animate-marquee-right" style={{ width: 'max-content' }}>
-          {[...row2, ...row2].map((src, i) => (
-            <PortfolioCard key={`r2-${i}`} src={src} />
-          ))}
+        {/* Row 2 - scrolls right */}
+        <div className="overflow-hidden">
+          <div className="flex gap-4 animate-marquee-right" style={{ width: 'max-content' }}>
+            {[...row2, ...row2].map((src, i) => (
+              <PortfolioCard key={`r2-${i}`} src={src} />
+            ))}
+          </div>
         </div>
       </div>
 
