@@ -32,10 +32,11 @@ export default function HeroDashboard() {
             muted
             loop
             playsInline
+            poster="/Videos/villagepeds-poster.jpg"
             className="w-full h-full object-cover"
           >
-            <source src="/Videos/villagepeds.webm" type="video/webm" />
-            <source src="/Videos/villagepeds.mov" type="video/mp4" />
+            <source src="/Videos/villagepeds-sm.webm" type="video/webm" />
+            <source src="/Videos/villagepeds.mp4" type="video/mp4" />
           </video>
         </div>
       </motion.div>
