@@ -44,15 +44,15 @@ export default function ClientLogoBanner({ variant = 'light', heading }: ClientL
             {[...row1, ...row1, ...row1].map((logo, index) => (
               <div
                 key={`r1-${index}`}
-                className="flex-shrink-0 w-[150px] sm:w-[220px] lg:w-[260px] h-[80px] sm:h-[110px] lg:h-[130px] flex items-center justify-center mx-5 sm:mx-10 lg:mx-12 opacity-70 hover:opacity-100 transition-opacity duration-300"
+                className="flex-shrink-0 w-[180px] sm:w-[260px] lg:w-[320px] h-[100px] sm:h-[130px] lg:h-[160px] flex items-center justify-center mx-5 sm:mx-10 lg:mx-12 opacity-70 hover:opacity-100 transition-opacity duration-300"
               >
                 <Image
                   src={logo.src}
                   alt={logo.name}
-                  width={180}
-                  height={100}
+                  width={240}
+                  height={140}
                   loading="lazy"
-                  className={`object-contain max-h-[60px] sm:max-h-[80px] lg:max-h-[100px] ${isDark ? 'brightness-0 invert' : ''}`}
+                  className={`object-contain max-h-[80px] sm:max-h-[100px] lg:max-h-[130px] ${isDark ? 'mix-blend-screen' : ''}`}
                 />
               </div>
             ))}
@@ -68,15 +68,15 @@ export default function ClientLogoBanner({ variant = 'light', heading }: ClientL
             {[...row2, ...row2, ...row2, ...row2].map((logo, index) => (
               <div
                 key={`r2-${index}`}
-                className="flex-shrink-0 w-[150px] sm:w-[220px] lg:w-[260px] h-[80px] sm:h-[110px] lg:h-[130px] flex items-center justify-center mx-5 sm:mx-10 lg:mx-12 opacity-70 hover:opacity-100 transition-opacity duration-300"
+                className="flex-shrink-0 w-[180px] sm:w-[260px] lg:w-[320px] h-[100px] sm:h-[130px] lg:h-[160px] flex items-center justify-center mx-5 sm:mx-10 lg:mx-12 opacity-70 hover:opacity-100 transition-opacity duration-300"
               >
                 <Image
                   src={logo.src}
                   alt={logo.name}
-                  width={180}
-                  height={100}
+                  width={240}
+                  height={140}
                   loading="lazy"
-                  className={`object-contain max-h-[60px] sm:max-h-[80px] lg:max-h-[100px] ${isDark ? 'brightness-0 invert' : ''}`}
+                  className={`object-contain max-h-[80px] sm:max-h-[100px] lg:max-h-[130px] ${isDark ? 'mix-blend-screen' : ''}`}
                 />
               </div>
             ))}
