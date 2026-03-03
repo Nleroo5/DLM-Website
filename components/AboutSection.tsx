@@ -22,7 +22,7 @@ const cards = [
 
 export default function AboutSection() {
   return (
-    <section className="relative bg-[#000000] py-20 lg:py-28 px-4 sm:px-6">
+    <section className="relative bg-[#000000] py-24 lg:py-36 px-4 sm:px-6">
       {/* Subtle grid overlay */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -41,24 +41,24 @@ export default function AboutSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <span className="text-[#5FA99F] text-[0.85rem] font-heading uppercase tracking-widest mb-3 block">Who We Are</span>
-          <h2 className="font-heading text-[1.75rem] sm:text-[2.25rem] lg:text-[2.75rem] text-white font-bold">
+          <span className="text-[#5FA99F] text-[0.95rem] font-heading uppercase tracking-widest mb-4 block">Who We Are</span>
+          <h2 className="font-heading text-[2rem] sm:text-[2.5rem] lg:text-[3.25rem] text-white font-bold">
             About Drive Lead Media
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {cards.map((card, i) => (
             <motion.div
               key={card.number}
-              className="bg-[#1A1A1A] border border-[rgba(95,169,159,0.15)] rounded-[24px] p-8 lg:p-10 hover:border-[rgba(95,169,159,0.4)] transition-all duration-300"
+              className="bg-[#1A1A1A] border border-[rgba(95,169,159,0.15)] rounded-[24px] p-10 lg:p-14 hover:border-[rgba(95,169,159,0.4)] transition-all duration-300"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.15 }}
             >
               <span
-                className="block text-[3rem] font-heading font-bold mb-4"
+                className="block text-[3.5rem] lg:text-[4rem] font-heading font-bold mb-5"
                 style={{
                   background: 'linear-gradient(135deg, #5FA99F, #85C7B3)',
                   WebkitBackgroundClip: 'text',
@@ -67,10 +67,10 @@ export default function AboutSection() {
               >
                 {card.number}
               </span>
-              <h3 className="text-white font-heading text-[1.25rem] lg:text-[1.5rem] font-semibold mb-4">
+              <h3 className="text-white font-heading text-[1.4rem] lg:text-[1.75rem] font-semibold mb-5">
                 {card.title}
               </h3>
-              <p className="text-gray-400 font-body text-[0.95rem] lg:text-[1rem] leading-relaxed">
+              <p className="text-gray-400 font-body text-[1.05rem] lg:text-[1.15rem] leading-relaxed">
                 {card.description}
               </p>
             </motion.div>
