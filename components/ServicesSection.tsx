@@ -44,51 +44,51 @@ export default function ServicesSection() {
         }}
       />
 
-      <div className="relative z-10 max-w-[1400px] mx-auto">
+      <div className="relative z-10 max-w-[1600px] mx-auto">
         <motion.div
-          className="text-center mb-14"
+          className="text-center mb-16 lg:mb-20"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <span className="text-[#5FA99F] text-[0.85rem] font-heading uppercase tracking-widest mb-3 block">Our Services</span>
-          <h2 className="font-heading text-[1.75rem] sm:text-[2.25rem] lg:text-[2.75rem] text-white font-bold">
+          <span className="text-[#5FA99F] text-[0.85rem] lg:text-[1rem] font-heading uppercase tracking-widest mb-3 block">Our Services</span>
+          <h2 className="font-heading text-[1.75rem] sm:text-[2.25rem] lg:text-[3.25rem] text-white font-bold">
             Everything You Need to Grow
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-10">
           {services.map((service, i) => (
             <motion.div
               key={service.title}
-              className="bg-[#1A1A1A] border border-[rgba(95,169,159,0.15)] rounded-[24px] p-8 lg:p-14 hover:border-[#5FA99F] transition-all duration-300 group"
+              className="bg-[#1A1A1A] border border-[rgba(95,169,159,0.15)] rounded-[24px] p-8 lg:p-16 hover:border-[#5FA99F] transition-all duration-300 group"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
             >
-              <div className="w-14 h-14 lg:w-20 lg:h-20 mb-5 lg:mb-7">
+              <div className="w-14 h-14 lg:w-24 lg:h-24 mb-5 lg:mb-8">
                 <Image
                   src={service.icon}
                   alt={`${service.title} icon`}
-                  width={80}
-                  height={80}
+                  width={96}
+                  height={96}
                   className="w-full h-full object-contain"
                 />
               </div>
-              <span className="text-[#5FA99F] text-xs lg:text-sm uppercase tracking-widest font-heading font-semibold">
+              <span className="text-[#5FA99F] text-xs lg:text-[0.9rem] uppercase tracking-widest font-heading font-semibold">
                 {service.category}
               </span>
-              <h3 className="text-white font-heading text-[1.25rem] lg:text-[1.85rem] font-semibold mt-4 mb-5 lg:mb-6">
+              <h3 className="text-white font-heading text-[1.25rem] lg:text-[2rem] font-semibold mt-4 mb-5 lg:mb-7">
                 {service.title}
               </h3>
-              <p className="text-gray-400 font-body text-[0.95rem] lg:text-[1.1rem] leading-relaxed mb-8 lg:mb-10">
+              <p className="text-gray-400 font-body text-[0.95rem] lg:text-[1.2rem] leading-relaxed mb-8 lg:mb-12">
                 {service.description}
               </p>
               <Link
                 href="/services"
-                className="inline-flex items-center text-[#5FA99F] font-ui font-medium text-sm lg:text-base group-hover:text-white transition-colors duration-300"
+                className="inline-flex items-center text-[#5FA99F] font-ui font-medium text-sm lg:text-[1.05rem] group-hover:text-white transition-colors duration-300"
               >
                 Learn more
                 <svg className="w-4 h-4 lg:w-5 lg:h-5 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
