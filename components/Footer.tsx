@@ -84,13 +84,13 @@ export default function Footer() {
                   Home
                 </Link>
                 <Link
-                  href="/portfolio"
+                  href="/case-studies"
                   className="font-body text-[0.9rem] text-gray-300 hover:text-[#5FA99F] transition-all duration-300 hover:translate-x-1"
                   style={{
                     textShadow: '0 0 5px rgba(95,169,159,0.2)'
                   }}
                 >
-                  Portfolio
+                  Case Studies
                 </Link>
                 <Link
                   href="/blog"
@@ -263,10 +263,10 @@ export default function Footer() {
                 Home
               </Link>
               <Link
-                href="/portfolio"
+                href="/case-studies"
                 className="font-body text-[0.95rem] text-[#85C7B3] hover:text-[#5FA99F] transition-colors duration-300"
               >
-                Portfolio
+                Case Studies
               </Link>
               <Link
                 href="/blog"

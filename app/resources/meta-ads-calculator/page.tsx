@@ -708,10 +708,10 @@ export default function MetaAdsCalculator() {
                   </svg>
                 </Link>
                 <Link
-                  href="/portfolio"
+                  href="/case-studies"
                   className="inline-flex items-center gap-2 bg-transparent border-2 border-[#85C7B3] text-[#EEF4D9] px-7 py-3 rounded-xl text-[1rem] font-bold font-body transition-all duration-300 hover:bg-[rgba(85,199,179,0.1)] hover:border-[#F2A922] hover:text-[#F2A922] no-underline"
                 >
-                  View Our Work
+                  View Case Studies
                 </Link>
               </div>
             </div>

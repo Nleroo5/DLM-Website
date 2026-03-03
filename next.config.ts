@@ -31,6 +31,26 @@ const nextConfig: NextConfig = {
 
   // Enable gzip/brotli compression
   compress: true,
+
+  async redirects() {
+    return [
+      {
+        source: '/portfolio',
+        destination: '/case-studies',
+        permanent: true,
+      },
+      {
+        source: '/portfolio/websites',
+        destination: '/case-studies',
+        permanent: true,
+      },
+      {
+        source: '/portfolio/video-ads',
+        destination: '/case-studies',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

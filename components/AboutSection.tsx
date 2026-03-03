@@ -18,7 +18,7 @@ const cards = [
   {
     number: '03',
     title: 'How We Deliver',
-    description: "You don't have to learn Meta ads. You don't have to shoot your own content. You don't have to wonder if it's working. We handle it and you see the leads come in. Simple as that.",
+    description: "We don't hand you a dashboard and wish you luck. You get a dedicated team handling your campaigns, your creatives, and your budget, while you stay focused on what you're actually good at. You'll see the leads. We'll show you what drove them.",
   },
 ];
 
