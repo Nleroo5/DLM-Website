@@ -44,7 +44,7 @@ export default function ClientLogoBanner({ variant = 'light', heading }: ClientL
             {[...row1, ...row1, ...row1].map((logo, index) => (
               <div
                 key={`r1-${index}`}
-                className="flex-shrink-0 w-[150px] sm:w-[200px] h-[80px] sm:h-[110px] flex items-center justify-center mx-5 sm:mx-10 opacity-70 hover:opacity-100 transition-opacity duration-300"
+                className="flex-shrink-0 w-[150px] sm:w-[220px] lg:w-[260px] h-[80px] sm:h-[110px] lg:h-[130px] flex items-center justify-center mx-5 sm:mx-10 lg:mx-12 opacity-70 hover:opacity-100 transition-opacity duration-300"
               >
                 <Image
                   src={logo.src}
@@ -52,7 +52,7 @@ export default function ClientLogoBanner({ variant = 'light', heading }: ClientL
                   width={180}
                   height={100}
                   loading="lazy"
-                  className={`object-contain max-h-[60px] sm:max-h-[80px] ${isDark ? 'brightness-0 invert' : ''}`}
+                  className={`object-contain max-h-[60px] sm:max-h-[80px] lg:max-h-[100px] ${isDark ? 'brightness-0 invert' : ''}`}
                 />
               </div>
             ))}
@@ -68,7 +68,7 @@ export default function ClientLogoBanner({ variant = 'light', heading }: ClientL
             {[...row2, ...row2, ...row2, ...row2].map((logo, index) => (
               <div
                 key={`r2-${index}`}
-                className="flex-shrink-0 w-[150px] sm:w-[200px] h-[80px] sm:h-[110px] flex items-center justify-center mx-5 sm:mx-10 opacity-70 hover:opacity-100 transition-opacity duration-300"
+                className="flex-shrink-0 w-[150px] sm:w-[220px] lg:w-[260px] h-[80px] sm:h-[110px] lg:h-[130px] flex items-center justify-center mx-5 sm:mx-10 lg:mx-12 opacity-70 hover:opacity-100 transition-opacity duration-300"
               >
                 <Image
                   src={logo.src}
@@ -76,7 +76,7 @@ export default function ClientLogoBanner({ variant = 'light', heading }: ClientL
                   width={180}
                   height={100}
                   loading="lazy"
-                  className={`object-contain max-h-[60px] sm:max-h-[80px] ${isDark ? 'brightness-0 invert' : ''}`}
+                  className={`object-contain max-h-[60px] sm:max-h-[80px] lg:max-h-[100px] ${isDark ? 'brightness-0 invert' : ''}`}
                 />
               </div>
             ))}

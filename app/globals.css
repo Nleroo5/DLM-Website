@@ -247,11 +247,11 @@ section {
 }
 
 .animate-marquee-left-slow {
-  animation: marquee-left 45s linear infinite;
+  animation: marquee-left 60s linear infinite;
 }
 
 .animate-marquee-right-slow {
-  animation: marquee-right 45s linear infinite;
+  animation: marquee-right 60s linear infinite;
 }
 
 .group:hover .animate-marquee-left,
