@@ -3,101 +3,56 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
-export default function ClientLogoBanner() {
-  // Client logos - strategically ordered to avoid same logos next to each other
-  const clients = [
-    { name: "The Yoga Lounge", logo: "/images/yoga-atlanta-creative-director-designer-team-member.webp?v=2", scale: 0.85 },
-    { name: "Maven", logo: "/images/maven-health-consulting-atlanta-healthcare-logo.webp?v=2", scale: 0.85 },
-    { name: "Village Pediatrics", logo: "/images/village-pediatrics-st-augustine-healthcare-logo.webp?v=2", scale: 0.85 },
-    { name: "Dream", logo: "/images/dream-big-atlanta-business-consulting-brand-logo.webp?v=2", scale: 1.1 },
-    { name: "SOA", logo: "/images/st-augustine-pediatric-healthcare-medical-logo.webp?v=2", scale: 1 },
-    { name: "FCC", logo: "/images/fcc-certified-drone-pilot-videography-license.webp?v=2", scale: 1 },
-  ];
+interface ClientLogoBannerProps {
+  variant?: 'light' | 'dark';
+  heading?: string;
+}
+
+export default function ClientLogoBanner({ variant = 'light', heading }: ClientLogoBannerProps) {
+  const logos = Array.from({ length: 17 }, (_, i) => ({
+    name: `Client ${i + 1}`,
+    src: `/images/client-logos/${i + 1}.png`,
+  }));
+
+  const isDark = variant === 'dark';
+  const displayHeading = heading || (isDark ? "You're in good company" : 'Trusted by Leading Brands');
 
   return (
-    <section className="bg-white border-y border-[rgba(95,169,159,0.12)] py-12 overflow-hidden">
+    <section className={`${isDark ? 'bg-[#0a0a0a] border-y border-[rgba(95,169,159,0.15)]' : 'bg-white border-y border-[rgba(95,169,159,0.12)]'} py-12 overflow-hidden`}>
       <div className="max-w-[1400px] mx-auto">
         <motion.h3
-          className="text-center text-[#5FA99F] text-[1rem] font-medium uppercase tracking-widest mb-8 font-[family-name:var(--font-inter)]"
+          className={`text-center text-[#5FA99F] text-[1rem] font-medium uppercase tracking-widest mb-8 font-heading`}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          Trusted by Leading Brands
+          {displayHeading}
         </motion.h3>
 
-        {/* Infinite scrolling logo container */}
-        <div className="relative w-full overflow-hidden">
-          <motion.div
-            className="flex gap-20"
-            animate={{
-              x: [0, -1200]
-            }}
-            transition={{
-              x: {
-                repeat: Infinity,
-                repeatType: "loop",
-                duration: 20,
-                ease: "linear"
-              }
-            }}
-          >
-            {/* First set of logos */}
-            {clients.map((client, index) => (
+        <div className="relative w-full overflow-hidden group">
+          {/* Left fade */}
+          <div className={`absolute left-0 top-0 bottom-0 w-[80px] sm:w-[120px] ${isDark ? 'bg-gradient-to-r from-[#0a0a0a]' : 'bg-gradient-to-r from-white'} to-transparent z-10 pointer-events-none`} />
+          {/* Right fade */}
+          <div className={`absolute right-0 top-0 bottom-0 w-[80px] sm:w-[120px] ${isDark ? 'bg-gradient-to-l from-[#0a0a0a]' : 'bg-gradient-to-l from-white'} to-transparent z-10 pointer-events-none`} />
+
+          <div className="flex animate-marquee-left-fast" style={{ width: 'max-content' }}>
+            {[...logos, ...logos].map((logo, index) => (
               <div
-                key={`logo-1-${index}`}
-                className="flex-shrink-0 w-[150px] h-[90px] flex items-center justify-center opacity-80 hover:opacity-100 transition-all duration-400 px-3"
+                key={`logo-${index}`}
+                className="flex-shrink-0 w-[120px] sm:w-[150px] h-[70px] sm:h-[90px] flex items-center justify-center mx-4 sm:mx-8 opacity-70 hover:opacity-100 transition-opacity duration-300"
               >
-                <div style={{ transform: `scale(${client.scale})` }} className="transition-transform duration-400">
-                  <Image
-                    src={client.logo}
-                    alt={client.name}
-                    width={140}
-                    height={80}
-                    loading="lazy"
-                    className="object-contain"
-                  />
-                </div>
+                <Image
+                  src={logo.src}
+                  alt={logo.name}
+                  width={140}
+                  height={80}
+                  loading="lazy"
+                  className={`object-contain max-h-[50px] sm:max-h-[60px] ${isDark ? 'brightness-0 invert' : ''}`}
+                />
               </div>
             ))}
-            {/* Duplicate set for seamless loop */}
-            {clients.map((client, index) => (
-              <div
-                key={`logo-2-${index}`}
-                className="flex-shrink-0 w-[150px] h-[90px] flex items-center justify-center opacity-80 hover:opacity-100 transition-all duration-400 px-3"
-              >
-                <div style={{ transform: `scale(${client.scale})` }} className="transition-transform duration-400">
-                  <Image
-                    src={client.logo}
-                    alt={client.name}
-                    width={140}
-                    height={80}
-                    loading="lazy"
-                    className="object-contain"
-                  />
-                </div>
-              </div>
-            ))}
-            {/* Third set for extra seamless coverage */}
-            {clients.map((client, index) => (
-              <div
-                key={`logo-3-${index}`}
-                className="flex-shrink-0 w-[150px] h-[90px] flex items-center justify-center opacity-80 hover:opacity-100 transition-all duration-400 px-3"
-              >
-                <div style={{ transform: `scale(${client.scale})` }} className="transition-transform duration-400">
-                  <Image
-                    src={client.logo}
-                    alt={client.name}
-                    width={140}
-                    height={80}
-                    loading="lazy"
-                    className="object-contain"
-                  />
-                </div>
-              </div>
-            ))}
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
