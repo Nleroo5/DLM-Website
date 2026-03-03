@@ -18,6 +18,7 @@ const testimonials = [
     role: 'Owner',
     company: 'Southern Tents and Events',
     image: '/images/perla.webp',
+    imagePosition: 'center 80%',
     quote:
       "After three disappointing experiences with other web design companies, Nicolas completely turned things around for us. He rebuilt our website from the ground up- it's now clean, modern, and mobile-friendly. Our traffic has exploded with better Google rankings and a huge uptick in leads from Facebook and Instagram ads. Nicolas and Drive Lead Media are the real deal!",
   },
@@ -136,6 +137,7 @@ export default function CaseStudiesPage() {
                     alt={testimonial.name}
                     fill
                     className="object-cover"
+                    style={{ objectPosition: testimonial.imagePosition || 'center center' }}
                     sizes="96px"
                   />
                 </div>

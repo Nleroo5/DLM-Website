@@ -82,23 +82,18 @@ export default function AboutSection() {
             {cards.map((card, i) => (
               <motion.div
                 key={card.number}
-                className="bg-[#1A1A1A] border border-[rgba(95,169,159,0.15)] rounded-[20px] p-6 lg:p-8 hover:border-[rgba(95,169,159,0.4)] transition-all duration-300"
+                className="relative overflow-hidden bg-[#1A1A1A] border border-[rgba(95,169,159,0.15)] rounded-[20px] p-6 lg:p-8 hover:border-[rgba(95,169,159,0.4)] transition-all duration-300"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: false }}
                 transition={{ duration: 0.6, delay: i * 0.12, ease: 'easeOut' }}
               >
-                <div className="flex items-center gap-4 mb-3">
-                  <span
-                    className="text-[2rem] lg:text-[2.5rem] font-heading font-bold leading-none"
-                    style={{
-                      background: 'linear-gradient(135deg, #5FA99F, #85C7B3)',
-                      WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
-                    }}
-                  >
-                    {card.number}
-                  </span>
+                <span
+                  className="absolute -top-4 -right-3 lg:-top-5 lg:-right-4 text-[5rem] lg:text-[7rem] font-heading font-bold leading-none -rotate-12 text-[#f2a921]/50 select-none pointer-events-none"
+                >
+                  {card.number}
+                </span>
+                <div className="relative z-10 mb-3">
                   <h3 className="text-white font-heading text-[1.15rem] lg:text-[1.35rem] font-semibold">
                     {card.title}
                   </h3>

@@ -1,32 +1,32 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
+import { Globe, Clapperboard, BarChart3, TrendingUp } from 'lucide-react';
 
 const services = [
   {
     category: 'Web Design',
     title: 'Custom Website Design',
     description: "Fast, modern websites built to convert. If your site isn't pulling its weight, we'll rebuild it from scratch.",
-    icon: '/images/custom-website-design-development-services-icon.webp',
+    icon: Globe,
   },
   {
     category: 'Creative',
     title: 'Video & Image Ads',
     description: "Motion graphics, drone footage, and scroll-stopping images built for Meta. No more generic stock photos or DIY content.",
-    icon: '/images/creative-design-services-custom-branding-icon.webp',
+    icon: Clapperboard,
   },
   {
     category: 'Tracking',
     title: 'Data & Analytics Setup',
     description: "We set up tracking on your website and ads so you can see exactly where every lead comes from, what's working, and what's not.",
-    icon: '/images/audience-targeting-strategy-marketing-services-icon.webp',
+    icon: BarChart3,
   },
   {
     category: 'Optimization',
     title: 'Continuous Improvement',
     description: "We test new ads, adjust budgets, and remove what's not working. Your campaigns get better every week.",
-    icon: '/images/website-performance-optimization-speed-testing-icon.webp',
+    icon: TrendingUp,
   },
 ];
 
@@ -67,14 +67,8 @@ export default function ServicesSection() {
               viewport={{ once: false }}
               transition={{ duration: 0.6, delay: i * 0.12, ease: 'easeOut' }}
             >
-              <div className="w-14 h-14 lg:w-24 lg:h-24 mb-5 lg:mb-8">
-                <Image
-                  src={service.icon}
-                  alt={`${service.title} icon`}
-                  width={96}
-                  height={96}
-                  className="w-full h-full object-contain"
-                />
+              <div className="w-14 h-14 lg:w-20 lg:h-20 mb-5 lg:mb-8 rounded-2xl bg-[#5FA99F]/10 flex items-center justify-center group-hover:bg-[#5FA99F]/20 transition-colors duration-300">
+                <service.icon className="w-7 h-7 lg:w-10 lg:h-10 text-[#f2a921]" strokeWidth={1.5} />
               </div>
               <span className="text-[#5FA99F] text-xs lg:text-[0.9rem] uppercase tracking-widest font-heading font-semibold">
                 {service.category}
