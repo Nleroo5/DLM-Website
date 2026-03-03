@@ -51,7 +51,7 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-8 lg:gap-12">
           {/* Team photo */}
           <motion.div
-            className="relative rounded-[24px] overflow-hidden min-h-[400px] lg:min-h-0"
+            className="relative rounded-[24px] overflow-hidden aspect-[3/4] lg:aspect-auto lg:h-full w-full"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -61,36 +61,39 @@ export default function AboutSection() {
               src="/images/aboutus.JPG"
               alt="The Drive Lead Media team"
               fill
-              className="object-cover"
+              className="object-cover object-center"
               sizes="(max-width: 1024px) 100vw, 33vw"
+              priority
             />
           </motion.div>
 
           {/* Cards */}
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-4 lg:gap-5">
             {cards.map((card, i) => (
               <motion.div
                 key={card.number}
-                className="bg-[#1A1A1A] border border-[rgba(95,169,159,0.15)] rounded-[24px] p-10 lg:p-14 hover:border-[rgba(95,169,159,0.4)] transition-all duration-300"
+                className="bg-[#1A1A1A] border border-[rgba(95,169,159,0.15)] rounded-[20px] p-6 lg:p-8 hover:border-[rgba(95,169,159,0.4)] transition-all duration-300"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.15 }}
               >
-                <span
-                  className="block text-[3.5rem] lg:text-[4rem] font-heading font-bold mb-5"
-                  style={{
-                    background: 'linear-gradient(135deg, #5FA99F, #85C7B3)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                  }}
-                >
-                  {card.number}
-                </span>
-                <h3 className="text-white font-heading text-[1.4rem] lg:text-[1.75rem] font-semibold mb-5">
-                  {card.title}
-                </h3>
-                <p className="text-gray-400 font-body text-[1.05rem] lg:text-[1.15rem] leading-relaxed">
+                <div className="flex items-center gap-4 mb-3">
+                  <span
+                    className="text-[2rem] lg:text-[2.5rem] font-heading font-bold leading-none"
+                    style={{
+                      background: 'linear-gradient(135deg, #5FA99F, #85C7B3)',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                    }}
+                  >
+                    {card.number}
+                  </span>
+                  <h3 className="text-white font-heading text-[1.15rem] lg:text-[1.35rem] font-semibold">
+                    {card.title}
+                  </h3>
+                </div>
+                <p className="text-gray-400 font-body text-[0.95rem] lg:text-[1rem] leading-relaxed">
                   {card.description}
                 </p>
               </motion.div>
