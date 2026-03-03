@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import Link from 'next/link';
 
 const services = [
   {
@@ -83,18 +82,9 @@ export default function ServicesSection() {
               <h3 className="text-white font-heading text-[1.25rem] lg:text-[2rem] font-semibold mt-4 mb-5 lg:mb-7">
                 {service.title}
               </h3>
-              <p className="text-gray-400 font-body text-[0.95rem] lg:text-[1.2rem] leading-relaxed mb-8 lg:mb-12">
+              <p className="text-gray-400 font-body text-[0.95rem] lg:text-[1.2rem] leading-relaxed">
                 {service.description}
               </p>
-              <Link
-                href="/services"
-                className="inline-flex items-center text-[#5FA99F] font-ui font-medium text-sm lg:text-[1.05rem] group-hover:text-white transition-colors duration-300"
-              >
-                Learn more
-                <svg className="w-4 h-4 lg:w-5 lg:h-5 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
             </motion.div>
           ))}
         </div>

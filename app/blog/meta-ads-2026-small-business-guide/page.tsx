@@ -1526,7 +1526,7 @@ export default function MetaAds2026SmallBusinessGuide() {
               Drive Lead Media specializes in Meta advertising for small businesses. We've helped clients go from break-even to 6:1+ ROAS using the exact strategies in this guide.
             </p>
             <Link
-              href="/services"
+              href="/contact"
               className="inline-block bg-[#5FA99F] hover:bg-[#4A8A82] text-[#000000] px-10 py-5 rounded-xl font-bold text-body transition-all duration-300 transform hover:scale-105 shadow-xl"
             >
               Get a Free Meta Ads Audit
