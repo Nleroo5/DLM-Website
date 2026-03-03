@@ -1,14 +1,15 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { useEffect, useRef, useState, useCallback } from 'react';
 
-// Expert-level counter hook using requestAnimationFrame with easeOutExpo
+// Counter hook that resets and replays when triggerKey changes
 function useCounter(
   end: number,
   start: number = 0,
   duration: number = 2000,
-  delay: number = 0
+  delay: number = 0,
+  triggerKey: number = 0
 ) {
   const [value, setValue] = useState(start);
   const rafRef = useRef<number>(0);
@@ -19,6 +20,10 @@ function useCounter(
   }, []);
 
   useEffect(() => {
+    if (triggerKey === 0) return; // don't run until first trigger
+
+    setValue(start); // reset to start value
+
     const timeout = setTimeout(() => {
       startTimeRef.current = performance.now();
 
@@ -42,7 +47,7 @@ function useCounter(
       clearTimeout(timeout);
       cancelAnimationFrame(rafRef.current);
     };
-  }, [end, start, duration, delay, easeOutExpo]);
+  }, [triggerKey, end, start, duration, delay, easeOutExpo]);
 
   return value;
 }
@@ -66,17 +71,28 @@ function formatDuration(totalSeconds: number): string {
 }
 
 export default function HeroDashboard() {
-  const counterDuration = 2200; // ms — same for all counters
-  const counterBaseDelay = 1000; // ms — after cards appear
+  const counterDuration = 3200;
+  const counterBaseDelay = 400; // shorter delay since we wait for inView
 
-  // Count UP from 0
-  const roas = useCounter(6.8, 0, counterDuration, counterBaseDelay);
-  // Count DOWN from high value
-  const cpl = useCounter(12.40, 52.80, counterDuration, counterBaseDelay);
-  // Count UP from 0
-  const sessions = useCounter(3987, 0, counterDuration, counterBaseDelay);
-  // Count UP in seconds (2m 34s = 154s)
-  const duration = useCounter(154, 0, counterDuration, counterBaseDelay);
+  // IntersectionObserver to detect when metrics are visible
+  const metricsRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(metricsRef, { amount: 0.3 });
+  const [triggerKey, setTriggerKey] = useState(0);
+
+  // Every time the section comes into view, bump the trigger to replay counters
+  useEffect(() => {
+    if (isInView) {
+      setTriggerKey((k) => k + 1);
+    }
+  }, [isInView]);
+
+  const roas = useCounter(6.8, 0, counterDuration, counterBaseDelay, triggerKey);
+  const cpl = useCounter(12.40, 52.80, counterDuration, counterBaseDelay, triggerKey);
+  const sessions = useCounter(3987, 0, counterDuration, counterBaseDelay, triggerKey);
+  const duration = useCounter(154, 0, counterDuration, counterBaseDelay, triggerKey);
+
+  // Sparkline animation key — resets bars each time section enters view
+  const sparklineKey = triggerKey;
 
   return (
     <div className="w-full flex flex-col gap-2">
@@ -85,7 +101,8 @@ export default function HeroDashboard() {
       <motion.div
         className="rounded-lg overflow-hidden border border-[#1a2a3a]/80 shadow-[0_4px_24px_rgba(0,0,0,0.4)] bg-[#0d1b2a]/90"
         initial={{ opacity: 0, y: 15 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.6 }}
       >
         {/* Browser chrome */}
@@ -117,13 +134,14 @@ export default function HeroDashboard() {
       </motion.div>
 
       {/* Metrics grid — 2x2 */}
-      <div className="grid grid-cols-2 gap-2">
+      <div ref={metricsRef} className="grid grid-cols-2 gap-2">
 
         {/* ROAS */}
         <motion.div
           className="rounded-lg p-4 bg-[#0d1b2a]/90 border border-[#1a2a3a]/80 shadow-[0_4px_24px_rgba(0,0,0,0.4)]"
           initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.75 }}
         >
           <span className="text-gray-400 text-[9px] font-ui tracking-wider uppercase">ROAS</span>
@@ -142,11 +160,11 @@ export default function HeroDashboard() {
           <div className="flex items-end gap-0.5 mt-2.5 h-6">
             {[30, 45, 40, 55, 50, 65, 60, 75, 70, 85, 80, 100].map((h, i) => (
               <motion.div
-                key={i}
+                key={`${sparklineKey}-${i}`}
                 className="flex-1 rounded-sm bg-gradient-to-t from-[#5FA99F]/60 to-[#5FA99F]"
                 initial={{ height: 0 }}
-                animate={{ height: `${h}%` }}
-                transition={{ duration: 0.4, delay: 1.0 + i * 0.04 }}
+                animate={isInView ? { height: `${h}%` } : { height: 0 }}
+                transition={{ duration: 0.4, delay: 0.6 + i * 0.04 }}
               />
             ))}
           </div>
@@ -156,7 +174,8 @@ export default function HeroDashboard() {
         <motion.div
           className="rounded-lg p-4 bg-[#0d1b2a]/90 border border-[#1a2a3a]/80 shadow-[0_4px_24px_rgba(0,0,0,0.4)]"
           initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.85 }}
         >
           <span className="text-gray-400 text-[9px] font-ui tracking-wider uppercase">Cost per Lead</span>
@@ -175,11 +194,11 @@ export default function HeroDashboard() {
           <div className="flex items-end gap-0.5 mt-2.5 h-6">
             {[100, 92, 85, 80, 72, 68, 60, 55, 48, 42, 38, 30].map((h, i) => (
               <motion.div
-                key={i}
+                key={`${sparklineKey}-${i}`}
                 className="flex-1 rounded-sm bg-gradient-to-t from-[#67E8F9]/60 to-[#67E8F9]"
                 initial={{ height: 0 }}
-                animate={{ height: `${h}%` }}
-                transition={{ duration: 0.4, delay: 1.1 + i * 0.04 }}
+                animate={isInView ? { height: `${h}%` } : { height: 0 }}
+                transition={{ duration: 0.4, delay: 0.7 + i * 0.04 }}
               />
             ))}
           </div>
@@ -189,7 +208,8 @@ export default function HeroDashboard() {
         <motion.div
           className="rounded-lg p-4 bg-[#0d1b2a]/90 border border-[#1a2a3a]/80 shadow-[0_4px_24px_rgba(0,0,0,0.4)]"
           initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.95 }}
         >
           <span className="text-gray-400 text-[9px] font-ui tracking-wider uppercase">Sessions</span>
@@ -208,11 +228,11 @@ export default function HeroDashboard() {
           <div className="flex items-end gap-0.5 mt-2.5 h-6">
             {[40, 55, 35, 65, 50, 80, 70, 90, 75, 95, 85, 100].map((h, i) => (
               <motion.div
-                key={i}
+                key={`${sparklineKey}-${i}`}
                 className="flex-1 rounded-sm bg-gradient-to-t from-[#5FA99F]/60 to-[#5FA99F]"
                 initial={{ height: 0 }}
-                animate={{ height: `${h}%` }}
-                transition={{ duration: 0.4, delay: 1.2 + i * 0.04 }}
+                animate={isInView ? { height: `${h}%` } : { height: 0 }}
+                transition={{ duration: 0.4, delay: 0.8 + i * 0.04 }}
               />
             ))}
           </div>
@@ -222,7 +242,8 @@ export default function HeroDashboard() {
         <motion.div
           className="rounded-lg p-4 bg-[#0d1b2a]/90 border border-[#1a2a3a]/80 shadow-[0_4px_24px_rgba(0,0,0,0.4)]"
           initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 1.05 }}
         >
           <span className="text-gray-400 text-[9px] font-ui tracking-wider uppercase">Avg. Session Duration</span>
@@ -241,11 +262,11 @@ export default function HeroDashboard() {
           <div className="flex items-end gap-0.5 mt-2.5 h-6">
             {[50, 45, 55, 60, 58, 65, 70, 68, 75, 80, 85, 90].map((h, i) => (
               <motion.div
-                key={i}
+                key={`${sparklineKey}-${i}`}
                 className="flex-1 rounded-sm bg-gradient-to-t from-[#67E8F9]/60 to-[#67E8F9]"
                 initial={{ height: 0 }}
-                animate={{ height: `${h}%` }}
-                transition={{ duration: 0.4, delay: 1.3 + i * 0.04 }}
+                animate={isInView ? { height: `${h}%` } : { height: 0 }}
+                transition={{ duration: 0.4, delay: 0.9 + i * 0.04 }}
               />
             ))}
           </div>

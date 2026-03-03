@@ -6,17 +6,17 @@ const cards = [
   {
     number: '01',
     title: 'Why We Exist',
-    description: "Too many small businesses burn money on ads that don't work. We started Drive Lead Media because we believe every local business deserves a marketing partner that treats their budget like their own — no vanity metrics, no fluff, just customers walking through the door.",
+    description: "We kept seeing the same thing, local businesses handing their money to agencies that overpromise and underdeliver. Ads that don't convert. Cookie-cutter websites that looked outdated the day they launched. We started Drive Lead Media to fix that.",
   },
   {
     number: '02',
     title: 'Our Approach',
-    description: "We build the entire system — Meta ad campaigns, actor-led video creative, and conversion-focused websites — all working together. Every dollar is tracked, every click has a purpose, and every week your campaigns get sharper.",
+    description: "We don't just run ads. We build the whole thing, the Meta campaigns, the video creatives and the website people actually convert on. It all works together because we built it that way.",
   },
   {
     number: '03',
     title: 'How We Deliver',
-    description: "You focus on running your business. We handle everything: creative production, audience targeting, campaign optimization, and detailed reporting. No guesswork, no DIY headaches — just measurable growth from day one.",
+    description: "You don't have to learn Meta ads. You don't have to shoot your own content. You don't have to wonder if it's working. We handle it and you see the leads come in. Simple as that.",
   },
 ];
 
