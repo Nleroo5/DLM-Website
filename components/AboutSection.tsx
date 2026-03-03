@@ -61,7 +61,7 @@ export default function AboutSection() {
               src="/images/aboutus.jpg"
               alt="The Drive Lead Media team"
               fill
-              className="object-cover object-center"
+              className="object-cover object-[center_60%] scale-125"
               sizes="(max-width: 1024px) 100vw, 33vw"
               priority
             />
