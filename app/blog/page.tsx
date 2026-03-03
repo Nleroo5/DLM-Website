@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { blogPosts } from '@/lib/blog-posts';
 import Newsletter from '@/components/Newsletter';
@@ -37,8 +38,20 @@ export default function BlogPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group bg-[#1A1A1A]/40 backdrop-blur-xl border-2 border-[rgba(95,169,159,0.3)] rounded-[20px] sm:rounded-[24px] p-6 sm:p-8 hover:border-[#f2a921] hover:shadow-[0_0_30px_rgba(242,169,33,0.3)] transition-all duration-500 hover:-translate-y-1 shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+                className="group bg-[#1A1A1A]/40 backdrop-blur-xl border-2 border-[rgba(95,169,159,0.3)] rounded-[20px] sm:rounded-[24px] overflow-hidden hover:border-[#f2a921] hover:shadow-[0_0_30px_rgba(242,169,33,0.3)] transition-all duration-500 hover:-translate-y-1 shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
               >
+                {/* Hero Image */}
+                <Link href={`/blog/${post.slug}`} className="block relative aspect-[16/9] overflow-hidden">
+                  <Image
+                    src={post.heroImage}
+                    alt={post.heroImageAlt}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                </Link>
+
+                <div className="p-6 sm:p-8">
                 {/* Category Badge */}
                 <Link
                   href={`/blog/category/${post.category.slug}`}
@@ -61,6 +74,7 @@ export default function BlogPage() {
                   <span>By {post.author.name}</span>
                   <span>•</span>
                   <span>{post.readTime}</span>
+                </div>
                 </div>
               </motion.div>
             ))}
