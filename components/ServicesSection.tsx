@@ -88,56 +88,32 @@ function BrowserWidget() {
   );
 }
 
-function WaveformWidget() {
-  const bars = [40, 70, 50, 85, 60, 95, 45, 80, 55, 90, 65, 75];
+function PlayButtonWidget() {
   return (
-    <div className="w-full h-full rounded-lg flex items-center justify-center p-3 relative" style={holoStyle}>
+    <div className="w-full h-full rounded-lg flex items-center justify-center relative" style={holoStyle}>
       <HoloShimmer />
-      <div className="flex items-center gap-1.5 w-full h-full relative z-10">
-        <motion.div
-          className="w-7 h-7 lg:w-9 lg:h-9 rounded-full flex items-center justify-center flex-shrink-0"
-          style={{
-            background: 'linear-gradient(135deg, rgba(242,169,33,0.25), rgba(242,169,33,0.1))',
-            border: '1px solid rgba(242,169,33,0.4)',
-            boxShadow: '0 0 12px rgba(242,169,33,0.15)',
-          }}
-          animate={{ boxShadow: ['0 0 12px rgba(242,169,33,0.15)', '0 0 20px rgba(242,169,33,0.3)', '0 0 12px rgba(242,169,33,0.15)'] }}
-          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+      <motion.div
+        className="w-10 h-10 lg:w-14 lg:h-14 rounded-full flex items-center justify-center relative z-10"
+        style={{
+          background: 'linear-gradient(135deg, rgba(242,169,33,0.3), rgba(242,169,33,0.1))',
+          border: '2px solid rgba(242,169,33,0.5)',
+          boxShadow: '0 0 16px rgba(242,169,33,0.2)',
+        }}
+        animate={{ boxShadow: ['0 0 16px rgba(242,169,33,0.2)', '0 0 28px rgba(242,169,33,0.4)', '0 0 16px rgba(242,169,33,0.2)'] }}
+        transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+      >
+        <motion.svg
+          className="w-5 h-5 lg:w-7 lg:h-7 text-[#f2a921] ml-0.5"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+          initial={{ scale: 0, rotate: -90 }}
+          whileInView={{ scale: 1, rotate: 0 }}
+          viewport={{ once: false }}
+          transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
         >
-          <motion.svg
-            className="w-3 h-3 lg:w-4 lg:h-4 text-[#f2a921] ml-0.5"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-            initial={{ scale: 0, rotate: -90 }}
-            whileInView={{ scale: 1, rotate: 0 }}
-            viewport={{ once: false }}
-            transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
-          >
-            <path d="M8 5v14l11-7z" />
-          </motion.svg>
-        </motion.div>
-        <div className="flex items-center gap-[2px] flex-1 h-full">
-          {bars.map((h, i) => (
-            <motion.div
-              key={i}
-              className="flex-1 rounded-full"
-              style={{
-                background: `linear-gradient(to top, rgba(95,169,159,0.4), ${i % 3 === 0 ? 'rgba(103,232,249,0.8)' : i % 3 === 1 ? 'rgba(95,169,159,0.9)' : 'rgba(242,169,33,0.7)'})`,
-                boxShadow: i % 3 === 0 ? '0 0 6px rgba(103,232,249,0.3)' : 'none',
-              }}
-              initial={{ height: '5%' }}
-              whileInView={{ height: `${h}%` }}
-              viewport={{ once: false }}
-              transition={{
-                delay: 0.3 + i * 0.06,
-                duration: 0.6,
-                type: 'spring',
-                stiffness: 120,
-              }}
-            />
-          ))}
-        </div>
-      </div>
+          <path d="M8 5v14l11-7z" />
+        </motion.svg>
+      </motion.div>
     </div>
   );
 }
@@ -280,7 +256,7 @@ const services = [
     category: 'Creative',
     title: 'Video & Image Ads',
     description: "Motion graphics, drone footage, and scroll-stopping images built for Meta. No more generic stock photos or DIY content.",
-    widget: WaveformWidget,
+    widget: PlayButtonWidget,
   },
   {
     category: 'Tracking',

@@ -71,7 +71,7 @@ export default function AboutSection() {
               src="/images/DLM-About.png"
               alt="The Drive Lead Media team"
               fill
-              className="object-cover object-[center_70%] scale-150"
+              className="object-cover object-center"
               sizes="(max-width: 1024px) 100vw, 33vw"
               priority
             />
