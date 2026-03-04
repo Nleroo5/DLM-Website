@@ -83,10 +83,10 @@ export default function AboutSection() {
               <motion.div
                 key={card.number}
                 className="relative overflow-hidden bg-[#1A1A1A] border border-[rgba(95,169,159,0.15)] rounded-[20px] p-6 lg:p-8 hover:border-[rgba(95,169,159,0.4)] transition-all duration-300"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: false }}
-                transition={{ duration: 0.6, delay: i * 0.12, ease: 'easeOut' }}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.5, delay: i * 0.15, ease: [0.25, 0.1, 0.25, 1] }}
               >
                 <span
                   className="absolute -top-4 -right-3 lg:-top-5 lg:-right-4 text-[5rem] lg:text-[7rem] font-heading font-bold leading-none -rotate-12 text-[#f2a921]/50 select-none pointer-events-none"

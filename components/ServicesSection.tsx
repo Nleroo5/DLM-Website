@@ -304,10 +304,10 @@ export default function ServicesSection() {
             <motion.div
               key={service.title}
               className="bg-[#1A1A1A] border border-[rgba(95,169,159,0.15)] rounded-[24px] p-8 lg:p-16 hover:border-[#5FA99F] transition-all duration-300 group"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: false }}
-              transition={{ duration: 0.6, delay: i * 0.12, ease: 'easeOut' }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, delay: i * 0.15, ease: [0.25, 0.1, 0.25, 1] }}
             >
               <div className="w-20 h-16 lg:w-28 lg:h-24 mb-5 lg:mb-8">
                 <service.widget />
