@@ -52,6 +52,11 @@ const nextConfig: NextConfig = {
         destination: '/case-studies',
         permanent: true,
       },
+      {
+        source: '/book-a-call',
+        destination: '/book',
+        permanent: true,
+      },
     ];
   },
 };

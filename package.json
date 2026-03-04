@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@calcom/embed-react": "^1.5.3",
     "@emailjs/browser": "^4.4.1",
     "@fontsource/exo-2": "^5.2.8",
     "@hookform/resolvers": "^3.9.1",

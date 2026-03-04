@@ -150,9 +150,17 @@ export default function Navigation() {
 
             <Link
               href="/contact"
-              className="font-ui text-[1rem] px-8 py-3 bg-transparent text-white font-semibold rounded-xl border-2 border-white shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] hover:border-white/80 transition-all duration-400 hover:transform hover:scale-105 backdrop-blur-sm"
+              className="font-ui text-[1rem] text-[#5FA99F] hover:text-[#4a8a81] transition-colors duration-400 relative group font-medium"
             >
               Contact
+              <span className="hidden md:block absolute bottom-0 left-0 w-0 h-px bg-[#5FA99F] transition-all duration-400 group-hover:w-full"></span>
+            </Link>
+
+            <Link
+              href="/book"
+              className="font-ui text-[1rem] px-8 py-3 bg-transparent text-white font-semibold rounded-xl border-2 border-white shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] hover:border-white/80 transition-all duration-400 hover:transform hover:scale-105 backdrop-blur-sm"
+            >
+              Book a Call
             </Link>
           </div>
 
@@ -343,6 +351,18 @@ export default function Navigation() {
               <Link
                 href="/contact"
                 onClick={() => setIsMobileMenuOpen(false)}
+                className="block font-ui text-[1.125rem] text-white hover:text-[#5FA99F] transition-all duration-400 py-3 font-medium relative group"
+                style={{
+                  textShadow: '0 0 10px rgba(95,169,159,0.3)'
+                }}
+              >
+                <span className="relative z-10">Contact</span>
+                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-[#5FA99F] to-[#85C7B3] group-hover:w-full transition-all duration-400 shadow-[0_0_10px_#5FA99F]"></span>
+              </Link>
+
+              <Link
+                href="/book"
+                onClick={() => setIsMobileMenuOpen(false)}
                 className="block text-center font-ui text-[1rem] px-8 py-4 bg-gradient-to-r from-[#5FA99F]/10 to-[#85C7B3]/10 text-white font-semibold rounded-xl border-2 border-[#5FA99F] transition-all duration-400 mt-8 relative overflow-hidden group"
                 style={{
                   boxShadow: '0 0 20px rgba(95,169,159,0.4), inset 0 0 20px rgba(95,169,159,0.1)',
@@ -361,7 +381,7 @@ export default function Navigation() {
                   />
                 </div>
 
-                <span className="relative z-10">Contact</span>
+                <span className="relative z-10">Book a Call</span>
               </Link>
             </div>
           </motion.div>

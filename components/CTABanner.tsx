@@ -29,14 +29,14 @@ export default function CTABanner() {
           Stop guessing. Start growing. Let&apos;s build your next campaign together.
         </motion.p>
         <motion.a
-          href="#contact-form"
+          href="/book"
           className="inline-block font-heading text-[1rem] px-10 py-4 bg-gradient-to-r from-[#5FA99F] to-[#85C7B3] text-white font-semibold rounded-xl shadow-[0_0_30px_rgba(95,169,159,0.4)] hover:shadow-[0_0_40px_rgba(95,169,159,0.6)] hover:scale-[1.02] transition-all duration-300"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Get Your Free Estimate
+          Book a Free Strategy Call
         </motion.a>
       </div>
     </section>
