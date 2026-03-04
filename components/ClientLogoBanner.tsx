@@ -24,10 +24,10 @@ export default function ClientLogoBanner({ variant = 'light', heading }: ClientL
 
   const isDark = variant === 'dark';
   const displayHeading = heading || (isDark ? "You're in good company" : 'Trusted by Leading Brands');
-  const fadeBg = isDark ? '#0a0a0a' : 'white';
+  const fadeBg = isDark ? '#141414' : 'white';
 
   return (
-    <section className={`${isDark ? 'bg-[#0a0a0a] border-y border-[rgba(95,169,159,0.15)]' : 'bg-white border-y border-[rgba(95,169,159,0.12)]'} py-12 overflow-hidden`}>
+    <section className={`${isDark ? 'bg-[#141414] border-y border-[rgba(95,169,159,0.2)]' : 'bg-white border-y border-[rgba(95,169,159,0.12)]'} py-12 overflow-hidden`}>
       <div className="max-w-[1400px] mx-auto">
         <motion.h3
           className="text-center text-[#5FA99F] text-[1rem] font-medium uppercase tracking-widest mb-8 font-heading"
@@ -48,7 +48,7 @@ export default function ClientLogoBanner({ variant = 'light', heading }: ClientL
             {[...row1, ...row1, ...row1].map((logo, index) => (
               <div
                 key={`r1-${index}`}
-                className="flex-shrink-0 w-[180px] sm:w-[260px] lg:w-[320px] h-[100px] sm:h-[130px] lg:h-[160px] flex items-center justify-center mx-5 sm:mx-10 lg:mx-12 opacity-70 hover:opacity-100 transition-opacity duration-300"
+                className="flex-shrink-0 w-[180px] sm:w-[260px] lg:w-[480px] h-[100px] sm:h-[130px] lg:h-[240px] flex items-center justify-center mx-5 sm:mx-10 lg:mx-12 opacity-70 hover:opacity-100 transition-opacity duration-300"
               >
                 <Image
                   src={logo.src}
@@ -56,7 +56,7 @@ export default function ClientLogoBanner({ variant = 'light', heading }: ClientL
                   width={240}
                   height={140}
                   loading="lazy"
-                  className={`object-contain max-h-[80px] sm:max-h-[100px] lg:max-h-[130px] ${isDark ? (logo.detailed ? 'invert' : 'brightness-0 invert') : ''}`}
+                  className={`object-contain max-h-[80px] sm:max-h-[100px] lg:max-h-[195px] ${isDark ? (logo.detailed ? 'invert' : 'brightness-0 invert') : ''}`}
                 />
               </div>
             ))}
@@ -72,7 +72,7 @@ export default function ClientLogoBanner({ variant = 'light', heading }: ClientL
             {[...row2, ...row2, ...row2, ...row2].map((logo, index) => (
               <div
                 key={`r2-${index}`}
-                className="flex-shrink-0 w-[180px] sm:w-[260px] lg:w-[320px] h-[100px] sm:h-[130px] lg:h-[160px] flex items-center justify-center mx-5 sm:mx-10 lg:mx-12 opacity-70 hover:opacity-100 transition-opacity duration-300"
+                className="flex-shrink-0 w-[180px] sm:w-[260px] lg:w-[480px] h-[100px] sm:h-[130px] lg:h-[240px] flex items-center justify-center mx-5 sm:mx-10 lg:mx-12 opacity-70 hover:opacity-100 transition-opacity duration-300"
               >
                 <Image
                   src={logo.src}
@@ -80,7 +80,7 @@ export default function ClientLogoBanner({ variant = 'light', heading }: ClientL
                   width={240}
                   height={140}
                   loading="lazy"
-                  className={`object-contain max-h-[80px] sm:max-h-[100px] lg:max-h-[130px] ${isDark ? (logo.detailed ? 'invert' : 'brightness-0 invert') : ''}`}
+                  className={`object-contain max-h-[80px] sm:max-h-[100px] lg:max-h-[195px] ${isDark ? (logo.detailed ? 'invert' : 'brightness-0 invert') : ''}`}
                 />
               </div>
             ))}

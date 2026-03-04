@@ -34,7 +34,7 @@ function PortfolioCard({ src }: { src: string }) {
         playsInline
         className="w-full h-full object-cover"
       />
-      <div className="absolute inset-0 bg-[#0d1b2a]/40 mix-blend-multiply pointer-events-none" />
+      <div className="absolute inset-0 bg-[#0d1b2a]/20 mix-blend-multiply pointer-events-none" />
     </div>
   );
 }

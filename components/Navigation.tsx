@@ -33,7 +33,7 @@ export default function Navigation() {
     <nav
       role="navigation"
       aria-label="Main navigation"
-      className="absolute top-0 left-0 right-0 z-[999] bg-transparent"
+      className="absolute top-0 left-0 right-0 z-[999] bg-transparent pt-3 sm:pt-4 lg:pt-5"
     >
       <div className="max-w-[1400px] mx-auto px-4 xs:px-5 sm:px-6 lg:px-10">
             <div className="flex items-center justify-between h-[70px] xs:h-[80px] sm:h-[90px]">
