@@ -699,7 +699,7 @@ export default function MetaAdsCalculator() {
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
                 <Link
-                  href="/contact"
+                  href="/book"
                   className="inline-flex items-center gap-2 bg-gradient-to-br from-[#F2A922] to-[#EEF4D9] text-[#012E40] px-7 py-3 rounded-xl text-[1rem] font-bold font-body transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(242,169,34,0.4)] no-underline"
                 >
                   Schedule Free Strategy Call

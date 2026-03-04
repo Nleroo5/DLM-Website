@@ -171,7 +171,7 @@ export default function CaseStudiesPage() {
             Let&apos;s talk about how we can grow your business.
           </p>
           <Link
-            href="/contact"
+            href="/book"
             className="inline-block bg-[#5FA99F] hover:bg-[#4a8a81] text-white font-heading font-semibold text-lg px-8 py-4 rounded-full transition-all duration-300 hover:shadow-[0_0_30px_rgba(95,169,159,0.4)]"
           >
             Get Your Free Estimate

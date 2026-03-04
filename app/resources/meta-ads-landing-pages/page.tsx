@@ -796,7 +796,7 @@ export default function MetaAdsLandingPagesPage() {
                     We build high-converting landing pages specifically designed for Meta ads. Every page includes proper tracking, mobile optimization, and is designed to turn your clicks into customers.
                   </p>
                   <Link
-                    href="/contact"
+                    href="/book"
                     className="inline-block bg-[#5FA99F] hover:bg-[#85C7B3] text-white px-8 py-4 rounded-xl font-heading font-semibold text-[1rem] sm:text-[1.1rem] transition-all duration-300 shadow-[0_4px_20px_rgba(95,169,159,0.4)] hover:shadow-[0_6px_30px_rgba(95,169,159,0.6)] mb-4"
                   >
                     Book Your Free Strategy Call

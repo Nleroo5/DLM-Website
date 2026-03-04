@@ -793,7 +793,7 @@ export default function NextJsVsWordPress2026() {
               We build custom Next.js websites optimized for Meta advertising campaigns. Fast load times, excellent security, and designed to convert your advertising traffic into customers.
             </p>
             <Link
-              href="/contact"
+              href="/book"
               className="inline-block bg-[#5FA99F] hover:bg-[#4A8A82] text-[#000000] px-10 py-5 rounded-xl font-bold text-body transition-all duration-300 transform hover:scale-105 shadow-xl"
             >
               Get Started with Next.js

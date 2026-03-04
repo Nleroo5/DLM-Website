@@ -708,7 +708,7 @@ export default function HowToTellIfFacebookAdsWorkingPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link
-                href="/contact"
+                href="/book"
                 className="inline-block font-heading text-base px-8 py-4 bg-[#5FA99F] text-white font-semibold rounded-lg hover:bg-[#85C7B3] transition-all duration-300 hover:scale-105 shadow-lg"
               >
                 Get Your Free Ad Account Audit

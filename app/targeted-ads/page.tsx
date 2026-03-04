@@ -378,7 +378,7 @@ export default function TargetedAdsPage() {
       {/* Floating CTA */}
       <div className="fixed bottom-[clamp(12px,2.5vw,20px)] right-[clamp(12px,2.5vw,20px)] z-[997] max-w-[clamp(200px,40vw,320px)] hidden sm:block">
         <Link
-          href="/contact"
+          href="/book"
           className="block bg-[#1A1A1A]/40 backdrop-blur-xl border-2 border-[rgba(95,169,159,0.4)] rounded-[clamp(10px,2vw,16px)] p-[clamp(12px,2.5vw,16px)_clamp(16px,3vw,20px)] shadow-[0_8px_32px_rgba(0,0,0,0.4)] transition-all duration-500 hover:-translate-y-[2px] hover:border-[rgba(95,169,159,0.6)] hover:shadow-[0_0_30px_rgba(95,169,159,0.3)]"
         >
           <p className="text-[clamp(0.85rem,1.8vw,1rem)] text-white font-heading font-bold text-center leading-[1.3] m-0">

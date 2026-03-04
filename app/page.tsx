@@ -12,7 +12,6 @@ const AboutSection = dynamic(() => import('@/components/AboutSection'), { ssr: t
 const PortfolioShowcase = dynamic(() => import('@/components/PortfolioShowcase'), { ssr: true });
 const ServicesSection = dynamic(() => import('@/components/ServicesSection'), { ssr: true });
 const CTABanner = dynamic(() => import('@/components/CTABanner'), { ssr: true });
-const HomepageContactSection = dynamic(() => import('@/components/HomepageContactSection'), { ssr: true });
 
 export default function Home() {
   useEffect(() => {
@@ -35,7 +34,6 @@ export default function Home() {
       <PortfolioShowcase />
       <ServicesSection />
       <CTABanner />
-      <HomepageContactSection />
     </main>
   );
 }

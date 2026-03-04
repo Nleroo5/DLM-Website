@@ -651,7 +651,7 @@ export default function FacebookAdsCostAtlantaPost() {
                 <p className="text-white text-body leading-body mb-4">
                   We're Drive Lead Media — an Atlanta-based Meta advertising agency specializing in video ads and conversion optimization.
                 </p>
-                <Link href="/contact" className="text-[#5FA99F] underline">Schedule a free strategy call →</Link>
+                <Link href="/book" className="text-[#5FA99F] underline">Schedule a free strategy call →</Link>
               </div>
             </div>
 

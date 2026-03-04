@@ -178,7 +178,7 @@ export default function RootLayout({
               "contactPoint": {
                 "@type": "ContactPoint",
                 "contactType": "Sales",
-                "url": "https://driveleadmedia.com/contact",
+                "url": "https://driveleadmedia.com/book",
                 "availableLanguage": "English"
               },
               "address": {

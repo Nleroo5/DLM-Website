@@ -755,7 +755,7 @@ export default function MetaAdsHealthcareComplianceAtlanta() {
               Drive Lead Media specializes in compliant Meta advertising for Atlanta healthcare practices. We handle policy navigation, creative development within compliance boundaries, and campaign management so you can focus on patient care.
             </p>
             <Link
-              href="/contact"
+              href="/book"
               className="inline-block bg-[#5FA99F] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#85C7B3] transition-colors"
             >
               Schedule a Consultation

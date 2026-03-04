@@ -1045,7 +1045,7 @@ export default function MetaAndromedaAlgorithm2026() {
               We specialize in Meta advertising for Atlanta businesses. We'll audit your current campaigns, create diverse creative, and optimize for the Andromeda algorithm so you get better results without wasting money on trial and error.
             </p>
             <Link
-              href="/contact"
+              href="/book"
               className="inline-block bg-[#5FA99F] hover:bg-[#4A8A82] text-[#000000] px-10 py-5 rounded-xl font-bold text-body transition-all duration-300 transform hover:scale-105 shadow-xl"
             >
               Get a Free Campaign Audit

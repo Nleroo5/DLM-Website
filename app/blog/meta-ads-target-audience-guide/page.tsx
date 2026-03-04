@@ -662,7 +662,7 @@ export default function MetaAdsTargetAudienceGuide() {
               We'll analyze your business, build custom audiences, and manage your Meta ads campaigns so you get the best results from day one.
             </p>
             <Link
-              href="/contact"
+              href="/book"
               className="inline-block bg-[#5FA99F] hover:bg-[#4A8A82] text-[#000000] px-10 py-5 rounded-xl font-bold text-body transition-all duration-300 transform hover:scale-105 shadow-xl"
             >
               Get a Free Strategy Call

@@ -1144,7 +1144,7 @@ export default function FacebookPixelSetupPage() {
                 We handle complete Meta Pixel setup, conversion tracking, and full-service Facebook & Instagram advertising campaign management for businesses in Atlanta.
               </p>
               <Link
-                href="/contact"
+                href="/book"
                 className="inline-block font-heading text-base px-8 py-4 bg-[#5FA99F] text-black font-semibold rounded-lg hover:bg-[#85C7B3] transition-all duration-300"
               >
                 Schedule a Free Strategy Call

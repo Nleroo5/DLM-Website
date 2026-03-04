@@ -11,7 +11,7 @@ export default function TargetedAdsCTA() {
       <div className="absolute bottom-0 left-0 right-0 h-[25vh] bg-gradient-to-b from-transparent via-black/50 to-black pointer-events-none" style={{ zIndex: -1 }} />
 
       <div className="relative z-10 flex flex-col items-center justify-center px-6">
-        <Link href="/contact" className="block">
+        <Link href="/book" className="block">
           <motion.button
             className="relative px-8 py-4 bg-transparent rounded-xl font-heading font-bold text-white text-lg overflow-hidden group cursor-pointer"
             whileHover={{

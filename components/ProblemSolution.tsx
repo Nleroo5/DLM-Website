@@ -76,7 +76,7 @@ export default function ProblemSolution() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link
-                href="/contact"
+                href="/book"
                 className="inline-block font-ui text-[0.9rem] sm:text-[0.95rem] md:text-[1rem] lg:text-[1.1rem] px-6 sm:px-7 md:px-8 py-3 sm:py-3.5 md:py-4 bg-[#5FA99F] text-white font-bold rounded-full hover:bg-[#4E8B82] hover:shadow-lg transition-all duration-300 hover:scale-105"
               >
                 Get Your Free Strategy Call

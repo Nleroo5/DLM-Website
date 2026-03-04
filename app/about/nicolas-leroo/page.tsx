@@ -349,7 +349,7 @@ export default function NicolasLerooPage() {
                 Ready to build a complete Meta advertising system for your business? Let's discuss your goals and create a strategy that works.
               </p>
               <Link
-                href="/contact"
+                href="/book"
                 className="inline-block bg-[#5FA99F] text-white px-8 py-4 text-[1rem] rounded-xl font-heading font-semibold hover:bg-[#85C7B3] transition-all duration-300 shadow-[0_4px_20px_rgba(95,169,159,0.4)] hover:shadow-[0_6px_30px_rgba(95,169,159,0.6)]"
               >
                 Get in Touch

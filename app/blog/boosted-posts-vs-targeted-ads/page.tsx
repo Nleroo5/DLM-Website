@@ -659,7 +659,7 @@ export default function BoostedPostsVsTargetedAdsPost() {
                 We build conversion-focused campaigns with proper tracking and optimization through Ads Manager.
               </p>
               <Link
-                href="/contact"
+                href="/book"
                 className="inline-block bg-gradient-to-r from-[#5FA99F] to-[#85C7B3] text-white px-8 py-4 rounded-xl font-heading font-bold hover:scale-105 transition-transform duration-300"
               >
                 Schedule Free Strategy Call →

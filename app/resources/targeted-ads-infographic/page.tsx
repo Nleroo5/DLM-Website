@@ -133,7 +133,7 @@ export default function TargetedAdsInfographic() {
             Have questions about implementing Meta Targeted Ads for your business?
           </p>
           <Link
-            href="/contact"
+            href="/book"
             className="inline-flex items-center gap-2 text-[#F2A922] hover:text-[#EEF4D9] transition-colors duration-300 font-heading text-[1rem] sm:text-[1.05rem] font-semibold underline underline-offset-4 hover:underline-offset-8"
           >
             Schedule a Free Strategy Call

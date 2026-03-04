@@ -57,6 +57,11 @@ const nextConfig: NextConfig = {
         destination: '/book',
         permanent: true,
       },
+      {
+        source: '/contact',
+        destination: '/book',
+        permanent: true,
+      },
     ];
   },
 };

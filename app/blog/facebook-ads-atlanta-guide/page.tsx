@@ -1486,7 +1486,7 @@ export default function FacebookAdsAtlantaGuide() {
                 </ul>
                 <div className="text-center">
                   <Link
-                    href="/contact"
+                    href="/book"
                     className="inline-block bg-[#5FA99F] text-[#000000] px-8 py-4 rounded-full font-bold text-body hover:bg-[#D4A574] transition-colors duration-300"
                   >
                     Get a Free Facebook Ads Audit
@@ -1628,7 +1628,7 @@ export default function FacebookAdsAtlantaGuide() {
                   Facebook ads can feel overwhelming at first. If you are stuck or not sure where to start, we are here to help.
                 </p>
                 <Link
-                  href="/contact"
+                  href="/book"
                   className="inline-block bg-[#5FA99F] text-[#000000] px-6 py-3 rounded-full font-bold text-[1rem] hover:bg-[#D4A574] transition-colors duration-300"
                 >
                   Ask Us Anything
@@ -1733,7 +1733,7 @@ export default function FacebookAdsAtlantaGuide() {
                 </ul>
                 <div className="text-center">
                   <Link
-                    href="/contact"
+                    href="/book"
                     className="inline-block bg-[#5FA99F] text-[#000000] px-8 py-4 rounded-full font-bold text-body hover:bg-[#D4A574] transition-colors duration-300 shadow-lg shadow-[#5FA99F]/30"
                   >
                     Get Your Free Audit
@@ -1753,7 +1753,7 @@ export default function FacebookAdsAtlantaGuide() {
                 Schedule a free 15-minute call and we will help you decide. No sales pressure, just honest advice.
               </p>
               <Link
-                href="/contact"
+                href="/book"
                 className="inline-block mt-4 text-[#5FA99F] hover:text-[#D4A574] font-bold underline"
               >
                 Schedule Free Strategy Call

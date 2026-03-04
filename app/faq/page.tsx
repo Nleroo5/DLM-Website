@@ -226,7 +226,7 @@ export default function FAQPage() {
             We're here to help. Get in touch and we'll respond as soon as possible.
           </p>
           <Link
-            href="/contact"
+            href="/book"
             className="inline-block bg-transparent text-white px-8 py-3 text-sm rounded-lg font-heading font-semibold border-2 border-white hover:bg-white hover:text-black transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] hover:scale-105"
           >
             Contact Us
