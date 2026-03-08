@@ -44,12 +44,12 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/portfolio/websites',
-        destination: '/case-studies',
+        destination: '/case-studies/websites',
         permanent: true,
       },
       {
         source: '/portfolio/video-ads',
-        destination: '/case-studies',
+        destination: '/case-studies/video-ads',
         permanent: true,
       },
       {

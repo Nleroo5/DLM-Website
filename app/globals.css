@@ -267,19 +267,19 @@ section {
 
 /* Logo banner marquee */
 .animate-marquee-left-slow {
-  animation: marquee-left 10s linear infinite;
+  animation: marquee-left 6s linear infinite;
 }
 
 .animate-marquee-right-slow {
-  animation: marquee-right 10s linear infinite;
+  animation: marquee-right 6s linear infinite;
 }
 
 @media (min-width: 640px) {
   .animate-marquee-left-slow {
-    animation: marquee-left 30s linear infinite;
+    animation: marquee-left 18s linear infinite;
   }
   .animate-marquee-right-slow {
-    animation: marquee-right 30s linear infinite;
+    animation: marquee-right 18s linear infinite;
   }
 }
 
