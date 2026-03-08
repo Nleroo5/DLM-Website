@@ -51,7 +51,7 @@ const websiteProjects: WebsiteProject[] = [
   {
     title: 'Southern Tents & Events',
     industry: 'Event Services',
-    thumbnail: '/images/case-studies/southern-tents/thumbnail.webp',
+    videoUrl: '/images/case-studies/southern-tents/southern-tents.webm',
     liveUrl: 'https://southerntentsandevents.com/',
     services: ['Website Rebuild', 'Meta Ads', 'SEO'],
     metrics: [
@@ -125,9 +125,9 @@ export default function WebsitesPage() {
             >
               {/* Video or Image Preview */}
               {project.videoUrl ? (
-                <div className="relative w-full aspect-[16/10] overflow-hidden">
+                <div className="relative w-full overflow-hidden">
                   <video
-                    className="w-full h-full object-cover"
+                    className="w-full h-auto"
                     autoPlay
                     loop
                     muted
