@@ -57,7 +57,7 @@ const websiteProjects: WebsiteProject[] = [
     services: ['Website Rebuild', 'Meta Ads', 'SEO'],
     metrics: [
       { value: '#3', label: 'Google Rankings (1st Month)' },
-      { value: '500%+', label: 'Increase in Leads' },
+      { value: '+500%', label: 'Increase in Leads' },
       { value: '4.2x', label: 'ROAS' },
     ],
     testimonial: {
@@ -72,7 +72,7 @@ const websiteProjects: WebsiteProject[] = [
   {
     title: 'SetLife Casting',
     industry: 'Entertainment - Casting',
-    videoUrl: '/Videos/atlanta-casting-agency-website-entertainment-portfolio.mp4',
+    videoUrl: '/images/case-studies/setlife-casting/setlife.webm',
     liveUrl: 'https://www.setlifecasting.com/',
     services: ['Web Design', 'Development', 'Branding'],
   },
@@ -176,9 +176,9 @@ export default function WebsitesPage() {
 
                 {/* Metrics — only if they exist */}
                 {project.metrics && project.metrics.length > 0 && (
-                  <div className="flex gap-6 mb-4 py-3 border-y border-[rgba(95,169,159,0.1)]">
+                  <div className="flex justify-between mb-4 py-3 border-y border-[rgba(95,169,159,0.1)]">
                     {project.metrics.map((metric) => (
-                      <div key={metric.label}>
+                      <div key={metric.label} className="text-center flex-1">
                         <p className="font-heading text-[1.5rem] font-bold text-[#f2a921] leading-none">
                           {metric.value}
                         </p>
@@ -199,7 +199,7 @@ export default function WebsitesPage() {
                       border: '1px solid rgba(95,169,159,0.15)',
                     }}
                   >
-                    <p className="font-heading text-white/90 text-[0.8rem] leading-relaxed mb-3 line-clamp-4">
+                    <p className="font-heading text-white/90 text-[0.8rem] leading-relaxed mb-3">
                       &ldquo;{project.testimonial.quote}&rdquo;
                     </p>
                     <div className="flex items-center gap-2.5">
