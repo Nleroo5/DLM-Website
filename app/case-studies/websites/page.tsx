@@ -39,6 +39,7 @@ const websiteProjects: WebsiteProject[] = [
     metrics: [
       { value: '+40%', label: 'Patient Bookings (1st Month)' },
       { value: '7.8x', label: 'ROAS' },
+      { value: '+1700%', label: 'Website Traffic' },
     ],
     testimonial: {
       quote:
@@ -55,8 +56,9 @@ const websiteProjects: WebsiteProject[] = [
     liveUrl: 'https://southerntentsandevents.com/',
     services: ['Website Rebuild', 'Meta Ads', 'SEO'],
     metrics: [
-      { value: '3x', label: 'Lead Increase' },
-      { value: '#1', label: 'Google Rankings' },
+      { value: '#3', label: 'Google Rankings (1st Month)' },
+      { value: '500%+', label: 'Increase in Leads' },
+      { value: '4.2x', label: 'ROAS' },
     ],
     testimonial: {
       quote:
