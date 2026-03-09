@@ -255,7 +255,7 @@ const services = [
   {
     category: 'Creative',
     title: 'Video & Image Ads',
-    description: "Motion graphics, drone footage, and scroll-stopping images built for Meta. No more generic stock photos or DIY content.",
+    description: "Motion graphics, drone footage, and high-converting images built for Meta. No more generic stock photos or DIY content.",
     widget: PlayButtonWidget,
   },
   {

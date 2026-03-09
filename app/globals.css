@@ -208,6 +208,13 @@ section {
     scrollbar-width: thin;
     scrollbar-color: rgba(95, 169, 159, 0.4) transparent;
   }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    scrollbar-width: none;
+  }
 }
 
 /* Utility Classes for Font Assignment */

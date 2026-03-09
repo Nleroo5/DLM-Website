@@ -219,7 +219,7 @@ export default function HowItWorks() {
                 transition={{ duration: 0.6, delay: 0.45 }}
               >
                 <h2 className="text-3xl lg:text-[2.625rem] font-bold text-white mb-6 leading-tight">
-                  Scroll Stopping<br />Creatives
+                  High-Converting<br />Creatives
                 </h2>
                 <p className="text-base lg:text-xl text-gray-300 leading-relaxed">
                   Custom video and image ads designed to capture attention in crowded feeds and drive qualified clicks across Instagram and Facebook.
@@ -345,7 +345,7 @@ export default function HowItWorks() {
         </div>
 
         <MobileScene
-          title="Scroll Stopping Creatives"
+          title="High-Converting Creatives"
           description="Custom video and image ads designed to capture attention in crowded feeds and drive qualified clicks across Instagram and Facebook."
           videoSrc="/Videos/scroll-stopping-deviceframes.webm"
           index={1}
