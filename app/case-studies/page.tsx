@@ -1,9 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, Fragment } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useTransform, useMotionValueEvent } from 'framer-motion';
 
 interface Metric {
   value: string;
@@ -29,6 +29,7 @@ interface CaseStudyProject {
   metrics?: Metric[];
   testimonial?: Testimonial;
   videoAds?: string[];
+  testimonialVideoId?: string;
 }
 
 const projects: CaseStudyProject[] = [
@@ -100,6 +101,7 @@ const projects: CaseStudyProject[] = [
       role: 'Owner, Village Pediatrics',
       image: '/images/dr-austin-dupont.webp',
     },
+    testimonialVideoId: 'YBLniwOCtKU',
   },
   {
     title: 'Wilcox Tax Firm',
@@ -161,6 +163,100 @@ const projects: CaseStudyProject[] = [
   },
 ];
 
+function ElevatorDoorVideo({ videoId }: { videoId: string }) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [doorsOpened, setDoorsOpened] = useState(false);
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ['start end', 'end start'],
+  });
+
+  const leftDoorXRaw = useTransform(scrollYProgress, [0.1, 0.45], ['0%', '-100%']);
+  const rightDoorXRaw = useTransform(scrollYProgress, [0.1, 0.45], ['0%', '100%']);
+  const videoOpacityRaw = useTransform(scrollYProgress, [0.25, 0.45], [0, 1]);
+
+  useMotionValueEvent(scrollYProgress, 'change', (v) => {
+    if (v >= 0.45 && !doorsOpened) {
+      setDoorsOpened(true);
+    }
+  });
+
+  const leftDoorX = doorsOpened ? '-100%' : leftDoorXRaw;
+  const rightDoorX = doorsOpened ? '100%' : rightDoorXRaw;
+  const videoOpacity = doorsOpened ? 1 : videoOpacityRaw;
+
+  return (
+    <div ref={containerRef} className="relative bg-black rounded-2xl overflow-hidden">
+      <div className="relative w-full" style={{ paddingBottom: '45%' }}>
+        <motion.iframe
+          style={{ opacity: videoOpacity }}
+          className="absolute inset-0 w-full h-full"
+          src={`https://www.youtube.com/embed/${videoId}?modestbranding=1&rel=0&showinfo=0&controls=1&disablekb=1${isPlaying ? '&autoplay=1' : ''}`}
+          title="Client Testimonial Video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+
+        <AnimatePresence>
+          {!isPlaying && (
+            <motion.button
+              initial={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              onClick={() => setIsPlaying(true)}
+              className="absolute inset-0 z-[5] flex items-center justify-center group cursor-pointer"
+              aria-label="Play video"
+            >
+              <div className="relative">
+                <div className="w-16 h-16 rounded-full bg-[#5FA99F] flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:bg-[#4a8a81] shadow-lg group-hover:shadow-[0_0_30px_rgba(95,169,159,0.6)]">
+                  <div className="w-0 h-0 ml-1 border-t-[12px] border-t-transparent border-l-[18px] border-l-white border-b-[12px] border-b-transparent" />
+                </div>
+              </div>
+            </motion.button>
+          )}
+        </AnimatePresence>
+
+        {/* Elevator Doors */}
+        <motion.div
+          style={{ x: leftDoorX }}
+          className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-br from-[hsl(204,97%,15%)] to-[hsl(204,97%,20%)] z-10 flex items-center justify-end pr-4 shadow-[0_0_20px_rgba(255,255,255,0.3),inset_2px_0_0_rgba(255,255,255,0.4)]"
+        >
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              backgroundImage: `
+                linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px)
+              `,
+              backgroundSize: '60px 60px',
+            }}
+          />
+          <div className="text-white text-2xl font-bold opacity-50 relative z-10">&blacktriangleright;</div>
+        </motion.div>
+
+        <motion.div
+          style={{ x: rightDoorX }}
+          className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-br from-[hsl(204,97%,15%)] to-[hsl(204,97%,20%)] z-10 flex items-center justify-start pl-4 shadow-[0_0_20px_rgba(255,255,255,0.3),inset_-2px_0_0_rgba(255,255,255,0.4)]"
+        >
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              backgroundImage: `
+                linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px)
+              `,
+              backgroundSize: '60px 60px',
+            }}
+          />
+          <div className="text-white text-2xl font-bold opacity-50 relative z-10">&blacktriangleleft;</div>
+        </motion.div>
+      </div>
+    </div>
+  );
+}
+
 export default function CaseStudiesPage() {
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
 
@@ -195,160 +291,178 @@ export default function CaseStudiesPage() {
       <section className="relative pb-[100px] sm:pb-[120px] px-4 sm:px-6">
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {projects.map((project, i) => (
-            <motion.article
-              key={project.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="bg-[#1A1A1A] border border-[rgba(95,169,159,0.15)] rounded-[20px] overflow-hidden"
-            >
-              {/* Video or Image Preview */}
-              {project.videoUrl ? (
-                <div className="relative w-full overflow-hidden bg-black flex justify-center">
-                  <video
-                    className="max-w-full max-h-[400px]"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                  >
-                    <source src={project.videoUrl} type={project.videoUrl.endsWith('.webm') ? 'video/webm' : 'video/mp4'} />
-                  </video>
-                </div>
-              ) : project.thumbnail ? (
-                <div className="relative w-full aspect-[16/10] overflow-hidden">
-                  <Image
-                    src={project.thumbnail}
-                    alt={project.title}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 580px"
-                  />
-                </div>
-              ) : null}
-
-              {/* Card Content */}
-              <div className="p-5 sm:p-6">
-                {/* Industry + Title */}
-                <span className="text-[#5FA99F] text-[0.65rem] font-heading uppercase tracking-widest">
-                  {project.industry}
-                </span>
-                <h2 className="font-heading text-[1.15rem] sm:text-[1.3rem] font-bold text-white mt-1 mb-3">
-                  {project.title}
-                </h2>
-
-                {/* Service Tags — only if they exist */}
-                {project.services && project.services.length > 0 && (
-                  <div className="flex flex-wrap gap-1.5 mb-4">
-                    {project.services.map((service) => (
-                      <span
-                        key={service}
-                        className="font-body text-[0.6rem] text-[#5FA99F] bg-[#5FA99F]/10 px-2.5 py-0.5 rounded-full uppercase tracking-wider"
-                      >
-                        {service}
-                      </span>
-                    ))}
+            <Fragment key={project.title}>
+              {/* Testimonial Video - takes one column, left of the card */}
+              {project.testimonialVideoId && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.1 }}
+                  transition={{ duration: 0.6, delay: i * 0.1 }}
+                >
+                  <ElevatorDoorVideo videoId={project.testimonialVideoId} />
+                </motion.div>
+              )}
+            {(() => {
+            // Standard card
+            return (
+              <motion.article
+                key={project.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
+                className="bg-[#1A1A1A] border border-[rgba(95,169,159,0.15)] rounded-[20px] overflow-hidden"
+              >
+                {/* Video or Image Preview */}
+                {project.videoUrl ? (
+                  <div className="relative w-full overflow-hidden bg-black flex justify-center">
+                    <video
+                      className="max-w-full max-h-[400px]"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                    >
+                      <source src={project.videoUrl} type={project.videoUrl.endsWith('.webm') ? 'video/webm' : 'video/mp4'} />
+                    </video>
                   </div>
-                )}
-
-                {/* Metrics — only if they exist */}
-                {project.metrics && project.metrics.length > 0 && (
-                  <div className="flex justify-between mb-4 py-3 border-y border-[rgba(95,169,159,0.1)]">
-                    {project.metrics.map((metric) => (
-                      <div key={metric.label} className="text-center flex-1">
-                        <p className="font-heading text-[1.5rem] font-bold text-[#f2a921] leading-none">
-                          {metric.value}
-                        </p>
-                        <p className="font-body text-gray-400 text-[0.65rem] uppercase tracking-wider mt-1">
-                          {metric.label}
-                        </p>
-                      </div>
-                    ))}
+                ) : project.thumbnail ? (
+                  <div className="relative w-full aspect-[16/10] overflow-hidden">
+                    <Image
+                      src={project.thumbnail}
+                      alt={project.title}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 580px"
+                    />
                   </div>
-                )}
+                ) : null}
 
-                {/* Testimonial — only if it exists */}
-                {project.testimonial && (
-                  <div
-                    className="rounded-[12px] p-4 mb-4"
-                    style={{
-                      background: 'linear-gradient(135deg, hsl(204,97%,12%) 0%, hsl(204,97%,18%) 100%)',
-                      border: '1px solid rgba(95,169,159,0.15)',
-                    }}
-                  >
-                    <p className="font-heading text-white/90 text-[0.8rem] leading-relaxed mb-3">
-                      &ldquo;{project.testimonial.quote}&rdquo;
-                    </p>
-                    <div className="flex items-center gap-2.5">
-                      {project.testimonial.image && (
-                        <div className="relative w-9 h-9 rounded-full overflow-hidden border-2 border-[#5FA99F]/30 flex-shrink-0">
-                          <Image
-                            src={project.testimonial.image}
-                            alt={project.testimonial.name}
-                            fill
-                            className="object-cover"
-                            style={{
-                              objectPosition: project.testimonial.imagePosition || 'center center',
-                            }}
-                            sizes="36px"
-                          />
-                        </div>
-                      )}
-                      <div>
-                        <p className="font-heading text-white font-bold text-[0.75rem]">
-                          {project.testimonial.name}
-                        </p>
-                        <p className="font-body text-white/60 text-[0.65rem]">
-                          {project.testimonial.role}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                )}
+                {/* Card Content */}
+                <div className="p-5 sm:p-6">
+                  {/* Industry + Title */}
+                  <span className="text-[#5FA99F] text-[0.65rem] font-heading uppercase tracking-widest">
+                    {project.industry}
+                  </span>
+                  <h2 className="font-heading text-[1.15rem] sm:text-[1.3rem] font-bold text-white mt-1 mb-3">
+                    {project.title}
+                  </h2>
 
-                {/* Video Ads — only if they exist */}
-                {project.videoAds && project.videoAds.length > 0 && (
-                  <div className="mb-4">
-                    <p className="font-heading text-white/60 text-[0.7rem] uppercase tracking-wider mb-3">Video Ads</p>
-                    <div className="flex gap-3">
-                      {project.videoAds.map((ad, adIndex) => (
-                        <button
-                          key={adIndex}
-                          onClick={() => setActiveVideo(ad)}
-                          className="flex-1 inline-flex items-center justify-center gap-2 border border-[rgba(95,169,159,0.3)] bg-[rgba(95,169,159,0.05)] text-[#5FA99F] px-4 py-2.5 rounded-xl font-heading font-bold text-[0.8rem] hover:border-[#5FA99F] hover:bg-[rgba(95,169,159,0.1)] hover:text-white transition-all duration-300"
+                  {/* Service Tags — only if they exist */}
+                  {project.services && project.services.length > 0 && (
+                    <div className="flex flex-wrap gap-1.5 mb-4">
+                      {project.services.map((service) => (
+                        <span
+                          key={service}
+                          className="font-body text-[0.6rem] text-[#5FA99F] bg-[#5FA99F]/10 px-2.5 py-0.5 rounded-full uppercase tracking-wider"
                         >
-                          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M8 5v14l11-7z" />
-                          </svg>
-                          Video Ad {adIndex + 1}
-                        </button>
+                          {service}
+                        </span>
                       ))}
                     </div>
-                  </div>
-                )}
+                  )}
 
-                {/* Visit Website Button */}
-                {project.liveUrl && (
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center border border-[rgba(95,169,159,0.3)] bg-[rgba(95,169,159,0.05)] text-[#5FA99F] px-5 py-2.5 rounded-xl font-heading font-bold text-[0.85rem] hover:border-[#5FA99F] hover:bg-[rgba(95,169,159,0.1)] hover:text-white transition-all duration-300 w-full"
-                  >
-                    <span>{project.liveUrlLabel || 'Visit Website'}</span>
-                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2.5}
-                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                      />
-                    </svg>
-                  </a>
-                )}
-              </div>
-            </motion.article>
+                  {/* Metrics — only if they exist */}
+                  {project.metrics && project.metrics.length > 0 && (
+                    <div className="flex justify-between mb-4 py-3 border-y border-[rgba(95,169,159,0.1)]">
+                      {project.metrics.map((metric) => (
+                        <div key={metric.label} className="text-center flex-1">
+                          <p className="font-heading text-[1.5rem] font-bold text-[#f2a921] leading-none">
+                            {metric.value}
+                          </p>
+                          <p className="font-body text-gray-400 text-[0.65rem] uppercase tracking-wider mt-1">
+                            {metric.label}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Testimonial — only if it exists */}
+                  {project.testimonial && (
+                    <div
+                      className="rounded-[12px] p-4 mb-4"
+                      style={{
+                        background: 'linear-gradient(135deg, hsl(204,97%,12%) 0%, hsl(204,97%,18%) 100%)',
+                        border: '1px solid rgba(95,169,159,0.15)',
+                      }}
+                    >
+                      <p className="font-heading text-white/90 text-[0.8rem] leading-relaxed mb-3">
+                        &ldquo;{project.testimonial.quote}&rdquo;
+                      </p>
+                      <div className="flex items-center gap-2.5">
+                        {project.testimonial.image && (
+                          <div className="relative w-9 h-9 rounded-full overflow-hidden border-2 border-[#5FA99F]/30 flex-shrink-0">
+                            <Image
+                              src={project.testimonial.image}
+                              alt={project.testimonial.name}
+                              fill
+                              className="object-cover"
+                              style={{
+                                objectPosition: project.testimonial.imagePosition || 'center center',
+                              }}
+                              sizes="36px"
+                            />
+                          </div>
+                        )}
+                        <div>
+                          <p className="font-heading text-white font-bold text-[0.75rem]">
+                            {project.testimonial.name}
+                          </p>
+                          <p className="font-body text-white/60 text-[0.65rem]">
+                            {project.testimonial.role}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Video Ads — only if they exist */}
+                  {project.videoAds && project.videoAds.length > 0 && (
+                    <div className="mb-4">
+                      <p className="font-heading text-white/60 text-[0.7rem] uppercase tracking-wider mb-3">Video Ads</p>
+                      <div className="flex gap-3">
+                        {project.videoAds.map((ad, adIndex) => (
+                          <button
+                            key={adIndex}
+                            onClick={() => setActiveVideo(ad)}
+                            className="flex-1 inline-flex items-center justify-center gap-2 border border-[rgba(95,169,159,0.3)] bg-[rgba(95,169,159,0.05)] text-[#5FA99F] px-4 py-2.5 rounded-xl font-heading font-bold text-[0.8rem] hover:border-[#5FA99F] hover:bg-[rgba(95,169,159,0.1)] hover:text-white transition-all duration-300"
+                          >
+                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M8 5v14l11-7z" />
+                            </svg>
+                            Video Ad {adIndex + 1}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Visit Website Button */}
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center border border-[rgba(95,169,159,0.3)] bg-[rgba(95,169,159,0.05)] text-[#5FA99F] px-5 py-2.5 rounded-xl font-heading font-bold text-[0.85rem] hover:border-[#5FA99F] hover:bg-[rgba(95,169,159,0.1)] hover:text-white transition-all duration-300 w-full"
+                    >
+                      <span>{project.liveUrlLabel || 'Visit Website'}</span>
+                      <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2.5}
+                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                        />
+                      </svg>
+                    </a>
+                  )}
+                </div>
+              </motion.article>
+            );
+            })()}
+            </Fragment>
           ))}
         </div>
       </section>

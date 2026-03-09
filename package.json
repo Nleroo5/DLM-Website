@@ -14,6 +14,7 @@
     "@fontsource/exo-2": "^5.2.8",
     "@hookform/resolvers": "^3.9.1",
     "@next/third-parties": "^16.1.6",
+    "@swc/helpers": "^0.5.19",
     "@tsparticles/engine": "^3.9.1",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.9.1",
