@@ -1,8 +1,9 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface Metric {
   value: string;
@@ -26,6 +27,7 @@ interface WebsiteProject {
   services?: string[];
   metrics?: Metric[];
   testimonial?: Testimonial;
+  videoAds?: string[];
 }
 
 const websiteProjects: WebsiteProject[] = [
@@ -70,15 +72,75 @@ const websiteProjects: WebsiteProject[] = [
     },
   },
   {
-    title: 'SetLife Casting',
+    title: 'Set Life Casting',
     industry: 'Entertainment - Casting',
     videoUrl: '/images/case-studies/setlife-casting/setlife.webm',
     liveUrl: 'https://www.setlifecasting.com/',
-    services: ['Web Design', 'Development', 'Branding'],
+    services: ['Fully Custom Website', 'Casting Platform', 'Talent Database'],
+    metrics: [
+      { value: '#3', label: 'Google Rankings' },
+      { value: '#1', label: 'ChatGPT Rankings' },
+      { value: '+800%', label: 'Website Traffic' },
+    ],
+    testimonial: {
+      quote:
+        "I came to Drive Lead Media with a big ask — a custom website, a casting platform, and a talent database all built from the ground up. They delivered on all of it. The site looks amazing, our traffic has completely blown up, and we're showing up at the top of Google and even ChatGPT now. I recommend them to everyone I know.",
+      name: 'Chaz Yu',
+      role: 'Owner, Set Life Casting',
+      image: '/images/case-studies/setlife-casting/chaz.jpeg',
+      imagePosition: 'center 30%',
+    },
+  },
+  {
+    title: 'The Yoga Lounge',
+    industry: 'Fitness & Wellness',
+    videoUrl: '/images/case-studies/the-yoga-lounge/yoga.webm',
+    services: ['Meta Ads', 'Video Creative', 'Ad Strategy'],
+    metrics: [
+      { value: '$3.73', label: 'Cost Per Lead' },
+      { value: '$250', label: 'Ad Spend' },
+      { value: '67', label: 'Leads Generated' },
+    ],
+    testimonial: {
+      quote:
+        "We partnered with Drive Lead Media to run Meta ads for my yoga studio, and it was smooth and professional. Nic and Tommy created amazing videos and ads that really captured our vibe. Within days we started seeing new leads coming in. I'm so grateful and would definitely recommend them.",
+      name: 'Jenn',
+      role: 'Owner, The Yoga Lounge',
+      image: '/images/jenn-yoga-lounge.webp',
+    },
+  },
+  {
+    title: 'Marietta Antique Mall',
+    industry: 'Retail - Antiques',
+    videoUrl: '/images/case-studies/marietta-antique-mall/marietta-antique.webm',
+    liveUrl: 'https://www.mariettaantiquemall.com/',
+    services: ['Fully Custom Website', 'Meta Ads', 'Video Creative'],
+    metrics: [
+      { value: '+1200%', label: 'Website Traffic' },
+      { value: 'Back-to-Back', label: 'Record Sales Months' },
+      { value: '#4', label: 'Google Rankings' },
+    ],
+  },
+  {
+    title: 'Pain Treatment Centers of Georgia',
+    industry: 'Healthcare - Pain Management',
+    videoUrl: '/images/case-studies/pain-treatment-centers/ptc-health.webm',
+    services: ['Meta Ads', 'Landing Page', 'Video Creative'],
+    metrics: [
+      { value: '$14.63', label: 'Cost Per Lead' },
+      { value: '90+', label: 'Leads (1st Month)' },
+      { value: '+40%', label: 'Website Traffic' },
+    ],
+    videoAds: [
+      '/images/case-studies/pain-treatment-centers/ptc-ad-1-audio.webm',
+      '/images/case-studies/pain-treatment-centers/ptc-ad-2-audio.webm',
+    ],
   },
 ];
 
 export default function WebsitesPage() {
+  const [activeVideo, setActiveVideo] = useState<string | null>(null);
+
   return (
     <main className="min-h-screen bg-black text-white">
       {/* Background gradient orbs */}
@@ -127,9 +189,9 @@ export default function WebsitesPage() {
             >
               {/* Video or Image Preview */}
               {project.videoUrl ? (
-                <div className="relative w-full overflow-hidden">
+                <div className="relative w-full overflow-hidden bg-black flex justify-center">
                   <video
-                    className="w-full h-auto"
+                    className="max-w-full max-h-[400px]"
                     autoPlay
                     loop
                     muted
@@ -229,6 +291,27 @@ export default function WebsitesPage() {
                   </div>
                 )}
 
+                {/* Video Ads — only if they exist */}
+                {project.videoAds && project.videoAds.length > 0 && (
+                  <div className="mb-4">
+                    <p className="font-heading text-white/60 text-[0.7rem] uppercase tracking-wider mb-3">Video Ads</p>
+                    <div className="flex gap-3">
+                      {project.videoAds.map((ad, adIndex) => (
+                        <button
+                          key={adIndex}
+                          onClick={() => setActiveVideo(ad)}
+                          className="flex-1 inline-flex items-center justify-center gap-2 border border-[rgba(95,169,159,0.3)] bg-[rgba(95,169,159,0.05)] text-[#5FA99F] px-4 py-2.5 rounded-xl font-heading font-bold text-[0.8rem] hover:border-[#5FA99F] hover:bg-[rgba(95,169,159,0.1)] hover:text-white transition-all duration-300"
+                        >
+                          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z" />
+                          </svg>
+                          Video Ad {adIndex + 1}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
                 {/* Visit Website Button */}
                 {project.liveUrl && (
                   <a
@@ -277,6 +360,42 @@ export default function WebsitesPage() {
           </Link>
         </motion.div>
       </section>
+
+      {/* Video Modal */}
+      <AnimatePresence>
+        {activeVideo && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+            onClick={() => setActiveVideo(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="relative max-w-[400px] w-full max-h-[90vh]"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setActiveVideo(null)}
+                className="absolute -top-10 right-0 text-white/70 hover:text-white text-2xl font-bold"
+              >
+                ✕
+              </button>
+              <video
+                className="w-full rounded-2xl"
+                autoPlay
+                controls
+                playsInline
+              >
+                <source src={activeVideo} type={activeVideo.endsWith('.webm') ? 'video/webm' : 'video/mp4'} />
+              </video>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </main>
   );
 }
