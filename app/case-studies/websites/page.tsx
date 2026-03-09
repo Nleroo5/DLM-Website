@@ -136,6 +136,22 @@ const websiteProjects: WebsiteProject[] = [
       '/images/case-studies/pain-treatment-centers/ptc-ad-2-audio.webm',
     ],
   },
+  {
+    title: 'Wilcox Tax Firm',
+    industry: 'Financial Services - Tax',
+    videoUrl: '/images/case-studies/wilcox-tax-firm/wilcox-tax.webm',
+    liveUrl: 'https://www.wilcox-tax.com/',
+    services: ['Fully Custom Website', 'Meta Ads', 'Video Creative'],
+    metrics: [
+      { value: '8x', label: 'ROAS' },
+      { value: '$11', label: 'Cost Per Lead' },
+      { value: '+640%', label: 'Website Traffic' },
+    ],
+    videoAds: [
+      '/images/case-studies/wilcox-tax-firm/wilcox-ad-1.webm',
+      '/images/case-studies/wilcox-tax-firm/wilcox-ad-2.webm',
+    ],
+  },
 ];
 
 export default function WebsitesPage() {
