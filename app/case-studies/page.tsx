@@ -24,6 +24,7 @@ interface CaseStudyProject {
   thumbnail?: string;
   videoUrl?: string;
   liveUrl?: string;
+  liveUrlLabel?: string;
   services?: string[];
   metrics?: Metric[];
   testimonial?: Testimonial;
@@ -35,6 +36,8 @@ const projects: CaseStudyProject[] = [
     title: 'Pain Treatment Centers of Georgia',
     industry: 'Healthcare - Pain Management',
     videoUrl: '/images/case-studies/pain-treatment-centers/ptc-health.webm',
+    liveUrl: 'https://book.ptchealth.com/',
+    liveUrlLabel: 'Visit Landing Page',
     services: ['Meta Ads', 'Landing Page', 'Video Creative'],
     metrics: [
       { value: '$14.63', label: 'Cost Per Lead' },
@@ -131,6 +134,10 @@ const projects: CaseStudyProject[] = [
       role: 'Owner, The Yoga Lounge',
       image: '/images/jenn-yoga-lounge.webp',
     },
+    videoAds: [
+      '/images/case-studies/the-yoga-lounge/yoga-ad-1-audio.webm',
+      '/images/case-studies/the-yoga-lounge/yoga-ad-2-audio.webm',
+    ],
   },
   {
     title: 'Southern Tents & Events',
@@ -329,7 +336,7 @@ export default function CaseStudiesPage() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center border border-[rgba(95,169,159,0.3)] bg-[rgba(95,169,159,0.05)] text-[#5FA99F] px-5 py-2.5 rounded-xl font-heading font-bold text-[0.85rem] hover:border-[#5FA99F] hover:bg-[rgba(95,169,159,0.1)] hover:text-white transition-all duration-300 w-full"
                   >
-                    <span>Visit Website</span>
+                    <span>{project.liveUrlLabel || 'Visit Website'}</span>
                     <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path
                         strokeLinecap="round"
