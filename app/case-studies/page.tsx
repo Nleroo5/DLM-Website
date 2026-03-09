@@ -1,14 +1,171 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
+
+interface Metric {
+  value: string;
+  label: string;
+}
+
+interface Testimonial {
+  quote: string;
+  name: string;
+  role: string;
+  image?: string;
+  imagePosition?: string;
+}
+
+interface CaseStudyProject {
+  title: string;
+  industry: string;
+  thumbnail?: string;
+  videoUrl?: string;
+  liveUrl?: string;
+  services?: string[];
+  metrics?: Metric[];
+  testimonial?: Testimonial;
+  videoAds?: string[];
+}
+
+const projects: CaseStudyProject[] = [
+  {
+    title: 'Pain Treatment Centers of Georgia',
+    industry: 'Healthcare - Pain Management',
+    videoUrl: '/images/case-studies/pain-treatment-centers/ptc-health.webm',
+    services: ['Meta Ads', 'Landing Page', 'Video Creative'],
+    metrics: [
+      { value: '$14.63', label: 'Cost Per Lead' },
+      { value: '90+', label: 'Leads (1st Month)' },
+      { value: '+40%', label: 'Website Traffic' },
+    ],
+    videoAds: [
+      '/images/case-studies/pain-treatment-centers/ptc-ad-1-audio.webm',
+      '/images/case-studies/pain-treatment-centers/ptc-ad-2-audio.webm',
+    ],
+  },
+  {
+    title: 'Set Life Casting',
+    industry: 'Entertainment - Casting',
+    videoUrl: '/images/case-studies/setlife-casting/setlife.webm',
+    liveUrl: 'https://www.setlifecasting.com/',
+    services: ['Fully Custom Website', 'Casting Platform', 'Talent Database'],
+    metrics: [
+      { value: '#3', label: 'Google Rankings' },
+      { value: '#1', label: 'ChatGPT Rankings' },
+      { value: '+800%', label: 'Website Traffic' },
+    ],
+    testimonial: {
+      quote:
+        "I came to Drive Lead Media with a big ask — a custom website, a casting platform, and a talent database all built from the ground up. They delivered on all of it. The site looks amazing, our traffic has completely blown up, and we're showing up at the top of Google and even ChatGPT now. I recommend them to everyone I know.",
+      name: 'Chaz Yu',
+      role: 'Owner, Set Life Casting',
+      image: '/images/case-studies/setlife-casting/chaz.jpeg',
+      imagePosition: 'center 30%',
+    },
+  },
+  {
+    title: 'Marietta Antique Mall',
+    industry: 'Retail - Antiques',
+    videoUrl: '/images/case-studies/marietta-antique-mall/marietta-antique.webm',
+    liveUrl: 'https://www.mariettaantiquemall.com/',
+    services: ['Fully Custom Website', 'Meta Ads', 'Video Creative'],
+    metrics: [
+      { value: '+1200%', label: 'Website Traffic' },
+      { value: 'Back-to-Back', label: 'Record Sales Months' },
+      { value: '#4', label: 'Google Rankings' },
+    ],
+  },
+  {
+    title: 'Village Pediatrics of St. Augustine',
+    industry: 'Healthcare - Pediatrics',
+    thumbnail: '/images/case-studies/village-pediatrics/thumbnail.webp',
+    videoUrl: '/images/case-studies/village-pediatrics/villagepeds.webm',
+    liveUrl: 'https://www.myvillagepeds.com/',
+    services: ['Fully Custom Website', 'SEO', 'Meta Ads', 'Tracking Setup'],
+    metrics: [
+      { value: '+40%', label: 'Patient Bookings (1st Month)' },
+      { value: '7.8x', label: 'ROAS' },
+      { value: '+1700%', label: 'Website Traffic' },
+    ],
+    testimonial: {
+      quote:
+        "Working with Drive Lead Media has been a great experience. Our patient bookings increased by more than 40% in the first month, and they built a custom website tailored specifically to our practice. They didn't ask for payment until we were 100% satisfied, which says a lot about how they operate. I highly recommend them.",
+      name: 'Dr. Austin Dupont',
+      role: 'Owner, Village Pediatrics',
+      image: '/images/dr-austin-dupont.webp',
+    },
+  },
+  {
+    title: 'Wilcox Tax Firm',
+    industry: 'Financial Services - Tax',
+    videoUrl: '/images/case-studies/wilcox-tax-firm/wilcox-tax.webm',
+    liveUrl: 'https://www.wilcox-tax.com/',
+    services: ['Fully Custom Website', 'Meta Ads', 'Video Creative'],
+    metrics: [
+      { value: '8x', label: 'ROAS' },
+      { value: '$11', label: 'Cost Per Lead' },
+      { value: '+640%', label: 'Website Traffic' },
+    ],
+    videoAds: [
+      '/images/case-studies/wilcox-tax-firm/wilcox-ad-1.webm',
+      '/images/case-studies/wilcox-tax-firm/wilcox-ad-2.webm',
+    ],
+  },
+  {
+    title: 'The Yoga Lounge',
+    industry: 'Fitness & Wellness',
+    videoUrl: '/images/case-studies/the-yoga-lounge/yoga.webm',
+    services: ['Meta Ads', 'Video Creative', 'Ad Strategy'],
+    metrics: [
+      { value: '$3.73', label: 'Cost Per Lead' },
+      { value: '$250', label: 'Ad Spend' },
+      { value: '67', label: 'Leads Generated' },
+    ],
+    testimonial: {
+      quote:
+        "We partnered with Drive Lead Media to run Meta ads for my yoga studio, and it was smooth and professional. Nic and Tommy created amazing videos and ads that really captured our vibe. Within days we started seeing new leads coming in. I'm so grateful and would definitely recommend them.",
+      name: 'Jenn',
+      role: 'Owner, The Yoga Lounge',
+      image: '/images/jenn-yoga-lounge.webp',
+    },
+  },
+  {
+    title: 'Southern Tents & Events',
+    industry: 'Event Services',
+    videoUrl: '/images/case-studies/southern-tents/southern-tents.webm',
+    liveUrl: 'https://southerntentsandevents.com/',
+    services: ['Website Rebuild', 'Meta Ads', 'SEO'],
+    metrics: [
+      { value: '#3', label: 'Google Rankings (1st Month)' },
+      { value: '+500%', label: 'Increase in Leads' },
+      { value: '4.2x', label: 'ROAS' },
+    ],
+    testimonial: {
+      quote:
+        "After three disappointing experiences with other web design companies, Nicolas completely turned things around for us. He rebuilt our website from the ground up- it's now clean, modern, and mobile-friendly. Our traffic has exploded with better Google rankings and a huge uptick in leads from Facebook and Instagram ads. Nicolas and Drive Lead Media are the real deal!",
+      name: 'Perla Rieder',
+      role: 'Owner, Southern Tents and Events',
+      image: '/images/perla.webp',
+      imagePosition: 'center 20%',
+    },
+  },
+];
 
 export default function CaseStudiesPage() {
+  const [activeVideo, setActiveVideo] = useState<string | null>(null);
+
   return (
-    <main className="min-h-screen bg-black">
+    <main className="min-h-screen bg-black text-white">
+      {/* Background gradient orbs */}
+      <div className="fixed top-[20%] left-[10%] w-[500px] h-[500px] bg-[#5FA99F] opacity-10 rounded-full blur-[150px] pointer-events-none" />
+      <div className="fixed bottom-[10%] right-[15%] w-[400px] h-[400px] bg-[#85C7B3] opacity-10 rounded-full blur-[150px] pointer-events-none" />
+
       {/* Hero Section */}
-      <section className="pt-[140px] sm:pt-[160px] lg:pt-[180px] pb-[80px] sm:pb-[100px] px-4 sm:px-6">
-        <div className="max-w-[1200px] mx-auto text-center">
+      <section className="relative pt-[140px] sm:pt-[160px] lg:pt-[180px] pb-[60px] sm:pb-[80px] px-4 sm:px-6">
+        <div className="max-w-[1400px] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -17,150 +174,237 @@ export default function CaseStudiesPage() {
             <span className="text-[#5FA99F] text-sm font-heading uppercase tracking-widest mb-4 block">
               Real Results
             </span>
-            <h1 className="text-white font-heading text-[2.5rem] sm:text-[3rem] lg:text-[4rem] font-bold leading-tight mb-6">
+            <h1 className="font-heading text-[2.5rem] sm:text-[3.5rem] lg:text-[5rem] font-bold text-white mb-6 leading-[1.1]">
               Case Studies
             </h1>
-            <p className="text-[#85C7B3] font-body text-[1.125rem] sm:text-[1.25rem] lg:text-[1.375rem] max-w-[800px] mx-auto leading-relaxed">
+            <p className="font-body text-[1.125rem] sm:text-[1.25rem] lg:text-[1.375rem] max-w-[800px] leading-relaxed text-gray-300">
               See how we help local businesses grow with custom websites, Meta ads, and scroll-stopping creative.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Category Cards */}
-      <section className="pb-[100px] sm:pb-[120px] px-4 sm:px-6">
-        <div className="max-w-[1200px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-            {/* Websites Category */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+      {/* Projects */}
+      <section className="relative pb-[100px] sm:pb-[120px] px-4 sm:px-6">
+        <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          {projects.map((project, i) => (
+            <motion.article
+              key={project.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.6, delay: i * 0.1 }}
+              className="bg-[#1A1A1A] border border-[rgba(95,169,159,0.15)] rounded-[20px] overflow-hidden"
             >
-              <Link href="/case-studies/websites">
-                <div className="group relative h-full min-h-[400px] sm:min-h-[500px] bg-[rgba(95,169,159,0.05)] border-2 border-[rgba(95,169,159,0.2)] rounded-[24px] p-8 sm:p-10 hover:border-[#5FA99F] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(95,169,159,0.2)] overflow-hidden">
-                  {/* Background Pattern */}
-                  <div className="absolute inset-0 opacity-5">
-                    <svg className="w-full h-full" viewBox="0 0 100 100" fill="none">
-                      <pattern id="websites-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-                        <rect x="0" y="0" width="1" height="1" fill="#5FA99F" />
-                      </pattern>
-                      <rect width="100" height="100" fill="url(#websites-pattern)" />
-                    </svg>
-                  </div>
+              {/* Video or Image Preview */}
+              {project.videoUrl ? (
+                <div className="relative w-full overflow-hidden bg-black flex justify-center">
+                  <video
+                    className="max-w-full max-h-[400px]"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  >
+                    <source src={project.videoUrl} type={project.videoUrl.endsWith('.webm') ? 'video/webm' : 'video/mp4'} />
+                  </video>
+                </div>
+              ) : project.thumbnail ? (
+                <div className="relative w-full aspect-[16/10] overflow-hidden">
+                  <Image
+                    src={project.thumbnail}
+                    alt={project.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 580px"
+                  />
+                </div>
+              ) : null}
 
-                  {/* Content */}
-                  <div className="relative z-10 h-full flex flex-col">
-                    {/* Icon */}
-                    <div className="mb-6">
-                      <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-[rgba(95,169,159,0.15)] border border-[#5FA99F] flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <svg className="w-8 h-8 sm:w-10 sm:h-10 text-[#5FA99F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
+              {/* Card Content */}
+              <div className="p-5 sm:p-6">
+                {/* Industry + Title */}
+                <span className="text-[#5FA99F] text-[0.65rem] font-heading uppercase tracking-widest">
+                  {project.industry}
+                </span>
+                <h2 className="font-heading text-[1.15rem] sm:text-[1.3rem] font-bold text-white mt-1 mb-3">
+                  {project.title}
+                </h2>
+
+                {/* Service Tags — only if they exist */}
+                {project.services && project.services.length > 0 && (
+                  <div className="flex flex-wrap gap-1.5 mb-4">
+                    {project.services.map((service) => (
+                      <span
+                        key={service}
+                        className="font-body text-[0.6rem] text-[#5FA99F] bg-[#5FA99F]/10 px-2.5 py-0.5 rounded-full uppercase tracking-wider"
+                      >
+                        {service}
+                      </span>
+                    ))}
+                  </div>
+                )}
+
+                {/* Metrics — only if they exist */}
+                {project.metrics && project.metrics.length > 0 && (
+                  <div className="flex justify-between mb-4 py-3 border-y border-[rgba(95,169,159,0.1)]">
+                    {project.metrics.map((metric) => (
+                      <div key={metric.label} className="text-center flex-1">
+                        <p className="font-heading text-[1.5rem] font-bold text-[#f2a921] leading-none">
+                          {metric.value}
+                        </p>
+                        <p className="font-body text-gray-400 text-[0.65rem] uppercase tracking-wider mt-1">
+                          {metric.label}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {/* Testimonial — only if it exists */}
+                {project.testimonial && (
+                  <div
+                    className="rounded-[12px] p-4 mb-4"
+                    style={{
+                      background: 'linear-gradient(135deg, hsl(204,97%,12%) 0%, hsl(204,97%,18%) 100%)',
+                      border: '1px solid rgba(95,169,159,0.15)',
+                    }}
+                  >
+                    <p className="font-heading text-white/90 text-[0.8rem] leading-relaxed mb-3">
+                      &ldquo;{project.testimonial.quote}&rdquo;
+                    </p>
+                    <div className="flex items-center gap-2.5">
+                      {project.testimonial.image && (
+                        <div className="relative w-9 h-9 rounded-full overflow-hidden border-2 border-[#5FA99F]/30 flex-shrink-0">
+                          <Image
+                            src={project.testimonial.image}
+                            alt={project.testimonial.name}
+                            fill
+                            className="object-cover"
+                            style={{
+                              objectPosition: project.testimonial.imagePosition || 'center center',
+                            }}
+                            sizes="36px"
+                          />
+                        </div>
+                      )}
+                      <div>
+                        <p className="font-heading text-white font-bold text-[0.75rem]">
+                          {project.testimonial.name}
+                        </p>
+                        <p className="font-body text-white/60 text-[0.65rem]">
+                          {project.testimonial.role}
+                        </p>
                       </div>
                     </div>
+                  </div>
+                )}
 
-                    {/* Title */}
-                    <h2 className="text-white font-heading text-[2rem] sm:text-[2.5rem] font-semibold mb-6 group-hover:text-[#5FA99F] transition-colors">
-                      Websites
-                    </h2>
-
-                    {/* Description */}
-                    <p className="text-[#85C7B3] font-body text-[1rem] sm:text-[1.125rem] leading-relaxed mb-8 flex-grow">
-                      Custom websites designed to convert visitors into customers. Built for speed, SEO, and results.
-                    </p>
-
-                    {/* CTA */}
-                    <div className="flex items-center text-[#5FA99F] font-ui font-medium text-lg group-hover:text-white transition-colors">
-                      <span>View Website Projects</span>
-                      <svg className="w-6 h-6 ml-2 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                      </svg>
+                {/* Video Ads — only if they exist */}
+                {project.videoAds && project.videoAds.length > 0 && (
+                  <div className="mb-4">
+                    <p className="font-heading text-white/60 text-[0.7rem] uppercase tracking-wider mb-3">Video Ads</p>
+                    <div className="flex gap-3">
+                      {project.videoAds.map((ad, adIndex) => (
+                        <button
+                          key={adIndex}
+                          onClick={() => setActiveVideo(ad)}
+                          className="flex-1 inline-flex items-center justify-center gap-2 border border-[rgba(95,169,159,0.3)] bg-[rgba(95,169,159,0.05)] text-[#5FA99F] px-4 py-2.5 rounded-xl font-heading font-bold text-[0.8rem] hover:border-[#5FA99F] hover:bg-[rgba(95,169,159,0.1)] hover:text-white transition-all duration-300"
+                        >
+                          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z" />
+                          </svg>
+                          Video Ad {adIndex + 1}
+                        </button>
+                      ))}
                     </div>
                   </div>
-                </div>
-              </Link>
-            </motion.div>
+                )}
 
-            {/* Video Ads Category */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <Link href="/case-studies/video-ads">
-                <div className="group relative h-full min-h-[400px] sm:min-h-[500px] bg-[rgba(95,169,159,0.05)] border-2 border-[rgba(95,169,159,0.2)] rounded-[24px] p-8 sm:p-10 hover:border-[#5FA99F] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(95,169,159,0.2)] overflow-hidden">
-                  {/* Background Pattern */}
-                  <div className="absolute inset-0 opacity-5">
-                    <svg className="w-full h-full" viewBox="0 0 100 100" fill="none">
-                      <pattern id="video-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-                        <circle cx="1" cy="1" r="1" fill="#5FA99F" />
-                      </pattern>
-                      <rect width="100" height="100" fill="url(#video-pattern)" />
+                {/* Visit Website Button */}
+                {project.liveUrl && (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center border border-[rgba(95,169,159,0.3)] bg-[rgba(95,169,159,0.05)] text-[#5FA99F] px-5 py-2.5 rounded-xl font-heading font-bold text-[0.85rem] hover:border-[#5FA99F] hover:bg-[rgba(95,169,159,0.1)] hover:text-white transition-all duration-300 w-full"
+                  >
+                    <span>Visit Website</span>
+                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2.5}
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
                     </svg>
-                  </div>
-
-                  {/* Content */}
-                  <div className="relative z-10 h-full flex flex-col">
-                    {/* Icon */}
-                    <div className="mb-6">
-                      <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-[rgba(95,169,159,0.15)] border border-[#5FA99F] flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <svg className="w-8 h-8 sm:w-10 sm:h-10 text-[#5FA99F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                        </svg>
-                      </div>
-                    </div>
-
-                    {/* Title */}
-                    <h2 className="text-white font-heading text-[2rem] sm:text-[2.5rem] font-semibold mb-6 group-hover:text-[#5FA99F] transition-colors">
-                      Video Ads
-                    </h2>
-
-                    {/* Description */}
-                    <p className="text-[#85C7B3] font-body text-[1rem] sm:text-[1.125rem] leading-relaxed mb-8 flex-grow">
-                      Meta advertising creative for Facebook and Instagram. Scroll-stopping video content designed to capture attention and drive leads.
-                    </p>
-
-                    {/* CTA */}
-                    <div className="flex items-center text-[#5FA99F] font-ui font-medium text-lg group-hover:text-white transition-colors">
-                      <span>View Video Portfolio</span>
-                      <svg className="w-6 h-6 ml-2 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            </motion.div>
-          </div>
+                  </a>
+                )}
+              </div>
+            </motion.article>
+          ))}
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="pb-[80px] sm:pb-[100px] px-4 sm:px-6">
+      <section className="relative pb-[100px] sm:pb-[120px] px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-[800px] mx-auto bg-[rgba(95,169,159,0.05)] border-2 border-[#5FA99F] rounded-[24px] p-8 sm:p-12 text-center"
+          className="max-w-[900px] mx-auto bg-[#1A1A1A]/40 backdrop-blur-xl rounded-[32px] border-2 border-[#5FA99F]/30 p-8 sm:p-12 text-center shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:border-[#5FA99F]/60 hover:shadow-[0_0_40px_rgba(95,169,159,0.3)] transition-all duration-500"
         >
-          <h2 className="text-white font-heading text-[2rem] sm:text-[2.5rem] font-semibold mb-4">
+          <h2 className="font-heading text-[2rem] sm:text-[3rem] font-bold text-white mb-4 leading-tight">
             Ready to Be Our Next Success Story?
           </h2>
-          <p className="text-[#85C7B3] font-body text-[1.125rem] mb-6 leading-relaxed">
+          <p className="font-body text-gray-300 text-[1.125rem] mb-8 leading-relaxed max-w-[600px] mx-auto">
             Book a free strategy call and let&apos;s map out how to grow your business.
           </p>
           <Link
             href="/book"
-            className="inline-block bg-[#5FA99F] text-white font-heading px-8 py-4 text-[1.125rem] rounded-full font-semibold hover:bg-[#4E8B82] hover:shadow-[0_0_30px_rgba(95,169,159,0.3)] transition-all duration-300 hover:scale-105"
+            className="inline-block bg-gradient-to-r from-[#5FA99F] to-[#85C7B3] text-white px-10 py-4 text-[1.125rem] rounded-xl font-heading font-bold hover:scale-105 transition-transform duration-300 shadow-[0_0_30px_rgba(95,169,159,0.4)]"
           >
             Book a Free Strategy Call
           </Link>
         </motion.div>
       </section>
+
+      {/* Video Modal */}
+      <AnimatePresence>
+        {activeVideo && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+            onClick={() => setActiveVideo(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="relative max-w-[400px] w-full max-h-[90vh]"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setActiveVideo(null)}
+                className="absolute -top-10 right-0 text-white/70 hover:text-white text-2xl font-bold"
+              >
+                ✕
+              </button>
+              <video
+                className="w-full rounded-2xl"
+                autoPlay
+                controls
+                playsInline
+              >
+                <source src={activeVideo} type={activeVideo.endsWith('.webm') ? 'video/webm' : 'video/mp4'} />
+              </video>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </main>
   );
 }
