@@ -105,9 +105,10 @@ export default function FacebookAdsCostAtlantaPost() {
       {/* Hero Section - Full Width */}
       <motion.div
         className="relative w-full pt-20 sm:pt-24 lg:pt-28 pb-16 sm:pb-20 lg:pb-24"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
       >
         {/* Background Image */}
         <div className="absolute inset-0">
@@ -124,14 +125,9 @@ export default function FacebookAdsCostAtlantaPost() {
         {/* Text Content */}
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="max-w-3xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-block mb-4"
-            >
+            <div className="inline-block mb-4">
               <span className="text-[#5FA99F] font-heading font-semibold text-body-sm tracking-[0.15em] uppercase">Meta Ads Pricing</span>
-            </motion.div>
+            </div>
             <h1 className="text-white font-heading text-h1 font-bold leading-[1.1] mb-4">
               How Much Do Facebook Ads Cost in Atlanta? (2025 Complete Guide)
             </h1>
@@ -180,9 +176,10 @@ export default function FacebookAdsCostAtlantaPost() {
             {/* Introduction */}
             <motion.section
               className="mb-20"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
             >
               <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
                 <div className="space-y-6">
@@ -239,13 +236,7 @@ export default function FacebookAdsCostAtlantaPost() {
             </p>
 
             {/* Meta Metrics Chart */}
-            <motion.div
-              className="my-12"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
+            <div className="my-12">
               <div className="relative rounded-[16px] overflow-hidden border border-[rgba(95,169,159,0.3)] shadow-2xl">
                 <Image
                   src="/images/facebook-meta-ads-performance-metrics-analytics-chart.webp"
@@ -258,7 +249,7 @@ export default function FacebookAdsCostAtlantaPost() {
               <p className="text-center text-white/60 text-body-sm mt-4 italic">
                 Example Meta Ads metrics showing typical CPC and CPM costs
               </p>
-            </motion.div>
+            </div>
 
             <div className="overflow-x-auto my-8">
               <table className="w-full border-collapse bg-gradient-to-br from-[#1A1A1A]/40 to-[#1A1A1A]/40 backdrop-blur-xl rounded-[16px] overflow-hidden">

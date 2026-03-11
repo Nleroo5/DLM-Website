@@ -101,9 +101,10 @@ export default function MetaAdsTargetAudienceGuide() {
       {/* Hero Section - Full Width */}
       <motion.div
         className="relative w-full pt-20 sm:pt-24 lg:pt-28 pb-16 sm:pb-20 lg:pb-24"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
       >
         {/* Background Image */}
         <div className="absolute inset-0">
@@ -120,14 +121,9 @@ export default function MetaAdsTargetAudienceGuide() {
         {/* Text Content */}
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="max-w-3xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-block mb-4"
-            >
+            <div className="inline-block mb-4">
               <span className="text-[#5FA99F] font-semibold text-body-sm tracking-[0.15em] uppercase">Targeting Strategy</span>
-            </motion.div>
+            </div>
             <h1 className="text-[#F8F6F3] font-serif text-h1 font-bold leading-[1.1] mb-4">
               Meta Ads Target Audience Guide
             </h1>
@@ -169,8 +165,9 @@ export default function MetaAdsTargetAudienceGuide() {
         <motion.section
           className="mb-20"
           initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
         >
           <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
             <div className="flex items-center mb-8">
@@ -227,8 +224,9 @@ export default function MetaAdsTargetAudienceGuide() {
         <motion.section
           className="mb-20"
           initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
         >
           <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
             <div className="flex items-center mb-8">
@@ -245,13 +243,7 @@ export default function MetaAdsTargetAudienceGuide() {
             </p>
 
             {/* Audience Funnel Visualization */}
-            <motion.div
-              className="my-12"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
+            <div className="my-12">
               <div className="relative rounded-[16px] overflow-hidden border border-[rgba(95,169,159,0.3)] shadow-2xl">
                 <Image
                   src="/images/facebook-ads-sales-funnel-audience-conversion-strategy.webp"
@@ -264,7 +256,7 @@ export default function MetaAdsTargetAudienceGuide() {
               <p className="text-center text-[#F8F6F3]/60 text-body-sm mt-4 italic">
                 The audience funnel: Cold → Warm → Hot progression for Meta ads targeting
               </p>
-            </motion.div>
+            </div>
 
             {/* Cold Audiences */}
             <div className="mb-10">
@@ -407,8 +399,9 @@ export default function MetaAdsTargetAudienceGuide() {
         <motion.section
           className="mb-20"
           initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
         >
           <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
             <div className="flex items-center mb-8">
@@ -486,13 +479,7 @@ export default function MetaAdsTargetAudienceGuide() {
               </div>
 
               {/* Demographics & Targeting Chart */}
-              <motion.div
-                className="my-8"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-              >
+              <div className="my-8">
                 <div className="relative rounded-[16px] overflow-hidden border border-[rgba(95,169,159,0.3)] shadow-2xl">
                   <Image
                     src="/images/facebook-meta-ads-custom-audience-targeting-options.webp"
@@ -505,7 +492,7 @@ export default function MetaAdsTargetAudienceGuide() {
                 <p className="text-center text-[#F8F6F3]/60 text-body-sm mt-4 italic">
                   Example of targeting options in Meta Ads Manager: demographics, interests, and behaviors
                 </p>
-              </motion.div>
+              </div>
             </div>
 
             {/* Step 3 - Interests */}
@@ -584,8 +571,9 @@ export default function MetaAdsTargetAudienceGuide() {
         <motion.div
           className="relative bg-[#1A1A1A]/40 backdrop-blur-xl border-2 border-[rgba(95,169,159,0.3)] rounded-[32px] p-6 sm:p-10 lg:p-12 mb-12 shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:border-[#5FA99F]/60 hover:shadow-[0_0_40px_rgba(95,169,159,0.3)] transition-all duration-500 overflow-hidden group"
           initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
         >
           <div className="absolute inset-0 bg-gradient-to-br from-[#5FA99F]/5 via-transparent to-[#85C7B3]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
@@ -651,8 +639,9 @@ export default function MetaAdsTargetAudienceGuide() {
         <motion.section
           className="mb-4"
           initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
         >
           <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] rounded-3xl p-12 shadow-2xl text-center">
             <h2 className="text-[#F8F6F3] font-serif text-3xl font-bold mb-4">
