@@ -149,9 +149,10 @@ export default function BoostedPostsVsTargetedAdsPost() {
       {/* Hero Section */}
       <motion.div
         className="relative w-full pt-20 sm:pt-24 lg:pt-28 pb-16 sm:pb-20 lg:pb-24"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
       >
         {/* Background Image */}
         <div className="absolute inset-0">
@@ -170,14 +171,9 @@ export default function BoostedPostsVsTargetedAdsPost() {
         {/* Text Content */}
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="max-w-3xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-block mb-4"
-            >
+            <div className="inline-block mb-4">
               <span className="text-[#5FA99F] font-heading font-semibold text-body-sm tracking-[0.15em] uppercase">Meta Ads Strategy</span>
-            </motion.div>
+            </div>
             <h1 className="font-heading text-h1 font-bold text-white leading-heading mb-6">
               Boosted Posts vs. Targeted Ads: Why That Blue Button Is Costing You Money
             </h1>
@@ -227,9 +223,10 @@ export default function BoostedPostsVsTargetedAdsPost() {
             {/* Introduction */}
             <motion.section
               className="mb-20"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
             >
               <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
                 <div className="space-y-6">
@@ -279,13 +276,7 @@ export default function BoostedPostsVsTargetedAdsPost() {
             </h3>
 
             {/* Boosted Post Interface Image */}
-            <motion.div
-              className="my-12"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
+            <div className="my-12">
               <div className="relative rounded-[16px] overflow-hidden border border-[rgba(95,169,159,0.3)] shadow-2xl max-w-2xl mx-auto">
                 <Image
                   src="/images/facebook-boost-post-button-mobile-interface-settings.webp"
@@ -299,7 +290,7 @@ export default function BoostedPostsVsTargetedAdsPost() {
               <p className="text-center text-white/60 text-body-sm mt-4 italic">
                 Facebook's boost post targeting interface showing basic demographic controls (age, gender, location)—notice the message directing advanced features to Ads Manager
               </p>
-            </motion.div>
+            </div>
 
             <p className="text-white text-body leading-relaxed mb-6">
               The interface above shows the limited targeting available when boosting: location (Italy in this example), age range (25-65+), gender, and basic interests. The key limitation appears at the bottom: "For advanced targeting features, go to Ads Manager." This means no access to Custom Audiences, Lookalike Audiences, or detailed behavioral targeting—the algorithm never learns who your actual customers are, only who engages with posts.
@@ -380,13 +371,7 @@ export default function BoostedPostsVsTargetedAdsPost() {
             </p>
 
             {/* Ads Manager Interface Image */}
-            <motion.div
-              className="my-12"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
+            <div className="my-12">
               <div className="relative rounded-[16px] overflow-hidden border border-[rgba(95,169,159,0.3)] shadow-2xl">
                 <Image
                   src="/images/facebook-meta-ads-manager-audience-targeting-interface.webp"
@@ -400,7 +385,7 @@ export default function BoostedPostsVsTargetedAdsPost() {
               <p className="text-center text-white/60 text-body-sm mt-4 italic">
                 Ads Manager dashboard showing granular metrics: CPM ($7.59), CTR (4.51%), reach (36,674), and cost per landing page view ($0.55)—data unavailable in boosted posts
               </p>
-            </motion.div>
+            </div>
 
             <p className="text-white text-body leading-relaxed mb-6">
               Notice the campaign above achieved a 4.51% CTR with a $7.59 CPM—metrics that tell you this creative resonates with the audience. With boosted posts, you'd only see "3,000 people reached" with no insight into efficiency or performance quality. This data gap makes optimization impossible.
@@ -466,13 +451,7 @@ export default function BoostedPostsVsTargetedAdsPost() {
             </div>
 
             {/* Cost Comparison Image */}
-            <motion.div
-              className="my-12"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
+            <div className="my-12">
               <div className="relative rounded-[16px] overflow-hidden border border-[rgba(95,169,159,0.3)] shadow-2xl">
                 <Image
                   src="/images/facebook-ads-cost-comparison-boosted-vs-targeted-roi.webp"
@@ -486,7 +465,7 @@ export default function BoostedPostsVsTargetedAdsPost() {
               <p className="text-center text-white/60 text-body-sm mt-4 italic">
                 Side-by-side comparison: Boosted posts vs. targeted campaigns — notice the "Boost again" buttons on basic posts vs. strategic lead generation campaigns
               </p>
-            </motion.div>
+            </div>
 
             <div className="bg-gradient-to-r from-[#5FA99F]/20 to-[#85C7B3]/20 rounded-xl p-6 my-8">
               <p className="text-white text-body leading-body font-semibold mb-0">
@@ -509,13 +488,7 @@ export default function BoostedPostsVsTargetedAdsPost() {
             </p>
 
             {/* Real Campaign Results Image */}
-            <motion.div
-              className="my-12"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
+            <div className="my-12">
               <div className="relative rounded-[16px] overflow-hidden border border-[rgba(95,169,159,0.3)] shadow-2xl">
                 <Image
                   src="/images/facebook-meta-ads-campaign-results-analytics-roi.webp"
@@ -529,7 +502,7 @@ export default function BoostedPostsVsTargetedAdsPost() {
               <p className="text-center text-white/60 text-body-sm mt-4 italic">
                 Six active campaigns with individual budgets ($20-$60 daily), performance metrics, and status controls—multi-campaign management impossible with boosted posts
               </p>
-            </motion.div>
+            </div>
 
             <p className="text-white text-body leading-relaxed mb-8">
               This dashboard shows 6 campaigns running simultaneously, allowing side-by-side performance comparison. Notice the "High performing" label on the Instagram-only campaign and the ability to track amount spent versus budget for each. This comparative view lets you identify winners, pause underperformers, and reallocate budget in real-time—capabilities that don't exist when each boosted post operates in isolation.
@@ -555,13 +528,7 @@ export default function BoostedPostsVsTargetedAdsPost() {
             </p>
 
             {/* Meta Pixel Setup Image */}
-            <motion.div
-              className="my-12"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
+            <div className="my-12">
               <div className="relative rounded-[16px] overflow-hidden border border-[rgba(95,169,159,0.3)] shadow-2xl max-w-3xl mx-auto">
                 <Image
                   src="/images/facebook-meta-pixel-conversion-tracking-setup-guide.webp"
@@ -575,7 +542,7 @@ export default function BoostedPostsVsTargetedAdsPost() {
               <p className="text-center text-white/60 text-body-sm mt-4 italic">
                 Meta Pixel connection options showing Web, App, Offline, CRM, and Messaging data sources—choose "Web" to track website conversions like purchases and form submissions
               </p>
-            </motion.div>
+            </div>
 
             <p className="text-white text-body leading-relaxed mb-8">
               The "Web" option lets you track visitor actions like page views, add to cart, and purchases—the exact activities mentioned in the description. This conversion data feeds Meta's machine learning algorithm, allowing it to find more people likely to take these valuable actions. Without this pixel, you're limited to the basic boost post interface.
@@ -646,10 +613,10 @@ export default function BoostedPostsVsTargetedAdsPost() {
 
             {/* Final CTA Section */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
               className="bg-[#1A1A1A]/40 backdrop-blur-xl border-2 border-[rgba(95,169,159,0.3)] rounded-[24px] p-8 my-12 text-center shadow-2xl hover:border-[#5FA99F]/60 transition-all duration-300"
             >
               <h3 className="text-white font-heading text-[1.6rem] font-bold mb-4">
