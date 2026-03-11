@@ -102,10 +102,10 @@ export default function HeroDashboard() {
       {/* Browser mockup with video — compact */}
       <motion.div
         className="rounded-lg overflow-hidden border border-[#1a2a3a]/80 shadow-[0_4px_24px_rgba(0,0,0,0.4)] bg-[#0d1b2a]/90"
-        initial={{ opacity: 0, y: 15 }}
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.6 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
       >
         {/* Browser chrome */}
         <div className="flex items-center gap-1 px-2.5 py-1.5 bg-[#0a1420] border-b border-[#1a2a3a]/60">
@@ -136,15 +136,18 @@ export default function HeroDashboard() {
       </motion.div>
 
       {/* Metrics grid — 2x2 */}
-      <div ref={metricsRef} className="grid grid-cols-2 gap-2">
+      <motion.div
+        ref={metricsRef}
+        className="grid grid-cols-2 gap-2"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+      >
 
         {/* ROAS */}
-        <motion.div
+        <div
           className="rounded-lg p-4 bg-[#0d1b2a]/90 border border-[#1a2a3a]/80 shadow-[0_4px_24px_rgba(0,0,0,0.4)]"
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.75 }}
         >
           <span className="text-gray-400 text-[9px] font-ui tracking-wider uppercase">ROAS</span>
           <div className="flex items-baseline gap-1 mt-1.5">
@@ -170,15 +173,11 @@ export default function HeroDashboard() {
               />
             ))}
           </div>
-        </motion.div>
+        </div>
 
         {/* Cost per Lead — counts DOWN */}
-        <motion.div
+        <div
           className="rounded-lg p-4 bg-[#0d1b2a]/90 border border-[#1a2a3a]/80 shadow-[0_4px_24px_rgba(0,0,0,0.4)]"
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.85 }}
         >
           <span className="text-gray-400 text-[9px] font-ui tracking-wider uppercase">Cost per Lead</span>
           <div className="flex items-baseline gap-1 mt-1.5">
@@ -204,15 +203,11 @@ export default function HeroDashboard() {
               />
             ))}
           </div>
-        </motion.div>
+        </div>
 
         {/* Sessions */}
-        <motion.div
+        <div
           className="rounded-lg p-4 bg-[#0d1b2a]/90 border border-[#1a2a3a]/80 shadow-[0_4px_24px_rgba(0,0,0,0.4)]"
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.95 }}
         >
           <span className="text-gray-400 text-[9px] font-ui tracking-wider uppercase">Sessions</span>
           <div className="flex items-baseline gap-1 mt-1.5">
@@ -238,15 +233,11 @@ export default function HeroDashboard() {
               />
             ))}
           </div>
-        </motion.div>
+        </div>
 
         {/* Avg. Session Duration */}
-        <motion.div
+        <div
           className="rounded-lg p-4 bg-[#0d1b2a]/90 border border-[#1a2a3a]/80 shadow-[0_4px_24px_rgba(0,0,0,0.4)]"
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 1.05 }}
         >
           <span className="text-gray-400 text-[9px] font-ui tracking-wider uppercase">Avg. Session Duration</span>
           <div className="flex items-baseline gap-1 mt-1.5">
@@ -272,9 +263,9 @@ export default function HeroDashboard() {
               />
             ))}
           </div>
-        </motion.div>
+        </div>
 
-      </div>
+      </motion.div>
     </div>
   );
 }

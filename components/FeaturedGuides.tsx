@@ -40,10 +40,10 @@ export default function FeaturedGuides() {
       <div className="max-w-[1400px] mx-auto relative z-10">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
           className="text-center mb-[60px]"
         >
           <h2 className="font-heading text-[2rem] sm:text-[2.5rem] md:text-[3rem] font-bold text-white mb-4">
@@ -55,23 +55,16 @@ export default function FeaturedGuides() {
         </motion.div>
 
         {/* Guides Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+        >
           {guides.map((guide, index) => (
-            <motion.div
+            <div
               key={guide.href}
-              initial={{
-                opacity: 0,
-                x: index % 2 === 0 ? -100 : 100
-              }}
-              whileInView={{
-                opacity: 1,
-                x: 0
-              }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{
-                duration: 0.6,
-                ease: "easeOut"
-              }}
             >
               <Link href={guide.href}>
                 <div className="group relative h-full bg-[#1A1A1A]/40 backdrop-blur-xl border-2 border-[#f2a921]/30 rounded-[20px] p-6 sm:p-8 hover:border-[#f2a921] transition-all duration-300 hover:shadow-[0_0_30px_rgba(242,169,33,0.3)]">
@@ -101,16 +94,16 @@ export default function FeaturedGuides() {
                   </div>
                 </div>
               </Link>
-            </motion.div>
+            </div>
           ))}
-        </div>
+        </motion.div>
 
         {/* View All Blog Link */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
           className="text-center mt-12"
         >
           <Link

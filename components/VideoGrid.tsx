@@ -79,46 +79,22 @@ export default function VideoGrid() {
     }
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: [0.16, 1, 0.3, 1]
-      }
-    }
-  };
-
   return (
     <>
       <section className="bg-[#000000] py-[80px] px-6 md:py-[60px]">
         <motion.div
           className="max-w-[1400px] mx-auto grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
         >
           {portfolioItems.map((item) => (
-            <motion.a
+            <a
               key={item.id}
               href={`https://youtube.com/watch?v=${item.youtubeId}`}
               target="_blank"
               rel="noopener noreferrer"
-              variants={itemVariants}
               className="group relative overflow-hidden bg-[#1A1A1A] border-2 border-[#5FA99F]/30 rounded-[24px] aspect-[9/16] cursor-pointer shadow-[0_0_30px_rgba(95,169,159,0.3)] transition-all duration-400 hover:transform hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(95,169,159,0.4)] hover:border-[#5FA99F]/50 block no-underline"
             >
               {/* YouTube Thumbnail Background */}
@@ -161,7 +137,7 @@ export default function VideoGrid() {
                   </p>
                 </div>
               </div>
-            </motion.a>
+            </a>
           ))}
         </motion.div>
       </section>

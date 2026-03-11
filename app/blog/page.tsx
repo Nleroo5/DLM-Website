@@ -30,14 +30,16 @@ export default function BlogPage() {
       {/* Blog Posts Grid */}
       <section className="relative pb-[80px] sm:pb-[100px] px-4 sm:px-6">
         <div className="max-w-[1200px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {blogPosts.map((post, index) => (
-              <motion.div
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+          >
+            {blogPosts.map((post) => (
+              <div
                 key={post.slug}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="group bg-[#1A1A1A]/40 backdrop-blur-xl border-2 border-[rgba(95,169,159,0.3)] rounded-[20px] sm:rounded-[24px] overflow-hidden hover:border-[#f2a921] hover:shadow-[0_0_30px_rgba(242,169,33,0.3)] transition-all duration-500 hover:-translate-y-1 shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
               >
                 {/* Hero Image */}
@@ -76,9 +78,9 @@ export default function BlogPage() {
                   <span>{post.readTime}</span>
                 </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 

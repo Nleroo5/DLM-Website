@@ -15,8 +15,8 @@ export default function ProblemSolution() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
           className="text-center mb-[60px]"
         >
           <h2 className="font-heading text-[1.5rem] sm:text-[1.75rem] md:text-[2.25rem] lg:text-[3rem] font-bold text-[#2A2A2A] mb-6 leading-[1.1]">
@@ -28,30 +28,33 @@ export default function ProblemSolution() {
         </motion.div>
 
         {/* Problem Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-[80px]">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-[80px]"
+        >
           <ProblemCard
             title="Wasted Budget"
             description="Paying for ads that reach everyone instead of your ideal customers"
-            delay={0.2}
           />
           <ProblemCard
             title="No Results"
             description="Spending money with no way to track if it's actually working"
-            delay={0.3}
           />
           <ProblemCard
             title="Overwhelmed"
             description="Too complicated to manage yourself, too expensive to hire an agency"
-            delay={0.4}
           />
-        </div>
+        </motion.div>
 
         {/* Solution Section */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.5 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
           className="bg-[#F8F6F3] backdrop-blur-xl rounded-[24px] p-[clamp(30px,6vw,60px)] border-2 border-[#5FA99F] relative overflow-hidden shadow-xl"
         >
           {/* Glow effect */}
@@ -95,13 +98,9 @@ export default function ProblemSolution() {
   );
 }
 
-function ProblemCard({ title, description, delay }: { icon?: string; title: string; description: string; delay: number }) {
+function ProblemCard({ title, description }: { icon?: string; title: string; description: string }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay }}
+    <div
       className="bg-[#F8F6F3] backdrop-blur-lg rounded-[20px] p-6 border-2 border-gray-200 hover:border-[#5FA99F] transition-all duration-300 hover:-translate-y-2 hover:shadow-lg text-center"
     >
       <h3 className="font-heading text-[1rem] sm:text-[1.1rem] md:text-[1.2rem] lg:text-[1.4rem] font-bold text-[#2A2A2A] mb-3">
@@ -110,6 +109,6 @@ function ProblemCard({ title, description, delay }: { icon?: string; title: stri
       <p className="font-body text-[0.9rem] sm:text-[0.95rem] md:text-[1rem] lg:text-[1.05rem] text-[#5FA99F] leading-[1.6]">
         {description}
       </p>
-    </motion.div>
+    </div>
   );
 }

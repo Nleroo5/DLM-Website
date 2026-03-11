@@ -18,10 +18,10 @@ export default function VideoCard({ project }: VideoCardProps) {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
+      viewport={{ once: true, amount: 0.1 }}
+      transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
       className="group"
     >
       <div className="bg-gradient-to-br from-[#0B1D2E] to-[#162E42] border border-[rgba(95,169,159,0.2)] rounded-[20px] overflow-hidden hover:border-[#5FA99F] transition-all duration-300 hover:-translate-y-2 shadow-lg hover:shadow-2xl">

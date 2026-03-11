@@ -43,28 +43,24 @@ export default function AboutSection() {
         }}
       />
 
-      <div className="relative z-10 max-w-[1400px] mx-auto">
-        <motion.div
-          className="text-center mb-14"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
+      <motion.div
+        className="relative z-10 max-w-[1400px] mx-auto"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+      >
+        <div className="text-center mb-14">
           <span className="text-[#5FA99F] text-[0.95rem] font-heading uppercase tracking-widest mb-4 block">Who We Are</span>
           <h2 className="font-heading text-[2rem] sm:text-[2.5rem] lg:text-[3.25rem] text-white font-bold">
             About Drive Lead Media
           </h2>
-        </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-8 lg:gap-12">
           {/* Team photo with parallax */}
           <motion.div
             className="relative rounded-[24px] overflow-hidden aspect-[3/4] lg:aspect-auto lg:h-full w-full"
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
             style={{ y: photoY }}
           >
             <Image
@@ -79,14 +75,10 @@ export default function AboutSection() {
 
           {/* Cards */}
           <div className="flex flex-col gap-4 lg:gap-5">
-            {cards.map((card, i) => (
-              <motion.div
+            {cards.map((card) => (
+              <div
                 key={card.number}
                 className="relative overflow-hidden bg-[#1A1A1A] border border-[rgba(95,169,159,0.15)] rounded-[20px] p-6 lg:p-8 hover:border-[rgba(95,169,159,0.4)] transition-all duration-300"
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.5, delay: i * 0.15, ease: [0.25, 0.1, 0.25, 1] }}
               >
                 <span
                   className="absolute -top-4 -right-3 lg:-top-5 lg:-right-4 text-[5rem] lg:text-[7rem] font-heading font-bold leading-none -rotate-12 text-[#f2a921]/50 select-none pointer-events-none"
@@ -101,11 +93,11 @@ export default function AboutSection() {
                 <p className="text-gray-400 font-body text-[0.95rem] lg:text-[1.15rem] leading-relaxed">
                   {card.description}
                 </p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

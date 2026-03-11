@@ -74,8 +74,8 @@ const MobileScene = ({
         className={`flex flex-col justify-center items-center ${desktopMaxWidth} w-full relative z-10`}
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
         onViewportEnter={() => {
           videoRef.current?.play().catch(() => {});
         }}
@@ -199,8 +199,8 @@ export default function HowItWorks() {
                 className="min-h-screen flex flex-col justify-center py-20"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
               >
                 <h2 className="text-3xl lg:text-[2.625rem] font-bold text-white mb-6 leading-tight">
                   High-Performance<br />Websites
@@ -215,8 +215,8 @@ export default function HowItWorks() {
                 className="min-h-screen flex flex-col justify-center py-20"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: 0.45 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
               >
                 <h2 className="text-3xl lg:text-[2.625rem] font-bold text-white mb-6 leading-tight">
                   High-Converting<br />Creatives
@@ -231,8 +231,8 @@ export default function HowItWorks() {
                 className="min-h-screen flex flex-col justify-center py-20"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: 0.6 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
               >
                 <h2 className="text-3xl lg:text-[2.625rem] font-bold text-white mb-6 leading-tight">
                   Precision<br />Targeting

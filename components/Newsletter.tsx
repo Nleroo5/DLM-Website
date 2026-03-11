@@ -55,10 +55,10 @@ export default function Newsletter() {
     <section className="relative py-[80px] px-6 bg-transparent">
       <motion.div
         className="max-w-[700px] mx-auto"
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
       >
         {/* Header */}
         <div className="text-center mb-8">

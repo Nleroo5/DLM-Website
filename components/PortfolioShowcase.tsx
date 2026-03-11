@@ -58,7 +58,13 @@ export default function PortfolioShowcase() {
       </div>
 
       {/* Angled marquee wrapper */}
-      <div className="-rotate-2 py-4">
+      <motion.div
+        className="-rotate-2 py-4"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+      >
         {/* Row 1 - scrolls left */}
         <div className="mb-4 overflow-hidden">
           <div className="flex gap-4 animate-marquee-left" style={{ width: 'max-content' }}>
@@ -76,7 +82,7 @@ export default function PortfolioShowcase() {
             ))}
           </div>
         </div>
-      </div>
+      </motion.div>
 
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 mt-12 text-center">
         <motion.div

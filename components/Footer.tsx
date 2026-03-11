@@ -27,15 +27,15 @@ export default function Footer() {
       <div className="max-w-[1200px] mx-auto px-4 xs:px-5 lg:px-8 relative z-10">
 
         {/* MOBILE LAYOUT - Option 5: Centered Logo Top + 2-Column Grid */}
-        <div className="md:hidden">
+        <motion.div
+          className="md:hidden"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+        >
           {/* Logo - Centered at top */}
-          <motion.div
-            className="text-center mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
+          <div className="text-center mb-8">
             <Link href="/" className="inline-block hover:opacity-80 transition-opacity duration-300">
               <Image
                 src="/images/light-header-logo.webp"
@@ -46,19 +46,13 @@ export default function Footer() {
                 priority
               />
             </Link>
-          </motion.div>
+          </div>
 
           {/* Teal divider line */}
           <div className="h-[1px] bg-gradient-to-r from-transparent via-[#5FA99F]/30 to-transparent mb-8" />
 
           {/* 2-Column Grid */}
-          <motion.div
-            className="grid grid-cols-2 gap-8 mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
+          <div className="grid grid-cols-2 gap-8 mb-8">
             {/* Left Column - Navigation */}
             <div>
               <h3 className="font-heading text-[#5FA99F] text-sm font-bold mb-4 uppercase tracking-wider"
@@ -203,19 +197,13 @@ export default function Footer() {
                 </a>
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Teal divider line */}
           <div className="h-[1px] bg-gradient-to-r from-transparent via-[#5FA99F]/30 to-transparent mb-6" />
 
           {/* Bottom Legal */}
-          <motion.div
-            className="text-center"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
+          <div className="text-center">
             <div className="flex flex-wrap items-center justify-center gap-2 font-body text-[0.75rem] text-gray-400">
               <span>© {currentYear} Drive Lead Media</span>
               <span>•</span>
@@ -227,19 +215,19 @@ export default function Footer() {
                 Terms
               </Link>
             </div>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
 
         {/* DESKTOP LAYOUT - Original horizontal layout */}
-        <div className="hidden md:block">
+        <motion.div
+          className="hidden md:block"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+        >
           {/* Single Row: Logo + Navigation + Contact */}
-          <motion.div
-            className="flex flex-row items-center justify-between gap-6 mb-4"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
+          <div className="flex flex-row items-center justify-between gap-6 mb-4">
             {/* Logo Section */}
             <div className="text-left">
               <Link href="/" className="inline-block hover:opacity-80 transition-opacity duration-300">
@@ -309,16 +297,10 @@ export default function Footer() {
                 hello@driveleadmedia.com
               </a>
             </div>
-          </motion.div>
+          </div>
 
           {/* Social Icons - Centered */}
-          <motion.div
-            className="flex gap-4 justify-center mb-3"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
+          <div className="flex gap-4 justify-center mb-3">
             <a
               href="https://www.facebook.com/driveleadmedia"
               target="_blank"
@@ -352,16 +334,10 @@ export default function Footer() {
                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
               </svg>
             </a>
-          </motion.div>
+          </div>
 
           {/* Bottom Legal - Single Line */}
-          <motion.div
-            className="text-center"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
+          <div className="text-center">
             <div className="flex flex-wrap items-center justify-center gap-3 font-body text-[0.85rem] text-[#85C7B3]">
               <span>© {currentYear} Drive Lead Media</span>
               <span>•</span>
@@ -373,8 +349,8 @@ export default function Footer() {
                 Terms
               </Link>
             </div>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
 
       </div>
     </footer>

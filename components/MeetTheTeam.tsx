@@ -108,75 +108,19 @@ export default function MeetTheTeam() {
       </div>
 
       {/* Team Grid */}
-      <div className="max-w-[1400px] mx-auto px-4 md:px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+      <motion.div
+        className="max-w-[1400px] mx-auto px-4 md:px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+      >
         {teamMembers.map((member, index) => {
-          const cardDelay = 0.3;
-          const laserDuration = 1.2;
-
           return (
             <div key={member.name} className="group relative">
-              {/* Progressive reveal mask - builds from top to bottom */}
-              <motion.div
-                className="absolute inset-0 z-10 pointer-events-none"
-                style={{
-                  background: 'linear-gradient(to bottom, transparent 0%, hsl(204,97%,17.5%) 0%)',
-                }}
-                initial={{
-                  background: 'linear-gradient(to bottom, transparent 0%, hsl(204,97%,17.5%) 0%)'
-                }}
-                whileInView={{
-                  background: [
-                    'linear-gradient(to bottom, transparent 0%, hsl(204,97%,17.5%) 0%)',
-                    'linear-gradient(to bottom, transparent 100%, hsl(204,97%,17.5%) 100%)'
-                  ]
-                }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{
-                  duration: laserDuration,
-                  delay: cardDelay,
-                  ease: "linear"
-                }}
-              />
-
-              {/* Laser scanning beam - moves top to bottom */}
-              <motion.div
-                className="absolute left-0 right-0 h-[3px] pointer-events-none z-20"
-                style={{
-                  background: 'linear-gradient(90deg, transparent, #5FA99F 20%, #ffffff 50%, #5FA99F 80%, transparent)',
-                  filter: 'url(#laserGlow)',
-                  boxShadow: '0 0 20px #5FA99F, 0 0 40px #5FA99F, 0 0 60px #5FA99F, 0 0 80px rgba(95,169,159,0.4)'
-                }}
-                initial={{ top: 0, opacity: 0 }}
-                whileInView={{
-                  top: ['0%', '100%'],
-                  opacity: [0, 1, 1, 0.3, 0]
-                }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{
-                  duration: laserDuration,
-                  delay: cardDelay,
-                  times: [0, 0.05, 0.95, 0.98, 1],
-                  ease: "linear"
-                }}
-              />
-
-              {/* Holographic glass card with laser etching reveal */}
-              <motion.div
+              {/* Glass card */}
+              <div
                 className="relative h-full bg-[#1A1A1A]/40 backdrop-blur-xl rounded-[32px] border-2 border-[#5FA99F]/30 p-8 lg:p-10 overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:border-[#5FA99F]/60 hover:shadow-[0_0_40px_rgba(95,169,159,0.3)] transition-all duration-500"
-                initial={{
-                  opacity: 0,
-                  boxShadow: '0 0 0 rgba(95,169,159,0)'
-                }}
-                whileInView={{
-                  opacity: 1,
-                  boxShadow: '0 8px 32px rgba(0,0,0,0.4)'
-                }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{
-                  duration: laserDuration,
-                  delay: cardDelay,
-                  ease: "easeOut"
-                }}
               >
                 {/* Animated gradient background on hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#5FA99F]/5 via-transparent to-[#85C7B3]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -226,11 +170,11 @@ export default function MeetTheTeam() {
                     {member.bio}
                   </p>
                 </div>
-              </motion.div>
+              </div>
             </div>
           );
         })}
-      </div>
+      </motion.div>
     </section>
   );
 }

@@ -350,10 +350,10 @@ function TestimonialCarousel() {
     <section className="relative pb-[80px] sm:pb-[100px] px-4 sm:px-6">
       <div className="max-w-[800px] mx-auto text-center">
         <motion.h2
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
           className="font-heading text-[1.75rem] sm:text-[2.25rem] font-bold text-white mb-10"
         >
           What Our Clients Say
@@ -490,10 +490,10 @@ function FeaturedCreativeReel({ onPlay }: { onPlay: (src: string) => void }) {
     <section className="relative pb-[80px] sm:pb-[100px]">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 mb-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
           className="flex items-end justify-between"
         >
           <div>
@@ -536,15 +536,9 @@ function FeaturedCreativeReel({ onPlay }: { onPlay: (src: string) => void }) {
         {/* Left spacer to align with max-w-[1200px] */}
         <div className="flex-shrink-0 w-[max(0px,calc((100vw-1200px)/2))]" />
         {featuredCreatives.map((creative, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.1 }}
-            transition={{ duration: 0.4, delay: i * 0.05 }}
-          >
+          <div key={i}>
             <PhoneFrame src={creative.src} label={creative.label} onPlay={onPlay} />
-          </motion.div>
+          </div>
         ))}
         <div className="flex-shrink-0 w-[max(0px,calc((100vw-1200px)/2))]" />
       </div>
@@ -584,31 +578,29 @@ export default function CaseStudiesPage() {
 
       {/* Projects */}
       <section className="relative pb-[100px] sm:pb-[120px] px-4 sm:px-6">
-        <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+          className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8"
+        >
           {projects.map((project, i) => (
             <Fragment key={project.title}>
               {/* Testimonial Video - centred, spanning full row */}
               {project.testimonialVideoUrl && (
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.1 }}
-                  transition={{ duration: 0.6, delay: i * 0.1 }}
+                <div
                   className="self-center"
                 >
                   <p className="font-heading text-[#5FA99F] text-[0.65rem] uppercase tracking-widest mb-3">Client Testimonial</p>
                   <ElevatorDoorVideo videoUrl={project.testimonialVideoUrl} />
-                </motion.div>
+                </div>
               )}
             {(() => {
             // Standard card
             return (
-              <motion.article
+              <article
                 key={project.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.1 }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
                 className="bg-[#1A1A1A] border border-[rgba(95,169,159,0.15)] rounded-[20px] overflow-hidden"
               >
                 {/* Video or Image Preview */}
@@ -717,12 +709,12 @@ export default function CaseStudiesPage() {
                     </a>
                   )}
                 </div>
-              </motion.article>
+              </article>
             );
             })()}
             </Fragment>
           ))}
-        </div>
+        </motion.div>
       </section>
 
       {/* Featured Creative Reel */}
@@ -734,10 +726,10 @@ export default function CaseStudiesPage() {
       {/* CTA Section */}
       <section className="relative pb-[100px] sm:pb-[120px] px-4 sm:px-6">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
           className="max-w-[900px] mx-auto bg-[#1A1A1A]/40 backdrop-blur-xl rounded-[32px] border-2 border-[#5FA99F]/30 p-8 sm:p-12 text-center shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:border-[#5FA99F]/60 hover:shadow-[0_0_40px_rgba(95,169,159,0.3)] transition-all duration-500"
         >
           <h2 className="font-heading text-[2rem] sm:text-[3rem] font-bold text-white mb-4 leading-tight">

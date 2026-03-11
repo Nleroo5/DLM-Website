@@ -18,12 +18,12 @@ export default function TargetedAdsCTA() {
               scale: 1.05,
             }}
             whileTap={{ scale: 0.98 }}
-            initial={{ opacity: 0, scale: 0.9, filter: 'blur(10px)' }}
-            whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
-            viewport={{ once: true, amount: 0.5 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1 }}
             transition={{
               duration: 0.8,
-              ease: [0.34, 1.56, 0.64, 1]
+              ease: [0.25, 0.1, 0.25, 1]
             }}
           >
             {/* Animated border with orange/gold pulse */}

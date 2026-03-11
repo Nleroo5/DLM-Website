@@ -11,13 +11,7 @@ interface DeviceFrameProps {
 
 export function DesktopFrame({ src, alt, priority = false }: DeviceFrameProps) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
-      className="w-full"
-    >
+    <div className="w-full">
       {/* Pre-framed Desktop Image */}
       <div className="relative w-full">
         <Image
@@ -30,19 +24,13 @@ export function DesktopFrame({ src, alt, priority = false }: DeviceFrameProps) {
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
         />
       </div>
-    </motion.div>
+    </div>
   );
 }
 
 export function TabletFrame({ src, alt }: DeviceFrameProps) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: 0.1 }}
-      className="w-full"
-    >
+    <div className="w-full">
       {/* Pre-framed Tablet Image */}
       <div className="relative w-full">
         <Image
@@ -54,19 +42,13 @@ export function TabletFrame({ src, alt }: DeviceFrameProps) {
           sizes="(max-width: 768px) 50vw, 400px"
         />
       </div>
-    </motion.div>
+    </div>
   );
 }
 
 export function MobileFrame({ src, alt }: DeviceFrameProps) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: 0.2 }}
-      className="w-full"
-    >
+    <div className="w-full">
       {/* Pre-framed Mobile Image */}
       <div className="relative w-full">
         <Image
@@ -78,7 +60,7 @@ export function MobileFrame({ src, alt }: DeviceFrameProps) {
           sizes="(max-width: 768px) 40vw, 300px"
         />
       </div>
-    </motion.div>
+    </div>
   );
 }
 
@@ -98,7 +80,13 @@ export function DeviceShowcase({
   liveUrl
 }: DeviceShowcaseProps) {
   return (
-    <div className="w-full space-y-8">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.1 }}
+      transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+      className="w-full space-y-8"
+    >
       {/* All Three Devices Side by Side on Desktop - Equal Emphasis */}
       <div className="grid grid-cols-1 lg:grid-cols-10 gap-6 lg:gap-8 max-w-[1600px] mx-auto items-center">
         {/* Tablet - Left Side (Desktop: 30%, Mobile: Full Width) */}
@@ -129,13 +117,7 @@ export function DeviceShowcase({
 
       {/* View Live Site Button */}
       {liveUrl && (
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex justify-center pt-4"
-        >
+        <div className="flex justify-center pt-4">
           <a
             href={liveUrl}
             target="_blank"
@@ -147,8 +129,8 @@ export function DeviceShowcase({
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
             </svg>
           </a>
-        </motion.div>
+        </div>
       )}
-    </div>
+    </motion.div>
   );
 }
