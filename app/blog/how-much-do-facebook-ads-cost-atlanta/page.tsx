@@ -344,10 +344,10 @@ export default function FacebookAdsCostAtlantaPost() {
 
             {/* CTA Box - Calculator */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
               className="bg-[#1A1A1A]/40 backdrop-blur-xl border-2 border-[rgba(95,169,159,0.3)] rounded-[32px] p-8 sm:p-10 lg:p-12 my-12 text-center shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:border-[#5FA99F]/60 hover:shadow-[0_0_40px_rgba(95,169,159,0.3)] transition-all duration-500 relative overflow-hidden group"
             >
               {/* Animated gradient background on hover */}
@@ -370,13 +370,7 @@ export default function FacebookAdsCostAtlantaPost() {
             </motion.div>
 
             {/* Meta Calculator Preview */}
-            <motion.div
-              className="my-12"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
+            <div className="my-12">
               <div className="relative rounded-[16px] overflow-hidden border border-[rgba(95,169,159,0.3)] shadow-2xl">
                 <Image
                   src="/images/facebook-ads-budget-calculator-roi-pricing-estimator.webp"
@@ -389,7 +383,7 @@ export default function FacebookAdsCostAtlantaPost() {
               <p className="text-center text-white/60 text-body-sm mt-4 italic">
                 Our free calculator helps Atlanta businesses project their Meta ads costs and ROI
               </p>
-            </motion.div>
+            </div>
 
             {/* Section: What Results to Expect */}
             <h2 className="text-white font-heading text-h2 font-bold mt-12 mb-6">
