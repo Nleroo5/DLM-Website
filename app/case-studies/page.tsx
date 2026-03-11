@@ -426,6 +426,7 @@ const featuredCreatives = [
   { src: '/images/case-studies/featured/converted/ptc-savannah.webm', label: 'Pain Treatment Centers of Georgia' },
   { src: '/images/case-studies/featured/converted/fayette-care.webm', label: 'Fayette Care Clinic' },
   { src: '/images/case-studies/featured/converted/maven-ad.webm', label: 'Maven Baseball Lab' },
+  { src: '/images/case-studies/featured/converted/maven-ad-2.webm', label: 'Maven Baseball Lab' },
   { src: '/images/case-studies/featured/converted/dream-ad-3.webm', label: 'Dream Pediatric Dentistry' },
   { src: '/images/case-studies/featured/converted/antique-mall-ad.webm', label: 'Marietta Antique Mall' },
   { src: '/images/case-studies/featured/converted/soa-testimonial-2.webm', label: 'School of Orthodontic Assisting' },
