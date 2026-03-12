@@ -77,9 +77,16 @@ export default function AtlantaBusinessWebsiteCostPost() {
         viewport={{ once: true, amount: 0.1 }}
         transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        {/* Background */}
+        {/* Background Image */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-[rgba(0,0,0,0.95)] via-[rgba(0,0,0,0.9)] to-[rgba(0,0,0,0.8)]"></div>
+          <Image
+            src="/images/atlanta-business-website-cost-web-design-pricing.webp"
+            alt="Atlanta Business Website Cost Guide 2026"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[rgba(0,0,0,0.95)] via-[rgba(0,0,0,0.85)] to-[rgba(0,0,0,0.7)]"></div>
         </div>
 
         {/* Text Content */}
