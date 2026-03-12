@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import Link from 'next/link';
 import { getPostBySlug, generateBlogPostSchema } from '@/lib/blog-posts';
 import Breadcrumbs from '@/components/blog/Breadcrumbs';
@@ -167,6 +168,17 @@ export default function AtlantaBusinessWebsiteCostPost() {
                 <li>&#8226; WordPress vs custom-built: which is actually worth it</li>
                 <li>&#8226; How to pick the right option for your budget</li>
               </ul>
+            </div>
+
+            {/* Cost Comparison Image */}
+            <div className="my-12 rounded-[16px] overflow-hidden">
+              <Image
+                src="/images/website-design-cost-comparison-options.webp"
+                alt="Website design cost comparison showing DIY, freelancer, and agency pricing options for Atlanta businesses"
+                width={1200}
+                height={627}
+                className="w-full h-auto"
+              />
             </div>
 
             {/* Section: Quick Overview */}
@@ -424,6 +436,16 @@ export default function AtlantaBusinessWebsiteCostPost() {
               Why Your Website&apos;s Speed Directly Affects Your Revenue
             </h2>
 
+            <div className="my-8 rounded-[16px] overflow-hidden">
+              <Image
+                src="/images/website-speed-performance-impact-conversions.webp"
+                alt="Website speed performance metrics showing impact on conversion rates and bounce rates"
+                width={1200}
+                height={800}
+                className="w-full h-auto"
+              />
+            </div>
+
             <p className="text-white text-body leading-relaxed mb-6">
               This is the part most business owners do not think about when comparing website options. The speed of your website has a measurable, direct impact on whether visitors become customers.
             </p>
@@ -459,6 +481,16 @@ export default function AtlantaBusinessWebsiteCostPost() {
             <h2 className="text-white font-heading text-h2 font-bold mt-12 mb-6">
               The WordPress Question: Popular Does Not Mean Best
             </h2>
+
+            <div className="my-8 rounded-[16px] overflow-hidden">
+              <Image
+                src="/images/wordpress-security-vulnerabilities-risk.webp"
+                alt="WordPress security vulnerabilities and risks for business websites"
+                width={1200}
+                height={835}
+                className="w-full h-auto"
+              />
+            </div>
 
             <p className="text-white text-body leading-relaxed mb-6">
               WordPress powers roughly 42.4% of all websites globally, according to W3Techs data from March 2026. It is the most popular content management system by a wide margin (the next closest is Shopify at 4.8%). But popularity does not mean it is the right choice for your business.
@@ -526,6 +558,16 @@ export default function AtlantaBusinessWebsiteCostPost() {
             <h2 className="text-white font-heading text-h2 font-bold mt-12 mb-6">
               The ROI of a Professional Website
             </h2>
+
+            <div className="my-8 rounded-[16px] overflow-hidden">
+              <Image
+                src="/images/website-roi-business-revenue-growth.webp"
+                alt="Business revenue growth chart showing ROI from professional website investment"
+                width={1200}
+                height={800}
+                className="w-full h-auto"
+              />
+            </div>
 
             <p className="text-white text-body leading-relaxed mb-6">
               A website is not just a cost. It is the most important marketing asset your business owns. Here is what the data shows:
