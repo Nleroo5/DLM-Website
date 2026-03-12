@@ -774,6 +774,35 @@ export default function MetaAdsHealthcareComplianceAtlanta() {
           <CollapsibleFAQ items={faqItems} />
         </motion.section>
 
+            {/* Related Resources */}
+            <div className="bg-gradient-to-br from-[#1A1A1A]/40 to-[#1A1A1A]/40 backdrop-blur-xl border border-[rgba(95,169,159,0.3)] rounded-[16px] p-8 my-12">
+              <h3 className="text-[#5FA99F] font-heading text-[1.5rem] font-normal mb-4">
+                Continue Learning
+              </h3>
+              <ul className="space-y-3 text-white text-lg">
+                <li>
+                  <Link href="/blog/how-much-do-facebook-ads-cost-atlanta" className="text-[#5FA99F] underline hover:text-gray-300">
+                    How Much Do Facebook Ads Cost in Atlanta? (Complete Guide)
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog/facebook-ads-atlanta-guide" className="text-[#5FA99F] underline hover:text-gray-300">
+                    Facebook Ads Atlanta: Complete Guide for Local Businesses
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog/how-to-set-up-facebook-pixel" className="text-[#5FA99F] underline hover:text-gray-300">
+                    How to Set Up Facebook Pixel: Complete Installation Guide
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog/why-meta-ads-need-landing-pages" className="text-[#5FA99F] underline hover:text-gray-300">
+                    Why Your Meta Ads Need a Dedicated Landing Page
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
         {/* Author Bio */}
         <AuthorBio author={post.author} />
       </article>

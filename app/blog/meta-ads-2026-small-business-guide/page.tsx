@@ -1537,6 +1537,35 @@ export default function MetaAds2026SmallBusinessGuide() {
         {/* FAQ Section */}
         <CollapsibleFAQ items={faqItems} />
 
+            {/* Related Resources */}
+            <div className="bg-gradient-to-br from-[#1A1A1A]/40 to-[#1A1A1A]/40 backdrop-blur-xl border border-[rgba(95,169,159,0.3)] rounded-[16px] p-8 my-12">
+              <h3 className="text-[#5FA99F] font-heading text-[1.5rem] font-normal mb-4">
+                Continue Learning
+              </h3>
+              <ul className="space-y-3 text-white text-lg">
+                <li>
+                  <Link href="/blog/how-much-do-facebook-ads-cost-atlanta" className="text-[#5FA99F] underline hover:text-gray-300">
+                    How Much Do Facebook Ads Cost in Atlanta? (Complete Guide)
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog/meta-andromeda-algorithm-2026" className="text-[#5FA99F] underline hover:text-gray-300">
+                    Meta&apos;s Andromeda Algorithm Explained (2026)
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog/instagram-reels-ads-small-business-guide" className="text-[#5FA99F] underline hover:text-gray-300">
+                    Instagram Reels Ads: The Small Business Guide
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog/how-to-create-facebook-ads" className="text-[#5FA99F] underline hover:text-gray-300">
+                    How to Create Facebook Ads: Step-by-Step Guide
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
         {/* Author Bio */}
         <AuthorBio author={post.author} />
 

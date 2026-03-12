@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "How Much Do Facebook Ads Cost in Atlanta? (2025 Complete Guide) | Drive Lead Media",
-  description: "Facebook ads in Atlanta cost $0.90-$3.50 per click. Complete 2025 pricing guide with industry breakdowns & free ROI calculator. Get pricing now.",
+  title: "Facebook Ads Cost in Atlanta: 2025 Pricing Guide | DLM",
+  description: "Facebook ads in Atlanta cost $0.90-$3.50 per click. 2025 pricing guide with industry breakdowns, budget recommendations, and a free ROI calculator.",
   keywords: "facebook ads cost atlanta, meta ads pricing atlanta, instagram ads cost, how much do facebook ads cost, facebook advertising budget atlanta, meta ads roi calculator, facebook ads cost per click atlanta, meta advertising prices",
   authors: [{ name: "Nicolas Leroo" }],
   openGraph: {

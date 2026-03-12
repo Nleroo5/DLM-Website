@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'How to Tell If Your Facebook Ads Are Working (5 Simple Metrics) | Atlanta',
-  description: 'Learn the 5 simple Facebook ad metrics that tell you if your ads are working. No jargon - just clear benchmarks for impressions, clicks, CPC, CPL, and ROAS with actionable advice.',
+  title: 'Are Your Facebook Ads Working? 5 Metrics to Check | DLM',
+  description: 'Five Facebook ad metrics that show if your ads are working. Clear benchmarks for impressions, clicks, CPC, CPL, and ROAS with actionable advice.',
   keywords: 'are my facebook ads working, facebook ad metrics explained, how to measure facebook ads, facebook advertising metrics atlanta, meta ads performance metrics, facebook ads cost per lead, facebook ads roi, facebook ctr benchmarks',
   authors: [{ name: 'Nicolas Leroo' }],
   openGraph: {

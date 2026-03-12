@@ -515,6 +515,37 @@ export const blogPosts: BlogPost[] = [
     heroImageAlt: 'Atlanta Business Website Cost Guide 2026 - Complete pricing breakdown for web design services',
     wordCount: 4200
   },
+  {
+    slug: 'google-business-profile-optimization-atlanta',
+    title: 'How to Optimize Your Google Business Profile in 2026 (Atlanta Guide)',
+    excerpt: '87% of consumers use Google to find local businesses. Complete 2026 guide to Google Business Profile optimization for Atlanta businesses, covering the 3-pack, reviews, NAP consistency, and AI search.',
+    date: 'March 2026',
+    datePublished: '2026-03-12T14:00:00-05:00',
+    dateModified: '2026-03-12T14:00:00-05:00',
+    readTime: '18 min read',
+    category: {
+      name: 'Local SEO',
+      slug: 'local-seo'
+    },
+    author: {
+      name: 'Nicolas Leroo',
+      jobTitle: 'Co-Founder & Meta Advertising Strategist',
+      url: 'https://driveleadmedia.com/about/nicolas-leroo'
+    },
+    keywords: [
+      'google business profile optimization atlanta',
+      'google maps ranking atlanta',
+      'local seo atlanta',
+      'google my business atlanta',
+      'how to rank on google maps',
+      'google reviews strategy',
+      'local 3-pack ranking',
+      'google business profile tips 2026'
+    ],
+    heroImage: '/images/google-business-profile-optimization-atlanta-local-seo.webp',
+    heroImageAlt: 'Google Business Profile optimization guide for Atlanta businesses showing local search results and Google Maps 3-pack',
+    wordCount: 4500
+  },
 ];
 
 // Helper functions

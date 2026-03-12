@@ -1,13 +1,13 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Meta\'s Andromeda Algorithm Explained (2026): Complete Guide for Advertisers',
-  description: 'Learn how Meta\'s Andromeda algorithm is revolutionizing Facebook and Instagram ads in 2026. Discover how creative-based targeting delivers 8-17% better conversions with proven strategies and real examples.',
+  title: 'Meta Andromeda Algorithm Explained (2026): Ad Guide | DLM',
+  description: 'Meta\'s Andromeda algorithm is changing Facebook and Instagram ads. Learn how creative-based targeting delivers 8-17% better conversions in 2026.',
   keywords: 'meta andromeda algorithm, facebook ads 2026, meta advantage plus, creative based targeting, facebook algorithm update, meta ai advertising, instagram ads optimization, advantage plus creative, meta ads machine learning, facebook advertising strategy 2026',
   authors: [{ name: 'Nicolas Leroo' }],
   openGraph: {
     title: 'Meta\'s Andromeda Algorithm Explained (2026): Complete Guide for Advertisers',
-    description: 'Learn how Meta\'s Andromeda algorithm is revolutionizing Facebook and Instagram ads in 2026. Discover how creative-based targeting delivers 8-17% better conversions with proven strategies and real examples.',
+    description: 'How Meta\'s Andromeda algorithm is changing Facebook and Instagram ads. Creative-based targeting delivers 8-17% better conversions in 2026.',
     type: 'article',
     publishedTime: '2026-01-07T09:00:00-05:00',
     authors: ['Nicolas Leroo'],

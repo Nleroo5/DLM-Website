@@ -1548,48 +1548,33 @@ export default function FacebookAdsAtlantaGuide() {
                 Want to dive deeper into Facebook ads? Here are more resources to help you <strong className="text-[#5FA99F]">master Meta advertising</strong>.
               </p>
 
-              <div className="grid md:grid-cols-2 gap-6 my-10">
-                <Link href="/blog" className="bg-[rgba(95,169,159,0.1)] border border-[#5FA99F]/30 rounded-2xl p-6 hover:bg-[rgba(95,169,159,0.15)] transition-colors duration-300">
-                  <h3 className="text-[#5FA99F] font-bold text-[1.2rem] mb-3">Facebook Ads Cost Calculator</h3>
-                  <p className="text-[#F8F6F3]/80 text-[1rem]">
-                    Calculate your expected Facebook ads budget, cost per lead, and ROI based on your industry and location in Atlanta.
-                  </p>
-                </Link>
-
-                <Link href="/blog" className="bg-[rgba(95,169,159,0.1)] border border-[#5FA99F]/30 rounded-2xl p-6 hover:bg-[rgba(95,169,159,0.15)] transition-colors duration-300">
-                  <h3 className="text-[#5FA99F] font-bold text-[1.2rem] mb-3">Meta Pixel Installation Guide</h3>
-                  <p className="text-[#F8F6F3]/80 text-[1rem]">
-                    Step-by-step tutorial on installing Meta Pixel to track conversions, retarget visitors, and optimize your ad campaigns.
-                  </p>
-                </Link>
-
-                <Link href="/blog" className="bg-[rgba(95,169,159,0.1)] border border-[#5FA99F]/30 rounded-2xl p-6 hover:bg-[rgba(95,169,159,0.15)] transition-colors duration-300">
-                  <h3 className="text-[#5FA99F] font-bold text-[1.2rem] mb-3">Atlanta Audience Targeting Guide</h3>
-                  <p className="text-[#F8F6F3]/80 text-[1rem]">
-                    Complete breakdown of Atlanta demographics, zip codes, and interests to help you target the right people.
-                  </p>
-                </Link>
-
-                <Link href="/blog" className="bg-[rgba(95,169,159,0.1)] border border-[#5FA99F]/30 rounded-2xl p-6 hover:bg-[rgba(95,169,159,0.15)] transition-colors duration-300">
-                  <h3 className="text-[#5FA99F] font-bold text-[1.2rem] mb-3">Facebook Ad Creative Templates</h3>
-                  <p className="text-[#F8F6F3]/80 text-[1rem]">
-                    Download free Canva templates for Facebook ads designed specifically for Atlanta service businesses.
-                  </p>
-                </Link>
-
-                <Link href="/blog" className="bg-[rgba(95,169,159,0.1)] border border-[#5FA99F]/30 rounded-2xl p-6 hover:bg-[rgba(95,169,159,0.15)] transition-colors duration-300">
-                  <h3 className="text-[#5FA99F] font-bold text-[1.2rem] mb-3">Lead Form vs Landing Page: Which Converts Better?</h3>
-                  <p className="text-[#F8F6F3]/80 text-[1rem]">
-                    Compare Facebook lead forms and landing pages to see which generates more qualified leads for your business.
-                  </p>
-                </Link>
-
-                <Link href="/blog" className="bg-[rgba(95,169,159,0.1)] border border-[#5FA99F]/30 rounded-2xl p-6 hover:bg-[rgba(95,169,159,0.15)] transition-colors duration-300">
-                  <h3 className="text-[#5FA99F] font-bold text-[1.2rem] mb-3">How to Read Facebook Ads Manager Reports</h3>
-                  <p className="text-[#F8F6F3]/80 text-[1rem]">
-                    Understand the metrics that matter and ignore the vanity numbers. Focus on what drives real business results.
-                  </p>
-                </Link>
+              {/* Continue Learning */}
+              <div className="bg-gradient-to-br from-[#1A1A1A]/40 to-[#1A1A1A]/40 backdrop-blur-xl border border-[rgba(95,169,159,0.3)] rounded-[16px] p-8 my-12">
+                <h3 className="text-[#5FA99F] font-heading text-[1.5rem] font-normal mb-4">
+                  Continue Learning
+                </h3>
+                <ul className="space-y-3 text-white text-lg">
+                  <li>
+                    <Link href="/blog/how-much-do-facebook-ads-cost-atlanta" className="text-[#5FA99F] underline hover:text-gray-300">
+                      How Much Do Facebook Ads Cost in Atlanta? (Complete Guide)
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/blog/meta-ads-target-audience-guide" className="text-[#5FA99F] underline hover:text-gray-300">
+                      Meta Ads Target Audience Guide
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/blog/boosted-posts-vs-targeted-ads" className="text-[#5FA99F] underline hover:text-gray-300">
+                      Boosted Posts vs. Targeted Ads
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/blog/how-to-create-facebook-ads" className="text-[#5FA99F] underline hover:text-gray-300">
+                      How to Create Facebook Ads: Step-by-Step Guide
+                    </Link>
+                  </li>
+                </ul>
               </div>
 
               <div className="bg-gradient-to-r from-[rgba(95,169,159,0.1)] to-[rgba(212,165,116,0.1)] rounded-2xl p-8 my-10">

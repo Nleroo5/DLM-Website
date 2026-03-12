@@ -827,6 +827,35 @@ export default function NextJsVsWordPress2026() {
           ]}
         />
 
+            {/* Related Resources */}
+            <div className="bg-gradient-to-br from-[#1A1A1A]/40 to-[#1A1A1A]/40 backdrop-blur-xl border border-[rgba(95,169,159,0.3)] rounded-[16px] p-8 my-12">
+              <h3 className="text-[#5FA99F] font-heading text-[1.5rem] font-normal mb-4">
+                Continue Learning
+              </h3>
+              <ul className="space-y-3 text-white text-lg">
+                <li>
+                  <Link href="/blog/atlanta-business-website-cost-2026" className="text-[#5FA99F] underline hover:text-gray-300">
+                    How Much Does a Business Website Cost in Atlanta? (2026 Guide)
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog/facebook-ads-vs-google-ads-atlanta" className="text-[#5FA99F] underline hover:text-gray-300">
+                    Facebook Ads vs. Google Ads: Which Is Better for Atlanta Businesses?
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog/google-business-profile-optimization-atlanta" className="text-[#5FA99F] underline hover:text-gray-300">
+                    How to Optimize Your Google Business Profile in 2026
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/case-studies" className="text-[#5FA99F] underline hover:text-gray-300">
+                    View Our Portfolio and Case Studies
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
         {/* Author Bio */}
         <AuthorBio author={post.author} />
 

@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Facebook Ads vs. Google Ads: Which Is Better for Atlanta Businesses? (2025)',
-  description: 'Compare Facebook Ads vs Google Ads costs, targeting, and ROI with data from WordStream, Meta, and Google. Industry benchmarks and sourced research to help Atlanta businesses choose the right platform.',
+  title: 'Facebook Ads vs Google Ads for Atlanta Businesses (2025) | DLM',
+  description: 'Compare Facebook Ads vs Google Ads costs, targeting, and ROI for Atlanta businesses. Industry benchmarks from WordStream, Meta, and Google.',
   keywords: 'facebook ads vs google ads, google ads vs facebook ads atlanta, should i use facebook or google ads, facebook ads or google ads for small business, meta ads vs google ads cost, which is better facebook or google ads, facebook vs google advertising atlanta, social media ads vs search ads',
   authors: [{ name: 'Nicolas Leroo' }],
   openGraph: {

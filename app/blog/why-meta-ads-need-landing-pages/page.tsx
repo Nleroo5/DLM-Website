@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { getPostBySlug, generateBlogPostSchema } from '@/lib/blog-posts';
 import Breadcrumbs from '@/components/blog/Breadcrumbs';
 import AuthorBio from '@/components/blog/AuthorBio';
+import CollapsibleFAQ from '@/components/blog/CollapsibleFAQ';
 import { ImageObjectSchema } from '@/components/StructuredDataSchemas';
 
 export default function WhyMetaAdsNeedLandingPages() {
@@ -934,6 +935,11 @@ export default function WhyMetaAdsNeedLandingPages() {
               </div>
             </div>
           </motion.section>
+
+          {/* FAQ Section */}
+          <div className="prose prose-invert prose-lg max-w-none">
+            <CollapsibleFAQ items={faqItems} />
+          </div>
 
           {/* Author Bio */}
           <AuthorBio author={post.author} />

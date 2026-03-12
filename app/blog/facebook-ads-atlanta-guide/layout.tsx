@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Facebook Ads Atlanta: Complete Guide for Local Businesses (2025) | Drive Lead Media',
-  description: 'Complete guide to Facebook advertising for Atlanta businesses. Learn costs, targeting, ROI benchmarks, and why 200+ local businesses choose Meta ads over billboards.',
+  title: 'Facebook Ads Atlanta: Local Business Guide (2025) | DLM',
+  description: 'Complete guide to Facebook advertising for Atlanta businesses. Costs, targeting strategies, ROI benchmarks, and proven tactics from local campaigns.',
   keywords: 'facebook ads atlanta, atlanta facebook ads, facebook advertising atlanta, meta ads atlanta, instagram ads atlanta, social media advertising atlanta, atlanta facebook ads agency',
   authors: [{ name: 'Nicolas Leroo' }],
   openGraph: {

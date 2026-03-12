@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'How to Create Facebook Ads: Step-by-Step Tutorial (2025) | Drive Lead Media',
-  description: 'Learn how to create Facebook ads in 2025 with our complete step-by-step guide. Screenshots, targeting strategies, and campaign setup from Atlanta\'s Meta advertising experts.',
+  title: 'How to Create Facebook Ads: Step-by-Step Guide (2025) | DLM',
+  description: 'Create Facebook ads step by step. Campaign setup, targeting strategies, budgets, and optimization tips with screenshots from Meta advertising experts.',
   keywords: 'how to create facebook ads, how to run facebook ads, how to make facebook ads, facebook ads tutorial, create facebook ad campaign, how to set up facebook ads, facebook advertising tutorial, facebook ads manager tutorial, how to advertise on facebook',
   authors: [{ name: 'Nicolas Leroo' }],
   openGraph: {

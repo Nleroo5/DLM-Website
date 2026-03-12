@@ -94,14 +94,6 @@ export default function FacebookAdsCostAtlantaPost() {
         height={800}
       />
 
-      {/* FAQ data will be rendered by CollapsibleFAQ component with schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(schemaData)
-        }}
-      />
-
       {/* Hero Section - Full Width */}
       <motion.div
         className="relative w-full pt-20 sm:pt-24 lg:pt-28 pb-16 sm:pb-20 lg:pb-24"
