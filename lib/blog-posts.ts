@@ -484,6 +484,37 @@ export const blogPosts: BlogPost[] = [
     heroImageAlt: 'Meta Ads Manager dashboard showing 6:1 ROAS performance for small business Facebook and Instagram advertising campaign in 2026',
     wordCount: 5500
   },
+  {
+    slug: 'atlanta-business-website-cost-2026',
+    title: 'How Much Does a Business Website Cost in Atlanta? (2026 Guide)',
+    excerpt: 'Atlanta business websites cost $1,500 to $15,000+ depending on complexity. Complete 2026 pricing guide with DIY vs freelancer vs agency breakdowns, ongoing costs, and ROI data.',
+    date: 'March 2026',
+    datePublished: '2026-03-12T09:00:00-05:00',
+    dateModified: '2026-03-12T09:00:00-05:00',
+    readTime: '16 min read',
+    category: {
+      name: 'Web Design Pricing',
+      slug: 'web-design-pricing'
+    },
+    author: {
+      name: 'Nicolas Leroo',
+      jobTitle: 'Co-Founder & Meta Advertising Strategist',
+      url: 'https://driveleadmedia.com/about/nicolas-leroo'
+    },
+    keywords: [
+      'atlanta business website cost',
+      'website design cost atlanta',
+      'atlanta web design pricing',
+      'how much does a website cost atlanta',
+      'custom website development atlanta',
+      'small business website cost 2026',
+      'web design atlanta ga',
+      'atlanta website development'
+    ],
+    heroImage: '/images/atlanta-business-website-cost-web-design-pricing.webp',
+    heroImageAlt: 'Atlanta Business Website Cost Guide 2026 - Complete pricing breakdown for web design services',
+    wordCount: 4200
+  },
 ];
 
 // Helper functions

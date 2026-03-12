@@ -7,7 +7,7 @@ import { getPostsByCategory, getAllCategories } from '@/lib/blog-posts';
 
 export default function CategoryPage() {
   const params = useParams();
-  const slug = params.slug as string;
+  const slug = params?.slug as string;
 
   const posts = getPostsByCategory(slug);
   const categories = getAllCategories();
