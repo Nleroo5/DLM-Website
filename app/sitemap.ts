@@ -137,6 +137,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/blog/custom-website-vs-template-atlanta-2026`,
+      lastModified: new Date('2026-03-12'),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/blog/category/meta-ads-pricing`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
@@ -204,6 +210,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/blog/category/web-development`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/blog/category/web-design`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.7,
