@@ -577,6 +577,37 @@ export const blogPosts: BlogPost[] = [
     heroImageAlt: 'Custom Website vs Template Comparison for Atlanta Businesses 2026',
     wordCount: 4200
   },
+  {
+    slug: 'signs-atlanta-business-needs-new-website-2026',
+    title: '7 Signs Your Atlanta Business Needs a New Website (2026 Checklist)',
+    excerpt: 'Is your website costing you customers? 7 data-backed warning signs it is time for a redesign. Speed, mobile, security, and SEO checklist for Atlanta businesses.',
+    date: 'March 2026',
+    datePublished: '2026-03-16T09:00:00-05:00',
+    dateModified: '2026-03-16T09:00:00-05:00',
+    readTime: '16 min read',
+    category: {
+      name: 'Web Design',
+      slug: 'web-design'
+    },
+    author: {
+      name: 'Nicolas Leroo',
+      jobTitle: 'Co-Founder & Meta Advertising Strategist',
+      url: 'https://driveleadmedia.com/about/nicolas-leroo'
+    },
+    keywords: [
+      'signs you need a new website',
+      'website redesign atlanta',
+      'outdated website checklist',
+      'website not mobile friendly',
+      'slow website losing customers',
+      'website security vulnerabilities',
+      'atlanta web design 2026',
+      'small business website checklist'
+    ],
+    heroImage: '/images/signs-new-website-outdated-design-comparison.webp',
+    heroImageAlt: '7 Signs Your Atlanta Business Needs a New Website - 2026 Checklist',
+    wordCount: 4500
+  },
 ];
 
 // Helper functions
