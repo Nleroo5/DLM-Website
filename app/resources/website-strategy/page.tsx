@@ -85,7 +85,7 @@ function renderMarkdown(text: string) {
       elements.push(
         <ul key={`list-${listKey++}`} className="space-y-2 mb-6">
           {currentList.map((item, i) => (
-            <li key={i} className="text-gray-300 font-body text-[0.95rem] leading-relaxed flex items-start gap-2">
+            <li key={i} className="text-gray-300 font-body text-[0.95rem] lg:text-[1.05rem] leading-relaxed flex items-start gap-2">
               <span className="text-[#5FA99F] mt-1 flex-shrink-0">&#8226;</span>
               <span dangerouslySetInnerHTML={{ __html: item.replace(/\*\*(.*?)\*\*/g, '<strong class="text-white">$1</strong>') }} />
             </li>
@@ -102,7 +102,7 @@ function renderMarkdown(text: string) {
     if (trimmed.startsWith('## ')) {
       flushList();
       elements.push(
-        <h2 key={`h2-${i}`} className="text-white font-heading text-[1.4rem] font-bold mt-8 mb-4 flex items-center gap-3">
+        <h2 key={`h2-${i}`} className="text-white font-heading text-[1.4rem] lg:text-[1.6rem] font-bold mt-8 mb-4 flex items-center gap-3">
           <span className="w-1 h-6 bg-[#5FA99F] rounded-full" />
           {trimmed.replace('## ', '')}
         </h2>
@@ -115,7 +115,7 @@ function renderMarkdown(text: string) {
       elements.push(
         <p
           key={`p-${i}`}
-          className="text-gray-300 font-body text-[0.95rem] leading-relaxed mb-4"
+          className="text-gray-300 font-body text-[0.95rem] lg:text-[1.05rem] leading-relaxed mb-4"
           dangerouslySetInnerHTML={{ __html: trimmed.replace(/\*\*(.*?)\*\*/g, '<strong class="text-white">$1</strong>') }}
         />
       );
@@ -279,7 +279,7 @@ export default function WebsiteStrategy() {
                             </svg>
                           ) : step.icon}
                         </div>
-                        <span className={`font-body text-[0.95rem] transition-colors duration-500 ${
+                        <span className={`font-body text-[0.95rem] lg:text-[1.05rem] transition-colors duration-500 ${
                           i <= loadingStep ? 'text-white' : 'text-gray-600'
                         }`}>
                           {step.label}
