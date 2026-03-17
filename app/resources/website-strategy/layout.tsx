@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://driveleadmedia.com/resources/website-strategy",
     images: [{
-      url: "https://driveleadmedia.com/images/dlm-og.webp",
+      url: "https://driveleadmedia.com/images/og-image.webp",
       width: 1200,
       height: 630,
       alt: "DLM AI Website Strategy Report - Free Website Analysis Tool",

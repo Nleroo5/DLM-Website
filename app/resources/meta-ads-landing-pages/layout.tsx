@@ -8,6 +8,18 @@ export const metadata: Metadata = {
     title: 'Why Your Meta Ads Need a Dedicated Landing Page | Convert More Facebook & Instagram Clicks',
     description: 'Stop wasting Meta ad budget. Dedicated landing pages convert 2-3X better than homepages. Free guide from Atlanta Meta ads experts.',
     type: 'article',
+    images: [{
+      url: "https://driveleadmedia.com/images/og-image.webp",
+      width: 1200,
+      height: 630,
+      alt: "Drive Lead Media - Custom Websites & Meta Advertising in Atlanta",
+    }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Why Your Meta Ads Need a Dedicated Landing Page | Convert More Facebook & Instagram Clicks",
+    description: "Stop wasting Meta ad budget. Dedicated landing pages convert 2-3X better than homepages. Free guide from Atlanta Meta ads experts.",
+    images: ["https://driveleadmedia.com/images/og-image.webp"],
   },
   alternates: {
     canonical: '/resources/meta-ads-landing-pages',

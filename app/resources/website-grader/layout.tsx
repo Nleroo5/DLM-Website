@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://driveleadmedia.com/resources/website-grader",
     images: [{
-      url: "https://driveleadmedia.com/images/dlm-og.webp",
+      url: "https://driveleadmedia.com/images/og-image.webp",
       width: 1200,
       height: 630,
       alt: "DLM Website Grader - Free Website Health Check Tool",

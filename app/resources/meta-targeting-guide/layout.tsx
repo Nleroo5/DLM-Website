@@ -18,6 +18,12 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Target Audiences Guide - Learn Meta Ad Targeting",
+    description: "Master Meta ad targeting with our comprehensive guide. Learn about cold, warm, and hot audiences, demographics, interests, and how to build your perfect customer audience.",
+    images: ["https://driveleadmedia.com/images/og-image.webp"],
+  },
   alternates: {
     canonical: '/resources/meta-targeting-guide',
   },
