@@ -94,34 +94,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://www.facebook.com" />
         <link rel="dns-prefetch" href="https://www.clarity.ms" />
 
-        {/* Meta Pixel Code - GDPR Compliant with Consent Mode */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              !function(f,b,e,v,n,t,s)
-              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-              n.queue=[];t=b.createElement(e);t.async=!0;
-              t.src=v;s=b.getElementsByTagName(e)[0];
-              s.parentNode.insertBefore(t,s)}(window, document,'script',
-              'https://connect.facebook.net/en_US/fbevents.js');
-
-              // Initialize with enhanced configuration
-              fbq('init', '1103544594607690', {
-                autoConfig: true,
-                debug: false
-              });
-
-              // Enable advanced matching
-              fbq('set', 'autoAdvancedMatching', true);
-
-              // Track PageView
-              fbq('consent', 'grant');
-              fbq('track', 'PageView');
-            `,
-          }}
-        />
+        {/* Meta Pixel noscript fallback (must stay in head) */}
         <noscript>
           <img
             height="1"
@@ -131,33 +104,6 @@ export default function RootLayout({
             alt=""
           />
         </noscript>
-        {/* Google Analytics 4 - GDPR Compliant with Consent Mode v2 */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-K25LTGL8FP"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-
-              // GA4 configuration
-              gtag('config', 'G-K25LTGL8FP', {
-                page_path: window.location.pathname,
-                send_page_view: true,
-                allow_google_signals: true,
-                allow_ad_personalization_signals: true,
-                cookie_flags: 'SameSite=None;Secure',
-                anonymize_ip: false,
-                content_group: 'General'
-              });
-
-              // Enable enhanced measurement
-              gtag('set', 'user_properties', {
-                site_section: 'main'
-              });
-            `,
-          }}
-        />
         {/* JSON-LD Structured Data - Enhanced Organization Schema */}
         <script
           type="application/ld+json"
@@ -394,8 +340,65 @@ export default function RootLayout({
             ])
           }}
         />
-        {/* MailerLite Universal */}
-        <script
+      </head>
+      <body className={`${arnoPro.variable} antialiased`}>
+        {/* Meta Pixel - Non-blocking */}
+        <Script
+          id="meta-pixel"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              !function(f,b,e,v,n,t,s)
+              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+              n.queue=[];t=b.createElement(e);t.async=!0;
+              t.src=v;s=b.getElementsByTagName(e)[0];
+              s.parentNode.insertBefore(t,s)}(window, document,'script',
+              'https://connect.facebook.net/en_US/fbevents.js');
+              fbq('init', '1103544594607690', {
+                autoConfig: true,
+                debug: false
+              });
+              fbq('set', 'autoAdvancedMatching', true);
+              fbq('consent', 'grant');
+              fbq('track', 'PageView');
+            `,
+          }}
+        />
+        {/* Google Analytics 4 - Non-blocking */}
+        <Script
+          id="ga4-gtag"
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-K25LTGL8FP"
+        />
+        <Script
+          id="ga4-config"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-K25LTGL8FP', {
+                page_path: window.location.pathname,
+                send_page_view: true,
+                allow_google_signals: true,
+                allow_ad_personalization_signals: true,
+                cookie_flags: 'SameSite=None;Secure',
+                anonymize_ip: false,
+                content_group: 'General'
+              });
+              gtag('set', 'user_properties', {
+                site_section: 'main'
+              });
+            `,
+          }}
+        />
+        {/* MailerLite Universal - Non-blocking */}
+        <Script
+          id="mailerlite"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
@@ -406,8 +409,6 @@ export default function RootLayout({
             `,
           }}
         />
-      </head>
-      <body className={`${arnoPro.variable} antialiased`}>
         {/* Microsoft Clarity */}
         <Script
           id="microsoft-clarity"
