@@ -36,6 +36,7 @@ interface MapResults {
     withWebsite: number;
     withoutWebsite: number;
     highestRated: string | null;
+    highestRatedScore: number | null;
     mostReviewed: string | null;
     mostReviewedCount: number;
   };
@@ -124,7 +125,7 @@ export default function CompetitorMap() {
 
   const mapRef = useRef<HTMLDivElement>(null);
   const googleMapRef = useRef<google.maps.Map | null>(null);
-  const markersRef = useRef<google.maps.marker.AdvancedMarkerElement[]>([]);
+  const markersRef = useRef<google.maps.Marker[]>([]);
   const infoWindowRef = useRef<google.maps.InfoWindow | null>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
 
@@ -136,13 +137,12 @@ export default function CompetitorMap() {
     if (!mapRef.current || !window.google) return;
 
     // Clear previous markers
-    markersRef.current.forEach(m => m.map = null);
+    markersRef.current.forEach(m => m.setMap(null));
     markersRef.current = [];
 
     const map = new google.maps.Map(mapRef.current, {
       center,
       zoom: 12,
-      mapId: 'competitor-map',
       styles: [
         { elementType: 'geometry', stylers: [{ color: '#1a1a2e' }] },
         { elementType: 'labels.text.stroke', stylers: [{ color: '#1a1a2e' }] },
@@ -164,14 +164,19 @@ export default function CompetitorMap() {
     infoWindowRef.current = new google.maps.InfoWindow();
 
     // Add center marker (user location)
-    const centerPin = document.createElement('div');
-    centerPin.innerHTML = `<div style="background:#5FA99F;width:20px;height:20px;border-radius:50%;border:3px solid white;box-shadow:0 0 10px rgba(95,169,159,0.5);"></div>`;
-
-    new google.maps.marker.AdvancedMarkerElement({
+    new google.maps.Marker({
       map,
       position: center,
-      content: centerPin,
       title: 'Your Location',
+      icon: {
+        path: google.maps.SymbolPath.CIRCLE,
+        scale: 10,
+        fillColor: '#5FA99F',
+        fillOpacity: 1,
+        strokeColor: '#ffffff',
+        strokeWeight: 3,
+      },
+      zIndex: 999,
     });
 
     // Add competitor markers
@@ -182,15 +187,34 @@ export default function CompetitorMap() {
       const position = { lat: comp.lat, lng: comp.lng };
       bounds.extend(position);
 
-      const pinEl = document.createElement('div');
-      const bgColor = comp.rating && comp.rating >= 4.5 ? '#22c55e' : comp.rating && comp.rating >= 4.0 ? '#eab308' : comp.rating && comp.rating >= 3.0 ? '#f97316' : '#ef4444';
-      pinEl.innerHTML = `<div style="background:${bgColor};color:white;padding:4px 8px;border-radius:8px;font-size:12px;font-weight:bold;box-shadow:0 2px 8px rgba(0,0,0,0.3);cursor:pointer;white-space:nowrap;">${index + 1}. ${comp.rating ?? 'N/A'}</div>`;
+      const getColor = (rating: number | null) => {
+        if (rating === null) return '#6b7280'; // gray for no rating
+        if (rating >= 4.5) return '#22c55e';   // green
+        if (rating >= 4.0) return '#eab308';   // yellow
+        if (rating >= 3.0) return '#f97316';   // orange
+        return '#ef4444';                       // red
+      };
 
-      const marker = new google.maps.marker.AdvancedMarkerElement({
+      const marker = new google.maps.Marker({
         map,
         position,
-        content: pinEl,
         title: comp.name,
+        label: {
+          text: String(index + 1),
+          color: '#ffffff',
+          fontSize: '11px',
+          fontWeight: 'bold',
+        },
+        icon: {
+          path: 'M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z',
+          fillColor: getColor(comp.rating),
+          fillOpacity: 1,
+          strokeColor: '#ffffff',
+          strokeWeight: 1.5,
+          scale: 1.8,
+          anchor: new google.maps.Point(12, 22),
+          labelOrigin: new google.maps.Point(12, 9),
+        },
       });
 
       marker.addListener('click', () => {
@@ -199,7 +223,7 @@ export default function CompetitorMap() {
           <div style="color:#000;padding:4px;max-width:220px;">
             <strong style="font-size:14px;">${comp.name}</strong>
             <p style="margin:4px 0;font-size:12px;color:#666;">${comp.address}</p>
-            ${comp.rating ? `<p style="margin:2px 0;font-size:13px;">Rating: <strong>${comp.rating}</strong> (${comp.reviewCount} reviews)</p>` : ''}
+            ${comp.rating !== null ? `<p style="margin:2px 0;font-size:13px;">Rating: <strong>${comp.rating}</strong> (${comp.reviewCount} reviews)</p>` : '<p style="margin:2px 0;font-size:12px;color:#999;">No rating yet</p>'}
             ${comp.phone ? `<p style="margin:2px 0;font-size:12px;">${comp.phone}</p>` : ''}
           </div>
         `);
@@ -294,7 +318,7 @@ export default function CompetitorMap() {
 
       {/* Google Maps Script */}
       <Script
-        src={`https://maps.googleapis.com/maps/api/js?key=${MAPS_KEY}&libraries=marker&v=weekly`}
+        src={`https://maps.googleapis.com/maps/api/js?key=${MAPS_KEY}&v=weekly`}
         strategy="lazyOnload"
         onLoad={() => setMapsLoaded(true)}
       />
@@ -565,6 +589,9 @@ export default function CompetitorMap() {
                   <div>
                     <p className="text-gray-400 font-body text-body-sm mb-1">Highest Rated</p>
                     <p className="text-white font-heading text-[1rem] font-semibold">{results.stats.highestRated}</p>
+                    {results.stats.highestRatedScore && (
+                      <p className="text-[#5FA99F] font-body text-body-sm">{results.stats.highestRatedScore} stars</p>
+                    )}
                   </div>
                   <div>
                     <p className="text-gray-400 font-body text-body-sm mb-1">Without a Website</p>

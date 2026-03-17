@@ -165,8 +165,8 @@ export async function POST(request: NextRequest) {
     const avgRating = withRatings.length > 0
       ? Math.round((withRatings.reduce((sum, c) => sum + (c.rating || 0), 0) / withRatings.length) * 10) / 10
       : 0;
-    const avgReviews = withRatings.length > 0
-      ? Math.round(withRatings.reduce((sum, c) => sum + c.reviewCount, 0) / withRatings.length)
+    const avgReviews = competitors.length > 0
+      ? Math.round(competitors.reduce((sum, c) => sum + c.reviewCount, 0) / competitors.length)
       : 0;
     const withWebsite = competitors.filter(c => c.website !== null).length;
     const totalCompetitors = competitors.length;
@@ -184,7 +184,10 @@ export async function POST(request: NextRequest) {
         withWebsite,
         withoutWebsite: totalCompetitors - withWebsite,
         highestRated: withRatings.length > 0
-          ? withRatings.reduce((best, c) => (c.rating || 0) > (best.rating || 0) ? c : best).name
+          ? (() => { const best = withRatings.reduce((b, c) => (c.rating || 0) > (b.rating || 0) ? c : b); return best.name; })()
+          : null,
+        highestRatedScore: withRatings.length > 0
+          ? withRatings.reduce((b, c) => (c.rating || 0) > (b.rating || 0) ? c : b).rating
           : null,
         mostReviewed: competitors.length > 0 ? competitors[0].name : null,
         mostReviewedCount: competitors.length > 0 ? competitors[0].reviewCount : 0,
