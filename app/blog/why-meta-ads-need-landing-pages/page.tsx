@@ -1,6 +1,4 @@
-'use client';
-
-import { motion } from 'framer-motion';
+import ScrollFadeIn from '@/components/blog/ScrollFadeIn';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getPostBySlug, generateBlogPostSchema } from '@/lib/blog-posts';
@@ -136,12 +134,7 @@ export default function WhyMetaAdsNeedLandingPages() {
       />
 
       {/* Hero Section - Full Width */}
-      <motion.div
-        className="relative w-full pt-20 sm:pt-24 lg:pt-28 pb-16 sm:pb-20 lg:pb-24"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
+      <ScrollFadeIn className="relative w-full pt-20 sm:pt-24 lg:pt-28 pb-16 sm:pb-20 lg:pb-24">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
@@ -150,6 +143,7 @@ export default function WhyMetaAdsNeedLandingPages() {
             fill
             className="object-cover"
             priority
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-[rgba(0,0,0,0.92)] via-[rgba(0,0,0,0.88)] to-[rgba(95,169,159,0.25)]"></div>
         </div>
@@ -157,14 +151,9 @@ export default function WhyMetaAdsNeedLandingPages() {
         {/* Text Content */}
         <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-12 lg:px-16">
           <div className="max-w-3xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-block mb-4"
-            >
+            <ScrollFadeIn className="inline-block mb-4">
               <span className="text-[#5FA99F] font-semibold text-body-sm tracking-[0.15em] uppercase">Marketing Strategy</span>
-            </motion.div>
+            </ScrollFadeIn>
             <h1 className="text-white font-heading text-h1 font-bold leading-[1.1] mb-4">
               Why Your Meta Ads Need a Dedicated Landing Page
             </h1>
@@ -173,7 +162,7 @@ export default function WhyMetaAdsNeedLandingPages() {
             </p>
           </div>
         </div>
-      </motion.div>
+      </ScrollFadeIn>
 
       {/* Breadcrumbs */}
       <Breadcrumbs category={post.category} postTitle={post.title} />
@@ -203,12 +192,7 @@ export default function WhyMetaAdsNeedLandingPages() {
         <div className="max-w-6xl mx-auto px-6 sm:px-12 lg:px-16 py-12 sm:py-10 sm:py-12 lg:py-16 lg:py-20">
 
           {/* Introduction - Side by Side */}
-          <motion.section
-            className="mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
+          <ScrollFadeIn as="section" className="mb-16">
               <div className="grid lg:grid-cols-2 gap-10 items-center">
                 {/* Left Column - Text */}
                 <div>
@@ -255,15 +239,10 @@ export default function WhyMetaAdsNeedLandingPages() {
                   <p className="text-gray-400 font-body text-body-sm mt-6 text-center italic">Source: Unbounce Landing Page Report, 2024</p>
                 </div>
               </div>
-          </motion.section>
+          </ScrollFadeIn>
 
           {/* What You'll Learn - Full Width Dark Section */}
-          <motion.section
-            className="mb-16 bg-gradient-to-br from-[#1A1A1A] to-[#0A0A0A] py-10 sm:py-12 lg:py-16 -mx-6 sm:-mx-12 lg:-mx-16"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
+          <ScrollFadeIn as="section" className="mb-16 bg-gradient-to-br from-[#1A1A1A] to-[#0A0A0A] py-10 sm:py-12 lg:py-16 -mx-6 sm:-mx-12 lg:-mx-16">
             <div className="max-w-6xl mx-auto px-6 sm:px-12 lg:px-16">
               <h3 className="text-[#5FA99F] text-3xl font-bold mb-4 text-center">
                 What You'll Learn in This Guide
@@ -303,15 +282,10 @@ export default function WhyMetaAdsNeedLandingPages() {
                 </div>
               </div>
             </div>
-          </motion.section>
+          </ScrollFadeIn>
 
           {/* Section 1 - The Message Match Problem */}
-          <motion.section
-            className="mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-          >
+          <ScrollFadeIn as="section" className="mb-16">
             <div className="flex items-center gap-4 mb-4">
                 <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#5FA99F] to-[#4A8A82] flex items-center justify-center shadow-lg">
                   <span className="text-white text-3xl font-bold">1</span>
@@ -346,6 +320,7 @@ export default function WhyMetaAdsNeedLandingPages() {
                       alt="Confused visitor leaving website homepage after clicking Meta ads without finding promised offer"
                       fill
                       className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 384px"
                     />
                   </div>
                   <div className="space-y-4">
@@ -408,6 +383,7 @@ export default function WhyMetaAdsNeedLandingPages() {
                       alt="Happy customer converting on dedicated landing page with clear call-to-action matching Meta ads promise"
                       fill
                       className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 384px"
                     />
                   </div>
                   <div className="space-y-4">
@@ -461,15 +437,10 @@ export default function WhyMetaAdsNeedLandingPages() {
                   When your ad promise matches your landing page experience exactly, people convert. It's that simple.
                 </p>
               </div>
-          </motion.section>
+          </ScrollFadeIn>
 
           {/* Section 2 - The 5 Elements */}
-          <motion.section
-            className="mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-          >
+          <ScrollFadeIn as="section" className="mb-16">
             <div className="flex items-center gap-4 mb-4">
               <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#5FA99F] to-[#4A8A82] flex items-center justify-center shadow-md">
                 <span className="text-white text-xl font-bold">2</span>
@@ -604,6 +575,7 @@ export default function WhyMetaAdsNeedLandingPages() {
                     alt="Mobile-optimized landing page for Meta ads showing responsive design with large tappable buttons and fast load time"
                     fill
                     className="object-cover"
+                    sizes="100vw"
                   />
                 </div>
 
@@ -641,15 +613,10 @@ export default function WhyMetaAdsNeedLandingPages() {
                 </div>
               </div>
             </div>
-          </motion.section>
+          </ScrollFadeIn>
 
           {/* Section 3 - The Cost */}
-          <motion.section
-            className="mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-          >
+          <ScrollFadeIn as="section" className="mb-16">
             <div className="flex items-center gap-4 mb-4">
               <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#5FA99F] to-[#4A8A82] flex items-center justify-center shadow-md">
                 <span className="text-white text-xl font-bold">3</span>
@@ -671,6 +638,7 @@ export default function WhyMetaAdsNeedLandingPages() {
                   alt="Financial analysis showing Meta ads ROI comparison between homepage and dedicated landing page cost per lead"
                   fill
                   className="object-cover"
+                  sizes="100vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-[#000000]/70 to-transparent"></div>
               </div>
@@ -753,15 +721,10 @@ export default function WhyMetaAdsNeedLandingPages() {
                 </div>
               </div>
             </div>
-          </motion.section>
+          </ScrollFadeIn>
 
           {/* Section 4 - Technical Setup */}
-          <motion.section
-            className="mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.0 }}
-          >
+          <ScrollFadeIn as="section" className="mb-16">
             <div className="flex items-center gap-4 mb-4">
               <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#5FA99F] to-[#4A8A82] flex items-center justify-center shadow-md">
                 <span className="text-white text-xl font-bold">4</span>
@@ -783,6 +746,7 @@ export default function WhyMetaAdsNeedLandingPages() {
                   alt="Analytics dashboard displaying Meta ads conversion tracking data and landing page performance metrics"
                   fill
                   className="object-cover"
+                  sizes="100vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#000000]/70 to-transparent"></div>
                 <div className="absolute bottom-8 left-8 right-8 text-white">
@@ -848,15 +812,10 @@ export default function WhyMetaAdsNeedLandingPages() {
                 At Drive Lead Media, we build landing pages that convert, install all tracking correctly, and make sure you can see exactly where every lead comes from.
               </p>
             </div>
-          </motion.section>
+          </ScrollFadeIn>
 
           {/* Conclusion & CTA */}
-          <motion.section
-            className="mb-4"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.2 }}
-          >
+          <ScrollFadeIn as="section" className="mb-4">
             <div className="bg-gradient-to-br from-[#1A1A1A] to-[#0A0A0A] rounded-3xl p-12 shadow-2xl">
               <h2 className="text-white font-heading text-3xl sm:text-3xl lg:text-3xl font-bold mb-4 text-center leading-tight">
                 Your Ads Are Only As Good As Your Landing Page
@@ -934,7 +893,7 @@ export default function WhyMetaAdsNeedLandingPages() {
                 </div>
               </div>
             </div>
-          </motion.section>
+          </ScrollFadeIn>
 
           {/* FAQ Section */}
           <div className="prose prose-invert prose-lg max-w-none">

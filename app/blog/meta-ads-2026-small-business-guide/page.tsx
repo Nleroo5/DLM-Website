@@ -1,6 +1,4 @@
-'use client';
-
-import { motion } from 'framer-motion';
+import ScrollFadeIn from '@/components/blog/ScrollFadeIn';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getPostBySlug, generateBlogPostSchema } from '@/lib/blog-posts';
@@ -137,17 +135,13 @@ export default function MetaAds2026SmallBusinessGuide() {
       />
 
       {/* Hero Section */}
-      <motion.div
-        className="relative w-full pt-20 sm:pt-24 lg:pt-28 pb-16 sm:pb-20 lg:pb-24"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
+      <ScrollFadeIn className="relative w-full pt-20 sm:pt-24 lg:pt-28 pb-16 sm:pb-20 lg:pb-24">
         <div className="absolute inset-0">
           <Image
             src="/images/meta-ads-2026-roas-dashboard-performance.webp"
             alt="Meta Ads Manager dashboard showing 6:1 ROAS performance for small business Facebook and Instagram advertising campaign in 2026"
             fill
+            sizes="100vw"
             className="object-cover"
             priority
           />
@@ -156,14 +150,9 @@ export default function MetaAds2026SmallBusinessGuide() {
 
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="max-w-3xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-block mb-4"
-            >
+            <ScrollFadeIn className="inline-block mb-4">
               <span className="text-[#5FA99F] font-semibold text-body-sm tracking-[0.15em] uppercase">Meta Ads Strategy</span>
-            </motion.div>
+            </ScrollFadeIn>
             <h1 className="font-heading text-h1 font-bold text-white leading-[1.1] mb-6">
               How to Run Meta Ads in 2026: Small Business Guide to 6:1 ROAS
             </h1>
@@ -172,7 +161,7 @@ export default function MetaAds2026SmallBusinessGuide() {
             </p>
           </div>
         </div>
-      </motion.div>
+      </ScrollFadeIn>
 
       {/* Article Meta */}
       <div className="bg-[#000000] border-b border-[#5FA99F]/20">
@@ -201,12 +190,7 @@ export default function MetaAds2026SmallBusinessGuide() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 py-10 sm:py-12 lg:py-16">
 
         {/* Introduction */}
-        <motion.section
-          className="mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
+        <ScrollFadeIn as="section" className="mb-20">
           <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
             <div className="space-y-6">
               <p className="text-gray-300 font-body text-body leading-relaxed">
@@ -238,15 +222,10 @@ export default function MetaAds2026SmallBusinessGuide() {
               </p>
             </div>
           </div>
-        </motion.section>
+        </ScrollFadeIn>
 
             {/* Section 2: What's New in Meta Ads for 2026 */}
-            <motion.section
-              className="mb-20"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
+            <ScrollFadeIn as="section" className="mb-20">
               <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
                 <div className="flex items-center mb-8">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[rgba(95,169,159,0.2)] rounded-xl flex items-center justify-center mr-4">
@@ -273,6 +252,7 @@ export default function MetaAds2026SmallBusinessGuide() {
                         src="/images/meta-ads-andromeda-ai-algorithm-visualization.webp"
                         alt="Meta Andromeda algorithm AI neural network visualization showing advanced machine learning technology for Facebook and Instagram advertising optimization in 2026"
                         width={1200}
+                        sizes="(max-width: 768px) 100vw, 1200px"
                         height={800}
                         className="w-full h-auto rounded-2xl shadow-2xl"
                       />
@@ -324,15 +304,10 @@ export default function MetaAds2026SmallBusinessGuide() {
                   </div>
                 </div>
               </div>
-            </motion.section>
+            </ScrollFadeIn>
 
             {/* Section 3: Understanding 6:1 ROAS */}
-            <motion.section
-              className="mb-20"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
+            <ScrollFadeIn as="section" className="mb-20">
               <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
                 <div className="flex items-center mb-8">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[rgba(95,169,159,0.2)] rounded-xl flex items-center justify-center mr-4">
@@ -368,6 +343,7 @@ export default function MetaAds2026SmallBusinessGuide() {
                       src="/images/meta-ads-roas-calculator-analytics-chart.webp"
                       alt="ROAS calculator and analytics charts showing return on ad spend metrics and ROI calculations for Meta advertising campaigns"
                       width={1200}
+                      sizes="(max-width: 768px) 100vw, 1200px"
                       height={1800}
                       className="w-full h-auto rounded-2xl shadow-2xl"
                     />
@@ -401,15 +377,10 @@ export default function MetaAds2026SmallBusinessGuide() {
                   </div>
                 </div>
               </div>
-            </motion.section>
+            </ScrollFadeIn>
 
             {/* Section 4: Foundation Setup */}
-            <motion.section
-              className="mb-20"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-            >
+            <ScrollFadeIn as="section" className="mb-20">
               <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
                 <div className="flex items-center mb-8">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[rgba(95,169,159,0.2)] rounded-xl flex items-center justify-center mr-4">
@@ -446,6 +417,7 @@ export default function MetaAds2026SmallBusinessGuide() {
                         src="/images/meta-pixel-setup-installation-code-website.webp"
                         alt="Meta Pixel installation code on computer screen showing JavaScript implementation for Facebook and Instagram conversion tracking"
                         width={1200}
+                        sizes="(max-width: 768px) 100vw, 1200px"
                         height={645}
                         className="w-full h-auto rounded-2xl shadow-2xl"
                       />
@@ -539,15 +511,10 @@ export default function MetaAds2026SmallBusinessGuide() {
                   </p>
                 </div>
               </div>
-            </motion.section>
+            </ScrollFadeIn>
 
             {/* Section 5: Campaign Structure */}
-            <motion.section
-              className="mb-20"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-            >
+            <ScrollFadeIn as="section" className="mb-20">
               <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
                 <div className="flex items-center mb-8">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[rgba(95,169,159,0.2)] rounded-xl flex items-center justify-center mr-4">
@@ -568,6 +535,7 @@ export default function MetaAds2026SmallBusinessGuide() {
                       src="/images/advantage-plus-campaign-strategy-planning.webp"
                       alt="Business team planning Advantage+ campaign strategy for Meta advertising with charts and analytics"
                       width={1200}
+                      sizes="(max-width: 768px) 100vw, 1200px"
                       height={800}
                       className="w-full h-auto rounded-2xl shadow-2xl"
                     />
@@ -675,15 +643,10 @@ export default function MetaAds2026SmallBusinessGuide() {
                   </div>
                 </div>
               </div>
-            </motion.section>
+            </ScrollFadeIn>
 
             {/* Section 6: Targeting Strategies */}
-            <motion.section
-              className="mb-20"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.0 }}
-            >
+            <ScrollFadeIn as="section" className="mb-20">
               <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
                 <div className="flex items-center mb-8">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[rgba(95,169,159,0.2)] rounded-xl flex items-center justify-center mr-4">
@@ -704,6 +667,7 @@ export default function MetaAds2026SmallBusinessGuide() {
                       src="/images/meta-ads-audience-targeting-demographics.webp"
                       alt="Audience targeting demographics charts showing Meta ads targeting strategy and customer segmentation analysis"
                       width={1200}
+                      sizes="(max-width: 768px) 100vw, 1200px"
                       height={795}
                       className="w-full h-auto rounded-2xl shadow-2xl"
                     />
@@ -793,15 +757,10 @@ export default function MetaAds2026SmallBusinessGuide() {
                   </p>
                 </div>
               </div>
-            </motion.section>
+            </ScrollFadeIn>
 
             {/* Section 7: Creative Strategy */}
-            <motion.section
-              className="mb-20"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.2 }}
-            >
+            <ScrollFadeIn as="section" className="mb-20">
               <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
                 <div className="flex items-center mb-8">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[rgba(95,169,159,0.2)] rounded-xl flex items-center justify-center mr-4">
@@ -832,6 +791,7 @@ export default function MetaAds2026SmallBusinessGuide() {
                         src="/images/ugc-video-content-creation-smartphone.webp"
                         alt="Creator using smartphone to record UGC video content for Meta ads showing authentic user-generated content production"
                         width={1200}
+                        sizes="(max-width: 768px) 100vw, 1200px"
                         height={800}
                         className="w-full h-auto rounded-2xl shadow-2xl"
                       />
@@ -957,15 +917,10 @@ export default function MetaAds2026SmallBusinessGuide() {
                   </p>
                 </div>
               </div>
-            </motion.section>
+            </ScrollFadeIn>
 
             {/* Section 8: Budget Management */}
-            <motion.section
-              className="mb-20"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.4 }}
-            >
+            <ScrollFadeIn as="section" className="mb-20">
               <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
                 <div className="flex items-center mb-8">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[rgba(95,169,159,0.2)] rounded-xl flex items-center justify-center mr-4">
@@ -986,6 +941,7 @@ export default function MetaAds2026SmallBusinessGuide() {
                       src="/images/meta-ads-budget-management-scaling-charts.webp"
                       alt="Budget management and scaling charts showing financial growth strategy for Meta advertising campaigns"
                       width={1200}
+                      sizes="(max-width: 768px) 100vw, 1200px"
                       height={800}
                       className="w-full h-auto rounded-2xl shadow-2xl"
                     />
@@ -1079,15 +1035,10 @@ export default function MetaAds2026SmallBusinessGuide() {
                   </div>
                 </div>
               </div>
-            </motion.section>
+            </ScrollFadeIn>
 
             {/* Section 9: Tracking and Analytics */}
-            <motion.section
-              className="mb-20"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.6 }}
-            >
+            <ScrollFadeIn as="section" className="mb-20">
               <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
                 <div className="flex items-center mb-8">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[rgba(95,169,159,0.2)] rounded-xl flex items-center justify-center mr-4">
@@ -1108,6 +1059,7 @@ export default function MetaAds2026SmallBusinessGuide() {
                       src="/images/meta-ads-analytics-performance-tracking.webp"
                       alt="Analytics performance tracking dashboard showing Meta ads metrics and campaign optimization data"
                       width={1200}
+                      sizes="(max-width: 768px) 100vw, 1200px"
                       height={795}
                       className="w-full h-auto rounded-2xl shadow-2xl"
                     />
@@ -1224,15 +1176,10 @@ export default function MetaAds2026SmallBusinessGuide() {
                   </p>
                 </div>
               </div>
-            </motion.section>
+            </ScrollFadeIn>
 
             {/* Section 10: Common Mistakes */}
-            <motion.section
-              className="mb-20"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.8 }}
-            >
+            <ScrollFadeIn as="section" className="mb-20">
               <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
                 <div className="flex items-center mb-8">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[rgba(95,169,159,0.2)] rounded-xl flex items-center justify-center mr-4">
@@ -1307,15 +1254,10 @@ export default function MetaAds2026SmallBusinessGuide() {
                   </div>
                 </div>
               </div>
-            </motion.section>
+            </ScrollFadeIn>
 
             {/* Section 11: Case Study */}
-            <motion.section
-              className="mb-20"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 2.0 }}
-            >
+            <ScrollFadeIn as="section" className="mb-20">
               <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
                 <div className="flex items-center mb-8">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[rgba(95,169,159,0.2)] rounded-xl flex items-center justify-center mr-4">
@@ -1389,6 +1331,7 @@ export default function MetaAds2026SmallBusinessGuide() {
                         src="/images/meta-ads-success-business-growth-results.webp"
                         alt="Business team celebrating success and growth achieving 6:1 ROAS from Meta advertising campaigns"
                         width={1200}
+                        sizes="(max-width: 768px) 100vw, 1200px"
                         height={801}
                         className="w-full h-auto rounded-2xl shadow-2xl"
                       />
@@ -1427,15 +1370,10 @@ export default function MetaAds2026SmallBusinessGuide() {
                   </p>
                 </div>
               </div>
-            </motion.section>
+            </ScrollFadeIn>
 
             {/* Section 12: Conclusion */}
-            <motion.section
-              className="mb-20"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 2.2 }}
-            >
+            <ScrollFadeIn as="section" className="mb-20">
               <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
                 <div className="flex items-center mb-8">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[rgba(95,169,159,0.2)] rounded-xl flex items-center justify-center mr-4">
@@ -1509,15 +1447,10 @@ export default function MetaAds2026SmallBusinessGuide() {
                   </p>
                 </div>
               </div>
-            </motion.section>
+            </ScrollFadeIn>
 
         {/* CTA Section */}
-        <motion.section
-          className="mb-4"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 2.4 }}
-        >
+        <ScrollFadeIn as="section" className="mb-4">
           <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] rounded-3xl p-12 shadow-2xl text-center border-2 border-[#5FA99F]">
             <h2 className="text-white font-serif text-3xl font-bold mb-4">
               Ready to Stop Wasting Money on Meta Ads?
@@ -1532,7 +1465,7 @@ export default function MetaAds2026SmallBusinessGuide() {
               Get a Free Meta Ads Audit
             </Link>
           </div>
-        </motion.section>
+        </ScrollFadeIn>
 
         {/* FAQ Section */}
         <CollapsibleFAQ items={faqItems} />

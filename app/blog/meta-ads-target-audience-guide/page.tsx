@@ -1,6 +1,4 @@
-'use client';
-
-import { motion } from 'framer-motion';
+import ScrollFadeIn from '@/components/blog/ScrollFadeIn';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getPostBySlug, generateBlogPostSchema } from '@/lib/blog-posts';
@@ -99,19 +97,14 @@ export default function MetaAdsTargetAudienceGuide() {
       />
 
       {/* Hero Section - Full Width */}
-      <motion.div
-        className="relative w-full pt-20 sm:pt-24 lg:pt-28 pb-16 sm:pb-20 lg:pb-24"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.1 }}
-        transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-      >
+      <ScrollFadeIn className="relative w-full pt-20 sm:pt-24 lg:pt-28 pb-16 sm:pb-20 lg:pb-24">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
             src="/images/facebook-meta-ads-audience-targeting-strategy-guide.webp"
             alt="Meta Ads audience targeting strategy guide hero image"
             fill
+            sizes="100vw"
             className="object-cover"
             priority
           />
@@ -132,7 +125,7 @@ export default function MetaAdsTargetAudienceGuide() {
             </p>
           </div>
         </div>
-      </motion.div>
+      </ScrollFadeIn>
 
       {/* Article Meta Info */}
       <div className="bg-[#000000] border-b border-[#5FA99F]/20">
@@ -162,13 +155,7 @@ export default function MetaAdsTargetAudienceGuide() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 py-10 sm:py-12 lg:py-16">
 
         {/* Section 1 - Why Targeting Matters */}
-        <motion.section
-          className="mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.1 }}
-          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-        >
+        <ScrollFadeIn as="section" className="mb-20">
           <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
             <div className="flex items-center mb-8">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[rgba(212,165,116,0.2)] rounded-xl flex items-center justify-center mr-4">
@@ -218,16 +205,10 @@ export default function MetaAdsTargetAudienceGuide() {
               </p>
             </div>
           </div>
-        </motion.section>
+        </ScrollFadeIn>
 
         {/* Section 2 - The 3 Types of Audiences */}
-        <motion.section
-          className="mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.1 }}
-          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-        >
+        <ScrollFadeIn as="section" className="mb-20">
           <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
             <div className="flex items-center mb-8">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[rgba(212,165,116,0.2)] rounded-xl flex items-center justify-center mr-4">
@@ -250,6 +231,7 @@ export default function MetaAdsTargetAudienceGuide() {
                   alt="Meta ads audience funnel showing the progression from cold audiences (strangers) to warm audiences (engaged users) to hot audiences (past customers and qualified leads)"
                   width={1200}
                   height={675}
+                  sizes="(max-width: 768px) 100vw, 1200px"
                   className="w-full h-auto"
                 />
               </div>
@@ -393,16 +375,10 @@ export default function MetaAdsTargetAudienceGuide() {
               </div>
             </div>
           </div>
-        </motion.section>
+        </ScrollFadeIn>
 
         {/* Section 3 - How to Build Your Perfect Audience */}
-        <motion.section
-          className="mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.1 }}
-          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-        >
+        <ScrollFadeIn as="section" className="mb-20">
           <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
             <div className="flex items-center mb-8">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[rgba(212,165,116,0.2)] rounded-xl flex items-center justify-center mr-4">
@@ -486,6 +462,7 @@ export default function MetaAdsTargetAudienceGuide() {
                     alt="Meta Ads Manager targeting interface showing demographics, interests, and behaviors options for precise audience targeting on Facebook and Instagram"
                     width={1200}
                     height={675}
+                    sizes="(max-width: 768px) 100vw, 1200px"
                     className="w-full h-auto"
                   />
                 </div>
@@ -565,16 +542,10 @@ export default function MetaAdsTargetAudienceGuide() {
               </div>
             </div>
           </div>
-        </motion.section>
+        </ScrollFadeIn>
 
         {/* Quick Reference Card */}
-        <motion.div
-          className="relative bg-[#1A1A1A]/40 backdrop-blur-xl border-2 border-[rgba(95,169,159,0.3)] rounded-[32px] p-6 sm:p-10 lg:p-12 mb-12 shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:border-[#5FA99F]/60 hover:shadow-[0_0_40px_rgba(95,169,159,0.3)] transition-all duration-500 overflow-hidden group"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.1 }}
-          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-        >
+        <ScrollFadeIn className="relative bg-[#1A1A1A]/40 backdrop-blur-xl border-2 border-[rgba(95,169,159,0.3)] rounded-[32px] p-6 sm:p-10 lg:p-12 mb-12 shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:border-[#5FA99F]/60 hover:shadow-[0_0_40px_rgba(95,169,159,0.3)] transition-all duration-500 overflow-hidden group">
           <div className="absolute inset-0 bg-gradient-to-br from-[#5FA99F]/5 via-transparent to-[#85C7B3]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
           <div className="relative z-10">
@@ -599,7 +570,7 @@ export default function MetaAdsTargetAudienceGuide() {
               </p>
             </div>
           </div>
-        </motion.div>
+        </ScrollFadeIn>
 
         {/* Related Resources */}
         <div className="bg-gradient-to-br from-[#1A1A1A]/40 to-[#1A1A1A]/40 backdrop-blur-xl border border-[rgba(95,169,159,0.3)] rounded-[16px] p-6 my-10">
@@ -636,13 +607,7 @@ export default function MetaAdsTargetAudienceGuide() {
         </div>
 
         {/* CTA Section */}
-        <motion.section
-          className="mb-4"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.1 }}
-          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-        >
+        <ScrollFadeIn as="section" className="mb-4">
           <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] rounded-3xl p-12 shadow-2xl text-center">
             <h2 className="text-[#F8F6F3] font-serif text-3xl font-bold mb-4">
               Need Help Setting Up Your Target Audiences?
@@ -657,7 +622,7 @@ export default function MetaAdsTargetAudienceGuide() {
               Get a Free Strategy Call
             </Link>
           </div>
-        </motion.section>
+        </ScrollFadeIn>
 
         {/* FAQ Section */}
         <CollapsibleFAQ

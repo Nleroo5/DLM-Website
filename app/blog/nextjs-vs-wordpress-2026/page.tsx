@@ -1,6 +1,4 @@
-'use client';
-
-import { motion } from 'framer-motion';
+import ScrollFadeIn from '@/components/blog/ScrollFadeIn';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getPostBySlug, generateBlogPostSchema } from '@/lib/blog-posts';
@@ -87,17 +85,13 @@ export default function NextJsVsWordPress2026() {
       />
 
       {/* Hero Section */}
-      <motion.div
-        className="relative w-full pt-20 sm:pt-24 lg:pt-28 pb-16 sm:pb-20 lg:pb-24"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
+      <ScrollFadeIn className="relative w-full pt-20 sm:pt-24 lg:pt-28 pb-16 sm:pb-20 lg:pb-24">
         <div className="absolute inset-0">
           <Image
             src="/images/nextjs-vs-wordpress-website-development-comparison.webp"
             alt="Next.js vs WordPress comparison showing performance metrics and modern web development technologies for business websites"
             fill
+            sizes="100vw"
             className="object-cover"
             priority
           />
@@ -106,14 +100,9 @@ export default function NextJsVsWordPress2026() {
 
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="max-w-3xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-block mb-4"
-            >
+            <ScrollFadeIn className="inline-block mb-4">
               <span className="text-[#5FA99F] font-semibold text-body-sm tracking-[0.15em] uppercase">Platform Comparison</span>
-            </motion.div>
+            </ScrollFadeIn>
             <h1 className="font-heading text-h1 font-bold text-white leading-[1.1] mb-6">
               Next.js vs WordPress for Small Business Websites in 2026
             </h1>
@@ -122,7 +111,7 @@ export default function NextJsVsWordPress2026() {
             </p>
           </div>
         </div>
-      </motion.div>
+      </ScrollFadeIn>
 
       {/* Article Meta */}
       <div className="bg-[#000000] border-b border-[#5FA99F]/20">
@@ -151,12 +140,7 @@ export default function NextJsVsWordPress2026() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 py-10 sm:py-12 lg:py-16">
 
         {/* Introduction */}
-        <motion.section
-          className="mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
+        <ScrollFadeIn as="section" className="mb-20">
           <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
             <div className="space-y-6">
               <p className="text-gray-300 font-body text-body leading-relaxed">
@@ -172,15 +156,10 @@ export default function NextJsVsWordPress2026() {
               </p>
             </div>
           </div>
-        </motion.section>
+        </ScrollFadeIn>
 
         {/* Understanding the Platforms */}
-        <motion.section
-          className="mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-        >
+        <ScrollFadeIn as="section" className="mb-20">
           <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
             <div className="flex items-center mb-8">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[rgba(212,165,116,0.2)] rounded-xl flex items-center justify-center mr-4">
@@ -233,15 +212,10 @@ export default function NextJsVsWordPress2026() {
               </div>
             </div>
           </div>
-        </motion.section>
+        </ScrollFadeIn>
 
         {/* Performance Comparison */}
-        <motion.section
-          className="mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-        >
+        <ScrollFadeIn as="section" className="mb-20">
           <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
             <div className="flex items-center mb-8">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[rgba(212,165,116,0.2)] rounded-xl flex items-center justify-center mr-4">
@@ -268,6 +242,7 @@ export default function NextJsVsWordPress2026() {
                     src="/images/website-performance-metrics-core-web-vitals-comparison.webp"
                     alt="Website performance metrics dashboard showing Core Web Vitals comparison between Next.js and WordPress with LCP, INP, and CLS scores"
                     width={1200}
+                    sizes="(max-width: 768px) 100vw, 1200px"
                     height={795}
                     className="w-full h-auto rounded-2xl shadow-2xl"
                   />
@@ -302,6 +277,7 @@ export default function NextJsVsWordPress2026() {
                   src="/images/nextjs-wordpress-load-time-speed-comparison-chart.webp"
                   alt="Performance comparison chart showing Next.js vs WordPress load times, PageSpeed scores, and data transfer metrics"
                   width={1200}
+                  sizes="(max-width: 768px) 100vw, 1200px"
                   height={795}
                   className="w-full h-auto rounded-2xl shadow-2xl"
                 />
@@ -337,15 +313,10 @@ export default function NextJsVsWordPress2026() {
               </div>
             </div>
           </div>
-        </motion.section>
+        </ScrollFadeIn>
 
         {/* Security Section */}
-        <motion.section
-          className="mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-        >
+        <ScrollFadeIn as="section" className="mb-20">
           <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
             <div className="flex items-center mb-8">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[rgba(212,165,116,0.2)] rounded-xl flex items-center justify-center mr-4">
@@ -372,6 +343,7 @@ export default function NextJsVsWordPress2026() {
                     src="/images/wordpress-security-vulnerabilities-2026-statistics-chart.webp"
                     alt="WordPress security vulnerabilities statistics 2026 showing 68% increase year-over-year and 71% of vulnerabilities remaining unpatched"
                     width={1200}
+                    sizes="(max-width: 768px) 100vw, 1200px"
                     height={800}
                     className="w-full h-auto rounded-2xl shadow-2xl"
                   />
@@ -403,15 +375,10 @@ export default function NextJsVsWordPress2026() {
               </p>
             </div>
           </div>
-        </motion.section>
+        </ScrollFadeIn>
 
         {/* Cost Comparison */}
-        <motion.section
-          className="mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.0 }}
-        >
+        <ScrollFadeIn as="section" className="mb-20">
           <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
             <div className="flex items-center mb-8">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[rgba(212,165,116,0.2)] rounded-xl flex items-center justify-center mr-4">
@@ -469,6 +436,7 @@ export default function NextJsVsWordPress2026() {
                   src="/images/nextjs-wordpress-cost-comparison-3-year-breakdown.webp"
                   alt="3-5 year cost comparison chart showing WordPress vs Next.js expenses for hosting, maintenance, and development"
                   width={1200}
+                  sizes="(max-width: 768px) 100vw, 1200px"
                   height={855}
                   className="w-full h-auto rounded-2xl shadow-2xl"
                 />
@@ -486,15 +454,10 @@ export default function NextJsVsWordPress2026() {
               </div>
             </div>
           </div>
-        </motion.section>
+        </ScrollFadeIn>
 
         {/* Content Management */}
-        <motion.section
-          className="mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.2 }}
-        >
+        <ScrollFadeIn as="section" className="mb-20">
           <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
             <div className="flex items-center mb-8">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[rgba(212,165,116,0.2)] rounded-xl flex items-center justify-center mr-4">
@@ -535,6 +498,7 @@ export default function NextJsVsWordPress2026() {
                       src="/images/nextjs-headless-cms-content-management-options.webp"
                       alt="Headless CMS options for Next.js including Contentful, Sanity, Prismic, and Strapi showing content management flexibility"
                       width={1200}
+                      sizes="(max-width: 768px) 100vw, 1200px"
                       height={800}
                       className="w-full h-auto rounded-2xl shadow-2xl"
                     />
@@ -557,15 +521,10 @@ export default function NextJsVsWordPress2026() {
               </div>
             </div>
           </div>
-        </motion.section>
+        </ScrollFadeIn>
 
         {/* Why DLM Builds on Next.js */}
-        <motion.section
-          className="mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.4 }}
-        >
+        <ScrollFadeIn as="section" className="mb-20">
           <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
             <div className="flex items-center mb-8">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[rgba(212,165,116,0.2)] rounded-xl flex items-center justify-center mr-4">
@@ -604,6 +563,7 @@ export default function NextJsVsWordPress2026() {
                       src="/images/development-workflow-nextjs-wordpress-efficiency.webp"
                       alt="Development workflow comparison showing Next.js clean code architecture versus WordPress plugin complexity"
                       width={1200}
+                      sizes="(max-width: 768px) 100vw, 1200px"
                       height={800}
                       className="w-full h-auto rounded-2xl shadow-2xl"
                     />
@@ -633,15 +593,10 @@ export default function NextJsVsWordPress2026() {
               </div>
             </div>
           </div>
-        </motion.section>
+        </ScrollFadeIn>
 
         {/* Decision Framework */}
-        <motion.section
-          className="mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.6 }}
-        >
+        <ScrollFadeIn as="section" className="mb-20">
           <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
             <div className="flex items-center mb-8">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[rgba(212,165,116,0.2)] rounded-xl flex items-center justify-center mr-4">
@@ -736,15 +691,10 @@ export default function NextJsVsWordPress2026() {
               </div>
             </div>
           </div>
-        </motion.section>
+        </ScrollFadeIn>
 
         {/* Conclusion */}
-        <motion.section
-          className="mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.8 }}
-        >
+        <ScrollFadeIn as="section" className="mb-20">
           <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
             <h2 className="text-white font-heading text-h2 font-bold mb-6">
               Conclusion
@@ -776,15 +726,10 @@ export default function NextJsVsWordPress2026() {
               </p>
             </div>
           </div>
-        </motion.section>
+        </ScrollFadeIn>
 
         {/* CTA Section */}
-        <motion.section
-          className="mb-4"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 2.0 }}
-        >
+        <ScrollFadeIn as="section" className="mb-4">
           <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] rounded-3xl p-12 shadow-2xl text-center border-2 border-[#5FA99F]">
             <h2 className="text-white font-serif text-3xl font-bold mb-4">
               Ready for a High-Performance Website?
@@ -799,7 +744,7 @@ export default function NextJsVsWordPress2026() {
               Get Started with Next.js
             </Link>
           </div>
-        </motion.section>
+        </ScrollFadeIn>
 
         {/* FAQ Section */}
         <CollapsibleFAQ

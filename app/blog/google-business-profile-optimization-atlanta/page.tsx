@@ -1,6 +1,4 @@
-'use client';
-
-import { motion } from 'framer-motion';
+import ScrollFadeIn from '@/components/blog/ScrollFadeIn';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getPostBySlug, generateBlogPostSchema } from '@/lib/blog-posts';
@@ -74,19 +72,14 @@ export default function GoogleBusinessProfileOptimizationPost() {
       />
 
       {/* Hero Section */}
-      <motion.div
-        className="relative w-full pt-20 sm:pt-24 lg:pt-28 pb-16 sm:pb-20 lg:pb-24"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.1 }}
-        transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-      >
+      <ScrollFadeIn className="relative w-full pt-20 sm:pt-24 lg:pt-28 pb-16 sm:pb-20 lg:pb-24">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
             src="/images/google-business-profile-optimization-atlanta-local-seo.webp"
             alt="Google Business Profile Optimization Guide for Atlanta Businesses"
             fill
+            sizes="100vw"
             className="object-cover"
             priority
           />
@@ -107,7 +100,7 @@ export default function GoogleBusinessProfileOptimizationPost() {
             </p>
           </div>
         </div>
-      </motion.div>
+      </ScrollFadeIn>
 
       {/* Breadcrumbs */}
       <Breadcrumbs category={post.category} postTitle={post.title} />
@@ -145,13 +138,7 @@ export default function GoogleBusinessProfileOptimizationPost() {
           {/* Article Content */}
           <div className="prose prose-invert prose-lg max-w-none">
             {/* Introduction */}
-            <motion.section
-              className="mb-20"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-            >
+            <ScrollFadeIn as="section" className="mb-20">
               <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
                 <div className="space-y-6">
                   <p className="text-gray-300 font-body text-body leading-relaxed">
@@ -163,7 +150,7 @@ export default function GoogleBusinessProfileOptimizationPost() {
                   </p>
                 </div>
               </div>
-            </motion.section>
+            </ScrollFadeIn>
 
             {/* Table of Contents */}
             <div className="bg-gradient-to-br from-[#1A1A1A]/40 to-[#1A1A1A]/40 backdrop-blur-xl border border-[rgba(95,169,159,0.3)] rounded-[16px] p-8 my-12">
@@ -235,6 +222,7 @@ export default function GoogleBusinessProfileOptimizationPost() {
                 src="/images/google-maps-3-pack-local-search-results.webp"
                 alt="Google Maps local 3-pack search results showing top three business listings for local search queries"
                 width={1200}
+                sizes="(max-width: 768px) 100vw, 1200px"
                 height={801}
                 className="w-full h-auto"
               />
@@ -341,13 +329,7 @@ export default function GoogleBusinessProfileOptimizationPost() {
             </p>
 
             {/* Mid-article CTA */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-              className="bg-[#1A1A1A]/40 backdrop-blur-xl border-2 border-[rgba(95,169,159,0.3)] rounded-[32px] p-8 sm:p-10 lg:p-12 my-12 text-center shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:border-[#5FA99F]/60 hover:shadow-[0_0_40px_rgba(95,169,159,0.3)] transition-all duration-500 relative overflow-hidden group"
-            >
+            <ScrollFadeIn className="bg-[#1A1A1A]/40 backdrop-blur-xl border-2 border-[rgba(95,169,159,0.3)] rounded-[32px] p-8 sm:p-10 lg:p-12 my-12 text-center shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:border-[#5FA99F]/60 hover:shadow-[0_0_40px_rgba(95,169,159,0.3)] transition-all duration-500 relative overflow-hidden group">
               <div className="absolute inset-0 bg-gradient-to-br from-[#5FA99F]/5 via-transparent to-[#85C7B3]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
               <div className="relative z-10">
@@ -364,7 +346,7 @@ export default function GoogleBusinessProfileOptimizationPost() {
                   Book a Free Strategy Call
                 </Link>
               </div>
-            </motion.div>
+            </ScrollFadeIn>
 
             {/* Google Reviews Image */}
             <div className="my-12 rounded-[16px] overflow-hidden">
@@ -372,6 +354,7 @@ export default function GoogleBusinessProfileOptimizationPost() {
                 src="/images/google-reviews-customer-rating-stars.webp"
                 alt="Google reviews and star ratings showing customer feedback impact on local business visibility and rankings"
                 width={1200}
+                sizes="(max-width: 768px) 100vw, 1200px"
                 height={800}
                 className="w-full h-auto"
               />
@@ -509,6 +492,7 @@ export default function GoogleBusinessProfileOptimizationPost() {
                 src="/images/google-business-profile-posts-local-marketing.webp"
                 alt="Business owner creating Google Business Profile posts for local marketing and customer engagement"
                 width={1200}
+                sizes="(max-width: 768px) 100vw, 1200px"
                 height={801}
                 className="w-full h-auto"
               />

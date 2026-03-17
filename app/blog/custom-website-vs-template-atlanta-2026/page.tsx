@@ -1,6 +1,4 @@
-'use client';
-
-import { motion } from 'framer-motion';
+import ScrollFadeIn from '@/components/blog/ScrollFadeIn';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getPostBySlug, generateBlogPostSchema } from '@/lib/blog-posts';
@@ -74,19 +72,14 @@ export default function CustomWebsiteVsTemplatePost() {
       />
 
       {/* Hero Section */}
-      <motion.div
-        className="relative w-full pt-20 sm:pt-24 lg:pt-28 pb-16 sm:pb-20 lg:pb-24"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.1 }}
-        transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-      >
+      <ScrollFadeIn className="relative w-full pt-20 sm:pt-24 lg:pt-28 pb-16 sm:pb-20 lg:pb-24">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
             src="/images/custom-website-vs-template-atlanta-comparison.webp"
             alt="Custom Website vs Template Comparison for Atlanta Businesses"
             fill
+            sizes="100vw"
             className="object-cover"
             priority
           />
@@ -107,7 +100,7 @@ export default function CustomWebsiteVsTemplatePost() {
             </p>
           </div>
         </div>
-      </motion.div>
+      </ScrollFadeIn>
 
       {/* Breadcrumbs */}
       <Breadcrumbs category={post.category} postTitle={post.title} />
@@ -145,13 +138,7 @@ export default function CustomWebsiteVsTemplatePost() {
           {/* Article Content */}
           <div className="prose prose-invert prose-lg max-w-none">
             {/* Introduction */}
-            <motion.section
-              className="mb-20"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-            >
+            <ScrollFadeIn as="section" className="mb-20">
               <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
                 <div className="space-y-6">
                   <p className="text-gray-300 font-body text-body leading-relaxed">
@@ -163,7 +150,7 @@ export default function CustomWebsiteVsTemplatePost() {
                   </p>
                 </div>
               </div>
-            </motion.section>
+            </ScrollFadeIn>
 
             {/* Comparison Image */}
             <div className="my-12 rounded-[16px] overflow-hidden">
@@ -171,6 +158,7 @@ export default function CustomWebsiteVsTemplatePost() {
                 src="/images/custom-vs-template-speed-comparison.webp"
                 alt="Side-by-side comparison of custom website speed versus template website performance metrics"
                 width={1200}
+                sizes="(max-width: 768px) 100vw, 1200px"
                 height={801}
                 className="w-full h-auto"
               />
@@ -192,13 +180,7 @@ export default function CustomWebsiteVsTemplatePost() {
             </div>
 
             {/* Section: The Real Difference */}
-            <motion.section
-              className="mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-            >
+            <ScrollFadeIn as="section" className="mb-16">
               <h2 className="text-white font-heading text-h2 font-bold mt-12 mb-6">
                 The Real Difference Between Custom and Template Websites
               </h2>
@@ -267,16 +249,10 @@ export default function CustomWebsiteVsTemplatePost() {
               <p className="text-gray-300 text-[0.9rem] italic mb-8">
                 *Performance data based on 2026 benchmarks from Bent Enterprise, SiteBuilderReport, and Google Lighthouse testing.
               </p>
-            </motion.section>
+            </ScrollFadeIn>
 
             {/* Section: Speed */}
-            <motion.section
-              className="mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-            >
+            <ScrollFadeIn as="section" className="mb-16">
               <h2 className="text-white font-heading text-h2 font-bold mt-12 mb-6">
                 Speed: The Metric That Costs You Customers
               </h2>
@@ -307,22 +283,17 @@ export default function CustomWebsiteVsTemplatePost() {
               <p className="text-white text-body leading-relaxed mb-6">
                 And speed is not just about user experience anymore. Google confirmed that Core Web Vitals are a ranking factor. During the December 2025 core update, pages with load times above 3 seconds experienced 23% more traffic loss than faster competitors with similar content quality.
               </p>
-            </motion.section>
+            </ScrollFadeIn>
 
             {/* Section: SEO */}
-            <motion.section
-              className="mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-            >
+            <ScrollFadeIn as="section" className="mb-16">
               {/* SEO Image */}
               <div className="my-12 rounded-[16px] overflow-hidden">
                 <Image
                   src="/images/custom-website-seo-structured-data.webp"
                   alt="SEO optimization and structured data analysis tools for business websites"
                   width={1200}
+                  sizes="(max-width: 768px) 100vw, 1200px"
                   height={658}
                   className="w-full h-auto"
                 />
@@ -367,22 +338,17 @@ export default function CustomWebsiteVsTemplatePost() {
               <p className="text-white text-body leading-relaxed mb-6">
                 For Atlanta businesses competing in local search, this matters even more. Your website&apos;s technical quality affects how you show up in Google Maps, the local 3-pack, and &quot;near me&quot; searches. A custom site with proper LocalBusiness schema, fast load times, and a clean mobile experience gives you an edge over competitors still running generic templates.
               </p>
-            </motion.section>
+            </ScrollFadeIn>
 
             {/* Section: Security */}
-            <motion.section
-              className="mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-            >
+            <ScrollFadeIn as="section" className="mb-16">
               {/* Security Image */}
               <div className="my-12 rounded-[16px] overflow-hidden">
                 <Image
                   src="/images/wordpress-security-vulnerabilities-plugins.webp"
                   alt="WordPress security vulnerabilities from plugins showing cybersecurity risks for business websites"
                   width={1200}
+                  sizes="(max-width: 768px) 100vw, 1200px"
                   height={800}
                   className="w-full h-auto"
                 />
@@ -457,22 +423,17 @@ export default function CustomWebsiteVsTemplatePost() {
               <p className="text-white text-body leading-relaxed mb-6">
                 Wix and Squarespace handle security for you, which is a genuine advantage of managed platforms. But you are also trusting a single company with your entire online presence. If their platform goes down, your business goes down. If they change their pricing or policies, you have no alternative. Custom websites give you ownership and control.
               </p>
-            </motion.section>
+            </ScrollFadeIn>
 
             {/* Section: Conversions */}
-            <motion.section
-              className="mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-            >
+            <ScrollFadeIn as="section" className="mb-16">
               {/* Conversions Image */}
               <div className="my-12 rounded-[16px] overflow-hidden">
                 <Image
                   src="/images/website-conversion-rate-analytics.webp"
                   alt="Website conversion rate analytics dashboard showing lead generation metrics for small businesses"
                   width={1200}
+                  sizes="(max-width: 768px) 100vw, 1200px"
                   height={800}
                   className="w-full h-auto"
                 />
@@ -507,22 +468,17 @@ export default function CustomWebsiteVsTemplatePost() {
               <p className="text-white text-body leading-relaxed mb-6">
                 For Atlanta service businesses like dental practices, law firms, HVAC companies, and medical offices, every lead matters. If your website gets 500 visitors per month and converts at 2% (template average), that is 10 leads. A custom site converting at 4% doubles that to 20 leads from the same traffic. Over a year, that difference can represent tens of thousands of dollars in revenue.
               </p>
-            </motion.section>
+            </ScrollFadeIn>
 
             {/* Section: Core Web Vitals */}
-            <motion.section
-              className="mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-            >
+            <ScrollFadeIn as="section" className="mb-16">
               {/* Core Web Vitals Image */}
               <div className="my-12 rounded-[16px] overflow-hidden">
                 <Image
                   src="/images/core-web-vitals-google-performance.webp"
                   alt="Google Core Web Vitals performance metrics showing LCP INP and CLS scores for website ranking"
                   width={1200}
+                  sizes="(max-width: 768px) 100vw, 1200px"
                   height={799}
                   className="w-full h-auto"
                 />
@@ -604,16 +560,10 @@ export default function CustomWebsiteVsTemplatePost() {
               <p className="text-white text-body leading-relaxed mb-6">
                 Less than half of WordPress sites pass Core Web Vitals on mobile. That means more than half of all WordPress websites are being penalized by Google&apos;s ranking algorithm to some degree. Wix and Squarespace perform better, but neither gives you the level of control that custom development does.
               </p>
-            </motion.section>
+            </ScrollFadeIn>
 
             {/* Section: ROI */}
-            <motion.section
-              className="mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-            >
+            <ScrollFadeIn as="section" className="mb-16">
               <h2 className="text-white font-heading text-h2 font-bold mt-12 mb-6">
                 The Real Cost: 3-Year ROI Comparison
               </h2>
@@ -686,22 +636,17 @@ export default function CustomWebsiteVsTemplatePost() {
               <p className="text-white text-body leading-relaxed mb-6">
                 Investing in UX delivers an ROI of 9,900%, meaning for every $1 spent on user experience, businesses earn $100 in return. That is why custom sites with purpose-built UX consistently outperform templates on revenue metrics.
               </p>
-            </motion.section>
+            </ScrollFadeIn>
 
             {/* Section: Atlanta Context */}
-            <motion.section
-              className="mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-            >
+            <ScrollFadeIn as="section" className="mb-16">
               {/* Atlanta Image */}
               <div className="my-12 rounded-[16px] overflow-hidden">
                 <Image
                   src="/images/atlanta-small-business-custom-website.webp"
                   alt="Atlanta Georgia skyline representing the growing small business market for custom web design"
                   width={1200}
+                  sizes="(max-width: 768px) 100vw, 1200px"
                   height={800}
                   className="w-full h-auto"
                 />
@@ -726,16 +671,10 @@ export default function CustomWebsiteVsTemplatePost() {
               <p className="text-white text-body leading-relaxed mb-6">
                 Atlanta&apos;s growing technology sector means consumers here are more digitally savvy than the national average. They recognize template websites. They notice slow load times. And they will click the back button and try your competitor if your site does not meet their expectations within the first few seconds.
               </p>
-            </motion.section>
+            </ScrollFadeIn>
 
             {/* Section: When Template Is Fine */}
-            <motion.section
-              className="mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-            >
+            <ScrollFadeIn as="section" className="mb-16">
               <h2 className="text-white font-heading text-h2 font-bold mt-12 mb-6">
                 When a Template Website Is the Right Choice
               </h2>
@@ -759,19 +698,13 @@ export default function CustomWebsiteVsTemplatePost() {
                   </p>
                 </div>
               </div>
-            </motion.section>
+            </ScrollFadeIn>
 
             {/* FAQ Section */}
             <CollapsibleFAQ items={faqItems} />
 
             {/* Final CTA Section */}
-            <motion.section
-              className="mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-            >
+            <ScrollFadeIn as="section" className="mb-16">
               <h2 className="text-white font-heading text-h2 font-bold mt-12 mb-6">
                 Ready to See What a Custom Website Can Do for Your Business?
               </h2>
@@ -796,7 +729,7 @@ export default function CustomWebsiteVsTemplatePost() {
                   <Link href="/book" className="text-[#5FA99F] underline">Book a free strategy call</Link>
                 </div>
               </div>
-            </motion.section>
+            </ScrollFadeIn>
 
             {/* Continue Learning */}
             <div className="bg-gradient-to-br from-[#1A1A1A]/40 to-[#1A1A1A]/40 backdrop-blur-xl border border-[rgba(95,169,159,0.3)] rounded-[16px] p-8 my-12">

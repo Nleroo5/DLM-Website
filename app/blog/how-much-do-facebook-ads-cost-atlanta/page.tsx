@@ -1,6 +1,4 @@
-'use client';
-
-import { motion } from 'framer-motion';
+import ScrollFadeIn from '@/components/blog/ScrollFadeIn';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getPostBySlug, generateBlogPostSchema } from '@/lib/blog-posts';
@@ -95,13 +93,7 @@ export default function FacebookAdsCostAtlantaPost() {
       />
 
       {/* Hero Section - Full Width */}
-      <motion.div
-        className="relative w-full pt-20 sm:pt-24 lg:pt-28 pb-16 sm:pb-20 lg:pb-24"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.1 }}
-        transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-      >
+      <ScrollFadeIn className="relative w-full pt-20 sm:pt-24 lg:pt-28 pb-16 sm:pb-20 lg:pb-24">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
@@ -110,6 +102,7 @@ export default function FacebookAdsCostAtlantaPost() {
             fill
             className="object-cover"
             priority
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[rgba(0,0,0,0.95)] via-[rgba(0,0,0,0.85)] to-[rgba(0,0,0,0.7)]"></div>
         </div>
@@ -128,7 +121,7 @@ export default function FacebookAdsCostAtlantaPost() {
             </p>
           </div>
         </div>
-      </motion.div>
+      </ScrollFadeIn>
 
       {/* Breadcrumbs */}
       <Breadcrumbs category={post.category} postTitle={post.title} />
@@ -166,13 +159,7 @@ export default function FacebookAdsCostAtlantaPost() {
           {/* Article Content */}
           <div className="prose prose-invert prose-lg max-w-none">
             {/* Introduction */}
-            <motion.section
-              className="mb-20"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-            >
+            <ScrollFadeIn as="section" className="mb-20">
               <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
                 <div className="space-y-6">
                   <p className="text-gray-300 font-body text-body leading-relaxed">
@@ -184,7 +171,7 @@ export default function FacebookAdsCostAtlantaPost() {
                   </p>
                 </div>
               </div>
-            </motion.section>
+            </ScrollFadeIn>
 
             {/* Table of Contents */}
             <div className="bg-gradient-to-br from-[#1A1A1A]/40 to-[#1A1A1A]/40 backdrop-blur-xl border border-[rgba(95,169,159,0.3)] rounded-[16px] p-8 my-12">
@@ -236,6 +223,7 @@ export default function FacebookAdsCostAtlantaPost() {
                   width={1200}
                   height={675}
                   className="w-full h-auto"
+                  sizes="(max-width: 768px) 100vw, 1200px"
                 />
               </div>
               <p className="text-center text-white/60 text-body-sm mt-4 italic">
@@ -335,13 +323,7 @@ export default function FacebookAdsCostAtlantaPost() {
             </div>
 
             {/* CTA Box - Calculator */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-              className="bg-[#1A1A1A]/40 backdrop-blur-xl border-2 border-[rgba(95,169,159,0.3)] rounded-[32px] p-8 sm:p-10 lg:p-12 my-12 text-center shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:border-[#5FA99F]/60 hover:shadow-[0_0_40px_rgba(95,169,159,0.3)] transition-all duration-500 relative overflow-hidden group"
-            >
+            <ScrollFadeIn className="bg-[#1A1A1A]/40 backdrop-blur-xl border-2 border-[rgba(95,169,159,0.3)] rounded-[32px] p-8 sm:p-10 lg:p-12 my-12 text-center shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:border-[#5FA99F]/60 hover:shadow-[0_0_40px_rgba(95,169,159,0.3)] transition-all duration-500 relative overflow-hidden group">
               {/* Animated gradient background on hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-[#5FA99F]/5 via-transparent to-[#85C7B3]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
@@ -359,7 +341,7 @@ export default function FacebookAdsCostAtlantaPost() {
                   Try Free ROI Calculator →
                 </Link>
               </div>
-            </motion.div>
+            </ScrollFadeIn>
 
             {/* Meta Calculator Preview */}
             <div className="my-12">
@@ -370,6 +352,7 @@ export default function FacebookAdsCostAtlantaPost() {
                   width={1200}
                   height={900}
                   className="w-full h-auto"
+                  sizes="(max-width: 768px) 100vw, 1200px"
                 />
               </div>
               <p className="text-center text-white/60 text-body-sm mt-4 italic">

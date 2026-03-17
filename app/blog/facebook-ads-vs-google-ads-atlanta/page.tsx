@@ -1,6 +1,4 @@
-'use client';
-
-import { motion } from 'framer-motion';
+import ScrollFadeIn from '@/components/blog/ScrollFadeIn';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArticleSchema, BreadcrumbSchema } from '@/components/StructuredDataSchemas';
@@ -125,6 +123,7 @@ export default function FacebookAdsVsGoogleAdsPage() {
                 alt="Facebook Ads vs Google Ads comparison showing cost differences and platform strengths for Atlanta businesses"
                 width={1200}
                 height={630}
+                sizes="(max-width: 768px) 100vw, 1200px"
                 className="w-full h-auto"
                 priority
               />
@@ -138,12 +137,7 @@ export default function FacebookAdsVsGoogleAdsPage() {
         <div className="max-w-[900px] mx-auto">
 
           {/* Introduction */}
-          <motion.section
-            className="mb-20"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
+          <ScrollFadeIn as="section" className="mb-20">
             <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
               <div className="space-y-6">
                 <p className="text-gray-300 font-body text-body leading-relaxed">
@@ -174,7 +168,7 @@ export default function FacebookAdsVsGoogleAdsPage() {
                 </p>
               </div>
             </div>
-          </motion.section>
+          </ScrollFadeIn>
 
           {/* Section 1: The Fundamental Difference */}
           <div className="mb-16">

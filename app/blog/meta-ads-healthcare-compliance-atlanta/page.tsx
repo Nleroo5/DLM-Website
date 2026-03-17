@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import ScrollFadeIn from '@/components/blog/ScrollFadeIn';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect } from 'react';
@@ -200,6 +200,7 @@ export default function MetaAdsHealthcareComplianceAtlanta() {
                 src="/images/atlanta-healthcare-medical-practice-meta-ads-hipaa-compliance.webp"
                 alt="Atlanta healthcare medical practice manager reviewing Meta ads compliance dashboard showing HIPAA privacy requirements, 2026 policy restrictions, and Georgia medical board regulations for Facebook Instagram advertising"
                 width={1200}
+                sizes="(max-width: 768px) 100vw, 1200px"
                 height={630}
                 className="w-full h-auto"
                 priority
@@ -211,12 +212,7 @@ export default function MetaAdsHealthcareComplianceAtlanta() {
 
       {/* Article Content */}
       <article className="max-w-[900px] mx-auto px-6 pb-[80px] relative z-10">
-        <motion.section
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="prose prose-invert prose-lg max-w-none space-y-8"
-        >
+        <ScrollFadeIn as="section" className="prose prose-invert prose-lg max-w-none space-y-8">
           <div className="bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg p-6 mb-8">
             <p className="text-gray-300 font-body leading-relaxed mb-0">
               <strong className="text-white">The Scenario:</strong> An Atlanta dermatologist launched Facebook ads promoting Botox treatments. Within 48 hours, Meta disabled the ad account. The reason? Before and after photos of patient results. Three thousand dollars in ad spend frozen, two weeks of patient acquisition lost, all because of one compliance violation the practice owner never knew existed.
@@ -761,18 +757,13 @@ export default function MetaAdsHealthcareComplianceAtlanta() {
               Schedule a Consultation
             </Link>
           </div>
-        </motion.section>
+        </ScrollFadeIn>
 
         {/* FAQ Section */}
         {/* FAQ Section */}
-        <motion.section
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-16"
-        >
+        <ScrollFadeIn as="section" className="mt-16">
           <CollapsibleFAQ items={faqItems} />
-        </motion.section>
+        </ScrollFadeIn>
 
             {/* Related Resources */}
             <div className="bg-gradient-to-br from-[#1A1A1A]/40 to-[#1A1A1A]/40 backdrop-blur-xl border border-[rgba(95,169,159,0.3)] rounded-[16px] p-8 my-12">

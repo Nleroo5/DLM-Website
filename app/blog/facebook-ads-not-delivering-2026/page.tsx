@@ -1,6 +1,4 @@
-'use client';
-
-import { motion } from 'framer-motion';
+import ScrollFadeIn from '@/components/blog/ScrollFadeIn';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getPostBySlug, generateBlogPostSchema } from '@/lib/blog-posts';
@@ -179,17 +177,13 @@ export default function FacebookAdsNotDelivering2026() {
       />
 
       {/* Hero Section */}
-      <motion.div
-        className="relative w-full pt-20 sm:pt-24 lg:pt-28 pb-16 sm:pb-20 lg:pb-24"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
+      <ScrollFadeIn className="relative w-full pt-20 sm:pt-24 lg:pt-28 pb-16 sm:pb-20 lg:pb-24">
         <div className="absolute inset-0">
           <Image
             src="/images/facebook-ads-not-delivering-business-owner-analytics-dashboard.webp"
             alt="Frustrated advertiser looking at Facebook ads not delivering in Meta Ads Manager showing delivery status issues and campaign problems"
             fill
+            sizes="100vw"
             className="object-cover"
             priority
           />
@@ -198,14 +192,9 @@ export default function FacebookAdsNotDelivering2026() {
 
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="max-w-3xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-block mb-4"
-            >
+            <ScrollFadeIn className="inline-block mb-4">
               <span className="text-[#5FA99F] font-semibold text-body-sm tracking-[0.15em] uppercase">Troubleshooting Guide</span>
-            </motion.div>
+            </ScrollFadeIn>
             <h1 className="font-heading text-h1 font-bold text-white leading-[1.1] mb-6">
               Why Your Facebook Ads Aren't Delivering (2026): 12 Reasons & Fixes
             </h1>
@@ -214,7 +203,7 @@ export default function FacebookAdsNotDelivering2026() {
             </p>
           </div>
         </div>
-      </motion.div>
+      </ScrollFadeIn>
 
       {/* Article Meta */}
       <div className="bg-[#000000] border-b border-[#5FA99F]/20">
@@ -243,12 +232,7 @@ export default function FacebookAdsNotDelivering2026() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 py-10 sm:py-12 lg:py-16">
 
         {/* Introduction */}
-        <motion.section
-          className="mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
+        <ScrollFadeIn as="section" className="mb-20">
           <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
             <div className="space-y-6">
               <p className="text-gray-300 font-body text-body leading-relaxed">
@@ -272,15 +256,10 @@ export default function FacebookAdsNotDelivering2026() {
               </p>
             </div>
           </div>
-        </motion.section>
+        </ScrollFadeIn>
 
         {/* Understanding Delivery Statuses */}
-        <motion.section
-          className="mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-        >
+        <ScrollFadeIn as="section" className="mb-20">
           <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
             <div className="flex items-center mb-8">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[rgba(212,165,116,0.2)] rounded-xl flex items-center justify-center mr-4">
@@ -351,15 +330,10 @@ export default function FacebookAdsNotDelivering2026() {
               </p>
             </div>
           </div>
-        </motion.section>
+        </ScrollFadeIn>
 
         {/* The 12 Reasons - Let me continue with the complete content */}
-        <motion.section
-          className="mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-        >
+        <ScrollFadeIn as="section" className="mb-20">
           <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
             <div className="flex items-center mb-8">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[rgba(212,165,116,0.2)] rounded-xl flex items-center justify-center mr-4">
@@ -707,15 +681,10 @@ export default function FacebookAdsNotDelivering2026() {
 
             </div>
           </div>
-        </motion.section>
+        </ScrollFadeIn>
 
         {/* Quick Diagnostic Checklist */}
-        <motion.section
-          className="mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-        >
+        <ScrollFadeIn as="section" className="mb-20">
           <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
             <div className="flex items-center mb-8">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[rgba(212,165,116,0.2)] rounded-xl flex items-center justify-center mr-4">
@@ -781,15 +750,10 @@ export default function FacebookAdsNotDelivering2026() {
               </p>
             </div>
           </div>
-        </motion.section>
+        </ScrollFadeIn>
 
         {/* CTA Section */}
-        <motion.section
-          className="mb-4"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.0 }}
-        >
+        <ScrollFadeIn as="section" className="mb-4">
           <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] rounded-3xl p-12 shadow-2xl text-center">
             <h2 className="text-white font-serif text-3xl font-bold mb-4">
               Still Having Delivery Issues?
@@ -804,7 +768,7 @@ export default function FacebookAdsNotDelivering2026() {
               Get a Free Account Audit
             </Link>
           </div>
-        </motion.section>
+        </ScrollFadeIn>
 
         {/* FAQ Section */}
         <CollapsibleFAQ

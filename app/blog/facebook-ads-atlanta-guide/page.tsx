@@ -1,6 +1,4 @@
-'use client';
-
-import { motion } from 'framer-motion';
+import ScrollFadeIn from '@/components/blog/ScrollFadeIn';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getPostBySlug, generateBlogPostSchema } from '@/lib/blog-posts';
@@ -110,18 +108,14 @@ export default function FacebookAdsAtlantaGuide() {
       />
 
       {/* Hero Section - Full Width */}
-      <motion.div
-        className="relative w-full pt-20 sm:pt-24 lg:pt-28 pb-16 sm:pb-20 lg:pb-24"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
+      <ScrollFadeIn className="relative w-full pt-20 sm:pt-24 lg:pt-28 pb-16 sm:pb-20 lg:pb-24">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
             src="/images/atlanta-facebook-ads-marketing-services-local-business-strategy.webp"
             alt="Atlanta business owner reviewing Facebook ads campaign performance and ROI dashboard"
             fill
+            sizes="100vw"
             className="object-cover"
             priority
           />
@@ -131,14 +125,9 @@ export default function FacebookAdsAtlantaGuide() {
         {/* Text Content */}
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="max-w-3xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-block mb-4"
-            >
+            <ScrollFadeIn className="inline-block mb-4">
               <span className="text-[#5FA99F] font-semibold text-body-sm tracking-[0.15em] uppercase">Complete Guide</span>
-            </motion.div>
+            </ScrollFadeIn>
             <h1 className="text-[#F8F6F3] font-serif text-h1 font-bold leading-[1.1] mb-4">
               Facebook Ads Atlanta: Complete Guide for Local Businesses (2025)
             </h1>
@@ -147,7 +136,7 @@ export default function FacebookAdsAtlantaGuide() {
             </p>
           </div>
         </div>
-      </motion.div>
+      </ScrollFadeIn>
 
       {/* Article Meta Info */}
       <div className="bg-[#000000] border-b border-[#5FA99F]/20">
@@ -177,12 +166,7 @@ export default function FacebookAdsAtlantaGuide() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 py-10 sm:py-12 lg:py-16">
 
         {/* Section 1 - Why Facebook Ads Work Better in Atlanta */}
-        <motion.section
-          className="mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
+        <ScrollFadeIn as="section" className="mb-20">
           <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
             <div className="flex items-center mb-8">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[rgba(212,165,116,0.2)] rounded-xl flex items-center justify-center mr-4">
@@ -246,15 +230,10 @@ export default function FacebookAdsAtlantaGuide() {
               </div>
             </div>
           </div>
-        </motion.section>
+        </ScrollFadeIn>
 
         {/* Section 2 - What Are Facebook Ads? */}
-        <motion.section
-          className="mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-        >
+        <ScrollFadeIn as="section" className="mb-20">
           <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
             <div className="flex items-center mb-8">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[rgba(212,165,116,0.2)] rounded-xl flex items-center justify-center mr-4">
@@ -369,15 +348,10 @@ export default function FacebookAdsAtlantaGuide() {
               </div>
             </div>
           </div>
-        </motion.section>
+        </ScrollFadeIn>
 
         {/* Section 3 - Who Should Use Facebook Ads in Atlanta */}
-        <motion.section
-          className="mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-        >
+        <ScrollFadeIn as="section" className="mb-20">
           <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
             <div className="flex items-center mb-8">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[rgba(212,165,116,0.2)] rounded-xl flex items-center justify-center mr-4">
@@ -478,15 +452,10 @@ export default function FacebookAdsAtlantaGuide() {
               </div>
             </div>
           </div>
-        </motion.section>
+        </ScrollFadeIn>
 
         {/* Section 4 - How Much Do Facebook Ads Cost in Atlanta */}
-        <motion.section
-          className="mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-        >
+        <ScrollFadeIn as="section" className="mb-20">
           <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
             <div className="flex items-center mb-8">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[rgba(212,165,116,0.2)] rounded-xl flex items-center justify-center mr-4">
@@ -643,15 +612,10 @@ export default function FacebookAdsAtlantaGuide() {
               </div>
             </div>
           </div>
-        </motion.section>
+        </ScrollFadeIn>
 
         {/* Section 5 - Step-by-Step How to Run Facebook Ads */}
-        <motion.section
-          className="mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-        >
+        <ScrollFadeIn as="section" className="mb-20">
           <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
             <div className="flex items-center mb-8">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[rgba(212,165,116,0.2)] rounded-xl flex items-center justify-center mr-4">
@@ -885,15 +849,10 @@ export default function FacebookAdsAtlantaGuide() {
               </div>
             </div>
           </div>
-        </motion.section>
+        </ScrollFadeIn>
 
         {/* Section 6 - Facebook Ads vs Traditional Atlanta Advertising */}
-        <motion.section
-          className="mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.7 }}
-        >
+        <ScrollFadeIn as="section" className="mb-20">
           <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
             <div className="flex items-center mb-8">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[rgba(212,165,116,0.2)] rounded-xl flex items-center justify-center mr-4">
@@ -1059,15 +1018,10 @@ export default function FacebookAdsAtlantaGuide() {
               </div>
             </div>
           </div>
-        </motion.section>
+        </ScrollFadeIn>
 
         {/* Section 7 - Success Stories from Atlanta Businesses */}
-        <motion.section
-          className="mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-        >
+        <ScrollFadeIn as="section" className="mb-20">
           <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
             <div className="flex items-center mb-8">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[rgba(212,165,116,0.2)] rounded-xl flex items-center justify-center mr-4">
@@ -1320,15 +1274,10 @@ export default function FacebookAdsAtlantaGuide() {
               </div>
             </div>
           </div>
-        </motion.section>
+        </ScrollFadeIn>
 
         {/* Section 8 - Should You Hire an Atlanta Agency */}
-        <motion.section
-          className="mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.9 }}
-        >
+        <ScrollFadeIn as="section" className="mb-20">
           <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
             <div className="flex items-center mb-8">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[rgba(212,165,116,0.2)] rounded-xl flex items-center justify-center mr-4">
@@ -1524,15 +1473,10 @@ export default function FacebookAdsAtlantaGuide() {
               </div>
             </div>
           </div>
-        </motion.section>
+        </ScrollFadeIn>
 
         {/* Section 9 - Related Resources */}
-        <motion.section
-          className="mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.0 }}
-        >
+        <ScrollFadeIn as="section" className="mb-20">
           <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
             <div className="flex items-center mb-8">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[rgba(212,165,116,0.2)] rounded-xl flex items-center justify-center mr-4">
@@ -1621,15 +1565,10 @@ export default function FacebookAdsAtlantaGuide() {
               </div>
             </div>
           </div>
-        </motion.section>
+        </ScrollFadeIn>
 
         {/* Section 10 - CTA Section */}
-        <motion.section
-          className="mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.1 }}
-        >
+        <ScrollFadeIn as="section" className="mb-20">
           <div className="bg-gradient-to-br from-[#1A1A1A] to-[#000000] border-2 border-[#5FA99F] rounded-[32px] p-6 sm:p-10 lg:p-12">
             <div className="text-center mb-10">
               <h2 className="text-[#F8F6F3] font-serif text-[2rem] sm:text-[2.5rem] lg:text-[3rem] font-bold mb-4">
@@ -1745,7 +1684,7 @@ export default function FacebookAdsAtlantaGuide() {
               </Link>
             </div>
           </div>
-        </motion.section>
+        </ScrollFadeIn>
 
         {/* FAQ Section */}
         <CollapsibleFAQ items={faqItems} />

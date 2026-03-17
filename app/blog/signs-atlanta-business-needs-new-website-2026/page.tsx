@@ -1,6 +1,4 @@
-'use client';
-
-import { motion } from 'framer-motion';
+import ScrollFadeIn from '@/components/blog/ScrollFadeIn';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getPostBySlug, generateBlogPostSchema } from '@/lib/blog-posts';
@@ -74,19 +72,14 @@ export default function SignsNewWebsitePost() {
       />
 
       {/* Hero Section */}
-      <motion.div
-        className="relative w-full pt-20 sm:pt-24 lg:pt-28 pb-16 sm:pb-20 lg:pb-24"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.1 }}
-        transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-      >
+      <ScrollFadeIn className="relative w-full pt-20 sm:pt-24 lg:pt-28 pb-16 sm:pb-20 lg:pb-24">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
             src="/images/signs-new-website-outdated-design-comparison.webp"
             alt="7 Signs Your Atlanta Business Needs a New Website in 2026"
             fill
+            sizes="100vw"
             className="object-cover"
             priority
           />
@@ -107,7 +100,7 @@ export default function SignsNewWebsitePost() {
             </p>
           </div>
         </div>
-      </motion.div>
+      </ScrollFadeIn>
 
       {/* Breadcrumbs */}
       <Breadcrumbs category={post.category} postTitle={post.title} />
@@ -145,13 +138,7 @@ export default function SignsNewWebsitePost() {
           {/* Article Content */}
           <div className="prose prose-invert prose-lg max-w-none">
             {/* Introduction */}
-            <motion.section
-              className="mb-20"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-            >
+            <ScrollFadeIn as="section" className="mb-20">
               <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
                 <div className="space-y-6">
                   <p className="text-gray-300 font-body text-body leading-relaxed">
@@ -167,7 +154,7 @@ export default function SignsNewWebsitePost() {
                   </p>
                 </div>
               </div>
-            </motion.section>
+            </ScrollFadeIn>
 
             {/* Table of Contents */}
             <div className="bg-gradient-to-br from-[#1A1A1A]/40 to-[#1A1A1A]/40 backdrop-blur-xl border border-[rgba(95,169,159,0.3)] rounded-[16px] p-8 my-12">
@@ -186,13 +173,7 @@ export default function SignsNewWebsitePost() {
             </div>
 
             {/* Sign #1: Slow Speed */}
-            <motion.section
-              className="mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-            >
+            <ScrollFadeIn as="section" className="mb-16">
               <h2 className="text-white font-heading text-h2 font-bold mb-6">
                 Sign #1: Your Website Takes More Than 3 Seconds to Load
               </h2>
@@ -211,6 +192,7 @@ export default function SignsNewWebsitePost() {
                     src="/images/slow-website-loading-speed-test.webp"
                     alt="Website speed test showing slow loading times impacting bounce rate and conversions"
                     width={1200}
+                    sizes="(max-width: 768px) 100vw, 1200px"
                     height={801}
                     className="w-full h-auto"
                   />
@@ -230,16 +212,10 @@ export default function SignsNewWebsitePost() {
                   </p>
                 </div>
               </div>
-            </motion.section>
+            </ScrollFadeIn>
 
             {/* Sign #2: Not Mobile Friendly */}
-            <motion.section
-              className="mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-            >
+            <ScrollFadeIn as="section" className="mb-16">
               <h2 className="text-white font-heading text-h2 font-bold mb-6">
                 Sign #2: Your Site Looks Broken on Mobile Devices
               </h2>
@@ -254,6 +230,7 @@ export default function SignsNewWebsitePost() {
                     src="/images/website-not-mobile-responsive-broken.webp"
                     alt="Website displaying broken layout on mobile device showing poor responsive design"
                     width={1200}
+                    sizes="(max-width: 768px) 100vw, 1200px"
                     height={801}
                     className="w-full h-auto"
                   />
@@ -277,16 +254,10 @@ export default function SignsNewWebsitePost() {
                   </p>
                 </div>
               </div>
-            </motion.section>
+            </ScrollFadeIn>
 
             {/* Sign #3: High Bounce Rate */}
-            <motion.section
-              className="mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-            >
+            <ScrollFadeIn as="section" className="mb-16">
               <h2 className="text-white font-heading text-h2 font-bold mb-6">
                 Sign #3: Your Bounce Rate Is Above 60%
               </h2>
@@ -301,6 +272,7 @@ export default function SignsNewWebsitePost() {
                     src="/images/website-high-bounce-rate-analytics.webp"
                     alt="Google Analytics dashboard showing high website bounce rate and declining engagement metrics"
                     width={1200}
+                    sizes="(max-width: 768px) 100vw, 1200px"
                     height={801}
                     className="w-full h-auto"
                   />
@@ -320,16 +292,10 @@ export default function SignsNewWebsitePost() {
                   </p>
                 </div>
               </div>
-            </motion.section>
+            </ScrollFadeIn>
 
             {/* Sign #4: Security Issues */}
-            <motion.section
-              className="mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-            >
+            <ScrollFadeIn as="section" className="mb-16">
               <h2 className="text-white font-heading text-h2 font-bold mb-6">
                 Sign #4: Your Site Has Security Warnings or Vulnerabilities
               </h2>
@@ -344,6 +310,7 @@ export default function SignsNewWebsitePost() {
                     src="/images/website-security-warning-not-secure.webp"
                     alt="Browser showing Not Secure warning on a business website with security vulnerability alerts"
                     width={1200}
+                    sizes="(max-width: 768px) 100vw, 1200px"
                     height={801}
                     className="w-full h-auto"
                   />
@@ -367,16 +334,10 @@ export default function SignsNewWebsitePost() {
                   </p>
                 </div>
               </div>
-            </motion.section>
+            </ScrollFadeIn>
 
             {/* Sign #5: Outdated Design */}
-            <motion.section
-              className="mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-            >
+            <ScrollFadeIn as="section" className="mb-16">
               <h2 className="text-white font-heading text-h2 font-bold mb-6">
                 Sign #5: Your Design Looks Like It Was Built 5 Years Ago
               </h2>
@@ -391,6 +352,7 @@ export default function SignsNewWebsitePost() {
                     src="/images/outdated-website-design-old-vs-new.webp"
                     alt="Side-by-side comparison of outdated 2018 website design versus modern 2026 clean website layout"
                     width={1200}
+                    sizes="(max-width: 768px) 100vw, 1200px"
                     height={801}
                     className="w-full h-auto"
                   />
@@ -414,16 +376,10 @@ export default function SignsNewWebsitePost() {
                   </p>
                 </div>
               </div>
-            </motion.section>
+            </ScrollFadeIn>
 
             {/* Sign #6: Not Generating Leads */}
-            <motion.section
-              className="mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-            >
+            <ScrollFadeIn as="section" className="mb-16">
               <h2 className="text-white font-heading text-h2 font-bold mb-6">
                 Sign #6: Your Website Is Not Generating Leads or Calls
               </h2>
@@ -451,16 +407,10 @@ export default function SignsNewWebsitePost() {
                   </p>
                 </div>
               </div>
-            </motion.section>
+            </ScrollFadeIn>
 
             {/* Sign #7: Google Rankings Dropping */}
-            <motion.section
-              className="mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-            >
+            <ScrollFadeIn as="section" className="mb-16">
               <h2 className="text-white font-heading text-h2 font-bold mb-6">
                 Sign #7: Your Google Rankings Are Dropping
               </h2>
@@ -475,6 +425,7 @@ export default function SignsNewWebsitePost() {
                     src="/images/website-seo-rankings-dropping-search.webp"
                     alt="SEO analytics showing declining Google search rankings and organic traffic loss"
                     width={1200}
+                    sizes="(max-width: 768px) 100vw, 1200px"
                     height={801}
                     className="w-full h-auto"
                   />
@@ -498,16 +449,10 @@ export default function SignsNewWebsitePost() {
                   </p>
                 </div>
               </div>
-            </motion.section>
+            </ScrollFadeIn>
 
             {/* The Atlanta Factor */}
-            <motion.section
-              className="mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-            >
+            <ScrollFadeIn as="section" className="mb-16">
               <h2 className="text-white font-heading text-h2 font-bold mb-6">
                 Why This Matters More for Atlanta Businesses
               </h2>
@@ -518,6 +463,7 @@ export default function SignsNewWebsitePost() {
                     src="/images/atlanta-small-business-custom-website.webp"
                     alt="Atlanta Georgia skyline representing the competitive small business market"
                     width={1200}
+                    sizes="(max-width: 768px) 100vw, 1200px"
                     height={800}
                     className="w-full h-auto"
                   />
@@ -535,16 +481,10 @@ export default function SignsNewWebsitePost() {
                   <strong>89% of consumers research products and services online before making a purchase</strong> (Network Solutions, 2025). And 76% check a company&apos;s website before visiting a physical location. Your website is not a digital brochure. It is your most important salesperson.
                 </p>
               </div>
-            </motion.section>
+            </ScrollFadeIn>
 
             {/* Quick Self-Audit Checklist */}
-            <motion.section
-              className="mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-            >
+            <ScrollFadeIn as="section" className="mb-16">
               <h2 className="text-white font-heading text-h2 font-bold mb-6">
                 Quick Self-Audit: Score Your Website
               </h2>
@@ -576,16 +516,10 @@ export default function SignsNewWebsitePost() {
                   </div>
                 </div>
               </div>
-            </motion.section>
+            </ScrollFadeIn>
 
             {/* What a Modern Website Looks Like */}
-            <motion.section
-              className="mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-            >
+            <ScrollFadeIn as="section" className="mb-16">
               <h2 className="text-white font-heading text-h2 font-bold mb-6">
                 What a Modern Business Website Should Look Like in 2026
               </h2>
@@ -620,16 +554,10 @@ export default function SignsNewWebsitePost() {
                   </div>
                 </div>
               </div>
-            </motion.section>
+            </ScrollFadeIn>
 
             {/* Data Sources */}
-            <motion.section
-              className="mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-            >
+            <ScrollFadeIn as="section" className="mb-16">
               <h2 className="text-white font-heading text-h2 font-bold mb-6">
                 Data Sources
               </h2>
@@ -652,31 +580,19 @@ export default function SignsNewWebsitePost() {
                   <li>&#8226; <strong className="text-gray-300">Off the Peg Design (2026):</strong> Website redesign frequency recommendations</li>
                 </ul>
               </div>
-            </motion.section>
+            </ScrollFadeIn>
 
             {/* FAQ Section */}
-            <motion.section
-              className="mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-            >
+            <ScrollFadeIn as="section" className="mb-16">
               <h2 className="text-white font-heading text-h2 font-bold mb-6">
                 Frequently Asked Questions
               </h2>
 
               <CollapsibleFAQ items={faqItems} />
-            </motion.section>
+            </ScrollFadeIn>
 
             {/* Continue Learning */}
-            <motion.section
-              className="mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-            >
+            <ScrollFadeIn as="section" className="mb-16">
               <h2 className="text-white font-heading text-h2 font-bold mb-6">
                 Continue Learning
               </h2>
@@ -699,7 +615,7 @@ export default function SignsNewWebsitePost() {
                   <span className="block text-white font-heading text-[1.1rem] mt-2">How to Optimize Your Google Business Profile in 2026 (Atlanta Guide)</span>
                 </Link>
               </div>
-            </motion.section>
+            </ScrollFadeIn>
 
             {/* Author Bio */}
             <AuthorBio author={post.author} />

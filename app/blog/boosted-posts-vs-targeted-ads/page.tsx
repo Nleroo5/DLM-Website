@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import ScrollFadeIn from '@/components/blog/ScrollFadeIn';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect } from 'react';
@@ -147,13 +147,7 @@ export default function BoostedPostsVsTargetedAdsPost() {
       />
 
       {/* Hero Section */}
-      <motion.div
-        className="relative w-full pt-20 sm:pt-24 lg:pt-28 pb-16 sm:pb-20 lg:pb-24"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.1 }}
-        transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-      >
+      <ScrollFadeIn className="relative w-full pt-20 sm:pt-24 lg:pt-28 pb-16 sm:pb-20 lg:pb-24">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
@@ -182,7 +176,7 @@ export default function BoostedPostsVsTargetedAdsPost() {
             </p>
           </div>
         </div>
-      </motion.div>
+      </ScrollFadeIn>
 
       {/* Breadcrumbs */}
       <Breadcrumbs category={post.category} postTitle={post.title} />
@@ -221,13 +215,7 @@ export default function BoostedPostsVsTargetedAdsPost() {
           <div className="prose prose-invert prose-lg max-w-none">
 
             {/* Introduction */}
-            <motion.section
-              className="mb-20"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-            >
+            <ScrollFadeIn as="section" className="mb-20">
               <div className="bg-gradient-to-br from-[#000000] to-[#1A1A1A] border border-[rgba(95,169,159,0.2)] rounded-[32px] p-6 sm:p-10 lg:p-12">
                 <div className="space-y-6">
                   <p className="text-gray-300 font-body text-body leading-relaxed">
@@ -251,7 +239,7 @@ export default function BoostedPostsVsTargetedAdsPost() {
                   </p>
                 </div>
               </div>
-            </motion.section>
+            </ScrollFadeIn>
 
             {/* What You'll Learn Box */}
             <div className="bg-gradient-to-br from-[#1A1A1A]/40 to-[#1A1A1A]/40 backdrop-blur-xl border border-[rgba(95,169,159,0.3)] rounded-[16px] p-6 my-10">
@@ -612,13 +600,7 @@ export default function BoostedPostsVsTargetedAdsPost() {
             </p>
 
             {/* Final CTA Section */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-              className="bg-[#1A1A1A]/40 backdrop-blur-xl border-2 border-[rgba(95,169,159,0.3)] rounded-[24px] p-8 my-12 text-center shadow-2xl hover:border-[#5FA99F]/60 transition-all duration-300"
-            >
+            <ScrollFadeIn className="bg-[#1A1A1A]/40 backdrop-blur-xl border-2 border-[rgba(95,169,159,0.3)] rounded-[24px] p-8 my-12 text-center shadow-2xl hover:border-[#5FA99F]/60 transition-all duration-300">
               <h3 className="text-white font-heading text-[1.6rem] font-bold mb-4">
                 Want Professional Meta Ad Campaigns?
               </h3>
@@ -631,7 +613,7 @@ export default function BoostedPostsVsTargetedAdsPost() {
               >
                 Schedule Free Strategy Call →
               </Link>
-            </motion.div>
+            </ScrollFadeIn>
 
             {/* Related Resources */}
             <div className="bg-gradient-to-br from-[#1A1A1A]/40 to-[#1A1A1A]/40 backdrop-blur-xl border border-[rgba(95,169,159,0.3)] rounded-[16px] p-6 my-10">
