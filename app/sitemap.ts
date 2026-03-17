@@ -245,6 +245,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/resources/website-strategy`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/resources/meta-ads-calculator`,
       lastModified: new Date(),
       changeFrequency: 'monthly',

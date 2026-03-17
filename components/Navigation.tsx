@@ -136,6 +136,12 @@ export default function Navigation() {
                       Website Grader
                     </Link>
                     <Link
+                      href="/resources/website-strategy"
+                      className="block px-5 py-3 font-ui text-[1rem] text-[#2A2A2A] hover:bg-[rgba(95,169,159,0.08)] hover:text-[#5FA99F] transition-all duration-400"
+                    >
+                      AI Strategy Report
+                    </Link>
+                    <Link
                       href="/resources/targeted-ads-infographic"
                       className="block px-5 py-3 font-ui text-[1rem] text-[#2A2A2A] hover:bg-[rgba(95,169,159,0.08)] hover:text-[#5FA99F] transition-all duration-400"
                     >
@@ -328,6 +334,16 @@ export default function Navigation() {
                         }}
                       >
                         Website Grader
+                      </Link>
+                      <Link
+                        href="/resources/website-strategy"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="block font-ui text-[1rem] text-gray-300 hover:text-[#5FA99F] transition-all duration-400 py-2 pl-3"
+                        style={{
+                          textShadow: '0 0 8px rgba(95,169,159,0.2)'
+                        }}
+                      >
+                        AI Strategy Report
                       </Link>
                       <Link
                         href="/resources/targeted-ads-infographic"
