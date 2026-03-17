@@ -83,7 +83,8 @@ function analyzeHtml(html: string, baseUrl: string): HtmlAnalysis {
   const imgMatches = html.match(/<img[^>]*>/gi) || [];
   const imagesTotal = imgMatches.length;
   const imagesMissingAlt = imgMatches.filter(img => {
-    const hasAlt = /alt=["'][^"']+["']/i.test(img);
+    // alt="" is valid for decorative images, so only flag truly missing alt attributes
+    const hasAlt = /\balt=["']/i.test(img);
     return !hasAlt;
   }).length;
 
@@ -133,8 +134,7 @@ function analyzeHtml(html: string, baseUrl: string): HtmlAnalysis {
     'google-analytics': 'Google Analytics',
     'gtag': 'Google Analytics (gtag)',
     'fbevents': 'Meta Pixel',
-    'facebook': 'Meta Pixel',
-    'connect.facebook': 'Meta Pixel',
+    'connect.facebook.net': 'Meta Pixel',
     'hotjar': 'Hotjar',
     'clarity.ms': 'Microsoft Clarity',
     'hubspot': 'HubSpot',
@@ -304,11 +304,22 @@ Do not add any sections beyond these five. Do not add a conclusion or sign-off. 
   }
 
   const data = await response.json();
-  const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+
+  // Gemini may return multiple parts (thinking + response). Get the text part.
+  const parts = data?.candidates?.[0]?.content?.parts || [];
+  let text = '';
+  for (const part of parts) {
+    if (part.text) {
+      text = part.text;
+    }
+  }
 
   if (!text) {
     throw new Error('Empty response from AI');
   }
+
+  // Strip any thinking blocks that Gemini 2.5 might include
+  text = text.replace(/<think>[\s\S]*?<\/think>/g, '').trim();
 
   return text;
 }
@@ -427,9 +438,23 @@ export async function POST(request: NextRequest) {
       };
     }
 
-    // Check robots.txt and sitemap
-    htmlAnalysis.hasRobotsTxt = robotsRes !== null && robotsRes.ok;
-    htmlAnalysis.hasSitemap = sitemapRes !== null && sitemapRes.ok;
+    // Check robots.txt and sitemap (verify content type to avoid soft 404s)
+    let hasRobots = false;
+    if (robotsRes && robotsRes.ok) {
+      const robotsContentType = robotsRes.headers.get('content-type') || '';
+      const robotsBody = await robotsRes.text().catch(() => '');
+      hasRobots = robotsContentType.includes('text/plain') || robotsBody.toLowerCase().includes('user-agent');
+    }
+
+    let hasSitemap = false;
+    if (sitemapRes && sitemapRes.ok) {
+      const sitemapContentType = sitemapRes.headers.get('content-type') || '';
+      const sitemapBody = await sitemapRes.text().catch(() => '');
+      hasSitemap = sitemapContentType.includes('xml') || sitemapBody.includes('<urlset') || sitemapBody.includes('<sitemapindex');
+    }
+
+    htmlAnalysis.hasRobotsTxt = hasRobots;
+    htmlAnalysis.hasSitemap = hasSitemap;
     htmlAnalysis.totalPageSizeKb = Math.round(totalBytes / 1024);
 
     // ── Step 4: Generate AI Strategy Report ──
@@ -449,12 +474,12 @@ export async function POST(request: NextRequest) {
     const checklist = [
       { label: 'HTTPS Secure', passed: cleanUrl.startsWith('https://') },
       { label: 'Meta Title', passed: htmlAnalysis.metaTitle !== null },
-      { label: 'Meta Title Length (under 60 chars)', passed: htmlAnalysis.metaTitleLength > 0 && htmlAnalysis.metaTitleLength <= 60 },
+      { label: 'Meta Title Length (under 70 chars)', passed: htmlAnalysis.metaTitleLength > 0 && htmlAnalysis.metaTitleLength <= 70 },
       { label: 'Meta Description', passed: htmlAnalysis.metaDescription !== null },
       { label: 'Meta Description Length (120-160 chars)', passed: htmlAnalysis.metaDescriptionLength >= 120 && htmlAnalysis.metaDescriptionLength <= 160 },
       { label: 'Single H1 Tag', passed: htmlAnalysis.h1Tags.length === 1 },
       { label: 'Heading Hierarchy (H2s present)', passed: htmlAnalysis.h2Count > 0 },
-      { label: 'All Images Have Alt Text', passed: htmlAnalysis.imagesTotal > 0 && htmlAnalysis.imagesMissingAlt === 0 },
+      { label: 'All Images Have Alt Text', passed: htmlAnalysis.imagesMissingAlt === 0 },
       { label: 'Open Graph Title', passed: htmlAnalysis.hasOgTitle },
       { label: 'Open Graph Description', passed: htmlAnalysis.hasOgDescription },
       { label: 'Open Graph Image', passed: htmlAnalysis.hasOgImage },
