@@ -51,36 +51,36 @@ interface SpeedResult {
 // ─── Business Types ──────────────────────────────────────────────────────────
 
 const BUSINESS_TYPES = [
-  { value: 'dentist', label: 'Dentist' },
-  { value: 'doctor', label: 'Doctor / Medical' },
-  { value: 'lawyer', label: 'Lawyer / Attorney' },
-  { value: 'restaurant', label: 'Restaurant' },
-  { value: 'cafe', label: 'Cafe / Coffee Shop' },
-  { value: 'hair_salon', label: 'Hair Salon' },
-  { value: 'beauty_salon', label: 'Beauty Salon / Spa' },
-  { value: 'gym', label: 'Gym / Fitness' },
-  { value: 'car_repair', label: 'Auto Repair' },
-  { value: 'car_dealer', label: 'Car Dealer' },
-  { value: 'plumber', label: 'Plumber' },
-  { value: 'electrician', label: 'Electrician' },
-  { value: 'real_estate_agency', label: 'Real Estate Agency' },
-  { value: 'insurance_agency', label: 'Insurance Agency' },
-  { value: 'accounting', label: 'Accountant / CPA' },
-  { value: 'veterinary_care', label: 'Veterinarian' },
-  { value: 'pharmacy', label: 'Pharmacy' },
-  { value: 'pet_store', label: 'Pet Store' },
-  { value: 'clothing_store', label: 'Clothing Store' },
-  { value: 'home_goods_store', label: 'Home Goods Store' },
-  { value: 'moving_company', label: 'Moving Company' },
-  { value: 'roofing_contractor', label: 'Roofing Contractor' },
-  { value: 'painter', label: 'Painter' },
-  { value: 'locksmith', label: 'Locksmith' },
-  { value: 'florist', label: 'Florist' },
-  { value: 'bakery', label: 'Bakery' },
-  { value: 'bar', label: 'Bar / Lounge' },
-  { value: 'hotel', label: 'Hotel' },
-  { value: 'school', label: 'School / Education' },
-  { value: 'church', label: 'Church / Place of Worship' },
+  { value: 'dentist', label: 'Dentist', plural: 'Dentists' },
+  { value: 'doctor', label: 'Doctor / Medical', plural: 'Doctors' },
+  { value: 'lawyer', label: 'Lawyer / Attorney', plural: 'Lawyers' },
+  { value: 'restaurant', label: 'Restaurant', plural: 'Restaurants' },
+  { value: 'cafe', label: 'Cafe / Coffee Shop', plural: 'Cafes' },
+  { value: 'hair_salon', label: 'Hair Salon', plural: 'Hair Salons' },
+  { value: 'beauty_salon', label: 'Beauty Salon / Spa', plural: 'Beauty Salons' },
+  { value: 'gym', label: 'Gym / Fitness', plural: 'Gyms' },
+  { value: 'car_repair', label: 'Auto Repair', plural: 'Auto Repair Shops' },
+  { value: 'car_dealer', label: 'Car Dealer', plural: 'Car Dealers' },
+  { value: 'plumber', label: 'Plumber', plural: 'Plumbers' },
+  { value: 'electrician', label: 'Electrician', plural: 'Electricians' },
+  { value: 'real_estate_agency', label: 'Real Estate Agency', plural: 'Real Estate Agencies' },
+  { value: 'insurance_agency', label: 'Insurance Agency', plural: 'Insurance Agencies' },
+  { value: 'accounting', label: 'Accountant / CPA', plural: 'Accountants' },
+  { value: 'veterinary_care', label: 'Veterinarian', plural: 'Veterinarians' },
+  { value: 'pharmacy', label: 'Pharmacy', plural: 'Pharmacies' },
+  { value: 'pet_store', label: 'Pet Store', plural: 'Pet Stores' },
+  { value: 'clothing_store', label: 'Clothing Store', plural: 'Clothing Stores' },
+  { value: 'home_goods_store', label: 'Home Goods Store', plural: 'Home Goods Stores' },
+  { value: 'moving_company', label: 'Moving Company', plural: 'Moving Companies' },
+  { value: 'roofing_contractor', label: 'Roofing Contractor', plural: 'Roofing Contractors' },
+  { value: 'painter', label: 'Painter', plural: 'Painters' },
+  { value: 'locksmith', label: 'Locksmith', plural: 'Locksmiths' },
+  { value: 'florist', label: 'Florist', plural: 'Florists' },
+  { value: 'bakery', label: 'Bakery', plural: 'Bakeries' },
+  { value: 'bar', label: 'Bar / Lounge', plural: 'Bars' },
+  { value: 'hotel', label: 'Hotel', plural: 'Hotels' },
+  { value: 'school', label: 'School / Education', plural: 'Schools' },
+  { value: 'church', label: 'Church / Place of Worship', plural: 'Churches' },
 ];
 
 // ─── Radius Options ──────────────────────────────────────────────────────────
@@ -307,8 +307,10 @@ export default function CompetitorMap() {
     }
   };
 
-  const getSelectedLabel = () => {
-    return BUSINESS_TYPES.find(t => t.value === businessType)?.label || '';
+  const getSelectedLabel = (plural = false) => {
+    const type = BUSINESS_TYPES.find(t => t.value === businessType);
+    if (!type) return '';
+    return plural ? type.plural : type.label;
   };
 
   return (
@@ -426,7 +428,7 @@ export default function CompetitorMap() {
               >
                 <div className="bg-gradient-to-br from-[#1A1A1A] to-[#111111] border border-[rgba(95,169,159,0.2)] rounded-[16px] p-5 text-center">
                   <div className="text-[2rem] font-heading font-bold text-white">{results.stats.totalCompetitors}</div>
-                  <div className="text-gray-400 font-body text-body-sm mt-1">{getSelectedLabel()}s Found</div>
+                  <div className="text-gray-400 font-body text-body-sm mt-1">{getSelectedLabel(true)} Found</div>
                 </div>
                 <div className="bg-gradient-to-br from-[#1A1A1A] to-[#111111] border border-[rgba(95,169,159,0.2)] rounded-[16px] p-5 text-center">
                   <div className="text-[2rem] font-heading font-bold text-yellow-400">{results.stats.avgRating}</div>
@@ -454,7 +456,7 @@ export default function CompetitorMap() {
                 >
                   <div className="p-4 border-b border-[rgba(95,169,159,0.1)]">
                     <p className="text-gray-400 font-body text-body-sm">
-                      Showing {results.stats.totalCompetitors} {getSelectedLabel().toLowerCase()}s near <span className="text-white font-semibold">{results.formattedAddress}</span>
+                      Showing {results.stats.totalCompetitors} {getSelectedLabel(true).toLowerCase()} near <span className="text-white font-semibold">{results.formattedAddress}</span>
                     </p>
                   </div>
                   <div ref={mapRef} className="w-full h-[500px]" />
