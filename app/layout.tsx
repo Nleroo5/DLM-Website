@@ -10,7 +10,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { MetaPixel } from "@/components/MetaPixel";
 import { Analytics } from "@vercel/analytics/next";
-import MobileStickyButton from "@/components/MobileStickyButton";
+
 
 const arnoPro = localFont({
   src: "../font/ArnoPro-LightDisplay.otf",
@@ -433,7 +433,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
-        <MobileStickyButton />
+
         <GoogleAnalytics gaId="G-K25LTGL8FP" />
       </body>
     </html>
