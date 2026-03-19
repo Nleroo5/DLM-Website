@@ -25,7 +25,7 @@ const row2 = [
 
 function PortfolioCard({ src }: { src: string }) {
   return (
-    <div className="relative w-[300px] sm:w-[350px] lg:w-[420px] h-[200px] sm:h-[250px] lg:h-[280px] flex-shrink-0 rounded-[16px] overflow-hidden">
+    <div className="relative w-[300px] sm:w-[350px] lg:w-[420px] h-[200px] sm:h-[250px] lg:h-[280px] flex-shrink-0 rounded-[16px] overflow-hidden mr-4">
       <video
         src={src}
         autoPlay
@@ -67,7 +67,7 @@ export default function PortfolioShowcase() {
       >
         {/* Row 1 - scrolls left */}
         <div className="mb-4 overflow-hidden">
-          <div className="flex gap-4 animate-marquee-left" style={{ width: 'max-content' }}>
+          <div className="flex animate-marquee-left" style={{ width: 'max-content' }}>
             {[...row1, ...row1].map((src, i) => (
               <PortfolioCard key={`r1-${i}`} src={src} />
             ))}
@@ -76,7 +76,7 @@ export default function PortfolioShowcase() {
 
         {/* Row 2 - scrolls right */}
         <div className="overflow-hidden">
-          <div className="flex gap-4 animate-marquee-right" style={{ width: 'max-content' }}>
+          <div className="flex animate-marquee-right" style={{ width: 'max-content' }}>
             {[...row2, ...row2].map((src, i) => (
               <PortfolioCard key={`r2-${i}`} src={src} />
             ))}

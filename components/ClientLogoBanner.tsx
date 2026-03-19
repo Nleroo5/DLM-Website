@@ -45,7 +45,7 @@ export default function ClientLogoBanner({ variant = 'light', heading }: ClientL
           <div className={`absolute right-0 top-0 bottom-0 w-[80px] sm:w-[120px] bg-gradient-to-l from-[${fadeBg}] to-transparent z-10 pointer-events-none`} />
 
           <div className="flex animate-marquee-left-slow" style={{ width: 'max-content' }}>
-            {[...row1, ...row1, ...row1].map((logo, index) => (
+            {[...row1, ...row1].map((logo, index) => (
               <div
                 key={`r1-${index}`}
                 className="flex-shrink-0 w-[180px] sm:w-[260px] lg:w-[300px] h-[100px] sm:h-[130px] lg:h-[140px] flex items-center justify-center mx-5 sm:mx-10 lg:mx-10 opacity-70 hover:opacity-100 transition-opacity duration-300"
@@ -69,7 +69,7 @@ export default function ClientLogoBanner({ variant = 'light', heading }: ClientL
           <div className={`absolute right-0 top-0 bottom-0 w-[80px] sm:w-[120px] bg-gradient-to-l from-[${fadeBg}] to-transparent z-10 pointer-events-none`} />
 
           <div className="flex animate-marquee-right-slow" style={{ width: 'max-content' }}>
-            {[...row2, ...row2, ...row2, ...row2].map((logo, index) => (
+            {[...row2, ...row2].map((logo, index) => (
               <div
                 key={`r2-${index}`}
                 className="flex-shrink-0 w-[180px] sm:w-[260px] lg:w-[300px] h-[100px] sm:h-[130px] lg:h-[140px] flex items-center justify-center mx-5 sm:mx-10 lg:mx-10 opacity-70 hover:opacity-100 transition-opacity duration-300"
