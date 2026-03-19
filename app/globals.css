@@ -244,22 +244,33 @@ section {
 
 /* Marquee Animations */
 @keyframes marquee-left {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
 }
 
 @keyframes marquee-right {
-  0% { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
+  0% { transform: translate3d(-50%, 0, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+/* Force GPU compositing on all marquee elements */
+.animate-marquee-left,
+.animate-marquee-right,
+.animate-marquee-left-fast,
+.animate-marquee-left-slow,
+.animate-marquee-right-slow {
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 /* Portfolio marquee */
 .animate-marquee-left {
-  animation: marquee-left 5s linear infinite;
+  animation: marquee-left 20s linear infinite;
 }
 
 .animate-marquee-right {
-  animation: marquee-right 5s linear infinite;
+  animation: marquee-right 20s linear infinite;
 }
 
 @media (min-width: 640px) {
@@ -286,19 +297,19 @@ section {
 
 /* Logo banner marquee */
 .animate-marquee-left-slow {
-  animation: marquee-left 6s linear infinite;
+  animation: marquee-left 25s linear infinite;
 }
 
 .animate-marquee-right-slow {
-  animation: marquee-right 6s linear infinite;
+  animation: marquee-right 25s linear infinite;
 }
 
 @media (min-width: 640px) {
   .animate-marquee-left-slow {
-    animation: marquee-left 18s linear infinite;
+    animation: marquee-left 40s linear infinite;
   }
   .animate-marquee-right-slow {
-    animation: marquee-right 18s linear infinite;
+    animation: marquee-right 40s linear infinite;
   }
 }
 
