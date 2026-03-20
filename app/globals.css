@@ -266,11 +266,11 @@ section {
 
 /* Portfolio marquee */
 .animate-marquee-left {
-  animation: marquee-left 12s linear infinite;
+  animation: marquee-left 6s linear infinite;
 }
 
 .animate-marquee-right {
-  animation: marquee-right 12s linear infinite;
+  animation: marquee-right 6s linear infinite;
 }
 
 @media (min-width: 640px) {
@@ -297,11 +297,11 @@ section {
 
 /* Logo banner marquee */
 .animate-marquee-left-slow {
-  animation: marquee-left 15s linear infinite;
+  animation: marquee-left 8s linear infinite;
 }
 
 .animate-marquee-right-slow {
-  animation: marquee-right 15s linear infinite;
+  animation: marquee-right 8s linear infinite;
 }
 
 @media (min-width: 640px) {
