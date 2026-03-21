@@ -608,6 +608,38 @@ export const blogPosts: BlogPost[] = [
     heroImageAlt: '7 Signs Your Atlanta Business Needs a New Website - 2026 Checklist',
     wordCount: 4500
   },
+  {
+    slug: 'seo-vs-meta-ads-atlanta',
+    title: 'SEO vs Meta Ads: Which Should Atlanta Businesses Invest In First?',
+    excerpt: 'Compare SEO and Meta Ads costs, timelines, and ROI with 2025 data. Budget framework to help Atlanta businesses decide where to invest first.',
+    date: 'March 2026',
+    datePublished: '2026-03-21T09:00:00-05:00',
+    dateModified: '2026-03-21T09:00:00-05:00',
+    readTime: '18 min read',
+    category: {
+      name: 'Platform Comparison',
+      slug: 'platform-comparison'
+    },
+    author: {
+      name: 'Nicolas Leroo',
+      jobTitle: 'Co-Founder & Meta Advertising Strategist',
+      url: 'https://driveleadmedia.com/about/nicolas-leroo'
+    },
+    keywords: [
+      'seo vs meta ads',
+      'seo vs facebook ads atlanta',
+      'should i invest in seo or ads',
+      'atlanta seo vs paid ads',
+      'local seo atlanta',
+      'meta ads roi comparison',
+      'seo roi vs paid ads',
+      'atlanta digital marketing strategy',
+      'small business marketing budget'
+    ],
+    heroImage: '/images/seo-vs-meta-ads-atlanta-business-strategy.webp',
+    heroImageAlt: 'SEO vs Meta Ads comparison for Atlanta businesses showing organic search results alongside Facebook ad campaigns',
+    wordCount: 4800
+  },
 ];
 
 // Helper functions
