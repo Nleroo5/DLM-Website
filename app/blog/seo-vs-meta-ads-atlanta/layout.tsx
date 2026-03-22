@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: "SEO vs Meta Ads: Which Should Atlanta Businesses Invest In First?",
     description: "One builds traffic you own. The other generates leads on day one. Real data comparing costs, timelines, and ROI for Atlanta businesses.",
     type: "article",
-    publishedTime: "2026-03-21T09:00:00Z",
+    publishedTime: "2026-03-21T09:00:00-05:00",
     authors: ["Nicolas Leroo"],
     url: "https://driveleadmedia.com/blog/seo-vs-meta-ads-atlanta",
     images: [{
