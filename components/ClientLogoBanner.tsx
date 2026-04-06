@@ -10,9 +10,9 @@ interface ClientLogoBannerProps {
 
 export default function ClientLogoBanner({ variant = 'light', heading }: ClientLogoBannerProps) {
   // Logos with detailed grey tones that lose detail with brightness-0
-  const detailedLogos = new Set([3, 9, 12]);
+  const detailedLogos = new Set([3, 9, 12, 18]);
 
-  const allLogos = Array.from({ length: 17 }, (_, i) => ({
+  const allLogos = Array.from({ length: 18 }, (_, i) => ({
     name: `Client ${i + 1}`,
     src: `/images/client-logos/${i + 1}.png`,
     detailed: detailedLogos.has(i + 1),
