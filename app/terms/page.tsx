@@ -7,6 +7,19 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/terms',
   },
+  openGraph: {
+    title: 'Terms of Service | Drive Lead Media',
+    description: 'Read the terms and conditions for using Drive Lead Media\'s services and website.',
+    type: 'website',
+    url: '/terms',
+    images: [{ url: '/images/og-image.webp', width: 1200, height: 630, alt: 'Drive Lead Media Terms of Service' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Terms of Service | Drive Lead Media',
+    description: 'Read the terms and conditions for using Drive Lead Media\'s services and website.',
+    images: ['/images/og-image.webp'],
+  },
 };
 
 export default function TermsPage() {

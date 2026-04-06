@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { rateLimit } from '@/lib/rate-limit';
 
 const API_KEY = process.env.GOOGLE_PAGESPEED_API_KEY;
 
@@ -48,6 +49,13 @@ function getGradeColor(grade: string): string {
 
 export async function POST(request: NextRequest) {
   try {
+    // Rate limit: 5 per minute (expensive API calls)
+    const ip = request.headers.get('x-forwarded-for')?.split(',')[0] || 'unknown';
+    const { allowed } = rateLimit(ip, 5, 60 * 1000);
+    if (!allowed) {
+      return NextResponse.json({ error: 'Too many requests. Please try again later.' }, { status: 429 });
+    }
+
     const { url } = await request.json();
 
     if (!url) {

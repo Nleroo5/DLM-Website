@@ -7,6 +7,19 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/privacy',
   },
+  openGraph: {
+    title: 'Privacy Policy | Drive Lead Media',
+    description: 'Learn how Drive Lead Media collects, uses, and protects your personal information.',
+    type: 'website',
+    url: '/privacy',
+    images: [{ url: '/images/og-image.webp', width: 1200, height: 630, alt: 'Drive Lead Media Privacy Policy' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Privacy Policy | Drive Lead Media',
+    description: 'Learn how Drive Lead Media collects, uses, and protects your personal information.',
+    images: ['/images/og-image.webp'],
+  },
 };
 
 export default function PrivacyPage() {

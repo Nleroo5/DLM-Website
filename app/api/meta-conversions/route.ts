@@ -21,7 +21,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import crypto from 'crypto';
 
-const PIXEL_ID = process.env.META_PIXEL_ID || '1103544594607690';
+const PIXEL_ID = process.env.META_PIXEL_ID;
 const ACCESS_TOKEN = process.env.META_CAPI_ACCESS_TOKEN;
 const CAPI_URL = `https://graph.facebook.com/v18.0/${PIXEL_ID}/events`;
 
@@ -57,14 +57,14 @@ function hashData(data: string): string {
  */
 export async function POST(request: NextRequest) {
   try {
-    // Check if access token is configured
-    if (!ACCESS_TOKEN) {
-      console.warn('META_CAPI_ACCESS_TOKEN not configured. Skipping server-side tracking.');
+    // Check if pixel ID and access token are configured
+    if (!PIXEL_ID || !ACCESS_TOKEN) {
+      console.warn('META_PIXEL_ID or META_CAPI_ACCESS_TOKEN not configured. Skipping server-side tracking.');
       return NextResponse.json(
         {
           success: false,
           error: 'CAPI not configured',
-          message: 'Add META_CAPI_ACCESS_TOKEN to .env.local to enable server-side tracking'
+          message: 'Add META_PIXEL_ID and META_CAPI_ACCESS_TOKEN to .env.local to enable server-side tracking'
         },
         { status: 200 } // Don't fail client-side if CAPI not set up
       );
@@ -155,9 +155,9 @@ export async function POST(request: NextRequest) {
 export async function GET() {
   return NextResponse.json({
     status: 'ok',
-    configured: !!ACCESS_TOKEN,
-    message: ACCESS_TOKEN
+    configured: !!(PIXEL_ID && ACCESS_TOKEN),
+    message: (PIXEL_ID && ACCESS_TOKEN)
       ? 'Meta Conversions API is configured and ready'
-      : 'Add META_CAPI_ACCESS_TOKEN to .env.local to enable server-side tracking',
+      : 'Add META_PIXEL_ID and META_CAPI_ACCESS_TOKEN to .env.local to enable server-side tracking',
   });
 }

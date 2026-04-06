@@ -41,8 +41,8 @@ export default function ClientLogoBanner({ variant = 'light', heading }: ClientL
 
         {/* Row 1 — scrolls left */}
         <div className="relative w-full overflow-hidden mb-6">
-          <div className={`absolute left-0 top-0 bottom-0 w-[80px] sm:w-[120px] bg-gradient-to-r from-[${fadeBg}] to-transparent z-10 pointer-events-none`} />
-          <div className={`absolute right-0 top-0 bottom-0 w-[80px] sm:w-[120px] bg-gradient-to-l from-[${fadeBg}] to-transparent z-10 pointer-events-none`} />
+          <div className="absolute left-0 top-0 bottom-0 w-[80px] sm:w-[120px] z-10 pointer-events-none" style={{ background: `linear-gradient(to right, ${fadeBg}, transparent)` }} />
+          <div className="absolute right-0 top-0 bottom-0 w-[80px] sm:w-[120px] z-10 pointer-events-none" style={{ background: `linear-gradient(to left, ${fadeBg}, transparent)` }} />
 
           <div className="flex animate-marquee-left-slow" style={{ width: 'max-content' }}>
             {[...row1, ...row1].map((logo, index) => (
@@ -65,8 +65,8 @@ export default function ClientLogoBanner({ variant = 'light', heading }: ClientL
 
         {/* Row 2 — scrolls right */}
         <div className="relative w-full overflow-hidden">
-          <div className={`absolute left-0 top-0 bottom-0 w-[80px] sm:w-[120px] bg-gradient-to-r from-[${fadeBg}] to-transparent z-10 pointer-events-none`} />
-          <div className={`absolute right-0 top-0 bottom-0 w-[80px] sm:w-[120px] bg-gradient-to-l from-[${fadeBg}] to-transparent z-10 pointer-events-none`} />
+          <div className="absolute left-0 top-0 bottom-0 w-[80px] sm:w-[120px] z-10 pointer-events-none" style={{ background: `linear-gradient(to right, ${fadeBg}, transparent)` }} />
+          <div className="absolute right-0 top-0 bottom-0 w-[80px] sm:w-[120px] z-10 pointer-events-none" style={{ background: `linear-gradient(to left, ${fadeBg}, transparent)` }} />
 
           <div className="flex animate-marquee-right-slow" style={{ width: 'max-content' }}>
             {[...row2, ...row2].map((logo, index) => (

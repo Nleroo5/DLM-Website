@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { rateLimit } from '@/lib/rate-limit';
 
 const API_KEY = process.env.GOOGLE_PAGESPEED_API_KEY;
 
@@ -48,8 +49,25 @@ interface CompetitorData {
 
 // ─── Main Handler ────────────────────────────────────────────────────────────
 
+// Valid business types for Google Places API
+const VALID_BUSINESS_TYPES = new Set([
+  'dentist', 'doctor', 'lawyer', 'restaurant', 'cafe', 'hair_salon',
+  'beauty_salon', 'gym', 'car_repair', 'car_dealer', 'plumber',
+  'electrician', 'real_estate_agency', 'insurance_agency', 'accounting',
+  'veterinary_care', 'pharmacy', 'pet_store', 'clothing_store',
+  'home_goods_store', 'moving_company', 'roofing_contractor', 'painter',
+  'locksmith', 'florist', 'bakery', 'bar', 'hotel', 'school', 'church',
+]);
+
 export async function POST(request: NextRequest) {
   try {
+    // Rate limit: 10 per minute
+    const ip = request.headers.get('x-forwarded-for')?.split(',')[0] || 'unknown';
+    const { allowed } = rateLimit(ip, 10, 60 * 1000);
+    if (!allowed) {
+      return NextResponse.json({ error: 'Too many requests. Please try again later.' }, { status: 429 });
+    }
+
     const { businessType, location, radius } = await request.json();
 
     if (!businessType || !location) {
@@ -58,6 +76,26 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       );
     }
+
+    // Validate business type against whitelist
+    if (!VALID_BUSINESS_TYPES.has(businessType)) {
+      return NextResponse.json(
+        { error: 'Invalid business type.' },
+        { status: 400 }
+      );
+    }
+
+    // Validate location length
+    if (typeof location !== 'string' || location.length > 200) {
+      return NextResponse.json(
+        { error: 'Invalid location.' },
+        { status: 400 }
+      );
+    }
+
+    // Validate and bound radius (1km to 50km)
+    const searchRadiusRaw = typeof radius === 'number' ? radius : 8000;
+    const searchRadiusBounded = Math.max(1000, Math.min(50000, searchRadiusRaw));
 
     if (!API_KEY) {
       return NextResponse.json({ error: 'API key not configured.' }, { status: 500 });
@@ -87,7 +125,7 @@ export async function POST(request: NextRequest) {
 
     // ── Step 2: Search for nearby businesses ──
 
-    const searchRadius = radius || 8000; // default 5 miles (~8km)
+    const searchRadius = searchRadiusBounded;
 
     const placesRes = await fetch(
       'https://places.googleapis.com/v1/places:searchNearby',

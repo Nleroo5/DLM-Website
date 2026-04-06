@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { rateLimit } from '@/lib/rate-limit';
 
 const API_KEY = process.env.GOOGLE_PAGESPEED_API_KEY;
 const GEMINI_MODEL = 'gemini-2.5-flash';
@@ -328,6 +329,13 @@ Do not add any sections beyond these five. Do not add a conclusion or sign-off. 
 
 export async function POST(request: NextRequest) {
   try {
+    // Rate limit: 3 per minute (very expensive: PageSpeed + Gemini)
+    const ip = request.headers.get('x-forwarded-for')?.split(',')[0] || 'unknown';
+    const { allowed } = rateLimit(ip, 3, 60 * 1000);
+    if (!allowed) {
+      return NextResponse.json({ error: 'Too many requests. Please try again later.' }, { status: 429 });
+    }
+
     const { url } = await request.json();
 
     if (!url) {

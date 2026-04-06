@@ -1,8 +1,8 @@
 /* Hide floating particles background on blog pages */
-body:has(.blog-page) {
+.blog-page {
   background: #0B1D2E !important;
 }
 
-body:has(.blog-page) canvas {
+.blog-page canvas {
   display: none !important;
 }
