@@ -1,14 +1,9 @@
 'use client';
 
-import { useState, useRef, useEffect, useCallback, Fragment } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion, AnimatePresence, useScroll, useTransform, useMotionValueEvent } from 'framer-motion';
-
-interface Metric {
-  value: string;
-  label: string;
-}
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface Testimonial {
   quote: string;
@@ -18,18 +13,19 @@ interface Testimonial {
   imagePosition?: string;
 }
 
+type ProjectLayout = 'hero' | 'medium' | 'tall' | 'small' | 'half';
+
 interface CaseStudyProject {
   title: string;
   industry: string;
-  thumbnail?: string;
   videoUrl?: string;
   liveUrl?: string;
   liveUrlLabel?: string;
   services?: string[];
-  metrics?: Metric[];
   testimonial?: Testimonial;
   videoAds?: string[];
   testimonialVideoUrl?: string;
+  layout: ProjectLayout;
 }
 
 const projects: CaseStudyProject[] = [
@@ -40,15 +36,11 @@ const projects: CaseStudyProject[] = [
     liveUrl: 'https://book.ptchealth.com/',
     liveUrlLabel: 'Visit Landing Page',
     services: ['Meta Ads', 'Landing Page', 'Video Creative'],
-    metrics: [
-      { value: '$14.63', label: 'Cost Per Lead' },
-      { value: '90+', label: 'Leads (1st Month)' },
-      { value: '+40%', label: 'Website Traffic' },
-    ],
     videoAds: [
       '/images/case-studies/pain-treatment-centers/ptc-ad-1-audio.webm',
       '/images/case-studies/pain-treatment-centers/ptc-ad-2-audio.webm',
     ],
+    layout: 'hero',
   },
   {
     title: 'Set Life Casting',
@@ -56,40 +48,16 @@ const projects: CaseStudyProject[] = [
     videoUrl: '/images/case-studies/setlife-casting/setlife.webm',
     liveUrl: 'https://www.setlifecasting.com/',
     services: ['Fully Custom Website', 'Casting Platform', 'Talent Database'],
-    metrics: [
-      { value: '#3', label: 'Google Rankings' },
-      { value: '#1', label: 'ChatGPT Rankings' },
-      { value: '+800%', label: 'Website Traffic' },
-    ],
-    testimonial: {
-      quote:
-        "I came to Drive Lead Media with a big ask — a custom website, a casting platform, and a talent database all built from the ground up. They delivered on all of it. The site looks amazing, our traffic has completely blown up, and we're showing up at the top of Google and even ChatGPT now. I recommend them to everyone I know.",
-      name: 'Chaz Yu',
-      role: 'Owner, Set Life Casting',
-      image: '/images/case-studies/setlife-casting/chaz.jpeg',
-      imagePosition: 'center 30%',
-    },
+    layout: 'medium',
   },
   {
     title: 'Village Pediatrics of St. Augustine',
     industry: 'Healthcare - Pediatrics',
-    thumbnail: '/images/case-studies/village-pediatrics/thumbnail.webp',
     videoUrl: '/images/case-studies/village-pediatrics/villagepeds.webm',
     liveUrl: 'https://www.myvillagepeds.com/',
     services: ['Fully Custom Website', 'SEO', 'Meta Ads', 'Tracking Setup'],
-    metrics: [
-      { value: '+40%', label: 'Patient Bookings (1st Month)' },
-      { value: '6.8x', label: 'ROAS' },
-      { value: '+1700%', label: 'Website Traffic' },
-    ],
-    testimonial: {
-      quote:
-        "Working with Drive Lead Media has been a great experience. Our patient bookings increased by more than 40% in the first month, and they built a custom website tailored specifically to our practice. They didn't ask for payment until we were 100% satisfied, which says a lot about how they operate. I highly recommend them.",
-      name: 'Dr. Austin Dupont',
-      role: 'Owner, Village Pediatrics',
-      image: '/images/dr-austin-dupont.webp',
-    },
     testimonialVideoUrl: '/images/case-studies/village-pediatrics/testimonial.webm',
+    layout: 'tall',
   },
   {
     title: 'Marietta Antique Mall',
@@ -97,15 +65,11 @@ const projects: CaseStudyProject[] = [
     videoUrl: '/images/case-studies/marietta-antique-mall/marietta-antique.webm',
     liveUrl: 'https://www.mariettaantiquemall.com/',
     services: ['Fully Custom Website', 'Meta Ads', 'Video Creative'],
-    metrics: [
-      { value: '+1200%', label: 'Website Traffic' },
-      { value: 'Back-to-Back', label: 'Record Sales Months' },
-      { value: '#4', label: 'Google Rankings' },
-    ],
     videoAds: [
       '/images/case-studies/marietta-antique-mall/marietta-ad-1-audio.webm',
       '/images/case-studies/marietta-antique-mall/marietta-ad-2-audio.webm',
     ],
+    layout: 'small',
   },
   {
     title: 'Wilcox Tax Firm',
@@ -113,37 +77,22 @@ const projects: CaseStudyProject[] = [
     videoUrl: '/images/case-studies/wilcox-tax-firm/wilcox-tax.webm',
     liveUrl: 'https://www.wilcox-tax.com/',
     services: ['Fully Custom Website', 'Meta Ads', 'Video Creative'],
-    metrics: [
-      { value: '8.2x', label: 'ROAS' },
-      { value: '$11', label: 'Cost Per Lead' },
-      { value: '+640%', label: 'Website Traffic' },
-    ],
     videoAds: [
       '/images/case-studies/wilcox-tax-firm/wilcox-ad-1.webm',
       '/images/case-studies/wilcox-tax-firm/wilcox-ad-2.webm',
     ],
+    layout: 'small',
   },
   {
     title: 'The Yoga Lounge',
     industry: 'Fitness & Wellness',
     videoUrl: '/images/case-studies/the-yoga-lounge/yoga.webm',
     services: ['Meta Ads', 'Video Creative', 'Ad Strategy'],
-    metrics: [
-      { value: '$3.73', label: 'Cost Per Lead' },
-      { value: '$250', label: 'Ad Spend' },
-      { value: '67', label: 'Leads Generated' },
-    ],
-    testimonial: {
-      quote:
-        "We partnered with Drive Lead Media to run Meta ads for my yoga studio, and it was smooth and professional. Nic and Tommy created amazing videos and ads that really captured our vibe. Within days we started seeing new leads coming in. I'm so grateful and would definitely recommend them.",
-      name: 'Jenn',
-      role: 'Owner, The Yoga Lounge',
-      image: '/images/jenn-yoga-lounge.webp',
-    },
     videoAds: [
       '/images/case-studies/the-yoga-lounge/yoga-ad-1-audio.webm',
       '/images/case-studies/the-yoga-lounge/yoga-ad-2-audio.webm',
     ],
+    layout: 'half',
   },
   {
     title: 'Southern Tents & Events',
@@ -151,125 +100,165 @@ const projects: CaseStudyProject[] = [
     videoUrl: '/images/case-studies/southern-tents/southern-tents.webm',
     liveUrl: 'https://southerntentsandevents.com/',
     services: ['Website Rebuild', 'Meta Ads', 'SEO'],
-    metrics: [
-      { value: '#3', label: 'Google Rankings (1st Month)' },
-      { value: '+500%', label: 'Increase in Leads' },
-      { value: '4.2x', label: 'ROAS' },
-    ],
-    testimonial: {
-      quote:
-        "After three disappointing experiences with other web design companies, Nicolas completely turned things around for us. He rebuilt our website from the ground up- it's now clean, modern, and mobile-friendly. Our traffic has exploded with better Google rankings and a huge uptick in leads from Facebook and Instagram ads. Nicolas and Drive Lead Media are the real deal!",
-      name: 'Perla Rieder',
-      role: 'Owner, Southern Tents and Events',
-      image: '/images/perla.webp',
-      imagePosition: 'center 20%',
-    },
+    layout: 'half',
   },
 ];
 
-function ElevatorDoorVideo({ videoUrl }: { videoUrl: string }) {
-  const containerRef = useRef<HTMLDivElement>(null);
+// Grid span classes per layout. Mobile is always full-width single column.
+const layoutClasses: Record<ProjectLayout, string> = {
+  hero: 'col-span-1 lg:col-span-12',
+  medium: 'col-span-1 lg:col-span-8',
+  tall: 'col-span-1 lg:col-span-4 lg:row-span-2',
+  small: 'col-span-1 lg:col-span-4',
+  half: 'col-span-1 lg:col-span-6',
+};
+
+// Aspect ratio per layout (video area)
+const aspectClasses: Record<ProjectLayout, string> = {
+  hero: 'aspect-[21/9]',
+  medium: 'aspect-[16/9]',
+  tall: 'aspect-[4/5]',
+  small: 'aspect-[16/9]',
+  half: 'aspect-[16/9]',
+};
+
+function ProjectVideo({ src, className = '' }: { src: string; className?: string }) {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [doorsOpened, setDoorsOpened] = useState(false);
 
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ['start end', 'end start'],
-  });
+  const handleEnter = () => {
+    const v = videoRef.current;
+    if (v) v.play().catch(() => {});
+  };
 
-  const leftDoorXRaw = useTransform(scrollYProgress, [0.1, 0.45], ['0%', '-100%']);
-  const rightDoorXRaw = useTransform(scrollYProgress, [0.1, 0.45], ['0%', '100%']);
-  const videoOpacityRaw = useTransform(scrollYProgress, [0.25, 0.45], [0, 1]);
-
-  useMotionValueEvent(scrollYProgress, 'change', (v) => {
-    if (v >= 0.45 && !doorsOpened) {
-      setDoorsOpened(true);
-    }
-  });
-
-  const leftDoorX = doorsOpened ? '-100%' : leftDoorXRaw;
-  const rightDoorX = doorsOpened ? '100%' : rightDoorXRaw;
-  const videoOpacity = doorsOpened ? 1 : videoOpacityRaw;
-
-  const handlePlay = () => {
-    setIsPlaying(true);
-    if (videoRef.current) {
-      videoRef.current.play();
+  const handleLeave = () => {
+    const v = videoRef.current;
+    if (v) {
+      v.pause();
+      v.currentTime = 0;
     }
   };
 
   return (
-    <div ref={containerRef} className="relative bg-black rounded-2xl overflow-hidden">
-      <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-        <motion.video
-          ref={videoRef}
-          style={{ opacity: videoOpacity }}
-          className="absolute inset-0 w-full h-full object-cover"
-          controls={isPlaying}
-          playsInline
-          preload="metadata"
-        >
-          <source src={videoUrl} type={videoUrl.endsWith('.webm') ? 'video/webm' : 'video/mp4'} />
-        </motion.video>
+    <video
+      ref={videoRef}
+      className={`absolute inset-0 w-full h-full object-cover ${className}`}
+      muted
+      loop
+      playsInline
+      preload="metadata"
+      onMouseEnter={handleEnter}
+      onMouseLeave={handleLeave}
+    >
+      <source src={src} type={src.endsWith('.webm') ? 'video/webm' : 'video/mp4'} />
+    </video>
+  );
+}
 
-        <AnimatePresence>
-          {!isPlaying && (
-            <motion.button
-              initial={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              onClick={handlePlay}
-              className="absolute inset-0 z-[5] flex items-center justify-center group cursor-pointer"
-              aria-label="Play video"
+interface ProjectCardProps {
+  project: CaseStudyProject;
+  onPlayVideo: (src: string) => void;
+}
+
+function ProjectCard({ project, onPlayVideo }: ProjectCardProps) {
+  const isHero = project.layout === 'hero';
+
+  return (
+    <article
+      className={`${layoutClasses[project.layout]} group relative overflow-hidden rounded-[20px] bg-[#0E0E0E] border border-white/[0.06] hover:border-white/[0.12] transition-colors duration-500`}
+    >
+      {/* Video area */}
+      {project.videoUrl && (
+        <div className={`relative w-full ${aspectClasses[project.layout]} overflow-hidden bg-black`}>
+          <ProjectVideo src={project.videoUrl} />
+          {/* Bottom gradient overlay so overlaid text stays legible */}
+          <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none" />
+
+          {/* Title block overlaid on video */}
+          <div className={`absolute inset-x-0 bottom-0 p-6 sm:p-8 ${isHero ? 'lg:p-10' : ''}`}>
+            <p className="font-heading text-[#5FA99F] text-[0.6rem] sm:text-[0.65rem] uppercase tracking-[0.2em] mb-2">
+              {project.industry}
+            </p>
+            <h2
+              className={`font-heading font-bold text-white leading-[1.05] ${
+                isHero
+                  ? 'text-[1.75rem] sm:text-[2.5rem] lg:text-[3rem] max-w-[700px]'
+                  : project.layout === 'medium'
+                  ? 'text-[1.5rem] sm:text-[2rem]'
+                  : 'text-[1.25rem] sm:text-[1.5rem]'
+              }`}
             >
-              <div className="relative">
-                {/* Pulse ring */}
-                <div className="absolute inset-0 w-20 h-20 -m-2 rounded-full bg-[#5FA99F]/20 animate-ping" />
-                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#5FA99F] to-[#85C7B3] flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-[0_0_20px_rgba(95,169,159,0.4)] group-hover:shadow-[0_0_40px_rgba(95,169,159,0.6)]">
-                  <div className="w-0 h-0 ml-1.5 border-t-[14px] border-t-transparent border-l-[22px] border-l-white border-b-[14px] border-b-transparent" />
-                </div>
-              </div>
-            </motion.button>
+              {project.title}
+            </h2>
+          </div>
+        </div>
+      )}
+
+      {/* Card meta — services + CTAs */}
+      <div className={`px-6 sm:px-8 ${isHero ? 'lg:px-10' : ''} pt-5 pb-6 sm:pt-6 sm:pb-7`}>
+        {project.services && project.services.length > 0 && (
+          <p className="font-body text-white/45 text-[0.7rem] sm:text-[0.75rem] tracking-wide mb-5">
+            {project.services.join(' · ')}
+          </p>
+        )}
+
+        <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
+          {project.liveUrl && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-white font-heading text-[0.85rem] tracking-wide border-b border-white/30 hover:border-[#5FA99F] hover:text-[#5FA99F] transition-colors duration-300 pb-0.5"
+            >
+              <span>{project.liveUrlLabel || 'View Live'}</span>
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
           )}
-        </AnimatePresence>
 
-        {/* Elevator Doors */}
-        <motion.div
-          style={{ x: leftDoorX }}
-          className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-br from-[hsl(204,97%,15%)] to-[hsl(204,97%,20%)] z-10 flex items-center justify-end pr-4 shadow-[0_0_20px_rgba(255,255,255,0.3),inset_2px_0_0_rgba(255,255,255,0.4)]"
-        >
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              backgroundImage: `
-                linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px)
-              `,
-              backgroundSize: '60px 60px',
-            }}
-          />
-          <div className="text-white text-2xl font-bold opacity-50 relative z-10">&blacktriangleright;</div>
-        </motion.div>
+          {project.videoAds && project.videoAds.length > 0 && (
+            <button
+              onClick={() => project.videoAds && onPlayVideo(project.videoAds[0])}
+              className="inline-flex items-center gap-2 text-white/70 font-heading text-[0.85rem] tracking-wide border-b border-white/15 hover:border-[#5FA99F] hover:text-[#5FA99F] transition-colors duration-300 pb-0.5"
+            >
+              <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+              <span>
+                Watch {project.videoAds.length > 1 ? `${project.videoAds.length} Ads` : 'Ad'}
+              </span>
+            </button>
+          )}
 
-        <motion.div
-          style={{ x: rightDoorX }}
-          className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-br from-[hsl(204,97%,15%)] to-[hsl(204,97%,20%)] z-10 flex items-center justify-start pl-4 shadow-[0_0_20px_rgba(255,255,255,0.3),inset_-2px_0_0_rgba(255,255,255,0.4)]"
-        >
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              backgroundImage: `
-                linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px)
-              `,
-              backgroundSize: '60px 60px',
-            }}
-          />
-          <div className="text-white text-2xl font-bold opacity-50 relative z-10">&blacktriangleleft;</div>
-        </motion.div>
+          {project.testimonialVideoUrl && (
+            <button
+              onClick={() => project.testimonialVideoUrl && onPlayVideo(project.testimonialVideoUrl)}
+              className="inline-flex items-center gap-2 text-white/70 font-heading text-[0.85rem] tracking-wide border-b border-white/15 hover:border-[#5FA99F] hover:text-[#5FA99F] transition-colors duration-300 pb-0.5"
+            >
+              <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+              <span>Watch Testimonial</span>
+            </button>
+          )}
+        </div>
+
+        {/* Render extra ad buttons if more than one */}
+        {project.videoAds && project.videoAds.length > 1 && (
+          <div className="flex flex-wrap gap-2 mt-4">
+            {project.videoAds.map((ad, i) => (
+              <button
+                key={ad}
+                onClick={() => onPlayVideo(ad)}
+                className="text-[0.7rem] text-white/40 hover:text-[#5FA99F] transition-colors font-heading tracking-wide uppercase"
+              >
+                Ad {i + 1}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
-    </div>
+    </article>
   );
 }
 
@@ -323,7 +312,6 @@ function TestimonialCarousel() {
     setCurrent((prev) => (prev + 1) % testimonials.length);
   }, []);
 
-  // Auto-rotate every 6 seconds
   useEffect(() => {
     timerRef.current = setInterval(next, 6000);
     return () => {
@@ -331,7 +319,6 @@ function TestimonialCarousel() {
     };
   }, [next]);
 
-  // Reset timer on manual navigation
   const handleDotClick = (index: number) => {
     if (timerRef.current) clearInterval(timerRef.current);
     goTo(index);
@@ -371,12 +358,10 @@ function TestimonialCarousel() {
               transition={{ duration: 0.4, ease: 'easeInOut' }}
               className="absolute inset-0 flex flex-col items-center justify-center"
             >
-              {/* Quote */}
               <p className="font-heading text-white/90 text-[0.95rem] sm:text-[1.1rem] leading-relaxed max-w-[650px] mb-6">
                 &ldquo;{t.quote}&rdquo;
               </p>
 
-              {/* Client info */}
               <div className="flex items-center gap-3">
                 {t.image && (
                   <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-[#5FA99F]/40 flex-shrink-0">
@@ -399,7 +384,6 @@ function TestimonialCarousel() {
           </AnimatePresence>
         </div>
 
-        {/* Navigation dots */}
         <div className="flex justify-center gap-2.5 mt-6">
           {testimonials.map((_, i) => (
             <button
@@ -443,9 +427,7 @@ function PhoneFrame({ src, label, onPlay }: { src: string; label: string; onPlay
       onClick={() => onPlay(src)}
       className="flex-shrink-0 group cursor-pointer"
     >
-      {/* Phone frame */}
       <div className="relative w-[180px] sm:w-[200px] rounded-[24px] overflow-hidden border-2 border-white/10 bg-[#111] shadow-[0_4px_20px_rgba(0,0,0,0.5)] group-hover:border-[#5FA99F]/40 transition-all duration-300 group-hover:scale-[1.03]">
-        {/* Screen area - 9:16 ratio */}
         <div className="relative w-full" style={{ paddingBottom: '177.78%' }}>
           <video
             className="absolute inset-0 w-full h-full object-cover"
@@ -459,7 +441,6 @@ function PhoneFrame({ src, label, onPlay }: { src: string; label: string; onPlay
             <source src={src} type="video/webm" />
           </video>
 
-          {/* Play icon overlay */}
           <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-100 group-hover:opacity-0 transition-opacity duration-300">
             <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
               <div className="w-0 h-0 ml-0.5 border-t-[7px] border-t-transparent border-l-[12px] border-l-white border-b-[7px] border-b-transparent" />
@@ -467,7 +448,6 @@ function PhoneFrame({ src, label, onPlay }: { src: string; label: string; onPlay
           </div>
         </div>
 
-        {/* Label */}
         <div className="py-2.5 px-3 text-center">
           <p className="font-heading text-white/70 text-[0.65rem] uppercase tracking-wider truncate">{label}</p>
         </div>
@@ -527,13 +507,11 @@ function FeaturedCreativeReel({ onPlay }: { onPlay: (src: string) => void }) {
         </motion.div>
       </div>
 
-      {/* Scrolling reel */}
       <div
         ref={scrollRef}
         className="flex gap-4 sm:gap-5 overflow-x-auto px-4 sm:px-6 pb-4 scrollbar-hide"
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
-        {/* Left spacer to align with max-w-[1200px] */}
         <div className="flex-shrink-0 w-[max(0px,calc((100vw-1200px)/2))]" />
         {featuredCreatives.map((creative, i) => (
           <div key={i}>
@@ -548,6 +526,15 @@ function FeaturedCreativeReel({ onPlay }: { onPlay: (src: string) => void }) {
 
 export default function CaseStudiesPage() {
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
+  const [activeVideoIsVertical, setActiveVideoIsVertical] = useState(true);
+
+  const handlePlayVideo = (src: string) => {
+    // Heuristic: ads are 9:16 vertical, testimonial/walkthrough videos are 16:9
+    const verticalHints = ['ad-', '-ad', '9x16', 'creative'];
+    const isVertical = verticalHints.some((hint) => src.includes(hint));
+    setActiveVideoIsVertical(isVertical);
+    setActiveVideo(src);
+  };
 
   return (
     <main className="min-h-screen bg-black text-white">
@@ -576,108 +563,23 @@ export default function CaseStudiesPage() {
         </div>
       </section>
 
-      {/* Projects */}
+      {/* Editorial Masonry Grid */}
       <section className="relative pb-[100px] sm:pb-[120px] px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.1 }}
+          viewport={{ once: true, amount: 0.05 }}
           transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-          className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8"
+          className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 lg:gap-7 auto-rows-auto"
         >
-          {projects.map((project, i) => (
-            <Fragment key={project.title}>
-              {/* Testimonial Video - centred, spanning full row */}
-              {project.testimonialVideoUrl && (
-                <div
-                  className="self-center"
-                >
-                  <p className="font-heading text-[#5FA99F] text-[0.65rem] uppercase tracking-widest mb-3">Client Testimonial</p>
-                  <ElevatorDoorVideo videoUrl={project.testimonialVideoUrl} />
-                </div>
-              )}
-            {(() => {
-            // Standard card
-            return (
-              <article
-                key={project.title}
-                className="bg-[#1A1A1A] border border-[rgba(95,169,159,0.15)] rounded-[20px] overflow-hidden"
-              >
-                {/* Card Content */}
-                <div className="p-5 sm:p-6">
-                  {/* Industry + Title */}
-                  <span className="text-[#5FA99F] text-[0.65rem] font-heading uppercase tracking-widest">
-                    {project.industry}
-                  </span>
-                  <h2 className="font-heading text-[1.15rem] sm:text-[1.3rem] font-bold text-white mt-1 mb-3">
-                    {project.title}
-                  </h2>
-
-                  {/* Service Tags — only if they exist */}
-                  {project.services && project.services.length > 0 && (
-                    <div className="flex flex-wrap gap-1.5 mb-4">
-                      {project.services.map((service) => (
-                        <span
-                          key={service}
-                          className="font-body text-[0.6rem] text-[#5FA99F] bg-[#5FA99F]/10 px-2.5 py-0.5 rounded-full uppercase tracking-wider"
-                        >
-                          {service}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-
-                  {/* Video Ads — only if they exist */}
-                  {project.videoAds && project.videoAds.length > 0 && (
-                    <div className="mb-4">
-                      <p className="font-heading text-white/60 text-[0.7rem] uppercase tracking-wider mb-3">Video Ads</p>
-                      <div className="flex gap-3">
-                        {project.videoAds.map((ad, adIndex) => (
-                          <button
-                            key={adIndex}
-                            onClick={() => setActiveVideo(ad)}
-                            className="flex-1 inline-flex items-center justify-center gap-2 border border-[rgba(95,169,159,0.3)] bg-[rgba(95,169,159,0.05)] text-[#5FA99F] px-4 py-2.5 rounded-xl font-heading font-bold text-[0.8rem] hover:border-[#5FA99F] hover:bg-[rgba(95,169,159,0.1)] hover:text-white transition-all duration-300"
-                          >
-                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                              <path d="M8 5v14l11-7z" />
-                            </svg>
-                            Video Ad {adIndex + 1}
-                          </button>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Visit Website Button */}
-                  {project.liveUrl && (
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center border border-[rgba(95,169,159,0.3)] bg-[rgba(95,169,159,0.05)] text-[#5FA99F] px-5 py-2.5 rounded-xl font-heading font-bold text-[0.85rem] hover:border-[#5FA99F] hover:bg-[rgba(95,169,159,0.1)] hover:text-white transition-all duration-300 w-full"
-                    >
-                      <span>{project.liveUrlLabel || 'Visit Website'}</span>
-                      <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2.5}
-                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                        />
-                      </svg>
-                    </a>
-                  )}
-                </div>
-              </article>
-            );
-            })()}
-            </Fragment>
+          {projects.map((project) => (
+            <ProjectCard key={project.title} project={project} onPlayVideo={handlePlayVideo} />
           ))}
         </motion.div>
       </section>
 
       {/* Featured Creative Reel */}
-      <FeaturedCreativeReel onPlay={setActiveVideo} />
+      <FeaturedCreativeReel onPlay={handlePlayVideo} />
 
       {/* Testimonial Carousel */}
       <TestimonialCarousel />
@@ -720,12 +622,13 @@ export default function CaseStudiesPage() {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="relative max-w-[400px] w-full max-h-[90vh]"
+              className={`relative w-full max-h-[90vh] ${activeVideoIsVertical ? 'max-w-[400px]' : 'max-w-[900px]'}`}
               onClick={(e) => e.stopPropagation()}
             >
               <button
                 onClick={() => setActiveVideo(null)}
                 className="absolute -top-10 right-0 text-white/70 hover:text-white text-2xl font-bold"
+                aria-label="Close video"
               >
                 ✕
               </button>
