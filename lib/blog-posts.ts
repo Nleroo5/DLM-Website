@@ -640,6 +640,38 @@ export const blogPosts: BlogPost[] = [
     heroImageAlt: 'SEO vs Meta Ads comparison for Atlanta businesses showing organic search results alongside Facebook ad campaigns',
     wordCount: 4800
   },
+  {
+    slug: 'get-cited-chatgpt-google-ai-overviews-atlanta',
+    title: 'How to Get Your Atlanta Business Cited in ChatGPT and Google AI Overviews',
+    excerpt: 'AI search now covers 25.8% of Google queries. Here is what actually gets Atlanta businesses cited in ChatGPT and AI Overviews, based on 2026 Semrush and Ahrefs studies.',
+    date: 'May 2026',
+    datePublished: '2026-05-20T09:00:00-05:00',
+    dateModified: '2026-05-20T09:00:00-05:00',
+    readTime: '8 min read',
+    category: {
+      name: 'AI Search',
+      slug: 'ai-search'
+    },
+    author: {
+      name: 'Nicolas Leroo',
+      jobTitle: 'Co-Founder & Meta Advertising Strategist',
+      url: 'https://driveleadmedia.com/about/nicolas-leroo'
+    },
+    keywords: [
+      'chatgpt seo atlanta',
+      'google ai overviews atlanta',
+      'get cited by ai search',
+      'generative engine optimization atlanta',
+      'ai search optimization',
+      'aeo atlanta',
+      'ranking in chatgpt 2026',
+      'ai overviews local business',
+      'atlanta digital marketing'
+    ],
+    heroImage: '/images/atlanta-business-chatgpt-google-ai-overviews-citations.webp',
+    heroImageAlt: 'Atlanta business cited in ChatGPT and Google AI Overviews search results',
+    wordCount: 1850
+  },
 ];
 
 // Helper functions

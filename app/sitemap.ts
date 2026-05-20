@@ -155,6 +155,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/blog/get-cited-chatgpt-google-ai-overviews-atlanta`,
+      lastModified: new Date('2026-05-20'),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/blog/category/meta-ads-pricing`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
@@ -234,6 +240,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/blog/category/video-advertising`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/blog/category/ai-search`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.7,
