@@ -603,31 +603,6 @@ export default function CaseStudiesPage() {
                 key={project.title}
                 className="bg-[#1A1A1A] border border-[rgba(95,169,159,0.15)] rounded-[20px] overflow-hidden"
               >
-                {/* Video or Image Preview */}
-                {project.videoUrl ? (
-                  <div className="relative w-full overflow-hidden bg-black flex justify-center">
-                    <video
-                      className="max-w-full max-h-[400px]"
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                    >
-                      <source src={project.videoUrl} type={project.videoUrl.endsWith('.webm') ? 'video/webm' : 'video/mp4'} />
-                    </video>
-                  </div>
-                ) : project.thumbnail ? (
-                  <div className="relative w-full aspect-[16/10] overflow-hidden">
-                    <Image
-                      src={project.thumbnail}
-                      alt={project.title}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 580px"
-                    />
-                  </div>
-                ) : null}
-
                 {/* Card Content */}
                 <div className="p-5 sm:p-6">
                   {/* Industry + Title */}
@@ -648,22 +623,6 @@ export default function CaseStudiesPage() {
                         >
                           {service}
                         </span>
-                      ))}
-                    </div>
-                  )}
-
-                  {/* Metrics — only if they exist */}
-                  {project.metrics && project.metrics.length > 0 && (
-                    <div className="flex justify-between mb-4 py-3 border-y border-[rgba(95,169,159,0.1)]">
-                      {project.metrics.map((metric) => (
-                        <div key={metric.label} className="text-center flex-1">
-                          <p className="font-heading text-[1.5rem] font-bold text-[#f2a921] leading-none">
-                            {metric.value}
-                          </p>
-                          <p className="font-body text-gray-400 text-[0.65rem] uppercase tracking-wider mt-1">
-                            {metric.label}
-                          </p>
-                        </div>
                       ))}
                     </div>
                   )}
