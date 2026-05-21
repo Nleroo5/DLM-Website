@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { GoogleAnalytics } from '@next/third-parties/google';
-import '@fontsource/exo-2/400.css';
-import '@fontsource/exo-2/600.css';
-import '@fontsource/exo-2/700.css';
+import { Exo_2 } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
@@ -11,6 +8,13 @@ import Footer from "@/components/Footer";
 import { MetaPixel } from "@/components/MetaPixel";
 import { Analytics } from "@vercel/analytics/next";
 
+
+const exo2 = Exo_2({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  variable: "--font-exo2",
+  display: "swap",
+});
 
 const arnoPro = localFont({
   src: "../font/ArnoPro-LightDisplay.otf",
@@ -341,7 +345,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${arnoPro.variable} antialiased`}>
+      <body className={`${arnoPro.variable} ${exo2.variable} antialiased`}>
         {/* Meta Pixel - Non-blocking */}
         <Script
           id="meta-pixel"
@@ -369,12 +373,12 @@ export default function RootLayout({
         {/* Google Analytics 4 - Non-blocking */}
         <Script
           id="ga4-gtag"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           src="https://www.googletagmanager.com/gtag/js?id=G-K25LTGL8FP"
         />
         <Script
           id="ga4-config"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
@@ -433,8 +437,6 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
-
-        <GoogleAnalytics gaId="G-K25LTGL8FP" />
       </body>
     </html>
   );

@@ -64,7 +64,7 @@ export default function AboutSection() {
             style={{ y: photoY }}
           >
             <Image
-              src="/images/DLM-About.png"
+              src="/images/DLM-About.webp"
               alt="The Drive Lead Media team"
               fill
               className="object-cover object-center"

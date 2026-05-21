@@ -126,12 +126,22 @@ function posterFromVideo(src: string): string {
   return src.replace(/\.(webm|mp4|mov)$/i, '-poster.webp');
 }
 
+/**
+ * Lazy hover video. Renders <img loading="lazy"> by default so the
+ * poster respects browser lazy loading. Only mounts the <video>
+ * element after first hover, then keeps it mounted (cached) and
+ * pauses on mouseleave for instant subsequent plays.
+ */
 function ProjectVideo({ src, className = '' }: { src: string; className?: string }) {
+  const [activated, setActivated] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const handleEnter = () => {
-    const v = videoRef.current;
-    if (v) v.play().catch(() => {});
+    if (!activated) setActivated(true);
+    // Use rAF so the video element exists before we try to play it on first hover
+    requestAnimationFrame(() => {
+      videoRef.current?.play().catch(() => {});
+    });
   };
 
   const handleLeave = () => {
@@ -142,20 +152,37 @@ function ProjectVideo({ src, className = '' }: { src: string; className?: string
     }
   };
 
+  const poster = posterFromVideo(src);
+
   return (
-    <video
-      ref={videoRef}
-      className={`absolute inset-0 w-full h-full object-cover ${className}`}
-      muted
-      loop
-      playsInline
-      preload="none"
-      poster={posterFromVideo(src)}
+    <div
+      className="absolute inset-0"
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
     >
-      <source src={src} type={src.endsWith('.webm') ? 'video/webm' : 'video/mp4'} />
-    </video>
+      {/* Poster image as the default static visual. Browser lazy-loads it. */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={poster}
+        alt=""
+        loading="lazy"
+        decoding="async"
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${activated ? 'opacity-0' : 'opacity-100'}`}
+      />
+      {/* Video only mounts after the first hover */}
+      {activated && (
+        <video
+          ref={videoRef}
+          className={`absolute inset-0 w-full h-full object-cover ${className}`}
+          muted
+          loop
+          playsInline
+          preload="auto"
+        >
+          <source src={src} type={src.endsWith('.webm') ? 'video/webm' : 'video/mp4'} />
+        </video>
+      )}
+    </div>
   );
 }
 
@@ -427,27 +454,55 @@ const featuredCreatives = [
 ];
 
 function PhoneFrame({ src, label, onPlay }: { src: string; label: string; onPlay: (src: string) => void }) {
+  const [activated, setActivated] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handleEnter = () => {
+    if (!activated) setActivated(true);
+    requestAnimationFrame(() => {
+      videoRef.current?.play().catch(() => {});
+    });
+  };
+
+  const handleLeave = () => {
+    const v = videoRef.current;
+    if (v) {
+      v.pause();
+      v.currentTime = 0;
+    }
+  };
+
   return (
     <button
       onClick={() => onPlay(src)}
+      onMouseEnter={handleEnter}
+      onMouseLeave={handleLeave}
       className="flex-shrink-0 group cursor-pointer"
     >
       <div className="relative w-[180px] sm:w-[200px] rounded-[24px] overflow-hidden border-2 border-white/10 bg-[#111] shadow-[0_4px_20px_rgba(0,0,0,0.5)] group-hover:border-[#5FA99F]/40 transition-all duration-300 group-hover:scale-[1.03]">
         <div className="relative w-full" style={{ paddingBottom: '177.78%' }}>
-          <video
-            className="absolute inset-0 w-full h-full object-cover"
-            muted
-            playsInline
-            loop
-            preload="none"
-            poster={posterFromVideo(src)}
-            onMouseEnter={(e) => e.currentTarget.play()}
-            onMouseLeave={(e) => { e.currentTarget.pause(); e.currentTarget.currentTime = 0; }}
-          >
-            <source src={src} type="video/webm" />
-          </video>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={posterFromVideo(src)}
+            alt={label}
+            loading="lazy"
+            decoding="async"
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${activated ? 'opacity-0' : 'opacity-100'}`}
+          />
+          {activated && (
+            <video
+              ref={videoRef}
+              className="absolute inset-0 w-full h-full object-cover"
+              muted
+              playsInline
+              loop
+              preload="auto"
+            >
+              <source src={src} type="video/webm" />
+            </video>
+          )}
 
-          <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-100 group-hover:opacity-0 transition-opacity duration-300">
+          <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-100 group-hover:opacity-0 transition-opacity duration-300 pointer-events-none">
             <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
               <div className="w-0 h-0 ml-0.5 border-t-[7px] border-t-transparent border-l-[12px] border-l-white border-b-[7px] border-b-transparent" />
             </div>

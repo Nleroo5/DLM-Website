@@ -21,13 +21,13 @@ const config: Config = {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        heading: ['"Exo 2"', 'sans-serif'],
+        heading: ['var(--font-exo2)', 'sans-serif'],
         body: ['var(--font-arno)', 'serif'],
         ui: ['var(--font-arno)', 'serif'],
-        exo2: ['"Exo 2"', 'sans-serif'],
+        exo2: ['var(--font-exo2)', 'sans-serif'],
         arno: ['var(--font-arno)', 'serif'],
         serif: ['var(--font-arno)', 'serif'],
-        sans: ['"Exo 2"', 'sans-serif'],
+        sans: ['var(--font-exo2)', 'sans-serif'],
       },
       fontSize: {
         // Professional fluid typography system (2026 standards)

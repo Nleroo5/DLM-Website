@@ -64,7 +64,7 @@ body {
 
 /* Typography - Exo 2 for Headings, Arno Pro for Body */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Exo 2', sans-serif;
+  font-family: var(--font-exo2), sans-serif;
   font-weight: 600;
   line-height: 1.2;
   color: #FFFFFF;
