@@ -122,6 +122,10 @@ const aspectClasses: Record<ProjectLayout, string> = {
   half: 'aspect-[16/9]',
 };
 
+function posterFromVideo(src: string): string {
+  return src.replace(/\.(webm|mp4|mov)$/i, '-poster.webp');
+}
+
 function ProjectVideo({ src, className = '' }: { src: string; className?: string }) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -145,7 +149,8 @@ function ProjectVideo({ src, className = '' }: { src: string; className?: string
       muted
       loop
       playsInline
-      preload="metadata"
+      preload="none"
+      poster={posterFromVideo(src)}
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
     >
@@ -434,7 +439,8 @@ function PhoneFrame({ src, label, onPlay }: { src: string; label: string; onPlay
             muted
             playsInline
             loop
-            preload="metadata"
+            preload="none"
+            poster={posterFromVideo(src)}
             onMouseEnter={(e) => e.currentTarget.play()}
             onMouseLeave={(e) => { e.currentTarget.pause(); e.currentTarget.currentTime = 0; }}
           >
