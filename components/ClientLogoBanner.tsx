@@ -23,7 +23,11 @@ export default function ClientLogoBanner({ variant = 'light', heading }: ClientL
   // Detailed grey/silver illustrations that collapse into a featureless white
   // blob under `brightness-0 invert`. They already read well on the dark banner,
   // so render them as-is to preserve their detail.
-  const naturalLogos = new Set([4, 12, 16, 20]);
+  const naturalLogos = new Set([4, 12, 16]);
+
+  // Colored logos we show desaturated (greys + white) so they don't clash with
+  // the monochrome banner. #20 is Quality Wildlife Solutions (blue accents).
+  const grayscaleLogos = new Set([20]);
 
   const allLogos = Array.from({ length: 23 }, (_, i) => i + 1)
     .filter((n) => !excludedLogos.has(n))
@@ -32,11 +36,14 @@ export default function ClientLogoBanner({ variant = 'light', heading }: ClientL
       src: `/images/client-logos/${n}.webp`,
       detailed: detailedLogos.has(n),
       natural: naturalLogos.has(n),
+      grayscale: grayscaleLogos.has(n),
     }));
 
   // The dark-mode filter applied to each logo (nothing in light mode).
-  const darkFilter = (logo: { detailed: boolean; natural: boolean }) => {
-    if (!isDark || logo.natural) return '';
+  const darkFilter = (logo: { detailed: boolean; natural: boolean; grayscale: boolean }) => {
+    if (!isDark) return '';
+    if (logo.grayscale) return 'grayscale';
+    if (logo.natural) return '';
     return logo.detailed ? 'invert' : 'brightness-0 invert';
   };
 
