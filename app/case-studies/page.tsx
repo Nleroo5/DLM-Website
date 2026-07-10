@@ -766,7 +766,7 @@ export default function CaseStudiesPage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.05 }}
           transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-          className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 lg:gap-7 auto-rows-auto"
+          className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-12 lg:items-start gap-5 sm:gap-6 lg:gap-7 auto-rows-auto"
         >
           {projects
             .filter((project) => project.ready !== false)
