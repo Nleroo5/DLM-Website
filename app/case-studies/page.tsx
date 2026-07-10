@@ -44,7 +44,7 @@ const projects: CaseStudyProject[] = [
       '/images/case-studies/pain-treatment-centers/ptc-ad-1-audio.webm',
       '/images/case-studies/pain-treatment-centers/ptc-ad-2-audio.webm',
     ],
-    layout: 'hero',
+    layout: 'small',
   },
   {
     title: 'Set Life Casting',
@@ -741,6 +741,9 @@ export default function CaseStudiesPage() {
         </div>
       </section>
 
+      {/* Founder Venture — our own product (lead feature) */}
+      <FounderVenture />
+
       {/* Editorial Masonry Grid */}
       <section className="relative pb-[100px] sm:pb-[120px] px-4 sm:px-6">
         <motion.div
@@ -757,9 +760,6 @@ export default function CaseStudiesPage() {
             ))}
         </motion.div>
       </section>
-
-      {/* Founder Venture — our own product */}
-      <FounderVenture />
 
       {/* Featured Creative Reel */}
       <FeaturedCreativeReel onPlay={handlePlayVideo} />
