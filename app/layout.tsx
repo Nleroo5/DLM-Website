@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Exo_2 } from "next/font/google";
-import localFont from "next/font/local";
+import { Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -9,17 +8,21 @@ import { MetaPixel } from "@/components/MetaPixel";
 import { Analytics } from "@vercel/analytics/next";
 
 
-const exo2 = Exo_2({
+// Space Grotesk = headings, Inter = body/UI. The CSS variable names
+// (--font-exo2 / --font-arno) are intentionally kept so globals.css and the
+// Tailwind config keep resolving without a site-wide rename.
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-exo2",
   display: "swap",
 });
 
-const arnoPro = localFont({
-  src: "../font/ArnoPro-LightDisplay.otf",
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
   variable: "--font-arno",
-  display: 'swap',
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -345,7 +348,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${arnoPro.variable} ${exo2.variable} antialiased`}>
+      <body className={`${inter.variable} ${spaceGrotesk.variable} antialiased`}>
         {/* Meta Pixel - Non-blocking */}
         <Script
           id="meta-pixel"
