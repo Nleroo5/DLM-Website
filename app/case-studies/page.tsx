@@ -19,6 +19,7 @@ interface CaseStudyProject {
   title: string;
   industry: string;
   videoUrl?: string;
+  imageUrl?: string; // Static screenshot / OG image, shown when there's no walkthrough video
   liveUrl?: string;
   liveUrlLabel?: string;
   services?: string[];
@@ -26,6 +27,9 @@ interface CaseStudyProject {
   videoAds?: string[];
   testimonialVideoUrl?: string;
   layout: ProjectLayout;
+  // Set to false to keep an entry wired up but hidden from the live grid until
+  // its walkthrough video + poster assets are added. Defaults to shown.
+  ready?: boolean;
 }
 
 const projects: CaseStudyProject[] = [
@@ -101,6 +105,23 @@ const projects: CaseStudyProject[] = [
     liveUrl: 'https://southerntentsandevents.com/',
     services: ['Website Rebuild', 'Meta Ads', 'SEO'],
     layout: 'half',
+  },
+  {
+    title: 'Greekfest Fayette',
+    industry: 'Events - Festival',
+    imageUrl: '/images/case-studies/greekfest-fayette/greekfest-og.webp',
+    liveUrl: 'https://greekfestfayette.com/',
+    liveUrlLabel: 'Visit Landing Page',
+    services: ['Meta Ads', 'Landing Page', 'Video Creative'],
+    layout: 'half',
+  },
+  {
+    title: 'Bière de Mac',
+    industry: 'Food & Beverage - Brewery',
+    imageUrl: '/images/case-studies/biere-de-mac/biere-de-mac-og.webp',
+    liveUrl: 'https://bieredemac.com/',
+    services: ['Fully Custom Website'],
+    layout: 'tall',
   },
 ];
 
@@ -198,10 +219,22 @@ function ProjectCard({ project, onPlayVideo }: ProjectCardProps) {
     <article
       className={`${layoutClasses[project.layout]} group relative overflow-hidden rounded-[20px] bg-[#0E0E0E] border border-white/[0.06] hover:border-white/[0.12] transition-colors duration-500`}
     >
-      {/* Video area */}
-      {project.videoUrl && (
+      {/* Video / image area */}
+      {(project.videoUrl || project.imageUrl) && (
         <div className={`relative w-full ${aspectClasses[project.layout]} overflow-hidden bg-black`}>
-          <ProjectVideo src={project.videoUrl} />
+          {project.videoUrl ? (
+            <ProjectVideo src={project.videoUrl} />
+          ) : (
+            // Static screenshot / OG image (no walkthrough video)
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={project.imageUrl}
+              alt={project.title}
+              loading="lazy"
+              decoding="async"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.04]"
+            />
+          )}
           {/* Bottom gradient overlay so overlaid text stays legible */}
           <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none" />
 
@@ -585,6 +618,90 @@ function FeaturedCreativeReel({ onPlay }: { onPlay: (src: string) => void }) {
   );
 }
 
+/**
+ * Founder Venture feature — Antique Partner. A distinct band that sets our own
+ * product apart from client case studies. The browser mockup shows the live
+ * site's OG image (public/images/ventures/antique-partner-og.webp).
+ */
+function FounderVenture() {
+  return (
+    <section className="relative pb-[100px] sm:pb-[120px] px-4 sm:px-6">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.15 }}
+        transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+        className="max-w-[1280px] mx-auto"
+      >
+        <div className="relative overflow-hidden rounded-[28px] border border-[#5FA99F]/25 bg-[#0E0E0E] shadow-[0_8px_40px_rgba(0,0,0,0.4)]">
+          <div className="pointer-events-none absolute -top-24 -right-24 w-[380px] h-[380px] bg-[#5FA99F] opacity-[0.12] rounded-full blur-[120px]" />
+
+          <div className="grid lg:grid-cols-2">
+            {/* Copy */}
+            <div className="relative p-8 sm:p-12 lg:p-14 flex flex-col justify-center">
+              <span className="inline-flex items-center gap-2 self-start rounded-full border border-[#5FA99F]/40 bg-[#5FA99F]/10 px-3.5 py-1.5 mb-6">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#5FA99F]" />
+                <span className="font-heading text-[#5FA99F] text-[0.6rem] uppercase tracking-[0.2em]">
+                  Founder Venture · Built &amp; Owned by Us
+                </span>
+              </span>
+
+              <h2 className="font-heading font-bold text-white text-[2rem] sm:text-[2.75rem] leading-[1.05] mb-4">
+                Antique Partner
+              </h2>
+
+              <p className="font-body text-white/70 text-[1rem] sm:text-[1.075rem] leading-relaxed mb-8 max-w-[520px]">
+                The largest online directory of antique stores, thrift shops, and flea markets in North
+                America — over 40,000 listings across the U.S. and Canada. Shoppers browse an interactive
+                map to find stores near them and discover vintage finds, while store owners get a free
+                listing in front of serious collectors. A platform we founded, designed, and built
+                ourselves.
+              </p>
+
+              <a
+                href="https://antiquepartner.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 self-start bg-gradient-to-r from-[#5FA99F] to-[#85C7B3] text-white font-heading font-bold text-[0.9rem] tracking-wide px-6 py-3 rounded-xl hover:scale-[1.03] transition-transform duration-300 shadow-[0_0_30px_rgba(95,169,159,0.35)]"
+              >
+                <span>Visit Antique Partner</span>
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+
+            {/* Browser mockup — swap the gradient "screen" for a real screenshot later */}
+            <div className="relative min-h-[280px] lg:min-h-[440px] bg-gradient-to-br from-[#141414] to-[#0A0A0A] p-6 sm:p-10 lg:p-12 flex items-center justify-center">
+              <div className="w-full max-w-[540px] rounded-xl overflow-hidden border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
+                {/* Browser chrome */}
+                <div className="flex items-center gap-2 px-4 py-3 bg-[#1b1b1b] border-b border-white/10">
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#febc2e]" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#28c840]" />
+                  <span className="ml-3 flex-1 truncate rounded-md bg-black/40 px-3 py-1 font-body text-white/40 text-[0.7rem]">
+                    antiquepartner.com
+                  </span>
+                </div>
+                {/* Screen — live site OG image */}
+                <div className="relative aspect-[16/10] bg-[#0A0A0A]">
+                  <Image
+                    src="/images/ventures/antique-partner-og.webp"
+                    alt="Antique Partner — antique & thrift store directory"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 90vw, 540px"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    </section>
+  );
+}
+
 export default function CaseStudiesPage() {
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
   const [activeVideoIsVertical, setActiveVideoIsVertical] = useState(true);
@@ -633,11 +750,16 @@ export default function CaseStudiesPage() {
           transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
           className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 lg:gap-7 auto-rows-auto"
         >
-          {projects.map((project) => (
-            <ProjectCard key={project.title} project={project} onPlayVideo={handlePlayVideo} />
-          ))}
+          {projects
+            .filter((project) => project.ready !== false)
+            .map((project) => (
+              <ProjectCard key={project.title} project={project} onPlayVideo={handlePlayVideo} />
+            ))}
         </motion.div>
       </section>
+
+      {/* Founder Venture — our own product */}
+      <FounderVenture />
 
       {/* Featured Creative Reel */}
       <FeaturedCreativeReel onPlay={handlePlayVideo} />
