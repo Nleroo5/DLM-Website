@@ -26,6 +26,7 @@ interface CaseStudyProject {
   testimonial?: Testimonial;
   videoAds?: string[];
   testimonialVideoUrl?: string;
+  autoplay?: boolean; // Play the card video on mount (muted, looping) instead of on hover
   layout: ProjectLayout;
   // Set to false to keep an entry wired up but hidden from the live grid until
   // its walkthrough video + poster assets are added. Defaults to shown.
@@ -96,6 +97,7 @@ const projects: CaseStudyProject[] = [
       '/images/case-studies/the-yoga-lounge/yoga-ad-1-audio.webm',
       '/images/case-studies/the-yoga-lounge/yoga-ad-2-audio.webm',
     ],
+    autoplay: true,
     layout: 'half',
   },
   {
@@ -152,12 +154,23 @@ function posterFromVideo(src: string): string {
  * poster respects browser lazy loading. Only mounts the <video>
  * element after first hover, then keeps it mounted (cached) and
  * pauses on mouseleave for instant subsequent plays.
+ *
+ * When `autoplay` is set, the video mounts immediately and plays on loop
+ * (muted, no hover needed); the poster stays underneath as a load fallback.
  */
-function ProjectVideo({ src, className = '' }: { src: string; className?: string }) {
-  const [activated, setActivated] = useState(false);
+function ProjectVideo({ src, className = '', autoplay = false }: { src: string; className?: string; autoplay?: boolean }) {
+  const [activated, setActivated] = useState(autoplay);
   const videoRef = useRef<HTMLVideoElement>(null);
 
+  // Autoplay cards start playing on mount — muted autoplay is allowed by browsers.
+  useEffect(() => {
+    if (autoplay) {
+      videoRef.current?.play().catch(() => {});
+    }
+  }, [autoplay]);
+
   const handleEnter = () => {
+    if (autoplay) return; // already playing
     if (!activated) setActivated(true);
     // Use rAF so the video element exists before we try to play it on first hover
     requestAnimationFrame(() => {
@@ -166,6 +179,7 @@ function ProjectVideo({ src, className = '' }: { src: string; className?: string
   };
 
   const handleLeave = () => {
+    if (autoplay) return; // keep autoplay cards running
     const v = videoRef.current;
     if (v) {
       v.pause();
@@ -188,13 +202,14 @@ function ProjectVideo({ src, className = '' }: { src: string; className?: string
         alt=""
         loading="lazy"
         decoding="async"
-        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${activated ? 'opacity-0' : 'opacity-100'}`}
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${activated && !autoplay ? 'opacity-0' : 'opacity-100'}`}
       />
-      {/* Video only mounts after the first hover */}
+      {/* Video mounts after first hover, or immediately when autoplay */}
       {activated && (
         <video
           ref={videoRef}
           className={`absolute inset-0 w-full h-full object-cover ${className}`}
+          autoPlay={autoplay}
           muted
           loop
           playsInline
@@ -223,7 +238,7 @@ function ProjectCard({ project, onPlayVideo }: ProjectCardProps) {
       {(project.videoUrl || project.imageUrl) && (
         <div className={`relative w-full ${aspectClasses[project.layout]} overflow-hidden bg-black`}>
           {project.videoUrl ? (
-            <ProjectVideo src={project.videoUrl} />
+            <ProjectVideo src={project.videoUrl} autoplay={project.autoplay} />
           ) : (
             // Static screenshot / OG image (no walkthrough video)
             // eslint-disable-next-line @next/next/no-img-element
