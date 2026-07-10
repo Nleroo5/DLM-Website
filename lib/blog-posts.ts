@@ -22,7 +22,7 @@ export interface BlogPost {
   wordCount?: number;
 }
 
-export const blogPosts: BlogPost[] = [
+const rawBlogPosts: BlogPost[] = [
   {
     slug: 'how-much-do-facebook-ads-cost-atlanta',
     title: 'How Much Do Facebook Ads Cost in Atlanta? (2025 Complete Guide)',
@@ -673,6 +673,11 @@ export const blogPosts: BlogPost[] = [
     wordCount: 1850
   },
 ];
+
+// Exported newest-first: most recent datePublished at the top of the list.
+export const blogPosts: BlogPost[] = [...rawBlogPosts].sort(
+  (a, b) => b.datePublished.localeCompare(a.datePublished)
+);
 
 // Helper functions
 export function getPostBySlug(slug: string): BlogPost | undefined {
