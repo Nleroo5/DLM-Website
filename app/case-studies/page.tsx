@@ -142,7 +142,7 @@ const projects: CaseStudyProject[] = [
     layout: 'small',
   },
   {
-    title: 'Local Wildlife Expert',
+    title: 'Local Wildlife Experts, LLC',
     industry: 'Wildlife Removal',
     imageUrl: '/images/case-studies/your-wildlife-expert/your-wildlife-expert-og.webp',
     liveUrl: 'https://www.yourwildlifeexpert.com/',
@@ -805,7 +805,7 @@ export default function CaseStudiesPage() {
           {projects
             .filter((project) => project.ready !== false)
             .map((project) => (
-              <ProjectCard key={project.title} project={project} onPlayVideo={handlePlayVideo} />
+              <ProjectCard key={project.liveUrl || project.title} project={project} onPlayVideo={handlePlayVideo} />
             ))}
         </motion.div>
       </section>
