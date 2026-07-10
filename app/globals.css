@@ -296,12 +296,14 @@ section {
 }
 
 /* Logo banner marquee */
+/* Mobile: calm, continuous scroll. (Was 8s — the whole strip raced by and
+   hard-looped every 8s, which read as a glitchy reset on phones.) */
 .animate-marquee-left-slow {
-  animation: marquee-left 8s linear infinite;
+  animation: marquee-left 50s linear infinite;
 }
 
 .animate-marquee-right-slow {
-  animation: marquee-right 8s linear infinite;
+  animation: marquee-right 50s linear infinite;
 }
 
 @media (min-width: 640px) {
