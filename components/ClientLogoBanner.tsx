@@ -9,18 +9,22 @@ interface ClientLogoBannerProps {
 }
 
 export default function ClientLogoBanner({ variant = 'light', heading }: ClientLogoBannerProps) {
-  // Logos with detailed grey tones that lose detail with brightness-0
-  const detailedLogos = new Set([3, 9, 12]);
+  // On the dark banner, most logos are forced to a crisp white silhouette
+  // (`brightness-0 invert`). Only logos with light artwork baked onto a dark
+  // shape (e.g. Set Life's cream text on a black clapperboard) belong here: they
+  // use plain `invert` so the two tones stay legible. Do NOT add grey/light-grey
+  // logos — `invert` turns them dark and they wash out against the dark bg.
+  const detailedLogos = new Set([3]);
 
-  const allLogos = Array.from({ length: 20 }, (_, i) => ({
+  const allLogos = Array.from({ length: 22 }, (_, i) => ({
     name: `Client ${i + 1}`,
     src: `/images/client-logos/${i + 1}.webp`,
     detailed: detailedLogos.has(i + 1),
   }));
 
   // Split into two rows
-  const row1 = allLogos.slice(0, 9);
-  const row2 = allLogos.slice(9);
+  const row1 = allLogos.slice(0, 11);
+  const row2 = allLogos.slice(11);
 
   const isDark = variant === 'dark';
   const displayHeading = heading || (isDark ? "You're in good company" : 'Trusted by Leading Brands');
