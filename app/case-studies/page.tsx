@@ -125,18 +125,52 @@ const projects: CaseStudyProject[] = [
     services: ['Fully Custom Website'],
     layout: 'tall',
   },
+  {
+    title: 'Quality Wildlife Solutions',
+    industry: 'Wildlife Removal',
+    imageUrl: '/images/case-studies/quality-wildlife-solutions/quality-wildlife-solutions-og.webp',
+    liveUrl: 'https://www.qualitywildlifesolutions.com/',
+    services: ['Fully Custom Website'],
+    layout: 'half',
+  },
+  {
+    title: 'Total Animal Control',
+    industry: 'Wildlife Removal',
+    imageUrl: '/images/case-studies/total-animal-control/total-animal-control-og.webp',
+    liveUrl: 'https://www.totalanimalcontrol.com/',
+    services: ['Fully Custom Website'],
+    layout: 'small',
+  },
+  {
+    title: 'Local Wildlife Expert',
+    industry: 'Wildlife Removal',
+    imageUrl: '/images/case-studies/your-wildlife-expert/your-wildlife-expert-og.webp',
+    liveUrl: 'https://www.yourwildlifeexpert.com/',
+    services: ['Fully Custom Website'],
+    layout: 'small',
+  },
+  {
+    title: 'Lantz Coaching',
+    industry: 'Sports - Athletic Training',
+    imageUrl: '/images/case-studies/lantz-coaching/lantz-coaching-og.webp',
+    liveUrl: 'https://www.lantzcoaching.com/',
+    services: ['Fully Custom Website'],
+    layout: 'half',
+  },
+  {
+    title: 'Local Wildlife Experts, LLC',
+    industry: 'Wildlife Removal',
+    imageUrl: '/images/case-studies/local-wildlife-experts/local-wildlife-experts-og.webp',
+    liveUrl: 'https://www.localwildlifeexperts.com/',
+    services: ['Fully Custom Website'],
+    layout: 'small',
+  },
 ];
 
 // Grid span classes per layout. Mobile is always full-width single column.
-const layoutClasses: Record<ProjectLayout, string> = {
-  hero: 'col-span-1 lg:col-span-12',
-  medium: 'col-span-1 lg:col-span-8',
-  tall: 'col-span-1 lg:col-span-4 lg:row-span-2',
-  small: 'col-span-1 lg:col-span-4',
-  half: 'col-span-1 lg:col-span-6',
-};
-
-// Aspect ratio per layout (video area)
+// The grid is a CSS-columns masonry, so `layout` no longer sets a grid span —
+// it only drives each card's media aspect ratio below. Portrait content
+// ('tall') stays portrait; everything else is 16/9.
 const aspectClasses: Record<ProjectLayout, string> = {
   hero: 'aspect-[21/9]',
   medium: 'aspect-[16/9]',
@@ -232,7 +266,7 @@ function ProjectCard({ project, onPlayVideo }: ProjectCardProps) {
 
   return (
     <article
-      className={`${layoutClasses[project.layout]} group relative overflow-hidden rounded-[20px] bg-[#0E0E0E] border border-white/[0.06] hover:border-white/[0.12] transition-colors duration-500`}
+      className={`mb-5 sm:mb-6 lg:mb-7 break-inside-avoid group relative overflow-hidden rounded-[20px] bg-[#0E0E0E] border border-white/[0.06] hover:border-white/[0.12] transition-colors duration-500`}
     >
       {/* Video / image area */}
       {(project.videoUrl || project.imageUrl) && (
@@ -766,7 +800,7 @@ export default function CaseStudiesPage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.05 }}
           transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-          className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-12 lg:items-start gap-5 sm:gap-6 lg:gap-7 auto-rows-auto"
+          className="max-w-[1280px] mx-auto columns-1 sm:columns-2 lg:columns-3 gap-5 sm:gap-6 lg:gap-7"
         >
           {projects
             .filter((project) => project.ready !== false)
