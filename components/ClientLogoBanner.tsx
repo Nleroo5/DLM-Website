@@ -69,7 +69,7 @@ export default function ClientLogoBanner({ variant = 'light', heading }: ClientL
             {[...row1, ...row1].map((logo, index) => (
               <div
                 key={`r1-${index}`}
-                className="flex-shrink-0 w-[180px] sm:w-[260px] lg:w-[300px] h-[100px] sm:h-[130px] lg:h-[140px] flex items-center justify-center mx-5 sm:mx-10 lg:mx-10 opacity-70 hover:opacity-100 transition-opacity duration-300"
+                className="flex-shrink-0 w-[130px] sm:w-[180px] lg:w-[210px] h-[100px] sm:h-[130px] lg:h-[140px] flex items-center justify-center mx-2 sm:mx-4 lg:mx-5 opacity-70 hover:opacity-100 transition-opacity duration-300"
               >
                 <Image
                   src={logo.src}
@@ -93,7 +93,7 @@ export default function ClientLogoBanner({ variant = 'light', heading }: ClientL
             {[...row2, ...row2].map((logo, index) => (
               <div
                 key={`r2-${index}`}
-                className="flex-shrink-0 w-[180px] sm:w-[260px] lg:w-[300px] h-[100px] sm:h-[130px] lg:h-[140px] flex items-center justify-center mx-5 sm:mx-10 lg:mx-10 opacity-70 hover:opacity-100 transition-opacity duration-300"
+                className="flex-shrink-0 w-[130px] sm:w-[180px] lg:w-[210px] h-[100px] sm:h-[130px] lg:h-[140px] flex items-center justify-center mx-2 sm:mx-4 lg:mx-5 opacity-70 hover:opacity-100 transition-opacity duration-300"
               >
                 <Image
                   src={logo.src}
