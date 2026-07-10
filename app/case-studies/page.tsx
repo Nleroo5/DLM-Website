@@ -652,10 +652,10 @@ function FounderVenture() {
 
               <p className="font-body text-white/70 text-[1rem] sm:text-[1.075rem] leading-relaxed mb-8 max-w-[520px]">
                 The largest online directory of antique stores, thrift shops, and flea markets in North
-                America — over 40,000 listings across the U.S. and Canada. Shoppers browse an interactive
-                map to find stores near them and discover vintage finds, while store owners get a free
-                listing in front of serious collectors. A platform we founded, designed, and built
-                ourselves.
+                America, with over 40,000 listings across the U.S. and Canada. Shoppers browse an
+                interactive map to find stores near them and discover vintage finds, while store owners
+                get a free listing in front of serious collectors. A platform we founded, designed, and
+                built ourselves.
               </p>
 
               <a
