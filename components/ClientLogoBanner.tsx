@@ -25,7 +25,7 @@ export default function ClientLogoBanner({ variant = 'light', heading }: ClientL
   // so render them as-is to preserve their detail.
   const naturalLogos = new Set([4, 12, 16, 20]);
 
-  const allLogos = Array.from({ length: 22 }, (_, i) => i + 1)
+  const allLogos = Array.from({ length: 23 }, (_, i) => i + 1)
     .filter((n) => !excludedLogos.has(n))
     .map((n) => ({
       name: `Client ${n}`,
