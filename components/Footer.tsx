@@ -215,6 +215,9 @@ export default function Footer() {
                 Terms
               </Link>
             </div>
+            <p className="font-body text-[0.75rem] text-gray-400 mt-2">
+              Drive Lead Media is a trading name of Established Shot LLC.
+            </p>
           </div>
         </motion.div>
 
@@ -349,6 +352,9 @@ export default function Footer() {
                 Terms
               </Link>
             </div>
+            <p className="font-body text-[0.85rem] text-[#85C7B3] mt-2">
+              Drive Lead Media is a trading name of Established Shot LLC.
+            </p>
           </div>
         </motion.div>
 

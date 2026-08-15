@@ -53,7 +53,7 @@ export default function TermsPage() {
           {/* Introduction */}
           <section>
             <p className="text-[1.05rem]">
-              Welcome to Drive Lead Media. By accessing or using our website{' '}
+              Welcome to Drive Lead Media, a trading name of Established Shot LLC. By accessing or using our website{' '}
               <a href="https://driveleadmedia.com" className="text-[#F2A922] hover:underline">
                 driveleadmedia.com
               </a>{' '}

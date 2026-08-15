@@ -53,7 +53,7 @@ export default function PrivacyPage() {
           {/* Introduction */}
           <section>
             <p className="text-[1.05rem]">
-              At Drive Lead Media ("we," "our," or "us"), we respect your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website{' '}
+              At Drive Lead Media, a trading name of Established Shot LLC ("we," "our," or "us"), we respect your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website{' '}
               <a href="https://driveleadmedia.com" className="text-[#F2A922] hover:underline">
                 driveleadmedia.com
               </a>{' '}
