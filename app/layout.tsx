@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Archivo, Inter } from "next/font/google";
+import { Fraunces, Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -8,19 +8,19 @@ import { MetaPixel } from "@/components/MetaPixel";
 import { Analytics } from "@vercel/analytics/next";
 
 
-// Archivo = headings, Inter = body/UI. The CSS variable names
-// (--font-exo2 / --font-arno) are intentionally kept so globals.css and the
-// Tailwind config keep resolving without a site-wide rename.
-const archivo = Archivo({
+// Fraunces (serif) = headings, Hanken Grotesk (sans) = body/UI — matching
+// antiquepartner.com. The CSS variable names (--font-exo2 / --font-arno) are
+// intentionally kept so globals.css and the Tailwind config keep resolving
+// without a site-wide rename.
+const fraunces = Fraunces({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  axes: ["opsz"],
   variable: "--font-exo2",
   display: "swap",
 });
 
-const inter = Inter({
+const hanken = Hanken_Grotesk({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
   variable: "--font-arno",
   display: "swap",
 });
@@ -348,7 +348,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.variable} ${archivo.variable} antialiased`}>
+      <body className={`${hanken.variable} ${fraunces.variable} antialiased`}>
         {/* Meta Pixel - Non-blocking */}
         <Script
           id="meta-pixel"

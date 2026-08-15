@@ -67,7 +67,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-exo2), sans-serif;
   font-weight: 600;
   line-height: 1.15;
-  letter-spacing: -0.02em; /* Archivo reads tighter/more premium at display sizes; utility tracking-* classes still override */
+  letter-spacing: -0.01em; /* gentle tracking for the Fraunces serif headings; utility tracking-* classes still override */
   text-wrap: balance;
   color: #FFFFFF;
 }
