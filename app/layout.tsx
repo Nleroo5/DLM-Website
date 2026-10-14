@@ -1,27 +1,21 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Fraunces, Hanken_Grotesk } from "next/font/google";
+import { Mona_Sans } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { MetaPixel } from "@/components/MetaPixel";
 import { Analytics } from "@vercel/analytics/next";
+import GrowthPlanProvider from "@/components/growth-plan/GrowthPlanProvider";
 
 
-// Fraunces (serif) = headings, Hanken Grotesk (sans) = body/UI — matching
-// antiquepartner.com. The CSS variable names (--font-exo2 / --font-arno) are
-// intentionally kept so globals.css and the Tailwind config keep resolving
-// without a site-wide rename.
-const fraunces = Fraunces({
+// Mona Sans for everything: one variable file covering headings and body.
+// The wdth axis lets globals.css set headings slightly wide (font-stretch).
+// globals.css maps --font-text to this same family.
+const monaSans = Mona_Sans({
   subsets: ["latin"],
-  axes: ["opsz"],
-  variable: "--font-exo2",
-  display: "swap",
-});
-
-const hanken = Hanken_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-arno",
+  axes: ["wdth"],
+  variable: "--font-display",
   display: "swap",
 });
 
@@ -82,7 +76,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    // Font variables must sit on <html> (:root) so globals.css can build
+    // --font-heading / --font-body from them there.
+    <html lang="en" className={monaSans.variable}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
         <meta name="google-site-verification" content="Aa_bZjosqPJtDpPU0ddFCLwmIT1PceViOlakLzBFqQE" />
@@ -348,7 +344,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${hanken.variable} ${fraunces.variable} antialiased`}>
+      <body className="antialiased">
         {/* Meta Pixel - Non-blocking */}
         <Script
           id="meta-pixel"
@@ -435,11 +431,13 @@ export default function RootLayout({
         <a href="#main-content" className="skip-to-content">
           Skip to main content
         </a>
-        <Navigation />
-        <main id="main-content">
-          {children}
-        </main>
-        <Footer />
+        <GrowthPlanProvider>
+          <Navigation />
+          <main id="main-content">
+            {children}
+          </main>
+          <Footer />
+        </GrowthPlanProvider>
       </body>
     </html>
   );

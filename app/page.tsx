@@ -29,7 +29,7 @@ export default function Home() {
       <OrganizationSchema />
 
       <Hero />
-      <ClientLogoBanner variant="dark" heading="You're in good company" />
+      <ClientLogoBanner variant="dark" heading="Trusted by local businesses" showRating />
       <AboutSection />
       <PortfolioShowcase />
       <ServicesSection />

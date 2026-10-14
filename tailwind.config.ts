@@ -21,13 +21,13 @@ const config: Config = {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        heading: ['var(--font-exo2)', 'sans-serif'],
-        body: ['var(--font-arno)', 'serif'],
-        ui: ['var(--font-arno)', 'serif'],
-        exo2: ['var(--font-exo2)', 'sans-serif'],
-        arno: ['var(--font-arno)', 'serif'],
-        serif: ['var(--font-arno)', 'serif'],
-        sans: ['var(--font-exo2)', 'sans-serif'],
+        heading: ['var(--font-display)', 'sans-serif'],
+        body: ['var(--font-text)', 'sans-serif'],
+        ui: ['var(--font-text)', 'sans-serif'],
+        exo2: ['var(--font-display)', 'sans-serif'],
+        arno: ['var(--font-text)', 'sans-serif'],
+        serif: ['var(--font-display)', 'sans-serif'], // used on headings (blog, legal pages)
+        sans: ['var(--font-display)', 'sans-serif'],
       },
       fontSize: {
         // Professional fluid typography system (2026 standards)

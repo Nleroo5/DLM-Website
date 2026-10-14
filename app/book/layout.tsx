@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Book a Free Strategy Session | Drive Lead Media',
+  title: 'Get Started Free | Drive Lead Media',
   description:
-    'Schedule a free 15-minute strategy call with Drive Lead Media. We\'ll review your marketing, identify what\'s costing you leads, and map out a growth plan.',
+    'Answer 4 quick questions about your business and Drive Lead Media will reach out the same business day with ideas to get you more leads from Meta ads and your website.',
   keywords: [
     'free strategy call',
-    'book a call',
+    'get started',
     'marketing consultation',
     'meta ads consultation',
     'facebook ads strategy',
@@ -16,9 +16,9 @@ export const metadata: Metadata = {
     canonical: 'https://driveleadmedia.com/book',
   },
   openGraph: {
-    title: 'Book a Free Strategy Session | Drive Lead Media',
+    title: 'Get Started Free | Drive Lead Media',
     description:
-      'Schedule a free 15-minute strategy call. We\'ll review your marketing and map out a plan to grow.',
+      'Answer 4 quick questions and we\'ll reach out the same business day with a plan to get you more leads.',
     url: 'https://driveleadmedia.com/book',
     siteName: 'Drive Lead Media',
     type: 'website',
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Book a Free Strategy Session | Drive Lead Media',
+    title: 'Get Started Free | Drive Lead Media',
     description:
-      'Schedule a free 15-minute strategy call. We\'ll review your marketing and map out a plan to grow.',
+      'Answer 4 quick questions and we\'ll reach out the same business day with a plan to get you more leads.',
     images: ["https://driveleadmedia.com/images/og-image.webp"],
   },
 };

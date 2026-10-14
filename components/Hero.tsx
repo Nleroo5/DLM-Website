@@ -2,7 +2,9 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import HeroDashboard from '@/components/HeroDashboard';
+import HeroVideo from '@/components/HeroVideo';
+import GrowthPlanButton from '@/components/growth-plan/GrowthPlanButton';
+import GoogleRating from '@/components/GoogleRating';
 
 export default function Hero() {
   return (
@@ -92,28 +94,42 @@ export default function Hero() {
             </span>
             {' '}advertising and conversion-focused web design that turns clicks into customers.
           </p>
-          <Link
-            href="/book"
-            className="inline-block font-ui text-[1rem] px-10 py-4 bg-transparent text-white font-semibold rounded-xl border-2 border-white shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] hover:border-white/80 transition-all duration-400 hover:transform hover:scale-105 backdrop-blur-sm"
-          >
-            Get Started
-          </Link>
+          <div className="flex flex-col xs:flex-row flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4">
+            <GrowthPlanButton
+              source="homepage_hero"
+              className="inline-block font-ui text-[1rem] px-8 sm:px-10 py-4 bg-[#5FA99F] text-[#061210] font-semibold rounded-xl shadow-[0_0_30px_rgba(95,169,159,0.4)] hover:bg-[#6fbbb0] hover:shadow-[0_0_40px_rgba(95,169,159,0.6)] hover:scale-[1.02] transition-all duration-300"
+            >
+              Get started: it&apos;s free →
+            </GrowthPlanButton>
+            <Link
+              href="#work"
+              className="inline-block font-ui text-[1rem] px-8 py-4 text-white font-semibold rounded-xl border border-white/25 hover:border-white/60 transition-colors duration-300"
+            >
+              See our work
+            </Link>
+          </div>
+          <div className="mt-5 flex flex-col items-center lg:items-start gap-1.5">
+            <GoogleRating />
+            <p className="font-ui text-[0.85rem] text-gray-500">
+              4 quick questions · About 60 seconds · Reviewed by a real person
+            </p>
+          </div>
         </motion.div>
 
-        {/* Right: Dashboard */}
+        {/* Right: "After the click" explainer video */}
         <motion.div
-          className="w-full lg:w-1/2 relative"
+          className="w-full lg:w-1/2 relative flex justify-center"
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.3, ease: 'easeOut' }}
         >
-          {/* Glow behind the dashboard */}
+          {/* Glow behind the video */}
           <div
             className="absolute -inset-4 rounded-3xl opacity-40 blur-[60px] pointer-events-none"
             style={{ background: 'radial-gradient(ellipse at center, rgba(95,169,159,0.3) 0%, transparent 70%)' }}
           />
           <div className="relative">
-            <HeroDashboard />
+            <HeroVideo />
           </div>
         </motion.div>
       </div>

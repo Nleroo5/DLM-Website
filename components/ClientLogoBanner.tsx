@@ -2,13 +2,15 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import GoogleRating from '@/components/GoogleRating';
 
 interface ClientLogoBannerProps {
   variant?: 'light' | 'dark';
   heading?: string;
+  showRating?: boolean;
 }
 
-export default function ClientLogoBanner({ variant = 'light', heading }: ClientLogoBannerProps) {
+export default function ClientLogoBanner({ variant = 'light', heading, showRating = false }: ClientLogoBannerProps) {
   const isDark = variant === 'dark';
 
   // Numbers refer to /images/client-logos/<n>.webp.
@@ -66,6 +68,11 @@ export default function ClientLogoBanner({ variant = 'light', heading }: ClientL
         >
           {displayHeading}
         </motion.h3>
+        {showRating && (
+          <div className="flex justify-center -mt-4 mb-8">
+            <GoogleRating />
+          </div>
+        )}
 
         {/* Row 1 — scrolls left */}
         <div className="relative w-full overflow-hidden mb-6">
