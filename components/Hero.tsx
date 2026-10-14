@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import HeroDashboard from '@/components/HeroDashboard';
 import GrowthPlanButton from '@/components/growth-plan/GrowthPlanButton';
+import GoogleRating from '@/components/GoogleRating';
 
 export default function Hero() {
   return (
@@ -98,7 +99,7 @@ export default function Hero() {
               source="homepage_hero"
               className="inline-block font-ui text-[1rem] px-8 sm:px-10 py-4 bg-[#5FA99F] text-[#061210] font-semibold rounded-xl shadow-[0_0_30px_rgba(95,169,159,0.4)] hover:bg-[#6fbbb0] hover:shadow-[0_0_40px_rgba(95,169,159,0.6)] hover:scale-[1.02] transition-all duration-300"
             >
-              Get my free growth plan →
+              Get my free lead plan →
             </GrowthPlanButton>
             <Link
               href="#work"
@@ -107,9 +108,12 @@ export default function Hero() {
               See our work
             </Link>
           </div>
-          <p className="font-ui text-[0.85rem] text-gray-500 mt-4">
-            4 quick questions · About 60 seconds · Reviewed by a real person
-          </p>
+          <div className="mt-5 flex flex-col items-center lg:items-start gap-1.5">
+            <GoogleRating />
+            <p className="font-ui text-[0.85rem] text-gray-500">
+              4 quick questions · About 60 seconds · Reviewed by a real person
+            </p>
+          </div>
         </motion.div>
 
         {/* Right: Dashboard */}

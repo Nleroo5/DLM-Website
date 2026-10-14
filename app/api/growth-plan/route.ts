@@ -107,10 +107,10 @@ export async function POST(request: Request) {
       from: process.env.GMAIL_USER,
       to: 'nicolas@driveleadmedia.com',
       replyTo: d.email,
-      subject: `[${route.toUpperCase()}] Growth plan request: ${d.businessName} (${goalTitle(d.goal)})`,
+      subject: `[${route.toUpperCase()}] Lead plan request: ${d.businessName} (${goalTitle(d.goal)})`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h2 style="color: #5FA99F; border-bottom: 2px solid #5FA99F; padding-bottom: 10px;">New Growth Plan Request</h2>
+          <h2 style="color: #5FA99F; border-bottom: 2px solid #5FA99F; padding-bottom: 10px;">New Lead Plan Request</h2>
           <p style="margin: 16px 0;">${badge}</p>
           <table style="border-collapse: collapse; width: 100%;">
             ${rows

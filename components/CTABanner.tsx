@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import GrowthPlanButton from '@/components/growth-plan/GrowthPlanButton';
+import GoogleRating from '@/components/GoogleRating';
 
 export default function CTABanner() {
   return (
@@ -27,9 +28,12 @@ export default function CTABanner() {
           source="homepage_cta_banner"
           className="inline-block font-ui text-[1rem] px-10 py-4 bg-[#5FA99F] text-[#061210] font-semibold rounded-xl shadow-[0_0_30px_rgba(95,169,159,0.4)] hover:bg-[#6fbbb0] hover:shadow-[0_0_40px_rgba(95,169,159,0.6)] hover:scale-[1.02] transition-all duration-300"
         >
-          Get my free growth plan →
+          Get my free lead plan →
         </GrowthPlanButton>
-        <p className="text-gray-500 font-body text-[0.95rem] mt-5">
+        <div className="mt-5">
+          <GoogleRating />
+        </div>
+        <p className="text-gray-500 font-body text-[0.95rem] mt-3">
           Prefer to pick a time?{' '}
           <a href="/book" className="text-[#5FA99F] underline hover:text-[#85C7B3]">
             Book a call directly

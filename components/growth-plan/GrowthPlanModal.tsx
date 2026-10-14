@@ -18,6 +18,7 @@ import {
 } from '@/components/growth-plan/questions';
 import { trackCustomEvent, trackFormAbandonment, trackLeadWithUserData } from '@/components/MetaPixel';
 import { trackEvent as trackGA4Event, trackFormSubmission } from '@/components/GoogleAnalytics';
+import GoogleRating from '@/components/GoogleRating';
 
 // Calendar only loads for hot leads on the success screen.
 const Cal = dynamic(() => import('@calcom/embed-react'), { ssr: false });
@@ -497,8 +498,11 @@ export default function GrowthPlanModal({
                     disabled={status === 'sending'}
                     className="font-body font-semibold text-[1rem] px-6 py-3 rounded-xl bg-[#5FA99F] text-[#061210] hover:bg-[#6fbbb0] disabled:opacity-60 transition-colors"
                   >
-                    {step < TOTAL_STEPS ? 'Continue' : status === 'sending' ? 'Sending…' : 'Send my growth plan'}
+                    {step < TOTAL_STEPS ? 'Continue' : status === 'sending' ? 'Sending…' : 'Send my lead plan'}
                   </button>
+                </div>
+                <div className="flex justify-center">
+                  <GoogleRating className="text-[0.82rem]" />
                 </div>
                 <p className="text-center text-gray-500 font-body text-[0.82rem]">
                   Already know you want to talk?{' '}
@@ -543,7 +547,7 @@ function SuccessScreen({ answers, route }: { answers: GrowthPlanAnswers; route: 
     },
     hot
       ? { title: 'Pick a time below', body: 'A strategy call with our team. Your name and email are already filled in.' }
-      : { title: 'Your growth plan, within 1 business day', body: 'A short, specific plan by email. Reply if you want to talk it through.' },
+      : { title: 'Your lead plan, within 1 business day', body: 'A short, specific plan by email. Reply if you want to talk it through.' },
   ].filter(Boolean) as { title: string; body: string }[];
 
   return (
