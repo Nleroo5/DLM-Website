@@ -1,7 +1,6 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
-import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { AnimatePresence, motion } from 'framer-motion';
 import {
@@ -19,9 +18,6 @@ import {
 import { trackCustomEvent, trackFormAbandonment, trackLeadWithUserData } from '@/components/MetaPixel';
 import { trackEvent as trackGA4Event, trackFormSubmission } from '@/components/GoogleAnalytics';
 import GoogleRating from '@/components/GoogleRating';
-
-// Calendar only loads for hot leads on the success screen.
-const Cal = dynamic(() => import('@calcom/embed-react'), { ssr: false });
 
 const TOTAL_STEPS = 4;
 const FORM_NAME = 'Growth Plan Intake';
@@ -104,7 +100,6 @@ export default function GrowthPlanModal({
   const [answers, setAnswers] = useState<GrowthPlanAnswers>(EMPTY_ANSWERS);
   const [error, setError] = useState('');
   const [status, setStatus] = useState<'idle' | 'sending' | 'done'>('idle');
-  const [route, setRoute] = useState<'hot' | 'warm'>('warm');
   const [honeypot, setHoneypot] = useState('');
   const dialogRef = useRef<HTMLDivElement>(null);
   const bodyRef = useRef<HTMLDivElement>(null);
@@ -189,7 +184,6 @@ export default function GrowthPlanModal({
       if (!res.ok) throw new Error(data.error || 'Something went wrong sending your request.');
 
       const leadRoute: 'hot' | 'warm' = data.route === 'hot' ? 'hot' : routeLead(answers);
-      setRoute(leadRoute);
       trackLeadWithUserData(FORM_NAME, 1.0, {
         email: answers.email,
         phone: answers.phone,
@@ -209,8 +203,8 @@ export default function GrowthPlanModal({
       setStatus('idle');
       setError(
         err instanceof Error
-          ? `${err.message} You can also book directly at driveleadmedia.com/book.`
-          : 'Something went wrong. You can also book directly at driveleadmedia.com/book.'
+          ? `${err.message} You can also email us at hello@driveleadmedia.com.`
+          : 'Something went wrong. You can also email us at hello@driveleadmedia.com.'
       );
     }
   };
@@ -251,7 +245,7 @@ export default function GrowthPlanModal({
             role="dialog"
             aria-modal="true"
             aria-labelledby="growth-plan-title"
-            className={`w-full ${done && route === 'hot' ? 'sm:max-w-[880px]' : 'sm:max-w-[560px]'} max-h-[92dvh] sm:max-h-[90vh] flex flex-col bg-[#141614] border border-[#5FA99F]/40 rounded-t-[20px] sm:rounded-[20px] shadow-[0_30px_80px_rgba(0,0,0,0.6)] overflow-hidden`}
+            className={`w-full sm:max-w-[560px] max-h-[92dvh] sm:max-h-[90vh] flex flex-col bg-[#141614] border border-[#5FA99F]/40 rounded-t-[20px] sm:rounded-[20px] shadow-[0_30px_80px_rgba(0,0,0,0.6)] overflow-hidden`}
             initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 40, opacity: 0 }}
@@ -294,7 +288,7 @@ export default function GrowthPlanModal({
                   className="flex flex-col gap-5"
                 >
                   {done ? (
-                    <SuccessScreen answers={answers} route={route} />
+                    <SuccessScreen answers={answers} />
                   ) : step === 1 ? (
                     <>
                       <StepHeading title="What can we help with?" hint="Pick the closest one. You can change it on the call." />
@@ -434,7 +428,7 @@ export default function GrowthPlanModal({
                         />
                       </div>
                       <div>
-                        <label htmlFor="gp-phone" className={labelClass}>Phone</label>
+                        <label htmlFor="gp-phone" className={labelClass}>Phone <span className="text-gray-500 font-normal">(so we can reach you quickly)</span></label>
                         <input
                           id="gp-phone"
                           type="tel"
@@ -498,25 +492,12 @@ export default function GrowthPlanModal({
                     disabled={status === 'sending'}
                     className="font-body font-semibold text-[1rem] px-6 py-3 rounded-xl bg-[#5FA99F] text-[#061210] hover:bg-[#6fbbb0] disabled:opacity-60 transition-colors"
                   >
-                    {step < TOTAL_STEPS ? 'Continue' : status === 'sending' ? 'Sending…' : 'Send my lead plan'}
+                    {step < TOTAL_STEPS ? 'Continue' : status === 'sending' ? 'Sending…' : 'Send my request'}
                   </button>
                 </div>
                 <div className="flex justify-center">
                   <GoogleRating className="text-[0.82rem]" />
                 </div>
-                <p className="text-center text-gray-500 font-body text-[0.82rem]">
-                  Already know you want to talk?{' '}
-                  <Link
-                    href="/book"
-                    onClick={() => {
-                      trackGA4Event('intake_skip_to_calendar', { form_name: FORM_NAME, step, source });
-                      onClose();
-                    }}
-                    className="text-[#5FA99F] underline hover:text-[#85C7B3]"
-                  >
-                    Skip to the calendar
-                  </Link>
-                </p>
               </div>
             )}
           </motion.div>
@@ -537,17 +518,17 @@ function StepHeading({ title, hint }: { title: string; hint: string }) {
   );
 }
 
-function SuccessScreen({ answers, route }: { answers: GrowthPlanAnswers; route: 'hot' | 'warm' }) {
-  const hot = route === 'hot';
+function SuccessScreen({ answers }: { answers: GrowthPlanAnswers }) {
   const hasSite = !answers.noWebsite && answers.website.trim();
   const steps = [
     hasSite && {
       title: `We review ${answers.website.trim()}`,
-      body: 'Before we talk, we check site speed, tracking, and how the ads land.',
+      body: 'Before we reach out, we check site speed, tracking, and how your ads land.',
     },
-    hot
-      ? { title: 'Pick a time below', body: 'A strategy call with our team. Your name and email are already filled in.' }
-      : { title: 'Your lead plan, within 1 business day', body: 'A short, specific plan by email. Reply if you want to talk it through.' },
+    {
+      title: 'We reach out the same business day',
+      body: `By phone at ${answers.phone} or by email. If you sent this after hours, expect us the next business day.`,
+    },
   ].filter(Boolean) as { title: string; body: string }[];
 
   return (
@@ -571,25 +552,6 @@ function SuccessScreen({ answers, route }: { answers: GrowthPlanAnswers; route: 
           </li>
         ))}
       </ol>
-      {hot && (
-        <div className="rounded-xl overflow-hidden min-h-[520px] bg-[#0e100f]">
-          <Cal
-            namespace="growth-plan"
-            calLink="drive-lead-media/strategy-session"
-            style={{ width: '100%', height: '100%', overflow: 'scroll' }}
-            config={{
-              layout: 'month_view',
-              useSlotsViewOnSmallScreen: 'true',
-              theme: 'dark',
-              name: `${answers.firstName} ${answers.lastName}`,
-              email: answers.email,
-              notes: `${goalTitle(answers.goal)} for ${answers.businessName} (${answers.industry}). ${
-                asksAdSpend(answers.goal) ? `Ad spend: ${answers.adSpend}.` : `Launch: ${answers.launch}.`
-              } Timeline: ${answers.timeline}.`,
-            }}
-          />
-        </div>
-      )}
     </>
   );
 }

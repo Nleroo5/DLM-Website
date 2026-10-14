@@ -100,8 +100,8 @@ export async function POST(request: Request) {
     ];
 
     const badge = route === 'hot'
-      ? '<span style="background:#e6f6ee;color:#1d7a4c;padding:4px 10px;border-radius:6px;font-weight:bold;">HOT: shown the calendar</span>'
-      : '<span style="background:#fdf3df;color:#9a6400;padding:4px 10px;border-radius:6px;font-weight:bold;">WARM: promised a plan by email within 1 business day</span>';
+      ? '<span style="background:#e6f6ee;color:#1d7a4c;padding:4px 10px;border-radius:6px;font-weight:bold;">HOT: call first</span>'
+      : '<span style="background:#fdf3df;color:#9a6400;padding:4px 10px;border-radius:6px;font-weight:bold;">WARM: follow up the same business day</span>';
 
     await transporter.sendMail({
       from: process.env.GMAIL_USER,

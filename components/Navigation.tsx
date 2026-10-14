@@ -170,7 +170,7 @@ export default function Navigation() {
               href="/book"
               className="font-ui text-[1rem] px-8 py-3 bg-transparent text-white font-semibold rounded-xl border-2 border-white shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] hover:border-white/80 transition-all duration-400 hover:transform hover:scale-105 backdrop-blur-sm"
             >
-              Book a Call
+              Get Started
             </Link>
           </div>
 
@@ -409,7 +409,7 @@ export default function Navigation() {
                   />
                 </div>
 
-                <span className="relative z-10">Book a Call</span>
+                <span className="relative z-10">Get Started</span>
               </Link>
             </div>
           </motion.div>

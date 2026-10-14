@@ -120,7 +120,7 @@ export default function Footer() {
                     textShadow: '0 0 5px rgba(95,169,159,0.2)'
                   }}
                 >
-                  Book a Call
+                  Get Started
                 </Link>
               </nav>
             </div>
@@ -281,7 +281,7 @@ export default function Footer() {
                 href="/book"
                 className="font-body text-[0.95rem] text-[#85C7B3] hover:text-[#5FA99F] transition-colors duration-300"
               >
-                Book a Call
+                Get Started
               </Link>
             </nav>
 

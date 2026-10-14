@@ -99,7 +99,7 @@ export default function Hero() {
               source="homepage_hero"
               className="inline-block font-ui text-[1rem] px-8 sm:px-10 py-4 bg-[#5FA99F] text-[#061210] font-semibold rounded-xl shadow-[0_0_30px_rgba(95,169,159,0.4)] hover:bg-[#6fbbb0] hover:shadow-[0_0_40px_rgba(95,169,159,0.6)] hover:scale-[1.02] transition-all duration-300"
             >
-              Get my free lead plan →
+              Get started: it&apos;s free →
             </GrowthPlanButton>
             <Link
               href="#work"

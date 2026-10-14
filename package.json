@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@calcom/embed-react": "^1.5.3",
     "@hookform/resolvers": "^3.9.1",
     "@swc/helpers": "^0.5.19",
     "@types/nodemailer": "^7.0.4",
