@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import HeroDashboard from '@/components/HeroDashboard';
+import GrowthPlanButton from '@/components/growth-plan/GrowthPlanButton';
 
 export default function Hero() {
   return (
@@ -92,12 +93,23 @@ export default function Hero() {
             </span>
             {' '}advertising and conversion-focused web design that turns clicks into customers.
           </p>
-          <Link
-            href="/book"
-            className="inline-block font-ui text-[1rem] px-10 py-4 bg-transparent text-white font-semibold rounded-xl border-2 border-white shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] hover:border-white/80 transition-all duration-400 hover:transform hover:scale-105 backdrop-blur-sm"
-          >
-            Get Started
-          </Link>
+          <div className="flex flex-col xs:flex-row flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4">
+            <GrowthPlanButton
+              source="homepage_hero"
+              className="inline-block font-ui text-[1rem] px-8 sm:px-10 py-4 bg-[#5FA99F] text-[#061210] font-semibold rounded-xl shadow-[0_0_30px_rgba(95,169,159,0.4)] hover:bg-[#6fbbb0] hover:shadow-[0_0_40px_rgba(95,169,159,0.6)] hover:scale-[1.02] transition-all duration-300"
+            >
+              Get my free growth plan →
+            </GrowthPlanButton>
+            <Link
+              href="#work"
+              className="inline-block font-ui text-[1rem] px-8 py-4 text-white font-semibold rounded-xl border border-white/25 hover:border-white/60 transition-colors duration-300"
+            >
+              See our work
+            </Link>
+          </div>
+          <p className="font-ui text-[0.85rem] text-gray-500 mt-4">
+            4 quick questions · About 60 seconds · Reviewed by a real person
+          </p>
         </motion.div>
 
         {/* Right: Dashboard */}

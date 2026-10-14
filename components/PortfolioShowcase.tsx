@@ -41,7 +41,7 @@ function PortfolioCard({ src }: { src: string }) {
 
 export default function PortfolioShowcase() {
   return (
-    <section className="relative bg-[#0a0a0a] py-20 lg:py-28 overflow-hidden">
+    <section id="work" className="relative bg-[#0a0a0a] py-20 lg:py-28 overflow-hidden scroll-mt-24">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 mb-12">
         <motion.div
           className="text-center"

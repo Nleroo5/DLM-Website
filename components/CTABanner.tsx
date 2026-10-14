@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import GrowthPlanButton from '@/components/growth-plan/GrowthPlanButton';
 
 export default function CTABanner() {
   return (
@@ -22,12 +23,18 @@ export default function CTABanner() {
         <p className="text-gray-400 font-body text-[1rem] sm:text-[1.125rem] lg:text-[1.25rem] mb-10 leading-relaxed">
           Stop guessing. Start growing. Let&apos;s build your next campaign together.
         </p>
-        <a
-          href="/book"
-          className="inline-block font-heading text-[1rem] px-10 py-4 bg-gradient-to-r from-[#5FA99F] to-[#85C7B3] text-white font-semibold rounded-xl shadow-[0_0_30px_rgba(95,169,159,0.4)] hover:shadow-[0_0_40px_rgba(95,169,159,0.6)] hover:scale-[1.02] transition-all duration-300"
+        <GrowthPlanButton
+          source="homepage_cta_banner"
+          className="inline-block font-ui text-[1rem] px-10 py-4 bg-[#5FA99F] text-[#061210] font-semibold rounded-xl shadow-[0_0_30px_rgba(95,169,159,0.4)] hover:bg-[#6fbbb0] hover:shadow-[0_0_40px_rgba(95,169,159,0.6)] hover:scale-[1.02] transition-all duration-300"
         >
-          Book a Free Strategy Call
-        </a>
+          Get my free growth plan →
+        </GrowthPlanButton>
+        <p className="text-gray-500 font-body text-[0.95rem] mt-5">
+          Prefer to pick a time?{' '}
+          <a href="/book" className="text-[#5FA99F] underline hover:text-[#85C7B3]">
+            Book a call directly
+          </a>
+        </p>
       </motion.div>
     </section>
   );

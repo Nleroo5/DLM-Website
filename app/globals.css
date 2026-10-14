@@ -24,10 +24,11 @@
   --color-gray-light: #E8E8E8;
   --color-gray-medium: #666666;
 
-  /* Typography */
-  --font-heading: var(--font-exo2);
-  --font-body: var(--font-arno);
-  --font-ui: var(--font-arno);
+  /* Typography: Mona Sans is the single family; --font-display comes from next/font */
+  --font-text: var(--font-display);
+  --font-heading: var(--font-display);
+  --font-body: var(--font-text);
+  --font-ui: var(--font-text);
 }
 
 * {
@@ -62,12 +63,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Typography - Archivo for headings, Inter for body */
+/* Typography - Mona Sans for headings and body */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-exo2), sans-serif;
+  font-family: var(--font-heading), sans-serif;
   font-weight: 600;
   line-height: 1.15;
-  letter-spacing: -0.01em; /* gentle tracking for the Fraunces serif headings; utility tracking-* classes still override */
+  letter-spacing: -0.025em; /* tight tracking for the heading look; utility tracking-* classes still override */
   text-wrap: balance;
   color: #FFFFFF;
 }
@@ -98,7 +99,7 @@ p, li, blockquote {
   line-height: 1.7;
 }
 
-/* UI Elements use the body font (Inter) */
+/* UI elements use the body font (Mona Sans) */
 button, a, input, textarea, label, nav {
   font-family: var(--font-ui), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
@@ -229,6 +230,11 @@ section {
   .scrollbar-hide {
     scrollbar-width: none;
   }
+}
+
+/* Big headings sit slightly wide on Mona Sans's width axis */
+h1, h2 {
+  font-stretch: 108%;
 }
 
 /* Utility Classes for Font Assignment */
