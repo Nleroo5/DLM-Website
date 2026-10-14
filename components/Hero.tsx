@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import HeroDashboard from '@/components/HeroDashboard';
+import HeroVideo from '@/components/HeroVideo';
 import GrowthPlanButton from '@/components/growth-plan/GrowthPlanButton';
 import GoogleRating from '@/components/GoogleRating';
 
@@ -116,20 +116,20 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* Right: Dashboard */}
+        {/* Right: "After the click" explainer video */}
         <motion.div
-          className="w-full lg:w-1/2 relative"
+          className="w-full lg:w-1/2 relative flex justify-center"
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.3, ease: 'easeOut' }}
         >
-          {/* Glow behind the dashboard */}
+          {/* Glow behind the video */}
           <div
             className="absolute -inset-4 rounded-3xl opacity-40 blur-[60px] pointer-events-none"
             style={{ background: 'radial-gradient(ellipse at center, rgba(95,169,159,0.3) 0%, transparent 70%)' }}
           />
           <div className="relative">
-            <HeroDashboard />
+            <HeroVideo />
           </div>
         </motion.div>
       </div>
