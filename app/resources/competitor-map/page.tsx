@@ -620,7 +620,7 @@ export default function CompetitorMap() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link href="/book" className="bg-[#5FA99F] hover:bg-[#4D9189] text-white font-heading font-semibold px-8 py-4 rounded-[12px] transition-colors no-underline">
-                    Get a Free Consultation
+                    Get started: it&apos;s free →
                   </Link>
                   <Link href="/case-studies" className="bg-transparent border border-[#5FA99F] text-[#5FA99F] hover:bg-[#5FA99F]/10 font-heading font-semibold px-8 py-4 rounded-[12px] transition-colors no-underline">
                     See Our Results

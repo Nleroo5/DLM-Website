@@ -550,7 +550,7 @@ export default function WebsiteStrategy() {
                     href="/book"
                     className="bg-[#5FA99F] hover:bg-[#4D9189] text-white font-heading font-semibold px-8 py-4 rounded-[12px] transition-colors no-underline"
                   >
-                    Get a Free Consultation
+                    Get started: it&apos;s free →
                   </Link>
                   <Link
                     href="/case-studies"

@@ -1674,13 +1674,13 @@ export default function FacebookAdsAtlantaGuide() {
                 <strong className="text-[#5FA99F]">Not sure which option is right for you?</strong>
               </p>
               <p className="text-[#F8F6F3]/60 text-[0.95rem]">
-                Schedule a free 15-minute call and we will help you decide. No sales pressure, just honest advice.
+                Answer 4 quick questions and we will reach out the same business day to help you decide. No sales pressure, just honest advice.
               </p>
               <Link
                 href="/book"
                 className="inline-block mt-4 text-[#5FA99F] hover:text-[#D4A574] font-bold underline"
               >
-                Schedule Free Strategy Call
+                Get started: it&apos;s free →
               </Link>
             </div>
           </div>

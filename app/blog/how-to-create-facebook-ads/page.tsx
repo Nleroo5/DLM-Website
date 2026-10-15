@@ -995,7 +995,7 @@ export default function HowToCreateFacebookAdsPage() {
                 <strong className="font-semibold">Ready to scale your Facebook advertising?</strong>
               </p>
               <p className="text-gray-300 font-body text-base leading-relaxed">
-                We manage Facebook and Instagram ad campaigns for Atlanta service businesses, e-commerce stores, and B2B companies. Get a free strategy call to discuss your goals and see if we're a fit.
+                We manage Facebook and Instagram ad campaigns for Atlanta service businesses, e-commerce stores, and B2B companies. Answer 4 quick questions and we'll reach out the same business day to talk through your goals and see if we're a fit.
               </p>
             </div>
 

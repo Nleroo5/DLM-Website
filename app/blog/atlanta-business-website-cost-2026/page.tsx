@@ -659,7 +659,7 @@ export default function AtlantaBusinessWebsiteCostPost() {
                 <p className="text-white text-body leading-body mb-4">
                   We are Drive Lead Media, an Atlanta-based agency that builds fast, custom websites on Next.js and runs Meta ad campaigns to drive traffic to them.
                 </p>
-                <Link href="/book" className="text-[#5FA99F] underline">Book a free strategy call</Link>
+                <Link href="/book" className="text-[#5FA99F] underline">Get started: it&apos;s free →</Link>
               </div>
             </div>
 

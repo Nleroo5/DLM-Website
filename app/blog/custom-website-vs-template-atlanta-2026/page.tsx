@@ -726,7 +726,7 @@ export default function CustomWebsiteVsTemplatePost() {
                   <p className="text-white text-body leading-body mb-4">
                     We are Drive Lead Media, an Atlanta agency that builds fast, custom websites on Next.js and runs Meta ad campaigns to drive traffic to them. If your current site is not converting, we can show you what is possible.
                   </p>
-                  <Link href="/book" className="text-[#5FA99F] underline">Book a free strategy call</Link>
+                  <Link href="/book" className="text-[#5FA99F] underline">Get started: it&apos;s free →</Link>
                 </div>
               </div>
             </ScrollFadeIn>

@@ -7,13 +7,13 @@ export default function MeetTheTeam() {
   const teamMembers = [
     {
       name: "Nicolas Leroo",
-      role: "Co-Founder & COO",
+      role: "Co-Founder & Meta Advertising Strategist",
       bio: "Nicolas brings Meta Certification in Digital Marketing with expertise in Facebook, Instagram advertising, and web design. He builds campaigns that reach the right audience and deliver measurable ROI.",
       image: "/images/nicolas-leroo-atlanta-digital-marketing-agency-founder.webp"
     },
     {
       name: "Tommy Duda",
-      role: "Co-Founder & Chief Creative Officer",
+      role: "Co-Founder & Creative Director",
       bio: "Tommy is a specialist in video production and ad creative, leading the direction of every project. He ensures ads look professional, capture attention, and convert viewers into customers.",
       image: "/images/tommy-atlanta-marketing-strategist-team-member.webp"
     }

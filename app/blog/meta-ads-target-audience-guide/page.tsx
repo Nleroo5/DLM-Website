@@ -619,7 +619,7 @@ export default function MetaAdsTargetAudienceGuide() {
               href="/book"
               className="inline-block bg-[#5FA99F] hover:bg-[#4A8A82] text-[#000000] px-10 py-5 rounded-xl font-bold text-body transition-all duration-300 transform hover:scale-105 shadow-xl"
             >
-              Get a Free Strategy Call
+              Get started: it&apos;s free →
             </Link>
           </div>
         </ScrollFadeIn>
