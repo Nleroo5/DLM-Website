@@ -1,6 +1,7 @@
 'use client';
 
 import { createContext, useCallback, useContext, useState } from 'react';
+import { MotionConfig } from 'framer-motion';
 import GrowthPlanModal from '@/components/growth-plan/GrowthPlanModal';
 import type { GrowthPlanAnswers } from '@/components/growth-plan/questions';
 import { trackCustomEvent } from '@/components/MetaPixel';
@@ -35,7 +36,8 @@ export default function GrowthPlanProvider({ children }: { children: React.React
 
   return (
     <GrowthPlanContext.Provider value={{ open }}>
-      {children}
+      {/* Every framer-motion animation on the site honors the OS "reduce motion" setting. */}
+      <MotionConfig reducedMotion="user">{children}</MotionConfig>
       <GrowthPlanModal isOpen={isOpen} source={source} prefill={prefill} onClose={() => setIsOpen(false)} />
     </GrowthPlanContext.Provider>
   );

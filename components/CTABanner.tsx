@@ -26,12 +26,12 @@ export default function CTABanner() {
         </p>
         <GrowthPlanButton
           source="homepage_cta_banner"
-          className="inline-block font-ui text-[1rem] px-10 py-4 bg-[#5FA99F] text-[#061210] font-semibold rounded-xl shadow-[0_0_30px_rgba(95,169,159,0.4)] hover:bg-[#6fbbb0] hover:shadow-[0_0_40px_rgba(95,169,159,0.6)] hover:scale-[1.02] transition-all duration-300"
+          className="group inline-block font-ui text-[1rem] px-10 py-4 bg-[#5FA99F] text-[#061210] font-semibold rounded-xl shadow-[0_0_30px_rgba(95,169,159,0.4)] hover:bg-[#6fbbb0] hover:shadow-[0_0_40px_rgba(95,169,159,0.6)] hover:scale-[1.02] active:scale-[0.97] active:duration-100 transition-all duration-300"
         >
-          Get started: it&apos;s free →
+          Get started: it&apos;s free <span className="inline-block transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">→</span>
         </GrowthPlanButton>
         <div className="mt-5">
-          <GoogleRating />
+          <GoogleRating animate="view" />
         </div>
       </motion.div>
     </section>

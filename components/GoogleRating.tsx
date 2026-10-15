@@ -1,3 +1,7 @@
+'use client';
+
+import { useEffect, useRef, useState } from 'react';
+
 // "5.0 ★★★★★ on Google" badge, shown wherever people decide whether to act.
 // Update GOOGLE_RATING when reviews change (or replace with a daily Places API pull).
 
@@ -22,8 +26,38 @@ function GoogleWordmark() {
   );
 }
 
-export default function GoogleRating({ className = '' }: { className?: string }) {
+// animate: 'load' pops the stars in shortly after page load (use above the fold);
+// 'view' waits until the badge scrolls into view. Omit for no animation.
+function useStarAnimation(animate?: 'load' | 'view') {
+  const ref = useRef<HTMLSpanElement>(null);
+  const [state, setState] = useState<'' | 'stars-pending' | 'stars-run'>('');
+
+  useEffect(() => {
+    if (animate !== 'view' || !ref.current || typeof IntersectionObserver === 'undefined') return;
+    const el = ref.current;
+    // Only hide the stars if they start off-screen, so nobody sees them blink out.
+    const r = el.getBoundingClientRect();
+    if (r.top < window.innerHeight && r.bottom > 0) return;
+    setState('stars-pending');
+    const io = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) {
+          setState('stars-run');
+          io.disconnect();
+        }
+      },
+      { threshold: 0.6 }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [animate]);
+
+  return { ref, starClass: animate === 'load' ? 'stars-load' : state };
+}
+
+export default function GoogleRating({ className = '', animate }: { className?: string; animate?: 'load' | 'view' }) {
   const { rating, reviewCount, profileUrl } = GOOGLE_RATING;
+  const { ref, starClass } = useStarAnimation(animate);
   const score = rating.toFixed(1);
   const countText = reviewCount
     ? `from ${reviewCount} Google review${reviewCount === 1 ? '' : 's'}`
@@ -34,7 +68,11 @@ export default function GoogleRating({ className = '' }: { className?: string })
     <>
       <GoogleWordmark />
       <span className="text-white font-semibold">{score}</span>
-      <span className="text-[#FBBC04] tracking-[1px]" aria-hidden="true">★★★★★</span>
+      <span ref={ref} className={`text-[#FBBC04] tracking-[1px] ${starClass}`} aria-hidden="true">
+        {[0, 1, 2, 3, 4].map((i) => (
+          <span key={i} className="rating-star">★</span>
+        ))}
+      </span>
       <span>{reviewCount ? countText : 'rating'}</span>
     </>
   );

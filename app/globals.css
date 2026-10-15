@@ -250,6 +250,53 @@ h1, h2 {
   font-family: var(--font-ui), sans-serif;
 }
 
+/* Homepage motion (100–400ms UI timing, ease-out, transform/opacity only) */
+
+/* One light sheen across the main hero button, once, a moment after load. */
+.cta-sheen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(100deg, transparent 30%, rgba(255, 255, 255, 0.45) 50%, transparent 70%);
+  transform: translateX(-120%);
+  animation: cta-sheen 900ms ease-out 2.5s 1 both;
+}
+@keyframes cta-sheen {
+  to { transform: translateX(120%); }
+}
+
+/* Google rating stars pop in left to right. */
+.rating-star { display: inline-block; }
+.stars-pending .rating-star { transform: scale(0); }
+.stars-run .rating-star { animation: star-pop 260ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+.stars-run .rating-star:nth-child(2) { animation-delay: 90ms; }
+.stars-run .rating-star:nth-child(3) { animation-delay: 180ms; }
+.stars-run .rating-star:nth-child(4) { animation-delay: 270ms; }
+.stars-run .rating-star:nth-child(5) { animation-delay: 360ms; }
+.stars-load .rating-star { animation: star-pop 260ms cubic-bezier(0.22, 1, 0.36, 1) 700ms both; }
+.stars-load .rating-star:nth-child(2) { animation-delay: 790ms; }
+.stars-load .rating-star:nth-child(3) { animation-delay: 880ms; }
+.stars-load .rating-star:nth-child(4) { animation-delay: 970ms; }
+.stars-load .rating-star:nth-child(5) { animation-delay: 1060ms; }
+@keyframes star-pop {
+  0% { transform: scale(0); }
+  70% { transform: scale(1.25); }
+  100% { transform: scale(1); }
+}
+
+/* The teal glow behind the hero video breathes very slowly. */
+.hero-glow-breathe { animation: hero-glow-breathe 7s ease-in-out infinite; }
+@keyframes hero-glow-breathe {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.06); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-sheen::after, .hero-glow-breathe, .stars-run .rating-star, .stars-load .rating-star { animation: none; }
+  .stars-pending .rating-star { transform: none; }
+}
+
 /* Marquee Animations */
 @keyframes marquee-left {
   0% { transform: translate3d(0, 0, 0); }

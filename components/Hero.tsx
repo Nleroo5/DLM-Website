@@ -97,19 +97,19 @@ export default function Hero() {
           <div className="flex flex-col xs:flex-row flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4">
             <GrowthPlanButton
               source="homepage_hero"
-              className="inline-block font-ui text-[1rem] px-8 sm:px-10 py-4 bg-[#5FA99F] text-[#061210] font-semibold rounded-xl shadow-[0_0_30px_rgba(95,169,159,0.4)] hover:bg-[#6fbbb0] hover:shadow-[0_0_40px_rgba(95,169,159,0.6)] hover:scale-[1.02] transition-all duration-300"
+              className="group cta-sheen relative overflow-hidden inline-block font-ui text-[1rem] px-8 sm:px-10 py-4 bg-[#5FA99F] text-[#061210] font-semibold rounded-xl shadow-[0_0_30px_rgba(95,169,159,0.4)] hover:bg-[#6fbbb0] hover:shadow-[0_0_40px_rgba(95,169,159,0.6)] hover:scale-[1.02] active:scale-[0.97] active:duration-100 transition-all duration-300"
             >
-              Get started: it&apos;s free →
+              Get started: it&apos;s free <span className="inline-block transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">→</span>
             </GrowthPlanButton>
             <Link
               href="#work"
-              className="inline-block font-ui text-[1rem] px-8 py-4 text-white font-semibold rounded-xl border border-white/25 hover:border-white/60 transition-colors duration-300"
+              className="inline-block font-ui text-[1rem] px-8 py-4 text-white font-semibold rounded-xl border border-white/25 hover:border-white/60 transition-[border-color,transform] duration-200 active:scale-[0.97] active:duration-100"
             >
               See our work
             </Link>
           </div>
           <div className="mt-5 flex flex-col items-center lg:items-start gap-1.5">
-            <GoogleRating />
+            <GoogleRating animate="load" />
             <p className="font-ui text-[0.85rem] text-gray-500">
               4 quick questions · About 60 seconds · Reviewed by a real person
             </p>
@@ -127,7 +127,7 @@ export default function Hero() {
             {/* Glow in the video's own background colors (#002E3F top, #002A38 middle,
                 #001C28 bottom) so the faded video edges melt into the hero. */}
             <div
-              className="absolute -inset-x-[90%] -inset-y-[6%] lg:-inset-x-[45%] lg:-inset-y-[14%] rounded-[50%] blur-[60px] lg:blur-[70px] pointer-events-none"
+              className="hero-glow-breathe absolute -inset-x-[90%] -inset-y-[6%] lg:-inset-x-[45%] lg:-inset-y-[14%] rounded-[50%] blur-[60px] lg:blur-[70px] pointer-events-none"
               style={{ background: 'linear-gradient(to bottom, #002e3f, #002a38 50%, #001c28)' }}
               aria-hidden="true"
             />
