@@ -4,5 +4,9 @@ wildguard-pro/
 *.MOV
 *.mp4
 *.MP4
+# Exception: web-optimized MP4s the site plays (iPhones need MP4, not WebM).
+# Raw footage stays excluded by the rules above.
+!public/Videos/dlm-after-the-click.mp4
+!public/Videos/work/*.mp4
 *.jpeg
 CONTACT_FORM_SETUP.md
