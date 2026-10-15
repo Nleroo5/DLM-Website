@@ -9,7 +9,6 @@ import { LocalBusinessSchema, OrganizationSchema } from '@/components/Structured
 
 // Dynamic imports for below-fold components
 const WorkShowcase = dynamic(() => import('@/components/WorkShowcase'), { ssr: true });
-const ServicesSection = dynamic(() => import('@/components/ServicesSection'), { ssr: true });
 const TeamSection = dynamic(() => import('@/components/TeamSection'), { ssr: true });
 const HomeHowItWorks = dynamic(() => import('@/components/HomeHowItWorks'), { ssr: true });
 const CTABanner = dynamic(() => import('@/components/CTABanner'), { ssr: true });
@@ -32,7 +31,6 @@ export default function Home() {
       <Hero />
       <ClientLogoBanner variant="dark" heading="Trusted by local businesses" showRating />
       <WorkShowcase />
-      <ServicesSection />
       <TeamSection />
       <HomeHowItWorks />
       <CTABanner />
