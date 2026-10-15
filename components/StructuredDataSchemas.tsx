@@ -16,8 +16,8 @@ export function LocalBusinessSchema({ url = 'https://driveleadmedia.com' }: Loca
     "alternateName": "DLM Digital Marketing",
     "description": "Atlanta digital marketing agency specializing in Meta (Facebook & Instagram) advertising, custom website design, video production, and conversion-optimized landing pages for local businesses.",
     "url": url,
-    "telephone": "+1-404-862-1975",
-    "email": "brenna@driveleadmedia.com",
+    "telephone": "+1-678-650-6411",
+    "email": "hello@driveleadmedia.com",
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
@@ -137,8 +137,8 @@ export function ServiceSchema({ serviceName, description, url }: ServiceSchemaPr
     "provider": {
       "@type": "LocalBusiness",
       "name": "Drive Lead Media",
-      "telephone": "+1-404-862-1975",
-      "email": "brenna@driveleadmedia.com"
+      "telephone": "+1-678-650-6411",
+      "email": "hello@driveleadmedia.com"
     },
     "areaServed": {
       "@type": "City",
@@ -437,9 +437,9 @@ export function OrganizationSchema({ url = 'https://driveleadmedia.com' }: Organ
     "contactPoint": [
       {
         "@type": "ContactPoint",
-        "telephone": "+1-404-862-1975",
+        "telephone": "+1-678-650-6411",
         "contactType": "Customer Service",
-        "email": "brenna@driveleadmedia.com",
+        "email": "hello@driveleadmedia.com",
         "availableLanguage": "English",
         "areaServed": "US",
         "contactOption": "TollFree"
