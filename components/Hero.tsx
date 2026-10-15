@@ -36,17 +36,28 @@ export default function Hero() {
       />
 
       {/* Split screen layout: stacked on mobile, side-by-side on lg+ */}
-      <div className="relative z-10 max-w-[1400px] mx-auto w-full flex flex-col lg:flex-row items-center gap-10 sm:gap-12 lg:gap-16">
-        {/* Left: Text */}
+      {/* Phones: headline, then video, then the rest. Desktop: text left (headline over
+          the rest), video right spanning both rows. */}
+      <div className="relative z-10 max-w-[1400px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 items-center gap-y-8 sm:gap-y-10 lg:gap-y-0 lg:gap-x-16">
+        {/* Left: Headline */}
         <motion.div
-          className="relative z-10 text-center lg:text-left lg:w-1/2 lg:flex-shrink-0"
+          className="relative z-10 text-center lg:text-left lg:col-start-1 lg:row-start-1 lg:self-end"
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          <h1 className="font-heading text-[1.75rem] xs:text-[2rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[2.75rem] xl:text-[3.25rem] 2xl:text-[3.75rem] font-bold text-white leading-[1.1] mb-5 sm:mb-7">
+          <h1 className="font-heading text-[1.75rem] xs:text-[2rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[2.75rem] xl:text-[3.25rem] 2xl:text-[3.75rem] font-bold text-white leading-[1.1] lg:mb-7">
             We Find Your Customers Before They Find Your Competitors
           </h1>
+        </motion.div>
+
+        {/* Left: Description, buttons, rating */}
+        <motion.div
+          className="relative z-10 order-3 lg:order-none text-center lg:text-left lg:col-start-1 lg:row-start-2 lg:self-start"
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+        >
           <p className="font-ui text-[1.125rem] sm:text-[1.25rem] md:text-[1.375rem] lg:text-[1.25rem] xl:text-[1.5rem] 2xl:text-[1.625rem] text-gray-400 leading-relaxed mb-8 sm:mb-10 max-w-[650px] mx-auto lg:mx-0">
             Data-driven{' '}
             <span className="inline-flex items-center align-middle mx-1">
@@ -118,7 +129,7 @@ export default function Hero() {
 
         {/* Right: "After the click" explainer video */}
         <motion.div
-          className="w-full lg:w-1/2 relative flex justify-center"
+          className="w-full relative order-2 lg:order-none flex justify-center lg:col-start-2 lg:row-start-1 lg:row-span-2"
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.3, ease: 'easeOut' }}
