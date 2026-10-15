@@ -23,7 +23,7 @@ const TOTAL_STEPS = 4;
 const FORM_NAME = 'Growth Plan Intake';
 
 const inputClass =
-  'w-full bg-[#0e100f] border border-white/15 rounded-[10px] px-3 py-3 text-white font-body text-[0.95rem] placeholder:text-white/35 focus:border-[#5FA99F] focus:outline-none transition-colors';
+  'w-full bg-[#0e100f] border border-white/15 rounded-[10px] px-3 py-3 text-white font-body text-[1rem] placeholder:text-white/35 focus:border-[#5FA99F] focus:outline-none transition-colors';
 const labelClass = 'block text-white font-body text-[0.875rem] font-semibold mb-1.5';
 
 function formatPhone(value: string): string {
@@ -404,7 +404,7 @@ export default function GrowthPlanModal({
                     </>
                   ) : (
                     <>
-                      <StepHeading title="Where should we send your plan?" hint="A real person reads every request. No spam." />
+                      <StepHeading title="How should we reach you?" hint="A real person reads every request. No spam." />
                       <div className="grid grid-cols-1 xs:grid-cols-2 gap-3">
                         <div>
                           <label htmlFor="gp-first" className={labelClass}>First name</label>

@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import Link from 'next/link';
 import HeroVideo from '@/components/HeroVideo';
 import GrowthPlanButton from '@/components/growth-plan/GrowthPlanButton';
@@ -38,12 +37,7 @@ export default function Hero() {
       {/* Split screen layout: stacked on mobile, side-by-side on lg+ */}
       <div className="relative z-10 max-w-[1400px] mx-auto w-full flex flex-col lg:flex-row items-center gap-10 sm:gap-12 lg:gap-16">
         {/* Left: Text */}
-        <motion.div
-          className="text-center lg:text-left lg:w-1/2 lg:flex-shrink-0"
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-        >
+        <div className="hero-in-left text-center lg:text-left lg:w-1/2 lg:flex-shrink-0">
           <h1 className="font-heading text-[1.75rem] xs:text-[2rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[2.75rem] xl:text-[3.25rem] 2xl:text-[3.75rem] font-bold text-white leading-[1.1] mb-5 sm:mb-7">
             We Find Your Customers Before They Find Your Competitors
           </h1>
@@ -114,15 +108,10 @@ export default function Hero() {
               4 quick questions · About 60 seconds · Reviewed by a real person
             </p>
           </div>
-        </motion.div>
+        </div>
 
         {/* Right: "After the click" explainer video */}
-        <motion.div
-          className="w-full lg:w-1/2 relative flex justify-center"
-          initial={{ opacity: 0, x: 30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, delay: 0.3, ease: 'easeOut' }}
-        >
+        <div className="hero-in-right w-full lg:w-1/2 relative flex justify-center">
           {/* Glow behind the video */}
           <div
             className="absolute -inset-4 rounded-3xl opacity-40 blur-[60px] pointer-events-none"
@@ -131,7 +120,7 @@ export default function Hero() {
           <div className="relative">
             <HeroVideo />
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

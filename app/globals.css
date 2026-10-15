@@ -250,6 +250,22 @@ h1, h2 {
   font-family: var(--font-ui), sans-serif;
 }
 
+/* Hero entrance: slide only, never hidden. Starting at opacity 0 would delay
+   Largest Contentful Paint until JavaScript runs, so these stay fully visible. */
+@keyframes hero-in-left {
+  from { transform: translateX(-24px); }
+  to { transform: translateX(0); }
+}
+@keyframes hero-in-right {
+  from { transform: translateX(24px); }
+  to { transform: translateX(0); }
+}
+.hero-in-left { animation: hero-in-left 0.7s ease-out both; }
+.hero-in-right { animation: hero-in-right 0.9s ease-out 0.15s both; }
+@media (prefers-reduced-motion: reduce) {
+  .hero-in-left, .hero-in-right { animation: none; }
+}
+
 /* Marquee Animations */
 @keyframes marquee-left {
   0% { transform: translate3d(0, 0, 0); }

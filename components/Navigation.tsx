@@ -216,7 +216,7 @@ export default function Navigation() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.4 }}
-            className="md:hidden bg-black/95 backdrop-blur-xl border-t border-[#5FA99F]/50 relative overflow-hidden"
+            className="md:hidden mt-[26px] bg-black/95 backdrop-blur-xl border-t border-[#5FA99F]/50 relative overflow-hidden"
             style={{
               boxShadow: '0 8px 32px rgba(0,0,0,0.8), inset 0 1px 0 rgba(95,169,159,0.2)'
             }}
@@ -234,11 +234,11 @@ export default function Navigation() {
             {/* Animated glow effect */}
             <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#5FA99F] to-transparent opacity-80" />
             <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#5FA99F]/50 to-transparent" />
-            <div className="px-6 py-8 space-y-5 relative z-10">
+            <div className="px-6 py-8 space-y-5 relative z-10 min-h-[calc(100dvh-108px)]">
               <Link
                 href="/"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block font-ui text-[1.125rem] text-white hover:text-[#5FA99F] transition-all duration-400 py-3 font-medium relative group"
+                className="flex items-center justify-start min-h-[48px] font-ui text-[1.125rem] text-white hover:text-[#5FA99F] transition-all duration-400 py-3 font-medium relative group"
                 style={{
                   textShadow: '0 0 10px rgba(95,169,159,0.3)'
                 }}
@@ -250,7 +250,7 @@ export default function Navigation() {
               <Link
                 href="/case-studies"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block font-ui text-[1.125rem] text-white hover:text-[#5FA99F] transition-all duration-400 py-3 font-medium relative group"
+                className="flex items-center justify-start min-h-[48px] font-ui text-[1.125rem] text-white hover:text-[#5FA99F] transition-all duration-400 py-3 font-medium relative group"
                 style={{
                   textShadow: '0 0 10px rgba(95,169,159,0.3)'
                 }}
@@ -262,7 +262,7 @@ export default function Navigation() {
               <Link
                 href="/blog"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block font-ui text-[1.125rem] text-white hover:text-[#5FA99F] transition-all duration-400 py-3 font-medium relative group"
+                className="flex items-center justify-start min-h-[48px] font-ui text-[1.125rem] text-white hover:text-[#5FA99F] transition-all duration-400 py-3 font-medium relative group"
                 style={{
                   textShadow: '0 0 10px rgba(95,169,159,0.3)'
                 }}
@@ -379,7 +379,7 @@ export default function Navigation() {
               <Link
                 href="/faq"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block font-ui text-[1.125rem] text-white hover:text-[#5FA99F] transition-all duration-400 py-3 font-medium relative group"
+                className="flex items-center justify-start min-h-[48px] font-ui text-[1.125rem] text-white hover:text-[#5FA99F] transition-all duration-400 py-3 font-medium relative group"
                 style={{
                   textShadow: '0 0 10px rgba(95,169,159,0.3)'
                 }}
