@@ -38,18 +38,6 @@ export default function FacebookAdsCostAtlantaPost() {
   ];
 
   // FAQ Schema for AEO (Answer Engine Optimization)
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqItems.map(item => ({
-      "@type": "Question",
-      "name": item.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": item.answer
-      }
-    }))
-  };
 
   return (
     <main className="blog-page min-h-screen bg-[#000000] relative">
@@ -63,11 +51,6 @@ export default function FacebookAdsCostAtlantaPost() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
 
-      {/* FAQ Schema for AEO */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
 
       {/* Image Schemas for SEO */}
       <ImageObjectSchema
@@ -114,7 +97,7 @@ export default function FacebookAdsCostAtlantaPost() {
               <span className="text-[#5FA99F] font-heading font-semibold text-body-sm tracking-[0.15em] uppercase">Meta Ads Pricing</span>
             </div>
             <h1 className="text-white font-heading text-h1 font-bold leading-[1.1] mb-4">
-              How Much Do Facebook Ads Cost in Atlanta? (2025 Complete Guide)
+              How Much Do Facebook Ads Cost in Atlanta? Complete Pricing Guide
             </h1>
             <p className="text-gray-300 font-body text-body-lg leading-relaxed">
               Real pricing data, budget recommendations, and what Atlanta businesses actually pay for Facebook & Instagram ads.

@@ -40,18 +40,6 @@ export default function SeoVsMetaAdsPost() {
     },
   ];
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqItems.map(item => ({
-      "@type": "Question",
-      "name": item.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": item.answer
-      }
-    }))
-  };
 
   return (
     <main className="blog-page min-h-screen bg-[#000000] relative">
@@ -65,11 +53,6 @@ export default function SeoVsMetaAdsPost() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
 
-      {/* FAQ Schema for AEO */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
 
       {/* Hero Section */}
       <ScrollFadeIn className="relative w-full pt-20 sm:pt-24 lg:pt-28 pb-16 sm:pb-20 lg:pb-24">
@@ -589,7 +572,7 @@ export default function SeoVsMetaAdsPost() {
                 </Link>
                 <Link href="/blog/how-much-do-facebook-ads-cost-atlanta" className="block bg-gradient-to-br from-[#1A1A1A] to-[#111111] border border-[rgba(95,169,159,0.2)] rounded-[16px] p-6 hover:border-[#5FA99F]/50 transition-colors no-underline">
                   <span className="text-[#5FA99F] font-heading text-body-sm uppercase tracking-wider">Meta Ads Pricing</span>
-                  <span className="block text-white font-heading text-[1.1rem] mt-2">How Much Do Facebook Ads Cost in Atlanta? (2025 Complete Guide)</span>
+                  <span className="block text-white font-heading text-[1.1rem] mt-2">How Much Do Facebook Ads Cost in Atlanta? Complete Pricing Guide</span>
                 </Link>
                 <Link href="/blog/signs-atlanta-business-needs-new-website-2026" className="block bg-gradient-to-br from-[#1A1A1A] to-[#111111] border border-[rgba(95,169,159,0.2)] rounded-[16px] p-6 hover:border-[#5FA99F]/50 transition-colors no-underline">
                   <span className="text-[#5FA99F] font-heading text-body-sm uppercase tracking-wider">Web Design</span>

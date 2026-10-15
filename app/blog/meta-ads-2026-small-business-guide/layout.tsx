@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "How to Run Meta Ads in 2026: Small Business Guide | Drive Lead Media",
+  title: 'How to Run Meta Ads in 2026: Small Business Guide | DLM',
   description: "Master Meta ads in 2026. Advantage+ campaigns, creative strategies, and targeting methods that deliver 6:1 ROAS for small businesses spending $500-5,000/month.",
   keywords: "meta ads 2026, facebook ads ROAS, instagram advertising small business, advantage plus campaigns, meta pixel setup, facebook ads targeting 2026, meta ads creative strategy, small business facebook ads",
   authors: [{ name: "Nicolas Leroo" }],

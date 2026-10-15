@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Facebook Ads Atlanta: Local Business Guide (2025) | DLM',
+  title: 'Facebook Ads in Atlanta: Local Business Guide | DLM',
   description: 'Complete guide to Facebook advertising for Atlanta businesses. Costs, targeting strategies, ROI benchmarks, and proven tactics from local campaigns.',
   keywords: 'facebook ads atlanta, atlanta facebook ads, facebook advertising atlanta, meta ads atlanta, instagram ads atlanta, social media advertising atlanta, atlanta facebook ads agency',
   authors: [{ name: 'Nicolas Leroo' }],
   openGraph: {
-    title: 'Facebook Ads Atlanta: Complete Guide for Local Businesses (2025)',
+    title: 'Facebook Ads Atlanta: Complete Guide for Local Businesses',
     description: 'Complete guide to Facebook advertising for Atlanta businesses. Learn costs, targeting strategies, and proven tactics from 200+ local campaigns.',
     type: 'article',
     publishedTime: '2025-12-11T09:00:00-05:00',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Facebook Ads Atlanta: Complete Guide for Local Businesses (2025)',
+    title: 'Facebook Ads Atlanta: Complete Guide for Local Businesses',
     description: 'Learn costs, targeting, and ROI benchmarks for Facebook ads in Atlanta. Complete guide for local businesses.',
     images: ['https://driveleadmedia.com/images/atlanta-facebook-ads-cost-meta-advertising-pricing.webp'],
   },

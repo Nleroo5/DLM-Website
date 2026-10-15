@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { useParams } from 'next/navigation';
-import { getPostsByCategory, getAllCategories } from '@/lib/blog-posts';
+import { getPostsByCategory, getAllCategories, CATEGORY_INTROS } from '@/lib/blog-posts';
 
 export default function CategoryPage() {
   const params = useParams();
@@ -49,7 +49,12 @@ export default function CategoryPage() {
             <h1 className="text-white font-heading text-[2rem] sm:text-[2.5rem] lg:text-[3.5rem] font-bold leading-tight mb-4 sm:mb-6">
               {currentCategory.name}
             </h1>
-            <p className="text-gray-300 font-body text-[1.0625rem] sm:text-[1.25rem] lg:text-[1.375rem]">
+            {CATEGORY_INTROS[slug] && (
+              <p className="text-gray-300 font-body text-[1.0625rem] sm:text-[1.15rem] leading-relaxed max-w-[68ch] mx-auto mb-4">
+                {CATEGORY_INTROS[slug]}
+              </p>
+            )}
+            <p className="text-gray-400 font-body text-[1rem] sm:text-[1.125rem]">
               {currentCategory.count} {currentCategory.count === 1 ? 'article' : 'articles'}
             </p>
           </motion.div>

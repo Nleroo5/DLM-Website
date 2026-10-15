@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Meta Ads ROI Calculator | Facebook & Instagram Ads Cost Calculator Atlanta',
-  description: 'Free Meta ads calculator. Calculate costs, leads & ROI for Facebook & Instagram campaigns. Industry-specific data for Atlanta businesses. Get instant projections.',
+  title: 'Meta Ads ROI Calculator: Facebook & Instagram Costs | DLM',
+  description: 'Free Meta ads calculator: estimate costs, leads and ROI for Facebook and Instagram campaigns, using industry benchmarks for Atlanta businesses.',
   keywords: 'meta ads calculator, facebook ads cost calculator atlanta, instagram ads budget, meta advertising cost atlanta, facebook ads roi calculator, cost per lead calculator, ad budget estimator atlanta',
   openGraph: {
     title: 'Meta Ads ROI Calculator | Facebook & Instagram Ads Cost Calculator',

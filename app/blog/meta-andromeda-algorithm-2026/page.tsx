@@ -15,92 +15,6 @@ export default function MetaAndromedaAlgorithm2026() {
   const schemaData = generateBlogPostSchema(post);
 
   // FAQ Schema for AEO (Answer Engine Optimization)
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is the Meta Andromeda algorithm?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The Meta Andromeda algorithm is Meta's AI-powered advertising system launched in late 2024 that fundamentally changed how Facebook and Instagram ads work. Instead of relying on manual audience targeting (age, interests, behaviors), Andromeda uses artificial intelligence to analyze ad creative content and automatically identify the best audiences. The algorithm delivers 8-17% better conversion rates by using creative as the primary targeting signal, with machine learning continuously optimizing delivery based on real-time performance data."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How does the Meta Andromeda algorithm work?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Andromeda works by analyzing your ad creative (images, video, text, offer) using machine learning to understand creative intent, then automatically identifies users most likely to convert based on creative match rather than traditional demographic targeting. The algorithm continuously optimizes delivery in real-time, adapting to performance data every few hours. It considers factors like visual elements, messaging tone, offer clarity, and historical conversion patterns to match ads with ideal audiences across Facebook and Instagram simultaneously."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is Advantage+ and how does it relate to Andromeda?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Advantage+ is Meta's suite of AI-powered campaign types that leverage the Andromeda algorithm. Advantage+ Shopping campaigns and Advantage+ Creative are the primary applications. These campaigns use broad targeting with minimal manual inputs, allowing Andromeda's AI to automatically find optimal audiences, placements, and creative combinations. Advantage+ campaigns typically deliver 8-17% better performance than traditional manual campaigns because they give Andromeda's algorithm maximum flexibility to optimize across all variables simultaneously."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do I optimize my campaigns for the Andromeda algorithm?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "To optimize for Andromeda: 1) Use 3-5 creative variations per ad set instead of just one, 2) Broaden your audience targeting rather than narrowing it, 3) Let campaigns learn for minimum 72 hours without edits, 4) Focus on creative quality over targeting precision, 5) Implement Advantage+ Creative features, 6) Ensure proper Facebook Pixel tracking for conversion data, 7) Use higher budgets to generate 50+ weekly conversions per ad set, and 8) Test video, image, and carousel formats to give Andromeda more options to optimize."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Should I still use detailed targeting with Andromeda?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "With Andromeda, broad targeting performs better than narrow detailed targeting in most cases. While you can still use interests and demographics, Meta is actively phasing out detailed targeting in favor of AI-powered audience finding. Best practice is to start with broad targeting (location + age range only) and let Andromeda's algorithm identify optimal audiences based on your creative and conversion data. Reserve detailed targeting only for very specific use cases like excluding competitors' employees or targeting users of specific apps."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How long is the learning phase with Andromeda?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "With Andromeda, the learning phase is faster than previous algorithms, typically 48-72 hours compared to the old 5-7 days. The algorithm still requires 50 optimization events to exit learning successfully, but reaches this threshold faster due to improved AI efficiency. However, campaigns that don't generate 50 conversions within 7 days still enter learning limited status. The faster learning means you can test and optimize campaigns more quickly, getting performance data in 2-3 days instead of a full week."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What creative strategy works best for Andromeda?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "For Andromeda, creative diversity is key: use 3-5 variations with different hooks, messaging angles, visual styles, and calls-to-action. Test both video (best performance in 2024-2026) and static images. Use authentic, real imagery rather than stock photos. Implement Advantage+ Creative which automatically tests up to 6 creative elements (text, headlines, images). Focus on clear value propositions and strong offers in the creative itself since creative drives targeting. Update creative every 2-3 weeks to prevent fatigue since Andromeda shows ads to the same optimal audiences repeatedly."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What's the difference between Andromeda and the old Facebook algorithm?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The old Facebook algorithm relied on advertisers manually selecting detailed targeting (interests, behaviors, demographics) and then optimized delivery within those constraints. Andromeda flips this model: it analyzes your creative content first, uses AI to understand what type of person would respond to that creative, then automatically finds those people regardless of traditional demographic boxes. Old algorithm: you tell Facebook who to target. Andromeda: Facebook's AI figures out who to target based on your creative. This results in 8-17% better conversions because AI finds audiences humans wouldn't think to target."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "When did Meta launch the Andromeda algorithm?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Meta launched the Andromeda algorithm in late 2024, with gradual rollout beginning in Q4 2024. By January 2025, Andromeda was powering the majority of Facebook and Instagram ad delivery. Meta officially announced in 2025 that by the end of 2026, every ad across Meta's platforms will be fully generated and optimized by artificial intelligence, making Andromeda the foundation of Meta's advertising future. The algorithm represents Meta's biggest advertising shift since the introduction of the News Feed algorithm."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do I need to change my existing campaigns for Andromeda?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "If your existing campaigns are performing well, you don't need to immediately change them - Andromeda is working in the background on all campaigns. However, to maximize Andromeda's potential, gradually transition by: 1) Testing Advantage+ campaigns alongside current campaigns for 30 days, 2) Comparing performance metrics, 3) Scaling the better performer, 4) Adding more creative variations to existing campaigns, 5) Broadening narrow audience targeting, and 6) Consolidating small ad sets into fewer, larger-budget ad sets. This transition approach minimizes risk while adapting to the new algorithm."
-        }
-      }
-    ]
-  };
 
   return (
     <main className="blog-page min-h-screen bg-[#000000]">
@@ -110,11 +24,6 @@ export default function MetaAndromedaAlgorithm2026() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
 
-      {/* FAQ Schema for AEO */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
 
       {/* Image Schemas for SEO */}
       <ImageObjectSchema

@@ -50,18 +50,6 @@ export default function FacebookAdsAtlantaGuide() {
   ];
 
   // FAQ Schema for AEO
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqItems.map(item => ({
-      "@type": "Question",
-      "name": item.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": item.answer
-      }
-    }))
-  };
 
   return (
     <main className="blog-page min-h-screen bg-[#000000]">
@@ -71,11 +59,6 @@ export default function FacebookAdsAtlantaGuide() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
 
-      {/* FAQ Schema for AEO */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
 
       {/* Image Schemas for SEO */}
       <ImageObjectSchema
@@ -129,7 +112,7 @@ export default function FacebookAdsAtlantaGuide() {
               <span className="text-[#5FA99F] font-semibold text-body-sm tracking-[0.15em] uppercase">Complete Guide</span>
             </ScrollFadeIn>
             <h1 className="text-[#F8F6F3] font-serif text-h1 font-bold leading-[1.1] mb-4">
-              Facebook Ads Atlanta: Complete Guide for Local Businesses (2025)
+              Facebook Ads Atlanta: Complete Guide for Local Businesses
             </h1>
             <p className="text-[#D4A574] text-body-lg leading-relaxed font-light">
               Stop wasting money on billboards nobody sees. Here is how Atlanta businesses use Facebook ads to get customers walking through their door.

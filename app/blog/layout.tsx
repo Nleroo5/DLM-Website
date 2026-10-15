@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Meta Advertising Blog | Facebook & Instagram Ads Tips | Drive Lead Media',
+  title: 'Meta Ads & Website Blog for Local Businesses | DLM',
   description: 'Expert Meta advertising insights, Facebook & Instagram ads strategies, and ROI tips for Atlanta businesses. Learn from our campaigns and industry expertise.',
   keywords: 'meta ads blog, facebook advertising tips, instagram ads strategies, meta advertising insights atlanta, social media marketing blog',
   openGraph: {

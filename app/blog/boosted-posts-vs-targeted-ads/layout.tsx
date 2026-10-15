@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Boosted Posts vs Targeted Ads: The Real Cost Difference | DLM',
+  title: 'Boosted Posts vs Targeted Ads: Real Cost Difference | DLM',
   description: 'Facebook\'s Boost button delivers 2-3X worse results than targeted ads. See the industry benchmarks, technical breakdown, and real cost comparison.',
   keywords: 'boosted posts vs targeted ads, facebook boost post vs ads manager, should i boost my facebook posts, meta ads manager vs boost, facebook advertising atlanta, targeted advertising',
   authors: [{ name: 'Nicolas Leroo' }],

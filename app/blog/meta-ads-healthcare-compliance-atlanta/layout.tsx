@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Meta Ads for Healthcare: HIPAA Compliance Guide (Atlanta) | Drive Lead Media",
-  description: "Navigate HIPAA, Meta's 2025-2026 restrictions, and Georgia regulations. Compliance guide for healthcare practices advertising on Facebook and Instagram in Atlanta.",
+  title: 'Meta Ads for Healthcare: HIPAA Compliance Guide | DLM',
+  description: "HIPAA, Meta's 2025-2026 health ad restrictions and Georgia rules: a compliance guide for Atlanta practices advertising on Facebook and Instagram.",
   keywords: "healthcare facebook ads 2026, medical practice meta ads, HIPAA compliant facebook advertising, healthcare advertising compliance, medical facebook ads atlanta, dentist facebook ads, meta healthcare restrictions",
   authors: [{ name: "Nicolas Leroo" }],
   openGraph: {

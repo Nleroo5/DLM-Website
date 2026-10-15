@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Meta Ads Landing Pages Guide | How to Convert Facebook & Instagram Ad Clicks Atlanta',
+  title: 'Meta Ads Landing Pages Guide: Convert Ad Clicks | DLM',
   description: 'Dedicated landing pages convert 3-5X better than homepages for Meta ads. Learn the 5 essential elements that turn Facebook & Instagram clicks into customers.',
   keywords: 'meta ads landing pages, facebook ads landing page atlanta, instagram ads conversion, landing page optimization, meta ads conversion rate atlanta, dedicated landing page design',
   openGraph: {

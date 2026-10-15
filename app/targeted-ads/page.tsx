@@ -4,13 +4,15 @@ import type { Metadata } from 'next';
 import ProgressBar from '@/components/ProgressBar';
 
 export const metadata: Metadata = {
-  title: 'Why Meta Targeted Ads Beat Traditional Advertising | Atlanta Facebook Ads Agency',
-  description: 'Meta targeted ads cost 85% less than traditional advertising. Learn how Facebook & Instagram ads target ideal customers. Free guide from Atlanta Meta ads experts.',
+  title: 'Why Meta Targeted Ads Beat Traditional Advertising | DLM',
+  description: 'Meta targeted ads cost 85% less than traditional advertising. Learn how Facebook and Instagram ads reach your ideal customers, from an Atlanta Meta ads team.',
   keywords: 'targeted ads, meta advertising, facebook ads vs traditional advertising, instagram targeted ads atlanta, meta ads cost comparison, targeted advertising guide atlanta',
   openGraph: {
     title: 'Why Meta Targeted Ads Are 85% Cheaper Than Traditional Advertising',
     description: 'Stop wasting money on untargeted advertising. Learn how Meta ads target your ideal customers at fraction of the cost.',
     type: 'article',
+    url: '/targeted-ads',
+    images: [{ url: '/images/targeted-facebook-ads-audience-precision-marketing.webp', alt: 'Targeted Facebook ads reaching a precise audience' }],
   },
   alternates: {
     canonical: '/targeted-ads',

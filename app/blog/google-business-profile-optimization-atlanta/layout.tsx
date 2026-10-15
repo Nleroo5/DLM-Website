@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Google Business Profile Optimization: Atlanta Guide (2026) | DLM",
+  title: 'Google Business Profile Optimization: Atlanta Guide | DLM',
   description: "87% of consumers use Google to find local businesses. Step-by-step GBP optimization for Atlanta businesses. Rank in the 3-pack and get more reviews.",
   keywords: "google business profile optimization atlanta, google maps ranking atlanta, local seo atlanta, google my business atlanta, how to rank on google maps, google reviews strategy, local 3-pack ranking, google business profile tips 2026, local seo guide atlanta, google maps seo",
   authors: [{ name: "Nicolas Leroo" }],

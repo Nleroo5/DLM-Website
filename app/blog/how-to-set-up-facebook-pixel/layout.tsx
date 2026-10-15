@@ -1,13 +1,13 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'How to Set Up Facebook Pixel: 2025 Guide (23 Screenshots) | DLM',
+  title: 'How to Set Up the Facebook Pixel (23 Screenshots) | DLM',
   description: 'Step-by-step Facebook Pixel setup guide with 23 screenshots. Covers WordPress, Shopify, and Google Tag Manager installation, testing, and verification.',
   keywords: 'how to install facebook pixel, meta pixel setup, facebook pixel installation guide, install meta pixel wordpress, facebook pixel shopify setup, google tag manager facebook pixel, meta pixel verification, facebook conversion tracking',
   authors: [{ name: 'Nicolas Leroo' }],
   openGraph: {
-    title: 'How to Set Up Facebook Pixel (2025): Complete Guide with 23 Screenshots',
-    description: 'Step-by-step Facebook Pixel setup guide for WordPress, Shopify, and GTM. 23 screenshots + video walkthrough. Updated January 2025.',
+    title: 'How to Set Up Facebook Pixel: Complete Guide with 23 Screenshots',
+    description: 'Step-by-step Facebook Pixel setup guide for WordPress, Shopify, and GTM. 23 screenshots + video walkthrough.',
     type: 'article',
     publishedTime: '2025-12-13T09:00:00-05:00',
     authors: ['Nicolas Leroo'],
@@ -21,8 +21,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'How to Set Up Facebook Pixel (2025): Complete Guide with 23 Screenshots',
-    description: 'Step-by-step Facebook Pixel setup guide for WordPress, Shopify, and GTM. 23 screenshots + video walkthrough. Updated January 2025.',
+    title: 'How to Set Up Facebook Pixel: Complete Guide with 23 Screenshots',
+    description: 'Step-by-step Facebook Pixel setup guide for WordPress, Shopify, and GTM. 23 screenshots + video walkthrough.',
     images: ['https://driveleadmedia.com/images/meta-events-manager-overview.webp'],
   },
   alternates: {

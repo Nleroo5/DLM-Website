@@ -57,18 +57,6 @@ export default function HowToTellIfFacebookAdsWorkingPage() {
   ];
 
   // FAQ Schema for AEO
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqItems.map(item => ({
-      "@type": "Question",
-      "name": item.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": item.answer
-      }
-    }))
-  };
 
   const howToSteps = [
     {
@@ -100,8 +88,8 @@ export default function HowToTellIfFacebookAdsWorkingPage() {
         headline="How to Tell If Your Facebook Ads Are Working (5 Simple Metrics)"
         description="Learn the 5 simple Facebook ad metrics that tell you if your ads are working. No jargon - just clear benchmarks for impressions, clicks, CPC, CPL, and ROAS with actionable advice."
         author="Nicolas Leroo"
-        datePublished="2024-12-12"
-        dateModified="2024-12-12"
+        datePublished={post?.datePublished ?? ''}
+        dateModified={post?.dateModified ?? ''}
         image="https://driveleadmedia.com/images/facebook-ads-lead-demographics-hero.webp"
         url="https://driveleadmedia.com/blog/how-to-tell-if-facebook-ads-working"
       />
@@ -114,11 +102,6 @@ export default function HowToTellIfFacebookAdsWorkingPage() {
         ]}
       />
 
-      {/* FAQ Schema for AEO */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
 
       <HowToSchema
         name="How to Tell If Your Facebook Ads Are Working"

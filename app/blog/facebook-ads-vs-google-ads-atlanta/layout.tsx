@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Facebook Ads vs Google Ads for Atlanta Businesses (2025) | DLM',
+  title: 'Facebook Ads vs Google Ads for Atlanta Businesses | DLM',
   description: 'Compare Facebook Ads vs Google Ads costs, targeting, and ROI for Atlanta businesses. Industry benchmarks from WordStream, Meta, and Google.',
   keywords: 'facebook ads vs google ads, google ads vs facebook ads atlanta, should i use facebook or google ads, facebook ads or google ads for small business, meta ads vs google ads cost, which is better facebook or google ads, facebook vs google advertising atlanta, social media ads vs search ads',
   authors: [{ name: 'Nicolas Leroo' }],

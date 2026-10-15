@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Custom Website vs Template: Atlanta Business Guide (2026) | DLM",
+  title: 'Custom Website vs Template: Atlanta Business Guide | DLM',
   description: "Custom websites convert 20-40% better than templates. Side-by-side comparison of speed, SEO, security, and real ROI data for Atlanta small businesses in 2026.",
   keywords: "custom website vs template, custom web design atlanta, template website problems, custom website benefits small business, wix vs custom website, squarespace vs custom website, atlanta web design, custom website ROI, template website speed",
   authors: [{ name: "Nicolas Leroo" }],

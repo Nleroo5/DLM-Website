@@ -1,4 +1,5 @@
 // Centralized blog post data - Single source of truth
+import { PUBLISHER_REF } from '@/lib/site';
 export interface BlogPost {
   slug: string;
   title: string;
@@ -25,7 +26,7 @@ export interface BlogPost {
 const rawBlogPosts: BlogPost[] = [
   {
     slug: 'how-much-do-facebook-ads-cost-atlanta',
-    title: 'How Much Do Facebook Ads Cost in Atlanta? (2025 Complete Guide)',
+    title: 'How Much Do Facebook Ads Cost in Atlanta? Complete Pricing Guide',
     excerpt: 'Facebook ads in Atlanta cost $0.90-$3.50 per click. Complete 2025 pricing guide with industry breakdowns, budget recommendations & free ROI calculator.',
     date: 'September 2025',
     datePublished: '2025-09-05T09:00:00-05:00',
@@ -137,7 +138,7 @@ const rawBlogPosts: BlogPost[] = [
   },
   {
     slug: 'facebook-ads-atlanta-guide',
-    title: 'Facebook Ads Atlanta: Complete Guide for Local Businesses (2025)',
+    title: 'Facebook Ads Atlanta: Complete Guide for Local Businesses',
     excerpt: 'Complete guide to Facebook advertising for Atlanta businesses. Learn costs, targeting strategies, ROI benchmarks, and why 200+ local businesses choose Meta ads over billboards.',
     date: 'November 2025',
     datePublished: '2025-11-05T09:00:00-05:00',
@@ -198,7 +199,7 @@ const rawBlogPosts: BlogPost[] = [
   },
   {
     slug: 'how-to-set-up-facebook-pixel',
-    title: 'How to Set Up Facebook Pixel: Complete 2025 Installation Guide',
+    title: 'How to Set Up Facebook Pixel: Complete Installation Guide',
     excerpt: 'Complete step-by-step guide to installing Facebook Pixel (Meta Pixel) on your website. Includes WordPress, Shopify, GTM setup methods, testing & verification with screenshots.',
     date: 'December 2025',
     datePublished: '2025-12-05T09:00:00-05:00',
@@ -229,7 +230,7 @@ const rawBlogPosts: BlogPost[] = [
   },
   {
     slug: 'facebook-ads-vs-google-ads-atlanta',
-    title: 'Facebook Ads vs. Google Ads: Which Is Better for Atlanta Businesses? (2025)',
+    title: 'Facebook Ads vs. Google Ads: Which Is Better for Atlanta Businesses?',
     excerpt: 'Compare Facebook Ads vs Google Ads costs, targeting, and ROI with data from WordStream, Meta, and Google. Industry benchmarks and sourced research to help Atlanta businesses choose.',
     date: 'December 2025',
     datePublished: '2025-12-13T09:00:00-05:00',
@@ -260,7 +261,7 @@ const rawBlogPosts: BlogPost[] = [
   },
   {
     slug: 'how-to-create-facebook-ads',
-    title: 'How to Create Facebook Ads: Complete Step-by-Step Guide (2025)',
+    title: 'How to Create Facebook Ads: Complete Step-by-Step Guide',
     excerpt: 'Learn how to create Facebook ads from scratch with our complete step-by-step tutorial. Campaign setup, targeting strategies, budgets, and optimization from Meta advertising experts.',
     date: 'December 2025',
     datePublished: '2025-12-14T09:00:00-05:00',
@@ -688,6 +689,17 @@ export function getPostsByCategory(categorySlug: string): BlogPost[] {
   return blogPosts.filter(post => post.category.slug === categorySlug);
 }
 
+// Intros for category pages with several posts. Categories with a single post
+// are noindexed (see app/blog/category/[slug]/layout.tsx), so they need none.
+export const CATEGORY_INTROS: Record<string, string> = {
+  'meta-ads-strategy':
+    'Guides to planning and running Facebook and Instagram ads for a local business: how to create a campaign step by step, why boosted posts cost more than targeted ads, how to tell whether your ads are working, and what to do when they stop delivering. Written by the team that runs Meta campaigns for our clients.',
+  'platform-comparison':
+    'Side-by-side comparisons to help you decide where your marketing budget should go first: Facebook ads versus Google ads, and Meta ads versus SEO. Each guide covers cost, how fast results come, and which kind of business each channel suits.',
+  'web-design':
+    'Guides for business owners deciding what to do about their website: the signs it is costing you customers, and when a custom site is worth it over a template builder.',
+};
+
 export function getAllCategories(): { name: string; slug: string; count: number }[] {
   const categoryMap = new Map<string, { name: string; count: number }>();
 
@@ -720,20 +732,12 @@ export function generateBlogPostSchema(post: BlogPost) {
     "dateModified": post.dateModified,
     "author": [{
       "@type": "Person",
+      "@id": `${post.author.url}#person`,
       "name": post.author.name,
       "jobTitle": post.author.jobTitle,
       "url": post.author.url
     }],
-    "publisher": {
-      "@type": "Organization",
-      "name": "Drive Lead Media",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://driveleadmedia.com/images/drive-lead-media-full-service-marketing-agency-brand.webp",
-        "width": 600,
-        "height": 60
-      }
-    },
+    "publisher": PUBLISHER_REF,
     "description": post.excerpt,
     "mainEntityOfPage": {
       "@type": "WebPage",

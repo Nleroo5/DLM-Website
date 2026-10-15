@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "7 Signs Your Atlanta Business Needs a New Website (2026) | DLM",
+  title: '7 Signs Your Atlanta Business Needs a New Website | DLM',
   description: "Is your website costing you customers? 7 data-backed signs it's time for a redesign. Speed, mobile, security, and SEO checklist for Atlanta businesses.",
   keywords: "signs you need a new website, website redesign atlanta, outdated website, website not mobile friendly, slow website, website security issues, atlanta web design, small business website checklist 2026",
   authors: [{ name: "Nicolas Leroo" }],

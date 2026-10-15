@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "SEO vs Meta Ads: Which Should Atlanta Businesses Invest In First? | DLM",
+  title: 'SEO vs Meta Ads: Which Should You Invest In First? | DLM',
   description: "Compare SEO and Meta Ads costs, timelines, and ROI with 2025 data. Budget framework to help Atlanta businesses decide where to invest first.",
   keywords: "seo vs meta ads, seo vs facebook ads, should i invest in seo or ads, atlanta seo vs paid ads, local seo atlanta, meta ads roi, seo roi comparison, atlanta digital marketing strategy, facebook ads vs organic search, small business marketing budget",
   authors: [{ name: "Nicolas Leroo" }],

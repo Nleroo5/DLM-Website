@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Get Started Free | Drive Lead Media',
   description:
-    'Answer 4 quick questions about your business and Drive Lead Media will reach out the same business day with ideas to get you more leads from Meta ads and your website.',
+    'Answer 4 quick questions about your business and we will reach out the same business day with ideas to get more leads from Meta ads and your website.',
   keywords: [
     'free strategy call',
     'get started',
