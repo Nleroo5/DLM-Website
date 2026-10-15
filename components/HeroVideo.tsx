@@ -15,6 +15,27 @@ export default function HeroVideo() {
       video.pause();
       video.controls = true;
     }
+
+    // The file ends on a white logo card (from 25.87s) that flashes against the
+    // dark hero. Jump back to the start at 25.7s, the darkest point of the fade
+    // just before it. Checked every frame: timeupdate only fires ~4x a second.
+    const LOOP_AT = 25.7;
+    let stopped = false;
+    let raf = 0;
+    const onFrame = () => {
+      if (stopped) return;
+      if (video.currentTime >= LOOP_AT) video.currentTime = 0;
+      schedule();
+    };
+    const schedule = () => {
+      if ('requestVideoFrameCallback' in video) video.requestVideoFrameCallback(onFrame);
+      else raf = requestAnimationFrame(onFrame);
+    };
+    schedule();
+    return () => {
+      stopped = true;
+      cancelAnimationFrame(raf);
+    };
   }, []);
 
   return (
