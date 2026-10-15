@@ -19,20 +19,16 @@ export default function HeroVideo() {
 
   return (
     <div
-      className="relative mx-auto w-[min(78vw,320px)] sm:w-[340px] lg:w-auto lg:h-[min(82vh,780px)] aspect-[9/16] overflow-hidden bg-[#002a38]"
-      style={{
-        // Fade every edge so the video dissolves into the matching glow behind it.
-        maskImage:
-          'linear-gradient(to bottom, transparent 0%, #000 9%, #000 91%, transparent 100%), linear-gradient(to right, transparent 0%, #000 14%, #000 86%, transparent 100%)',
-        maskComposite: 'intersect',
-        WebkitMaskImage:
-          'linear-gradient(to bottom, transparent 0%, #000 9%, #000 91%, transparent 100%), linear-gradient(to right, transparent 0%, #000 14%, #000 86%, transparent 100%)',
-        WebkitMaskComposite: 'source-in',
-      }}
+      // Phones: full screen width, cropped to 18:25. Every scene's content sits
+      // between 13% and 79% of the frame height, so the crop only removes empty
+      // teal above and below, and the video gets 28% bigger at the same height.
+      // max-w-none: the global mobile rule caps elements at their parent's width.
+      // ml-[50%] + -translate-x-1/2 centers it on the screen past the hero padding.
+      className="hero-video-frame relative ml-[50%] -translate-x-1/2 sm:mx-auto sm:translate-x-0 w-screen max-w-none aspect-[18/25] sm:w-[340px] sm:aspect-[9/16] lg:w-auto lg:h-[min(82vh,780px)] overflow-hidden bg-[#002a38]"
     >
       <video
         ref={videoRef}
-        className="hero-video w-full h-full object-cover"
+        className="hero-video w-full h-full object-cover object-[50%_26%] sm:object-center"
         autoPlay
         muted
         loop

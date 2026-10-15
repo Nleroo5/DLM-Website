@@ -288,10 +288,49 @@ h1, h2 {
   100% { transform: scale(1); }
 }
 
+/* Hero video edges fade into the glow behind it. Phones use a thinner fade
+   because the video runs edge to edge; the side labels stay readable. */
+.hero-video-frame {
+  --fade-y: 6%;
+  --fade-x: 6%;
+  -webkit-mask-image:
+    linear-gradient(to bottom, transparent 0%, #000 var(--fade-y), #000 calc(100% - var(--fade-y)), transparent 100%),
+    linear-gradient(to right, transparent 0%, #000 var(--fade-x), #000 calc(100% - var(--fade-x)), transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to bottom, transparent 0%, #000 var(--fade-y), #000 calc(100% - var(--fade-y)), transparent 100%),
+    linear-gradient(to right, transparent 0%, #000 var(--fade-x), #000 calc(100% - var(--fade-x)), transparent 100%);
+  mask-composite: intersect;
+}
+@media (min-width: 640px) {
+  .hero-video-frame { --fade-y: 9%; --fade-x: 14%; }
+}
+
 /* iOS shows a big play button over muted autoplay video when autoplay is
    blocked (Low Power Mode). The hero video is decorative, so hide it and let
    the poster show. */
 .hero-video::-webkit-media-controls-start-playback-button { display: none !important; -webkit-appearance: none; }
+
+/* Hero headline bull's-eye (components/BullseyeHeadline.tsx). */
+.bh .bh-w { transition: color .42s ease-out, text-shadow .42s ease-out; }
+.bh .bh-lit { color: #F2B544; text-shadow: 0 0 18px rgba(242, 181, 68, .55); transition: color .08s ease-out, text-shadow .08s ease-out; }
+.bh .bh-keep { color: #F2B544; }
+/* The real "o" stays in the text for search and screen readers, just invisible. */
+.bh .bh-o { position: relative; color: transparent !important; text-shadow: none !important; }
+/* Server-rendered stand-in so the "o" is a target from the very first frame;
+   the script swaps in the measured SVG target (.bh-ready). */
+.bh:not(.bh-ready) .bh-o::before {
+  content: ""; position: absolute; left: 50%; top: 0.83em; width: 0.62em; height: 0.62em; border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle closest-side, #E39B1F 0 18%, #FBF1D6 18% 38%, #E39B1F 38% 58%, #FBF1D6 58% 79%, #E39B1F 79% 100%);
+}
+.bh-fx { position: absolute; inset: 0; pointer-events: none; }
+.bh-target { position: absolute; width: 0; height: 0; }
+.bh-target svg { display: block; width: 100%; height: 100%; }
+.bh-arrow { position: absolute; left: 0; top: 0; opacity: 0; transform-origin: 0 0; will-change: transform, opacity; }
+.bh-arrow svg { display: block; overflow: visible; }
+.bh-ring { position: absolute; border-radius: 50%; border: 2px solid #F2B544; opacity: 0; will-change: transform, opacity; }
+.bh-ring-teal { border-color: #5FA99F; }
 
 /* The teal glow behind the hero video breathes very slowly. */
 .hero-glow-breathe { animation: hero-glow-breathe 7s ease-in-out infinite; }
