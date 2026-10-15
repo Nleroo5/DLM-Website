@@ -39,7 +39,7 @@ export default function Hero() {
       <div className="relative z-10 max-w-[1400px] mx-auto w-full flex flex-col lg:flex-row items-center gap-10 sm:gap-12 lg:gap-16">
         {/* Left: Text */}
         <motion.div
-          className="text-center lg:text-left lg:w-1/2 lg:flex-shrink-0"
+          className="relative z-10 text-center lg:text-left lg:w-1/2 lg:flex-shrink-0"
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}

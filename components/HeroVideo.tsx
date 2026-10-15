@@ -19,7 +19,7 @@ export default function HeroVideo() {
 
   return (
     <div
-      className="relative mx-auto w-[min(78vw,320px)] sm:w-[340px] lg:w-auto lg:h-[min(72vh,640px)] aspect-[9/16] overflow-hidden bg-[#002a38]"
+      className="relative mx-auto w-[min(78vw,320px)] sm:w-[340px] lg:w-auto lg:h-[min(82vh,780px)] aspect-[9/16] overflow-hidden bg-[#002a38]"
       style={{
         // Fade every edge so the video dissolves into the matching glow behind it.
         maskImage:
