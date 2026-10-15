@@ -48,8 +48,8 @@ export default function Navigation() {
               priority
             />
           </Link>
-          {/* Desktop Navigation - Now shows on tablets (md:) and above */}
-          <div className="hidden md:flex items-center gap-5 lg:gap-10 whitespace-nowrap">
+          {/* Desktop navigation from lg (1024px); tablets use the menu button so the links never overflow */}
+          <div className="hidden lg:flex items-center gap-8 xl:gap-10 whitespace-nowrap">
             <Link
               href="/"
               className="font-ui text-[1rem] text-[#5FA99F] hover:text-[#4a8a81] transition-colors duration-400 relative group font-medium"
@@ -183,7 +183,7 @@ export default function Navigation() {
 
           {/* Mobile Menu Button - Only show on mobile, hide on tablets */}
           <button
-            className="md:hidden flex flex-col gap-1.5 w-8 h-8 justify-center items-center relative"
+            className="lg:hidden flex flex-col gap-1.5 w-8 h-8 justify-center items-center relative"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label={isMobileMenuOpen ? 'Close mobile menu' : 'Open mobile menu'}
             aria-expanded={isMobileMenuOpen}
@@ -223,7 +223,7 @@ export default function Navigation() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.4 }}
-            className="md:hidden bg-black/95 backdrop-blur-xl border-t border-[#5FA99F]/50 relative overflow-hidden"
+            className="lg:hidden bg-black/95 backdrop-blur-xl border-t border-[#5FA99F]/50 relative overflow-hidden"
             style={{
               boxShadow: '0 8px 32px rgba(0,0,0,0.8), inset 0 1px 0 rgba(95,169,159,0.2)'
             }}
