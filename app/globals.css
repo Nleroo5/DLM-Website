@@ -288,6 +288,24 @@ h1, h2 {
   100% { transform: scale(1); }
 }
 
+/* Hero video edges fade into the glow behind it. Phones use a thinner fade
+   because the video runs edge to edge; the side labels stay readable. */
+.hero-video-frame {
+  --fade-y: 6%;
+  --fade-x: 6%;
+  -webkit-mask-image:
+    linear-gradient(to bottom, transparent 0%, #000 var(--fade-y), #000 calc(100% - var(--fade-y)), transparent 100%),
+    linear-gradient(to right, transparent 0%, #000 var(--fade-x), #000 calc(100% - var(--fade-x)), transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to bottom, transparent 0%, #000 var(--fade-y), #000 calc(100% - var(--fade-y)), transparent 100%),
+    linear-gradient(to right, transparent 0%, #000 var(--fade-x), #000 calc(100% - var(--fade-x)), transparent 100%);
+  mask-composite: intersect;
+}
+@media (min-width: 640px) {
+  .hero-video-frame { --fade-y: 9%; --fade-x: 14%; }
+}
+
 /* iOS shows a big play button over muted autoplay video when autoplay is
    blocked (Low Power Mode). The hero video is decorative, so hide it and let
    the poster show. */
