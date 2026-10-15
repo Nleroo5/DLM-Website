@@ -305,6 +305,11 @@ h1, h2 {
 @media (min-width: 640px) {
   .hero-video-frame { --fade-y: 9%; --fade-x: 14%; }
 }
+/* Desktop uses the cropped frame too: a thinner top/bottom fade keeps the
+   scene titles fully visible. */
+@media (min-width: 1024px) {
+  .hero-video-frame { --fade-y: 6%; }
+}
 
 /* iOS shows a big play button over muted autoplay video when autoplay is
    blocked (Low Power Mode). The hero video is decorative, so hide it and let

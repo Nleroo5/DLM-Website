@@ -40,16 +40,17 @@ export default function HeroVideo() {
 
   return (
     <div
-      // Phones: full screen width, cropped to 18:25. Every scene's content sits
-      // between 13% and 79% of the frame height, so the crop only removes empty
-      // teal above and below, and the video gets 28% bigger at the same height.
+      // Cropped to 18:25 on phones and desktop (tablets keep 9:16). Every scene's
+      // content sits between 13% and 79% of the frame height, so the crop only
+      // removes empty teal and the video gets 28% wider at the same height.
+      // Phones run full screen width; desktop is 82vh tall, capped at 960px.
       // max-w-none: the global mobile rule caps elements at their parent's width.
       // ml-[50%] + -translate-x-1/2 centers it on the screen past the hero padding.
-      className="hero-video-frame relative ml-[50%] -translate-x-1/2 sm:mx-auto sm:translate-x-0 w-screen max-w-none aspect-[18/25] sm:w-[340px] sm:aspect-[9/16] lg:w-auto lg:h-[min(82vh,780px)] overflow-hidden bg-[#002a38]"
+      className="hero-video-frame relative ml-[50%] -translate-x-1/2 sm:mx-auto sm:translate-x-0 w-screen max-w-none aspect-[18/25] sm:w-[340px] sm:aspect-[9/16] lg:w-auto lg:aspect-[18/25] lg:h-[min(82vh,960px)] overflow-hidden bg-[#002a38]"
     >
       <video
         ref={videoRef}
-        className="hero-video w-full h-full object-cover object-[50%_26%] sm:object-center"
+        className="hero-video w-full h-full object-cover object-[50%_26%] sm:object-center lg:object-[50%_26%]"
         autoPlay
         muted
         loop
