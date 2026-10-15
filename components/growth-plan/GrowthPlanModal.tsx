@@ -307,7 +307,7 @@ export default function GrowthPlanModal({
                                 set('adSpend', '');
                                 set('launch', '');
                               }}
-                              className={`text-left rounded-xl border px-4 py-3.5 transition-colors ${
+                              className={`flex flex-col items-stretch w-full text-left rounded-xl border px-4 py-3.5 transition-colors ${
                                 selected ? 'border-[#5FA99F] bg-[#5FA99F]/10' : 'border-white/10 bg-[#1b1e1d] hover:border-[#5FA99F]/50'
                               }`}
                             >
