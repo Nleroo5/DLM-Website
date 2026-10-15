@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { trackCustomEvent } from '@/components/MetaPixel';
+import { EASE_OUT, reveal } from '@/lib/motion';
 
 // Homepage "Our Work" section: a Village Pediatrics spotlight (video testimonial)
 // followed by ad → website pairs. Every video is a still poster until tapped,
@@ -136,13 +137,7 @@ export default function WorkShowcase() {
   return (
     <section id="work" className="relative bg-[#0a0a0a] py-20 lg:py-28 px-4 sm:px-6 scroll-mt-24">
       <div className="max-w-[1200px] mx-auto flex flex-col gap-8 lg:gap-10">
-        <motion.div
-          className="text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
+        <motion.div className="text-center" {...reveal()}>
           <span className="text-[#5FA99F] text-[0.85rem] font-heading uppercase tracking-widest mb-3 block">Our Work</span>
           <h2 className="font-heading text-[1.75rem] sm:text-[2.25rem] lg:text-[2.75rem] text-white font-bold">
             Real Businesses. Real Results.
@@ -150,7 +145,7 @@ export default function WorkShowcase() {
         </motion.div>
 
         {/* Spotlight: Village Pediatrics */}
-        <article className="grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] bg-[#1A1A1A] border border-[#5FA99F]/20 rounded-[24px] overflow-hidden">
+        <motion.article {...reveal()} className="grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] bg-[#1A1A1A] border border-[#5FA99F]/20 rounded-[24px] overflow-hidden">
           <TapVideo
             src="/Videos/work/village-pediatrics-testimonial.mp4"
             poster="/images/work/village-pediatrics-testimonial-poster.webp"
@@ -178,7 +173,7 @@ export default function WorkShowcase() {
             </div>
             <Chips items={['Website', 'SEO', 'Meta ads', 'Tracking']} />
           </div>
-        </article>
+        </motion.article>
 
         {/* Ad → website pairs */}
         <div className="flex flex-col gap-4">
@@ -211,26 +206,61 @@ export default function WorkShowcase() {
 
             if (p.secondAd) {
               return (
-                <article
+                <motion.article
                   key={p.client}
+                  {...reveal()}
                   className="grid grid-cols-2 md:grid-cols-[140px_140px_minmax(0,1fr)] gap-3 md:gap-5 items-center bg-[#1A1A1A] border border-[#5FA99F]/15 rounded-[20px] p-3.5 sm:p-5"
                 >
                   <AdTile ad={p.ad} label={`${p.client} Meta ad 1`} tag="Ad 1" />
                   <AdTile ad={p.secondAd} label={`${p.client} Meta ad 2`} tag="Ad 2" />
                   {info}
-                </article>
+                </motion.article>
               );
             }
 
             return (
-              <article
+              <motion.article
                 key={p.client}
-                className="grid grid-cols-[96px_20px_minmax(0,1fr)] md:grid-cols-[140px_32px_minmax(0,1fr)_minmax(0,0.85fr)] gap-3 md:gap-5 items-center bg-[#1A1A1A] border border-[#5FA99F]/15 rounded-[20px] p-3.5 sm:p-5"
+                {...reveal()}
+                className="grid grid-cols-[96px_28px_minmax(0,1fr)] md:grid-cols-[140px_56px_minmax(0,1fr)_minmax(0,0.85fr)] gap-3 md:gap-5 items-center bg-[#1A1A1A] border border-[#5FA99F]/15 rounded-[20px] p-3.5 sm:p-5"
               >
                 <AdTile ad={p.ad} label={`${p.client} Meta ad`} tag="The ad" />
-                <span className="text-[#5FA99F] text-[1.4rem] md:text-[1.8rem] text-center" aria-hidden="true">→</span>
+                {/* "The click" travels from the ad to the site it lands on. */}
+                {/* The visible track is what's observed; the clipped dot can't trigger in-view itself. */}
+                <motion.div
+                  className="relative h-3 overflow-hidden"
+                  initial="start"
+                  whileInView="travel"
+                  viewport={{ once: true, amount: 0.6 }}
+                  aria-hidden="true"
+                >
+                  <span className="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-[2px] rounded bg-[#5FA99F]/35" />
+                  <motion.span
+                    className="absolute inset-0"
+                    variants={{
+                      start: { x: '-100%' },
+                      travel: { x: '0%', transition: { duration: 0.9, ease: EASE_OUT, delay: 0.35 } },
+                    }}
+                  >
+                    <span className="absolute right-0 top-1/2 -translate-y-1/2 w-2.5 h-2.5 rounded-full bg-[#f2a921] shadow-[0_0_12px_rgba(242,169,33,0.7)]" />
+                  </motion.span>
+                </motion.div>
                 {p.site && (
-                  <div className="relative rounded-[12px] overflow-hidden border border-white/10 bg-[#111]">
+                  <motion.div
+                    className="relative rounded-[12px] overflow-hidden border border-white/10 bg-[#111]"
+                    initial={{ scale: 1 }}
+                    whileInView={{ scale: [1, 1.03, 1] }}
+                    viewport={{ once: true, amount: 0.6 }}
+                    transition={{ duration: 0.45, ease: EASE_OUT, delay: 1.15 }}
+                  >
+                    <motion.span
+                      className="pointer-events-none absolute inset-0 z-10 rounded-[12px] ring-2 ring-[#5FA99F]"
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: [0, 1, 0] }}
+                      viewport={{ once: true, amount: 0.6 }}
+                      transition={{ duration: 0.8, ease: 'easeOut', delay: 1.15 }}
+                      aria-hidden="true"
+                    />
                     <div className="h-4 md:h-5 bg-[#1c1f1e] flex items-center gap-1 px-2" aria-hidden="true">
                       <i className="w-1.5 h-1.5 rounded-full bg-[#3a3f3d]" />
                       <i className="w-1.5 h-1.5 rounded-full bg-[#3a3f3d]" />
@@ -248,10 +278,10 @@ export default function WorkShowcase() {
                     <span className="absolute top-6 md:top-7 left-1.5 font-ui text-[0.6rem] uppercase tracking-[0.1em] font-bold text-[#5FA99F] bg-black/75 rounded px-1.5 py-0.5">
                       {p.site.label}
                     </span>
-                  </div>
+                  </motion.div>
                 )}
                 {info}
-              </article>
+              </motion.article>
             );
           })}
         </div>
