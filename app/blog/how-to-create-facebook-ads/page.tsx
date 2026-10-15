@@ -57,28 +57,16 @@ export default function HowToCreateFacebookAdsPage() {
   ];
 
   // FAQ Schema for AEO
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqItems.map(item => ({
-      "@type": "Question",
-      "name": item.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": item.answer
-      }
-    }))
-  };
 
   return (
     <main className="min-h-screen bg-[#000000]">
       {/* Structured Data */}
       <ArticleSchema
-        headline="How to Create Facebook Ads: Complete Step-by-Step Guide (2025)"
+        headline="How to Create Facebook Ads: Complete Step-by-Step Guide"
         description="Learn how to create Facebook ads in 2025 with our complete step-by-step guide. Screenshots, targeting strategies, and campaign setup from Atlanta's Meta advertising experts."
         author="Nicolas Leroo"
-        datePublished="2025-12-14"
-        dateModified="2025-12-14"
+        datePublished={post?.datePublished ?? ''}
+        dateModified={post?.dateModified ?? ''}
         image="https://driveleadmedia.com/images/how-to-create-facebook-ads-tutorial-guide.webp"
         url="https://driveleadmedia.com/blog/how-to-create-facebook-ads"
       />
@@ -91,11 +79,6 @@ export default function HowToCreateFacebookAdsPage() {
         ]}
       />
 
-      {/* FAQ Schema for AEO */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
 
       {/* Hero Section */}
       <section className="relative pt-[120px] pb-[80px] px-6 overflow-hidden">
@@ -104,7 +87,7 @@ export default function HowToCreateFacebookAdsPage() {
 
         <div className="max-w-[900px] mx-auto relative z-10">
           <h1 className="font-heading text-h1 font-bold text-white leading-[1.1] mb-6">
-            How to Create Facebook Ads: Complete Step-by-Step Guide (2025)
+            How to Create Facebook Ads: Complete Step-by-Step Guide
           </h1>
 
           <p className="text-body-lg text-gray-300 font-body mb-8 leading-relaxed">

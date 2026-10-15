@@ -15,108 +15,6 @@ export default function FacebookAdsNotDelivering2026() {
   const schemaData = generateBlogPostSchema(post);
 
   // FAQ Schema for AEO (Answer Engine Optimization)
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Why are my Facebook ads not delivering?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Facebook ads typically don't deliver due to learning limited status (40% of cases), Facebook Pixel tracking errors, budget too low, ad account restrictions, audience too narrow, bid cap too low, creative rejection, overlapping audiences, delivery optimization mismatches, campaign schedule issues, payment problems, or creative fatigue. The most common issue is learning limited status, which occurs when your ad set doesn't generate 50 optimization events within 7 days."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is learning limited status on Facebook ads?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Learning limited status occurs when your Facebook ad set doesn't generate 50 optimization events (conversions, leads, purchases, etc.) within 7 days. During this phase, Meta's algorithm cannot effectively optimize delivery, resulting in higher costs and inconsistent performance. To fix learning limited status, consolidate ad sets to increase volume, increase your daily budget by 20-30%, or switch to a higher-funnel conversion event that fires more frequently."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do I fix Facebook ads that aren't spending my budget?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "If your Facebook ads aren't spending budget, first check your delivery status in Ads Manager. Common fixes include: increasing your daily budget to at least $20-30 per ad set, broadening your audience targeting to reach more people, consolidating multiple ad sets into fewer ad sets with higher budgets, fixing Facebook Pixel tracking if events aren't firing, removing bid caps that are too low, and ensuring your payment method is valid and has sufficient funds."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How long does the Facebook ads learning phase last?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The Facebook ads learning phase typically lasts 3-7 days and requires 50 optimization events to exit successfully. With Meta's Andromeda algorithm (2024+), learning phases are faster, often completing in 48-72 hours for well-optimized campaigns. However, if you don't generate 50 conversions within 7 days, your campaign enters 'learning limited' status and may remain there indefinitely until you make changes to increase conversion volume."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is a good budget to avoid learning limited on Facebook ads?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "To avoid learning limited status, your budget should generate approximately 50 conversion events per week per ad set. If your cost per conversion is $20, you need a minimum weekly budget of $1,000 ($142/day) per ad set. For Atlanta businesses, recommended budgets are: small local businesses $50-100/day, medium businesses $100-300/day, and larger businesses $300+/day. It's better to run 2 ad sets at $100/day each than 5 ad sets at $40/day each."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do I know if my Facebook Pixel is working correctly?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "To verify your Facebook Pixel is working: 1) Install the Meta Pixel Helper Chrome extension, 2) Visit your website and click the extension icon, 3) Look for a green checkmark indicating the pixel is firing, 4) Check Events Manager in Meta Business Suite for recent PageView events, 5) Use the Test Events tab to see real-time event tracking, and 6) Verify that conversion events (Lead, Purchase, etc.) are firing on thank-you pages. If the pixel isn't tracking, check that the base code is in your website's <head> section and events are properly configured."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Why is my Facebook ad account restricted?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Facebook ad accounts get restricted for policy violations (prohibited content, misleading claims, restricted industries), payment issues (declined cards, chargebacks), unusual account activity (sudden spending increases, login from new locations), multiple policy violations over time, or association with previously banned accounts. To fix restrictions: review Meta's Advertising Policies, appeal the restriction through Account Quality in Business Settings, remove policy-violating content, verify your business and payment information, and in severe cases, create a new Business Manager account."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is ad frequency and when is it too high?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Ad frequency shows how many times the average person sees your ad. Frequency between 1.0-2.0 is optimal. Frequency of 2.0-3.0 indicates creative is getting stale. Frequency above 3.0 means creative fatigue - people are seeing your ad too many times and ignoring it, causing higher costs and lower performance. To fix high frequency: add new creative variations, refresh ad copy and images, expand your audience size, or pause the campaign for 3-7 days to reset user saturation."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How many ad sets should I run at once?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "For optimal performance and to avoid learning limited status, run 2-4 ad sets maximum per campaign with consolidated budgets. Running 8+ small ad sets ($20-30 each) spreads your budget too thin and prevents any single ad set from getting 50 weekly conversions. Best practice: consolidate into 2-3 ad sets at $80-150/day each rather than 6-8 ad sets at $30/day each. This allows each ad set to exit learning phase faster and optimize more effectively."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Should I consolidate my Facebook ad sets?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, consolidate ad sets if you're experiencing learning limited status or have multiple small-budget ad sets. Ad set consolidation works best when you combine similar audiences into fewer ad sets with larger budgets. For example, instead of running 6 separate ad sets for different age ranges ($30/day each = $180 total), run 2 consolidated ad sets with broader age targeting ($90/day each = $180 total). This increases the likelihood of generating 50+ weekly conversions per ad set, helping you exit learning limited and achieve better performance."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How much does it cost to run Facebook ads in Atlanta?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Facebook ads in Atlanta cost $0.90-$3.50 per click depending on industry, with most local businesses paying $1.50-$2.80 CPC. Cost per lead ranges from $8-45, with healthcare/dental at $25-65, home services at $15-35, real estate at $12-25, and professional services at $40-120. Atlanta businesses should budget minimum $500-1,000/month ($16-33/day) for small local campaigns, $1,500-3,000/month ($50-100/day) recommended for consistent lead flow, and $3,000-8,000+/month for scaling campaigns. Buckhead and Midtown targeting typically costs 30-40% more than broader Atlanta metro targeting."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What does 'in review' status mean for Facebook ads?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "In review status means Meta is checking your ad for policy compliance before allowing it to deliver. Review typically takes 15 minutes to 24 hours, with most ads approved within 1-2 hours. If stuck in review for 24+ hours, try: editing a small detail in the ad copy (adding a period), duplicating the ad, or contacting Meta support. Ads promoting alcohol, financial services, healthcare, or political content take longer to review. Once approved, the ad will automatically start delivering based on your schedule and budget settings."
-        }
-      }
-    ]
-  };
 
   return (
     <main className="blog-page min-h-screen bg-[#000000]">
@@ -126,11 +24,6 @@ export default function FacebookAdsNotDelivering2026() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
 
-      {/* FAQ Schema for AEO */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
 
       {/* Image Schemas for SEO */}
       <ImageObjectSchema

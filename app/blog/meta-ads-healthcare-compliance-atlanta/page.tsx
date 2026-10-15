@@ -82,18 +82,6 @@ export default function MetaAdsHealthcareComplianceAtlanta() {
     }
   ];
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqItems.map(item => ({
-      "@type": "Question",
-      "name": item.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": item.answer
-      }
-    }))
-  };
 
   return (
     <main className="blog-page min-h-screen bg-[#000000] relative">
@@ -107,11 +95,6 @@ export default function MetaAdsHealthcareComplianceAtlanta() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
 
-      {/* FAQ Schema for AEO */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
 
       {/* Image Schemas for SEO - All placed before article content */}
       <ImageObjectSchema
@@ -211,6 +194,9 @@ export default function MetaAdsHealthcareComplianceAtlanta() {
       </section>
 
       {/* Article Content */}
+      {/* Breadcrumbs */}
+      <Breadcrumbs category={post.category} postTitle={post.title} />
+
       <article className="max-w-[900px] mx-auto px-6 pb-[80px] relative z-10">
         <ScrollFadeIn as="section" className="prose prose-invert prose-lg max-w-none space-y-8">
           <div className="bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg p-6 mb-8">

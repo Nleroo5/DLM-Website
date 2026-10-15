@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Case Studies | Drive Lead Media - Real Results for Local Businesses',
+  title: 'Case Studies: Real Results for Local Businesses | DLM',
   description:
     'See how Drive Lead Media helps local businesses grow with Meta ads, custom websites, and professional video creative. Real results from real clients.',
   keywords: [

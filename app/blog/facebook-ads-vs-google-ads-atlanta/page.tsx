@@ -41,28 +41,16 @@ export default function FacebookAdsVsGoogleAdsPage() {
   ];
 
   // FAQ Schema for AEO
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqItems.map(item => ({
-      "@type": "Question",
-      "name": item.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": item.answer
-      }
-    }))
-  };
 
   return (
     <main className="min-h-screen bg-[#000000]">
       {/* Structured Data */}
       <ArticleSchema
-        headline="Facebook Ads vs. Google Ads: Which Is Better for Atlanta Businesses? (2025)"
+        headline="Facebook Ads vs. Google Ads: Which Is Better for Atlanta Businesses?"
         description="Compare Facebook Ads vs Google Ads costs, targeting, and ROI with data from WordStream, Meta, and Google. Industry benchmarks to help Atlanta businesses choose."
         author="Nicolas Leroo"
-        datePublished="2025-12-13"
-        dateModified="2025-12-13"
+        datePublished={post?.datePublished ?? ''}
+        dateModified={post?.dateModified ?? ''}
         image="https://driveleadmedia.com/images/facebook-vs-google-ads-comparison-hero.webp"
         url="https://driveleadmedia.com/blog/facebook-ads-vs-google-ads-atlanta"
       />
@@ -75,11 +63,6 @@ export default function FacebookAdsVsGoogleAdsPage() {
         ]}
       />
 
-      {/* FAQ Schema for AEO */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
 
       {/* Hero Section */}
       <section className="relative pt-[120px] pb-[80px] px-6 overflow-hidden">

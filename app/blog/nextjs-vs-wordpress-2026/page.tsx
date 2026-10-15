@@ -15,60 +15,6 @@ export default function NextJsVsWordPress2026() {
   const schemaData = generateBlogPostSchema(post);
 
   // FAQ Schema for AEO (Answer Engine Optimization)
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Is Next.js better than WordPress for small business websites?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Next.js is better for businesses prioritizing performance, security, and scalability. Sites load 3-4x faster (1-2s vs 4-6s), have dramatically better security (no plugin vulnerabilities), and scale effortlessly with traffic. However, WordPress is better for businesses needing non-technical content management, frequent publishing by multiple team members, or extremely limited budgets under $1,000. The right choice depends on whether you value technical excellence or content management flexibility."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How much faster is Next.js compared to WordPress?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Next.js sites typically load in 1-2 seconds with PageSpeed scores of 95-100, while WordPress sites average 4-6 seconds with scores of 60-70. This represents a 3-4x performance improvement. The difference comes from Next.js generating static pages during build (no server processing), while WordPress processes PHP and queries databases on every page load. Research from Pagepro shows that a 1-second delay reduces conversions by 20%, making this speed difference critical for conversion-focused businesses."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is WordPress more secure than Next.js?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No, Next.js is significantly more secure. According to WebHostMost, WordPress vulnerabilities surged 68% year-over-year, and SolidWP research found 71% of disclosed vulnerabilities remained unpatched. WordPress's plugin ecosystem creates constant security risks, requiring ongoing vigilance, updates, and security tools. Next.js sites consist of static files served from CDNs with no admin panels, databases to inject into, or plugin vulnerabilities to exploit, dramatically reducing the attack surface."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the cost difference between Next.js and WordPress websites?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "WordPress appears cheaper initially ($20-30/month for hosting, minimal setup costs) but ongoing costs add up: approximately $2,600/year including hosting, security, backups, maintenance, and developer fixes. Next.js requires higher initial investment ($3,000-15,000 for custom development) but ongoing costs are minimal (approximately $755/year for hosting, domain, and minor updates). By year three, Next.js becomes cost-competitive, and by year five, it's significantly cheaper despite higher upfront costs."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can non-technical people edit Next.js websites?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Out of the box, no. Next.js has no built-in content editor and requires developers to make changes. However, you can add headless CMS solutions like Contentful, Sanity, or Prismic to provide WordPress-like editing experiences while maintaining Next.js performance and security benefits. This adds complexity and potential cost ($0-500/month for CMS services plus developer setup time). For businesses updating content monthly or less, developer-managed content works fine. For daily publishing needs, either add a headless CMS or choose WordPress."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Why does Drive Lead Media only build on Next.js?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Drive Lead Media builds exclusively on Next.js because their clients run Meta advertising campaigns where every second of load time impacts ROI. When businesses pay $3-20 per click, slow-loading websites waste advertising spend on traffic that bounces. Next.js's 1-2 second load times (vs WordPress 4-6 seconds) directly improve conversion rates. Additionally, the security architecture eliminates client liability risks, and development efficiency allows building exactly what's needed without plugin compromises. This focus attracts clients who value results over lowest-price options."
-        }
-      }
-    ]
-  };
 
   return (
     <main className="blog-page min-h-screen bg-[#000000]">
@@ -78,11 +24,6 @@ export default function NextJsVsWordPress2026() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
 
-      {/* FAQ Schema for AEO */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
 
       {/* Hero Section */}
       <ScrollFadeIn className="relative w-full pt-20 sm:pt-24 lg:pt-28 pb-16 sm:pb-20 lg:pb-24">

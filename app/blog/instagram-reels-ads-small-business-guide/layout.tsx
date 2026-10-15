@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Instagram Reels Ads: Small Business Video Ad Guide | Drive Lead Media",
-  description: "Over half of Instagram ads now run on Reels. Learn how to create Reels ads that convert, what specs matter, and why short-form video is the highest-reach format on Meta.",
+  title: 'Instagram Reels Ads: Small Business Video Ad Guide | DLM',
+  description: "Over half of Instagram ads now run on Reels. How to create Reels ads that convert, which specs matter, and why short video is Meta's highest-reach format.",
   keywords: "instagram reels ads, facebook reels ads, reels advertising small business, short form video ads, instagram video ads 2026, meta reels advertising, reels ads setup, instagram ads strategy 2026",
   authors: [{ name: "Nicolas Leroo" }],
   openGraph: {

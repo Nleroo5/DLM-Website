@@ -8,6 +8,7 @@ export default function NicolasLerooPage() {
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": "https://driveleadmedia.com/about/nicolas-leroo#person",
     "name": "Nicolas Leroo",
     "givenName": "Nicolas",
     "familyName": "Leroo",
@@ -21,7 +22,6 @@ export default function NicolasLerooPage() {
       "name": "Drive Lead Media",
       "url": "https://driveleadmedia.com"
     },
-    "foundingDate": "2021",
     "knowsAbout": [
       "Meta Advertising",
       "Facebook Advertising",
@@ -86,89 +86,20 @@ export default function NicolasLerooPage() {
       "addressCountry": "US"
     },
     "sameAs": [
-      "https://www.linkedin.com/in/nicolas-leroo",
-      "https://www.linkedin.com/company/drive-lead-media"
+      "https://www.linkedin.com/in/nicolas-leroo"
     ],
-    "author": [
-      {
-        "@type": "Article",
-        "name": "Meta's Andromeda Algorithm Explained (2026)",
-        "url": "https://driveleadmedia.com/blog/meta-andromeda-algorithm-2026"
-      },
-      {
-        "@type": "Article",
-        "name": "Why Your Facebook Ads Aren't Delivering (2026): 12 Reasons & Fixes",
-        "url": "https://driveleadmedia.com/blog/facebook-ads-not-delivering-2026"
-      },
-      {
-        "@type": "Article",
-        "name": "How to Set Up Facebook Pixel: Complete 2025 Guide",
-        "url": "https://driveleadmedia.com/blog/how-to-set-up-facebook-pixel"
-      },
-      {
-        "@type": "Article",
-        "name": "How Much Do Facebook Ads Cost in Atlanta? (2025 Complete Guide)",
-        "url": "https://driveleadmedia.com/blog/how-much-do-facebook-ads-cost-atlanta"
-      },
-      {
-        "@type": "Article",
-        "name": "Boosted Posts vs Targeted Ads: The Truth About What Works (2025)",
-        "url": "https://driveleadmedia.com/blog/boosted-posts-vs-targeted-ads"
-      },
-      {
-        "@type": "Article",
-        "name": "How to Tell If Your Facebook Ads Are Working: 5 Key Metrics (2025)",
-        "url": "https://driveleadmedia.com/blog/how-to-tell-if-facebook-ads-working"
-      },
-      {
-        "@type": "Article",
-        "name": "How to Create Facebook Ads: Complete Step-by-Step Guide (2025)",
-        "url": "https://driveleadmedia.com/blog/how-to-create-facebook-ads"
-      },
-      {
-        "@type": "Article",
-        "name": "Facebook Ads vs. Google Ads: Which Is Better for Atlanta Businesses? (2025)",
-        "url": "https://driveleadmedia.com/blog/facebook-ads-vs-google-ads-atlanta"
-      },
-      {
-        "@type": "Article",
-        "name": "Meta Ads Target Audience Guide",
-        "url": "https://driveleadmedia.com/blog/meta-ads-target-audience-guide"
-      },
-      {
-        "@type": "Article",
-        "name": "Why Your Meta Ads Need a Dedicated Landing Page",
-        "url": "https://driveleadmedia.com/blog/why-meta-ads-need-landing-pages"
-      },
-      {
-        "@type": "Article",
-        "name": "Facebook Ads for Atlanta Businesses: Complete 2025 Guide",
-        "url": "https://driveleadmedia.com/blog/facebook-ads-atlanta-guide"
-      }
-    ],
-    "alumniOf": {
-      "@type": "EducationalOrganization",
-      "name": "Meta Blueprint"
-    },
-    "award": [
-      "Meta Blueprint Certification"
-    ],
-    "memberOf": {
-      "@type": "Organization",
-      "name": "Drive Lead Media",
-      "url": "https://driveleadmedia.com"
-    },
+    "memberOf": { "@id": "https://driveleadmedia.com/#organization" },
     "subjectOf": {
       "@type": "WebPage",
       "url": "https://driveleadmedia.com/about/nicolas-leroo",
-      "name": "Nicolas Leroo - Co-Founder & Meta Advertising Strategist"
+      "name": "Nicolas Leroo, Co-Founder of Drive Lead Media"
     }
   };
 
   const blogPosts = [
     {
       slug: 'how-much-do-facebook-ads-cost-atlanta',
-      title: 'How Much Do Facebook Ads Cost in Atlanta? (2025 Complete Guide)',
+      title: 'How Much Do Facebook Ads Cost in Atlanta? Complete Pricing Guide',
       date: 'September 2025',
       category: 'Meta Ads Pricing',
     },

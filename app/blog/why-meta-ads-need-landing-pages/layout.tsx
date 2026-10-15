@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Why Your Meta Ads Need a Dedicated Landing Page | Drive Lead Media',
+  title: 'Why Your Meta Ads Need a Dedicated Landing Page | DLM',
   description: 'Learn how dedicated landing pages 2-3x your Meta ads conversion rates. Expert guide covering 5 essential elements & ROI optimization. Get the guide.',
   keywords: 'meta ads landing pages, facebook ads landing page, instagram ads conversion, landing page optimization, meta ads ROI, conversion rate optimization',
   authors: [{ name: 'Nicolas Leroo' }],

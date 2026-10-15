@@ -14,76 +14,6 @@ export default function MetaAds2026SmallBusinessGuide() {
   const schemaData = generateBlogPostSchema(post);
 
   // FAQ Schema for AEO
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How much should I spend on Meta ads per month?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The minimum effective budget for small businesses is $600/month ($20/day), which allows Meta's algorithm to exit the learning phase and optimize your campaigns. The average small business spends $427/month according to Meta's Q4 2025 earnings report, but we recommend starting at $30-50/day ($900-1,500/month) if you want to see meaningful results within 30-60 days. Your specific budget depends on your industry, profit margins, and customer lifetime value. Start with a budget that allows for 10-20 conversions per month minimum—this gives Meta enough data to optimize."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How long does it take to see results from Meta ads?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Expect to wait 7-14 days before judging campaign performance. Days 1-7 are the learning phase where Meta tests your ads across different audiences and placements. Results during this phase are unpredictable. Days 8-14 show initial stabilization as the algorithm identifies what works. Days 15-30 deliver consistent, predictable results. Most small businesses achieve their target ROAS (like 6:1) within 60-90 days after creative testing and optimization. The biggest mistake is changing campaigns too early—give each campaign at least 7 days and 50 conversion events before making decisions."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What's better for small businesses: Advantage+ or manual campaigns?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Advantage+ campaigns are better for 90% of small businesses in 2026. Meta's data shows Advantage+ Shopping campaigns deliver 22% higher ROAS and 9-32% lower cost per acquisition compared to manual campaigns. Use Advantage+ if you're e-commerce selling products, generating leads for services, have a budget above $30/day, or want Meta's AI to handle targeting automatically. Use manual campaigns only if you need highly specific targeting or you're running retargeting-only campaigns."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do I really need a Meta Pixel?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "You absolutely need the Meta Pixel installed and working correctly—it's non-negotiable for profitable campaigns in 2026. Without the Pixel, Meta can't track conversions, optimize delivery, or build retargeting audiences. Installing the Pixel takes 15 minutes and is required for features like Advantage+ campaigns and Conversion API. Verify it's working with Meta Pixel Helper browser extension."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What type of creative performs best in 2026?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Short-form vertical video (9:16 format, 15-30 seconds long) dominates in 2026, particularly user-generated content (UGC) style that looks native to Facebook and Instagram feeds. The winning formula: hook attention in first 3 seconds, show product in action, use native feel (iPhone footage outperforms studio videos), add captions (80% watch with sound off), and design for vertical mobile viewing. Static images still work but typically get 40-50% lower CTR than video."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do I know if my Meta ads are profitable?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Calculate your break-even ROAS using this formula: Break-even ROAS = 1 ÷ profit margin. For example, if you have a 40% profit margin (0.40), your break-even ROAS is 1 ÷ 0.40 = 2.5:1. Any ROAS above 2.5:1 means you're profitable. To find your current ROAS, check Meta Ads Manager: divide Purchase Conversion Value by Amount Spent. Track ROAS over 7-14 day periods, not daily—fluctuations are normal."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What should I do if my ROAS is below 2:1?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "First, confirm you've given the campaign at least 7 days to exit the learning phase. If ROAS is still below 2:1 after 14 days, diagnose systematically: Check Pixel is tracking conversions correctly, audit creative (CTR below 0.8% means your creative isn't engaging), review landing page (high CTR but low conversions means landing page problem), analyze audience breakdown, and verify budget is above $30/day. Most underperforming campaigns have creative or landing page problems, not targeting issues."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Should I use Facebook, Instagram, or both?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Use both—let Meta's algorithm determine which placement performs better through Advantage+ Placements (automatic placement optimization). In 2026, Meta automatically distributes your budget across Facebook Feed, Instagram Feed, Stories, Reels, and other placements based on where you're most likely to get conversions. Most small businesses see about 60% of conversions from Facebook and 40% from Instagram, but this varies by audience and creative."
-        }
-      }
-    ]
-  };
 
   const faqItems = [
     {
@@ -128,11 +58,6 @@ export default function MetaAds2026SmallBusinessGuide() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
 
-      {/* FAQ Schema for AEO */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
 
       {/* Hero Section */}
       <ScrollFadeIn className="relative w-full pt-20 sm:pt-24 lg:pt-28 pb-16 sm:pb-20 lg:pb-24">

@@ -49,7 +49,7 @@ export default function Navigation() {
             />
           </Link>
           {/* Desktop Navigation - Now shows on tablets (md:) and above */}
-          <div className="hidden md:flex items-center gap-8 lg:gap-10">
+          <div className="hidden md:flex items-center gap-5 lg:gap-10 whitespace-nowrap">
             <Link
               href="/"
               className="font-ui text-[1rem] text-[#5FA99F] hover:text-[#4a8a81] transition-colors duration-400 relative group font-medium"
@@ -58,6 +58,13 @@ export default function Navigation() {
               <span className="hidden md:block absolute bottom-0 left-0 w-0 h-px bg-[#5FA99F] transition-all duration-400 group-hover:w-full"></span>
             </Link>
 
+            <Link
+              href="/services"
+              className="font-ui text-[1rem] text-[#5FA99F] hover:text-[#4a8a81] transition-colors duration-400 relative group font-medium"
+            >
+              Services
+              <span className="hidden md:block absolute bottom-0 left-0 w-0 h-px bg-[#5FA99F] transition-all duration-400 group-hover:w-full"></span>
+            </Link>
             <Link
               href="/case-studies"
               className="font-ui text-[1rem] text-[#5FA99F] hover:text-[#4a8a81] transition-colors duration-400 relative group font-medium"
@@ -247,6 +254,17 @@ export default function Navigation() {
                 <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-[#5FA99F] to-[#85C7B3] group-hover:w-full transition-all duration-400 shadow-[0_0_10px_#5FA99F]"></span>
               </Link>
 
+              <Link
+                href="/services"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block font-ui text-[1.125rem] text-white hover:text-[#5FA99F] transition-all duration-400 py-3 font-medium relative group"
+                style={{
+                  textShadow: '0 0 10px rgba(95,169,159,0.3)'
+                }}
+              >
+                <span className="relative z-10">Services</span>
+                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-[#5FA99F] to-[#85C7B3] group-hover:w-full transition-all duration-400 shadow-[0_0_10px_#5FA99F]"></span>
+              </Link>
               <Link
                 href="/case-studies"
                 onClick={() => setIsMobileMenuOpen(false)}

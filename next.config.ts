@@ -72,6 +72,12 @@ const nextConfig: NextConfig = {
         destination: '/book',
         permanent: true,
       },
+      {
+        // Dental landing page retired; closest match is Meta ads management.
+        source: '/dental',
+        destination: '/services/meta-ads',
+        permanent: true,
+      },
     ];
   },
 };

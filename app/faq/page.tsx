@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { faqCategories, faqItems, searchFAQs, generateFAQSchema } from '@/lib/faq-data';
 import { trackEvent } from '@/components/MetaPixel';
@@ -168,24 +168,21 @@ export default function FAQPage() {
                           </svg>
                         </button>
 
-                        {/* Answer */}
-                        <AnimatePresence>
-                          {isOpen && (
-                            <motion.div
-                              initial={{ height: 0, opacity: 0 }}
-                              animate={{ height: 'auto', opacity: 1 }}
-                              exit={{ height: 0, opacity: 0 }}
-                              transition={{ duration: 0.3 }}
-                              className="overflow-hidden"
-                            >
-                              <div className="px-6 pb-6 pt-0">
-                                <p className="font-body text-[1rem] text-gray-300 leading-relaxed">
-                                  {item.answer}
-                                </p>
-                              </div>
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
+                        {/* Answer: always in the HTML so crawlers that don't run
+                            JavaScript can read it; collapsed with CSS. */}
+                        <div
+                          className={`grid transition-[grid-template-rows,opacity] duration-300 ${
+                            isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+                          }`}
+                        >
+                          <div className="overflow-hidden">
+                            <div className="px-6 pb-6 pt-0">
+                              <p className="font-body text-[1rem] text-gray-300 leading-relaxed">
+                                {item.answer}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     );
                   })}

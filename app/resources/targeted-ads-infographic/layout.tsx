@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Free Meta Ads Infographic | Targeted Advertising Guide Atlanta | Drive Lead Media',
-  description: 'Download free Meta targeted ads infographic. One-page visual guide to Facebook & Instagram advertising. Learn audience targeting, ad costs & strategy from Atlanta experts.',
+  title: 'Free Meta Ads Infographic: Targeted Advertising | DLM',
+  description: 'Free one-page infographic on Facebook and Instagram targeted ads: audience targeting, ad costs and strategy, from an Atlanta Meta ads team.',
   keywords: 'meta ads infographic, facebook ads guide, targeted advertising infographic, meta advertising guide atlanta, facebook ads cheat sheet, instagram ads guide download',
   openGraph: {
     title: 'Free Meta Targeted Ads Infographic Download',

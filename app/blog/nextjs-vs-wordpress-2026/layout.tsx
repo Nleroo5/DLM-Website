@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Next.js vs WordPress for Small Business Websites (2026) | Drive Lead Media",
+  title: 'Next.js vs WordPress for Small Business Websites | DLM',
   description: "Compare Next.js vs WordPress for small business sites. Load times, security, costs, and performance data to help you choose the right platform in 2026.",
   keywords: "nextjs vs wordpress, next.js vs wordpress 2026, wordpress vs nextjs performance, nextjs website development, wordpress security issues, nextjs for small business, custom website development, wordpress alternatives 2026",
   authors: [{ name: "Nicolas Leroo" }],

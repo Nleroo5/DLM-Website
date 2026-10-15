@@ -379,7 +379,7 @@ function ProjectCard({ project, onPlayVideo }: ProjectCardProps) {
 const testimonials = [
   {
     quote:
-      "Working with Drive Lead Media has been a great experience. Our patient bookings increased by more than 40% in the first month, and they built a custom website tailored specifically to our practice. They didn't ask for payment until we were 100% satisfied, which says a lot about how they operate. I highly recommend them.",
+      "Working with Drive Lead Media has been a great experience. They built a custom website tailored specifically to our practice. They didn't ask for payment until we were 100% satisfied, which says a lot about how they operate. I highly recommend them.",
     name: 'Dr. Austin Dupont',
     role: 'Owner, Village Pediatrics',
     image: '/images/dr-austin-dupont.webp',

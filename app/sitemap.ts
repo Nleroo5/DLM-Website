@@ -1,326 +1,70 @@
 import { MetadataRoute } from 'next';
+import { blogPosts, getAllCategories } from '@/lib/blog-posts';
+import { SITE_URL } from '@/lib/site';
+
+// lastModified must be the date the page's content really changed. Google
+// ignores lastmod on sites where it changes on every build, so never use
+// new Date() here: update the date when you edit the page.
+type Entry = { path: string; updated: string; priority: number; freq: 'weekly' | 'monthly' | 'yearly' };
+
+const PAGES: Entry[] = [
+  { path: '', updated: '2026-10-15', priority: 1, freq: 'weekly' },
+  { path: '/services', updated: '2026-10-15', priority: 0.9, freq: 'monthly' },
+  { path: '/services/meta-ads', updated: '2026-10-15', priority: 0.9, freq: 'monthly' },
+  { path: '/services/website-design', updated: '2026-10-15', priority: 0.9, freq: 'monthly' },
+  { path: '/case-studies', updated: '2026-10-15', priority: 0.9, freq: 'monthly' },
+  { path: '/about', updated: '2026-10-15', priority: 0.7, freq: 'yearly' },
+  { path: '/about/nicolas-leroo', updated: '2026-10-15', priority: 0.6, freq: 'yearly' },
+  { path: '/about/tommy-duda', updated: '2026-10-15', priority: 0.6, freq: 'yearly' },
+  { path: '/targeted-ads', updated: '2026-10-15', priority: 0.7, freq: 'monthly' },
+  { path: '/faq', updated: '2026-10-15', priority: 0.7, freq: 'monthly' },
+  { path: '/resources', updated: '2026-10-15', priority: 0.7, freq: 'monthly' },
+  { path: '/resources/website-grader', updated: '2026-10-15', priority: 0.7, freq: 'monthly' },
+  { path: '/resources/website-strategy', updated: '2026-10-15', priority: 0.7, freq: 'monthly' },
+  { path: '/resources/competitor-map', updated: '2026-10-15', priority: 0.7, freq: 'monthly' },
+  { path: '/resources/meta-ads-calculator', updated: '2026-10-15', priority: 0.7, freq: 'monthly' },
+  { path: '/resources/targeted-ads-infographic', updated: '2026-10-15', priority: 0.5, freq: 'yearly' },
+  { path: '/resources/meta-ads-landing-pages', updated: '2026-10-15', priority: 0.6, freq: 'yearly' },
+  { path: '/resources/meta-targeting-guide', updated: '2026-03-17', priority: 0.6, freq: 'yearly' },
+  { path: '/book', updated: '2026-10-14', priority: 0.6, freq: 'yearly' },
+  { path: '/privacy', updated: '2026-08-15', priority: 0.2, freq: 'yearly' },
+  { path: '/terms', updated: '2026-08-15', priority: 0.2, freq: 'yearly' },
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://driveleadmedia.com';
+  const posts = blogPosts.map((p) => ({
+    url: `${SITE_URL}/blog/${p.slug}`,
+    lastModified: new Date(p.dateModified),
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }));
+
+  const newestPost = blogPosts.reduce((max, p) => (p.dateModified > max ? p.dateModified : max), '');
+
+  // Only categories with several posts are indexed (one-post categories are noindex).
+  const categories = getAllCategories()
+    .filter((c) => c.count >= 2)
+    .map((c) => {
+      const newest = blogPosts
+        .filter((p) => p.category.slug === c.slug)
+        .reduce((max, p) => (p.dateModified > max ? p.dateModified : max), '');
+      return {
+        url: `${SITE_URL}/blog/category/${c.slug}`,
+        lastModified: new Date(newest),
+        changeFrequency: 'monthly' as const,
+        priority: 0.5,
+      };
+    });
 
   return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/case-studies`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/targeted-ads`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/dental`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/blog`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/blog/how-much-do-facebook-ads-cost-atlanta`,
-      lastModified: new Date('2025-09-05'),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/blog/why-meta-ads-need-landing-pages`,
-      lastModified: new Date('2025-09-20'),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/blog/meta-ads-target-audience-guide`,
-      lastModified: new Date('2025-10-05'),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/blog/boosted-posts-vs-targeted-ads`,
-      lastModified: new Date('2025-10-21'),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/blog/facebook-ads-atlanta-guide`,
-      lastModified: new Date('2025-11-05'),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/blog/how-to-tell-if-facebook-ads-working`,
-      lastModified: new Date('2025-11-20'),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/blog/how-to-set-up-facebook-pixel`,
-      lastModified: new Date('2025-12-05'),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/blog/facebook-ads-vs-google-ads-atlanta`,
-      lastModified: new Date('2025-12-13'),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/blog/how-to-create-facebook-ads`,
-      lastModified: new Date('2025-12-14'),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/blog/meta-andromeda-algorithm-2026`,
-      lastModified: new Date('2026-01-07'),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/blog/facebook-ads-not-delivering-2026`,
-      lastModified: new Date('2026-01-11'),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/blog/meta-ads-healthcare-compliance-atlanta`,
-      lastModified: new Date('2026-01-23'),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/blog/nextjs-vs-wordpress-2026`,
-      lastModified: new Date('2026-02-09'),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/blog/meta-ads-2026-small-business-guide`,
-      lastModified: new Date('2026-02-09'),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/blog/instagram-reels-ads-small-business-guide`,
-      lastModified: new Date('2026-02-18'),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/blog/atlanta-business-website-cost-2026`,
-      lastModified: new Date('2026-03-12'),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/blog/google-business-profile-optimization-atlanta`,
-      lastModified: new Date('2026-03-12'),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/blog/custom-website-vs-template-atlanta-2026`,
-      lastModified: new Date('2026-03-12'),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/blog/signs-atlanta-business-needs-new-website-2026`,
-      lastModified: new Date('2026-03-16'),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/blog/seo-vs-meta-ads-atlanta`,
-      lastModified: new Date('2026-03-21'),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/blog/get-cited-chatgpt-google-ai-overviews-atlanta`,
-      lastModified: new Date('2026-05-20'),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/blog/category/meta-ads-pricing`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/blog/category/conversion-optimization`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/blog/category/targeting-strategy`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/blog/category/meta-ads-strategy`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/blog/category/local-marketing`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/blog/category/meta-ads-setup`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/blog/category/platform-comparison`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/blog/category/web-design-pricing`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/blog/category/local-seo`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/blog/category/algorithm-updates`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/blog/category/healthcare-marketing`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/blog/category/web-development`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/blog/category/web-design`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/blog/category/video-advertising`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/blog/category/ai-search`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/about/nicolas-leroo`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/resources/website-grader`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/resources/website-strategy`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/resources/competitor-map`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/resources/meta-ads-calculator`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/resources/targeted-ads-infographic`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/resources/meta-ads-landing-pages`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/resources/meta-targeting-guide`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/faq`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/book`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/privacy`,
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/terms`,
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.3,
-    },
+    ...PAGES.map((p) => ({
+      url: `${SITE_URL}${p.path}`,
+      lastModified: new Date(p.updated),
+      changeFrequency: p.freq,
+      priority: p.priority,
+    })),
+    { url: `${SITE_URL}/blog`, lastModified: new Date(newestPost), changeFrequency: 'weekly', priority: 0.9 },
+    ...posts,
+    ...categories,
   ];
 }

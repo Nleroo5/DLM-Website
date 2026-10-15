@@ -5,7 +5,6 @@ import { useEffect } from 'react';
 import Hero from '@/components/Hero';
 import ClientLogoBanner from '@/components/ClientLogoBanner';
 import { trackEvent } from '@/components/MetaPixel';
-import { LocalBusinessSchema, OrganizationSchema } from '@/components/StructuredDataSchemas';
 
 // Dynamic imports for below-fold components
 const WorkShowcase = dynamic(() => import('@/components/WorkShowcase'), { ssr: true });
@@ -25,8 +24,6 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#000000]">
       {/* Structured Data for SEO */}
-      <LocalBusinessSchema />
-      <OrganizationSchema />
 
       <Hero />
       <ClientLogoBanner variant="dark" heading="Trusted by local businesses" showRating />

@@ -92,28 +92,16 @@ export default function FacebookPixelSetupPage() {
   ];
 
   // FAQ Schema for AEO (Answer Engine Optimization)
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqItems.map(item => ({
-      "@type": "Question",
-      "name": item.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": item.answer
-      }
-    }))
-  };
 
   return (
     <main className="min-h-screen bg-[#000000]">
       {/* Structured Data */}
       <ArticleSchema
-        headline="How to Set Up Facebook Pixel (2025): Complete Guide with 23 Screenshots"
-        description="Step-by-step Facebook Pixel setup guide for WordPress, Shopify, and GTM. 23 screenshots + video walkthrough. Updated January 2025."
+        headline="How to Set Up Facebook Pixel: Complete Guide with 23 Screenshots"
+        description="Step-by-step Facebook Pixel setup guide for WordPress, Shopify, and GTM. 23 screenshots + video walkthrough."
         author="Nicolas Leroo"
-        datePublished="2025-12-13"
-        dateModified="2025-12-13"
+        datePublished={post?.datePublished ?? ''}
+        dateModified={post?.dateModified ?? ''}
         image="https://driveleadmedia.com/images/meta-events-manager-overview.webp"
         url="https://driveleadmedia.com/blog/how-to-set-up-facebook-pixel"
       />
@@ -132,11 +120,6 @@ export default function FacebookPixelSetupPage() {
         steps={howToSteps}
       />
 
-      {/* FAQ Schema for AEO */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
 
       {/* Hero Section */}
       <section className="pt-[140px] pb-[60px] px-6 bg-[#000000] relative">
@@ -146,7 +129,7 @@ export default function FacebookPixelSetupPage() {
 
         <div className="max-w-[900px] mx-auto relative z-10">
           <h1 className="font-heading text-h1 font-bold text-white leading-tight mb-6">
-            How to Set Up Facebook Pixel (2025): Complete Guide with 23 Screenshots
+            How to Set Up Facebook Pixel: Complete Guide with 23 Screenshots
           </h1>
 
           <div className="flex flex-wrap items-center gap-4 text-gray-400 font-body text-body-sm sm:text-base mb-6">

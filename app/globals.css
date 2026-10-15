@@ -150,7 +150,10 @@ textarea {
 
 /* Touch Target Optimization - Ensure minimum 44x44px on mobile */
 @media (max-width: 768px) {
-  a,
+  /* .text-link = a link inside running text; WCAG 2.5.8 exempts inline links
+     from target sizing, and padding would break the sentence. :where() keeps
+     these selectors' specificity unchanged. */
+  a:where(:not(.text-link)),
   button,
   [role="button"],
   input[type="submit"],
@@ -164,7 +167,7 @@ textarea {
   }
 
   /* Add padding to text-only links to meet touch target size */
-  a:not([class*="min-h"]):not([class*="min-w"]) {
+  a:not([class*="min-h"]):not([class*="min-w"]):where(:not(.text-link)) {
     padding: 0.5rem 0.75rem;
   }
 }

@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import { MetaPixel } from "@/components/MetaPixel";
 import { Analytics } from "@vercel/analytics/next";
 import GrowthPlanProvider from "@/components/growth-plan/GrowthPlanProvider";
+import SiteSchema from "@/components/SiteSchema";
 
 
 // Mona Sans for everything: one variable file covering headings and body.
@@ -20,8 +21,8 @@ const monaSans = Mona_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Custom Websites & Meta Advertising | Facebook & Instagram Ads | Drive Lead Media",
-  description: "Atlanta Meta advertising. Facebook & Instagram ad campaigns that convert. Video production, targeting strategy & websites. Get started today.",
+  title: 'Atlanta Meta Ads & Website Design | Drive Lead Media',
+  description: "Atlanta agency for Facebook and Instagram ads, video creative and fast websites that turn clicks into customers. Get started free.",
   keywords: "atlanta meta ads agency, facebook advertising atlanta, instagram ads atlanta ga, meta advertising agency atlanta, atlanta social media marketing, facebook ads agency atlanta, meta ads consultant atlanta, video ads production atlanta, atlanta digital marketing agency, meta certified atlanta",
   authors: [{ name: "Drive Lead Media" }],
   creator: "Drive Lead Media",
@@ -31,8 +32,8 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://driveleadmedia.com",
     siteName: "Drive Lead Media",
-    title: "Custom Websites & Meta Advertising | Facebook & Instagram Ads",
-    description: "Atlanta's premier Meta advertising. We build Facebook & Instagram ad campaigns and high-converting websites that bring your best customers to you.",
+    title: "Meta Ads & Websites for Atlanta Businesses",
+    description: "We run Facebook and Instagram ads, make the video creative, and build the websites they point to, so local businesses get more customers.",
     images: [
       {
         url: "/images/og-image.webp",
@@ -44,8 +45,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Custom Websites & Meta Advertising | Facebook & Instagram Ads",
-    description: "Atlanta's premier Meta advertising. We build Facebook & Instagram ad campaigns and high-converting websites.",
+    title: "Meta Ads & Websites for Atlanta Businesses",
+    description: "Facebook and Instagram ads, video creative and websites for local businesses.",
     images: ["/images/og-image.webp"],
   },
   icons: {
@@ -56,6 +57,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://driveleadmedia.com"),
   alternates: {
     canonical: "/",
+    types: { "application/rss+xml": "https://driveleadmedia.com/feed.xml" },
   },
   robots: {
     index: true,
@@ -107,242 +109,8 @@ export default function RootLayout({
             alt=""
           />
         </noscript>
-        {/* JSON-LD Structured Data - Enhanced Organization Schema */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              "name": "Drive Lead Media",
-              "alternateName": "DLM",
-              "url": "https://driveleadmedia.com",
-              "logo": "https://driveleadmedia.com/images/drive-lead-media-full-service-marketing-agency-brand.webp",
-              "description": "Atlanta's premier Meta advertising. Full-service Facebook ads, Instagram ads, video production, and custom website development for local businesses. Serving Atlanta, GA and nationwide.",
-              "foundingDate": "2019",
-              "sameAs": [
-                "https://www.facebook.com/driveleadmedia",
-                "https://www.instagram.com/driveleadmedia",
-                "https://www.linkedin.com/company/drive-lead-media"
-              ],
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "contactType": "Sales",
-                "url": "https://driveleadmedia.com/book",
-                "availableLanguage": "English"
-              },
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Atlanta",
-                "addressRegion": "GA",
-                "addressCountry": "US"
-              },
-              "areaServed": [
-                {
-                  "@type": "City",
-                  "name": "Atlanta"
-                },
-                {
-                  "@type": "State",
-                  "name": "Georgia"
-                },
-                {
-                  "@type": "Country",
-                  "name": "United States"
-                }
-              ],
-              "knowsAbout": [
-                "Meta Advertising",
-                "Facebook Advertising",
-                "Instagram Advertising",
-                "Social Media Marketing",
-                "Video Production",
-                "Web Design",
-                "Lead Generation",
-                "Digital Marketing Strategy"
-              ]
-            })
-          }}
-        />
-        {/* Service Schema */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify([
-              {
-                "@context": "https://schema.org",
-                "@type": "Service",
-                "serviceType": "Meta Advertising Management",
-                "name": "Meta Ad Campaign Management",
-                "description": "Full-service Meta (Facebook & Instagram) advertising campaigns including strategy, ad creation, targeting, optimization, and reporting.",
-                "provider": {
-                  "@type": "Organization",
-                  "name": "Drive Lead Media"
-                },
-                "areaServed": "US",
-                "audience": {
-                  "@type": "Audience",
-                  "audienceType": "Small Business Owners, Local Businesses, Healthcare Practices"
-                }
-              },
-              {
-                "@context": "https://schema.org",
-                "@type": "Service",
-                "serviceType": "Video Production",
-                "name": "Actor-Led Video Ad Production",
-                "description": "Professional actor-led video production and motion graphics specifically designed for Meta advertising campaigns. No filming required from clients.",
-                "provider": {
-                  "@type": "Organization",
-                  "name": "Drive Lead Media"
-                },
-                "areaServed": "US"
-              },
-              {
-                "@context": "https://schema.org",
-                "@type": "Service",
-                "serviceType": "Web Design",
-                "name": "Custom Website Design & Development",
-                "description": "High-converting website design and development optimized for local business lead generation and Meta advertising integration.",
-                "provider": {
-                  "@type": "Organization",
-                  "name": "Drive Lead Media"
-                },
-                "areaServed": "US"
-              }
-            ])
-          }}
-        />
-        {/* Website Schema */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              "name": "Drive Lead Media",
-              "url": "https://driveleadmedia.com",
-              "description": "Meta advertising agency specializing in Facebook and Instagram ads, video production, and website development."
-            })
-          }}
-        />
-        {/* LocalBusiness Schema */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "LocalBusiness",
-              "@id": "https://driveleadmedia.com/#localbusiness",
-              "name": "Drive Lead Media",
-              "image": "https://driveleadmedia.com/images/drive-lead-media-full-service-marketing-agency-brand.webp",
-              "url": "https://driveleadmedia.com",
-              "telephone": "+1-678-650-6411",
-              "email": "hello@driveleadmedia.com",
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Atlanta",
-                "addressRegion": "GA",
-                "addressCountry": "US"
-              },
-              "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": "33.3968",
-                "longitude": "-84.5957"
-              },
-              "priceRange": "$$",
-              "areaServed": [
-                {
-                  "@type": "City",
-                  "name": "Atlanta"
-                },
-                {
-                  "@type": "State",
-                  "name": "Georgia"
-                },
-                {
-                  "@type": "Country",
-                  "name": "United States"
-                }
-              ],
-              "openingHoursSpecification": {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"],
-                "opens": "09:00",
-                "closes": "17:00"
-              },
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "5",
-                "reviewCount": "2",
-                "bestRating": "5",
-                "worstRating": "5"
-              },
-              "sameAs": [
-                "https://www.facebook.com/driveleadmedia",
-                "https://www.instagram.com/driveleadmedia",
-                "https://www.linkedin.com/company/drive-lead-media"
-              ]
-            })
-          }}
-        />
-        {/* Review Schema - Testimonials */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify([
-              {
-                "@context": "https://schema.org",
-                "@type": "Review",
-                "itemReviewed": {
-                  "@type": "LocalBusiness",
-                  "name": "Drive Lead Media",
-                  "image": "https://driveleadmedia.com/images/drive-lead-media-full-service-marketing-agency-brand.webp"
-                },
-                "author": {
-                  "@type": "Person",
-                  "name": "Jenn",
-                  "jobTitle": "Owner",
-                  "worksFor": {
-                    "@type": "Organization",
-                    "name": "The Yoga Lounge"
-                  }
-                },
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": "5",
-                  "bestRating": "5"
-                },
-                "reviewBody": "We partnered with Drive Lead Media to run Meta ads for my yoga studio, and the experience was smooth and professional. Nic and Tommy created amazing videos and ads that really captured our vibe, and I learned so much about how to better use Meta for marketing. Within weeks we started seeing new leads coming in, and their clear communication made the whole process easy. I'm so grateful for all they did and would definitely recommend them to any business looking to grow.",
-                "datePublished": "2024-01-15"
-              },
-              {
-                "@context": "https://schema.org",
-                "@type": "Review",
-                "itemReviewed": {
-                  "@type": "LocalBusiness",
-                  "name": "Drive Lead Media",
-                  "image": "https://driveleadmedia.com/images/drive-lead-media-full-service-marketing-agency-brand.webp"
-                },
-                "author": {
-                  "@type": "Person",
-                  "name": "Dr. Austin Dupont",
-                  "jobTitle": "Owner",
-                  "worksFor": {
-                    "@type": "Organization",
-                    "name": "Village Pediatrics of St. Augustine"
-                  }
-                },
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": "5",
-                  "bestRating": "5"
-                },
-                "reviewBody": "Working with Drive Lead Media has been a game changer for Village Pediatrics. They completely transformed our outdated website into something modern and professional. The Meta ad campaigns they've been running have brought in a 40% increase in new patient bookings, and honestly, the best part is that I haven't had to manage any of it. Nic and Tommy handle everything from strategy to execution while I focus on caring for my patients.",
-                "datePublished": "2024-02-20"
-              }
-            ])
-          }}
-        />
+        {/* Sitewide structured data: business, website, founders */}
+        <SiteSchema />
       </head>
       <body className="antialiased">
         {/* Meta Pixel - Non-blocking */}
