@@ -343,7 +343,7 @@ export default function GoogleBusinessProfileOptimizationPost() {
                   href="/book"
                   className="inline-block bg-gradient-to-r from-[#5FA99F] to-[#85C7B3] text-white px-8 py-4 rounded-xl font-heading font-bold hover:scale-105 transition-transform duration-300 shadow-[0_0_30px_rgba(95,169,159,0.4)]"
                 >
-                  Book a Free Strategy Call
+                  Get started: it&apos;s free →
                 </Link>
               </div>
             </ScrollFadeIn>
@@ -707,7 +707,7 @@ export default function GoogleBusinessProfileOptimizationPost() {
                 <p className="text-white text-body leading-body mb-4">
                   We are Drive Lead Media, an Atlanta agency that builds fast websites and runs targeted Meta ad campaigns. We will audit your online presence and show you exactly where you are losing visibility.
                 </p>
-                <Link href="/book" className="text-[#5FA99F] underline">Book a free strategy call</Link>
+                <Link href="/book" className="text-[#5FA99F] underline">Get started: it&apos;s free →</Link>
               </div>
             </div>
 

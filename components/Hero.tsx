@@ -9,7 +9,7 @@ import GoogleRating from '@/components/GoogleRating';
 export default function Hero() {
   return (
     <section
-      className="relative w-full min-h-screen flex items-center overflow-hidden pt-[130px] xs:pt-[140px] sm:pt-[120px] pb-16 sm:pb-20 px-4 xs:px-5 sm:px-6"
+      className="relative w-full min-h-screen flex items-center overflow-hidden pt-[130px] xs:pt-[140px] sm:pt-[120px] pb-28 sm:pb-24 lg:pb-20 px-4 xs:px-5 sm:px-6"
       style={{ backgroundColor: '#0a0a0a' }}
     >
       {/* Background gradient orbs */}
@@ -39,7 +39,7 @@ export default function Hero() {
       <div className="relative z-10 max-w-[1400px] mx-auto w-full flex flex-col lg:flex-row items-center gap-10 sm:gap-12 lg:gap-16">
         {/* Left: Text */}
         <motion.div
-          className="text-center lg:text-left lg:w-1/2 lg:flex-shrink-0"
+          className="relative z-10 text-center lg:text-left lg:w-1/2 lg:flex-shrink-0"
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -123,12 +123,19 @@ export default function Hero() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.3, ease: 'easeOut' }}
         >
-          {/* Glow behind the video */}
-          <div
-            className="absolute -inset-4 rounded-3xl opacity-40 blur-[60px] pointer-events-none"
-            style={{ background: 'radial-gradient(ellipse at center, rgba(95,169,159,0.3) 0%, transparent 70%)' }}
-          />
           <div className="relative">
+            {/* Glow in the video's own background colors (#002E3F top, #002A38 middle,
+                #001C28 bottom) so the faded video edges melt into the hero. */}
+            <div
+              className="absolute -inset-x-[90%] -inset-y-[6%] lg:-inset-x-[45%] lg:-inset-y-[14%] rounded-[50%] blur-[60px] lg:blur-[70px] pointer-events-none"
+              style={{ background: 'linear-gradient(to bottom, #002e3f, #002a38 50%, #001c28)' }}
+              aria-hidden="true"
+            />
+            <div
+              className="hidden lg:block absolute -inset-x-[120%] -inset-y-[40%] pointer-events-none"
+              style={{ background: 'radial-gradient(closest-side, rgba(0,42,56,0.55), rgba(0,42,56,0.18) 55%, rgba(0,42,56,0) 100%)' }}
+              aria-hidden="true"
+            />
             <HeroVideo />
           </div>
         </motion.div>

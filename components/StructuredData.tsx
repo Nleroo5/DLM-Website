@@ -10,11 +10,11 @@ export default function StructuredData() {
     "founders": [
       {
         "@type": "Person",
-        "name": "Nic Leroo"
+        "name": "Nicolas Leroo"
       },
       {
         "@type": "Person",
-        "name": "Tommy Farese"
+        "name": "Tommy Duda"
       }
     ],
     "address": {

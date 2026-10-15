@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import { useGrowthPlan } from '@/components/growth-plan/GrowthPlanProvider';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 
@@ -157,6 +158,7 @@ function MetricRow({ label, value, status }: { label: string; value: string; sta
 
 export default function WebsiteGrader() {
   const [url, setUrl] = useState('');
+  const { open: openIntake } = useGrowthPlan();
   const [loading, setLoading] = useState(false);
   const [results, setResults] = useState<GraderResults | null>(null);
   const [error, setError] = useState('');
@@ -582,12 +584,13 @@ export default function WebsiteGrader() {
                   We build fast, modern websites that score 90+ on Google PageSpeed. No templates. No plugins. Just clean, custom code built to convert visitors into customers.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link
-                    href="/book"
-                    className="bg-[#5FA99F] hover:bg-[#4D9189] text-white font-heading font-semibold px-8 py-4 rounded-[12px] transition-colors no-underline"
+                  <button
+                    type="button"
+                    onClick={() => openIntake('website_grader', { goal: 'website', website: results.url, noWebsite: false })}
+                    className="bg-[#5FA99F] hover:bg-[#4D9189] text-white font-heading font-semibold px-8 py-4 rounded-[12px] transition-colors"
                   >
-                    Get a Free Consultation
-                  </Link>
+                    Get started: it&apos;s free →
+                  </button>
                   <Link
                     href="/case-studies"
                     className="bg-transparent border border-[#5FA99F] text-[#5FA99F] hover:bg-[#5FA99F]/10 font-heading font-semibold px-8 py-4 rounded-[12px] transition-colors no-underline"

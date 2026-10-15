@@ -4,6 +4,7 @@
 // SEO: Meta title and description handled via layout metadata override
 
 import { useState, useEffect, useMemo } from 'react';
+import { useGrowthPlan } from '@/components/growth-plan/GrowthPlanProvider';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
@@ -50,6 +51,7 @@ const getSeasonalFactor = () => {
 export default function MetaAdsCalculator() {
   // State for filters - blank defaults
   const [industry, setIndustry] = useState('');
+  const { open: openIntake } = useGrowthPlan();
   const [location, setLocation] = useState('');
   const [monthlyBudget, setMonthlyBudget] = useState(500);
   const [customerValue, setCustomerValue] = useState(0);
@@ -229,7 +231,7 @@ export default function MetaAdsCalculator() {
                 <select
                   value={industry}
                   onChange={(e) => setIndustry(e.target.value)}
-                  className="w-full px-4 py-3 bg-[rgba(1,46,64,0.5)] border-2 border-[#85C7B3] rounded-xl text-[#EEF4D9] font-body text-[0.95rem] outline-none transition-all duration-300 focus:border-[#F2A922] focus:ring-2 focus:ring-[#F2A922] focus:ring-opacity-50 cursor-pointer"
+                  className="w-full px-4 py-3 bg-[rgba(1,46,64,0.5)] border-2 border-[#85C7B3] rounded-xl text-[#EEF4D9] font-body text-[1rem] outline-none transition-all duration-300 focus:border-[#F2A922] focus:ring-2 focus:ring-[#F2A922] focus:ring-opacity-50 cursor-pointer"
                 >
                   <option value="">Select your industry...</option>
                   {Object.entries(INDUSTRY_DATA).map(([key, data]) => (
@@ -253,7 +255,7 @@ export default function MetaAdsCalculator() {
                 <select
                   value={location}
                   onChange={(e) => setLocation(e.target.value)}
-                  className="w-full px-4 py-3 bg-[rgba(1,46,64,0.5)] border-2 border-[#85C7B3] rounded-xl text-[#EEF4D9] font-body text-[0.95rem] outline-none transition-all duration-300 focus:border-[#F2A922] focus:ring-2 focus:ring-[#F2A922] focus:ring-opacity-50 cursor-pointer"
+                  className="w-full px-4 py-3 bg-[rgba(1,46,64,0.5)] border-2 border-[#85C7B3] rounded-xl text-[#EEF4D9] font-body text-[1rem] outline-none transition-all duration-300 focus:border-[#F2A922] focus:ring-2 focus:ring-[#F2A922] focus:ring-opacity-50 cursor-pointer"
                 >
                   <option value="">Select your market location...</option>
                   {Object.entries(LOCATION_TIERS).map(([key, data]) => (
@@ -276,9 +278,9 @@ export default function MetaAdsCalculator() {
                   step="100"
                   value={monthlyBudget}
                   onChange={(e) => setMonthlyBudget(Number(e.target.value))}
-                  className="w-full h-2 bg-[rgba(85,199,179,0.3)] rounded-lg appearance-none cursor-pointer accent-[#F2A922]"
+                  className="w-full h-11 bg-transparent appearance-none cursor-pointer accent-[#F2A922] [&::-webkit-slider-runnable-track]:h-2 [&::-webkit-slider-runnable-track]:rounded-lg [&::-webkit-slider-runnable-track]:bg-[rgba(85,199,179,0.3)] [&::-moz-range-track]:h-2 [&::-moz-range-track]:rounded-lg [&::-moz-range-track]:bg-[rgba(85,199,179,0.3)]"
                 />
-                <div className="flex justify-between text-[#EEF4D9] text-[0.75rem] mt-1 font-body opacity-70">
+                <div className="flex justify-between text-[#EEF4D9] text-[0.8rem] mt-1 font-body opacity-70">
                   <span>$500</span>
                   <span>$50,000+</span>
                 </div>
@@ -299,11 +301,11 @@ export default function MetaAdsCalculator() {
                     step="50"
                     value={customerValue}
                     onChange={(e) => setCustomerValue(Number(e.target.value))}
-                    className="w-full pl-8 pr-4 py-3 bg-[rgba(1,46,64,0.5)] border-2 border-[#85C7B3] rounded-xl text-[#EEF4D9] font-body text-[0.95rem] outline-none transition-all duration-300 focus:border-[#F2A922] focus:ring-2 focus:ring-[#F2A922] focus:ring-opacity-50"
+                    className="w-full pl-8 pr-4 py-3 bg-[rgba(1,46,64,0.5)] border-2 border-[#85C7B3] rounded-xl text-[#EEF4D9] font-body text-[1rem] outline-none transition-all duration-300 focus:border-[#F2A922] focus:ring-2 focus:ring-[#F2A922] focus:ring-opacity-50"
                     placeholder="500"
                   />
                 </div>
-                <p className="text-[#EEF4D9] text-[0.75rem] mt-1 font-body opacity-70">
+                <p className="text-[#EEF4D9] text-[0.8rem] mt-1 font-body opacity-70">
                   How much is a new customer worth to your business?
                 </p>
               </div>
@@ -320,9 +322,9 @@ export default function MetaAdsCalculator() {
                   step="0.1"
                   value={conversionRate}
                   onChange={(e) => setConversionRate(Number(e.target.value))}
-                  className="w-full h-2 bg-[rgba(85,199,179,0.3)] rounded-lg appearance-none cursor-pointer accent-[#F2A922]"
+                  className="w-full h-11 bg-transparent appearance-none cursor-pointer accent-[#F2A922] [&::-webkit-slider-runnable-track]:h-2 [&::-webkit-slider-runnable-track]:rounded-lg [&::-webkit-slider-runnable-track]:bg-[rgba(85,199,179,0.3)] [&::-moz-range-track]:h-2 [&::-moz-range-track]:rounded-lg [&::-moz-range-track]:bg-[rgba(85,199,179,0.3)]"
                 />
-                <div className="flex justify-between text-[#EEF4D9] text-[0.75rem] mt-1 font-body opacity-70">
+                <div className="flex justify-between text-[#EEF4D9] text-[0.8rem] mt-1 font-body opacity-70">
                   <span>0% = Auto (Industry Avg: {industry ? `${INDUSTRY_DATA[industry as keyof typeof INDUSTRY_DATA].conversionRate}%` : 'N/A'})</span>
                   <span>10%</span>
                 </div>
@@ -340,9 +342,9 @@ export default function MetaAdsCalculator() {
                   step="1"
                   value={campaignDuration}
                   onChange={(e) => setCampaignDuration(Number(e.target.value))}
-                  className="w-full h-2 bg-[rgba(85,199,179,0.3)] rounded-lg appearance-none cursor-pointer accent-[#F2A922]"
+                  className="w-full h-11 bg-transparent appearance-none cursor-pointer accent-[#F2A922] [&::-webkit-slider-runnable-track]:h-2 [&::-webkit-slider-runnable-track]:rounded-lg [&::-webkit-slider-runnable-track]:bg-[rgba(85,199,179,0.3)] [&::-moz-range-track]:h-2 [&::-moz-range-track]:rounded-lg [&::-moz-range-track]:bg-[rgba(85,199,179,0.3)]"
                 />
-                <div className="flex justify-between text-[#EEF4D9] text-[0.75rem] mt-1 font-body opacity-70">
+                <div className="flex justify-between text-[#EEF4D9] text-[0.8rem] mt-1 font-body opacity-70">
                   <span>1 month</span>
                   <span>12 months</span>
                 </div>
@@ -360,9 +362,9 @@ export default function MetaAdsCalculator() {
                   step="50"
                   value={managementFee}
                   onChange={(e) => setManagementFee(Number(e.target.value))}
-                  className="w-full h-2 bg-[rgba(85,199,179,0.3)] rounded-lg appearance-none cursor-pointer accent-[#F2A922]"
+                  className="w-full h-11 bg-transparent appearance-none cursor-pointer accent-[#F2A922] [&::-webkit-slider-runnable-track]:h-2 [&::-webkit-slider-runnable-track]:rounded-lg [&::-webkit-slider-runnable-track]:bg-[rgba(85,199,179,0.3)] [&::-moz-range-track]:h-2 [&::-moz-range-track]:rounded-lg [&::-moz-range-track]:bg-[rgba(85,199,179,0.3)]"
                 />
-                <div className="flex justify-between text-[#EEF4D9] text-[0.75rem] mt-1 font-body opacity-70">
+                <div className="flex justify-between text-[#EEF4D9] text-[0.8rem] mt-1 font-body opacity-70">
                   <span>$0 = DIY/No Management</span>
                   <span>$5,000</span>
                 </div>
@@ -401,7 +403,7 @@ export default function MetaAdsCalculator() {
                 <p className="text-[#EEF4D9] text-[1.75rem] font-bold font-body leading-tight">
                   {results.estimatedImpressions.toLocaleString()}
                 </p>
-                <p className="text-[#EEF4D9] text-[0.7rem] font-body opacity-60">per month</p>
+                <p className="text-[#EEF4D9] text-[0.8rem] font-body opacity-60">per month</p>
               </div>
 
               {/* Cost Per Lead */}
@@ -410,7 +412,7 @@ export default function MetaAdsCalculator() {
                 <p className="text-[#EEF4D9] text-[1.75rem] font-bold font-body leading-tight">
                   ${results.costPerLead}
                 </p>
-                <p className="text-[#EEF4D9] text-[0.7rem] font-body opacity-60">per qualified lead</p>
+                <p className="text-[#EEF4D9] text-[0.8rem] font-body opacity-60">per qualified lead</p>
               </div>
 
               {/* Estimated Leads */}
@@ -419,7 +421,7 @@ export default function MetaAdsCalculator() {
                 <p className="text-[#EEF4D9] text-[1.75rem] font-bold font-body leading-tight">
                   {results.estimatedLeads}
                 </p>
-                <p className="text-[#EEF4D9] text-[0.7rem] font-body opacity-60">qualified leads</p>
+                <p className="text-[#EEF4D9] text-[0.8rem] font-body opacity-60">qualified leads</p>
               </div>
 
               {/* Projected ROI */}
@@ -428,7 +430,7 @@ export default function MetaAdsCalculator() {
                 <p className="text-[#EEF4D9] text-[1.75rem] font-bold font-body leading-tight">
                   {results.roi > 0 ? `${results.roi}%` : 'N/A'}
                 </p>
-                <p className="text-[#EEF4D9] text-[0.7rem] font-body opacity-60">
+                <p className="text-[#EEF4D9] text-[0.8rem] font-body opacity-60">
                   {results.roi > 0 ? `$${results.profit.toLocaleString()} profit` : 'Enter customer value'}
                 </p>
               </div>
@@ -695,18 +697,19 @@ export default function MetaAdsCalculator() {
                 Ready to Launch Your Campaign?
               </h2>
               <p className="text-[#EEF4D9] font-body text-[0.95rem] mb-5 max-w-[600px] mx-auto leading-relaxed opacity-85">
-                Let's turn these projections into real results. Schedule a free strategy call to discuss your specific goals and how we can help you maximize your Meta advertising ROI.
+                Let's turn these projections into real results. Answer 4 quick questions and we'll reach out the same business day to talk through your goals.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
-                <Link
-                  href="/book"
-                  className="inline-flex items-center gap-2 bg-gradient-to-br from-[#F2A922] to-[#EEF4D9] text-[#012E40] px-7 py-3 rounded-xl text-[1rem] font-bold font-body transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(242,169,34,0.4)] no-underline"
+                <button
+                  type="button"
+                  onClick={() => openIntake('meta_ads_calculator', { goal: 'meta_ads' })}
+                  className="inline-flex items-center gap-2 bg-gradient-to-br from-[#F2A922] to-[#EEF4D9] text-[#012E40] px-7 py-3 rounded-xl text-[1rem] font-bold font-body transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(242,169,34,0.4)]"
                 >
-                  Schedule Free Strategy Call
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  Get started: it&apos;s free
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
-                </Link>
+                </button>
                 <Link
                   href="/case-studies"
                   className="inline-flex items-center gap-2 bg-transparent border-2 border-[#85C7B3] text-[#EEF4D9] px-7 py-3 rounded-xl text-[1rem] font-bold font-body transition-all duration-300 hover:bg-[rgba(85,199,179,0.1)] hover:border-[#F2A922] hover:text-[#F2A922] no-underline"

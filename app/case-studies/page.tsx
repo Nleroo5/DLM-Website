@@ -829,13 +829,13 @@ export default function CaseStudiesPage() {
             Ready to Be Our Next Success Story?
           </h2>
           <p className="font-body text-gray-300 text-[1.125rem] mb-8 leading-relaxed max-w-[600px] mx-auto">
-            Book a free strategy call and let&apos;s map out how to grow your business.
+            Answer 4 quick questions and we&apos;ll reach out the same business day to map out how to grow your business.
           </p>
           <Link
             href="/book"
             className="inline-block bg-gradient-to-r from-[#5FA99F] to-[#85C7B3] text-white px-10 py-4 text-[1.125rem] rounded-xl font-heading font-bold hover:scale-105 transition-transform duration-300 shadow-[0_0_30px_rgba(95,169,159,0.4)]"
           >
-            Book a Free Strategy Call
+            Get started: it&apos;s free →
           </Link>
         </motion.div>
       </section>

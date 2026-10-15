@@ -18,7 +18,18 @@ export default function HeroVideo() {
   }, []);
 
   return (
-    <div className="relative mx-auto w-[min(78vw,320px)] sm:w-[340px] lg:w-auto lg:h-[min(72vh,640px)] aspect-[9/16] rounded-[28px] overflow-hidden border border-[#5FA99F]/30 bg-[#0b2a30] shadow-[0_30px_80px_rgba(0,0,0,0.55)]">
+    <div
+      className="relative mx-auto w-[min(78vw,320px)] sm:w-[340px] lg:w-auto lg:h-[min(82vh,780px)] aspect-[9/16] overflow-hidden bg-[#002a38]"
+      style={{
+        // Fade every edge so the video dissolves into the matching glow behind it.
+        maskImage:
+          'linear-gradient(to bottom, transparent 0%, #000 9%, #000 91%, transparent 100%), linear-gradient(to right, transparent 0%, #000 14%, #000 86%, transparent 100%)',
+        maskComposite: 'intersect',
+        WebkitMaskImage:
+          'linear-gradient(to bottom, transparent 0%, #000 9%, #000 91%, transparent 100%), linear-gradient(to right, transparent 0%, #000 14%, #000 86%, transparent 100%)',
+        WebkitMaskComposite: 'source-in',
+      }}
+    >
       <video
         ref={videoRef}
         className="w-full h-full object-cover"

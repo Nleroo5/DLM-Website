@@ -12,13 +12,13 @@ export default function TargetedAdsInfographic() {
       <div className="max-w-[1000px] mx-auto">
         {/* Back Button */}
         <Link
-          href="/resources"
+          href="/"
           className="inline-flex items-center gap-2 text-[#85C7B3] hover:text-[#F2A922] transition-colors duration-300 mb-8 font-heading text-[0.95rem]"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
           </svg>
-          Back to Resources
+          Back to Home
         </Link>
 
         {/* Hero Section */}
@@ -136,7 +136,7 @@ export default function TargetedAdsInfographic() {
             href="/book"
             className="inline-flex items-center gap-2 text-[#F2A922] hover:text-[#EEF4D9] transition-colors duration-300 font-heading text-[1rem] sm:text-[1.05rem] font-semibold underline underline-offset-4 hover:underline-offset-8"
           >
-            Schedule a Free Strategy Call
+            Get started: it&apos;s free
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>

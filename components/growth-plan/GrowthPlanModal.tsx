@@ -90,10 +90,12 @@ function Chips({
 export default function GrowthPlanModal({
   isOpen,
   source,
+  prefill,
   onClose,
 }: {
   isOpen: boolean;
   source: string;
+  prefill?: Partial<GrowthPlanAnswers>;
   onClose: () => void;
 }) {
   const [step, setStep] = useState(1);
@@ -127,6 +129,19 @@ export default function GrowthPlanModal({
       }, 300);
     }
   }, [done, step, source, onClose]);
+
+  // Apply answers handed over by the page that opened the form (only fills
+  // fields the visitor hasn't already answered).
+  useEffect(() => {
+    if (!isOpen || !prefill) return;
+    setAnswers((prev) => {
+      const next = { ...prev };
+      for (const [k, v] of Object.entries(prefill) as [keyof GrowthPlanAnswers, never][]) {
+        if (v !== undefined && (prev[k] === '' || prev[k] === EMPTY_ANSWERS[k])) next[k] = v;
+      }
+      return next;
+    });
+  }, [isOpen, prefill]);
 
   const closeRef = useRef(close);
   closeRef.current = close;
@@ -307,7 +322,7 @@ export default function GrowthPlanModal({
                                 set('adSpend', '');
                                 set('launch', '');
                               }}
-                              className={`text-left rounded-xl border px-4 py-3.5 transition-colors ${
+                              className={`flex flex-col items-stretch w-full text-left rounded-xl border px-4 py-3.5 transition-colors ${
                                 selected ? 'border-[#5FA99F] bg-[#5FA99F]/10' : 'border-white/10 bg-[#1b1e1d] hover:border-[#5FA99F]/50'
                               }`}
                             >
