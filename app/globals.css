@@ -354,11 +354,12 @@ h1, h2 {
 /* Mobile: calm, continuous scroll. (Was 8s — the whole strip raced by and
    hard-looped every 8s, which read as a glitchy reset on phones.) */
 .animate-marquee-left-slow {
-  animation: marquee-left 50s linear infinite;
+  animation: marquee-left 36s linear infinite;
 }
 
+/* Second row a touch slower so the two rows don't move in lockstep. */
 .animate-marquee-right-slow {
-  animation: marquee-right 50s linear infinite;
+  animation: marquee-right 40s linear infinite;
 }
 
 @media (min-width: 640px) {
@@ -377,6 +378,16 @@ h1, h2 {
   .animate-marquee-right-slow {
     animation: marquee-right 90s linear infinite;
   }
+}
+
+/* Logo strip pauses on hover (mouse) or while held (touch). */
+@media (hover: hover) {
+  .marquee-pausable:hover [class*="animate-marquee"] {
+    animation-play-state: paused;
+  }
+}
+.marquee-pausable.is-held [class*="animate-marquee"] {
+  animation-play-state: paused;
 }
 
 .group:hover .animate-marquee-left,

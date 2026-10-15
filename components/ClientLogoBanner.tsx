@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import GoogleRating from '@/components/GoogleRating';
@@ -56,6 +57,15 @@ export default function ClientLogoBanner({ variant = 'light', heading, showRatin
   const displayHeading = heading || (isDark ? "You're in good company" : 'Trusted by Leading Brands');
   const fadeBg = isDark ? '#141414' : 'white';
 
+  // Touch has no hover, so pressing and holding the strip pauses it (WCAG 2.2.2).
+  const [held, setHeld] = useState(false);
+  const hold = {
+    onPointerDown: (e: React.PointerEvent) => { if (e.pointerType !== 'mouse') setHeld(true); },
+    onPointerUp: () => setHeld(false),
+    onPointerCancel: () => setHeld(false),
+    onPointerLeave: () => setHeld(false),
+  };
+
   return (
     <section className={`${isDark ? 'bg-[#141414] border-y border-[rgba(95,169,159,0.2)]' : 'bg-white border-y border-[rgba(95,169,159,0.12)]'} py-12 overflow-hidden`}>
       <div className="max-w-[1400px] mx-auto">
@@ -74,12 +84,13 @@ export default function ClientLogoBanner({ variant = 'light', heading, showRatin
           </div>
         )}
 
+        <div className={`marquee-pausable${held ? ' is-held' : ''}`} {...hold}>
         {/* Row 1 — scrolls left */}
         <div className="relative w-full overflow-hidden mb-6">
           <div className="absolute left-0 top-0 bottom-0 w-[80px] sm:w-[120px] z-10 pointer-events-none" style={{ background: `linear-gradient(to right, ${fadeBg}, transparent)` }} />
           <div className="absolute right-0 top-0 bottom-0 w-[80px] sm:w-[120px] z-10 pointer-events-none" style={{ background: `linear-gradient(to left, ${fadeBg}, transparent)` }} />
 
-          <div className="flex animate-marquee-left-slow" style={{ width: 'max-content' }}>
+          <div className="flex max-w-none animate-marquee-left-slow" style={{ width: 'max-content' }}>
             {[...row1, ...row1].map((logo, index) => (
               <div
                 key={`r1-${index}`}
@@ -103,7 +114,7 @@ export default function ClientLogoBanner({ variant = 'light', heading, showRatin
           <div className="absolute left-0 top-0 bottom-0 w-[80px] sm:w-[120px] z-10 pointer-events-none" style={{ background: `linear-gradient(to right, ${fadeBg}, transparent)` }} />
           <div className="absolute right-0 top-0 bottom-0 w-[80px] sm:w-[120px] z-10 pointer-events-none" style={{ background: `linear-gradient(to left, ${fadeBg}, transparent)` }} />
 
-          <div className="flex animate-marquee-right-slow" style={{ width: 'max-content' }}>
+          <div className="flex max-w-none animate-marquee-right-slow" style={{ width: 'max-content' }}>
             {[...row2, ...row2].map((logo, index) => (
               <div
                 key={`r2-${index}`}
@@ -120,6 +131,7 @@ export default function ClientLogoBanner({ variant = 'light', heading, showRatin
               </div>
             ))}
           </div>
+        </div>
         </div>
       </div>
     </section>
