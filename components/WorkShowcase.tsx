@@ -88,6 +88,7 @@ type Pair = {
   ad: Ad;
   site?: { image: string; label: string };
   secondAd?: Ad;
+  logo?: { src: string; width: number; height: number };
   liveUrl: string;
 };
 
@@ -108,6 +109,7 @@ const PAIRS: Pair[] = [
     services: ['Meta ads', 'Video creative', 'Landing page'],
     ad: { video: '/Videos/work/ptc-local-care.mp4', poster: '/images/work/ptc-local-care-poster.webp' },
     secondAd: { video: '/Videos/work/ptc-savannah.mp4', poster: '/images/work/ptc-savannah-poster.webp' },
+    logo: { src: '/images/work/ptc-logo.webp', width: 640, height: 154 },
     liveUrl: 'https://book.ptchealth.com/',
   },
 ];
@@ -183,6 +185,15 @@ export default function WorkShowcase() {
           {PAIRS.map((p) => {
             const info = (
               <div className={`${p.secondAd ? 'col-span-2' : 'col-span-3'} md:col-span-1 flex flex-col gap-2`}>
+                {p.logo && (
+                  <Image
+                    src={p.logo.src}
+                    alt={`${p.client} logo`}
+                    width={p.logo.width}
+                    height={p.logo.height}
+                    className="self-start h-11 md:h-14 w-auto object-contain mb-1 brightness-0 invert opacity-90"
+                  />
+                )}
                 <span className="font-ui text-[0.75rem] uppercase tracking-[0.12em] text-[#f2a921] font-semibold">{p.industry}</span>
                 <h3 className="font-heading text-white text-[1.2rem] font-bold leading-tight">{p.client}</h3>
                 <p className="font-body text-[0.95rem] text-gray-400 leading-relaxed">{p.description}</p>
