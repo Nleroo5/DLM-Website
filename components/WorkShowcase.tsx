@@ -77,30 +77,60 @@ function Chips({ items }: { items: string[] }) {
   );
 }
 
-const PAIRS = [
+type Ad = { video: string; poster: string };
+
+// Each card shows either an ad -> the site it leads to, or two ads side by side.
+type Pair = {
+  client: string;
+  industry: string;
+  description: string;
+  services: string[];
+  ad: Ad;
+  site?: { image: string; label: string };
+  secondAd?: Ad;
+  logo?: { src: string; width: number; height: number };
+  liveUrl: string;
+};
+
+const PAIRS: Pair[] = [
   {
     client: 'Marietta Antique Mall',
     industry: 'Local retail',
     description: 'Scroll-stopping video ads that send shoppers to a new site built to get them through the door.',
     services: ['Website', 'Meta ads', 'Video creative'],
-    adVideo: '/Videos/work/antique-mall-ad.mp4',
-    adPoster: '/images/work/antique-mall-ad-poster.webp',
-    siteImage: '/images/case-studies/marietta-antique-mall/marietta-antique-poster.webp',
-    siteLabel: 'The website',
+    ad: { video: '/Videos/work/antique-mall-ad.mp4', poster: '/images/work/antique-mall-ad-poster.webp' },
+    site: { image: '/images/case-studies/marietta-antique-mall/marietta-antique-poster.webp', label: 'The website' },
     liveUrl: 'https://www.mariettaantiquemall.com/',
   },
   {
     client: 'Pain Treatment Centers of Georgia',
     industry: 'Medical',
-    description: 'Meta ads for new patients, each landing on a booking page built for that one offer.',
-    services: ['Meta ads', 'Landing page', 'Video creative'],
-    adVideo: '/Videos/work/ptc-savannah.mp4',
-    adPoster: '/images/work/ptc-savannah-poster.webp',
-    siteImage: '/images/case-studies/pain-treatment-centers/ptc-health-poster.webp',
-    siteLabel: 'Landing page',
+    description: 'Video ads we produced for their new-patient campaigns on Facebook and Instagram.',
+    services: ['Meta ads', 'Video creative', 'Landing page'],
+    ad: { video: '/Videos/work/ptc-local-care.mp4', poster: '/images/work/ptc-local-care-poster.webp' },
+    secondAd: { video: '/Videos/work/ptc-savannah.mp4', poster: '/images/work/ptc-savannah-poster.webp' },
+    logo: { src: '/images/work/ptc-logo.webp', width: 640, height: 154 },
     liveUrl: 'https://book.ptchealth.com/',
   },
 ];
+
+function AdTile({ ad, label, tag }: { ad: Ad; label: string; tag: string }) {
+  return (
+    <div className="relative">
+      <TapVideo
+        src={ad.video}
+        poster={ad.poster}
+        label={label}
+        sizes="140px"
+        className="aspect-[9/16] rounded-[14px] border border-white/15"
+        small
+      />
+      <span className="pointer-events-none absolute top-1.5 left-1.5 font-ui text-[0.6rem] uppercase tracking-[0.1em] font-bold text-[#f2a921] bg-black/75 rounded px-1.5 py-0.5">
+        {tag}
+      </span>
+    </div>
+  );
+}
 
 export default function WorkShowcase() {
   return (
@@ -152,45 +182,18 @@ export default function WorkShowcase() {
 
         {/* Ad → website pairs */}
         <div className="flex flex-col gap-4">
-          {PAIRS.map((p) => (
-            <article
-              key={p.client}
-              className="grid grid-cols-[96px_20px_minmax(0,1fr)] md:grid-cols-[140px_32px_minmax(0,1fr)_minmax(0,0.85fr)] gap-3 md:gap-5 items-center bg-[#1A1A1A] border border-[#5FA99F]/15 rounded-[20px] p-3.5 sm:p-5"
-            >
-              <div className="relative">
-                <TapVideo
-                  src={p.adVideo}
-                  poster={p.adPoster}
-                  label={`${p.client} Meta ad`}
-                  sizes="140px"
-                  className="aspect-[9/16] rounded-[14px] border border-white/15"
-                  small
-                />
-                <span className="pointer-events-none absolute top-1.5 left-1.5 font-ui text-[0.6rem] uppercase tracking-[0.1em] font-bold text-[#f2a921] bg-black/75 rounded px-1.5 py-0.5">
-                  The ad
-                </span>
-              </div>
-              <span className="text-[#5FA99F] text-[1.4rem] md:text-[1.8rem] text-center" aria-hidden="true">→</span>
-              <div className="relative rounded-[12px] overflow-hidden border border-white/10 bg-[#111]">
-                <div className="h-4 md:h-5 bg-[#1c1f1e] flex items-center gap-1 px-2" aria-hidden="true">
-                  <i className="w-1.5 h-1.5 rounded-full bg-[#3a3f3d]" />
-                  <i className="w-1.5 h-1.5 rounded-full bg-[#3a3f3d]" />
-                  <i className="w-1.5 h-1.5 rounded-full bg-[#3a3f3d]" />
-                </div>
-                <div className="relative aspect-[16/10]">
+          {PAIRS.map((p) => {
+            const info = (
+              <div className={`${p.secondAd ? 'col-span-2' : 'col-span-3'} md:col-span-1 flex flex-col gap-2`}>
+                {p.logo && (
                   <Image
-                    src={p.siteImage}
-                    alt={`${p.client} ${p.siteLabel.toLowerCase()}`}
-                    fill
-                    sizes="(max-width: 768px) 60vw, 360px"
-                    className="object-cover"
+                    src={p.logo.src}
+                    alt={`${p.client} logo`}
+                    width={p.logo.width}
+                    height={p.logo.height}
+                    className="self-start h-11 md:h-14 w-auto object-contain mb-1 brightness-0 invert opacity-90"
                   />
-                </div>
-                <span className="absolute top-6 md:top-7 left-1.5 font-ui text-[0.6rem] uppercase tracking-[0.1em] font-bold text-[#5FA99F] bg-black/75 rounded px-1.5 py-0.5">
-                  {p.siteLabel}
-                </span>
-              </div>
-              <div className="col-span-3 md:col-span-1 flex flex-col gap-2">
+                )}
                 <span className="font-ui text-[0.75rem] uppercase tracking-[0.12em] text-[#f2a921] font-semibold">{p.industry}</span>
                 <h3 className="font-heading text-white text-[1.2rem] font-bold leading-tight">{p.client}</h3>
                 <p className="font-body text-[0.95rem] text-gray-400 leading-relaxed">{p.description}</p>
@@ -204,8 +207,53 @@ export default function WorkShowcase() {
                   Visit the live site ↗
                 </a>
               </div>
-            </article>
-          ))}
+            );
+
+            if (p.secondAd) {
+              return (
+                <article
+                  key={p.client}
+                  className="grid grid-cols-2 md:grid-cols-[140px_140px_minmax(0,1fr)] gap-3 md:gap-5 items-center bg-[#1A1A1A] border border-[#5FA99F]/15 rounded-[20px] p-3.5 sm:p-5"
+                >
+                  <AdTile ad={p.ad} label={`${p.client} Meta ad 1`} tag="Ad 1" />
+                  <AdTile ad={p.secondAd} label={`${p.client} Meta ad 2`} tag="Ad 2" />
+                  {info}
+                </article>
+              );
+            }
+
+            return (
+              <article
+                key={p.client}
+                className="grid grid-cols-[96px_20px_minmax(0,1fr)] md:grid-cols-[140px_32px_minmax(0,1fr)_minmax(0,0.85fr)] gap-3 md:gap-5 items-center bg-[#1A1A1A] border border-[#5FA99F]/15 rounded-[20px] p-3.5 sm:p-5"
+              >
+                <AdTile ad={p.ad} label={`${p.client} Meta ad`} tag="The ad" />
+                <span className="text-[#5FA99F] text-[1.4rem] md:text-[1.8rem] text-center" aria-hidden="true">→</span>
+                {p.site && (
+                  <div className="relative rounded-[12px] overflow-hidden border border-white/10 bg-[#111]">
+                    <div className="h-4 md:h-5 bg-[#1c1f1e] flex items-center gap-1 px-2" aria-hidden="true">
+                      <i className="w-1.5 h-1.5 rounded-full bg-[#3a3f3d]" />
+                      <i className="w-1.5 h-1.5 rounded-full bg-[#3a3f3d]" />
+                      <i className="w-1.5 h-1.5 rounded-full bg-[#3a3f3d]" />
+                    </div>
+                    <div className="relative aspect-[16/10]">
+                      <Image
+                        src={p.site.image}
+                        alt={`${p.client} ${p.site.label.toLowerCase()}`}
+                        fill
+                        sizes="(max-width: 768px) 60vw, 360px"
+                        className="object-cover"
+                      />
+                    </div>
+                    <span className="absolute top-6 md:top-7 left-1.5 font-ui text-[0.6rem] uppercase tracking-[0.1em] font-bold text-[#5FA99F] bg-black/75 rounded px-1.5 py-0.5">
+                      {p.site.label}
+                    </span>
+                  </div>
+                )}
+                {info}
+              </article>
+            );
+          })}
         </div>
 
         <div className="text-center">
