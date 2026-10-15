@@ -136,9 +136,20 @@ export default function Hero() {
         >
           <div className="relative">
             {/* Glow in the video's own background colors (#002E3F top, #002A38 middle,
-                #001C28 bottom) so the faded video edges melt into the hero. */}
+                #001C28 bottom) so the faded video edges melt into the hero.
+                Phones: a masked gradient, no blur. Safari clips large blur() filters
+                unevenly, which made the glow lopsided. Desktop keeps the blurred glow. */}
             <div
-              className="hero-glow-breathe absolute -inset-x-[90%] -inset-y-[6%] lg:-inset-x-[45%] lg:-inset-y-[14%] rounded-[50%] blur-[60px] lg:blur-[70px] pointer-events-none"
+              className="lg:hidden absolute -inset-x-[45%] -inset-y-[16%] max-w-none pointer-events-none"
+              style={{
+                background: 'linear-gradient(to bottom, #002e3f, #002a38 50%, #001c28)',
+                maskImage: 'radial-gradient(ellipse 50% 50% at 50% 50%, #000 52%, rgba(0,0,0,0.55) 74%, transparent 100%)',
+                WebkitMaskImage: 'radial-gradient(ellipse 50% 50% at 50% 50%, #000 52%, rgba(0,0,0,0.55) 74%, transparent 100%)',
+              }}
+              aria-hidden="true"
+            />
+            <div
+              className="hidden lg:block hero-glow-breathe absolute -inset-x-[45%] -inset-y-[14%] rounded-[50%] blur-[70px] pointer-events-none"
               style={{ background: 'linear-gradient(to bottom, #002e3f, #002a38 50%, #001c28)' }}
               aria-hidden="true"
             />

@@ -288,6 +288,11 @@ h1, h2 {
   100% { transform: scale(1); }
 }
 
+/* iOS shows a big play button over muted autoplay video when autoplay is
+   blocked (Low Power Mode). The hero video is decorative, so hide it and let
+   the poster show. */
+.hero-video::-webkit-media-controls-start-playback-button { display: none !important; -webkit-appearance: none; }
+
 /* The teal glow behind the hero video breathes very slowly. */
 .hero-glow-breathe { animation: hero-glow-breathe 7s ease-in-out infinite; }
 @keyframes hero-glow-breathe {

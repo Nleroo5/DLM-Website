@@ -109,6 +109,17 @@ export default function RootLayout({
             alt=""
           />
         </noscript>
+        {/* Start every fresh page load at the top. Safari otherwise jumps back to the
+            old scroll position on reload, which reads as the page scrolling itself.
+            Marking the entry "manual" on pagehide stops that restore; switching back
+            to "auto" after load keeps normal back/forward behavior inside the site.
+            Links with a #hash still land on their section. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "(function(){try{var h=history;if(!('scrollRestoration' in h))return;addEventListener('pagehide',function(){h.scrollRestoration='manual'});if(!location.hash){h.scrollRestoration='manual';scrollTo(0,0)}addEventListener('load',function(){setTimeout(function(){h.scrollRestoration='auto'},0)})}catch(e){}})();",
+          }}
+        />
         {/* Sitewide structured data: business, website, founders */}
         <SiteSchema />
       </head>

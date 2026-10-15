@@ -32,7 +32,7 @@ export default function HeroVideo() {
     >
       <video
         ref={videoRef}
-        className="w-full h-full object-cover"
+        className="hero-video w-full h-full object-cover"
         autoPlay
         muted
         loop

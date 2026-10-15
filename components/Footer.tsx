@@ -264,7 +264,7 @@ export default function Footer() {
             </div>
 
             {/* Navigation Links */}
-            <nav className="flex flex-row items-center gap-6">
+            <nav className="flex flex-row flex-wrap items-center gap-x-6 gap-y-2">
               <Link
                 href="/"
                 className="font-body text-[0.95rem] text-[#85C7B3] hover:text-[#5FA99F] transition-colors duration-300"
