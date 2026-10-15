@@ -8,9 +8,10 @@ import { trackEvent } from '@/components/MetaPixel';
 import { LocalBusinessSchema, OrganizationSchema } from '@/components/StructuredDataSchemas';
 
 // Dynamic imports for below-fold components
-const AboutSection = dynamic(() => import('@/components/AboutSection'), { ssr: true });
 const WorkShowcase = dynamic(() => import('@/components/WorkShowcase'), { ssr: true });
 const ServicesSection = dynamic(() => import('@/components/ServicesSection'), { ssr: true });
+const TeamSection = dynamic(() => import('@/components/TeamSection'), { ssr: true });
+const HomeHowItWorks = dynamic(() => import('@/components/HomeHowItWorks'), { ssr: true });
 const CTABanner = dynamic(() => import('@/components/CTABanner'), { ssr: true });
 
 export default function Home() {
@@ -30,9 +31,10 @@ export default function Home() {
 
       <Hero />
       <ClientLogoBanner variant="dark" heading="Trusted by local businesses" showRating />
-      <AboutSection />
       <WorkShowcase />
       <ServicesSection />
+      <TeamSection />
+      <HomeHowItWorks />
       <CTABanner />
     </main>
   );

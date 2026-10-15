@@ -16,12 +16,6 @@ export default function MeetTheTeam() {
       role: "Co-Founder & Chief Creative Officer",
       bio: "Tommy is a specialist in video production and ad creative, leading the direction of every project. He ensures ads look professional, capture attention, and convert viewers into customers.",
       image: "/images/tommy-atlanta-marketing-strategist-team-member.webp"
-    },
-    {
-      name: "Brenna Skalski Kirillov",
-      role: "VP of Sales & Business Development",
-      bio: "As VP of Sales & Business Development, Brenna leads client acquisition and account management. She ensures new clients are set up for success and existing partnerships continue to grow.",
-      image: "/images/brenna-atlanta-marketing-consultant-team-member.webp"
     }
   ];
 
