@@ -5,6 +5,7 @@ import Link from 'next/link';
 import HeroVideo from '@/components/HeroVideo';
 import GrowthPlanButton from '@/components/growth-plan/GrowthPlanButton';
 import GoogleRating from '@/components/GoogleRating';
+import BullseyeHeadline from '@/components/BullseyeHeadline';
 
 export default function Hero() {
   return (
@@ -39,17 +40,11 @@ export default function Hero() {
       {/* Phones: headline, then video, then the rest. Desktop: text left (headline over
           the rest), video right spanning both rows. */}
       <div className="relative z-10 max-w-[1400px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 items-center gap-y-8 sm:gap-y-10 lg:gap-y-0 lg:gap-x-16">
-        {/* Left: Headline */}
-        <motion.div
-          className="relative z-10 text-center lg:text-left lg:col-start-1 lg:row-start-1 lg:self-end"
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-        >
-          <h1 className="font-heading text-[1.75rem] xs:text-[2rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[2.75rem] xl:text-[3.25rem] 2xl:text-[3.75rem] font-bold text-white leading-[1.1] lg:mb-7">
-            We Find Your Customers Before They Find Your Competitors
-          </h1>
-        </motion.div>
+        {/* Left: Headline. No fade-in: the text shows from the first frame and the
+            bull's-eye animation (an arrow hitting the "o") plays on top. */}
+        <div className="relative z-10 text-center lg:text-left lg:col-start-1 lg:row-start-1 lg:self-end">
+          <BullseyeHeadline className="font-heading text-[1.75rem] xs:text-[2rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[2.75rem] xl:text-[3.25rem] 2xl:text-[3.75rem] font-bold text-white leading-[1.1] lg:mb-7" />
+        </div>
 
         {/* Left: Description, buttons, rating */}
         <motion.div
