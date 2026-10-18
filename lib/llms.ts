@@ -10,7 +10,6 @@ const day = (iso: string) => iso.slice(0, 10);
 const PAGES = [
   ['Meta Ads Management', '/services/meta-ads', 'Facebook and Instagram ad strategy, creative, Pixel tracking and optimization.'],
   ['Website Design', '/services/website-design', 'Custom Next.js websites for local businesses. Projects start at $1,500; most take 2 to 3 weeks.'],
-  ['Services overview', '/services', 'Meta ads, video ad creative and websites, and how they work together.'],
   ['Case studies', '/case-studies', 'Websites, ads and video built for clients.'],
   ['About', '/about', 'Who we are, how we work, and the founders.'],
   ['Nicolas Leroo', '/about/nicolas-leroo', 'Co-founder; author of the blog.'],
