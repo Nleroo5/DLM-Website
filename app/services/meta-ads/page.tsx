@@ -4,6 +4,7 @@ import {
   Hero, AdStrip, Section, SectionHead, Ledger, Quote, Fact, Thumb, Timeline, QAGrid, Closing, Rule, Label,
   JsonLd, faqSchema, textLink,
 } from '@/components/service/ServiceKit';
+import { Reveal } from '@/components/service/Motion';
 import { IDS, SITE_URL } from '@/lib/site';
 
 const PATH = '/services/meta-ads';
@@ -22,9 +23,9 @@ export const metadata: Metadata = {
 };
 
 const ADS = [
-  { src: '/images/work/antique-mall-ad-poster.webp', alt: 'Marietta Antique Mall video ad: Great finds online', client: 'Marietta Antique Mall', detail: 'Retail · video ad' },
-  { src: '/images/work/ptc-local-care-poster.webp', alt: 'Pain Treatment Centers video ad: Local care focused on people', client: 'Pain Treatment Centers', detail: 'Healthcare · video ad' },
-  { src: '/images/work/ptc-savannah-poster.webp', alt: 'Pain Treatment Centers video ad: Not all pain is the same', client: 'Pain Treatment Centers', detail: 'Savannah · video ad' },
+  { src: '/images/work/antique-mall-ad-poster.webp', loop: '/Videos/work/antique-mall-ad-loop.mp4', alt: 'Marietta Antique Mall video ad: Great finds online', client: 'Marietta Antique Mall', detail: 'Retail · video ad' },
+  { src: '/images/work/ptc-local-care-poster.webp', loop: '/Videos/work/ptc-local-care-loop.mp4', alt: 'Pain Treatment Centers video ad: Local care focused on people', client: 'Pain Treatment Centers', detail: 'Healthcare · video ad' },
+  { src: '/images/work/ptc-savannah-poster.webp', loop: '/Videos/work/ptc-savannah-loop.mp4', alt: 'Pain Treatment Centers video ad: Not all pain is the same', client: 'Pain Treatment Centers', detail: 'Savannah · video ad' },
 ];
 
 const FAQS = [
@@ -149,10 +150,10 @@ export default function MetaAdsServicePage() {
 
       <Section flushTop>
         <SectionHead title="What it costs.">Two separate numbers, both up front.</SectionHead>
-        <div className="grid md:grid-cols-2 border-t border-white/10">
+        <Reveal className="svc-money grid md:grid-cols-2 border-t border-white/10">
           <div className="py-6 md:pr-7 grid gap-2">
             <Label>Your ad budget</Label>
-            <p className="font-heading font-bold text-[#F2B544] text-[2.3rem] sm:text-[3.2rem] leading-none tracking-[-0.03em] [font-stretch:115%]">You set it</p>
+            <p className="svc-ink font-heading font-bold text-[#F2B544] text-[2.3rem] sm:text-[3.2rem] leading-none tracking-[-0.03em] [font-stretch:115%]">You set it</p>
             <p className="font-body text-[1rem] text-[#b8c3c0] leading-relaxed max-w-[40ch]">
               It&apos;s paid to Meta through your own ad account. We&apos;ll recommend a starting budget for your industry.{' '}
               <Link href="/blog/how-much-do-facebook-ads-cost-atlanta" className={textLink}>
@@ -162,13 +163,13 @@ export default function MetaAdsServicePage() {
           </div>
           <div className="py-6 md:pl-7 grid gap-2 border-t md:border-t-0 md:border-l border-white/10">
             <Label>Our management</Label>
-            <p className="font-heading font-bold text-[#F2B544] text-[2.3rem] sm:text-[3.2rem] leading-none tracking-[-0.03em] [font-stretch:115%]">Fit to you</p>
+            <p className="svc-ink font-heading font-bold text-[#F2B544] text-[2.3rem] sm:text-[3.2rem] leading-none tracking-[-0.03em] [font-stretch:115%]">Fit to you</p>
             <p className="font-body text-[1rem] text-[#b8c3c0] leading-relaxed max-w-[40ch]">
               It depends on how many ads we make and run for you. We walk you through it when we reach out, the same
               business day.
             </p>
           </div>
-        </div>
+        </Reveal>
       </Section>
 
       <Section flushTop>

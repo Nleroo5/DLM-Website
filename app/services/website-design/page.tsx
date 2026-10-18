@@ -5,6 +5,7 @@ import {
   Hero, Wrap, Section, SectionHead, Quote, Timeline, QAGrid, Closing, Rule, JsonLd, faqSchema, textLink,
 } from '@/components/service/ServiceKit';
 import TapVideo from '@/components/TapVideo';
+import { Reveal, LoopVideo } from '@/components/service/Motion';
 import { IDS, SITE_URL } from '@/lib/site';
 
 const PATH = '/services/website-design';
@@ -71,7 +72,7 @@ const breadcrumbs = {
 // A real site in a minimal browser frame.
 function SiteFrame({ src, alt, className, priority = false }: { src: string; alt: string; className: string; priority?: boolean }) {
   return (
-    <div className={`absolute rounded-[10px] overflow-hidden border border-white/[0.12] bg-[#111] shadow-[0_24px_60px_rgba(0,0,0,0.55)] ${className}`}>
+    <div className={`svc-site absolute rounded-[10px] overflow-hidden border border-white/[0.12] bg-[#111] shadow-[0_24px_60px_rgba(0,0,0,0.55)] ${className}`}>
       <div className="h-[18px] bg-[#1a1f1f] flex items-center gap-1 pl-2" aria-hidden="true">
         <i className="w-1.5 h-1.5 rounded-full bg-[#39443f]" />
         <i className="w-1.5 h-1.5 rounded-full bg-[#39443f]" />
@@ -90,13 +91,15 @@ function Case({
   who,
   quote,
   name,
+  desc,
   made,
 }: {
   flip?: boolean;
   media: React.ReactNode;
   who: string;
-  quote: string;
-  name: string;
+  quote?: string;
+  name?: string;
+  desc?: string;
   made: string;
 }) {
   return (
@@ -104,16 +107,26 @@ function Case({
       <div className={flip ? 'lg:order-2' : ''}>{media}</div>
       <div>
         <p className="font-ui text-[0.78rem] font-semibold tracking-[0.12em] uppercase text-[#5FA99F] mb-3">{who}</p>
-        <Quote text={quote} name={name} role="Owner" />
+        {quote && name ? (
+          <Quote text={quote} name={name} role="Owner" />
+        ) : (
+          <p className="font-body text-[1.04rem] sm:text-[1.12rem] leading-[1.5] text-[#f2f2ee]">{desc}</p>
+        )}
         <p className="font-ui text-[0.86rem] text-[#8ea19c] mt-3.5">{made}</p>
       </div>
     </div>
   );
 }
 
-const Shot = ({ src, alt }: { src: string; alt: string }) => (
-  <div className="relative aspect-video rounded-[10px] overflow-hidden border border-white/[0.12]">
-    <Image src={src} alt={alt} fill sizes="(max-width: 1024px) 92vw, 560px" className="object-cover object-top" />
+// A client site scrolling itself (silent screen recording) in a browser frame.
+const Walkthrough = ({ src, poster, label }: { src: string; poster: string; label: string }) => (
+  <div className="rounded-[10px] overflow-hidden border border-white/[0.12] bg-[#111]">
+    <div className="h-[18px] bg-[#1a1f1f] flex items-center gap-1 pl-2" aria-hidden="true">
+      <i className="w-1.5 h-1.5 rounded-full bg-[#39443f]" />
+      <i className="w-1.5 h-1.5 rounded-full bg-[#39443f]" />
+      <i className="w-1.5 h-1.5 rounded-full bg-[#39443f]" />
+    </div>
+    <LoopVideo src={src} poster={poster} label={label} delay={200} sizes="(max-width: 1024px) 92vw, 560px" className="aspect-video" />
   </div>
 );
 
@@ -134,16 +147,16 @@ export default function WebsiteDesignServicePage() {
         note="4 quick questions · About 60 seconds · We reach out the same business day"
         alignEnd={false}
         aside={
-          <div className="relative min-h-[280px] sm:min-h-[360px] lg:min-h-[400px]" aria-label="Three websites we built">
-            <SiteFrame src="/images/case-studies/setlife-casting/setlife-poster.webp" alt="Set Life Casting website" className="left-0 top-0 w-[78%]" priority />
-            <SiteFrame src="/images/case-studies/marietta-antique-mall/marietta-antique-poster.webp" alt="Marietta Antique Mall website" className="right-0 top-[22%] w-[78%]" />
-            <SiteFrame src="/images/case-studies/village-pediatrics/villagepeds-poster.webp" alt="Village Pediatrics website" className="left-[8%] top-[48%] w-[70%]" />
-          </div>
+          <Reveal className="svc-stack relative min-h-[280px] sm:min-h-[360px] lg:min-h-[400px]">
+            <SiteFrame src="/images/case-studies/setlife-casting/setlife-poster.webp" alt="Set Life Casting website" className="s1 left-0 top-0 w-[78%]" priority />
+            <SiteFrame src="/images/case-studies/marietta-antique-mall/marietta-antique-poster.webp" alt="Marietta Antique Mall website" className="s2 right-0 top-[22%] w-[78%]" />
+            <SiteFrame src="/images/case-studies/village-pediatrics/villagepeds-poster.webp" alt="Village Pediatrics website" className="s3 left-[8%] top-[48%] w-[70%]" />
+          </Reveal>
         }
       />
 
       <Wrap>
-        <dl className="grid grid-cols-2 lg:grid-cols-4 border-y border-white/10 m-0">
+        <Reveal as="dl" className="svc-facts grid grid-cols-2 lg:grid-cols-4 border-y border-white/10 m-0">
           {[
             ['$1,500', 'Projects start at'],
             ['2–3 weeks', 'Most sites, start to launch'],
@@ -155,13 +168,13 @@ export default function WebsiteDesignServicePage() {
               <dd className="m-0 font-heading font-bold text-white text-[1.4rem] sm:text-[1.85rem] tracking-[-0.02em] [font-stretch:112%]">{big}</dd>
             </div>
           ))}
-        </dl>
+        </Reveal>
       </Wrap>
 
       <Section>
         <SectionHead title="Sites we built, in our clients' words.">Healthcare, retail, events, entertainment and local services.</SectionHead>
         <Case
-          media={<Shot src="/images/case-studies/setlife-casting/setlife-poster.webp" alt="Set Life Casting website" />}
+          media={<Walkthrough src="/Videos/work/setlife-walkthrough.mp4" poster="/images/case-studies/setlife-casting/setlife-poster.webp" label="Set Life Casting website, scrolling through the homepage" />}
           who="Set Life Casting · Entertainment"
           quote="I came to Drive Lead Media with a big ask — a custom website, a casting platform, and a talent database all built from the ground up. They delivered on all of it."
           name="Chaz Yu"
@@ -169,11 +182,10 @@ export default function WebsiteDesignServicePage() {
         />
         <Case
           flip
-          media={<Shot src="/images/case-studies/southern-tents/southern-tents-poster.webp" alt="Southern Tents and Events website" />}
-          who="Southern Tents & Events · Event rentals"
-          quote="After three disappointing experiences with other web design companies, Nicolas completely turned things around for us. He rebuilt our website from the ground up- it's now clean, modern, and mobile-friendly."
-          name="Perla Rieder"
-          made="Website rebuild · SEO · Meta ads"
+          media={<Walkthrough src="/Videos/work/biere-de-mac-walkthrough.mp4" poster="/images/case-studies/biere-de-mac/biere-de-mac-poster.webp" label="Bière de Mac website, scrolling through the homepage" />}
+          who="Bière de Mac · Brewery"
+          desc="A website for a family brewery in Mackinaw City, Michigan: their story, the beers, the kitchen menu, events, tours and hours, with directions one tap away."
+          made="Custom website"
         />
         <Case
           media={
@@ -191,8 +203,8 @@ export default function WebsiteDesignServicePage() {
           made="Custom website · SEO · Meta ads · tracking"
         />
         <p className="font-body text-[0.97rem] text-[#9fb0ac] leading-relaxed pt-7 border-t border-white/10 max-w-[80ch]">
-          <span className="text-[#e8ecea] font-semibold">Also built for:</span> Marietta Antique Mall, Wilcox Tax Firm, Bière
-          de Mac, Lantz Coaching, Quality Wildlife Solutions and Total Animal Control.{' '}
+          <span className="text-[#e8ecea] font-semibold">Also built for:</span> Southern Tents &amp; Events, Marietta Antique Mall,
+          Wilcox Tax Firm, Lantz Coaching, Quality Wildlife Solutions and Total Animal Control.{' '}
           <Link href="/case-studies" className={textLink}>
             See the sites →
           </Link>
@@ -201,17 +213,24 @@ export default function WebsiteDesignServicePage() {
 
       <Section flushTop>
         <SectionHead title="What's in every site.">Line by line, like the quote you'll get.</SectionHead>
-        <table className="w-full border-collapse font-body text-[0.98rem]">
+        <Reveal as="table" className="svc-spec w-full border-collapse font-body text-[0.98rem]">
           <tbody>
             {SPEC.map((r) => (
               <tr key={r.item} className="border-t border-white/10 last:border-b">
                 <th scope="row" className="text-left align-top font-semibold text-white py-3.5 pr-4 w-[34%]">{r.item}</th>
                 <td className="align-top text-[#aebbb8] py-3.5">{r.what}</td>
-                <td className={`align-top text-right whitespace-nowrap py-3.5 pl-4 font-semibold ${r.muted ? 'text-[#8ea19c] font-normal' : 'text-[#8fd0c6]'}`}>{r.tag}</td>
+                <td className={`align-top text-right whitespace-nowrap py-3.5 pl-4 font-semibold ${r.muted ? 'text-[#8ea19c] font-normal' : 'text-[#8fd0c6]'}`}>
+                  {!r.muted && (
+                    <svg className="svc-check inline-block w-[15px] h-[15px] mr-1.5 -mt-0.5 align-middle" viewBox="0 0 20 20" aria-hidden="true">
+                      <path d="M4 10.5l4 4 8-9" fill="none" stroke="#8fd0c6" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  )}
+                  <span className="svc-tag inline-block">{r.tag}</span>
+                </td>
               </tr>
             ))}
           </tbody>
-        </table>
+        </Reveal>
       </Section>
 
       <Section flushTop>

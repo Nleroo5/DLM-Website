@@ -358,6 +358,97 @@ h1, h2 {
   .stars-pending .rating-star { transform: none; }
 }
 
+/* Service page motion (components/service/Motion.tsx). One curve, 300-1100ms,
+   each move plays once. Hidden "armed" states only exist once the script has
+   armed an element below the fold, so content never depends on JavaScript.
+   Hero moves use transform only, so nothing above the fold starts invisible. */
+:root { --svc-ease: cubic-bezier(.22, 1, .36, 1); }
+@keyframes svc-rise { from { transform: translateY(12px); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes svc-draw { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+/* Meta hero: the three ads land into their staggered spots. */
+@keyframes svc-land { from { transform: translateY(38px); } to { transform: none; } }
+.svc-strip.go .svc-ad { animation: svc-land .7s var(--svc-ease) both; }
+.svc-strip.go .svc-ad:nth-child(2) { animation-delay: .09s; }
+.svc-strip.go .svc-ad:nth-child(3) { animation-delay: .18s; }
+
+/* Ledger: the divider draws, claim from the left, proof from the right. */
+.svc-row { position: relative; }
+.svc-row::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 1px; background: rgba(255,255,255,.1); transform-origin: left; }
+@keyframes svc-from-l { from { transform: translateX(-16px); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes svc-from-r { from { transform: translateX(16px); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes svc-pop { 0% { transform: scale(0); } 70% { transform: scale(1.3); } 100% { transform: scale(1); } }
+.svc-mark { display: inline-block; }
+[data-armed].svc-row::before { transform: scaleX(0); }
+[data-armed].svc-row .svc-claim, [data-armed].svc-row .svc-proof { opacity: 0; }
+[data-armed].svc-row .svc-mark { transform: scale(0); }
+.svc-row.go::before { animation: svc-draw .7s var(--svc-ease) both; }
+.svc-row.go .svc-claim { animation: svc-from-l .6s var(--svc-ease) .15s both; }
+.svc-row.go .svc-proof { animation: svc-from-r .6s var(--svc-ease) .25s both; }
+.svc-row.go .svc-mark { animation: svc-pop .45s var(--svc-ease) .55s both; }
+
+/* Timeline: the line draws and each milestone lights as it passes. */
+.svc-line { position: absolute; left: 0; right: 0; top: 0; height: 2px; background: #5FA99F; transform-origin: left; }
+@keyframes svc-lit { 0% { transform: scale(.4); background: #0a0a0a; } 60% { transform: scale(1.35); background: #5FA99F; } 100% { transform: scale(1); background: #5FA99F; } }
+[data-armed].svc-time .svc-line { transform: scaleX(0); }
+[data-armed].svc-time .svc-step { opacity: 0; }
+.svc-time.go .svc-line { animation: svc-draw 1.1s cubic-bezier(.45,0,.2,1) both; }
+.svc-time.go .svc-step { animation: svc-rise .5s var(--svc-ease) both; }
+.svc-time.go .svc-dot { animation: svc-lit .35s var(--svc-ease) both; }
+.svc-time.go .svc-step:nth-of-type(2), .svc-time.go .svc-step:nth-of-type(2) .svc-dot { animation-delay: .28s; }
+.svc-time.go .svc-step:nth-of-type(3), .svc-time.go .svc-step:nth-of-type(3) .svc-dot { animation-delay: .56s; }
+.svc-time.go .svc-step:nth-of-type(4), .svc-time.go .svc-step:nth-of-type(4) .svc-dot { animation-delay: .84s; }
+
+/* Cost: the two gold answers fill in like ink. */
+@keyframes svc-ink { to { background-position: 0 0; } }
+.svc-money.go .svc-ink { background: linear-gradient(90deg, #F2B544 0 45%, rgba(242,181,68,.25) 55% 100%); background-size: 240% 100%; background-position: 100% 0; -webkit-background-clip: text; background-clip: text; color: transparent; animation: svc-ink 1s var(--svc-ease) both; }
+.svc-money.go > div + div .svc-ink { animation-delay: .25s; }
+
+/* Closing button: one light sweep, then the arrow nudges. */
+.svc-sheen { position: relative; overflow: hidden; }
+.svc-sheen::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(100deg, transparent 30%, rgba(255,255,255,.5) 50%, transparent 70%); transform: translateX(-120%); }
+@keyframes svc-sweep { to { transform: translateX(120%); } }
+@keyframes svc-nudge { 0%, 100% { transform: none; } 40% { transform: translateX(6px); } 70% { transform: translateX(-1px); } }
+.svc-cta.go .svc-sheen::after { animation: svc-sweep .9s ease-out .3s both; }
+.svc-cta.go .svc-arrow { animation: svc-nudge .9s var(--svc-ease) 1.1s both; }
+
+/* Website hero: the sites deal onto the table; hover fans them apart. */
+@keyframes svc-deal { from { transform: translateY(40px) rotate(var(--svc-r, 0deg)) scale(.96); } to { transform: none; } }
+.svc-stack .svc-site { transition: transform .45s var(--svc-ease); }
+.svc-stack .s1 { --svc-r: -1.5deg; } .svc-stack .s2 { --svc-r: 1.2deg; } .svc-stack .s3 { --svc-r: -.6deg; }
+.svc-stack.go .svc-site { animation: svc-deal .8s var(--svc-ease) both; }
+.svc-stack.go .s2 { animation-delay: .14s; } .svc-stack.go .s3 { animation-delay: .28s; }
+@media (hover: hover) {
+  .svc-stack:hover .s1 { transform: translate(-12px, -8px) rotate(-1.2deg); }
+  .svc-stack:hover .s2 { transform: translate(14px, -4px) rotate(1deg); }
+  .svc-stack:hover .s3 { transform: translate(0, 14px); }
+}
+
+/* Facts strip ticks in left to right (no counting numbers). */
+[data-armed].svc-facts > div { opacity: 0; }
+.svc-facts.go > div { animation: svc-rise .55s var(--svc-ease) both; }
+.svc-facts.go > div:nth-child(2) { animation-delay: .08s; }
+.svc-facts.go > div:nth-child(3) { animation-delay: .16s; }
+.svc-facts.go > div:nth-child(4) { animation-delay: .24s; }
+
+/* "What's in every site": each line gets checked off in order. */
+.svc-check path { stroke-dasharray: 24; stroke-dashoffset: 0; }
+@keyframes svc-tick { from { stroke-dashoffset: 24; } to { stroke-dashoffset: 0; } }
+[data-armed].svc-spec .svc-check path { stroke-dashoffset: 24; }
+[data-armed].svc-spec .svc-tag { opacity: 0; }
+.svc-spec.go .svc-check path { animation: svc-tick .45s var(--svc-ease) both; }
+.svc-spec.go .svc-tag { animation: svc-rise .4s var(--svc-ease) both; }
+.svc-spec.go tr:nth-child(2) .svc-check path, .svc-spec.go tr:nth-child(2) .svc-tag { animation-delay: .12s; }
+.svc-spec.go tr:nth-child(3) .svc-check path, .svc-spec.go tr:nth-child(3) .svc-tag { animation-delay: .24s; }
+.svc-spec.go tr:nth-child(4) .svc-check path, .svc-spec.go tr:nth-child(4) .svc-tag { animation-delay: .36s; }
+.svc-spec.go tr:nth-child(5) .svc-check path, .svc-spec.go tr:nth-child(5) .svc-tag { animation-delay: .48s; }
+.svc-spec.go tr:nth-child(6) .svc-tag { animation-delay: .6s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .go, .go *, .go::before, .go *::before, .go *::after { animation: none !important; }
+  .svc-stack .svc-site { transition: none; }
+}
+
 /* Marquee Animations */
 @keyframes marquee-left {
   0% { transform: translate3d(0, 0, 0); }
