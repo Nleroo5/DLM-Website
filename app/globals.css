@@ -119,7 +119,7 @@ textarea {
   position: absolute;
   top: -40px;
   left: 0;
-  background: var(--color-teal);
+  background: #2f7f74; /* darker teal: white text passes 4.5:1 contrast */
   color: white;
   padding: 8px 16px;
   text-decoration: none;

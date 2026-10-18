@@ -41,9 +41,8 @@ export default function Footer() {
                 src="/images/light-header-logo.webp"
                 alt="Drive Lead Media"
                 width={140}
-                height={46}
+                height={56}
                 className="h-auto w-auto max-w-[140px]"
-                priority
               />
             </Link>
           </div>
@@ -265,9 +264,8 @@ export default function Footer() {
                   src="/images/light-header-logo.webp"
                   alt="Drive Lead Media"
                   width={120}
-                  height={40}
+                  height={48}
                   className="h-auto w-auto max-w-[120px]"
-                  priority
                 />
               </Link>
             </div>
