@@ -778,10 +778,10 @@ export default function CaseStudiesPage() {
             transition={{ duration: 0.6 }}
           >
             <span className="text-[#5FA99F] text-sm font-heading uppercase tracking-widest mb-4 block">
-              Real Results
+              Our work
             </span>
             <h1 className="font-heading text-[2.5rem] sm:text-[3.5rem] lg:text-[5rem] font-bold text-white mb-6 leading-[1.1]">
-              Case Studies
+              Work that brought in customers.
             </h1>
             <p className="font-body text-[1.125rem] sm:text-[1.25rem] lg:text-[1.375rem] max-w-[800px] leading-relaxed text-gray-300">
               See how we help local businesses grow with custom websites, Meta ads, and high-converting creative.
