@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Case Studies: Real Results for Local Businesses | DLM',
+  title: 'Our Work: Meta Ads & Websites for Local Businesses | DLM',
   description:
     'See how Drive Lead Media helps local businesses grow with Meta ads, custom websites, and professional video creative. Real results from real clients.',
   keywords: [
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     'Atlanta marketing agency results',
   ],
   openGraph: {
-    title: 'Case Studies | Drive Lead Media',
+    title: 'Our Work | Drive Lead Media',
     description:
       'See how Drive Lead Media helps local businesses grow with Meta ads, custom websites, and professional video creative.',
     url: 'https://driveleadmedia.com/case-studies',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Case Studies | Drive Lead Media',
+    title: 'Our Work | Drive Lead Media',
     description:
       'See how Drive Lead Media helps local businesses grow with Meta ads, custom websites, and professional video creative.',
     images: ["https://driveleadmedia.com/images/og-image.webp"],

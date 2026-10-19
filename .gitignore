@@ -34,3 +34,11 @@ yarn-error.log*
 next-env.d.ts
 public/Videos-backup/
 public/Videos/portfolio/*.mov
+
+# iCloud: these folders end in .nosync so iCloud never offloads them
+# (node_modules and .next are links to them)
+/node_modules.nosync/
+/.next.nosync/
+/.next
+/node_modules_icloud_offloaded*/
+/node_modules_old/

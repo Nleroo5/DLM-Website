@@ -232,7 +232,7 @@ export default function WorkShowcase() {
 
         <div className="text-center">
           <Link href="/case-studies" className="font-ui text-[1rem] text-[#5FA99F] hover:text-[#85C7B3] font-semibold">
-            See all case studies →
+            See all our work →
           </Link>
         </div>
       </div>
