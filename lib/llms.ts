@@ -25,6 +25,8 @@ const TOOLS = [
   ['Meta ads ROI calculator', '/resources/meta-ads-calculator', 'Estimate clicks, leads and cost per lead by industry.'],
   ['Meta targeting guide', '/resources/meta-targeting-guide', 'Cold, warm and hot audiences explained.'],
   ['Landing pages for Meta ads', '/resources/meta-ads-landing-pages', 'What makes a page convert ad clicks.'],
+  ['Targeted ads explained', '/targeted-ads', 'Why targeted Facebook and Instagram ads cost less than traditional advertising, with sources.'],
+  ['Targeted ads infographic', '/resources/targeted-ads-infographic', 'One-page PDF on targeted ads vs traditional advertising.'],
 ] as const;
 
 function header() {

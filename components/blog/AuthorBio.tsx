@@ -3,6 +3,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { usePathname } from 'next/navigation';
+import RelatedGuides from '@/components/blog/RelatedGuides';
 
 interface AuthorBioProps {
   author: {
@@ -13,7 +15,11 @@ interface AuthorBioProps {
 }
 
 export default function AuthorBio({ author }: AuthorBioProps) {
+  // Every post renders the author bio at its end, so related guides and the
+  // service link live here too (no per-post wiring).
+  const slug = (usePathname() ?? '').split('/blog/')[1]?.replace(/\/$/, '') ?? '';
   return (
+    <>
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -62,5 +68,7 @@ export default function AuthorBio({ author }: AuthorBioProps) {
         </div>
       </div>
     </motion.div>
+    {slug && <RelatedGuides slug={slug} />}
+    </>
   );
 }
