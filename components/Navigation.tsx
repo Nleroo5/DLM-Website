@@ -86,14 +86,9 @@ export default function Navigation() {
                 <span className="hidden md:block absolute bottom-0 left-0 w-0 h-px bg-[#5FA99F] transition-all duration-400 group-hover:w-full"></span>
               </button>
 
-              <AnimatePresence>
-                {isServicesOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.3 }}
-                    className="absolute top-full left-0 mt-2 w-[220px] bg-white backdrop-blur-lg rounded-2xl shadow-[0_8px_24px_rgba(0,0,0,0.12)] border border-gray-200 overflow-hidden"
+              {/* Always in the HTML so search engines can follow these links; shown on hover. */}
+              <div
+                    className={`absolute top-full left-0 mt-2 w-[220px] bg-white backdrop-blur-lg rounded-2xl shadow-[0_8px_24px_rgba(0,0,0,0.12)] border border-gray-200 overflow-hidden transition-all duration-300 ${isServicesOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2.5 pointer-events-none'}`}
                     role="menu"
                     aria-label="Services menu"
                   >
@@ -109,9 +104,7 @@ export default function Navigation() {
                     >
                       Website Design
                     </Link>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+                  </div>
             </div>
             <Link
               href="/case-studies"
@@ -161,14 +154,9 @@ export default function Navigation() {
               </button>
 
               {/* Dropdown Menu */}
-              <AnimatePresence>
-                {isResourcesOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.3 }}
-                    className="absolute top-full left-0 mt-2 w-[220px] bg-white backdrop-blur-lg rounded-2xl shadow-[0_8px_24px_rgba(0,0,0,0.12)] border border-gray-200 overflow-hidden"
+              {/* Always in the HTML so search engines can follow these links; shown on hover. */}
+              <div
+                    className={`absolute top-full left-0 mt-2 w-[220px] bg-white backdrop-blur-lg rounded-2xl shadow-[0_8px_24px_rgba(0,0,0,0.12)] border border-gray-200 overflow-hidden transition-all duration-300 ${isResourcesOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2.5 pointer-events-none'}`}
                     role="menu"
                     aria-label="Resources menu"
                   >
@@ -208,9 +196,7 @@ export default function Navigation() {
                     >
                       Download Infographic
                     </Link>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+                  </div>
             </div>
 
             <Link
