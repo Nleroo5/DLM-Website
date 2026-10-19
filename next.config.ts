@@ -73,6 +73,12 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        // Services overview page retired; the two service pages are in the menu.
+        source: '/services',
+        destination: '/services/meta-ads',
+        permanent: true,
+      },
+      {
         // Dental landing page retired; closest match is Meta ads management.
         source: '/dental',
         destination: '/services/meta-ads',

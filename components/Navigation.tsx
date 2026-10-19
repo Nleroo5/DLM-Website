@@ -9,6 +9,7 @@ export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isResourcesOpen, setIsResourcesOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
 
   // Handle scroll effect
   useEffect(() => {
@@ -58,13 +59,60 @@ export default function Navigation() {
               <span className="hidden md:block absolute bottom-0 left-0 w-0 h-px bg-[#5FA99F] transition-all duration-400 group-hover:w-full"></span>
             </Link>
 
-            <Link
-              href="/services"
-              className="font-ui text-[1rem] text-[#5FA99F] hover:text-[#4a8a81] transition-colors duration-400 relative group font-medium"
+            {/* Services Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setIsServicesOpen(true)}
+              onMouseLeave={() => setIsServicesOpen(false)}
             >
-              Services
-              <span className="hidden md:block absolute bottom-0 left-0 w-0 h-px bg-[#5FA99F] transition-all duration-400 group-hover:w-full"></span>
-            </Link>
+              <button
+                aria-haspopup="true"
+                aria-expanded={isServicesOpen}
+                onClick={() => setIsServicesOpen(!isServicesOpen)}
+                className="font-ui text-[1rem] text-[#5FA99F] hover:text-[#4a8a81] transition-colors duration-400 flex items-center gap-2 relative group font-medium"
+              >
+                Services
+                <svg
+                  className={`w-4 h-4 transition-transform duration-400 ${
+                    isServicesOpen ? 'rotate-180' : ''
+                  }`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+                <span className="hidden md:block absolute bottom-0 left-0 w-0 h-px bg-[#5FA99F] transition-all duration-400 group-hover:w-full"></span>
+              </button>
+
+              <AnimatePresence>
+                {isServicesOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.3 }}
+                    className="absolute top-full left-0 mt-2 w-[220px] bg-white backdrop-blur-lg rounded-2xl shadow-[0_8px_24px_rgba(0,0,0,0.12)] border border-gray-200 overflow-hidden"
+                    role="menu"
+                    aria-label="Services menu"
+                  >
+                    <Link
+                      href="/services/meta-ads"
+                      className="block px-5 py-3 font-ui text-[1rem] text-[#2A2A2A] hover:bg-[rgba(95,169,159,0.08)] hover:text-[#5FA99F] transition-all duration-400"
+                    >
+                      Meta Ads Management
+                    </Link>
+                    <Link
+                      href="/services/website-design"
+                      className="block px-5 py-3 font-ui text-[1rem] text-[#2A2A2A] hover:bg-[rgba(95,169,159,0.08)] hover:text-[#5FA99F] transition-all duration-400"
+                    >
+                      Website Design
+                    </Link>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
             <Link
               href="/case-studies"
               className="font-ui text-[1rem] text-[#5FA99F] hover:text-[#4a8a81] transition-colors duration-400 relative group font-medium"
@@ -255,14 +303,25 @@ export default function Navigation() {
               </Link>
 
               <Link
-                href="/services"
+                href="/services/meta-ads"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="block font-ui text-[1.125rem] text-white hover:text-[#5FA99F] transition-all duration-400 py-3 font-medium relative group"
                 style={{
                   textShadow: '0 0 10px rgba(95,169,159,0.3)'
                 }}
               >
-                <span className="relative z-10">Services</span>
+                <span className="relative z-10">Meta Ads</span>
+                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-[#5FA99F] to-[#85C7B3] group-hover:w-full transition-all duration-400 shadow-[0_0_10px_#5FA99F]"></span>
+              </Link>
+              <Link
+                href="/services/website-design"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block font-ui text-[1.125rem] text-white hover:text-[#5FA99F] transition-all duration-400 py-3 font-medium relative group"
+                style={{
+                  textShadow: '0 0 10px rgba(95,169,159,0.3)'
+                }}
+              >
+                <span className="relative z-10">Website Design</span>
                 <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-[#5FA99F] to-[#85C7B3] group-hover:w-full transition-all duration-400 shadow-[0_0_10px_#5FA99F]"></span>
               </Link>
               <Link

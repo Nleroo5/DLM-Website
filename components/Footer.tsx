@@ -41,9 +41,8 @@ export default function Footer() {
                 src="/images/light-header-logo.webp"
                 alt="Drive Lead Media"
                 width={140}
-                height={46}
+                height={56}
                 className="h-auto w-auto max-w-[140px]"
-                priority
               />
             </Link>
           </div>
@@ -78,13 +77,22 @@ export default function Footer() {
                   Home
                 </Link>
                 <Link
-                  href="/services"
+                  href="/services/meta-ads"
                   className="font-body text-[0.9rem] text-gray-300 hover:text-[#5FA99F] transition-all duration-300 hover:translate-x-1"
                   style={{
                     textShadow: '0 0 5px rgba(95,169,159,0.2)'
                   }}
                 >
-                  Services
+                  Meta Ads
+                </Link>
+                <Link
+                  href="/services/website-design"
+                  className="font-body text-[0.9rem] text-gray-300 hover:text-[#5FA99F] transition-all duration-300 hover:translate-x-1"
+                  style={{
+                    textShadow: '0 0 5px rgba(95,169,159,0.2)'
+                  }}
+                >
+                  Website Design
                 </Link>
                 <Link
                   href="/case-studies"
@@ -256,9 +264,8 @@ export default function Footer() {
                   src="/images/light-header-logo.webp"
                   alt="Drive Lead Media"
                   width={120}
-                  height={40}
+                  height={48}
                   className="h-auto w-auto max-w-[120px]"
-                  priority
                 />
               </Link>
             </div>
@@ -272,10 +279,16 @@ export default function Footer() {
                 Home
               </Link>
               <Link
-                href="/services"
+                href="/services/meta-ads"
                 className="font-body text-[0.95rem] text-[#85C7B3] hover:text-[#5FA99F] transition-colors duration-300"
               >
-                Services
+                Meta Ads
+              </Link>
+              <Link
+                href="/services/website-design"
+                className="font-body text-[0.95rem] text-[#85C7B3] hover:text-[#5FA99F] transition-colors duration-300"
+              >
+                Website Design
               </Link>
               <Link
                 href="/case-studies"

@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import {
-  JsonLd, PageHero, Section, CheckList, Steps, LinkCards, FaqList, ClosingCta, faqSchema, breadcrumbSchema,
-} from '@/components/content/Content';
+  Hero, AdStrip, Section, SectionHead, Ledger, Quote, Fact, Thumb, Timeline, QAGrid, Closing, Rule, Label,
+  JsonLd, faqSchema, textLink,
+} from '@/components/service/ServiceKit';
+import { Reveal } from '@/components/service/Motion';
 import { IDS, SITE_URL } from '@/lib/site';
 
 const PATH = '/services/meta-ads';
@@ -14,37 +16,16 @@ export const metadata: Metadata = {
   alternates: { canonical: PATH },
   openGraph: {
     title: 'Meta Ads Management in Atlanta',
-    description: 'Facebook and Instagram ads planned, created, tracked and tuned by one small Atlanta team.',
+    description: 'Facebook and Instagram ads made, run, tracked and tuned by one small Atlanta team.',
     url: PATH,
     images: ['/images/og-image.webp'],
   },
 };
 
-const INCLUDED = [
-  { title: 'Strategy and campaign setup', body: 'We set goals, budget and campaign structure in Meta Ads Manager around the leads you want, not likes.' },
-  { title: 'Ad creative', body: 'Graphics, video ads and copy made for your audience. We film and edit, so you never have to.' },
-  { title: 'Audience targeting', body: 'Demographics, interests and behaviors, plus custom and lookalike audiences built from your best customers.' },
-  { title: 'Meta Pixel and conversion tracking', body: 'We install the Pixel and track each lead so you can see what your ad spend actually brought in.' },
-  { title: 'Monitoring and optimization', body: 'We watch campaigns daily, retire tired ads and shift budget toward what is working.' },
-  { title: 'Facebook and Instagram', body: 'Both run from the same Ads Manager account, and we optimize for each placement.' },
-  { title: 'You approve every ad', body: 'You see all creative before anything goes live.' },
-  { title: 'You own the ad account', body: 'The Meta ad account stays yours. We manage it with the access you grant us.' },
-];
-
-const STEPS = [
-  { title: 'Tell us about your business', body: 'Four quick questions: what you need, your industry, your budget and timing.' },
-  { title: 'We review it and reach out', body: 'We look at your site and current ads, then call or email you the same business day with ideas.' },
-  { title: 'We build, launch and improve', body: 'Ads, video creative and the page they point to, built together and tuned every week.' },
-];
-
-const WORK = [
-  { client: 'Pain Treatment Centers of Georgia', industry: 'Healthcare', services: 'Meta ads, landing page, video creative' },
-  { client: 'Village Pediatrics of St. Augustine', industry: 'Healthcare', services: 'Meta ads, website, SEO, tracking setup' },
-  { client: 'Marietta Antique Mall', industry: 'Retail', services: 'Meta ads, website, video creative' },
-  { client: 'Wilcox Tax Firm', industry: 'Financial services', services: 'Meta ads, website, video creative' },
-  { client: 'The Yoga Lounge', industry: 'Fitness and wellness', services: 'Meta ads, video creative, ad strategy' },
-  { client: 'Southern Tents & Events', industry: 'Event services', services: 'Meta ads, website rebuild, SEO' },
-  { client: 'Greekfest Fayette', industry: 'Events', services: 'Meta ads, landing page, video creative' },
+const ADS = [
+  { src: '/images/work/antique-mall-ad-poster.webp', loop: '/Videos/work/antique-mall-ad-loop.mp4', alt: 'Marietta Antique Mall video ad: Great finds online', client: 'Marietta Antique Mall', detail: 'Retail · video ad' },
+  { src: '/images/work/ptc-local-care-poster.webp', loop: '/Videos/work/ptc-local-care-loop.mp4', alt: 'Pain Treatment Centers video ad: Local care focused on people', client: 'Pain Treatment Centers', detail: 'Healthcare · video ad' },
+  { src: '/images/work/ptc-savannah-poster.webp', loop: '/Videos/work/ptc-savannah-loop.mp4', alt: 'Pain Treatment Centers video ad: Not all pain is the same', client: 'Pain Treatment Centers', detail: 'Savannah · video ad' },
 ];
 
 const FAQS = [
@@ -73,95 +54,144 @@ const serviceSchema = {
   ],
 };
 
+const breadcrumbs = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+    { '@type': 'ListItem', position: 2, name: 'Meta Ads Management', item: `${SITE_URL}${PATH}` },
+  ],
+};
+
 export default function MetaAdsServicePage() {
   return (
-    <main className="min-h-screen bg-[#000000] text-white">
+    <main className="min-h-screen bg-[#0a0a0a] text-white">
       <JsonLd data={serviceSchema} />
       <JsonLd data={faqSchema(FAQS)} />
-      <JsonLd data={breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Services', path: '/services' }, { name: 'Meta Ads Management', path: PATH }])} />
+      <JsonLd data={breadcrumbs} />
 
-      <PageHero
-        eyebrow="Services · Meta ads"
-        title="Meta Ads Management for Atlanta Businesses"
-        ctaSource="service_meta_ads_hero"
-        intro={
-          <p>
-            We plan, create and run Facebook and Instagram ad campaigns for local businesses in Atlanta and across the
-            US. One small team handles the strategy, the ad creative, the tracking and the weekly tuning, and you approve
-            every ad before it goes live.
-          </p>
-        }
+      <Hero
+        label="Meta ads management · Atlanta"
+        title="We make the ads, run them, and show you"
+        accent="which ones bring in customers."
+        lead="Facebook and Instagram campaigns for local businesses. The two of us plan them, film them, track every lead, and tune them every week. You approve every ad before it goes live."
+        source="service_meta_ads_hero"
+        ghost={{ href: '/case-studies', label: 'See the ads' }}
+        note="4 quick questions · About 60 seconds · We reach out the same business day"
+        aside={<AdStrip ads={ADS} />}
       />
 
-      <Section
-        title="What Meta ads management includes"
-        intro={
-          <p>
-            Meta ads management means running your Facebook and Instagram advertising end to end: deciding who to reach,
-            making the ads, tracking which ones produce leads, and adjusting the budget as results come in.
-          </p>
-        }
-      >
-        <CheckList items={INCLUDED} />
-      </Section>
-
-      <Section
-        title="Ads work best with a page built for them"
-        intro={
-          <>
-            <p>
-              An ad earns the click. The page it lands on has to earn the call. We build fast landing pages and websites
-              alongside the ads, so the message, the offer and the tracking match from the first tap to the lead.
-            </p>
-            <p>
-              See <Link href="/services/website-design" className="text-link text-[#5FA99F] underline underline-offset-4">website design</Link> or
-              read <Link href="/blog/why-meta-ads-need-landing-pages" className="text-link text-[#5FA99F] underline underline-offset-4">why Meta ads need a dedicated landing page</Link>.
-            </p>
-          </>
-        }
-      />
-
-      <Section title="How it works">
-        <Steps steps={STEPS} />
-      </Section>
-
-      <Section
-        title="Businesses we run Meta ads for"
-        intro={<p>Healthcare practices, retail, events, fitness, financial and home services. A few of them:</p>}
-      >
-        <ul className="divide-y divide-white/[0.08] border-y border-white/[0.08]">
-          {WORK.map((w) => (
-            <li key={w.client} className="py-3.5 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
-              <span className="font-heading text-white font-semibold">{w.client}</span>
-              <span className="font-body text-[0.95rem] text-gray-400">{w.industry} · {w.services}</span>
-            </li>
-          ))}
-        </ul>
-        <p className="mt-5">
-          <Link href="/case-studies" className="font-ui text-[#5FA99F] font-semibold">See the ads and websites →</Link>
+      <Rule />
+      <Section>
+        <SectionHead title="What you get, and the proof.">
+          Meta ads management means running your Facebook and Instagram advertising end to end: who sees it, what they
+          see, and which ads actually produce leads.
+        </SectionHead>
+        <Ledger
+          rows={[
+            {
+              title: 'Ads people stop scrolling for',
+              body: 'We script, film and edit the ads ourselves: video, graphics and copy made for your customers. You never have to film anything.',
+              proof: (
+                <div className="flex gap-4 items-start">
+                  <Thumb src="/images/work/yoga-lounge-ad-frame.webp" alt="The Yoga Lounge video ad: the studio owner in her studio" />
+                  <Quote
+                    text="Nic and Tommy created amazing videos and ads that really captured our vibe. Within days we started seeing new leads coming in."
+                    name="Jenn"
+                    role="Owner, The Yoga Lounge"
+                  />
+                </div>
+              ),
+            },
+            {
+              title: 'Shown to the people near you',
+              body: 'Targeting by area, interests and behavior, plus custom and lookalike audiences built from your best customers.',
+              proof: (
+                <div className="flex gap-4 items-start">
+                  <div className="flex gap-2.5">
+                    <Thumb src="/images/work/ptc-local-care-poster.webp" alt="Pain Treatment Centers video ad: Local care" w={88} />
+                    <Thumb src="/images/work/ptc-savannah-poster.webp" alt="Pain Treatment Centers video ad: Not all pain is the same" w={88} />
+                  </div>
+                  <p className="font-body text-[1rem] text-[#d9e1de] leading-relaxed">
+                    Two of the video ads we made for Pain Treatment Centers of Georgia, each written for the patients they want to reach.
+                  </p>
+                </div>
+              ),
+            },
+            {
+              title: 'Every lead tracked',
+              body: 'We install the Meta Pixel and track each lead back to the ad that brought it in, so you see what your budget actually bought.',
+              proof: <Fact lead="Your account, your data.">The ad account stays in your name. We manage it with the access you grant us.</Fact>,
+            },
+            {
+              title: 'Tuned every week',
+              body: 'We watch campaigns daily, retire ads that stop working, and move budget to the ones that do.',
+              proof: (
+                <Fact lead="Ads and the page, together.">
+                  The ad earns the click; the page has to earn the call. We build the landing page too, so the offer and the
+                  tracking match.{' '}
+                  <Link href="/services/website-design" className={textLink}>
+                    Website design →
+                  </Link>
+                </Fact>
+              ),
+            },
+          ]}
+        />
+        <p className="font-body text-[0.97rem] text-[#9fb0ac] leading-relaxed mt-7 max-w-[80ch]">
+          <span className="text-[#e8ecea] font-semibold">Also running for:</span> Village Pediatrics of St. Augustine
+          (healthcare), Wilcox Tax Firm (financial services), Southern Tents &amp; Events (event rentals), Greekfest Fayette
+          (events) and The Yoga Lounge (fitness).{' '}
+          <Link href="/case-studies" className={textLink}>
+            See the work →
+          </Link>
         </p>
       </Section>
 
-      <Section title="Guides from our team">
-        <LinkCards
+      <Section flushTop>
+        <SectionHead title="What it costs.">Two separate numbers, both up front.</SectionHead>
+        <Reveal className="svc-money grid md:grid-cols-2 border-t border-white/10">
+          <div className="py-6 md:pr-7 grid gap-2">
+            <Label>Your ad budget</Label>
+            <p className="svc-ink font-heading font-bold text-[#F2B544] text-[2.3rem] sm:text-[3.2rem] leading-none tracking-[-0.03em] [font-stretch:115%]">You set it</p>
+            <p className="font-body text-[1rem] text-[#b8c3c0] leading-relaxed max-w-[40ch]">
+              It&apos;s paid to Meta through your own ad account. We&apos;ll recommend a starting budget for your industry.{' '}
+              <Link href="/blog/how-much-do-facebook-ads-cost-atlanta" className={textLink}>
+                What Facebook ads cost in Atlanta →
+              </Link>
+            </p>
+          </div>
+          <div className="py-6 md:pl-7 grid gap-2 border-t md:border-t-0 md:border-l border-white/10">
+            <Label>Our management</Label>
+            <p className="svc-ink font-heading font-bold text-[#F2B544] text-[2.3rem] sm:text-[3.2rem] leading-none tracking-[-0.03em] [font-stretch:115%]">Fit to you</p>
+            <p className="font-body text-[1rem] text-[#b8c3c0] leading-relaxed max-w-[40ch]">
+              It depends on how many ads we make and run for you. We walk you through it when we reach out, the same
+              business day.
+            </p>
+          </div>
+        </Reveal>
+      </Section>
+
+      <Section flushTop>
+        <SectionHead title="How it starts.">No calls to book. You tell us about your business, and we take it from there.</SectionHead>
+        <Timeline
           items={[
-            { href: '/blog/how-much-do-facebook-ads-cost-atlanta', tag: 'Budget', title: 'How much do Facebook ads cost in Atlanta?', body: 'Typical costs by industry and how to set a starting budget.' },
-            { href: '/blog/meta-ads-2026-small-business-guide', tag: 'Strategy', title: 'How to run Meta ads in 2026', body: 'A step-by-step guide for small businesses.' },
-            { href: '/blog/facebook-ads-not-delivering-2026', tag: 'Troubleshooting', title: 'Facebook ads not delivering?', body: 'Common reasons and how to fix each one.' },
-            { href: '/resources/meta-ads-calculator', tag: 'Free tool', title: 'Meta ads ROI calculator', body: 'Estimate clicks, leads and cost per lead for your budget.' },
+            { when: 'Today', title: '4 quick questions', body: 'What you need, your industry, budget and timing. About 60 seconds.' },
+            { when: 'Same business day', title: 'We reach out', body: 'We look at your site and current ads, then call or email with ideas.' },
+            { when: 'Before launch', title: 'You approve the ads', body: 'We film, write and build. Nothing runs until you say yes.' },
+            { when: 'Every week', title: 'We tune it', body: "More budget to what's working, fresh ads for what isn't." },
           ]}
         />
       </Section>
 
-      <Section title="Meta ads questions">
-        <FaqList items={FAQS} />
+      <Rule />
+      <Section>
+        <SectionHead title="Questions we get." />
+        <QAGrid items={FAQS} />
       </Section>
 
-      <ClosingCta
-        title="Want more leads from Facebook and Instagram?"
-        body="Tell us about your business and we'll come back the same business day with ideas for your ads."
-        source="service_meta_ads_footer"
-      />
+      <Rule />
+      <Closing title="Tell us about your business. We'll show you what we'd run." source="service_meta_ads_footer" />
     </main>
   );
 }

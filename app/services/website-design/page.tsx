@@ -1,8 +1,11 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import {
-  JsonLd, PageHero, Section, CheckList, Steps, LinkCards, FaqList, ClosingCta, faqSchema, breadcrumbSchema,
-} from '@/components/content/Content';
+  Hero, Wrap, Section, SectionHead, Quote, Timeline, QAGrid, Closing, Rule, JsonLd, faqSchema, textLink,
+} from '@/components/service/ServiceKit';
+import TapVideo from '@/components/TapVideo';
+import { Reveal, LoopVideo } from '@/components/service/Motion';
 import { IDS, SITE_URL } from '@/lib/site';
 
 const PATH = '/services/website-design';
@@ -20,38 +23,21 @@ export const metadata: Metadata = {
   },
 };
 
-const INCLUDED = [
-  { title: 'Custom design', body: 'Designed around your business and your customers, not a template other sites share.' },
-  { title: 'Mobile-first build', body: 'Most local customers find you on a phone, so every page is built and tested for small screens first.' },
-  { title: 'SEO setup', body: 'Search setup on every page, so Google can find your site and understand what your business does.' },
-  { title: 'Analytics and tracking', body: 'Google Analytics, plus the Meta Pixel when you run ads, so you can see where leads come from.' },
-  { title: 'Built for speed', body: 'We build in Next.js and React, which keeps pages fast. Fast pages rank better and lose fewer visitors.' },
-  { title: 'Support after launch', body: 'Ongoing maintenance, updates and support packages are available for sites we build.' },
-];
-
-const STEPS = [
-  { title: 'Tell us about your business', body: 'Four quick questions: what you need, your industry, your budget and timing.' },
-  { title: 'We review it and reach out', body: 'We look at your current site, then call or email you the same business day with ideas and a quote.' },
-  { title: 'We design, build and launch', body: 'Most sites take 2 to 3 weeks from start to finish, depending on complexity and how quickly content and feedback come in.' },
-];
-
-const WORK = [
-  { client: 'Set Life Casting', industry: 'Entertainment', services: 'Custom website, casting platform, talent database' },
-  { client: 'Village Pediatrics of St. Augustine', industry: 'Healthcare', services: 'Custom website, SEO, Meta ads' },
-  { client: 'Marietta Antique Mall', industry: 'Retail', services: 'Custom website, Meta ads, video' },
-  { client: 'Wilcox Tax Firm', industry: 'Financial services', services: 'Custom website, Meta ads, video' },
-  { client: 'Southern Tents & Events', industry: 'Event services', services: 'Website rebuild, SEO, Meta ads' },
-  { client: 'Bière de Mac', industry: 'Brewery', services: 'Custom website' },
-  { client: 'Lantz Coaching', industry: 'Athletic training', services: 'Custom website' },
-  { client: 'Quality Wildlife Solutions', industry: 'Wildlife removal', services: 'Custom website' },
-];
-
 const FAQS = [
   { question: 'How much does a website cost?', answer: 'Website projects typically start at $1,500. The final cost depends on your specific needs, features, and functionality. We provide a detailed quote after our initial consultation.' },
   { question: 'How long does it take to build a website?', answer: 'Most websites take 2-3 weeks from start to finish, depending on the complexity and how quickly you provide content and feedback.' },
   { question: 'What platforms do you build websites on?', answer: 'We build custom websites using Next.js/React for maximum performance and SEO, as well as other platforms based on your specific needs.' },
   { question: "What's included in a website project?", answer: 'Our websites include custom design, mobile-responsive development, SEO setup, and Google Analytics integration.' },
   { question: 'Do you offer website maintenance after launch?', answer: 'Yes, we offer ongoing maintenance, updates, and support packages for websites we build.' },
+];
+
+const SPEC = [
+  { item: 'Custom design', what: 'Designed around your business and customers, not a shared template.', tag: 'Included' },
+  { item: 'Mobile-first build', what: 'Built and tested on phones first, where most local customers find you.', tag: 'Included' },
+  { item: 'SEO setup', what: 'Search setup on every page, so Google can find and understand your business.', tag: 'Included' },
+  { item: 'Google Analytics', what: 'See where visitors come from and what they do.', tag: 'Included' },
+  { item: 'Meta Pixel', what: 'Track leads back to the ads that brought them in.', tag: 'With ads' },
+  { item: 'Maintenance', what: 'Updates, changes and support after launch.', tag: 'Optional plan', muted: true },
 ];
 
 const serviceSchema = {
@@ -74,87 +60,199 @@ const serviceSchema = {
   },
 };
 
+const breadcrumbs = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+    { '@type': 'ListItem', position: 2, name: 'Website Design', item: `${SITE_URL}${PATH}` },
+  ],
+};
+
+// A real site in a minimal browser frame.
+function SiteFrame({ src, alt, className, priority = false }: { src: string; alt: string; className: string; priority?: boolean }) {
+  return (
+    <div className={`svc-site absolute rounded-[10px] overflow-hidden border border-white/[0.12] bg-[#111] shadow-[0_24px_60px_rgba(0,0,0,0.55)] ${className}`}>
+      <div className="h-[18px] bg-[#1a1f1f] flex items-center gap-1 pl-2" aria-hidden="true">
+        <i className="w-1.5 h-1.5 rounded-full bg-[#39443f]" />
+        <i className="w-1.5 h-1.5 rounded-full bg-[#39443f]" />
+        <i className="w-1.5 h-1.5 rounded-full bg-[#39443f]" />
+      </div>
+      <div className="relative aspect-video">
+        <Image src={src} alt={alt} fill priority={priority} sizes="(max-width: 1024px) 78vw, 400px" className="object-cover object-top" />
+      </div>
+    </div>
+  );
+}
+
+function Case({
+  flip = false,
+  media,
+  who,
+  quote,
+  name,
+  desc,
+  made,
+}: {
+  flip?: boolean;
+  media: React.ReactNode;
+  who: string;
+  quote?: string;
+  name?: string;
+  desc?: string;
+  made: string;
+}) {
+  return (
+    <div className={`grid gap-5 lg:gap-12 items-center py-7 border-t border-white/10 ${flip ? 'lg:grid-cols-[1fr_1.25fr]' : 'lg:grid-cols-[1.25fr_1fr]'}`}>
+      <div className={flip ? 'lg:order-2' : ''}>{media}</div>
+      <div>
+        <p className="font-ui text-[0.78rem] font-semibold tracking-[0.12em] uppercase text-[#5FA99F] mb-3">{who}</p>
+        {quote && name ? (
+          <Quote text={quote} name={name} role="Owner" />
+        ) : (
+          <p className="font-body text-[1.04rem] sm:text-[1.12rem] leading-[1.5] text-[#f2f2ee]">{desc}</p>
+        )}
+        <p className="font-ui text-[0.86rem] text-[#8ea19c] mt-3.5">{made}</p>
+      </div>
+    </div>
+  );
+}
+
+// A client site scrolling itself (silent screen recording) in a browser frame.
+const Walkthrough = ({ src, poster, label }: { src: string; poster: string; label: string }) => (
+  <div className="rounded-[10px] overflow-hidden border border-white/[0.12] bg-[#111]">
+    <div className="h-[18px] bg-[#1a1f1f] flex items-center gap-1 pl-2" aria-hidden="true">
+      <i className="w-1.5 h-1.5 rounded-full bg-[#39443f]" />
+      <i className="w-1.5 h-1.5 rounded-full bg-[#39443f]" />
+      <i className="w-1.5 h-1.5 rounded-full bg-[#39443f]" />
+    </div>
+    <LoopVideo src={src} poster={poster} label={label} delay={200} sizes="(max-width: 1024px) 92vw, 560px" className="aspect-video" />
+  </div>
+);
+
 export default function WebsiteDesignServicePage() {
   return (
-    <main className="min-h-screen bg-[#000000] text-white">
+    <main className="min-h-screen bg-[#0a0a0a] text-white">
       <JsonLd data={serviceSchema} />
       <JsonLd data={faqSchema(FAQS)} />
-      <JsonLd data={breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Services', path: '/services' }, { name: 'Website Design', path: PATH }])} />
+      <JsonLd data={breadcrumbs} />
 
-      <PageHero
-        eyebrow="Services · Websites"
-        title="Website Design for Atlanta Small Businesses"
-        ctaSource="service_website_hero"
-        intro={
-          <p>
-            We design and build custom websites for local businesses in Atlanta and across the US. Each site is fast,
-            built for phones first, and set up to turn visitors and ad clicks into calls and bookings. Projects start at
-            $1,500, and most launch in 2 to 3 weeks.
-          </p>
+      <Hero
+        label="Website design · Atlanta"
+        title="Websites that get you calls."
+        accent="From $1,500, live in 2–3 weeks."
+        lead="Custom, fast, built for phones first, and set up so you can see where every lead came from. Built by the same two people who run your ads."
+        source="service_website_hero"
+        ghost={{ href: '/case-studies', label: 'See the sites' }}
+        note="4 quick questions · About 60 seconds · We reach out the same business day"
+        alignEnd={false}
+        aside={
+          <Reveal className="svc-stack relative min-h-[280px] sm:min-h-[360px] lg:min-h-[400px]">
+            <SiteFrame src="/images/case-studies/setlife-casting/setlife-poster.webp" alt="Set Life Casting website" className="s1 left-0 top-0 w-[78%]" priority />
+            <SiteFrame src="/images/case-studies/marietta-antique-mall/marietta-antique-poster.webp" alt="Marietta Antique Mall website" className="s2 right-0 top-[22%] w-[78%]" />
+            <SiteFrame src="/images/case-studies/village-pediatrics/villagepeds-poster.webp" alt="Village Pediatrics website" className="s3 left-[8%] top-[48%] w-[70%]" />
+          </Reveal>
         }
       />
 
-      <Section title="What's included in every website">
-        <CheckList items={INCLUDED} />
-      </Section>
-
-      <Section
-        title="Built to work with your ads"
-        intro={
-          <p>
-            Many of our websites go live alongside{' '}
-            <Link href="/services/meta-ads" className="text-link text-[#5FA99F] underline underline-offset-4">Meta ad campaigns</Link>.
-            We build the landing page and the ad together, so the offer matches, the page loads fast on a phone, and every
-            lead is tracked back to the ad that brought it in.
-          </p>
-        }
-      />
-
-      <Section title="How it works">
-        <Steps steps={STEPS} />
-      </Section>
-
-      <Section title="Websites we've built" intro={<p>A few of the businesses we've built for:</p>}>
-        <ul className="divide-y divide-white/[0.08] border-y border-white/[0.08]">
-          {WORK.map((w) => (
-            <li key={w.client} className="py-3.5 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
-              <span className="font-heading text-white font-semibold">{w.client}</span>
-              <span className="font-body text-[0.95rem] text-gray-400">{w.industry} · {w.services}</span>
-            </li>
+      <Wrap>
+        <Reveal as="dl" className="svc-facts grid grid-cols-2 lg:grid-cols-4 border-y border-white/10 m-0">
+          {[
+            ['$1,500', 'Projects start at'],
+            ['2–3 weeks', 'Most sites, start to launch'],
+            ['Next.js', 'Fast pages that rank'],
+            ['After launch', 'Maintenance plans available'],
+          ].map(([big, small]) => (
+            <div key={big} className="py-5 pr-4 flex flex-col-reverse gap-0.5">
+              <dt className="font-ui text-[0.85rem] text-[#8ea19c]">{small}</dt>
+              <dd className="m-0 font-heading font-bold text-white text-[1.4rem] sm:text-[1.85rem] tracking-[-0.02em] [font-stretch:112%]">{big}</dd>
+            </div>
           ))}
-        </ul>
-        <figure className="mt-8 bg-[#111] border border-[#5FA99F]/20 rounded-2xl p-6">
-          <blockquote className="font-body text-[1.05rem] text-gray-200 leading-relaxed">
-            &ldquo;I came to Drive Lead Media with a big ask — a custom website, a casting platform, and a talent database
-            all built from the ground up. They delivered on all of it.&rdquo;
-          </blockquote>
-          <figcaption className="font-ui text-[0.9rem] text-[#5FA99F] font-semibold mt-3">Chaz Yu, Owner, Set Life Casting</figcaption>
-        </figure>
-        <p className="mt-5">
-          <Link href="/case-studies" className="font-ui text-[#5FA99F] font-semibold">See the websites →</Link>
+        </Reveal>
+      </Wrap>
+
+      <Section>
+        <SectionHead title="Sites we built, in our clients' words.">Healthcare, retail, events, entertainment and local services.</SectionHead>
+        <Case
+          media={<Walkthrough src="/Videos/work/setlife-walkthrough.mp4" poster="/images/case-studies/setlife-casting/setlife-poster.webp" label="Set Life Casting website, scrolling through the homepage" />}
+          who="Set Life Casting · Entertainment"
+          quote="I came to Drive Lead Media with a big ask — a custom website, a casting platform, and a talent database all built from the ground up. They delivered on all of it."
+          name="Chaz Yu"
+          made="Custom website · casting platform · talent database"
+        />
+        <Case
+          flip
+          media={<Walkthrough src="/Videos/work/biere-de-mac-walkthrough.mp4" poster="/images/case-studies/biere-de-mac/biere-de-mac-poster.webp" label="Bière de Mac website, scrolling through the homepage" />}
+          who="Bière de Mac · Brewery"
+          desc="A website for a family brewery in Mackinaw City, Michigan: their story, the beers, the kitchen menu, events, tours and hours, with directions one tap away."
+          made="Custom website"
+        />
+        <Case
+          media={
+            <TapVideo
+              src="/Videos/work/village-pediatrics-testimonial.mp4"
+              poster="/images/work/village-pediatrics-testimonial-poster.webp"
+              label="Village Pediatrics testimonial"
+              sizes="(max-width: 1024px) 92vw, 560px"
+              className="aspect-video rounded-[10px] border border-white/[0.12]"
+            />
+          }
+          who="Village Pediatrics · Healthcare"
+          quote="They built a custom website tailored specifically to our practice. They didn't ask for payment until we were 100% satisfied, which says a lot about how they operate."
+          name="Dr. Austin Dupont"
+          made="Custom website · SEO · Meta ads · tracking"
+        />
+        <p className="font-body text-[0.97rem] text-[#9fb0ac] leading-relaxed pt-7 border-t border-white/10 max-w-[80ch]">
+          <span className="text-[#e8ecea] font-semibold">Also built for:</span> Southern Tents &amp; Events, Marietta Antique Mall,
+          Wilcox Tax Firm, Lantz Coaching, Quality Wildlife Solutions and Total Animal Control.{' '}
+          <Link href="/case-studies" className={textLink}>
+            See the sites →
+          </Link>
         </p>
       </Section>
 
-      <Section title="Free tools and guides">
-        <LinkCards
+      <Section flushTop>
+        <SectionHead title="What's in every site.">Line by line, like the quote you'll get.</SectionHead>
+        <Reveal as="table" className="svc-spec w-full border-collapse font-body text-[0.98rem]">
+          <tbody>
+            {SPEC.map((r) => (
+              <tr key={r.item} className="border-t border-white/10 last:border-b">
+                <th scope="row" className="text-left align-top font-semibold text-white py-3.5 pr-4 w-[34%]">{r.item}</th>
+                <td className="align-top text-[#aebbb8] py-3.5">{r.what}</td>
+                <td className={`align-top text-right whitespace-nowrap py-3.5 pl-4 font-semibold ${r.muted ? 'text-[#8ea19c] font-normal' : 'text-[#8fd0c6]'}`}>
+                  {!r.muted && (
+                    <svg className="svc-check inline-block w-[15px] h-[15px] mr-1.5 -mt-0.5 align-middle" viewBox="0 0 20 20" aria-hidden="true">
+                      <path d="M4 10.5l4 4 8-9" fill="none" stroke="#8fd0c6" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  )}
+                  <span className="svc-tag inline-block">{r.tag}</span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </Reveal>
+      </Section>
+
+      <Section flushTop>
+        <SectionHead title="How it goes.">From your first answer to a live site, usually 2–3 weeks.</SectionHead>
+        <Timeline
           items={[
-            { href: '/resources/website-grader', tag: 'Free tool', title: 'Website grader', body: 'Check your current site’s speed, SEO and mobile health in a minute.' },
-            { href: '/blog/atlanta-business-website-cost-2026', tag: 'Pricing', title: 'What a business website costs in Atlanta', body: 'Price ranges and what drives them.' },
-            { href: '/blog/custom-website-vs-template-atlanta-2026', tag: 'Comparison', title: 'Custom website vs template', body: 'When a builder is enough and when it is not.' },
-            { href: '/blog/nextjs-vs-wordpress-2026', tag: 'Platforms', title: 'Next.js vs WordPress', body: 'Why we build in Next.js and when WordPress still fits.' },
+            { when: 'Today', title: '4 quick questions', body: 'What you need, your industry, budget and timing.' },
+            { when: 'Same business day', title: 'We reach out', body: 'We look at your current site, then call or email with ideas and next steps.' },
+            { when: 'Weeks 1–3', title: 'Design and build', body: 'Most sites take 2–3 weeks, depending on complexity and how fast content comes in.' },
+            { when: 'Launch', title: 'Live and tracked', body: 'Analytics on day one, and the Pixel if you run ads.' },
           ]}
         />
       </Section>
 
-      <Section title="Website questions">
-        <FaqList items={FAQS} />
+      <Rule />
+      <Section>
+        <SectionHead title="Questions we get." />
+        <QAGrid items={FAQS} />
       </Section>
 
-      <ClosingCta
-        title="Ready for a website that brings in customers?"
-        body="Tell us about your business and we'll come back the same business day with ideas and a quote."
-        source="service_website_footer"
-      />
+      <Rule />
+      <Closing title="Tell us about your business. We'll show you what we'd build." source="service_website_footer" />
     </main>
   );
 }

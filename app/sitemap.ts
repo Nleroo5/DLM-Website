@@ -9,9 +9,8 @@ type Entry = { path: string; updated: string; priority: number; freq: 'weekly' |
 
 const PAGES: Entry[] = [
   { path: '', updated: '2026-10-15', priority: 1, freq: 'weekly' },
-  { path: '/services', updated: '2026-10-15', priority: 0.9, freq: 'monthly' },
-  { path: '/services/meta-ads', updated: '2026-10-15', priority: 0.9, freq: 'monthly' },
-  { path: '/services/website-design', updated: '2026-10-15', priority: 0.9, freq: 'monthly' },
+  { path: '/services/meta-ads', updated: '2026-10-18', priority: 0.9, freq: 'monthly' },
+  { path: '/services/website-design', updated: '2026-10-18', priority: 0.9, freq: 'monthly' },
   { path: '/case-studies', updated: '2026-10-15', priority: 0.9, freq: 'monthly' },
   { path: '/about', updated: '2026-10-15', priority: 0.7, freq: 'yearly' },
   { path: '/about/nicolas-leroo', updated: '2026-10-15', priority: 0.6, freq: 'yearly' },
