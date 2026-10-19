@@ -10,7 +10,8 @@ export const GOOGLE_RATING = {
   // Set to the real review count from Google Business Profile to show "from N reviews".
   reviewCount: null as number | null,
   // Set to the Business Profile reviews URL to make the badge a link (opens in a new tab).
-  profileUrl: null as string | null,
+  // Drive Lead Media on Google Maps (permanent CID link; survives renames).
+  profileUrl: 'https://www.google.com/maps?cid=2471121807011827958' as string | null,
 };
 
 function GoogleWordmark() {
@@ -55,8 +56,18 @@ function useStarAnimation(animate?: 'load' | 'view') {
   return { ref, starClass: animate === 'load' ? 'stars-load' : state };
 }
 
-export default function GoogleRating({ className = '', animate }: { className?: string; animate?: 'load' | 'view' }) {
-  const { rating, reviewCount, profileUrl } = GOOGLE_RATING;
+// link=false keeps it plain text (inside the intake form, so nobody leaves mid-way).
+export default function GoogleRating({
+  className = '',
+  animate,
+  link = true,
+}: {
+  className?: string;
+  animate?: 'load' | 'view';
+  link?: boolean;
+}) {
+  const { rating, reviewCount } = GOOGLE_RATING;
+  const profileUrl = link ? GOOGLE_RATING.profileUrl : null;
   const { ref, starClass } = useStarAnimation(animate);
   const score = rating.toFixed(1);
   const countText = reviewCount
@@ -80,7 +91,7 @@ export default function GoogleRating({ className = '', animate }: { className?: 
   const classes = `inline-flex flex-wrap items-center gap-x-2 gap-y-1 font-ui text-[0.9rem] text-gray-400 ${className}`;
 
   return profileUrl ? (
-    <a href={profileUrl} target="_blank" rel="noopener noreferrer" aria-label={label} className={`${classes} hover:text-gray-200 transition-colors`}>
+    <a href={profileUrl} target="_blank" rel="noopener noreferrer" aria-label={`${label}. See our reviews on Google (opens in a new tab)`} className={`${classes} min-h-[44px] hover:text-gray-200 transition-colors`}>
       {content}
     </a>
   ) : (
