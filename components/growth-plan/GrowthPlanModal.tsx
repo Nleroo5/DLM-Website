@@ -511,7 +511,7 @@ export default function GrowthPlanModal({
                   </button>
                 </div>
                 <div className="flex justify-center">
-                  <GoogleRating className="text-[0.82rem]" />
+                  <GoogleRating className="text-[0.82rem]" link={false} />
                 </div>
               </div>
             )}
